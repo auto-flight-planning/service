@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-build": "next lint && next build"
   },
   "dependencies": {
+    "@swagger-api/apidom-core": "^1.0.0-beta.46",
+    "@types/swagger-ui-react": "^5.18.0",
     "next": "15.4.7",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "swagger-ui-react": "^5.27.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
