@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./_components/header";
+import { Header } from "./_components";
 
 export const metadata: Metadata = {
   title: "運航日程企画システム",

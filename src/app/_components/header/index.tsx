@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { RoundButton } from "@/client/components/button";
+import LoginButton from "./loginButton";
 
 export default function Header() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function Header() {
       >
         運航日程企画システム
       </h1>
-      <RoundButton text="ログイン" onClick={() => {}} />
+      <LoginButton />
     </section>
   );
 }
