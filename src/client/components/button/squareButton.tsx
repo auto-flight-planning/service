@@ -12,7 +12,7 @@ export default function SquareButton({
   size?: "small" | "medium" | "large";
 }) {
   const baseClasses =
-    "rounded-md font-medium transition-all duration-200 cursor-pointer border-none";
+    "rounded-md font-medium transition-all duration-200 cursor-pointer border-none active:scale-95";
 
   const colorClasses = {
     primary: "bg-[#0284c7] hover:bg-[#0369a1] text-white",
