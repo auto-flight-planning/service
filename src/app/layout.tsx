@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ModalContainer } from "@/client/components/modal";
 import { Header } from "./_components";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <ModalContainer />
       </body>
     </html>
   );

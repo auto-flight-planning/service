@@ -1,5 +1,11 @@
+import { useModalStore } from "@/client/stores";
+import { LoginModal } from "@/client/features/auth";
 import { RoundButton } from "@/client/components/button";
 
 export default function LoginButton() {
-  return <RoundButton text="ログイン" onClick={() => {}} />;
+  const { openModal } = useModalStore();
+
+  return (
+    <RoundButton text="ログイン" onClick={() => openModal(<LoginModal />)} />
+  );
 }
