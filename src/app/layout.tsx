@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ModalContainer } from "@/client/components/modal";
+import { ToastContainer } from "@/client/components/toast";
 import { Header } from "./_components";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ModalContainer />
+        <ToastContainer />
       </body>
     </html>
   );

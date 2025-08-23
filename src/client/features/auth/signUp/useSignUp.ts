@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { FieldErrors, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema, type SignUpFormDataType } from "./schema";
@@ -18,8 +19,10 @@ export default function useSignUp() {
     },
   });
 
+  const router = useRouter();
   const onValidSubmit = (data: SignUpFormDataType) => {
     console.log("valid", data);
+    router.push("/home");
   };
 
   const onInvalidSubmit = (errors: FieldErrors<SignUpFormDataType>) => {

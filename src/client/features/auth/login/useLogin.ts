@@ -1,4 +1,6 @@
+import { useRouter } from "next/navigation";
 import { FieldErrors, useForm } from "react-hook-form";
+import { useToastStore } from "@/client/stores/toastStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginFormDataType } from "./schema";
 
@@ -16,8 +18,16 @@ export default function useLogin() {
     },
   });
 
+  const router = useRouter();
+  const { addToast } = useToastStore();
   const onValidSubmit = (data: LoginFormDataType) => {
     console.log("valid", data);
+    addToast({
+      type: "success",
+      title: "ログイン成功",
+      message: "ログインに成功しました。",
+    });
+    // router.push("/home");
   };
 
   const onInvalidSubmit = (errors: FieldErrors<LoginFormDataType>) => {
