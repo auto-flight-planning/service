@@ -4,17 +4,19 @@
   --primary-100: #e0f2fe;
   --primary-500: #0284c7;
   --primary-600: #0369a1;
+  --red: #ff6e6e;
 }
 
 /* 
   tailwind.cssのテーマ変数 (utilty class)
   ex. bg-color-background, text-color-foreground
 */
-@theme inline {
+@theme {
   --font-noto-sans-jp: var(--font-noto-sans-jp);
   --color-primary-100: var(--primary-100);
   --color-primary-500: var(--primary-500);
   --color-primary-600: var(--primary-600);
+  --color-red: var(--red);
 }
 
 body {
