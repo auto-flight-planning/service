@@ -1,22 +1,25 @@
 "use client";
 
+import { ButtonHTMLAttributes } from "react";
+
+interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  color?: "primary" | "gray";
+  size?: "small" | "medium" | "large";
+}
+
 export default function SquareButton({
   text,
   onClick,
   color = "primary",
   size = "medium",
-}: {
-  text: string;
-  onClick: () => void;
-  color?: "primary" | "gray";
-  size?: "small" | "medium" | "large";
-}) {
+}: SquareButtonProps) {
   const baseClasses =
     "rounded-md font-medium transition-all duration-200 cursor-pointer border-none active:scale-95";
 
   const colorClasses = {
-    primary: "bg-[#0284c7] hover:bg-[#0369a1] text-white",
-    gray: "bg-[#f3f4f6] hover:bg-[#e5e7eb] text-[#6b7280]",
+    primary: "bg-primary-500 hover:bg-primary-600 text-white",
+    gray: "bg-gray-300 hover:bg-gray-400 text-gray-700",
   };
 
   const sizeClasses = {

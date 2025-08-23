@@ -1,7 +1,7 @@
 "use client";
 
 import { useModalStore } from "@/client/stores";
-import { LoginModal } from "@/client/features/auth";
+import { LoginModal } from "@/client/features/auth/login";
 import { SquareButton } from "@/client/components/button";
 
 export default function LoginButton() {

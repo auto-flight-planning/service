@@ -8,7 +8,7 @@ export default function Start() {
           運航日程企画システム
         </h1>
         <p className="text-lg text-gray-500">
-          投入資源に対する予測収益の高い運航日程を自動企画するシステムへようこそ。
+          投入資源に対する予測収益の高い運航日程を自動企画するシステムへようこそ
         </p>
       </div>
       <LoginButton />
