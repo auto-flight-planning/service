@@ -16,14 +16,19 @@ export default function useLogin() {
     },
   });
 
-  const onSubmit = (data: LoginFormDataType) => {
-    console.log(data);
+  const onValidSubmit = (data: LoginFormDataType) => {
+    console.log("valid", data);
+  };
+
+  const onInvalidSubmit = () => {
+    console.log("invalid");
   };
 
   return {
     register,
     errors,
     handleSubmit,
-    onSubmit,
+    onValidSubmit,
+    onInvalidSubmit,
   };
 }

@@ -6,6 +6,7 @@ interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   color?: "primary" | "gray";
   size?: "small" | "medium" | "large";
+  fullWidth?: boolean;
 }
 
 export default function SquareButton({
@@ -13,6 +14,8 @@ export default function SquareButton({
   onClick,
   color = "primary",
   size = "medium",
+  fullWidth = false,
+  ...props
 }: SquareButtonProps) {
   const baseClasses =
     "rounded-md font-medium transition-all duration-200 cursor-pointer border-none active:scale-95";
@@ -28,10 +31,13 @@ export default function SquareButton({
     large: "px-6 py-3 text-base",
   };
 
-  const classes = `${baseClasses} ${colorClasses[color]} ${sizeClasses[size]}`;
+  const widthClasses = fullWidth ? "w-full" : "";
+
+  const classes =
+    `${baseClasses} ${colorClasses[color]} ${sizeClasses[size]} ${widthClasses}`.trim();
 
   return (
-    <button className={classes} onClick={onClick}>
+    <button className={classes} onClick={onClick} {...props}>
       {text}
     </button>
   );

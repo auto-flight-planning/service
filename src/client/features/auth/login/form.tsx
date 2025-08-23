@@ -1,11 +1,16 @@
 import { useLogin } from ".";
 import { TextField, SecretTextField } from "@/client/components/form";
+import { SquareButton } from "@/client/components/button";
 
 export default function LoginForm() {
-  const { register, errors, handleSubmit, onSubmit } = useLogin();
+  const { register, errors, handleSubmit, onValidSubmit, onInvalidSubmit } =
+    useLogin();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
+      className="flex flex-col gap-6"
+    >
       <TextField
         label="社員ID"
         {...register("employeeId")}
@@ -18,6 +23,7 @@ export default function LoginForm() {
         placeholder="パスワードを入力してください"
         error={errors.password?.message}
       />
+      <SquareButton text="ログイン" type="submit" size="large" fullWidth />
     </form>
   );
 }
