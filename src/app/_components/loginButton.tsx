@@ -1,7 +1,6 @@
 "use client";
 
 import { useModalStore } from "@/client/stores";
-import { LoginModal } from "@/client/features/auth/login";
 import { SquareButton } from "@/client/components/button";
 
 export default function LoginButton() {
@@ -10,7 +9,7 @@ export default function LoginButton() {
   return (
     <SquareButton
       text="システムにログイン"
-      onClick={() => openModal(<LoginModal />)}
+      onClick={() => openModal("login")}
       size="large"
     />
   );

@@ -1,26 +1,28 @@
 import { FieldErrors, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, type LoginFormDataType } from "./schema";
+import { signUpSchema, type SignUpFormDataType } from "./schema";
 
-export default function useLogin() {
+export default function useSignUp() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormDataType>({
+  } = useForm<SignUpFormDataType>({
     mode: "onChange",
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(signUpSchema),
     defaultValues: {
       employeeId: "",
       password: "",
+      name: "",
+      email: "",
     },
   });
 
-  const onValidSubmit = (data: LoginFormDataType) => {
+  const onValidSubmit = (data: SignUpFormDataType) => {
     console.log("valid", data);
   };
 
-  const onInvalidSubmit = (errors: FieldErrors<LoginFormDataType>) => {
+  const onInvalidSubmit = (errors: FieldErrors<SignUpFormDataType>) => {
     console.log("invalid", errors);
   };
 
