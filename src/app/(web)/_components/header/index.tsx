@@ -2,14 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/client/stores";
-import LoginButton from "./loginButton";
-import createBrowserClient from "@/server/supabase/browserClient";
+import LogoutButton from "./logoutButton";
 
 export default function Header() {
   const router = useRouter();
   const { user } = useUserStore();
-  const supabaseCli = createBrowserClient();
-  // console.log(user);
 
   return (
     <section className="bg-white h-14 flex justify-between items-center px-4 shadow-md">
@@ -19,16 +16,13 @@ export default function Header() {
       >
         運航日程企画システム
       </h1>
-      {user ? (
-        <div
-          onClick={() => {
-            supabaseCli.auth.signOut();
-          }}
-        >
-          {user.firstName} {user.lastName} さん
+      {user && (
+        <div className="flex items-center gap-4">
+          <span className="text-gray-600 text-sm font-medium relative border-b border-gray-300">
+            {user.lastName} {user.firstName} さん
+          </span>
+          <LogoutButton />
         </div>
-      ) : (
-        <LoginButton />
       )}
     </section>
   );

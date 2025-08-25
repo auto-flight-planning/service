@@ -7,13 +7,11 @@ interface User {
 }
 
 interface UserStore {
-  user: User | null;
-  setUser: (user: User) => void;
-  clearUser: () => void;
+  user: User | null | undefined;
+  setUser: (user: User | null) => void;
 }
 
 export const useUserStore = create<UserStore>((set) => ({
-  user: null,
-  setUser: (user: User) => set({ user }),
-  clearUser: () => set({ user: null }),
+  user: undefined,
+  setUser: (user: User | null) => set({ user }),
 }));
