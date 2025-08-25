@@ -53,7 +53,7 @@ export default function Toast({
 
   const getToastStyles = () => {
     const baseStyles =
-      "bg-white rounded-xl p-4 shadow-lg border min-w-[300px] max-w-[400px] transform transition-all duration-300 ease-in-out flex items-center gap-3 mb-3 relative overflow-hidden";
+      "bg-white rounded-xl p-4 shadow-lg min-w-[300px] max-w-[400px] transform transition-all duration-300 ease-in-out flex items-center gap-3 mb-3 relative overflow-hidden";
 
     if (type === "success") {
       return `${baseStyles} border-l-4 border-l-primary-500`;
