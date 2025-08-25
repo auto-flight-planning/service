@@ -16,7 +16,7 @@ export default async function checkRequestBody<TSchema extends ZodType>(
       return {
         success: false,
         response: NextResponse.json(
-          { error: parsed.error.message },
+          { error: parsed.error.flatten() },
           { status: 400 }
         ),
       };

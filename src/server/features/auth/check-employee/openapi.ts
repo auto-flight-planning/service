@@ -1,34 +1,31 @@
 import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
-import { loginReqSchema, loginResSchema } from "./schema";
+import { checkEmployeeReqSchema, checkEmployeeResSchema } from "./schema";
 
 export const registerLoginSchemas = (registry: OpenAPIRegistry) => {
   registry.registerPath({
     method: "post",
-    path: "/api/auth/login",
+    path: "/api/auth/check-employee",
     tags: ["Auth"],
     request: {
       body: {
         content: {
           "application/json": {
-            schema: loginReqSchema,
+            schema: checkEmployeeReqSchema,
           },
         },
       },
     },
     responses: {
       200: {
-        description: "ログインに成功しました",
+        description: "職員情報を取得しました",
         content: {
           "application/json": {
-            schema: loginResSchema,
+            schema: checkEmployeeResSchema,
           },
         },
       },
-      401: {
-        description: "パスワードが間違っています",
-      },
       404: {
-        description: "存在しない職員IDまたはユーザーです",
+        description: "存在しない職員IDです",
       },
     },
   });

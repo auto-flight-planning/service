@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../../app/globals.css";
+import { AuthProvider, ReactQueryProvider } from "@/client/providers";
 import { ModalContainer } from "@/client/components/modal";
 import { ToastContainer } from "@/client/components/toast";
 import { Header } from "./_components";
@@ -15,13 +16,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body>
-        <Header />
-        {children}
-        <ModalContainer />
-        <ToastContainer />
-      </body>
-    </html>
+    <ReactQueryProvider>
+      <html lang="ja">
+        <body>
+          <AuthProvider>
+            <Header />
+            {children}
+            <ModalContainer />
+            <ToastContainer />
+          </AuthProvider>
+        </body>
+      </html>
+    </ReactQueryProvider>
   );
 }
