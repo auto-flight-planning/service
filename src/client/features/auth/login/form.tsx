@@ -3,12 +3,11 @@ import { TextField, SecretTextField } from "@/client/components/form";
 import { SquareButton } from "@/client/components/button";
 
 export default function LoginForm() {
-  const { register, errors, handleSubmit, onValidSubmit, onInvalidSubmit } =
-    useLogin();
+  const { register, errors, handleSubmit, onValidSubmit } = useLogin();
 
   return (
     <form
-      onSubmit={handleSubmit(onValidSubmit, onInvalidSubmit)}
+      onSubmit={handleSubmit(onValidSubmit)}
       className="flex flex-col gap-6"
     >
       <TextField
