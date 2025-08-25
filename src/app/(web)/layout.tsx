@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../../app/globals.css";
 import { ModalContainer } from "@/client/components/modal";
 import { ToastContainer } from "@/client/components/toast";
 import { Header } from "./_components";

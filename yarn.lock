@@ -21,6 +21,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@asteasolutions/zod-to-openapi@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "@asteasolutions/zod-to-openapi@npm:8.1.0"
+  dependencies:
+    openapi3-ts: "npm:^4.1.2"
+  peerDependencies:
+    zod: ^4.0.0
+  checksum: 10c0/974a8b06bc3048406bc13f2cf2c00ce8bc2256af6d1e24b39f3b8b1c6fa6047d64b8a017da5b45e6b3f28ca89b159383f01dabc00a904a705a54ea87712dfda3
+  languageName: node
+  linkType: hard
+
 "@babel/runtime-corejs3@npm:^7.20.7, @babel/runtime-corejs3@npm:^7.22.15, @babel/runtime-corejs3@npm:^7.26.10, @babel/runtime-corejs3@npm:^7.27.1":
   version: 7.28.3
   resolution: "@babel/runtime-corejs3@npm:7.28.3"
@@ -5385,6 +5396,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"openapi3-ts@npm:^4.1.2":
+  version: 4.5.0
+  resolution: "openapi3-ts@npm:4.5.0"
+  dependencies:
+    yaml: "npm:^2.8.0"
+  checksum: 10c0/97de2d24e9ceffb89e1388e137e4a6e17ee57a02dce0c938a5e98b1338ac72b31e8b2ce8dd28945ad43fae8bee2a145892cb548ba5ae60b0930f1b6b79b0747d
+  languageName: node
+  linkType: hard
+
 "optionator@npm:^0.9.3":
   version: 0.9.4
   resolution: "optionator@npm:0.9.4"
@@ -6192,6 +6212,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "service@workspace:."
   dependencies:
+    "@asteasolutions/zod-to-openapi": "npm:^8.1.0"
     "@eslint/eslintrc": "npm:^3"
     "@heroicons/react": "npm:^2.2.0"
     "@hookform/resolvers": "npm:^5.2.1"
@@ -7393,6 +7414,15 @@ __metadata:
   version: 5.0.0
   resolution: "yallist@npm:5.0.0"
   checksum: 10c0/a499c81ce6d4a1d260d4ea0f6d49ab4da09681e32c3f0472dee16667ed69d01dae63a3b81745a24bd78476ec4fcf856114cb4896ace738e01da34b2c42235416
+  languageName: node
+  linkType: hard
+
+"yaml@npm:^2.8.0":
+  version: 2.8.1
+  resolution: "yaml@npm:2.8.1"
+  bin:
+    yaml: bin.mjs
+  checksum: 10c0/7c587be00d9303d2ae1566e03bc5bc7fe978ba0d9bf39cc418c3139d37929dfcb93a230d9749f2cb578b6aa5d9ebebc322415e4b653cb83acd8bc0bc321707f3
   languageName: node
   linkType: hard
 
