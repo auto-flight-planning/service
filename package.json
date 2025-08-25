@@ -12,6 +12,8 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.2.1",
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.56.0",
     "@swagger-api/apidom-core": "^1.0.0-beta.46",
     "@types/swagger-ui-react": "^5.18.0",
     "next": "15.4.7",

@@ -4,11 +4,9 @@ import { useState, useEffect } from "react";
 import { useModalStore } from "@/client/stores";
 import Modal from "./modal";
 import LoginModal from "@/client/features/auth/login/modal";
-import SignUpModal from "@/client/features/auth/signUp/modal";
 
 const MODAL_COMPONENTS = {
   login: LoginModal,
-  signUp: SignUpModal,
 };
 
 export default function ModalContainer() {

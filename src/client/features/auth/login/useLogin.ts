@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 import { FieldErrors, useForm } from "react-hook-form";
-import { useToastStore } from "@/client/stores/toastStore";
+import { useToastStore } from "@/client/stores";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginFormDataType } from "./schema";
 
