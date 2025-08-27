@@ -18,31 +18,33 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     const { data: listener } = supabaseBrowserClient.auth.onAuthStateChange(
       async (event, session) => {
         if (event === "INITIAL_SESSION" && session) {
-          const res = await fetch("/api/auth/get-employee", {
-            method: "POST",
-            body: JSON.stringify({ userId: session.user.id }),
-          });
-          const { employeeId, firstName, lastName } = await res.json();
+          if (session) {
+            const res = await fetch("/api/auth/get-employee", {
+              method: "POST",
+              body: JSON.stringify({ userId: session.user.id }),
+            });
+            const { employeeId, firstName, lastName } = await res.json();
 
-          setUser({
-            employeeId,
-            firstName,
-            lastName,
-          });
+            setUser({
+              employeeId,
+              firstName,
+              lastName,
+            });
 
-          if (pathname === "/") {
-            router.push("/home");
+            if (pathname === "/") {
+              router.push("/home");
+            }
+            addToast({
+              type: "success",
+              message: `${firstName} ${lastName} さん、システムへようこそ。`,
+              title: "ログイン成功",
+            });
+          } else {
+            setUser(null);
           }
-          addToast({
-            type: "success",
-            message: `${firstName} ${lastName} さん、システムへようこそ。`,
-            title: "ログイン成功",
-          });
         } else if (event === "SIGNED_OUT") {
           setUser(null);
           router.push("/");
-        } else {
-          setUser(null);
         }
       }
     );
