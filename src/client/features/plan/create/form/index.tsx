@@ -1,6 +1,6 @@
 import { FieldWrapper, Select } from "@/client/components/form";
 import { TextField } from "@/client/components/form";
-import { useCreatePlan } from "@/client/features/createPlan";
+import { useCreatePlan } from "@/client/features/plan/create";
 import { getYearOptions } from "../utils";
 import AddParticipants from "./addParticipants";
 
