@@ -6,26 +6,28 @@ interface WhiteCardProps {
   children: ReactNode;
   onClick?: () => void;
   className?: string;
+  onBorder?: boolean;
 }
 
 export default function WhiteCard({
   children,
   onClick,
   className = "",
+  onBorder = false,
 }: WhiteCardProps) {
   return (
     <div
       className={`
         bg-white 
         rounded-2xl 
-        p-8 
+        p-6 
         shadow-lg 
         cursor-pointer 
         transition-all 
         duration-300 
         ease-in-out 
         border-2 
-        border-transparent 
+        ${onBorder ? "border-gray-200" : "border-transparent"}
         relative
         hover:border-primary-500 
         hover:-translate-y-1 

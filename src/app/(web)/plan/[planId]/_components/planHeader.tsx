@@ -2,13 +2,26 @@
 
 import { Spinner } from "@/client/components/spinner";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { usePathname } from "next/navigation";
 
 interface PlanHeaderProps {
   planId: string;
 }
 
 export default function PlanHeader({ planId }: PlanHeaderProps) {
+  const pathname = usePathname();
   const { data, isPending, error } = useGetPlanInfo(planId);
+
+  // input 하위 페이지들에서는 렌더링하지 않음
+  const isInputSubPage =
+    pathname.includes("/input/") &&
+    (pathname.includes("/resource") ||
+      pathname.includes("/analytics") ||
+      pathname.includes("/airport"));
+
+  if (isInputSubPage) {
+    return null;
+  }
 
   if (isPending || !data) {
     return (
