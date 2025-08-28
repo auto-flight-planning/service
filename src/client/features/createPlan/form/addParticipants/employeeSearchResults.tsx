@@ -3,14 +3,14 @@ import { Spinner } from "@/client/components/spinner";
 
 interface EmployeeSearchResultsProps {
   employees: EmployeeResult[];
-  isLoading: boolean;
+  isPending: boolean;
   searchName: string;
   onSelect?: (employee: EmployeeResult) => void;
 }
 
 export default function EmployeeSearchResults({
   employees,
-  isLoading,
+  isPending,
   searchName,
   onSelect,
 }: EmployeeSearchResultsProps) {
@@ -20,7 +20,7 @@ export default function EmployeeSearchResults({
 
   return (
     <div className="mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
-      {isLoading ? (
+      {isPending ? (
         <div className="px-4 py-3 text-center flex items-center justify-center gap-2">
           <Spinner size="sm" />
           <span className="text-sm text-gray-500">検索中...</span>

@@ -14,7 +14,7 @@ export default function AddParticipants() {
 
   const [searchName, setSearchName] = useState("");
   const deferredSearchName = useDeferredValue(searchName);
-  const { employees, isLoading } = useSearchEmployee(deferredSearchName);
+  const { employees, isPending } = useSearchEmployee(deferredSearchName);
   const filteredEmployees = employees.filter(
     (employee) =>
       !selectedEmployees.some(
@@ -45,7 +45,7 @@ export default function AddParticipants() {
 
         <EmployeeSearchResults
           employees={filteredEmployees}
-          isLoading={isLoading}
+          isPending={isPending}
           searchName={deferredSearchName}
           onSelect={handleEmployeeSelect}
         />

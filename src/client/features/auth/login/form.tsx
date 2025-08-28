@@ -4,7 +4,7 @@ import { SquareButton } from "@/client/components/button";
 import { FormProvider } from "react-hook-form";
 
 export default function LoginForm() {
-  const { formMethods, onValidSubmit } = useLogin();
+  const { formMethods, onValidSubmit, isPending } = useLogin();
   const { handleSubmit } = formMethods;
 
   return (
@@ -23,7 +23,13 @@ export default function LoginForm() {
           name="password"
           placeholder="パスワードを入力してください"
         />
-        <SquareButton text="ログイン" type="submit" size="large" fullWidth />
+        <SquareButton
+          text="ログイン"
+          type="submit"
+          size="large"
+          fullWidth
+          isPending={isPending}
+        />
       </form>
     </FormProvider>
   );

@@ -122,6 +122,11 @@ export type users = $Result.DefaultSelection<Prisma.$usersPayload>
  * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
  */
 export type employees = $Result.DefaultSelection<Prisma.$employeesPayload>
+/**
+ * Model plan_list
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_list = $Result.DefaultSelection<Prisma.$plan_listPayload>
 
 /**
  * Enums
@@ -481,6 +486,16 @@ export class PrismaClient<
     * ```
     */
   get employees(): Prisma.employeesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_list`: Exposes CRUD operations for the **plan_list** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_lists
+    * const plan_lists = await prisma.plan_list.findMany()
+    * ```
+    */
+  get plan_list(): Prisma.plan_listDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -937,7 +952,8 @@ export namespace Prisma {
     sso_domains: 'sso_domains',
     sso_providers: 'sso_providers',
     users: 'users',
-    employees: 'employees'
+    employees: 'employees',
+    plan_list: 'plan_list'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -956,7 +972,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees"
+      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2218,6 +2234,80 @@ export namespace Prisma {
           }
         }
       }
+      plan_list: {
+        payload: Prisma.$plan_listPayload<ExtArgs>
+        fields: Prisma.plan_listFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_listFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_listFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_listFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_listFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>
+          }
+          findMany: {
+            args: Prisma.plan_listFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>[]
+          }
+          create: {
+            args: Prisma.plan_listCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>
+          }
+          createMany: {
+            args: Prisma.plan_listCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_listCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_listDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>
+          }
+          update: {
+            args: Prisma.plan_listUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_listDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_listUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_listUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_listUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_listPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_listAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_list>
+          }
+          groupBy: {
+            args: Prisma.plan_listGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_listGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_listCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_listCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2327,6 +2417,7 @@ export namespace Prisma {
     sso_providers?: sso_providersOmit
     users?: usersOmit
     employees?: employeesOmit
+    plan_list?: plan_listOmit
   }
 
   /* Types for Logging */
@@ -21631,6 +21722,1061 @@ export namespace Prisma {
 
 
   /**
+   * Model plan_list
+   */
+
+  export type AggregatePlan_list = {
+    _count: Plan_listCountAggregateOutputType | null
+    _avg: Plan_listAvgAggregateOutputType | null
+    _sum: Plan_listSumAggregateOutputType | null
+    _min: Plan_listMinAggregateOutputType | null
+    _max: Plan_listMaxAggregateOutputType | null
+  }
+
+  export type Plan_listAvgAggregateOutputType = {
+    year: number | null
+    month: number | null
+  }
+
+  export type Plan_listSumAggregateOutputType = {
+    year: number | null
+    month: number | null
+  }
+
+  export type Plan_listMinAggregateOutputType = {
+    id: string | null
+    creator_id: string | null
+    name: string | null
+    year: number | null
+    month: number | null
+    created_at: Date | null
+  }
+
+  export type Plan_listMaxAggregateOutputType = {
+    id: string | null
+    creator_id: string | null
+    name: string | null
+    year: number | null
+    month: number | null
+    created_at: Date | null
+  }
+
+  export type Plan_listCountAggregateOutputType = {
+    id: number
+    creator_id: number
+    name: number
+    year: number
+    month: number
+    participant_ids: number
+    created_at: number
+    _all: number
+  }
+
+
+  export type Plan_listAvgAggregateInputType = {
+    year?: true
+    month?: true
+  }
+
+  export type Plan_listSumAggregateInputType = {
+    year?: true
+    month?: true
+  }
+
+  export type Plan_listMinAggregateInputType = {
+    id?: true
+    creator_id?: true
+    name?: true
+    year?: true
+    month?: true
+    created_at?: true
+  }
+
+  export type Plan_listMaxAggregateInputType = {
+    id?: true
+    creator_id?: true
+    name?: true
+    year?: true
+    month?: true
+    created_at?: true
+  }
+
+  export type Plan_listCountAggregateInputType = {
+    id?: true
+    creator_id?: true
+    name?: true
+    year?: true
+    month?: true
+    participant_ids?: true
+    created_at?: true
+    _all?: true
+  }
+
+  export type Plan_listAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_list to aggregate.
+     */
+    where?: plan_listWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_lists to fetch.
+     */
+    orderBy?: plan_listOrderByWithRelationInput | plan_listOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_listWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_lists from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_lists.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_lists
+    **/
+    _count?: true | Plan_listCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Plan_listAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Plan_listSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_listMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_listMaxAggregateInputType
+  }
+
+  export type GetPlan_listAggregateType<T extends Plan_listAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_list]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_list[P]>
+      : GetScalarType<T[P], AggregatePlan_list[P]>
+  }
+
+
+
+
+  export type plan_listGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_listWhereInput
+    orderBy?: plan_listOrderByWithAggregationInput | plan_listOrderByWithAggregationInput[]
+    by: Plan_listScalarFieldEnum[] | Plan_listScalarFieldEnum
+    having?: plan_listScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_listCountAggregateInputType | true
+    _avg?: Plan_listAvgAggregateInputType
+    _sum?: Plan_listSumAggregateInputType
+    _min?: Plan_listMinAggregateInputType
+    _max?: Plan_listMaxAggregateInputType
+  }
+
+  export type Plan_listGroupByOutputType = {
+    id: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids: string[]
+    created_at: Date
+    _count: Plan_listCountAggregateOutputType | null
+    _avg: Plan_listAvgAggregateOutputType | null
+    _sum: Plan_listSumAggregateOutputType | null
+    _min: Plan_listMinAggregateOutputType | null
+    _max: Plan_listMaxAggregateOutputType | null
+  }
+
+  type GetPlan_listGroupByPayload<T extends plan_listGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_listGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_listGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_listGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_listGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_listSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    creator_id?: boolean
+    name?: boolean
+    year?: boolean
+    month?: boolean
+    participant_ids?: boolean
+    created_at?: boolean
+  }, ExtArgs["result"]["plan_list"]>
+
+  export type plan_listSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    creator_id?: boolean
+    name?: boolean
+    year?: boolean
+    month?: boolean
+    participant_ids?: boolean
+    created_at?: boolean
+  }, ExtArgs["result"]["plan_list"]>
+
+  export type plan_listSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    creator_id?: boolean
+    name?: boolean
+    year?: boolean
+    month?: boolean
+    participant_ids?: boolean
+    created_at?: boolean
+  }, ExtArgs["result"]["plan_list"]>
+
+  export type plan_listSelectScalar = {
+    id?: boolean
+    creator_id?: boolean
+    name?: boolean
+    year?: boolean
+    month?: boolean
+    participant_ids?: boolean
+    created_at?: boolean
+  }
+
+  export type plan_listOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "creator_id" | "name" | "year" | "month" | "participant_ids" | "created_at", ExtArgs["result"]["plan_list"]>
+
+  export type $plan_listPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_list"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      creator_id: string
+      name: string
+      year: number
+      month: number
+      participant_ids: string[]
+      created_at: Date
+    }, ExtArgs["result"]["plan_list"]>
+    composites: {}
+  }
+
+  type plan_listGetPayload<S extends boolean | null | undefined | plan_listDefaultArgs> = $Result.GetResult<Prisma.$plan_listPayload, S>
+
+  type plan_listCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_listFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_listCountAggregateInputType | true
+    }
+
+  export interface plan_listDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_list'], meta: { name: 'plan_list' } }
+    /**
+     * Find zero or one Plan_list that matches the filter.
+     * @param {plan_listFindUniqueArgs} args - Arguments to find a Plan_list
+     * @example
+     * // Get one Plan_list
+     * const plan_list = await prisma.plan_list.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_listFindUniqueArgs>(args: SelectSubset<T, plan_listFindUniqueArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_list that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_listFindUniqueOrThrowArgs} args - Arguments to find a Plan_list
+     * @example
+     * // Get one Plan_list
+     * const plan_list = await prisma.plan_list.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_listFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_listFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_list that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_listFindFirstArgs} args - Arguments to find a Plan_list
+     * @example
+     * // Get one Plan_list
+     * const plan_list = await prisma.plan_list.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_listFindFirstArgs>(args?: SelectSubset<T, plan_listFindFirstArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_list that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_listFindFirstOrThrowArgs} args - Arguments to find a Plan_list
+     * @example
+     * // Get one Plan_list
+     * const plan_list = await prisma.plan_list.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_listFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_listFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_lists that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_listFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_lists
+     * const plan_lists = await prisma.plan_list.findMany()
+     * 
+     * // Get first 10 Plan_lists
+     * const plan_lists = await prisma.plan_list.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const plan_listWithIdOnly = await prisma.plan_list.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends plan_listFindManyArgs>(args?: SelectSubset<T, plan_listFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_list.
+     * @param {plan_listCreateArgs} args - Arguments to create a Plan_list.
+     * @example
+     * // Create one Plan_list
+     * const Plan_list = await prisma.plan_list.create({
+     *   data: {
+     *     // ... data to create a Plan_list
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_listCreateArgs>(args: SelectSubset<T, plan_listCreateArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_lists.
+     * @param {plan_listCreateManyArgs} args - Arguments to create many Plan_lists.
+     * @example
+     * // Create many Plan_lists
+     * const plan_list = await prisma.plan_list.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_listCreateManyArgs>(args?: SelectSubset<T, plan_listCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_lists and returns the data saved in the database.
+     * @param {plan_listCreateManyAndReturnArgs} args - Arguments to create many Plan_lists.
+     * @example
+     * // Create many Plan_lists
+     * const plan_list = await prisma.plan_list.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_lists and only return the `id`
+     * const plan_listWithIdOnly = await prisma.plan_list.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_listCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_listCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_list.
+     * @param {plan_listDeleteArgs} args - Arguments to delete one Plan_list.
+     * @example
+     * // Delete one Plan_list
+     * const Plan_list = await prisma.plan_list.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_list
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_listDeleteArgs>(args: SelectSubset<T, plan_listDeleteArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_list.
+     * @param {plan_listUpdateArgs} args - Arguments to update one Plan_list.
+     * @example
+     * // Update one Plan_list
+     * const plan_list = await prisma.plan_list.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_listUpdateArgs>(args: SelectSubset<T, plan_listUpdateArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_lists.
+     * @param {plan_listDeleteManyArgs} args - Arguments to filter Plan_lists to delete.
+     * @example
+     * // Delete a few Plan_lists
+     * const { count } = await prisma.plan_list.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_listDeleteManyArgs>(args?: SelectSubset<T, plan_listDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_lists.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_listUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_lists
+     * const plan_list = await prisma.plan_list.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_listUpdateManyArgs>(args: SelectSubset<T, plan_listUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_lists and returns the data updated in the database.
+     * @param {plan_listUpdateManyAndReturnArgs} args - Arguments to update many Plan_lists.
+     * @example
+     * // Update many Plan_lists
+     * const plan_list = await prisma.plan_list.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_lists and only return the `id`
+     * const plan_listWithIdOnly = await prisma.plan_list.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_listUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_listUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_list.
+     * @param {plan_listUpsertArgs} args - Arguments to update or create a Plan_list.
+     * @example
+     * // Update or create a Plan_list
+     * const plan_list = await prisma.plan_list.upsert({
+     *   create: {
+     *     // ... data to create a Plan_list
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_list we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_listUpsertArgs>(args: SelectSubset<T, plan_listUpsertArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_lists.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_listCountArgs} args - Arguments to filter Plan_lists to count.
+     * @example
+     * // Count the number of Plan_lists
+     * const count = await prisma.plan_list.count({
+     *   where: {
+     *     // ... the filter for the Plan_lists we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_listCountArgs>(
+      args?: Subset<T, plan_listCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_listCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_list.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_listAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_listAggregateArgs>(args: Subset<T, Plan_listAggregateArgs>): Prisma.PrismaPromise<GetPlan_listAggregateType<T>>
+
+    /**
+     * Group by Plan_list.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_listGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_listGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_listGroupByArgs['orderBy'] }
+        : { orderBy?: plan_listGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_listGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_listGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_list model
+   */
+  readonly fields: plan_listFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_list.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_listClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_list model
+   */
+  interface plan_listFieldRefs {
+    readonly id: FieldRef<"plan_list", 'String'>
+    readonly creator_id: FieldRef<"plan_list", 'String'>
+    readonly name: FieldRef<"plan_list", 'String'>
+    readonly year: FieldRef<"plan_list", 'Int'>
+    readonly month: FieldRef<"plan_list", 'Int'>
+    readonly participant_ids: FieldRef<"plan_list", 'String[]'>
+    readonly created_at: FieldRef<"plan_list", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_list findUnique
+   */
+  export type plan_listFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * Filter, which plan_list to fetch.
+     */
+    where: plan_listWhereUniqueInput
+  }
+
+  /**
+   * plan_list findUniqueOrThrow
+   */
+  export type plan_listFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * Filter, which plan_list to fetch.
+     */
+    where: plan_listWhereUniqueInput
+  }
+
+  /**
+   * plan_list findFirst
+   */
+  export type plan_listFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * Filter, which plan_list to fetch.
+     */
+    where?: plan_listWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_lists to fetch.
+     */
+    orderBy?: plan_listOrderByWithRelationInput | plan_listOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_lists.
+     */
+    cursor?: plan_listWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_lists from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_lists.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_lists.
+     */
+    distinct?: Plan_listScalarFieldEnum | Plan_listScalarFieldEnum[]
+  }
+
+  /**
+   * plan_list findFirstOrThrow
+   */
+  export type plan_listFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * Filter, which plan_list to fetch.
+     */
+    where?: plan_listWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_lists to fetch.
+     */
+    orderBy?: plan_listOrderByWithRelationInput | plan_listOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_lists.
+     */
+    cursor?: plan_listWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_lists from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_lists.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_lists.
+     */
+    distinct?: Plan_listScalarFieldEnum | Plan_listScalarFieldEnum[]
+  }
+
+  /**
+   * plan_list findMany
+   */
+  export type plan_listFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * Filter, which plan_lists to fetch.
+     */
+    where?: plan_listWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_lists to fetch.
+     */
+    orderBy?: plan_listOrderByWithRelationInput | plan_listOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_lists.
+     */
+    cursor?: plan_listWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_lists from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_lists.
+     */
+    skip?: number
+    distinct?: Plan_listScalarFieldEnum | Plan_listScalarFieldEnum[]
+  }
+
+  /**
+   * plan_list create
+   */
+  export type plan_listCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * The data needed to create a plan_list.
+     */
+    data: XOR<plan_listCreateInput, plan_listUncheckedCreateInput>
+  }
+
+  /**
+   * plan_list createMany
+   */
+  export type plan_listCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_lists.
+     */
+    data: plan_listCreateManyInput | plan_listCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_list createManyAndReturn
+   */
+  export type plan_listCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_lists.
+     */
+    data: plan_listCreateManyInput | plan_listCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_list update
+   */
+  export type plan_listUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * The data needed to update a plan_list.
+     */
+    data: XOR<plan_listUpdateInput, plan_listUncheckedUpdateInput>
+    /**
+     * Choose, which plan_list to update.
+     */
+    where: plan_listWhereUniqueInput
+  }
+
+  /**
+   * plan_list updateMany
+   */
+  export type plan_listUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_lists.
+     */
+    data: XOR<plan_listUpdateManyMutationInput, plan_listUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_lists to update
+     */
+    where?: plan_listWhereInput
+    /**
+     * Limit how many plan_lists to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_list updateManyAndReturn
+   */
+  export type plan_listUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_lists.
+     */
+    data: XOR<plan_listUpdateManyMutationInput, plan_listUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_lists to update
+     */
+    where?: plan_listWhereInput
+    /**
+     * Limit how many plan_lists to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_list upsert
+   */
+  export type plan_listUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * The filter to search for the plan_list to update in case it exists.
+     */
+    where: plan_listWhereUniqueInput
+    /**
+     * In case the plan_list found by the `where` argument doesn't exist, create a new plan_list with this data.
+     */
+    create: XOR<plan_listCreateInput, plan_listUncheckedCreateInput>
+    /**
+     * In case the plan_list was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_listUpdateInput, plan_listUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_list delete
+   */
+  export type plan_listDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+    /**
+     * Filter which plan_list to delete.
+     */
+    where: plan_listWhereUniqueInput
+  }
+
+  /**
+   * plan_list deleteMany
+   */
+  export type plan_listDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_lists to delete
+     */
+    where?: plan_listWhereInput
+    /**
+     * Limit how many plan_lists to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_list without action
+   */
+  export type plan_listDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_list
+     */
+    select?: plan_listSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_list
+     */
+    omit?: plan_listOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -21894,6 +23040,19 @@ export namespace Prisma {
   };
 
   export type EmployeesScalarFieldEnum = (typeof EmployeesScalarFieldEnum)[keyof typeof EmployeesScalarFieldEnum]
+
+
+  export const Plan_listScalarFieldEnum: {
+    id: 'id',
+    creator_id: 'creator_id',
+    name: 'name',
+    year: 'year',
+    month: 'month',
+    participant_ids: 'participant_ids',
+    created_at: 'created_at'
+  };
+
+  export type Plan_listScalarFieldEnum = (typeof Plan_listScalarFieldEnum)[keyof typeof Plan_listScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -23402,6 +24561,70 @@ export namespace Prisma {
     created_at?: DateTimeWithAggregatesFilter<"employees"> | Date | string
   }
 
+  export type plan_listWhereInput = {
+    AND?: plan_listWhereInput | plan_listWhereInput[]
+    OR?: plan_listWhereInput[]
+    NOT?: plan_listWhereInput | plan_listWhereInput[]
+    id?: UuidFilter<"plan_list"> | string
+    creator_id?: UuidFilter<"plan_list"> | string
+    name?: StringFilter<"plan_list"> | string
+    year?: IntFilter<"plan_list"> | number
+    month?: IntFilter<"plan_list"> | number
+    participant_ids?: StringNullableListFilter<"plan_list">
+    created_at?: DateTimeFilter<"plan_list"> | Date | string
+  }
+
+  export type plan_listOrderByWithRelationInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    participant_ids?: SortOrder
+    created_at?: SortOrder
+  }
+
+  export type plan_listWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: plan_listWhereInput | plan_listWhereInput[]
+    OR?: plan_listWhereInput[]
+    NOT?: plan_listWhereInput | plan_listWhereInput[]
+    creator_id?: UuidFilter<"plan_list"> | string
+    name?: StringFilter<"plan_list"> | string
+    year?: IntFilter<"plan_list"> | number
+    month?: IntFilter<"plan_list"> | number
+    participant_ids?: StringNullableListFilter<"plan_list">
+    created_at?: DateTimeFilter<"plan_list"> | Date | string
+  }, "id">
+
+  export type plan_listOrderByWithAggregationInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    participant_ids?: SortOrder
+    created_at?: SortOrder
+    _count?: plan_listCountOrderByAggregateInput
+    _avg?: plan_listAvgOrderByAggregateInput
+    _max?: plan_listMaxOrderByAggregateInput
+    _min?: plan_listMinOrderByAggregateInput
+    _sum?: plan_listSumOrderByAggregateInput
+  }
+
+  export type plan_listScalarWhereWithAggregatesInput = {
+    AND?: plan_listScalarWhereWithAggregatesInput | plan_listScalarWhereWithAggregatesInput[]
+    OR?: plan_listScalarWhereWithAggregatesInput[]
+    NOT?: plan_listScalarWhereWithAggregatesInput | plan_listScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"plan_list"> | string
+    creator_id?: UuidWithAggregatesFilter<"plan_list"> | string
+    name?: StringWithAggregatesFilter<"plan_list"> | string
+    year?: IntWithAggregatesFilter<"plan_list"> | number
+    month?: IntWithAggregatesFilter<"plan_list"> | number
+    participant_ids?: StringNullableListFilter<"plan_list">
+    created_at?: DateTimeWithAggregatesFilter<"plan_list"> | Date | string
+  }
+
   export type audit_log_entriesCreateInput = {
     instance_id?: string | null
     id: string
@@ -24845,6 +26068,76 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type plan_listCreateInput = {
+    id?: string
+    creator_id?: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+  }
+
+  export type plan_listUncheckedCreateInput = {
+    id?: string
+    creator_id?: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+  }
+
+  export type plan_listUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type plan_listUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type plan_listCreateManyInput = {
+    id?: string
+    creator_id?: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+  }
+
+  export type plan_listUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type plan_listUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type UuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -26043,6 +27336,79 @@ export namespace Prisma {
     created_at?: SortOrder
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
+  export type plan_listCountOrderByAggregateInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    participant_ids?: SortOrder
+    created_at?: SortOrder
+  }
+
+  export type plan_listAvgOrderByAggregateInput = {
+    year?: SortOrder
+    month?: SortOrder
+  }
+
+  export type plan_listMaxOrderByAggregateInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    created_at?: SortOrder
+  }
+
+  export type plan_listMinOrderByAggregateInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    created_at?: SortOrder
+  }
+
+  export type plan_listSumOrderByAggregateInput = {
+    year?: SortOrder
+    month?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
@@ -26769,6 +28135,23 @@ export namespace Prisma {
     update?: XOR<XOR<usersUpdateToOneWithWhereWithoutEmployeesInput, usersUpdateWithoutEmployeesInput>, usersUncheckedUpdateWithoutEmployeesInput>
   }
 
+  export type plan_listCreateparticipant_idsInput = {
+    set: string[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type plan_listUpdateparticipant_idsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -27173,6 +28556,22 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type saml_relay_statesCreateWithoutFlow_stateInput = {

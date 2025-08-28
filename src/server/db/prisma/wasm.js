@@ -321,6 +321,16 @@ exports.Prisma.EmployeesScalarFieldEnum = {
   created_at: 'created_at'
 };
 
+exports.Prisma.Plan_listScalarFieldEnum = {
+  id: 'id',
+  creator_id: 'creator_id',
+  name: 'name',
+  year: 'year',
+  month: 'month',
+  participant_ids: 'participant_ids',
+  created_at: 'created_at'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -398,7 +408,8 @@ exports.Prisma.ModelName = {
   sso_domains: 'sso_domains',
   sso_providers: 'sso_providers',
   users: 'users',
-  employees: 'employees'
+  employees: 'employees',
+  plan_list: 'plan_list'
 };
 
 /**

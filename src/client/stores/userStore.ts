@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 interface User {
+  userId: string;
   employeeId: string;
   lastName: string;
   firstName: string;

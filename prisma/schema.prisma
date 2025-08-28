@@ -340,6 +340,19 @@ model employees {
   @@schema("public")
 }
 
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model plan_list {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  creator_id      String   @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name            String   @db.VarChar
+  year            Int      @db.SmallInt
+  month           Int      @db.SmallInt
+  participant_ids String[] @db.Uuid
+  created_at      DateTime @default(now()) @db.Timestamptz(6)
+
+  @@schema("public")
+}
+
 enum aal_level {
   aal1
   aal2

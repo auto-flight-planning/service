@@ -15,7 +15,7 @@ interface SearchEmployeeResponse {
 export default function useSearchEmployee(searchName: string) {
   const { user } = useUserStore();
 
-  const { data, isLoading, error } = useQuery({
+  const { data, isPending, error } = useQuery({
     queryKey: ["searchEmployee", searchName],
     queryFn: async (): Promise<SearchEmployeeResponse> => {
       if (!searchName.trim()) {
@@ -42,7 +42,7 @@ export default function useSearchEmployee(searchName: string) {
 
   return {
     employees: filteredEmployees,
-    isLoading,
+    isPending,
     error,
   };
 }

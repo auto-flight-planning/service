@@ -5,7 +5,7 @@ interface BasicModalFooterProps {
   confirmText: string;
   onCancel: () => void;
   onConfirm: () => void;
-  isLoading?: boolean;
+  isPending?: boolean;
   disabled?: boolean;
 }
 
@@ -14,7 +14,7 @@ export default function BasicModalFooter({
   confirmText,
   onCancel,
   onConfirm,
-  isLoading = false,
+  isPending = false,
   disabled = false,
 }: BasicModalFooterProps) {
   return (
@@ -23,13 +23,14 @@ export default function BasicModalFooter({
         text={cancelText}
         color="gray"
         onClick={onCancel}
-        disabled={isLoading}
+        disabled={isPending}
       />
       <SquareButton
-        text={isLoading ? "処理中..." : confirmText}
+        text={confirmText}
         color="primary"
         onClick={onConfirm}
-        disabled={disabled || isLoading}
+        disabled={disabled}
+        isPending={isPending}
       />
     </div>
   );

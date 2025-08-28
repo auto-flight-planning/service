@@ -10,7 +10,6 @@ export default function CreatePlanForm() {
     dateProps: { monthOptions, onYearChange },
   } = useCreatePlan();
   const {
-    handleSubmit,
     formState: { errors },
   } = formMethods;
 

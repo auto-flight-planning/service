@@ -17,7 +17,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const { data: listener } = supabaseBrowserClient.auth.onAuthStateChange(
       async (event, session) => {
-        if (event === "INITIAL_SESSION" && session) {
+        if (event === "INITIAL_SESSION") {
           if (session) {
             const res = await fetch("/api/user/get-employee", {
               method: "POST",
@@ -26,6 +26,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
             const { employeeId, firstName, lastName } = await res.json();
 
             setUser({
+              userId: session.user.id,
               employeeId,
               firstName,
               lastName,

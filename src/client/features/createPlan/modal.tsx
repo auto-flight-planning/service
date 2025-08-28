@@ -5,7 +5,7 @@ import { CreatePlanForm, useCreatePlan } from ".";
 
 export default function CreatePlanModal() {
   const { closeModal } = useModalStore();
-  const { formMethods, onValidSubmit } = useCreatePlan();
+  const { formMethods, onValidSubmit, isPending } = useCreatePlan();
   const { handleSubmit } = formMethods;
 
   return (
@@ -22,6 +22,7 @@ export default function CreatePlanModal() {
             confirmText="作成"
             onCancel={closeModal}
             onConfirm={handleSubmit(onValidSubmit)}
+            isPending={isPending}
           />
         </form>
       </FormProvider>

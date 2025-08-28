@@ -21,10 +21,11 @@ export default function useLogin() {
   const router = useRouter();
   const { closeModal } = useModalStore();
 
-  const { mutate: login } = useMutation({
+  const { mutate: login, isPending } = useMutation({
     mutationFn: loginAPI,
-    onSuccess: ({ employeeId, firstName, lastName }) => {
+    onSuccess: ({ userId, employeeId, firstName, lastName }) => {
       setUser({
+        userId,
         employeeId,
         firstName,
         lastName,
@@ -53,6 +54,7 @@ export default function useLogin() {
   return {
     formMethods,
     onValidSubmit,
+    isPending,
     login,
   };
 }
@@ -81,6 +83,7 @@ export async function loginAPI(data: LoginFormDataType) {
 
   return {
     accessToken: authData.session.access_token,
+    userId: authData.user.id,
     employeeId: responseData.employeeId,
     firstName: responseData.firstName,
     lastName: responseData.lastName,

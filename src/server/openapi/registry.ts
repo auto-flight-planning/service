@@ -11,6 +11,7 @@ extendZodWithOpenApi(z);
 import { registerLoginSchemas } from "@/server/features/user/check-employee/openapi";
 import { registerGetEmployeeSchemas } from "@/server/features/user/get-employee/openapi";
 import { registerSearchEmployeeSchemas } from "@/server/features/user/search-employee/openapi";
+import { registerCreatePlanSchemas } from "@/server/features/plan/create/openapi";
 
 export const registry = new OpenAPIRegistry();
 
@@ -22,3 +23,4 @@ export const registry = new OpenAPIRegistry();
 registerLoginSchemas(registry);
 registerGetEmployeeSchemas(registry);
 registerSearchEmployeeSchemas(registry);
+registerCreatePlanSchemas(registry);
