@@ -12,6 +12,7 @@ import { registerLoginSchemas } from "@/server/features/user/check-employee/open
 import { registerGetEmployeeSchemas } from "@/server/features/user/get-employee/openapi";
 import { registerSearchEmployeeSchemas } from "@/server/features/user/search-employee/openapi";
 import { registerCreatePlanSchemas } from "@/server/features/plan/create/openapi";
+import { registerGetNotificationSchemas } from "../features/plan/notification/get/openapi";
 
 export const registry = new OpenAPIRegistry();
 
@@ -24,3 +25,4 @@ registerLoginSchemas(registry);
 registerGetEmployeeSchemas(registry);
 registerSearchEmployeeSchemas(registry);
 registerCreatePlanSchemas(registry);
+registerGetNotificationSchemas(registry);
