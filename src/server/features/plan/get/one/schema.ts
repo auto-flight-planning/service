@@ -16,6 +16,8 @@ export const getPlanOneReqSchema = z.object({
 export const getPlanOneResSchema = z.object({
   planId: z.uuid(),
   planName: z.string(),
+  year: z.number(),
+  month: z.number(),
   status: z.object({
     step: z.string(),
     input_status: z.record(z.string(), z.unknown()),

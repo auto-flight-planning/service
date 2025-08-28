@@ -41,6 +41,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
   const res = getPlanOneResSchema.parse({
     planId: plan.id,
     planName: plan.name,
+    year: plan.year,
+    month: plan.month,
     status: {
       step: plan_status.step,
       input_status: plan_status.input_status,
