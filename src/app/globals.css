@@ -19,9 +19,47 @@
   --color-primary-600: var(--primary-600);
   --color-primary-700: var(--primary-700);
   --color-red: var(--red);
+
+  /* Shake Animation */
+  --animate-shake: shake 0.5s ease-in-out;
 }
 
 body {
   font-family: var(--font-noto-sans-jp);
   background: var(--primary-100);
+}
+
+/* Shake Animation for Form Errors */
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: rotate(-0.5deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: rotate(0.5deg);
+  }
+  5%,
+  25%,
+  45%,
+  65%,
+  85% {
+    transform: rotate(-0.2deg);
+  }
+  15%,
+  35%,
+  55%,
+  75%,
+  95% {
+    transform: rotate(0.2deg);
+  }
 }

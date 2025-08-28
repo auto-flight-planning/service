@@ -21,7 +21,9 @@ export default function RootLayout({
         <body>
           <AuthProvider>
             <Header />
-            {children}
+            <div className="flex flex-col items-center justify-center h-[calc(100vh-56px)]">
+              {children}
+            </div>
             <ModalContainer />
             <ToastContainer />
           </AuthProvider>

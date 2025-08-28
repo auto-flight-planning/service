@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import { useModalStore } from "@/client/stores";
 import Modal from "./modal";
-import LoginModal from "@/client/features/auth/login/modal";
+import { LoginModal } from "@/client/features/auth/login";
+import { CreatePlanModal } from "@/client/features/createPlan";
 
 const MODAL_COMPONENTS = {
   login: LoginModal,
+  createPlan: CreatePlanModal,
 };
 
 export default function ModalContainer() {

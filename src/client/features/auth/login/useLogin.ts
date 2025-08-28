@@ -7,11 +7,7 @@ import { useMutation } from "@tanstack/react-query";
 import createBrowserClient from "@/server/supabase/browserClient";
 
 export default function useLogin() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginFormDataType>({
+  const formMethods = useForm<LoginFormDataType>({
     mode: "onChange",
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -55,9 +51,7 @@ export default function useLogin() {
   };
 
   return {
-    register,
-    errors,
-    handleSubmit,
+    formMethods,
     onValidSubmit,
     login,
   };
