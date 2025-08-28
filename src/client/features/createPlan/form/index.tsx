@@ -1,7 +1,9 @@
 import { FormProvider } from "react-hook-form";
-import { useCreatePlan } from ".";
-import { FieldWrapper, Select, TextField } from "@/client/components/form";
-import { getYearOptions } from "./utils";
+import { FieldWrapper, Select } from "@/client/components/form";
+import { TextField } from "@/client/components/form";
+import { useCreatePlan } from "@/client/features/createPlan";
+import { getYearOptions } from "../utils";
+import AddParticipants from "./addParticipants";
 
 export default function CreatePlanForm() {
   const {
@@ -42,6 +44,7 @@ export default function CreatePlanForm() {
             </div>
           </div>
         </FieldWrapper>
+        <AddParticipants />
       </form>
     </FormProvider>
   );

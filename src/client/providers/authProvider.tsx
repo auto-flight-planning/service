@@ -19,7 +19,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       async (event, session) => {
         if (event === "INITIAL_SESSION" && session) {
           if (session) {
-            const res = await fetch("/api/auth/get-employee", {
+            const res = await fetch("/api/user/get-employee", {
               method: "POST",
               body: JSON.stringify({ userId: session.user.id }),
             });

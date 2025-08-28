@@ -58,7 +58,7 @@ export default function useLogin() {
 }
 
 export async function loginAPI(data: LoginFormDataType) {
-  const employeeResponse = await fetch("/api/auth/check-employee", {
+  const employeeResponse = await fetch("/api/user/check-employee", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ employeeId: data.employeeId }),

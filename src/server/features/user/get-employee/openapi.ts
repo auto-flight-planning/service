@@ -4,8 +4,8 @@ import { getEmployeeReqSchema, getEmployeeResSchema } from "./schema";
 export const registerGetEmployeeSchemas = (registry: OpenAPIRegistry) => {
   registry.registerPath({
     method: "post",
-    path: "/api/auth/get-employee",
-    tags: ["Auth"],
+    path: "/api/user/get-employee",
+    tags: ["User"],
     request: {
       body: {
         content: {

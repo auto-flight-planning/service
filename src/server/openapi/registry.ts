@@ -8,8 +8,9 @@ extendZodWithOpenApi(z);
 
 // import { resourceRequestSchema, resourceResponseSchema } from '../schemas/createResource';
 
-import { registerLoginSchemas } from "@/server/features/auth/check-employee/openapi";
-import { registerGetEmployeeSchemas } from "@/server/features/auth/get-employee/openapi";
+import { registerLoginSchemas } from "@/server/features/user/check-employee/openapi";
+import { registerGetEmployeeSchemas } from "@/server/features/user/get-employee/openapi";
+import { registerSearchEmployeeSchemas } from "@/server/features/user/search-employee/openapi";
 
 export const registry = new OpenAPIRegistry();
 
@@ -20,3 +21,4 @@ export const registry = new OpenAPIRegistry();
 // API別
 registerLoginSchemas(registry);
 registerGetEmployeeSchemas(registry);
+registerSearchEmployeeSchemas(registry);
