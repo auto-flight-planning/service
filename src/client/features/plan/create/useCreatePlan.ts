@@ -44,7 +44,7 @@ export default function useCreatePlan() {
         message: "企画を作成しました。",
         title: "企画作成成功",
       });
-      router.push(`/plan/${planId}`);
+      router.push(`/plan/${planId}/input`);
       closeModal();
     },
     onError: (error) => {

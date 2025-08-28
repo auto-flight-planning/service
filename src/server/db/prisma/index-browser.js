@@ -345,7 +345,8 @@ exports.Prisma.Plan_statusScalarFieldEnum = {
   plan_id: 'plan_id',
   step: 'step',
   input_status: 'input_status',
-  review_status: 'review_status'
+  review_status: 'review_status',
+  result_status: 'result_status'
 };
 
 exports.Prisma.SortOrder = {

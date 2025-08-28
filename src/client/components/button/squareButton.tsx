@@ -5,6 +5,7 @@ import { Spinner } from "@/client/components/spinner";
 
 interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
+  bold?: boolean;
   color?: "primary" | "gray";
   size?: "small" | "medium" | "large";
   fullWidth?: boolean;
@@ -13,6 +14,7 @@ interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function SquareButton({
   text,
+  bold = false,
   onClick,
   color = "primary",
   size = "medium",
@@ -21,12 +23,16 @@ export default function SquareButton({
   ...props
 }: SquareButtonProps) {
   const baseClasses =
-    "rounded-md font-medium transition-all duration-200 cursor-pointer border-none active:scale-95";
+    "rounded-md font-medium transition-all duration-200 border-none";
 
   const colorClasses = {
-    primary: "bg-primary-500 hover:bg-primary-600 text-white",
-    gray: "bg-gray-300 hover:bg-gray-400 text-gray-700",
+    primary:
+      "bg-primary-500 hover:bg-primary-600 text-white disabled:bg-primary-700 disabled:text-gray-200",
+    gray: "bg-gray-300 hover:bg-gray-400 text-gray-700 disabled:bg-gray-200 disabled:text-gray-400",
   };
+
+  const interactionClasses =
+    "cursor-pointer active:scale-95 disabled:cursor-not-allowed disabled:active:scale-100";
 
   const sizeClasses = {
     small: "px-3 py-1.5 text-xs",
@@ -48,7 +54,7 @@ export default function SquareButton({
   };
 
   const classes =
-    `${baseClasses} ${colorClasses[color]} ${sizeClasses[size]} ${widthClasses}`.trim();
+    `${baseClasses} ${colorClasses[color]} ${interactionClasses} ${sizeClasses[size]} ${widthClasses}`.trim();
 
   return (
     <button
@@ -61,7 +67,7 @@ export default function SquareButton({
         {isPending && (
           <Spinner size={spinnerSizes[size]} color={spinnerColors[color]} />
         )}
-        <span>{text}</span>
+        <span className={bold ? "font-semibold" : ""}>{text}</span>
       </div>
     </button>
   );

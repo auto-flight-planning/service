@@ -1,3 +1,5 @@
+"use client";
+
 import { InputHTMLAttributes, useState } from "react";
 import { useController, useFormContext } from "react-hook-form";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";

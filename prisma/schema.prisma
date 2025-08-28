@@ -375,6 +375,7 @@ model plan_status {
   step          String    @default("input")
   input_status  Json      @default("{}") @db.Json
   review_status String?   @default("")
+  result_status String?
   plan_list     plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@schema("public")

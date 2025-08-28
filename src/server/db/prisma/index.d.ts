@@ -24185,12 +24185,14 @@ export namespace Prisma {
     plan_id: string | null
     step: string | null
     review_status: string | null
+    result_status: string | null
   }
 
   export type Plan_statusMaxAggregateOutputType = {
     plan_id: string | null
     step: string | null
     review_status: string | null
+    result_status: string | null
   }
 
   export type Plan_statusCountAggregateOutputType = {
@@ -24198,6 +24200,7 @@ export namespace Prisma {
     step: number
     input_status: number
     review_status: number
+    result_status: number
     _all: number
   }
 
@@ -24206,12 +24209,14 @@ export namespace Prisma {
     plan_id?: true
     step?: true
     review_status?: true
+    result_status?: true
   }
 
   export type Plan_statusMaxAggregateInputType = {
     plan_id?: true
     step?: true
     review_status?: true
+    result_status?: true
   }
 
   export type Plan_statusCountAggregateInputType = {
@@ -24219,6 +24224,7 @@ export namespace Prisma {
     step?: true
     input_status?: true
     review_status?: true
+    result_status?: true
     _all?: true
   }
 
@@ -24299,6 +24305,7 @@ export namespace Prisma {
     step: string
     input_status: JsonValue
     review_status: string | null
+    result_status: string | null
     _count: Plan_statusCountAggregateOutputType | null
     _min: Plan_statusMinAggregateOutputType | null
     _max: Plan_statusMaxAggregateOutputType | null
@@ -24323,6 +24330,7 @@ export namespace Prisma {
     step?: boolean
     input_status?: boolean
     review_status?: boolean
+    result_status?: boolean
     plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_status"]>
 
@@ -24331,6 +24339,7 @@ export namespace Prisma {
     step?: boolean
     input_status?: boolean
     review_status?: boolean
+    result_status?: boolean
     plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_status"]>
 
@@ -24339,6 +24348,7 @@ export namespace Prisma {
     step?: boolean
     input_status?: boolean
     review_status?: boolean
+    result_status?: boolean
     plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_status"]>
 
@@ -24347,9 +24357,10 @@ export namespace Prisma {
     step?: boolean
     input_status?: boolean
     review_status?: boolean
+    result_status?: boolean
   }
 
-  export type plan_statusOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "step" | "input_status" | "review_status", ExtArgs["result"]["plan_status"]>
+  export type plan_statusOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "step" | "input_status" | "review_status" | "result_status", ExtArgs["result"]["plan_status"]>
   export type plan_statusInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
   }
@@ -24370,6 +24381,7 @@ export namespace Prisma {
       step: string
       input_status: Prisma.JsonValue
       review_status: string | null
+      result_status: string | null
     }, ExtArgs["result"]["plan_status"]>
     composites: {}
   }
@@ -24798,6 +24810,7 @@ export namespace Prisma {
     readonly step: FieldRef<"plan_status", 'String'>
     readonly input_status: FieldRef<"plan_status", 'Json'>
     readonly review_status: FieldRef<"plan_status", 'String'>
+    readonly result_status: FieldRef<"plan_status", 'String'>
   }
     
 
@@ -25508,7 +25521,8 @@ export namespace Prisma {
     plan_id: 'plan_id',
     step: 'step',
     input_status: 'input_status',
-    review_status: 'review_status'
+    review_status: 'review_status',
+    result_status: 'result_status'
   };
 
   export type Plan_statusScalarFieldEnum = (typeof Plan_statusScalarFieldEnum)[keyof typeof Plan_statusScalarFieldEnum]
@@ -27163,6 +27177,7 @@ export namespace Prisma {
     step?: StringFilter<"plan_status"> | string
     input_status?: JsonFilter<"plan_status">
     review_status?: StringNullableFilter<"plan_status"> | string | null
+    result_status?: StringNullableFilter<"plan_status"> | string | null
     plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
   }
 
@@ -27171,6 +27186,7 @@ export namespace Prisma {
     step?: SortOrder
     input_status?: SortOrder
     review_status?: SortOrderInput | SortOrder
+    result_status?: SortOrderInput | SortOrder
     plan_list?: plan_listOrderByWithRelationInput
   }
 
@@ -27182,6 +27198,7 @@ export namespace Prisma {
     step?: StringFilter<"plan_status"> | string
     input_status?: JsonFilter<"plan_status">
     review_status?: StringNullableFilter<"plan_status"> | string | null
+    result_status?: StringNullableFilter<"plan_status"> | string | null
     plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
   }, "plan_id">
 
@@ -27190,6 +27207,7 @@ export namespace Prisma {
     step?: SortOrder
     input_status?: SortOrder
     review_status?: SortOrderInput | SortOrder
+    result_status?: SortOrderInput | SortOrder
     _count?: plan_statusCountOrderByAggregateInput
     _max?: plan_statusMaxOrderByAggregateInput
     _min?: plan_statusMinOrderByAggregateInput
@@ -27203,6 +27221,7 @@ export namespace Prisma {
     step?: StringWithAggregatesFilter<"plan_status"> | string
     input_status?: JsonWithAggregatesFilter<"plan_status">
     review_status?: StringNullableWithAggregatesFilter<"plan_status"> | string | null
+    result_status?: StringNullableWithAggregatesFilter<"plan_status"> | string | null
   }
 
   export type audit_log_entriesCreateInput = {
@@ -28799,6 +28818,7 @@ export namespace Prisma {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: string | null
+    result_status?: string | null
     plan_list: plan_listCreateNestedOneWithoutPlan_statusInput
   }
 
@@ -28807,12 +28827,14 @@ export namespace Prisma {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: string | null
+    result_status?: string | null
   }
 
   export type plan_statusUpdateInput = {
     step?: StringFieldUpdateOperationsInput | string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
+    result_status?: NullableStringFieldUpdateOperationsInput | string | null
     plan_list?: plan_listUpdateOneRequiredWithoutPlan_statusNestedInput
   }
 
@@ -28821,6 +28843,7 @@ export namespace Prisma {
     step?: StringFieldUpdateOperationsInput | string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
+    result_status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type plan_statusCreateManyInput = {
@@ -28828,12 +28851,14 @@ export namespace Prisma {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: string | null
+    result_status?: string | null
   }
 
   export type plan_statusUpdateManyMutationInput = {
     step?: StringFieldUpdateOperationsInput | string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
+    result_status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type plan_statusUncheckedUpdateManyInput = {
@@ -28841,6 +28866,7 @@ export namespace Prisma {
     step?: StringFieldUpdateOperationsInput | string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
+    result_status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UuidNullableFilter<$PrismaModel = never> = {
@@ -30169,18 +30195,21 @@ export namespace Prisma {
     step?: SortOrder
     input_status?: SortOrder
     review_status?: SortOrder
+    result_status?: SortOrder
   }
 
   export type plan_statusMaxOrderByAggregateInput = {
     plan_id?: SortOrder
     step?: SortOrder
     review_status?: SortOrder
+    result_status?: SortOrder
   }
 
   export type plan_statusMinOrderByAggregateInput = {
     plan_id?: SortOrder
     step?: SortOrder
     review_status?: SortOrder
+    result_status?: SortOrder
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -33576,12 +33605,14 @@ export namespace Prisma {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: string | null
+    result_status?: string | null
   }
 
   export type plan_statusUncheckedCreateWithoutPlan_listInput = {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: string | null
+    result_status?: string | null
   }
 
   export type plan_statusCreateOrConnectWithoutPlan_listInput = {
@@ -33633,12 +33664,14 @@ export namespace Prisma {
     step?: StringFieldUpdateOperationsInput | string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
+    result_status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type plan_statusUncheckedUpdateWithoutPlan_listInput = {
     step?: StringFieldUpdateOperationsInput | string
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
+    result_status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type plan_listCreateWithoutPlan_notificationInput = {

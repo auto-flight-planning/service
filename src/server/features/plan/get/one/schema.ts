@@ -21,6 +21,7 @@ export const getPlanOneResSchema = z.object({
   status: z.object({
     step: z.string(),
     input_status: z.record(z.string(), z.unknown()),
+    result_status: z.string().nullable(),
     review_status: z.string().nullable(),
   }),
 });

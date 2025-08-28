@@ -46,6 +46,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     status: {
       step: plan_status.step,
       input_status: plan_status.input_status,
+      result_status: plan_status.result_status,
       review_status: plan_status.review_status,
     },
   });
