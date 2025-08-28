@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useModalStore } from "@/client/stores";
 import { WhiteCard } from "@/client/components/card";
+import Notification from "./_components/notification";
 
 export default function Home() {
   const router = useRouter();
@@ -36,7 +37,7 @@ export default function Home() {
           </p>
         </WhiteCard>
       </div>
-      <WhiteCard className="w-full">temp</WhiteCard>
+      <Notification />
     </div>
   );
 }

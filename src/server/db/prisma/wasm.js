@@ -331,6 +331,16 @@ exports.Prisma.Plan_listScalarFieldEnum = {
   created_at: 'created_at'
 };
 
+exports.Prisma.Plan_notificationScalarFieldEnum = {
+  id: 'id',
+  plan_id: 'plan_id',
+  plan_name: 'plan_name',
+  sender: 'sender',
+  message: 'message',
+  is_confirmed: 'is_confirmed',
+  created_at: 'created_at'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -409,7 +419,8 @@ exports.Prisma.ModelName = {
   sso_providers: 'sso_providers',
   users: 'users',
   employees: 'employees',
-  plan_list: 'plan_list'
+  plan_list: 'plan_list',
+  plan_notification: 'plan_notification'
 };
 
 /**
