@@ -20,7 +20,7 @@ export default function Home() {
             新規企画
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
-            予測収益が高い新しい運航日程を企画する。
+            予測収益が高い新しい運航日程を企画する
           </p>
         </WhiteCard>
         <WhiteCard
@@ -32,7 +32,7 @@ export default function Home() {
             既存企画
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
-            進行中または採択が完了した既存企画を確認する。
+            進行中または採択が完了した既存企画を確認する
           </p>
         </WhiteCard>
       </div>
