@@ -1,4 +1,4 @@
-import { plan_notification } from "./../../../../db/prisma/index.d";
+import { plan_notification } from "@/server/db/prisma/index.d";
 import { NextRequest, NextResponse } from "next/server";
 import { withErrorHandler, checkRequestBody } from "@/server/utils";
 import { getNotificationReqSchema, getNotificationResSchema } from "./schema";
@@ -13,9 +13,16 @@ export const POST = withErrorHandler(async (req: NextRequest) => {
   const planIds = await prismaClient.plan_list
     .findMany({
       where: {
-        participant_ids: {
-          has: userId,
-        },
+        OR: [
+          {
+            participant_ids: {
+              has: userId,
+            },
+          },
+          {
+            creator_id: userId,
+          },
+        ],
       },
     })
     .then((res) => res.map((item) => item.id));

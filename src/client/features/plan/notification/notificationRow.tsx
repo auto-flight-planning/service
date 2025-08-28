@@ -1,8 +1,8 @@
-import { NotificationData } from "./types";
+import { plan_notification } from "@/server/db/prisma/index.d";
 
 interface NotificationRowProps {
-  notification: NotificationData;
-  onClick?: (notification: NotificationData) => void;
+  notification: plan_notification;
+  onClick?: (notification: plan_notification) => void;
 }
 
 export default function NotificationRow({
@@ -15,7 +15,7 @@ export default function NotificationRow({
       onClick={() => onClick?.(notification)}
     >
       <td className="px-4 py-3 text-sm font-medium text-gray-900 overflow-hidden text-ellipsis whitespace-nowrap">
-        <strong>{notification.planName}</strong>
+        <strong>{notification.plan_name}</strong>
       </td>
 
       <td className="px-4 py-3 text-sm text-gray-700 overflow-hidden text-ellipsis whitespace-nowrap">
@@ -29,12 +29,12 @@ export default function NotificationRow({
       </td>
 
       <td className="px-4 py-3 text-xs text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap">
-        {notification.receivedAt}
+        {notification.created_at.toLocaleString()}
       </td>
 
       <td className="px-4 py-3 text-center">
         <div className="flex items-center justify-center">
-          {notification.isConfirmed ? (
+          {notification.is_confirmed ? (
             <svg
               className="w-5 h-5 text-green-500"
               fill="currentColor"
