@@ -350,6 +350,7 @@ model plan_list {
   participant_ids   String[]            @db.Uuid
   created_at        DateTime            @default(now()) @db.Timestamptz(6)
   plan_notification plan_notification[]
+  plan_status       plan_status?
 
   @@schema("public")
 }
@@ -364,6 +365,17 @@ model plan_notification {
   is_confirmed Boolean   @default(false)
   created_at   DateTime  @default(now()) @db.Timestamptz(6)
   plan_list    plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model plan_status {
+  plan_id       String    @id @db.Uuid
+  step          String    @default("input")
+  input_status  Json      @default("{}") @db.Json
+  review_status String?   @default("")
+  plan_list     plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@schema("public")
 }

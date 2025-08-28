@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { withErrorHandler, checkRequestBody } from "@/server/utils";
 import { createPlanReqSchema, createPlanResSchema } from "./schema";
 import { prismaClient } from "@/server/db/prismaClient";
+import { inputStatusInitDummy } from "@/client/inputStatusDummy";
 
 export const POST = withErrorHandler(async (req: NextRequest) => {
   const parsed = await checkRequestBody(req, createPlanReqSchema);
@@ -16,6 +17,15 @@ export const POST = withErrorHandler(async (req: NextRequest) => {
       year,
       month,
       participant_ids,
+    },
+  });
+
+  await prismaClient.plan_status.create({
+    data: {
+      plan_id: plan.id,
+      step: "input",
+      input_status: inputStatusInitDummy,
+      review_status: null,
     },
   });
 

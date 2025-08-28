@@ -24,6 +24,12 @@ export const registerGetNotificationSchemas = (registry: OpenAPIRegistry) => {
           },
         },
       },
+      400: {
+        description: "ユーザーIDを入力してください",
+      },
+      404: {
+        description: "通知が見つかりません",
+      },
     },
   });
 };
