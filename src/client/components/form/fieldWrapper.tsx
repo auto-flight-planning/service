@@ -5,6 +5,7 @@ interface FieldWrapperProps {
   error?: string;
   children: ReactNode;
   htmlFor?: string;
+  onErrorMsg?: boolean;
 }
 
 export default function FieldWrapper({
@@ -12,6 +13,7 @@ export default function FieldWrapper({
   error,
   children,
   htmlFor,
+  onErrorMsg = true,
 }: FieldWrapperProps) {
   return (
     <div className={`w-full ${error ? "animate-shake" : ""}`}>
@@ -24,7 +26,9 @@ export default function FieldWrapper({
         </label>
       )}
       {children}
-      {error && <p className="mt-1 text-xs text-right text-red">{error}</p>}
+      {error && onErrorMsg && (
+        <p className="mt-1 text-xs text-right text-red">{error}</p>
+      )}
     </div>
   );
 }
