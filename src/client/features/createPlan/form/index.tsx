@@ -1,4 +1,3 @@
-import { FormProvider } from "react-hook-form";
 import { FieldWrapper, Select } from "@/client/components/form";
 import { TextField } from "@/client/components/form";
 import { useCreatePlan } from "@/client/features/createPlan";
@@ -16,36 +15,34 @@ export default function CreatePlanForm() {
   } = formMethods;
 
   return (
-    <FormProvider {...formMethods}>
-      <form className="flex flex-col gap-6" onSubmit={handleSubmit(() => {})}>
-        <TextField
-          name="planName"
-          label="企画名"
-          placeholder="企画名を入力してください"
-        />
-        <FieldWrapper
-          label="対象期間"
-          error={errors.year?.message || errors.month?.message}
-          onErrorMsg={false}
-        >
-          <div className="flex flex-col">
-            <div className="flex gap-4 w-full">
-              <Select
-                name="year"
-                placeholder="対象年を選択してください"
-                options={getYearOptions()}
-                onCustomChange={onYearChange}
-              />
-              <Select
-                name="month"
-                placeholder="対象月を選択してください"
-                options={monthOptions}
-              />
-            </div>
+    <div className="flex flex-col gap-4">
+      <TextField
+        name="planName"
+        label="企画名"
+        placeholder="企画名を入力してください"
+      />
+      <FieldWrapper
+        label="対象期間"
+        error={errors.year?.message || errors.month?.message}
+        onErrorMsg={false}
+      >
+        <div className="flex flex-col">
+          <div className="flex gap-4 w-full">
+            <Select
+              name="year"
+              placeholder="対象年を選択してください"
+              options={getYearOptions()}
+              onCustomChange={onYearChange}
+            />
+            <Select
+              name="month"
+              placeholder="対象月を選択してください"
+              options={monthOptions}
+            />
           </div>
-        </FieldWrapper>
-        <AddParticipants />
-      </form>
-    </FormProvider>
+        </div>
+      </FieldWrapper>
+      <AddParticipants />
+    </div>
   );
 }

@@ -22,7 +22,7 @@ export default function TextField({
   return (
     <div>
       {label && (
-        <label className="block text-md font-[550] text-gray-700 mb-1.5">
+        <label className="block text-sm font-[550] text-gray-700 mb-1.5">
           {label}
         </label>
       )}
