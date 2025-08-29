@@ -19,9 +19,9 @@ export default function ModalTab({ tabs, defaultTab }: ModalTabProps) {
   const activeTabContent = tabs.find((tab) => tab.id === activeTab)?.content;
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col flex-1 overflow-hidden">
       {/* 탭 헤더 */}
-      <div className="flex border-b border-gray-200">
+      <div className="flex border-b border-gray-200 flex-shrink-0">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -37,8 +37,10 @@ export default function ModalTab({ tabs, defaultTab }: ModalTabProps) {
         ))}
       </div>
 
-      {/* 탭 컨텐츠 */}
-      <div className="p-6">{activeTabContent}</div>
+      {/* 탭 컨텐츠 - 스크롤 영역 */}
+      <div className="flex-1 overflow-y-auto p-6 scrollbar-custom">
+        {activeTabContent}
+      </div>
     </div>
   );
 }

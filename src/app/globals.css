@@ -10,8 +10,9 @@
   --success-600: #059669;
   --green-500: #10b981;
   --green-600: #059669;
-  --yellow-500: #eab308;
-  --yellow-600: #ca8a04;
+  --yellow-100: #fef3c7;
+  --yellow-500: #ffd044;
+  --yellow-600: #ffba25;
 }
 
 /* 
@@ -29,6 +30,7 @@
   --color-success-600: var(--success-600);
   --color-green-500: var(--green-500);
   --color-green-600: var(--green-600);
+  --color-yellow-100: var(--yellow-100);
   --color-yellow-500: var(--yellow-500);
   --color-yellow-600: var(--yellow-600);
 

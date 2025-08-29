@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-type ColorVariant = "primary" | "gray";
+type ColorVariant = "primary" | "gray" | "yellow";
 
 interface PointCardProps {
   children: ReactNode;
@@ -32,6 +32,14 @@ const colorStyles = {
     hoverBorder: "hover:border-gray-400",
     shadow: "shadow-gray-400/15",
   },
+  yellow: {
+    bgWhite: "bg-white",
+    bgLight: "bg-yellow-100",
+    pointBorder: "border-l-yellow-500",
+    border: "border-yellow-500",
+    hoverBorder: "hover:border-yellow-500",
+    shadow: "shadow-yellow-500/15",
+  },
 };
 
 export default function PointCard({
@@ -48,8 +56,8 @@ export default function PointCard({
 
   const baseClasses = [
     background === "white" ? styles.bgWhite : styles.bgLight,
-    "rounded-2xl",
-    "p-6",
+    "rounded-xl",
+    "p-5",
     "transition-all",
     "duration-300",
   ];
@@ -61,12 +69,12 @@ export default function PointCard({
 
   // 포인트 보더 (왼쪽 굵은 라인)
   if (onPointBorder) {
-    baseClasses.push("border-l-4", styles.pointBorder);
+    baseClasses.push("border-l-6", styles.pointBorder);
   }
 
   // 전체 보더
   if (onBorder) {
-    baseClasses.push("border-2", styles.border);
+    baseClasses.push("border-1", styles.border);
   } else if (!onPointBorder) {
     // 기본적으로 투명 보더를 주고 호버시 색상 변경
     baseClasses.push("border-2", "border-transparent", styles.hoverBorder);

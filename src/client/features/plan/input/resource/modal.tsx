@@ -6,6 +6,7 @@ import {
   BasicModalFooter,
   ModalTab,
 } from "@/client/components/modal";
+import ResourceExplain from "./explain";
 
 interface ResourceInputModalProps {
   planId?: string;
@@ -32,14 +33,7 @@ export default function ResourceInputModal({
     {
       id: "detail",
       label: "詳細説明",
-      content: (
-        <div className="space-y-6">
-          {/* 상세 설명 컨텐츠가 들어갈 자리 */}
-          <div className="text-gray-500 text-center py-8">
-            상세 설명 컴포넌트가 들어갈 자리입니다
-          </div>
-        </div>
-      ),
+      content: <ResourceExplain />,
     },
   ];
 
