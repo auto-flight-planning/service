@@ -5,6 +5,7 @@ import {
   ModalTab,
   NumberedModalHeader,
 } from "@/client/components/modal";
+import { FlightScaleExplain } from ".";
 
 export default function FlightScaleModal({
   planId = "",
@@ -28,8 +29,7 @@ export default function FlightScaleModal({
     {
       id: "detail",
       label: "詳細説明",
-      content: <>detail</>,
-      //   content: <TotalPersonExplain />,
+      content: <FlightScaleExplain />,
     },
   ];
 

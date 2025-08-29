@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-type ColorVariant = "primary" | "gray" | "yellow";
+type ColorVariant = "primary" | "gray" | "yellow" | "deepGray";
 
 interface PointCardProps {
   children: ReactNode;
@@ -20,23 +20,31 @@ const colorStyles = {
     bgWhite: "bg-white",
     bgLight: "bg-primary-100",
     pointBorder: "border-l-primary-500",
-    border: "border-primary-500",
+    border: "border-primary-400",
     hoverBorder: "hover:border-primary-500",
     shadow: "shadow-primary-500/15",
   },
   gray: {
     bgWhite: "bg-white",
     bgLight: "bg-gray-100", // Tailwind 기본 gray-100 사용
-    pointBorder: "border-l-gray-400",
+    pointBorder: "border-l-gray-500",
     border: "border-gray-400",
-    hoverBorder: "hover:border-gray-400",
-    shadow: "shadow-gray-400/15",
+    hoverBorder: "hover:border-gray-500",
+    shadow: "shadow-gray-500/15",
+  },
+  deepGray: {
+    bgWhite: "bg-white",
+    bgLight: "bg-gray-300",
+    pointBorder: "border-l-gray-600",
+    border: "border-gray-500",
+    hoverBorder: "hover:border-gray-600",
+    shadow: "shadow-gray-500/15",
   },
   yellow: {
     bgWhite: "bg-white",
     bgLight: "bg-yellow-100",
     pointBorder: "border-l-yellow-500",
-    border: "border-yellow-500",
+    border: "border-yellow-400",
     hoverBorder: "hover:border-yellow-500",
     shadow: "shadow-yellow-500/15",
   },
