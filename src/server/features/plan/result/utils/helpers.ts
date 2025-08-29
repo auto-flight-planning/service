@@ -1,5 +1,5 @@
 /**
- * 공통으로 사용되는 헬퍼 함수들
+ * 共通で使用されるヘルパー関数
  */
 
 import fs from "fs";
@@ -7,9 +7,9 @@ import path from "path";
 import { FlightData } from "./loader/flightDataLoader";
 
 /**
- * internal_resource_data.json 파일을 읽어오는 공통 함수
- * @param internalResourceDataPath internal_resource_data.json 파일 경로
- * @returns 파싱된 자원 데이터
+ * internal_resource_data.jsonファイルを読み込む共通関数
+ * @param internalResourceDataPath internal_resource_data.jsonファイルパス
+ * @returns パースされたリソースデータ
  */
 export async function loadInternalResourceData(
   internalResourceDataPath: string
@@ -20,15 +20,15 @@ export async function loadInternalResourceData(
     const dummyDataContent = await fs.promises.readFile(dummyDataPath, "utf-8");
     return JSON.parse(dummyDataContent);
   } catch (error) {
-    console.error("internal_resource_data.json 읽기 실패:", error);
-    throw new Error("자원 데이터 로드에 실패했습니다.");
+    console.error("internal_resource_data.json読み込み失敗:", error);
+    throw new Error("リソースデータの読み込みに失敗しました。");
   }
 }
 
 /**
- * internal_resource_data.json에서 최소 자원값들을 계산하는 헬퍼 함수
- * @param internalResourceData internal_resource_data.json 데이터
- * @returns 최소 자원값들
+ * internal_resource_data.jsonから最小リソース値を計算するヘルパー関数
+ * @param internalResourceData internal_resource_data.jsonデータ
+ * @returns 最小リソース値
  */
 export function getMinResourceValues(
   internalResourceData: any,
@@ -72,15 +72,15 @@ export function getMinResourceValues(
         return 0;
     }
   } catch (error) {
-    console.error("최소 자원값 계산 중 오류:", error);
+    console.error("最小リソース値計算中エラー:", error);
     return 0;
   }
 }
 
 /**
- * 시간 문자열을 분 단위로 변환하는 헬퍼 함수
- * @param timeString "HH:MM" 형태의 시간 문자열
- * @returns 분 단위 숫자
+ * 時間文字列を分単位に変換するヘルパー関数
+ * @param timeString "HH:MM"形式の時間文字列
+ * @returns 分単位の数字
  */
 export function convertTimeToMinutes(timeString: string): number {
   const [hours, minutes] = timeString.split(":").map(Number);
@@ -88,10 +88,10 @@ export function convertTimeToMinutes(timeString: string): number {
 }
 
 /**
- * 공항 스케줄 가용성을 체크하는 공통 함수
- * @param flightData 운항 데이터 (往路 또는 復路)
- * @param airportScheduleData 공항 스케줄 데이터
- * @returns 배정 가능 여부
+ * 空港スケジュール可用性をチェックする共通関数
+ * @param flightData 運航データ（往路または復路）
+ * @param airportScheduleData 空港スケジュールデータ
+ * @returns 割り当て可能かどうか
  */
 export function checkAirportScheduleAvailability(
   flightData: FlightData,
@@ -101,20 +101,20 @@ export function checkAirportScheduleAvailability(
     const { 出発国家, 出発空港, 出発時刻 } = flightData;
     const 日付 = Object.values(flightData)[0];
 
-    // 공항 스케줄 데이터에서 해당 국가, 공항, 날짜의 데이터 조회
+    // 空港スケジュールデータから該当国家、空港、日付のデータを取得
     const scheduleKey = `${出発国家}_${出発空港}_${日付}`;
     const scheduleData = airportScheduleData[scheduleKey];
 
     if (!scheduleData) {
-      console.log(`공항 스케줄 데이터 없음: ${scheduleKey}`);
+      console.log(`空港スケジュールデータなし: ${scheduleKey}`);
       return false;
     }
 
-    // 출발 시각에 해당하는 시간대 객체 찾기
+    // 出発時刻に該当する時間帯オブジェクトを探す
     const timeSlot = scheduleData.find((slot: any) => {
       const [startTime, endTime] = slot.時間帯.split(" ~ ");
 
-      // 시간을 분 단위로 변환하여 숫자 비교
+      // 時間を分単位に変換して数字比較
       const departureMinutes = convertTimeToMinutes(出発時刻);
       const startMinutes = convertTimeToMinutes(startTime);
       const endMinutes = convertTimeToMinutes(endTime);
@@ -123,16 +123,16 @@ export function checkAirportScheduleAvailability(
     });
 
     if (!timeSlot) {
-      console.log(`해당 시간대 스케줄 없음: ${出発時刻}`);
+      console.log(`該当時間帯スケジュールなし: ${出発時刻}`);
       return false;
     }
 
-    // 割り当て可能回数이 0보다 큰지 확인
+    // 割り当て可能回数が0より大きいか確認
     const isAvailable = timeSlot.割り当て可能回数 > 0;
 
     if (!isAvailable) {
       console.log(
-        `공항 스케줄 배정 불가: ${出発空港} ${出発時刻} - 割り当て可能回数: ${timeSlot.割り当て可能回数}`
+        `空港スケジュール割り当て不可: ${出発空港} ${出発時刻} - 割り当て可能回数: ${timeSlot.割り当て可能回数}`
       );
     }
 

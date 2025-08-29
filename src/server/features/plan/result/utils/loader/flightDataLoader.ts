@@ -2,15 +2,15 @@ import fs from "fs";
 import path from "path";
 import { parse } from "csv-parse/sync";
 
-// CSV의 모든 컬럼을 포함한 인터페이스
+// CSVの全てのカラムを含むインターフェース
 export interface FlightData {
-  日付: string; // 日付 (예: "1日", "2日")
+  日付: string; // 日付（例: "1日", "2日"）
   出発国家: string; // 出発国家
   出発空港: string; // 出発空港
   到着国家: string; // 到着国家
   到着空港: string; // 到着空港
-  出発時刻: string; // 出発時刻 (예: "07:00", "14:30")
-  飛行時間: number; // 飛行時間 (분)
+  出発時刻: string; // 出発時刻（例: "07:00", "14:30"）
+  飛行時間: number; // 飛行時間（分）
   推奨最大運航数: number; // 推奨最大運航数
   "収益(円)": number; // 収益(円)
   "価格(円)": number; // 価格(円)
@@ -21,35 +21,35 @@ export interface FlightData {
   必要機長数: number; // 必要機長数
   必要副操縦士数: number; // 必要副操縦士数
   その他必要人員指数: number; // その他必要人員指数
-  飛行前必要時間: number; // 飛行前必要時間 (분)
-  飛行後必要時間: number; // 飛行後必要時間 (분)
+  飛行前必要時間: number; // 飛行前必要時間（分）
+  飛行後必要時間: number; // 飛行後必要時間（分）
   優先順位指数: number; // 優先順位指数
 }
 
-// 往路 데이터 (우선순위 내림차순 정렬됨)
+// 往路データ（優先度降順ソート済み）
 export type OutboundFlights = FlightData[];
 
-// International 復路 데이터 구조 (출발국가별 > 출발공항별로 그룹화)
+// International復路データ構造（出発国家別 > 出発空港別でグループ化）
 export type InternationalInboundFlights = {
   [departureCountry: string]: {
     [departureAirport: string]: FlightData[];
   };
 };
 
-// Domestic 復路 데이터
+// Domestic復路データ
 export type DomesticInboundFlights = FlightData[];
 
-// 로드된 전체 데이터
+// ロードされた全体データ
 export interface LoadedFlightData {
-  outbound: OutboundFlights; // 往路 (international + domestic, 우선순위 내림차순 정렬됨)
-  internationalInbound: InternationalInboundFlights; // International 復路 (출발국가별 > 출발공항별로 그룹화, 각 그룹 내에서 우선순위 내림차순 정렬됨)
-  domesticInbound: DomesticInboundFlights; // Domestic 復路 (우선순위 내림차순 정렬됨)
+  outbound: OutboundFlights; // 往路（international + domestic、優先度降順ソート済み）
+  internationalInbound: InternationalInboundFlights; // International復路（出発国家別 > 出発空港別でグループ化、各グループ内で優先度降順ソート済み）
+  domesticInbound: DomesticInboundFlights; // Domestic復路（優先度降順ソート済み）
 }
 
 /**
- * CSV 파일을 로드하고 파싱하는 함수
- * @param filePath CSV 파일 경로
- * @returns 파싱된 데이터 배열
+ * CSVファイルをロードしてパースする関数
+ * @param filePath CSVファイルパス
+ * @returns パースされたデータ配列
  */
 async function loadCSVData(filePath: string): Promise<FlightData[]> {
   try {
@@ -60,7 +60,7 @@ async function loadCSVData(filePath: string): Promise<FlightData[]> {
       trim: true,
     });
 
-    // 데이터 타입 변환 (문자열을 숫자로)
+    // データタイプ変換（文字列を数字に）
     return records.map((record: any) => ({
       ...record,
       飛行時間: Number(record.飛行時間),
@@ -78,17 +78,17 @@ async function loadCSVData(filePath: string): Promise<FlightData[]> {
       その他必要人員指数: Number(record.その他必要人員指数),
     }));
   } catch (error) {
-    console.error(`CSV 파일 로드 실패 (${filePath}):`, error);
-    throw new Error(`CSV 파일 로드를 실패했습니다: ${filePath}`);
+    console.error(`CSVファイルロード失敗（${filePath}）:`, error);
+    throw new Error(`CSVファイルロードに失敗しました: ${filePath}`);
   }
 }
 
 /**
- * CSV 파일들을 로드하고 往路와 復路를 분리하여 정렬하는 함수
- * @param internationalDeparturePath international_departure.csv 파일 경로
- * @param internationalArrivalPath international_arrival.csv 파일 경로
- * @param domesticPath domestic_all.csv 파일 경로
- * @returns 로드된 운항 데이터 (往路, 復路 분리 및 정렬 완료)
+ * CSVファイル群をロードして往路と復路を分離してソートする関数
+ * @param internationalDeparturePath international_departure.csvファイルパス
+ * @param internationalArrivalPath international_arrival.csvファイルパス
+ * @param domesticPath domestic_all.csvファイルパス
+ * @returns ロードされた運航データ（往路、復路分離及びソート完了）
  */
 export async function loadAndProcessFlightData(
   internationalDeparturePath: string,
@@ -96,7 +96,7 @@ export async function loadAndProcessFlightData(
   domesticPath: string
 ): Promise<LoadedFlightData> {
   try {
-    console.log("CSV 파일들 로드 시작...");
+    console.log("CSVファイル群ロード開始...");
 
     // CSV 파일들 로드 (병렬 처리)
     const [internationalDepartures, internationalArrivals, domesticFlights] =

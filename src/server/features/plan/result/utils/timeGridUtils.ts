@@ -1,9 +1,9 @@
 import { loadInternalResourceData } from "./helpers";
 
-// 자원별 시간그리드 변수 타입 정의
+// リソース別時間グリッド変数のタイプ定義
 export type TimeSlot = {
-  startTime: [number, number]; // [hour, minute] 형태 (예: [3, 30] = 오전 3시 30분)
-  endTime: [number, number]; // [hour, minute] 형태 (예: [4, 0] = 오전 4시 0분)
+  startTime: [number, number]; // [hour, minute]形式（例: [3, 30] = 午前3時30分）
+  endTime: [number, number]; // [hour, minute]形式（例: [4, 0] = 午前4時0分）
   available: number;
 };
 
@@ -13,14 +13,14 @@ export type ResourceTimeGrid = {
   [date: string]: DailyTimeGrid;
 };
 
-// 자원별 시간그리드 변수들을 저장할 객체
+// リソース別時間グリッド変数を保存するオブジェクト
 export type ResourceTimeGridVariables = {
   [resourceName: string]: ResourceTimeGrid;
 };
 
 /**
- * 30분 단위 시간 슬롯을 생성하는 함수
- * @returns 30분 단위로 나눈 시간 슬롯 배열 (00:00~00:30부터 23:30~24:00까지)
+ * 30分単位時間スロットを生成する関数
+ * @returns 30分単位で分割された時間スロット配列（00:00~00:30から23:30~24:00まで）
  */
 export function generateTimeSlots(): Array<[number, number]> {
   const slots: Array<[number, number]> = [];
@@ -33,9 +33,9 @@ export function generateTimeSlots(): Array<[number, number]> {
 }
 
 /**
- * 31일간의 날짜 배열을 생성하는 함수
- * @param baseDate 기준 날짜 (기본값: 2025-09-01)
- * @returns 31일간의 날짜 배열
+ * 31日間の日付配列を生成する関数
+ * @param baseDate 基準日付（デフォルト: 2025-09-01）
+ * @returns 31日間の日付配列
  */
 export function generateDateRange(baseDate: string = "2025-09-01"): string[] {
   const dates: string[] = [];
@@ -52,12 +52,12 @@ export function generateDateRange(baseDate: string = "2025-09-01"): string[] {
 }
 
 /**
- * 자원별 시간그리드 변수를 초기화하는 함수
- * @param resourceName 자원 이름
- * @param initialAmount 초기 가용 자원 수
- * @param dates 날짜 배열
- * @param timeSlots 시간 슬롯 배열
- * @returns 초기화된 자원별 시간그리드
+ * リソース別時間グリッド変数を初期化する関数
+ * @param resourceName リソース名
+ * @param initialAmount 初期利用可能リソース数
+ * @param dates 日付配列
+ * @param timeSlots 時間スロット配列
+ * @returns 初期化されたリソース別時間グリッド
  */
 export function initializeResourceTimeGrid(
   resourceName: string,
@@ -90,9 +90,9 @@ export function initializeResourceTimeGrid(
 }
 
 /**
- * 더미 데이터에서 자원 정보를 읽어와서 자원별 시간그리드 변수를 초기화하는 함수
- * @param internalResourceDataPath internal_resource_data.json 파일 경로
- * @returns 초기화된 모든 자원별 시간그리드 변수들
+ * ダミーデータからリソース情報を読み込んでリソース別時間グリッド変数を初期化する関数
+ * @param internalResourceDataPath internal_resource_data.jsonファイルパス
+ * @returns 初期化された全てのリソース別時間グリッド変数
  */
 export async function initializeResourceTimeGridVariables(
   internalResourceDataPath: string

@@ -9,13 +9,13 @@ import { ParsedAirportScheduleData } from "../types";
 import { ResourceTimeGrid, ResourceTimeGridVariables } from "../timeGridUtils";
 
 /**
- * 往路 배정 후 復路를 필터링하는 함수
- * @param assignedOutbound 배정된 往路 운항
- * @param candidateInbounds 필터링할 復路 후보들
- * @param airportScheduleData 공항 스케줄 데이터
- * @param assignedFlights 이미 배정된 운항들
- * @param resourceTimeGridVariables 자원 시간 그리드 변수
- * @returns 필터링된 復路 후보들
+ * 往路割り当て後復路をフィルタリングする関数
+ * @param assignedOutbound 割り当て済み往路運航
+ * @param candidateInbounds フィルタリングする復路候補
+ * @param airportScheduleData 空港スケジュールデータ
+ * @param assignedFlights 既に割り当て済みの運航
+ * @param resourceTimeGridVariables リソース時間グリッド変数
+ * @returns フィルタリングされた復路候補
  */
 export function filterInboundFlights(
   assignedOutbound: FlightData,
@@ -26,29 +26,29 @@ export function filterInboundFlights(
   internalResourceData: any
 ): FlightData[] {
   return candidateInbounds.filter((inbound) => {
-    // 1번 조건은 이미 findCandidateInbounds에서 체크됨 (중복 제거)
+    // 1番目の条件は既にfindCandidateInboundsでチェック済み（重複除去）
 
-    // 2번 조건: 시간 조건 체크
+    // 2番目の条件: 時間条件チェック
     if (!checkTimeConstraint(assignedOutbound, inbound)) {
       return false;
     }
 
-    // 3번 조건: 자원 조건 체크
+    // 3番目の条件: リソース条件チェック
     if (!checkResourceConstraint(assignedOutbound, inbound)) {
       return false;
     }
 
-    // 체크2: 공항 스케줄 가용성
+    // チェック2: 空港スケジュール可用性
     if (!checkAirportScheduleAvailability(inbound, airportScheduleData)) {
       return false;
     }
 
-    // 체크3: 최대 운항수
+    // チェック3: 最大運航数
     if (!checkMaxFlightCount(inbound, assignedFlights, "inbound")) {
       return false;
     }
 
-    // 체크1: 자원 가용성 (가장 복잡한 체크)
+    // チェック1: リソース可用性（最も複雑なチェック）
     if (
       !checkResourceAvailability(
         assignedOutbound,
@@ -65,38 +65,38 @@ export function filterInboundFlights(
 }
 
 /**
- * 시간 제약 조건을 체크하는 함수
- * @param outbound 배정된 往路
- * @param inbound 체크할 復路
- * @returns 시간 조건 만족 여부
+ * 時間制約条件をチェックする関数
+ * @param outbound 割り当て済み往路
+ * @param inbound チェックする復路
+ * @returns 時間条件満足の有無
  */
 function checkTimeConstraint(
   outbound: FlightData,
   inbound: FlightData
 ): boolean {
-  // 往路의 날짜와 출발시각을 합쳐서 Date 객체 생성
+  // 往路の日付と出発時刻を合わせてDateオブジェクト作成
   const outboundDate = new Date(
     `2025-09-${outbound.日付.replace("日", "")}T${outbound.出発時刻}:00`
   );
 
-  // 往路 비행 완료 시각 계산 (Date 객체)
-  // A = 往路 출발시각 + 往路 비행시간 + 往路 비행후필요시간
+  // 往路飛行完了時刻計算（Dateオブジェクト）
+  // A = 往路出発時刻 + 往路飛行時間 + 往路飛行後必要時間
   const timeA = new Date(
     outboundDate.getTime() +
       (outbound.飛行時間 + outbound.飛行後必要時間) * 60 * 1000
   );
 
-  // 復路의 날짜와 출발시각을 합쳐서 Date 객체 생성
+  // 復路の日付と出発時刻を合わせてDateオブジェクト作成
   const inboundDate = new Date(
     `2025-09-${inbound.日付.replace("日", "")}T${inbound.出発時刻}:00`
   );
 
-  // B = 復路 출발시각 - 復路 비행전필요시간 (Date 객체)
+  // B = 復路出発時刻 - 復路飛行前必要時間（Dateオブジェクト）
   const timeB = new Date(
     inboundDate.getTime() - inbound.飛行前必要時間 * 60 * 1000
   );
 
-  // A < B 여야 함 (Date 객체 비교)
+  // A < Bでなければならない（Dateオブジェクト比較）
   return timeA < timeB;
 }
 

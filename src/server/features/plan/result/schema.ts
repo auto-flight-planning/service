@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-// FlightData 스키마 (기존 타입과 일치)
+// FlightDataスキーマ（既存タイプと一致）
 export const flightDataSchema = z.object({
   日付: z.string(),
   出発国家: z.string(),
@@ -24,14 +24,14 @@ export const flightDataSchema = z.object({
   優先順位指数: z.number(),
 });
 
-// AssignedFlight 스키마
+// AssignedFlightスキーマ
 export const assignedFlightSchema = z.object({
   outbound: flightDataSchema,
   inbound: flightDataSchema.nullable(),
   assignmentTime: z.date(),
 });
 
-// 응답 스키마
+// レスポンススキーマ
 export const getResultResponseSchema = z.object({
   message: z.string(),
   timestamp: z.date(),
@@ -39,7 +39,7 @@ export const getResultResponseSchema = z.object({
   assignedFlights: z.array(assignedFlightSchema),
 });
 
-// 타입 정의
+// タイプ定義
 export type FlightData = z.infer<typeof flightDataSchema>;
 export type AssignedFlight = z.infer<typeof assignedFlightSchema>;
 export type GetResultResponse = z.infer<typeof getResultResponseSchema>;

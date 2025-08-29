@@ -5,23 +5,23 @@ import { getResultResponseSchema } from "./schema";
 
 /**
  * GET /api/plan/result
- * Get flight assignment result
+ * 運航割り当て結果を取得
  */
 export async function GET(request: NextRequest) {
   try {
-    // FlightAssignmentEngine 인스턴스 생성
+    // FlightAssignmentEngineインスタンス作成
     const engine = new FlightAssignmentEngine(DUMMY_DATA_PATHS);
 
-    // 엔진 초기화
+    // エンジン初期化
     await engine.initialize();
 
-    // 전체 운항 배정 수행
+    // 全体運航割り当て実行
     await engine.assignAllFlights();
 
-    // 배정 결과 가져오기
+    // 割り当て結果取得
     const assignedFlights = engine.getAssignedFlights();
 
-    // 응답 데이터 구조
+    // レスポンスデータ構造
     const responseData = {
       message: "Flight assignment result retrieved successfully",
       timestamp: new Date(),
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
       })),
     };
 
-    // 스키마 검증
+    // スキーマ検証
     const validatedResponse = getResultResponseSchema.parse(responseData);
 
     return NextResponse.json(validatedResponse, { status: 200 });

@@ -20,27 +20,27 @@ import {
 import { DummyDataPaths } from "../path";
 import { loadInternalResourceData } from "./helpers";
 
-// 배정된 운항 정보
+// 割り当て済み運航情報
 export interface AssignedFlight {
   outbound: FlightData;
   inbound: FlightData | null;
   assignmentTime: Date;
 }
 
-// 배정 엔진의 상태
+// 割り当てエンジンの状態
 export interface AssignmentEngineState {
   internalResourceData: any;
   loadedData: LoadedFlightData;
   assignedFlights: AssignedFlight[];
   currentOutboundIndex: number;
-  airportScheduleData: ParsedAirportScheduleData; // 공항 스케줄 데이터
-  resourceTimeGridVariables: ResourceTimeGridVariables; // 자원 시간 그리드 변수
-  monthlyMinimumOperations: MonthlyMinimumOperations; // 월별 최소 운항 기준
+  airportScheduleData: ParsedAirportScheduleData; // 空港スケジュールデータ
+  resourceTimeGridVariables: ResourceTimeGridVariables; // リソース時間グリッド変数
+  monthlyMinimumOperations: MonthlyMinimumOperations; // 月別最小運航基準
 }
 
 /**
- * 운항 일정 배정 엔진
- * 왕복 운항 할당 프로세스를 관리하는 메인 클래스
+ * 運航日程割り当てエンジン
+ * 往復運航割り当てプロセスを管理するメインクラス
  */
 export class FlightAssignmentEngine {
   private state: AssignmentEngineState;
@@ -57,20 +57,20 @@ export class FlightAssignmentEngine {
       },
       assignedFlights: [],
       currentOutboundIndex: 0,
-      airportScheduleData: {}, // 공항 스케줄 데이터 초기화
-      resourceTimeGridVariables: {}, // 자원 시간 그리드 변수 초기화
-      monthlyMinimumOperations: [], // 월별 최소 운항 기준 초기화
+      airportScheduleData: {}, // 空港スケジュールデータ初期化
+      resourceTimeGridVariables: {}, // リソース時間グリッド変数初期化
+      monthlyMinimumOperations: [], // 月別最小運航基準初期化
     };
   }
 
   /**
-   * 운항 데이터를 로드하고 초기화
+   * 運航データをロードして初期化
    */
   async initialize(): Promise<void> {
     try {
-      console.log("데이터 로드 시작...");
+      console.log("データロード開始...");
 
-      // 병렬로 모든 데이터 로드
+      // 並列で全てのデータロード
       const [
         loadedData,
         airportScheduleData,

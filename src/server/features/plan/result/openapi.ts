@@ -5,12 +5,11 @@ export const registerGetResultSchemas = (registry: OpenAPIRegistry) => {
     method: "get",
     path: "/api/plan/result",
     tags: ["Plan/Result"],
-    summary: "Get flight assignment result",
-    description:
-      "Retrieve the result of flight assignments including outbound and inbound flights",
+    summary: "運航割り当て結果を取得",
+    description: "往路・復路を含む運航割り当て結果を取得",
     responses: {
       200: {
-        description: "Flight assignment result retrieved successfully",
+        description: "運航割り当て結果の取得に成功",
         content: {
           "application/json": {
             schema: {
@@ -28,18 +27,17 @@ export const registerGetResultSchemas = (registry: OpenAPIRegistry) => {
                 assignedFlightsCount: {
                   type: "number",
                   example: 25,
-                  description: "Total number of assigned flights",
+                  description: "割り当て済み運航の総数",
                 },
                 assignedFlights: {
                   type: "array",
-                  description:
-                    "Array of assigned flights with outbound and inbound information",
+                  description: "往路・復路情報を含む割り当て済み運航の配列",
                   items: {
                     type: "object",
                     properties: {
                       outbound: {
                         type: "object",
-                        description: "Outbound flight data",
+                        description: "往路運航データ",
                         properties: {
                           日付: { type: "string", example: "1日" },
                           出発国家: { type: "string", example: "日本" },
@@ -68,7 +66,7 @@ export const registerGetResultSchemas = (registry: OpenAPIRegistry) => {
                       },
                       inbound: {
                         type: "object",
-                        description: "Inbound flight data (can be null)",
+                        description: "復路運航データ（null可能）",
                         nullable: true,
                         properties: {
                           日付: { type: "string", example: "2日" },

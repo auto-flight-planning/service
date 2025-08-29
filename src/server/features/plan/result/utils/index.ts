@@ -1,20 +1,20 @@
-// 타입 정의
+// タイプ定義
 export * from "./types";
 
-// 공통 헬퍼 함수들
+// 共通ヘルパー関数
 export * from "./helpers";
 
-// 시간그리드 관련 유틸리티
+// 時間グリッド関連ユーティリティ
 export * from "./timeGridUtils";
 
-// 데이터 로더 관련
+// データローダー関連
 export * from "./loader";
 
-// 필터링 관련
+// フィルタリング関連
 export * from "./filter";
 
-// 왕복 우선순위 계산 유틸리티
+// 往復優先度計算ユーティリティ
 export * from "./roundTripPriorityCalculator";
 
-// 운항 배정 엔진
+// 運航割り当てエンジン
 export * from "./flightAssignmentEngine";

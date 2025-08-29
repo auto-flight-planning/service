@@ -1,5 +1,5 @@
-// 운항 데이터 로더
+// 運航データローダー
 export * from "./flightDataLoader";
 
-// 공항 스케줄 데이터 로더
+// 空港スケジュールデータローダー
 export * from "./airportScheduleLoader";

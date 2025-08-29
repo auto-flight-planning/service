@@ -1,5 +1,5 @@
-// 往路 필터링 유틸리티
+// 往路フィルタリングユーティリティ
 export * from "./outboundFilter";
 
-// 復路 필터링 유틸리티
+// 復路フィルタリングユーティリティ
 export * from "./inboundFilter";

@@ -8,29 +8,29 @@ import {
 } from "../types";
 
 /**
- * 공항 스케줄 데이터를 로드하고 파싱하는 함수
- * @param airportScheduleDataPath airport_schedule_data.csv 파일 경로
- * @returns 파싱된 공항 스케줄 데이터
+ * 空港スケジュールデータをロードしてパースする関数
+ * @param airportScheduleDataPath airport_schedule_data.csvファイルパス
+ * @returns パースされた空港スケジュールデータ
  */
 export async function loadAirportScheduleData(
   airportScheduleDataPath: string
 ): Promise<AirportScheduleData> {
   try {
-    // CSV 파일 경로
+    // CSVファイルパス
     const csvPath = path.join(process.cwd(), airportScheduleDataPath);
 
-    // CSV 파일 읽기 (비동기)
+    // CSVファイル読み込み（非同期）
     const csvContent = await fs.promises.readFile(csvPath, "utf-8");
 
-    // CSV 파싱
+    // CSVパース
     const records = parse(csvContent, {
       columns: true,
       skip_empty_lines: true,
     }) as AirportScheduleRow[];
 
-    console.log(`공항 스케줄 데이터 로드 완료: ${records.length}건`);
+    console.log(`空港スケジュールデータロード完了: ${records.length}件`);
 
-    // 파싱된 데이터 생성
+    // パースされたデータ作成
     const parsedData: ParsedAirportScheduleData = {};
 
     records.forEach((record) => {
@@ -42,23 +42,25 @@ export async function loadAirportScheduleData(
       } = record;
 
       try {
-        // JSON 문자열을 파싱
+        // JSON文字列をパース
         const timeSlots = JSON.parse(timeSlotsJson);
 
-        // 키 생성: "국가_공항명_날짜" 형태
+        // キー作成: "国家_空港名_日付"形式
         const scheduleKey = `${国}_${空港}_${日付}`;
 
         parsedData[scheduleKey] = timeSlots;
       } catch (jsonError) {
-        console.error(`JSON 파싱 오류 (${国} ${空港} ${日付}):`, jsonError);
-        // JSON 파싱 실패 시 빈 배열로 설정
+        console.error(`JSONパースエラー（${国} ${空港} ${日付}）:`, jsonError);
+        // JSONパース失敗時は空配列で設定
         const scheduleKey = `${国}_${空港}_${日付}`;
         parsedData[scheduleKey] = [];
       }
     });
 
     console.log(
-      `공항 스케줄 데이터 파싱 완료: ${Object.keys(parsedData).length}개 키`
+      `空港スケジュールデータパース完了: ${
+        Object.keys(parsedData).length
+      }個のキー`
     );
 
     return {
@@ -66,9 +68,9 @@ export async function loadAirportScheduleData(
       parsedData: parsedData,
     };
   } catch (error) {
-    console.error("공항 스케줄 데이터 로드 중 오류:", error);
+    console.error("空港スケジュールデータロード中エラー:", error);
 
-    // 오류 발생 시 빈 데이터 반환
+    // エラー発生時は空データ返却
     return {
       rawData: [],
       parsedData: {},
@@ -77,12 +79,12 @@ export async function loadAirportScheduleData(
 }
 
 /**
- * 특정 공항・날짜의 스케줄 데이터 조회
- * @param country 국가
- * @param airport 공항명
- * @param date 날짜
- * @param parsedData 파싱된 공항 스케줄 데이터
- * @returns 해당 공항・날짜의 시간대별 배정 가능 횟수 배열
+ * 特定空港・日付のスケジュールデータ照会
+ * @param country 国家
+ * @param airport 空港名
+ * @param date 日付
+ * @param parsedData パースされた空港スケジュールデータ
+ * @returns 該当空港・日付の時間帯別割り当て可能回数配列
  */
 export function getAirportSchedule(
   country: string,
