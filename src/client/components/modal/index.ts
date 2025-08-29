@@ -3,6 +3,10 @@ export { default as Modal } from "./modal";
 
 // Header
 export { default as BasicModalHeader } from "./header/basicModalHeader";
+export { default as NumberedModalHeader } from "./header/numberedModalHeader";
 
 // Footer
 export { default as BasicModalFooter } from "./footer/basicModalFooter";
+
+// Tab
+export { ModalTab } from "./tab";

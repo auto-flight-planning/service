@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SquareButton } from "@/client/components/button";
 import { PointCard } from "@/client/components/card";
 import DataInputCard from "../../_components/dataInputCard";
+import { useModalStore } from "@/client/stores";
 
 interface ResourceInputContentProps {
   planId: string;
@@ -12,12 +13,16 @@ interface ResourceInputContentProps {
 export default function ResourceInputContent({
   planId,
 }: ResourceInputContentProps) {
+  const { openModal } = useModalStore();
   const [isDirectInput, setIsDirectInput] = useState(false);
   const dataItems = [
     {
       number: 1,
       title: "総人員データ",
       items: ["機長・副操縦士人数", "その他総人員指数"],
+      onClick: () => {
+        openModal("resourceInput", { planId });
+      },
       isCompleted: true, // 완료 상태
     },
     {
@@ -66,7 +71,7 @@ export default function ResourceInputContent({
             title={item.title}
             items={item.items}
             isCompleted={item.isCompleted}
-            onClick={() => console.log(`${item.title} 클릭`)}
+            onClick={item.onClick}
           />
         ))}
       </div>

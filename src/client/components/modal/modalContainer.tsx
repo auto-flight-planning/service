@@ -5,14 +5,16 @@ import { useModalStore } from "@/client/stores";
 import Modal from "./modal";
 import { LoginModal } from "@/client/features/user/login";
 import { CreatePlanModal } from "@/client/features/plan/create";
+import { ResourceInputModal } from "@/client/features/plan/input/resource";
 
 const MODAL_COMPONENTS = {
   login: LoginModal,
   createPlan: CreatePlanModal,
+  resourceInput: ResourceInputModal,
 };
 
 export default function ModalContainer() {
-  const { isOpen, modalName, closeModal } = useModalStore();
+  const { isOpen, modalName, modalProps, closeModal } = useModalStore();
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function ModalContainer() {
 
   return (
     <Modal isOpen={isReady} onClose={closeModal}>
-      <ModalComponent />
+      <ModalComponent {...(modalProps || {})} />
     </Modal>
   );
 }
