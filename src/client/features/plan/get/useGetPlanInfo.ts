@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export const useGetPlanInfo = (planId: string) => {
   const { data, isPending, error } = useQuery({
-    queryKey: ["plan", planId],
+    queryKey: ["planInfo", planId],
     queryFn: async (): Promise<GetPlanOneResSchema> => {
       const res = await fetch(`/api/plan/get/one?planId=${planId}`);
       if (!res.ok) {

@@ -342,15 +342,16 @@ model employees {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_list {
-  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  creator_id        String              @db.Uuid
-  name              String              @db.VarChar
-  year              Int                 @db.SmallInt
-  month             Int                 @db.SmallInt
-  participant_ids   String[]            @db.Uuid
-  created_at        DateTime            @default(now()) @db.Timestamptz(6)
-  plan_notification plan_notification[]
-  plan_status       plan_status?
+  id                  String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  creator_id          String               @db.Uuid
+  name                String               @db.VarChar
+  year                Int                  @db.SmallInt
+  month               Int                  @db.SmallInt
+  participant_ids     String[]             @db.Uuid
+  created_at          DateTime             @default(now()) @db.Timestamptz(6)
+  plan_notification   plan_notification[]
+  plan_resource_input plan_resource_input?
+  plan_status         plan_status?
 
   @@schema("public")
 }
@@ -377,6 +378,19 @@ model plan_status {
   review_status String?   @default("")
   result_status String?
   plan_list     plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model plan_resource_input {
+  plan_id               String    @id @db.Uuid
+  pilot_cnt             Int?      @db.SmallInt
+  second_pilot_cnt      Int?      @db.SmallInt
+  total_person_exponent BigInt?
+  flight_scale_types    String[]
+  per_flight_scale_data Json?     @db.Json
+  plan_list             plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@schema("public")
 }

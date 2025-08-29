@@ -349,6 +349,15 @@ exports.Prisma.Plan_statusScalarFieldEnum = {
   result_status: 'result_status'
 };
 
+exports.Prisma.Plan_resource_inputScalarFieldEnum = {
+  plan_id: 'plan_id',
+  pilot_cnt: 'pilot_cnt',
+  second_pilot_cnt: 'second_pilot_cnt',
+  total_person_exponent: 'total_person_exponent',
+  flight_scale_types: 'flight_scale_types',
+  per_flight_scale_data: 'per_flight_scale_data'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -429,7 +438,8 @@ exports.Prisma.ModelName = {
   employees: 'employees',
   plan_list: 'plan_list',
   plan_notification: 'plan_notification',
-  plan_status: 'plan_status'
+  plan_status: 'plan_status',
+  plan_resource_input: 'plan_resource_input'
 };
 
 /**

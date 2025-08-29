@@ -137,6 +137,11 @@ export type plan_notification = $Result.DefaultSelection<Prisma.$plan_notificati
  * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
  */
 export type plan_status = $Result.DefaultSelection<Prisma.$plan_statusPayload>
+/**
+ * Model plan_resource_input
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_resource_input = $Result.DefaultSelection<Prisma.$plan_resource_inputPayload>
 
 /**
  * Enums
@@ -526,6 +531,16 @@ export class PrismaClient<
     * ```
     */
   get plan_status(): Prisma.plan_statusDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_resource_input`: Exposes CRUD operations for the **plan_resource_input** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_resource_inputs
+    * const plan_resource_inputs = await prisma.plan_resource_input.findMany()
+    * ```
+    */
+  get plan_resource_input(): Prisma.plan_resource_inputDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -985,7 +1000,8 @@ export namespace Prisma {
     employees: 'employees',
     plan_list: 'plan_list',
     plan_notification: 'plan_notification',
-    plan_status: 'plan_status'
+    plan_status: 'plan_status',
+    plan_resource_input: 'plan_resource_input'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1004,7 +1020,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list" | "plan_notification" | "plan_status"
+      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list" | "plan_notification" | "plan_status" | "plan_resource_input"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2488,6 +2504,80 @@ export namespace Prisma {
           }
         }
       }
+      plan_resource_input: {
+        payload: Prisma.$plan_resource_inputPayload<ExtArgs>
+        fields: Prisma.plan_resource_inputFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_resource_inputFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_resource_inputFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_resource_inputFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_resource_inputFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>
+          }
+          findMany: {
+            args: Prisma.plan_resource_inputFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>[]
+          }
+          create: {
+            args: Prisma.plan_resource_inputCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>
+          }
+          createMany: {
+            args: Prisma.plan_resource_inputCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_resource_inputCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_resource_inputDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>
+          }
+          update: {
+            args: Prisma.plan_resource_inputUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_resource_inputDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_resource_inputUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_resource_inputUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_resource_inputUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_resource_inputPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_resource_inputAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_resource_input>
+          }
+          groupBy: {
+            args: Prisma.plan_resource_inputGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_resource_inputGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_resource_inputCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_resource_inputCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2600,6 +2690,7 @@ export namespace Prisma {
     plan_list?: plan_listOmit
     plan_notification?: plan_notificationOmit
     plan_status?: plan_statusOmit
+    plan_resource_input?: plan_resource_inputOmit
   }
 
   /* Types for Logging */
@@ -22149,6 +22240,7 @@ export namespace Prisma {
     participant_ids?: boolean
     created_at?: boolean
     plan_notification?: boolean | plan_list$plan_notificationArgs<ExtArgs>
+    plan_resource_input?: boolean | plan_list$plan_resource_inputArgs<ExtArgs>
     plan_status?: boolean | plan_list$plan_statusArgs<ExtArgs>
     _count?: boolean | Plan_listCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_list"]>
@@ -22186,6 +22278,7 @@ export namespace Prisma {
   export type plan_listOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "creator_id" | "name" | "year" | "month" | "participant_ids" | "created_at", ExtArgs["result"]["plan_list"]>
   export type plan_listInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plan_notification?: boolean | plan_list$plan_notificationArgs<ExtArgs>
+    plan_resource_input?: boolean | plan_list$plan_resource_inputArgs<ExtArgs>
     plan_status?: boolean | plan_list$plan_statusArgs<ExtArgs>
     _count?: boolean | Plan_listCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -22196,6 +22289,7 @@ export namespace Prisma {
     name: "plan_list"
     objects: {
       plan_notification: Prisma.$plan_notificationPayload<ExtArgs>[]
+      plan_resource_input: Prisma.$plan_resource_inputPayload<ExtArgs> | null
       plan_status: Prisma.$plan_statusPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -22601,6 +22695,7 @@ export namespace Prisma {
   export interface Prisma__plan_listClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     plan_notification<T extends plan_list$plan_notificationArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_notificationArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_notificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    plan_resource_input<T extends plan_list$plan_resource_inputArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_resource_inputArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     plan_status<T extends plan_list$plan_statusArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_statusArgs<ExtArgs>>): Prisma__plan_statusClient<$Result.GetResult<Prisma.$plan_statusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -23047,6 +23142,25 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: Plan_notificationScalarFieldEnum | Plan_notificationScalarFieldEnum[]
+  }
+
+  /**
+   * plan_list.plan_resource_input
+   */
+  export type plan_list$plan_resource_inputArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    where?: plan_resource_inputWhereInput
   }
 
   /**
@@ -25226,6 +25340,1111 @@ export namespace Prisma {
 
 
   /**
+   * Model plan_resource_input
+   */
+
+  export type AggregatePlan_resource_input = {
+    _count: Plan_resource_inputCountAggregateOutputType | null
+    _avg: Plan_resource_inputAvgAggregateOutputType | null
+    _sum: Plan_resource_inputSumAggregateOutputType | null
+    _min: Plan_resource_inputMinAggregateOutputType | null
+    _max: Plan_resource_inputMaxAggregateOutputType | null
+  }
+
+  export type Plan_resource_inputAvgAggregateOutputType = {
+    pilot_cnt: number | null
+    second_pilot_cnt: number | null
+    total_person_exponent: number | null
+  }
+
+  export type Plan_resource_inputSumAggregateOutputType = {
+    pilot_cnt: number | null
+    second_pilot_cnt: number | null
+    total_person_exponent: bigint | null
+  }
+
+  export type Plan_resource_inputMinAggregateOutputType = {
+    plan_id: string | null
+    pilot_cnt: number | null
+    second_pilot_cnt: number | null
+    total_person_exponent: bigint | null
+  }
+
+  export type Plan_resource_inputMaxAggregateOutputType = {
+    plan_id: string | null
+    pilot_cnt: number | null
+    second_pilot_cnt: number | null
+    total_person_exponent: bigint | null
+  }
+
+  export type Plan_resource_inputCountAggregateOutputType = {
+    plan_id: number
+    pilot_cnt: number
+    second_pilot_cnt: number
+    total_person_exponent: number
+    flight_scale_types: number
+    per_flight_scale_data: number
+    _all: number
+  }
+
+
+  export type Plan_resource_inputAvgAggregateInputType = {
+    pilot_cnt?: true
+    second_pilot_cnt?: true
+    total_person_exponent?: true
+  }
+
+  export type Plan_resource_inputSumAggregateInputType = {
+    pilot_cnt?: true
+    second_pilot_cnt?: true
+    total_person_exponent?: true
+  }
+
+  export type Plan_resource_inputMinAggregateInputType = {
+    plan_id?: true
+    pilot_cnt?: true
+    second_pilot_cnt?: true
+    total_person_exponent?: true
+  }
+
+  export type Plan_resource_inputMaxAggregateInputType = {
+    plan_id?: true
+    pilot_cnt?: true
+    second_pilot_cnt?: true
+    total_person_exponent?: true
+  }
+
+  export type Plan_resource_inputCountAggregateInputType = {
+    plan_id?: true
+    pilot_cnt?: true
+    second_pilot_cnt?: true
+    total_person_exponent?: true
+    flight_scale_types?: true
+    per_flight_scale_data?: true
+    _all?: true
+  }
+
+  export type Plan_resource_inputAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_resource_input to aggregate.
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_resource_inputs to fetch.
+     */
+    orderBy?: plan_resource_inputOrderByWithRelationInput | plan_resource_inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_resource_inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_resource_inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_resource_inputs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_resource_inputs
+    **/
+    _count?: true | Plan_resource_inputCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Plan_resource_inputAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Plan_resource_inputSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_resource_inputMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_resource_inputMaxAggregateInputType
+  }
+
+  export type GetPlan_resource_inputAggregateType<T extends Plan_resource_inputAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_resource_input]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_resource_input[P]>
+      : GetScalarType<T[P], AggregatePlan_resource_input[P]>
+  }
+
+
+
+
+  export type plan_resource_inputGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_resource_inputWhereInput
+    orderBy?: plan_resource_inputOrderByWithAggregationInput | plan_resource_inputOrderByWithAggregationInput[]
+    by: Plan_resource_inputScalarFieldEnum[] | Plan_resource_inputScalarFieldEnum
+    having?: plan_resource_inputScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_resource_inputCountAggregateInputType | true
+    _avg?: Plan_resource_inputAvgAggregateInputType
+    _sum?: Plan_resource_inputSumAggregateInputType
+    _min?: Plan_resource_inputMinAggregateInputType
+    _max?: Plan_resource_inputMaxAggregateInputType
+  }
+
+  export type Plan_resource_inputGroupByOutputType = {
+    plan_id: string
+    pilot_cnt: number | null
+    second_pilot_cnt: number | null
+    total_person_exponent: bigint | null
+    flight_scale_types: string[]
+    per_flight_scale_data: JsonValue | null
+    _count: Plan_resource_inputCountAggregateOutputType | null
+    _avg: Plan_resource_inputAvgAggregateOutputType | null
+    _sum: Plan_resource_inputSumAggregateOutputType | null
+    _min: Plan_resource_inputMinAggregateOutputType | null
+    _max: Plan_resource_inputMaxAggregateOutputType | null
+  }
+
+  type GetPlan_resource_inputGroupByPayload<T extends plan_resource_inputGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_resource_inputGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_resource_inputGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_resource_inputGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_resource_inputGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_resource_inputSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    pilot_cnt?: boolean
+    second_pilot_cnt?: boolean
+    total_person_exponent?: boolean
+    flight_scale_types?: boolean
+    per_flight_scale_data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_resource_input"]>
+
+  export type plan_resource_inputSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    pilot_cnt?: boolean
+    second_pilot_cnt?: boolean
+    total_person_exponent?: boolean
+    flight_scale_types?: boolean
+    per_flight_scale_data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_resource_input"]>
+
+  export type plan_resource_inputSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    pilot_cnt?: boolean
+    second_pilot_cnt?: boolean
+    total_person_exponent?: boolean
+    flight_scale_types?: boolean
+    per_flight_scale_data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_resource_input"]>
+
+  export type plan_resource_inputSelectScalar = {
+    plan_id?: boolean
+    pilot_cnt?: boolean
+    second_pilot_cnt?: boolean
+    total_person_exponent?: boolean
+    flight_scale_types?: boolean
+    per_flight_scale_data?: boolean
+  }
+
+  export type plan_resource_inputOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "pilot_cnt" | "second_pilot_cnt" | "total_person_exponent" | "flight_scale_types" | "per_flight_scale_data", ExtArgs["result"]["plan_resource_input"]>
+  export type plan_resource_inputInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_resource_inputIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_resource_inputIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_resource_inputPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_resource_input"
+    objects: {
+      plan_list: Prisma.$plan_listPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      pilot_cnt: number | null
+      second_pilot_cnt: number | null
+      total_person_exponent: bigint | null
+      flight_scale_types: string[]
+      per_flight_scale_data: Prisma.JsonValue | null
+    }, ExtArgs["result"]["plan_resource_input"]>
+    composites: {}
+  }
+
+  type plan_resource_inputGetPayload<S extends boolean | null | undefined | plan_resource_inputDefaultArgs> = $Result.GetResult<Prisma.$plan_resource_inputPayload, S>
+
+  type plan_resource_inputCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_resource_inputFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_resource_inputCountAggregateInputType | true
+    }
+
+  export interface plan_resource_inputDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_resource_input'], meta: { name: 'plan_resource_input' } }
+    /**
+     * Find zero or one Plan_resource_input that matches the filter.
+     * @param {plan_resource_inputFindUniqueArgs} args - Arguments to find a Plan_resource_input
+     * @example
+     * // Get one Plan_resource_input
+     * const plan_resource_input = await prisma.plan_resource_input.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_resource_inputFindUniqueArgs>(args: SelectSubset<T, plan_resource_inputFindUniqueArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_resource_input that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_resource_inputFindUniqueOrThrowArgs} args - Arguments to find a Plan_resource_input
+     * @example
+     * // Get one Plan_resource_input
+     * const plan_resource_input = await prisma.plan_resource_input.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_resource_inputFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_resource_inputFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_resource_input that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_resource_inputFindFirstArgs} args - Arguments to find a Plan_resource_input
+     * @example
+     * // Get one Plan_resource_input
+     * const plan_resource_input = await prisma.plan_resource_input.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_resource_inputFindFirstArgs>(args?: SelectSubset<T, plan_resource_inputFindFirstArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_resource_input that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_resource_inputFindFirstOrThrowArgs} args - Arguments to find a Plan_resource_input
+     * @example
+     * // Get one Plan_resource_input
+     * const plan_resource_input = await prisma.plan_resource_input.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_resource_inputFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_resource_inputFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_resource_inputs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_resource_inputFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_resource_inputs
+     * const plan_resource_inputs = await prisma.plan_resource_input.findMany()
+     * 
+     * // Get first 10 Plan_resource_inputs
+     * const plan_resource_inputs = await prisma.plan_resource_input.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_resource_inputWithPlan_idOnly = await prisma.plan_resource_input.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_resource_inputFindManyArgs>(args?: SelectSubset<T, plan_resource_inputFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_resource_input.
+     * @param {plan_resource_inputCreateArgs} args - Arguments to create a Plan_resource_input.
+     * @example
+     * // Create one Plan_resource_input
+     * const Plan_resource_input = await prisma.plan_resource_input.create({
+     *   data: {
+     *     // ... data to create a Plan_resource_input
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_resource_inputCreateArgs>(args: SelectSubset<T, plan_resource_inputCreateArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_resource_inputs.
+     * @param {plan_resource_inputCreateManyArgs} args - Arguments to create many Plan_resource_inputs.
+     * @example
+     * // Create many Plan_resource_inputs
+     * const plan_resource_input = await prisma.plan_resource_input.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_resource_inputCreateManyArgs>(args?: SelectSubset<T, plan_resource_inputCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_resource_inputs and returns the data saved in the database.
+     * @param {plan_resource_inputCreateManyAndReturnArgs} args - Arguments to create many Plan_resource_inputs.
+     * @example
+     * // Create many Plan_resource_inputs
+     * const plan_resource_input = await prisma.plan_resource_input.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_resource_inputs and only return the `plan_id`
+     * const plan_resource_inputWithPlan_idOnly = await prisma.plan_resource_input.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_resource_inputCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_resource_inputCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_resource_input.
+     * @param {plan_resource_inputDeleteArgs} args - Arguments to delete one Plan_resource_input.
+     * @example
+     * // Delete one Plan_resource_input
+     * const Plan_resource_input = await prisma.plan_resource_input.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_resource_input
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_resource_inputDeleteArgs>(args: SelectSubset<T, plan_resource_inputDeleteArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_resource_input.
+     * @param {plan_resource_inputUpdateArgs} args - Arguments to update one Plan_resource_input.
+     * @example
+     * // Update one Plan_resource_input
+     * const plan_resource_input = await prisma.plan_resource_input.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_resource_inputUpdateArgs>(args: SelectSubset<T, plan_resource_inputUpdateArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_resource_inputs.
+     * @param {plan_resource_inputDeleteManyArgs} args - Arguments to filter Plan_resource_inputs to delete.
+     * @example
+     * // Delete a few Plan_resource_inputs
+     * const { count } = await prisma.plan_resource_input.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_resource_inputDeleteManyArgs>(args?: SelectSubset<T, plan_resource_inputDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_resource_inputs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_resource_inputUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_resource_inputs
+     * const plan_resource_input = await prisma.plan_resource_input.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_resource_inputUpdateManyArgs>(args: SelectSubset<T, plan_resource_inputUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_resource_inputs and returns the data updated in the database.
+     * @param {plan_resource_inputUpdateManyAndReturnArgs} args - Arguments to update many Plan_resource_inputs.
+     * @example
+     * // Update many Plan_resource_inputs
+     * const plan_resource_input = await prisma.plan_resource_input.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_resource_inputs and only return the `plan_id`
+     * const plan_resource_inputWithPlan_idOnly = await prisma.plan_resource_input.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_resource_inputUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_resource_inputUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_resource_input.
+     * @param {plan_resource_inputUpsertArgs} args - Arguments to update or create a Plan_resource_input.
+     * @example
+     * // Update or create a Plan_resource_input
+     * const plan_resource_input = await prisma.plan_resource_input.upsert({
+     *   create: {
+     *     // ... data to create a Plan_resource_input
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_resource_input we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_resource_inputUpsertArgs>(args: SelectSubset<T, plan_resource_inputUpsertArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_resource_inputs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_resource_inputCountArgs} args - Arguments to filter Plan_resource_inputs to count.
+     * @example
+     * // Count the number of Plan_resource_inputs
+     * const count = await prisma.plan_resource_input.count({
+     *   where: {
+     *     // ... the filter for the Plan_resource_inputs we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_resource_inputCountArgs>(
+      args?: Subset<T, plan_resource_inputCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_resource_inputCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_resource_input.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_resource_inputAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_resource_inputAggregateArgs>(args: Subset<T, Plan_resource_inputAggregateArgs>): Prisma.PrismaPromise<GetPlan_resource_inputAggregateType<T>>
+
+    /**
+     * Group by Plan_resource_input.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_resource_inputGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_resource_inputGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_resource_inputGroupByArgs['orderBy'] }
+        : { orderBy?: plan_resource_inputGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_resource_inputGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_resource_inputGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_resource_input model
+   */
+  readonly fields: plan_resource_inputFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_resource_input.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_resource_inputClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plan_list<T extends plan_listDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plan_listDefaultArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_resource_input model
+   */
+  interface plan_resource_inputFieldRefs {
+    readonly plan_id: FieldRef<"plan_resource_input", 'String'>
+    readonly pilot_cnt: FieldRef<"plan_resource_input", 'Int'>
+    readonly second_pilot_cnt: FieldRef<"plan_resource_input", 'Int'>
+    readonly total_person_exponent: FieldRef<"plan_resource_input", 'BigInt'>
+    readonly flight_scale_types: FieldRef<"plan_resource_input", 'String[]'>
+    readonly per_flight_scale_data: FieldRef<"plan_resource_input", 'Json'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_resource_input findUnique
+   */
+  export type plan_resource_inputFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_resource_input to fetch.
+     */
+    where: plan_resource_inputWhereUniqueInput
+  }
+
+  /**
+   * plan_resource_input findUniqueOrThrow
+   */
+  export type plan_resource_inputFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_resource_input to fetch.
+     */
+    where: plan_resource_inputWhereUniqueInput
+  }
+
+  /**
+   * plan_resource_input findFirst
+   */
+  export type plan_resource_inputFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_resource_input to fetch.
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_resource_inputs to fetch.
+     */
+    orderBy?: plan_resource_inputOrderByWithRelationInput | plan_resource_inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_resource_inputs.
+     */
+    cursor?: plan_resource_inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_resource_inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_resource_inputs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_resource_inputs.
+     */
+    distinct?: Plan_resource_inputScalarFieldEnum | Plan_resource_inputScalarFieldEnum[]
+  }
+
+  /**
+   * plan_resource_input findFirstOrThrow
+   */
+  export type plan_resource_inputFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_resource_input to fetch.
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_resource_inputs to fetch.
+     */
+    orderBy?: plan_resource_inputOrderByWithRelationInput | plan_resource_inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_resource_inputs.
+     */
+    cursor?: plan_resource_inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_resource_inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_resource_inputs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_resource_inputs.
+     */
+    distinct?: Plan_resource_inputScalarFieldEnum | Plan_resource_inputScalarFieldEnum[]
+  }
+
+  /**
+   * plan_resource_input findMany
+   */
+  export type plan_resource_inputFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_resource_inputs to fetch.
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_resource_inputs to fetch.
+     */
+    orderBy?: plan_resource_inputOrderByWithRelationInput | plan_resource_inputOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_resource_inputs.
+     */
+    cursor?: plan_resource_inputWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_resource_inputs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_resource_inputs.
+     */
+    skip?: number
+    distinct?: Plan_resource_inputScalarFieldEnum | Plan_resource_inputScalarFieldEnum[]
+  }
+
+  /**
+   * plan_resource_input create
+   */
+  export type plan_resource_inputCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_resource_input.
+     */
+    data: XOR<plan_resource_inputCreateInput, plan_resource_inputUncheckedCreateInput>
+  }
+
+  /**
+   * plan_resource_input createMany
+   */
+  export type plan_resource_inputCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_resource_inputs.
+     */
+    data: plan_resource_inputCreateManyInput | plan_resource_inputCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_resource_input createManyAndReturn
+   */
+  export type plan_resource_inputCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_resource_inputs.
+     */
+    data: plan_resource_inputCreateManyInput | plan_resource_inputCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_resource_input update
+   */
+  export type plan_resource_inputUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_resource_input.
+     */
+    data: XOR<plan_resource_inputUpdateInput, plan_resource_inputUncheckedUpdateInput>
+    /**
+     * Choose, which plan_resource_input to update.
+     */
+    where: plan_resource_inputWhereUniqueInput
+  }
+
+  /**
+   * plan_resource_input updateMany
+   */
+  export type plan_resource_inputUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_resource_inputs.
+     */
+    data: XOR<plan_resource_inputUpdateManyMutationInput, plan_resource_inputUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_resource_inputs to update
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * Limit how many plan_resource_inputs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_resource_input updateManyAndReturn
+   */
+  export type plan_resource_inputUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_resource_inputs.
+     */
+    data: XOR<plan_resource_inputUpdateManyMutationInput, plan_resource_inputUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_resource_inputs to update
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * Limit how many plan_resource_inputs to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_resource_input upsert
+   */
+  export type plan_resource_inputUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_resource_input to update in case it exists.
+     */
+    where: plan_resource_inputWhereUniqueInput
+    /**
+     * In case the plan_resource_input found by the `where` argument doesn't exist, create a new plan_resource_input with this data.
+     */
+    create: XOR<plan_resource_inputCreateInput, plan_resource_inputUncheckedCreateInput>
+    /**
+     * In case the plan_resource_input was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_resource_inputUpdateInput, plan_resource_inputUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_resource_input delete
+   */
+  export type plan_resource_inputDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+    /**
+     * Filter which plan_resource_input to delete.
+     */
+    where: plan_resource_inputWhereUniqueInput
+  }
+
+  /**
+   * plan_resource_input deleteMany
+   */
+  export type plan_resource_inputDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_resource_inputs to delete
+     */
+    where?: plan_resource_inputWhereInput
+    /**
+     * Limit how many plan_resource_inputs to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_resource_input without action
+   */
+  export type plan_resource_inputDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_resource_input
+     */
+    select?: plan_resource_inputSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_resource_input
+     */
+    omit?: plan_resource_inputOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_resource_inputInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -25526,6 +26745,18 @@ export namespace Prisma {
   };
 
   export type Plan_statusScalarFieldEnum = (typeof Plan_statusScalarFieldEnum)[keyof typeof Plan_statusScalarFieldEnum]
+
+
+  export const Plan_resource_inputScalarFieldEnum: {
+    plan_id: 'plan_id',
+    pilot_cnt: 'pilot_cnt',
+    second_pilot_cnt: 'second_pilot_cnt',
+    total_person_exponent: 'total_person_exponent',
+    flight_scale_types: 'flight_scale_types',
+    per_flight_scale_data: 'per_flight_scale_data'
+  };
+
+  export type Plan_resource_inputScalarFieldEnum = (typeof Plan_resource_inputScalarFieldEnum)[keyof typeof Plan_resource_inputScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -27046,6 +28277,7 @@ export namespace Prisma {
     participant_ids?: StringNullableListFilter<"plan_list">
     created_at?: DateTimeFilter<"plan_list"> | Date | string
     plan_notification?: Plan_notificationListRelationFilter
+    plan_resource_input?: XOR<Plan_resource_inputNullableScalarRelationFilter, plan_resource_inputWhereInput> | null
     plan_status?: XOR<Plan_statusNullableScalarRelationFilter, plan_statusWhereInput> | null
   }
 
@@ -27058,6 +28290,7 @@ export namespace Prisma {
     participant_ids?: SortOrder
     created_at?: SortOrder
     plan_notification?: plan_notificationOrderByRelationAggregateInput
+    plan_resource_input?: plan_resource_inputOrderByWithRelationInput
     plan_status?: plan_statusOrderByWithRelationInput
   }
 
@@ -27073,6 +28306,7 @@ export namespace Prisma {
     participant_ids?: StringNullableListFilter<"plan_list">
     created_at?: DateTimeFilter<"plan_list"> | Date | string
     plan_notification?: Plan_notificationListRelationFilter
+    plan_resource_input?: XOR<Plan_resource_inputNullableScalarRelationFilter, plan_resource_inputWhereInput> | null
     plan_status?: XOR<Plan_statusNullableScalarRelationFilter, plan_statusWhereInput> | null
   }, "id">
 
@@ -27222,6 +28456,68 @@ export namespace Prisma {
     input_status?: JsonWithAggregatesFilter<"plan_status">
     review_status?: StringNullableWithAggregatesFilter<"plan_status"> | string | null
     result_status?: StringNullableWithAggregatesFilter<"plan_status"> | string | null
+  }
+
+  export type plan_resource_inputWhereInput = {
+    AND?: plan_resource_inputWhereInput | plan_resource_inputWhereInput[]
+    OR?: plan_resource_inputWhereInput[]
+    NOT?: plan_resource_inputWhereInput | plan_resource_inputWhereInput[]
+    plan_id?: UuidFilter<"plan_resource_input"> | string
+    pilot_cnt?: IntNullableFilter<"plan_resource_input"> | number | null
+    second_pilot_cnt?: IntNullableFilter<"plan_resource_input"> | number | null
+    total_person_exponent?: BigIntNullableFilter<"plan_resource_input"> | bigint | number | null
+    flight_scale_types?: StringNullableListFilter<"plan_resource_input">
+    per_flight_scale_data?: JsonNullableFilter<"plan_resource_input">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }
+
+  export type plan_resource_inputOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    pilot_cnt?: SortOrderInput | SortOrder
+    second_pilot_cnt?: SortOrderInput | SortOrder
+    total_person_exponent?: SortOrderInput | SortOrder
+    flight_scale_types?: SortOrder
+    per_flight_scale_data?: SortOrderInput | SortOrder
+    plan_list?: plan_listOrderByWithRelationInput
+  }
+
+  export type plan_resource_inputWhereUniqueInput = Prisma.AtLeast<{
+    plan_id?: string
+    AND?: plan_resource_inputWhereInput | plan_resource_inputWhereInput[]
+    OR?: plan_resource_inputWhereInput[]
+    NOT?: plan_resource_inputWhereInput | plan_resource_inputWhereInput[]
+    pilot_cnt?: IntNullableFilter<"plan_resource_input"> | number | null
+    second_pilot_cnt?: IntNullableFilter<"plan_resource_input"> | number | null
+    total_person_exponent?: BigIntNullableFilter<"plan_resource_input"> | bigint | number | null
+    flight_scale_types?: StringNullableListFilter<"plan_resource_input">
+    per_flight_scale_data?: JsonNullableFilter<"plan_resource_input">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }, "plan_id">
+
+  export type plan_resource_inputOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    pilot_cnt?: SortOrderInput | SortOrder
+    second_pilot_cnt?: SortOrderInput | SortOrder
+    total_person_exponent?: SortOrderInput | SortOrder
+    flight_scale_types?: SortOrder
+    per_flight_scale_data?: SortOrderInput | SortOrder
+    _count?: plan_resource_inputCountOrderByAggregateInput
+    _avg?: plan_resource_inputAvgOrderByAggregateInput
+    _max?: plan_resource_inputMaxOrderByAggregateInput
+    _min?: plan_resource_inputMinOrderByAggregateInput
+    _sum?: plan_resource_inputSumOrderByAggregateInput
+  }
+
+  export type plan_resource_inputScalarWhereWithAggregatesInput = {
+    AND?: plan_resource_inputScalarWhereWithAggregatesInput | plan_resource_inputScalarWhereWithAggregatesInput[]
+    OR?: plan_resource_inputScalarWhereWithAggregatesInput[]
+    NOT?: plan_resource_inputScalarWhereWithAggregatesInput | plan_resource_inputScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_resource_input"> | string
+    pilot_cnt?: IntNullableWithAggregatesFilter<"plan_resource_input"> | number | null
+    second_pilot_cnt?: IntNullableWithAggregatesFilter<"plan_resource_input"> | number | null
+    total_person_exponent?: BigIntNullableWithAggregatesFilter<"plan_resource_input"> | bigint | number | null
+    flight_scale_types?: StringNullableListFilter<"plan_resource_input">
+    per_flight_scale_data?: JsonNullableWithAggregatesFilter<"plan_resource_input">
   }
 
   export type audit_log_entriesCreateInput = {
@@ -28676,6 +29972,7 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
   }
 
@@ -28688,6 +29985,7 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
@@ -28700,6 +29998,7 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -28712,6 +30011,7 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -28867,6 +30167,68 @@ export namespace Prisma {
     input_status?: JsonNullValueInput | InputJsonValue
     review_status?: NullableStringFieldUpdateOperationsInput | string | null
     result_status?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_resource_inputCreateInput = {
+    pilot_cnt?: number | null
+    second_pilot_cnt?: number | null
+    total_person_exponent?: bigint | number | null
+    flight_scale_types?: plan_resource_inputCreateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+    plan_list: plan_listCreateNestedOneWithoutPlan_resource_inputInput
+  }
+
+  export type plan_resource_inputUncheckedCreateInput = {
+    plan_id: string
+    pilot_cnt?: number | null
+    second_pilot_cnt?: number | null
+    total_person_exponent?: bigint | number | null
+    flight_scale_types?: plan_resource_inputCreateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputUpdateInput = {
+    pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    second_pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+    plan_list?: plan_listUpdateOneRequiredWithoutPlan_resource_inputNestedInput
+  }
+
+  export type plan_resource_inputUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    second_pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputCreateManyInput = {
+    plan_id: string
+    pilot_cnt?: number | null
+    second_pilot_cnt?: number | null
+    total_person_exponent?: bigint | number | null
+    flight_scale_types?: plan_resource_inputCreateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputUpdateManyMutationInput = {
+    pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    second_pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    second_pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
   }
 
   export type UuidNullableFilter<$PrismaModel = never> = {
@@ -30092,6 +31454,11 @@ export namespace Prisma {
     none?: plan_notificationWhereInput
   }
 
+  export type Plan_resource_inputNullableScalarRelationFilter = {
+    is?: plan_resource_inputWhereInput | null
+    isNot?: plan_resource_inputWhereInput | null
+  }
+
   export type Plan_statusNullableScalarRelationFilter = {
     is?: plan_statusWhereInput | null
     isNot?: plan_statusWhereInput | null
@@ -30210,6 +31577,68 @@ export namespace Prisma {
     step?: SortOrder
     review_status?: SortOrder
     result_status?: SortOrder
+  }
+
+  export type BigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
+  }
+
+  export type plan_resource_inputCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    pilot_cnt?: SortOrder
+    second_pilot_cnt?: SortOrder
+    total_person_exponent?: SortOrder
+    flight_scale_types?: SortOrder
+    per_flight_scale_data?: SortOrder
+  }
+
+  export type plan_resource_inputAvgOrderByAggregateInput = {
+    pilot_cnt?: SortOrder
+    second_pilot_cnt?: SortOrder
+    total_person_exponent?: SortOrder
+  }
+
+  export type plan_resource_inputMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    pilot_cnt?: SortOrder
+    second_pilot_cnt?: SortOrder
+    total_person_exponent?: SortOrder
+  }
+
+  export type plan_resource_inputMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    pilot_cnt?: SortOrder
+    second_pilot_cnt?: SortOrder
+    total_person_exponent?: SortOrder
+  }
+
+  export type plan_resource_inputSumOrderByAggregateInput = {
+    pilot_cnt?: SortOrder
+    second_pilot_cnt?: SortOrder
+    total_person_exponent?: SortOrder
+  }
+
+  export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>
+    _min?: NestedBigIntNullableFilter<$PrismaModel>
+    _max?: NestedBigIntNullableFilter<$PrismaModel>
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -30949,6 +32378,12 @@ export namespace Prisma {
     connect?: plan_notificationWhereUniqueInput | plan_notificationWhereUniqueInput[]
   }
 
+  export type plan_resource_inputCreateNestedOneWithoutPlan_listInput = {
+    create?: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_resource_inputCreateOrConnectWithoutPlan_listInput
+    connect?: plan_resource_inputWhereUniqueInput
+  }
+
   export type plan_statusCreateNestedOneWithoutPlan_listInput = {
     create?: XOR<plan_statusCreateWithoutPlan_listInput, plan_statusUncheckedCreateWithoutPlan_listInput>
     connectOrCreate?: plan_statusCreateOrConnectWithoutPlan_listInput
@@ -30960,6 +32395,12 @@ export namespace Prisma {
     connectOrCreate?: plan_notificationCreateOrConnectWithoutPlan_listInput | plan_notificationCreateOrConnectWithoutPlan_listInput[]
     createMany?: plan_notificationCreateManyPlan_listInputEnvelope
     connect?: plan_notificationWhereUniqueInput | plan_notificationWhereUniqueInput[]
+  }
+
+  export type plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput = {
+    create?: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_resource_inputCreateOrConnectWithoutPlan_listInput
+    connect?: plan_resource_inputWhereUniqueInput
   }
 
   export type plan_statusUncheckedCreateNestedOneWithoutPlan_listInput = {
@@ -30995,6 +32436,16 @@ export namespace Prisma {
     deleteMany?: plan_notificationScalarWhereInput | plan_notificationScalarWhereInput[]
   }
 
+  export type plan_resource_inputUpdateOneWithoutPlan_listNestedInput = {
+    create?: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_resource_inputCreateOrConnectWithoutPlan_listInput
+    upsert?: plan_resource_inputUpsertWithoutPlan_listInput
+    disconnect?: plan_resource_inputWhereInput | boolean
+    delete?: plan_resource_inputWhereInput | boolean
+    connect?: plan_resource_inputWhereUniqueInput
+    update?: XOR<XOR<plan_resource_inputUpdateToOneWithWhereWithoutPlan_listInput, plan_resource_inputUpdateWithoutPlan_listInput>, plan_resource_inputUncheckedUpdateWithoutPlan_listInput>
+  }
+
   export type plan_statusUpdateOneWithoutPlan_listNestedInput = {
     create?: XOR<plan_statusCreateWithoutPlan_listInput, plan_statusUncheckedCreateWithoutPlan_listInput>
     connectOrCreate?: plan_statusCreateOrConnectWithoutPlan_listInput
@@ -31017,6 +32468,16 @@ export namespace Prisma {
     update?: plan_notificationUpdateWithWhereUniqueWithoutPlan_listInput | plan_notificationUpdateWithWhereUniqueWithoutPlan_listInput[]
     updateMany?: plan_notificationUpdateManyWithWhereWithoutPlan_listInput | plan_notificationUpdateManyWithWhereWithoutPlan_listInput[]
     deleteMany?: plan_notificationScalarWhereInput | plan_notificationScalarWhereInput[]
+  }
+
+  export type plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput = {
+    create?: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_resource_inputCreateOrConnectWithoutPlan_listInput
+    upsert?: plan_resource_inputUpsertWithoutPlan_listInput
+    disconnect?: plan_resource_inputWhereInput | boolean
+    delete?: plan_resource_inputWhereInput | boolean
+    connect?: plan_resource_inputWhereUniqueInput
+    update?: XOR<XOR<plan_resource_inputUpdateToOneWithWhereWithoutPlan_listInput, plan_resource_inputUpdateWithoutPlan_listInput>, plan_resource_inputUncheckedUpdateWithoutPlan_listInput>
   }
 
   export type plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput = {
@@ -31055,6 +32516,37 @@ export namespace Prisma {
     upsert?: plan_listUpsertWithoutPlan_statusInput
     connect?: plan_listWhereUniqueInput
     update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_statusInput, plan_listUpdateWithoutPlan_statusInput>, plan_listUncheckedUpdateWithoutPlan_statusInput>
+  }
+
+  export type plan_resource_inputCreateflight_scale_typesInput = {
+    set: string[]
+  }
+
+  export type plan_listCreateNestedOneWithoutPlan_resource_inputInput = {
+    create?: XOR<plan_listCreateWithoutPlan_resource_inputInput, plan_listUncheckedCreateWithoutPlan_resource_inputInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_resource_inputInput
+    connect?: plan_listWhereUniqueInput
+  }
+
+  export type NullableBigIntFieldUpdateOperationsInput = {
+    set?: bigint | number | null
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
+  }
+
+  export type plan_resource_inputUpdateflight_scale_typesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type plan_listUpdateOneRequiredWithoutPlan_resource_inputNestedInput = {
+    create?: XOR<plan_listCreateWithoutPlan_resource_inputInput, plan_listUncheckedCreateWithoutPlan_resource_inputInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_resource_inputInput
+    upsert?: plan_listUpsertWithoutPlan_resource_inputInput
+    connect?: plan_listWhereUniqueInput
+    update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_resource_inputInput, plan_listUpdateWithoutPlan_resource_inputInput>, plan_listUncheckedUpdateWithoutPlan_resource_inputInput>
   }
 
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
@@ -31477,6 +32969,33 @@ export namespace Prisma {
     _sum?: NestedIntFilter<$PrismaModel>
     _min?: NestedIntFilter<$PrismaModel>
     _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedBigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
+  }
+
+  export type NestedBigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>
+    _min?: NestedBigIntNullableFilter<$PrismaModel>
+    _max?: NestedBigIntNullableFilter<$PrismaModel>
   }
 
   export type saml_relay_statesCreateWithoutFlow_stateInput = {
@@ -33601,6 +35120,27 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type plan_resource_inputCreateWithoutPlan_listInput = {
+    pilot_cnt?: number | null
+    second_pilot_cnt?: number | null
+    total_person_exponent?: bigint | number | null
+    flight_scale_types?: plan_resource_inputCreateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputUncheckedCreateWithoutPlan_listInput = {
+    pilot_cnt?: number | null
+    second_pilot_cnt?: number | null
+    total_person_exponent?: bigint | number | null
+    flight_scale_types?: plan_resource_inputCreateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputCreateOrConnectWithoutPlan_listInput = {
+    where: plan_resource_inputWhereUniqueInput
+    create: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
+  }
+
   export type plan_statusCreateWithoutPlan_listInput = {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
@@ -33649,6 +35189,33 @@ export namespace Prisma {
     created_at?: DateTimeFilter<"plan_notification"> | Date | string
   }
 
+  export type plan_resource_inputUpsertWithoutPlan_listInput = {
+    update: XOR<plan_resource_inputUpdateWithoutPlan_listInput, plan_resource_inputUncheckedUpdateWithoutPlan_listInput>
+    create: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
+    where?: plan_resource_inputWhereInput
+  }
+
+  export type plan_resource_inputUpdateToOneWithWhereWithoutPlan_listInput = {
+    where?: plan_resource_inputWhereInput
+    data: XOR<plan_resource_inputUpdateWithoutPlan_listInput, plan_resource_inputUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_resource_inputUpdateWithoutPlan_listInput = {
+    pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    second_pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_resource_inputUncheckedUpdateWithoutPlan_listInput = {
+    pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    second_pilot_cnt?: NullableIntFieldUpdateOperationsInput | number | null
+    total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
+    per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
   export type plan_statusUpsertWithoutPlan_listInput = {
     update: XOR<plan_statusUpdateWithoutPlan_listInput, plan_statusUncheckedUpdateWithoutPlan_listInput>
     create: XOR<plan_statusCreateWithoutPlan_listInput, plan_statusUncheckedCreateWithoutPlan_listInput>
@@ -33682,6 +35249,7 @@ export namespace Prisma {
     month: number
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
+    plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
   }
 
@@ -33693,6 +35261,7 @@ export namespace Prisma {
     month: number
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
+    plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
@@ -33720,6 +35289,7 @@ export namespace Prisma {
     month?: IntFieldUpdateOperationsInput | number
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -33731,6 +35301,7 @@ export namespace Prisma {
     month?: IntFieldUpdateOperationsInput | number
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -33743,6 +35314,7 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
   }
 
   export type plan_listUncheckedCreateWithoutPlan_statusInput = {
@@ -33754,6 +35326,7 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
   export type plan_listCreateOrConnectWithoutPlan_statusInput = {
@@ -33781,6 +35354,7 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
   }
 
   export type plan_listUncheckedUpdateWithoutPlan_statusInput = {
@@ -33792,6 +35366,71 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listCreateWithoutPlan_resource_inputInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listUncheckedCreateWithoutPlan_resource_inputInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listCreateOrConnectWithoutPlan_resource_inputInput = {
+    where: plan_listWhereUniqueInput
+    create: XOR<plan_listCreateWithoutPlan_resource_inputInput, plan_listUncheckedCreateWithoutPlan_resource_inputInput>
+  }
+
+  export type plan_listUpsertWithoutPlan_resource_inputInput = {
+    update: XOR<plan_listUpdateWithoutPlan_resource_inputInput, plan_listUncheckedUpdateWithoutPlan_resource_inputInput>
+    create: XOR<plan_listCreateWithoutPlan_resource_inputInput, plan_listUncheckedCreateWithoutPlan_resource_inputInput>
+    where?: plan_listWhereInput
+  }
+
+  export type plan_listUpdateToOneWithWhereWithoutPlan_resource_inputInput = {
+    where?: plan_listWhereInput
+    data: XOR<plan_listUpdateWithoutPlan_resource_inputInput, plan_listUncheckedUpdateWithoutPlan_resource_inputInput>
+  }
+
+  export type plan_listUpdateWithoutPlan_resource_inputInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listUncheckedUpdateWithoutPlan_resource_inputInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
   export type saml_relay_statesCreateManyFlow_stateInput = {

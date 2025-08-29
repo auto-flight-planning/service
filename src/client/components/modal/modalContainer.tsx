@@ -5,7 +5,7 @@ import { useModalStore } from "@/client/stores";
 import Modal from "./modal";
 import { LoginModal } from "@/client/features/user/login";
 import { CreatePlanModal } from "@/client/features/plan/create";
-import { ResourceInputModal } from "@/client/features/plan/input/resource";
+import { ResourceInputModal } from "@/client/features/plan/input/resource/totalPerson";
 
 const MODAL_COMPONENTS = {
   login: LoginModal,

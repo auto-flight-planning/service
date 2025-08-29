@@ -14,6 +14,8 @@ import { registerSearchEmployeeSchemas } from "@/server/features/user/search-emp
 import { registerCreatePlanSchemas } from "@/server/features/plan/create/openapi";
 import { registerGetNotificationSchemas } from "../features/plan/notification/get/openapi";
 import { registerGetPlanOneSchemas } from "../features/plan/get/one/openapi";
+import { registerUpdateTotalPersonResourceSchemas } from "../features/plan/input/resource/update/openapi";
+import { registerGetTotalPersonResourceSchemas } from "../features/plan/input/resource/get/openapi";
 
 export const registry = new OpenAPIRegistry();
 
@@ -28,3 +30,5 @@ registerSearchEmployeeSchemas(registry);
 registerCreatePlanSchemas(registry);
 registerGetNotificationSchemas(registry);
 registerGetPlanOneSchemas(registry);
+registerUpdateTotalPersonResourceSchemas(registry);
+registerGetTotalPersonResourceSchemas(registry);

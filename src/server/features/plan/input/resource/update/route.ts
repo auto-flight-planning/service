@@ -1,0 +1,91 @@
+import { NextRequest, NextResponse } from "next/server";
+import { prismaClient } from "@/server/db/prismaClient";
+import { checkRequestBody, withErrorHandler } from "@/server/utils";
+import { updateTotalPersonResourceInputReqSchema } from "./schema";
+
+export const TotalPersonPOST = withErrorHandler(async (req: NextRequest) => {
+  try {
+    const parsed = await checkRequestBody(
+      req,
+      updateTotalPersonResourceInputReqSchema
+    );
+    if (!parsed.success) return parsed.response;
+
+    const { planId, pilot_cnt, second_pilot_cnt, total_person_exponent } =
+      parsed.data;
+
+    const updatedPlan = await prismaClient.plan_resource_input.update({
+      where: { plan_id: planId },
+      data: {
+        pilot_cnt,
+        second_pilot_cnt,
+        total_person_exponent,
+      },
+    });
+
+    const {
+      pilot_cnt: updatedPilotCnt,
+      second_pilot_cnt: updatedSecondPilotCnt,
+      total_person_exponent: updatedTotalPersonExponent,
+    } = updatedPlan;
+    // totalPerson 입력 상태 계산
+    const totalPersonValues = [
+      updatedPilotCnt,
+      updatedSecondPilotCnt,
+      updatedTotalPersonExponent,
+    ];
+    const hasAnyInput = totalPersonValues.some((value) => value !== null);
+    const hasAllInputs = totalPersonValues.every((value) => value !== null);
+
+    let totalPersonInputStatus: string;
+    if (!hasAnyInput) {
+      totalPersonInputStatus = "empty";
+    } else if (hasAllInputs) {
+      totalPersonInputStatus = "submitted";
+    } else {
+      totalPersonInputStatus = "inputting";
+    }
+
+    const beforeInputStatus = await prismaClient.plan_status.findUnique({
+      where: { plan_id: planId },
+    });
+
+    if (!beforeInputStatus) {
+      return NextResponse.json(
+        { error: "Plan status not found" },
+        { status: 404 }
+      );
+    }
+
+    const beforeInputStatusResourceData =
+      beforeInputStatus.input_status as Record<string, unknown>;
+    const beforeInputStatusResourceDataResourceData =
+      beforeInputStatusResourceData.resource_data as Record<string, unknown>;
+
+    await prismaClient.plan_status.update({
+      where: { plan_id: planId },
+      data: {
+        input_status: {
+          ...beforeInputStatusResourceData,
+          resource_data: {
+            ...beforeInputStatusResourceDataResourceData,
+            total_person_resource_data: totalPersonInputStatus,
+          },
+        },
+      },
+    });
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (error) {
+    console.error("=== ERROR DETAILS ===");
+    console.error("Error type:", error?.constructor?.name);
+    console.error("Full error:", JSON.stringify(error, null, 2));
+
+    return NextResponse.json(
+      {
+        error: "Database error",
+      },
+      { status: 500 }
+    );
+  }
+});

@@ -1,6 +1,6 @@
 import { PointCard } from "@/client/components/card";
 
-export default function ResourceExplain() {
+export default function TotalPersonExplain() {
   return (
     <div className="space-y-6">
       {/* 데이터 리스트 */}

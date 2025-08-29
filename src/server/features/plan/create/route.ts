@@ -29,6 +29,12 @@ export const POST = withErrorHandler(async (req: NextRequest) => {
     },
   });
 
+  await prismaClient.plan_resource_input.create({
+    data: {
+      plan_id: plan.id,
+    },
+  });
+
   const res = createPlanResSchema.parse({
     planId: plan.id,
     creatorId: plan.creator_id,
