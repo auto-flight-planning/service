@@ -9,16 +9,12 @@ import {
 } from "@/client/components/modal";
 import { Spinner } from "@/client/components/spinner";
 import { useTotalPersonResource, TotalPersonForm, TotalPersonExplain } from ".";
-
-interface ResourceInputModalProps {
-  planId?: string;
-  type?: "view" | "edit";
-}
+import { InputModalProps } from "../../types";
 
 export default function ResourceInputModal({
   planId = "",
   type = "edit",
-}: ResourceInputModalProps) {
+}: InputModalProps) {
   const { formMethods, onValidSubmit, isPendingToGet, isPendingToUpdate } =
     useTotalPersonResource(planId);
   const { handleSubmit } = formMethods;

@@ -6,11 +6,13 @@ import Modal from "./modal";
 import { LoginModal } from "@/client/features/user/login";
 import { CreatePlanModal } from "@/client/features/plan/create";
 import { ResourceInputModal } from "@/client/features/plan/input/resource/totalPerson";
+import { FlightScaleModal } from "@/client/features/plan/input/resource/flightScale";
 
 const MODAL_COMPONENTS = {
   login: LoginModal,
   createPlan: CreatePlanModal,
   resourceInput: ResourceInputModal,
+  flightScaleInput: FlightScaleModal,
 };
 
 export default function ModalContainer() {

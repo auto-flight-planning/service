@@ -5,6 +5,8 @@ import { BackButton, SquareButton } from "@/client/components/button";
 import { PointCard } from "@/client/components/card";
 import DataInputCard from "../../_components/dataInputCard";
 import { useModalStore } from "@/client/stores";
+import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { Spinner } from "@/client/components/spinner";
 
 interface ResourceInputContentProps {
   planId: string;
@@ -15,6 +17,10 @@ export default function ResourceInputContent({
 }: ResourceInputContentProps) {
   const { openModal } = useModalStore();
   const [isDirectInput, setIsDirectInput] = useState(false);
+
+  const { data, isPending } = useGetPlanInfo(planId);
+  const resourceDataStatus: any = data?.status.input_status.resource_data;
+
   const dataItems = [
     {
       number: 1,
@@ -26,13 +32,20 @@ export default function ResourceInputContent({
           type: isDirectInput ? "edit" : "view",
         });
       },
-      isCompleted: true, // 완료 상태
+      isCompleted:
+        resourceDataStatus?.total_person_resource_data === "submitted",
     },
     {
       number: 2,
       title: "運航規模の種類",
       items: ["自社保有の航空機に応じた運航規模区分"],
-      isCompleted: true, // 완료 상태
+      onClick: () => {
+        openModal("flightScaleInput", {
+          planId,
+          type: isDirectInput ? "edit" : "view",
+        });
+      },
+      isCompleted: resourceDataStatus?.flight_scale_data === "submitted",
     },
     {
       number: 3,
@@ -45,9 +58,17 @@ export default function ResourceInputContent({
         "運航可能最小収益",
         "飛行前後に必要な時間",
       ],
-      isCompleted: false, // 미완료 상태
+      isCompleted: resourceDataStatus?.per_flight_scale_data === "submitted",
     },
   ];
+
+  if (isPending) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Spinner size="md" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-8 bg-white p-8 rounded-xl shadow-md mb-8">
