@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SquareButton } from "@/client/components/button";
+import { BackButton, SquareButton } from "@/client/components/button";
 import { PointCard } from "@/client/components/card";
 import DataInputCard from "../../_components/dataInputCard";
 import { useModalStore } from "@/client/stores";
@@ -21,7 +21,10 @@ export default function ResourceInputContent({
       title: "総人員データ",
       items: ["機長・副操縦士人数", "その他総人員指数"],
       onClick: () => {
-        openModal("resourceInput", { planId });
+        openModal("resourceInput", {
+          planId,
+          type: isDirectInput ? "edit" : "view",
+        });
       },
       isCompleted: true, // 완료 상태
     },
@@ -49,9 +52,12 @@ export default function ResourceInputContent({
   return (
     <div className="flex flex-col gap-8 bg-white p-8 rounded-xl shadow-md mb-8">
       {/* 헤더 */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <h4 className="text-xl font-bold text-gray-700">データ入力状況</h4>
+      <div className="flex items-center gap-4">
+        {isDirectInput && (
+          <BackButton onClick={() => setIsDirectInput(false)} />
+        )}
+        <h4 className="text-xl font-bold text-gray-700">データ入力状況</h4>
+        {!isDirectInput && (
           <SquareButton
             text="直接入力"
             color="light-gray"
@@ -59,7 +65,7 @@ export default function ResourceInputContent({
             onBorder
             onClick={() => setIsDirectInput(!isDirectInput)}
           />
-        </div>
+        )}
       </div>
 
       {/* 데이터 입력 카드들 */}

@@ -12,15 +12,17 @@ import { useTotalPersonResource, TotalPersonForm, TotalPersonExplain } from ".";
 
 interface ResourceInputModalProps {
   planId?: string;
+  type?: "view" | "edit";
 }
 
 export default function ResourceInputModal({
   planId = "",
+  type = "edit",
 }: ResourceInputModalProps) {
   const { formMethods, onValidSubmit, isPendingToGet, isPendingToUpdate } =
     useTotalPersonResource(planId);
   const { handleSubmit } = formMethods;
-  const { closeModal } = useModalStore();
+  const { closeModal, openModal } = useModalStore();
 
   const tabs = [
     {
@@ -31,7 +33,7 @@ export default function ResourceInputModal({
           <Spinner size="md" />
         </div>
       ) : (
-        <TotalPersonForm planId={planId} />
+        <TotalPersonForm planId={planId} type={type} />
       ),
     },
     {
@@ -51,14 +53,28 @@ export default function ResourceInputModal({
       <FormProvider {...formMethods}>
         <ModalTab tabs={tabs} defaultTab="data-input" />
         <div className="px-4 pb-4 pt-2 border-t border-gray-200">
-          <BasicModalFooter
-            confirmText="保存"
-            showCancel={false}
-            leftText="保存すると企画部に自動で通知が送信されます"
-            onConfirm={handleSubmit(onValidSubmit)}
-            isPending={isPendingToUpdate}
-            onBorder={false}
-          />
+          {type === "edit" ? (
+            <BasicModalFooter
+              confirmText="保存"
+              showCancel={false}
+              leftText="保存すると企画部に自動で通知が送信されます"
+              onConfirm={handleSubmit(onValidSubmit)}
+              isPending={isPendingToUpdate}
+              onBorder={false}
+            />
+          ) : (
+            <BasicModalFooter
+              confirmText="編集"
+              showCancel={false}
+              onConfirm={() =>
+                openModal("resourceInput", {
+                  planId,
+                  type: "edit",
+                })
+              }
+              onBorder={false}
+            />
+          )}
         </div>
       </FormProvider>
     </div>

@@ -2,6 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { BackButton } from "@/client/components/button";
 
 interface BreadcrumbProps {
   planId: string;
@@ -39,21 +40,7 @@ export default function Breadcrumb({ planId }: BreadcrumbProps) {
   return (
     <div className="flex items-center gap-3 mb-6 text-sm">
       {/* 뒤로가기 버튼 */}
-      <button
-        onClick={() => router.push(`/plan/${planId}/input`)}
-        className="flex items-center justify-center w-8 h-8 text-gray-600 hover:text-gray-800 hover:bg-gray-200 hover:opacity-50 rounded-full transition-all duration-200 cursor-pointer active:scale-95 active:bg-gray-300"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </button>
+      <BackButton onClick={() => router.push(`/plan/${planId}/input`)} />
 
       {/* 브레드크럼 텍스트 */}
       <span className="text-primary-500 font-medium">{data.planName}</span>
