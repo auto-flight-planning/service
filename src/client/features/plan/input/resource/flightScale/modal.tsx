@@ -5,26 +5,24 @@ import {
   ModalTab,
   NumberedModalHeader,
 } from "@/client/components/modal";
-import { FlightScaleExplain } from ".";
+import { FlightScaleExplain, FlightScaleForm } from ".";
+import useFlightScaleResource from "./useFlightScaleResource";
+import { FormProvider } from "react-hook-form";
 
 export default function FlightScaleModal({
   planId = "",
   type = "edit",
 }: InputModalProps) {
+  const { formMethods, onValidSubmit, onInvalidSubmit } =
+    useFlightScaleResource(planId);
+  const { handleSubmit } = formMethods;
   const { closeModal, openModal } = useModalStore();
 
   const tabs = [
     {
       id: "data-input",
       label: "データ入力",
-      content: <>data input</>,
-      //   content: isPendingToGet ? (
-      //     <div className="flex justify-center items-center h-full">
-      //       <Spinner size="md" />
-      //     </div>
-      //   ) : (
-      //     <TotalPersonForm planId={planId} type={type} />
-      //   ),
+      content: <FlightScaleForm planId={planId} type={type} />,
     },
     {
       id: "detail",
@@ -40,34 +38,33 @@ export default function FlightScaleModal({
         number={2}
         onClose={closeModal}
       />
-      {/* <FormProvider {...formMethods}> */}
-      <ModalTab tabs={tabs} defaultTab="data-input" />
-      <div className="px-4 pb-4 pt-2 border-t border-gray-200">
-        {type === "edit" ? (
-          <BasicModalFooter
-            confirmText="保存"
-            showCancel={false}
-            leftText="保存すると企画部に自動で通知が送信されます"
-            onConfirm={() => {}}
-            //   onConfirm={handleSubmit(onValidSubmit)}
-            //   isPending={isPendingToUpdate}
-            onBorder={false}
-          />
-        ) : (
-          <BasicModalFooter
-            confirmText="編集"
-            showCancel={false}
-            onConfirm={() =>
-              openModal("flightScaleInput", {
-                planId,
-                type: "edit",
-              })
-            }
-            onBorder={false}
-          />
-        )}
-      </div>
-      {/* </FormProvider> */}
+      <FormProvider {...formMethods}>
+        <ModalTab tabs={tabs} defaultTab="data-input" />
+        <div className="px-4 pb-4 pt-2 border-t border-gray-200">
+          {type === "edit" ? (
+            <BasicModalFooter
+              confirmText="保存"
+              showCancel={false}
+              leftText="保存すると企画部に自動で通知が送信されます"
+              onConfirm={handleSubmit(onValidSubmit, onInvalidSubmit)}
+              // isPending={isPendingToUpdate}
+              onBorder={false}
+            />
+          ) : (
+            <BasicModalFooter
+              confirmText="編集"
+              showCancel={false}
+              onConfirm={() =>
+                openModal("flightScaleInput", {
+                  planId,
+                  type: "edit",
+                })
+              }
+              onBorder={false}
+            />
+          )}
+        </div>
+      </FormProvider>
     </div>
   );
 }
