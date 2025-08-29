@@ -25,16 +25,6 @@ export const TotalPersonGET = withErrorHandler(async (req: NextRequest) => {
     );
   }
 
-  // BigInt -> Number 변환 처리
-  console.log(
-    "DB total_person_exponent type:",
-    typeof totalPerson.total_person_exponent
-  );
-  console.log(
-    "DB total_person_exponent value:",
-    totalPerson.total_person_exponent
-  );
-
   const res = getTotalPersonResourceInputResSchema.parse({
     pilot_cnt: totalPerson.pilot_cnt,
     second_pilot_cnt: totalPerson.second_pilot_cnt,
