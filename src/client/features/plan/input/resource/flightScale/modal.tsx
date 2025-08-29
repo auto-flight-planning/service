@@ -8,13 +8,19 @@ import {
 import { FlightScaleExplain, FlightScaleForm } from ".";
 import useFlightScaleResource from "./useFlightScaleResource";
 import { FormProvider } from "react-hook-form";
+import { Spinner } from "@/client/components/spinner";
 
 export default function FlightScaleModal({
   planId = "",
   type = "edit",
 }: InputModalProps) {
-  const { formMethods, onValidSubmit, onInvalidSubmit } =
-    useFlightScaleResource(planId);
+  const {
+    formMethods,
+    onValidSubmit,
+    onInvalidSubmit,
+    isPendingToGet,
+    isPendingToUpdate,
+  } = useFlightScaleResource(planId);
   const { handleSubmit } = formMethods;
   const { closeModal, openModal } = useModalStore();
 
@@ -22,7 +28,13 @@ export default function FlightScaleModal({
     {
       id: "data-input",
       label: "データ入力",
-      content: <FlightScaleForm planId={planId} type={type} />,
+      content: isPendingToGet ? (
+        <div className="flex justify-center items-center h-full">
+          <Spinner size="md" />
+        </div>
+      ) : (
+        <FlightScaleForm planId={planId} type={type} />
+      ),
     },
     {
       id: "detail",
@@ -47,7 +59,7 @@ export default function FlightScaleModal({
               showCancel={false}
               leftText="保存すると企画部に自動で通知が送信されます"
               onConfirm={handleSubmit(onValidSubmit, onInvalidSubmit)}
-              // isPending={isPendingToUpdate}
+              isPending={isPendingToUpdate}
               onBorder={false}
             />
           ) : (

@@ -13,7 +13,7 @@ export default function FlightScaleForm({
 
   const { fields: flightScaleType, replace } = useFieldArray({
     control,
-    name: "flight_scale_type",
+    name: "flight_scale_types",
   });
 
   // 전체 배열을 바꾸는 함수들
@@ -36,32 +36,42 @@ export default function FlightScaleForm({
   };
 
   return (
-    <div>
-      <form className="flex flex-col gap-6" onSubmit={handleSubmit(() => {})}>
+    <div className="h-full">
+      <form
+        className="flex flex-col gap-6 h-full"
+        onSubmit={handleSubmit(() => {})}
+      >
         {/* 운항규모의 종류 섹션 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <h3 className="font-semibold text-gray-700">運航規模の種類</h3>
+        {flightScaleType.every((scaleType) => scaleType.value === "") &&
+        type === "view" ? (
+          <div className="text-gray-500 w-full flex justify-center items-center h-full">
+            まだ入力されていません
           </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <h3 className="font-semibold text-gray-700">運航規模の種類</h3>
+            </div>
 
-          {/* 동적 입력 필드들 */}
-          <div className="space-y-3">
-            {flightScaleType.map((scaleType, index) => (
-              <FlightScaleItem
-                key={index}
-                index={index}
-                value={scaleType.value}
-                canRemove={flightScaleType.length > 1}
-                type={type}
-                onRemove={() => removeScale(index)}
-                onUpdate={(value) => updateScale(index, value)}
-              />
-            ))}
+            {/* 동적 입력 필드들 */}
+            <div className="space-y-3">
+              {flightScaleType.map((scaleType, index) => (
+                <FlightScaleItem
+                  key={index}
+                  index={index}
+                  value={scaleType.value}
+                  canRemove={flightScaleType.length > 1}
+                  type={type}
+                  onRemove={() => removeScale(index)}
+                  onUpdate={(value) => updateScale(index, value)}
+                />
+              ))}
+            </div>
+
+            {/* 추가 버튼 */}
+            {type === "edit" && <AddScaleButton onAdd={addScale} />}
           </div>
-
-          {/* 추가 버튼 */}
-          {type === "edit" && <AddScaleButton onAdd={addScale} />}
-        </div>
+        )}
       </form>
     </div>
   );

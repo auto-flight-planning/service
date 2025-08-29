@@ -15,7 +15,7 @@ export type UpdateTotalPersonResourceInputReqSchema = z.infer<
 // 2. Flight Scale
 export const updateFlightScaleResourceInputReqSchema = z.object({
   planId: z.uuid(),
-  flight_scale: z.array(z.string()),
+  flight_scale_types: z.array(z.string()),
 });
 
 export type UpdateFlightScaleResourceInputReqSchema = z.infer<

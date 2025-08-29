@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const flightScaleResourceSchema = z.object({
-  flight_scale_type: z.array(
+  flight_scale_types: z.array(
     z.object({
       value: z
         .string()

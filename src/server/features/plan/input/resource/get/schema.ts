@@ -28,5 +28,24 @@ export type GetTotalPersonResourceInputResSchema = z.infer<
 >;
 
 // 2. Flight Scale
+export const getFlightScaleResourceInputReqSchema = z.object({
+  planId: z.uuid().openapi({
+    param: {
+      name: "planId",
+      in: "query",
+    },
+    example: "123e4567-e89b-12d3-a456-426614174000",
+  }),
+});
+export const getFlightScaleResourceInputResSchema = z.object({
+  flight_scale_types: z.array(z.string()).nullable(),
+});
+
+export type GetFlightScaleResourceInputReqSchema = z.infer<
+  typeof getFlightScaleResourceInputReqSchema
+>;
+export type GetFlightScaleResourceInputResSchema = z.infer<
+  typeof getFlightScaleResourceInputResSchema
+>;
 
 // 3. Per Flight Scale Data
