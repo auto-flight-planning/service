@@ -1,56 +1,22 @@
 import fs from "fs";
 import { parse } from "csv-parse/sync";
+import { FlightCandidateData } from "../types";
 
-// CSVの全てのカラムを含むインターフェース
-export interface FlightData {
-  日付: string; // 日付（例: "1日", "2日"）
-  出発国家: string; // 出発国家
-  出発空港: string; // 出発空港
-  到着国家: string; // 到着国家
-  到着空港: string; // 到着空港
-  出発時刻: string; // 出発時刻（例: "07:00", "14:30"）
-  飛行時間: number; // 飛行時間（分）
-  推奨最大運航数: number; // 推奨最大運航数
-  "収益(円)": number; // 収益(円)
-  "価格(円)": number; // 価格(円)
-  "需要(名)": number; // 需要(名)
-  運航規模: string; // 運航規模
-  座席数: number; // 座席数
-  "運航可能な最小収益(円)": number; // 運航可能な最小収益(円)
-  必要機長数: number; // 必要機長数
-  必要副操縦士数: number; // 必要副操縦士数
-  その他必要人員指数: number; // その他必要人員指数
-  飛行前必要時間: number; // 飛行前必要時間（分）
-  飛行後必要時間: number; // 飛行後必要時間（分）
-  優先順位指数: number; // 優先順位指数
-}
-
-// 往路データ（優先度降順ソート済み）
-export type OutboundFlights = FlightData[];
-
-// International復路データ構造（出発国家別 > 出発空港別でグループ化）
-export type InternationalInboundFlights = {
+// Outbound : 往路, Inbound : 復路
+export type OutboundFlightCandidates = FlightCandidateData[];
+export type InternationalInboundFlightCandidates = {
   [departureCountry: string]: {
-    [departureAirport: string]: FlightData[];
+    [departureAirport: string]: FlightCandidateData[];
   };
 };
-
-// Domestic復路データ
-export type DomesticInboundFlights = FlightData[];
-
-// ロードされた全体データ
-export interface LoadedFlightData {
-  outbound: OutboundFlights; // 往路（international + domestic、優先度降順ソート済み）
-  internationalInbound: InternationalInboundFlights; // International復路（出発国家別 > 出発空港別でグループ化、各グループ内で優先度降順ソート済み）
-  domesticInbound: DomesticInboundFlights; // Domestic復路（優先度降順ソート済み）
+export type DomesticInboundFlightCandidates = FlightCandidateData[];
+export interface LoadedFlightCandidateData {
+  outbound: OutboundFlightCandidates;
+  internationalInbound: InternationalInboundFlightCandidates;
+  domesticInbound: DomesticInboundFlightCandidates;
 }
 
-/**
- * CSVファイルをロードしてパースする関数
- * @param filePath CSVファイルパス
- * @returns パースされたデータ配列
- */
-async function loadCSVData(filePath: string): Promise<FlightData[]> {
+async function loadCSVData(filePath: string): Promise<FlightCandidateData[]> {
   try {
     const fileContent = await fs.promises.readFile(filePath, "utf-8");
     const records = parse(fileContent, {
@@ -59,9 +25,9 @@ async function loadCSVData(filePath: string): Promise<FlightData[]> {
       trim: true,
     });
 
-    // データタイプ変換（文字列を数字に）
     return records.map((record: any) => ({
       ...record,
+      日付: Number(record.日付.replace("日", "")),
       飛行時間: Number(record.飛行時間),
       優先順位指数: Number(record.優先順位指数),
       飛行前必要時間: Number(record.飛行前必要時間),
