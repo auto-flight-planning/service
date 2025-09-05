@@ -4,11 +4,11 @@ import {
   BasicModalFooter,
   ModalTab,
   NumberedModalHeader,
-} from "@/client/components/modal";
+} from "@/components/modal";
 import { FlightScaleExplain, FlightScaleForm } from ".";
 import useFlightScaleResource from "./useFlightScaleResource";
 import { FormProvider } from "react-hook-form";
-import { Spinner } from "@/client/components/spinner";
+import { Spinner } from "@/components/spinner";
 
 export default function FlightScaleModal({
   planId = "",

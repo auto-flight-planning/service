@@ -6,7 +6,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useToastStore } from "@/client/stores";
-import { queryClient } from "@/client/providers/reactQueryProvider";
+import { queryClient } from "@/app/(web)/_providers/reactQueryProvider";
 import { useEffect } from "react";
 
 export default function useTotalPersonResource(planId: string) {

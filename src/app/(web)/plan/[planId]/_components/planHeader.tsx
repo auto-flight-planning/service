@@ -1,6 +1,6 @@
 "use client";
 
-import { Spinner } from "@/client/components/spinner";
+import { Spinner } from "@/components/spinner";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
 import { usePathname } from "next/navigation";
 

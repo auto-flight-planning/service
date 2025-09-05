@@ -3,7 +3,7 @@
 import NotificationHeader from "./notificationHeader";
 import NotificationRow from "./notificationRow";
 import useNotification from "./useNotification";
-import { Spinner } from "@/client/components/spinner";
+import { Spinner } from "@/components/spinner";
 import { plan_notification } from "@/server/db/prisma/index.d";
 
 export default function Notification() {

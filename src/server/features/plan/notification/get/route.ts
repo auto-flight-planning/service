@@ -1,6 +1,6 @@
 import { plan_notification } from "@/server/db/prisma/index.d";
 import { NextRequest, NextResponse } from "next/server";
-import { withErrorHandler, checkRequestBody } from "@/server/utils";
+import { withErrorHandler, checkRequestBody } from "@/server/lib";
 import { getNotificationReqSchema } from "./schema";
 import { prismaClient } from "@/server/db/prismaClient";
 

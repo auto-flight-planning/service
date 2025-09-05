@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
-import { BackButton } from "@/client/components/button";
+import { BackButton } from "@/components/button";
 
 interface BreadcrumbProps {
   planId: string;

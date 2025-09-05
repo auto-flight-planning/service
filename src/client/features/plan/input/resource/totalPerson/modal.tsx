@@ -6,8 +6,8 @@ import {
   NumberedModalHeader,
   BasicModalFooter,
   ModalTab,
-} from "@/client/components/modal";
-import { Spinner } from "@/client/components/spinner";
+} from "@/components/modal";
+import { Spinner } from "@/components/spinner";
 import { useTotalPersonResource, TotalPersonForm, TotalPersonExplain } from ".";
 import { InputModalProps } from "../../types";
 

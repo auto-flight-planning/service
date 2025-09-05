@@ -1,5 +1,5 @@
-import { SquareButton } from "@/client/components/button";
-import { PointCard } from "@/client/components/card";
+import { SquareButton } from "@/components/button";
+import { PointCard } from "@/components/card";
 import DataCategoriesSection from "./_components/dataCategoriesSection";
 import SubmitButton from "./_components/submitButton";
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prismaClient } from "@/server/db/prismaClient";
-import { withErrorHandler } from "@/server/utils";
+import { withErrorHandler } from "@/server/lib";
 import { searchEmployeeResSchema } from "./schema";
 
 export const GET = withErrorHandler(async (req: NextRequest) => {

@@ -4,7 +4,7 @@ import { useUserStore, useToastStore, useModalStore } from "@/client/stores";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginFormDataType } from "./schema";
 import { useMutation } from "@tanstack/react-query";
-import createBrowserClient from "@/server/supabase/browserClient";
+import createBrowserClient from "@/supabase/browserClient";
 
 export default function useLogin() {
   const formMethods = useForm<LoginFormDataType>({

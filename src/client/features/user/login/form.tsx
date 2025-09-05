@@ -1,6 +1,6 @@
 import { useLogin } from ".";
-import { TextField, SecretTextField } from "@/client/components/form";
-import { SquareButton } from "@/client/components/button";
+import { TextField, SecretTextField } from "@/components/form";
+import { SquareButton } from "@/components/button";
 import { FormProvider } from "react-hook-form";
 
 export default function LoginForm() {

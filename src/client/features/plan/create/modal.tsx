@@ -1,6 +1,6 @@
 import { FormProvider } from "react-hook-form";
 import { useModalStore } from "@/client/stores";
-import { BasicModalHeader, BasicModalFooter } from "@/client/components/modal";
+import { BasicModalHeader, BasicModalFooter } from "@/components/modal";
 import { CreatePlanForm, useCreatePlan } from ".";
 
 export default function CreatePlanModal() {

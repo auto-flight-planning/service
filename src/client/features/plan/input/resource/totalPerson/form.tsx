@@ -1,4 +1,4 @@
-import { NumberField } from "@/client/components/form";
+import { NumberField } from "@/components/form";
 import useTotalPersonResource from "./useTotalPersonResource";
 
 interface TotalPersonFormProps {

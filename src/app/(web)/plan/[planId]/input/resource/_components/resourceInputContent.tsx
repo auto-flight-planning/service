@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { BackButton, SquareButton } from "@/client/components/button";
-import { PointCard } from "@/client/components/card";
+import { BackButton, SquareButton } from "@/components/button";
+import { PointCard } from "@/components/card";
 import DataInputCard from "../../_components/dataInputCard";
 import { useModalStore } from "@/client/stores";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
-import { Spinner } from "@/client/components/spinner";
+import { Spinner } from "@/components/spinner";
 
 interface ResourceInputContentProps {
   planId: string;

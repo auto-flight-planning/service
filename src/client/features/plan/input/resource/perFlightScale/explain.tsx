@@ -1,4 +1,4 @@
-import { PointCard } from "@/client/components/card";
+import { PointCard } from "@/components/card";
 
 export default function PerFlightScaleExplain() {
   return (

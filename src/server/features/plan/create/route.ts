@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { withErrorHandler, checkRequestBody } from "@/server/utils";
+import { withErrorHandler, checkRequestBody } from "@/server/lib";
 import { createPlanReqSchema, createPlanResSchema } from "./schema";
 import { prismaClient } from "@/server/db/prismaClient";
 import { inputStatusInitDummy } from "@/client/inputStatusDummy";

@@ -1,6 +1,6 @@
 "use client";
 
-import { SquareButton } from "@/client/components/button";
+import { SquareButton } from "@/components/button";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
 import { useRouter } from "next/navigation";
 

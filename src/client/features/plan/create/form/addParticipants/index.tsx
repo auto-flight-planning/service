@@ -1,7 +1,7 @@
 import { useState, useDeferredValue } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
-import { TextField } from "@/client/components/input";
-import { Chip } from "@/client/components/chip";
+import { TextField } from "@/components/input";
+import { Chip } from "@/components/chip";
 import useSearchEmployee, { EmployeeResult } from "./useSearchEmployee";
 import EmployeeSearchResults from "./employeeSearchResults";
 

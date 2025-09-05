@@ -1,5 +1,5 @@
 import { useModalStore } from "@/client/stores";
-import { BasicModalHeader } from "@/client/components/modal";
+import { BasicModalHeader } from "@/components/modal";
 import { LoginForm } from ".";
 
 export default function LoginModal() {

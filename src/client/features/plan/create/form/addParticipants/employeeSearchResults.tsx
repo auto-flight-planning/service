@@ -1,5 +1,5 @@
 import { EmployeeResult } from "./useSearchEmployee";
-import { Spinner } from "@/client/components/spinner";
+import { Spinner } from "@/components/spinner";
 
 interface EmployeeSearchResultsProps {
   employees: EmployeeResult[];

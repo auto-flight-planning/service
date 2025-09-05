@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prismaClient } from "@/server/db/prismaClient";
-import { checkRequestBody, withErrorHandler } from "@/server/utils";
+import { checkRequestBody, withErrorHandler } from "@/server/lib";
 import {
   updateFlightScaleResourceInputReqSchema,
   updateTotalPersonResourceInputReqSchema,

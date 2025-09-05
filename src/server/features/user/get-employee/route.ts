@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prismaClient } from "@/server/db/prismaClient";
-import { withErrorHandler, checkRequestBody } from "@/server/utils";
+import { withErrorHandler, checkRequestBody } from "@/server/lib";
 import { getEmployeeReqSchema, getEmployeeResSchema } from "./schema";
 
 export const POST = withErrorHandler(async (req: NextRequest) => {

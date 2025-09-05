@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useModalStore } from "@/client/stores";
-import { WhiteCard } from "@/client/components/card";
+import { WhiteCard } from "@/components/card";
 import Notification from "@/client/features/plan/notification";
 
 export default function Home() {
