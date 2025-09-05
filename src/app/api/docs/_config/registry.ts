@@ -8,9 +8,9 @@ extendZodWithOpenApi(z);
 
 // import { resourceRequestSchema, resourceResponseSchema } from '../schemas/createResource';
 
-import { registerLoginSchemas } from "@/server/features/user/check-employee/openapi";
-import { registerGetEmployeeSchemas } from "@/server/features/user/get-employee/openapi";
-import { registerSearchEmployeeSchemas } from "@/server/features/user/search-employee/openapi";
+import { registerLoginSchemas } from "@/features/employee/check-employee/openapi";
+import { registerGetEmployeeSchemas } from "@/features/employee/get-employee/openapi";
+import { registerSearchEmployeeSchemas } from "@/features/employee/search-employee/openapi";
 import { registerCreatePlanSchemas } from "@/server/features/plan/create/openapi";
 import { registerGetNotificationSchemas } from "@/server/features/plan/notification/get/openapi";
 import { registerGetPlanOneSchemas } from "@/server/features/plan/get/one/openapi";

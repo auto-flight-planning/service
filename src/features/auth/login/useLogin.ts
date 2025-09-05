@@ -1,10 +1,11 @@
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { useUserStore, useToastStore, useModalStore } from "@/client/stores";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, type LoginFormDataType } from "./schema";
 import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import createBrowserClient from "@/supabase/browserClient";
+import { useToastStore } from "@/features/toast";
+import { useModalStore } from "@/features/modal";
+import { LoginFormDataType, loginSchema, useUserStore } from "..";
 
 export default function useLogin() {
   const formMethods = useForm<LoginFormDataType>({
