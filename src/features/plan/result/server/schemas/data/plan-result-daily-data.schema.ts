@@ -8,12 +8,12 @@ import {
   flightIdSchema,
   departureTimeSchema,
   revenueSchema,
-} from "./common/common.schema";
-import { airportPointSchema } from "./common/airport.schema";
+} from "../common/common.schema";
+import { airportPointSchema } from "../common/airport.schema";
 import {
   prioritySchema,
   priorityNormChartDataSchema,
-} from "./common/priority.schema";
+} from "../common/priority.schema";
 
 extendZodWithOpenApi(z);
 

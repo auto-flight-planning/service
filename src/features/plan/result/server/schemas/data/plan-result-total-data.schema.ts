@@ -5,8 +5,8 @@ import {
   daySchema,
   totalFlightCntSchema,
   totalRevenueSchema,
-} from "./common/common.schema";
-import { priorityNormChartDataSchema } from "./common/priority.schema";
+} from "../common/common.schema";
+import { priorityNormChartDataSchema } from "../common/priority.schema";
 
 extendZodWithOpenApi(z);
 
