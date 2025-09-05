@@ -358,6 +358,38 @@ exports.Prisma.Plan_resource_inputScalarFieldEnum = {
   per_flight_scale_data: 'per_flight_scale_data'
 };
 
+exports.Prisma.Oauth_clientsScalarFieldEnum = {
+  id: 'id',
+  client_id: 'client_id',
+  client_secret_hash: 'client_secret_hash',
+  registration_type: 'registration_type',
+  redirect_uris: 'redirect_uris',
+  grant_types: 'grant_types',
+  client_name: 'client_name',
+  client_uri: 'client_uri',
+  logo_uri: 'logo_uri',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
+  deleted_at: 'deleted_at'
+};
+
+exports.Prisma.Plan_results_daily_dataScalarFieldEnum = {
+  plan_id: 'plan_id',
+  day: 'day',
+  data: 'data'
+};
+
+exports.Prisma.Plan_results_flights_dataScalarFieldEnum = {
+  id: 'id',
+  plan_id: 'plan_id',
+  data: 'data'
+};
+
+exports.Prisma.Plan_results_total_dataScalarFieldEnum = {
+  plan_id: 'plan_id',
+  data: 'data'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -418,6 +450,11 @@ exports.aal_level = exports.$Enums.aal_level = {
   aal3: 'aal3'
 };
 
+exports.oauth_registration_type = exports.$Enums.oauth_registration_type = {
+  dynamic: 'dynamic',
+  manual: 'manual'
+};
+
 exports.Prisma.ModelName = {
   audit_log_entries: 'audit_log_entries',
   flow_state: 'flow_state',
@@ -439,7 +476,11 @@ exports.Prisma.ModelName = {
   plan_list: 'plan_list',
   plan_notification: 'plan_notification',
   plan_status: 'plan_status',
-  plan_resource_input: 'plan_resource_input'
+  plan_resource_input: 'plan_resource_input',
+  oauth_clients: 'oauth_clients',
+  plan_results_daily_data: 'plan_results_daily_data',
+  plan_results_flights_data: 'plan_results_flights_data',
+  plan_results_total_data: 'plan_results_total_data'
 };
 
 /**

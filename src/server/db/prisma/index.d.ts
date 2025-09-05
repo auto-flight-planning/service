@@ -142,6 +142,26 @@ export type plan_status = $Result.DefaultSelection<Prisma.$plan_statusPayload>
  * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
  */
 export type plan_resource_input = $Result.DefaultSelection<Prisma.$plan_resource_inputPayload>
+/**
+ * Model oauth_clients
+ * This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+ */
+export type oauth_clients = $Result.DefaultSelection<Prisma.$oauth_clientsPayload>
+/**
+ * Model plan_results_daily_data
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_results_daily_data = $Result.DefaultSelection<Prisma.$plan_results_daily_dataPayload>
+/**
+ * Model plan_results_flights_data
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_results_flights_data = $Result.DefaultSelection<Prisma.$plan_results_flights_dataPayload>
+/**
+ * Model plan_results_total_data
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_results_total_data = $Result.DefaultSelection<Prisma.$plan_results_total_dataPayload>
 
 /**
  * Enums
@@ -192,6 +212,14 @@ export const one_time_token_type: {
 
 export type one_time_token_type = (typeof one_time_token_type)[keyof typeof one_time_token_type]
 
+
+export const oauth_registration_type: {
+  dynamic: 'dynamic',
+  manual: 'manual'
+};
+
+export type oauth_registration_type = (typeof oauth_registration_type)[keyof typeof oauth_registration_type]
+
 }
 
 export type aal_level = $Enums.aal_level
@@ -213,6 +241,10 @@ export const factor_type: typeof $Enums.factor_type
 export type one_time_token_type = $Enums.one_time_token_type
 
 export const one_time_token_type: typeof $Enums.one_time_token_type
+
+export type oauth_registration_type = $Enums.oauth_registration_type
+
+export const oauth_registration_type: typeof $Enums.oauth_registration_type
 
 /**
  * ##  Prisma Client ʲˢ
@@ -541,6 +573,46 @@ export class PrismaClient<
     * ```
     */
   get plan_resource_input(): Prisma.plan_resource_inputDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.oauth_clients`: Exposes CRUD operations for the **oauth_clients** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Oauth_clients
+    * const oauth_clients = await prisma.oauth_clients.findMany()
+    * ```
+    */
+  get oauth_clients(): Prisma.oauth_clientsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_results_daily_data`: Exposes CRUD operations for the **plan_results_daily_data** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_results_daily_data
+    * const plan_results_daily_data = await prisma.plan_results_daily_data.findMany()
+    * ```
+    */
+  get plan_results_daily_data(): Prisma.plan_results_daily_dataDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_results_flights_data`: Exposes CRUD operations for the **plan_results_flights_data** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_results_flights_data
+    * const plan_results_flights_data = await prisma.plan_results_flights_data.findMany()
+    * ```
+    */
+  get plan_results_flights_data(): Prisma.plan_results_flights_dataDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_results_total_data`: Exposes CRUD operations for the **plan_results_total_data** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_results_total_data
+    * const plan_results_total_data = await prisma.plan_results_total_data.findMany()
+    * ```
+    */
+  get plan_results_total_data(): Prisma.plan_results_total_dataDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -1001,7 +1073,11 @@ export namespace Prisma {
     plan_list: 'plan_list',
     plan_notification: 'plan_notification',
     plan_status: 'plan_status',
-    plan_resource_input: 'plan_resource_input'
+    plan_resource_input: 'plan_resource_input',
+    oauth_clients: 'oauth_clients',
+    plan_results_daily_data: 'plan_results_daily_data',
+    plan_results_flights_data: 'plan_results_flights_data',
+    plan_results_total_data: 'plan_results_total_data'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1020,7 +1096,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list" | "plan_notification" | "plan_status" | "plan_resource_input"
+      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list" | "plan_notification" | "plan_status" | "plan_resource_input" | "oauth_clients" | "plan_results_daily_data" | "plan_results_flights_data" | "plan_results_total_data"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2578,6 +2654,302 @@ export namespace Prisma {
           }
         }
       }
+      oauth_clients: {
+        payload: Prisma.$oauth_clientsPayload<ExtArgs>
+        fields: Prisma.oauth_clientsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.oauth_clientsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.oauth_clientsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>
+          }
+          findFirst: {
+            args: Prisma.oauth_clientsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.oauth_clientsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>
+          }
+          findMany: {
+            args: Prisma.oauth_clientsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>[]
+          }
+          create: {
+            args: Prisma.oauth_clientsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>
+          }
+          createMany: {
+            args: Prisma.oauth_clientsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.oauth_clientsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>[]
+          }
+          delete: {
+            args: Prisma.oauth_clientsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>
+          }
+          update: {
+            args: Prisma.oauth_clientsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>
+          }
+          deleteMany: {
+            args: Prisma.oauth_clientsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.oauth_clientsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.oauth_clientsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>[]
+          }
+          upsert: {
+            args: Prisma.oauth_clientsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$oauth_clientsPayload>
+          }
+          aggregate: {
+            args: Prisma.Oauth_clientsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateOauth_clients>
+          }
+          groupBy: {
+            args: Prisma.oauth_clientsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Oauth_clientsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.oauth_clientsCountArgs<ExtArgs>
+            result: $Utils.Optional<Oauth_clientsCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_results_daily_data: {
+        payload: Prisma.$plan_results_daily_dataPayload<ExtArgs>
+        fields: Prisma.plan_results_daily_dataFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_results_daily_dataFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_results_daily_dataFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_results_daily_dataFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_results_daily_dataFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>
+          }
+          findMany: {
+            args: Prisma.plan_results_daily_dataFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>[]
+          }
+          create: {
+            args: Prisma.plan_results_daily_dataCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>
+          }
+          createMany: {
+            args: Prisma.plan_results_daily_dataCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_results_daily_dataCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_results_daily_dataDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>
+          }
+          update: {
+            args: Prisma.plan_results_daily_dataUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_results_daily_dataDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_results_daily_dataUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_results_daily_dataUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_results_daily_dataUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_daily_dataPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_results_daily_dataAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_results_daily_data>
+          }
+          groupBy: {
+            args: Prisma.plan_results_daily_dataGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_results_daily_dataGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_results_daily_dataCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_results_daily_dataCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_results_flights_data: {
+        payload: Prisma.$plan_results_flights_dataPayload<ExtArgs>
+        fields: Prisma.plan_results_flights_dataFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_results_flights_dataFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_results_flights_dataFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_results_flights_dataFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_results_flights_dataFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>
+          }
+          findMany: {
+            args: Prisma.plan_results_flights_dataFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>[]
+          }
+          create: {
+            args: Prisma.plan_results_flights_dataCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>
+          }
+          createMany: {
+            args: Prisma.plan_results_flights_dataCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_results_flights_dataCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_results_flights_dataDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>
+          }
+          update: {
+            args: Prisma.plan_results_flights_dataUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_results_flights_dataDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_results_flights_dataUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_results_flights_dataUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_results_flights_dataUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_flights_dataPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_results_flights_dataAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_results_flights_data>
+          }
+          groupBy: {
+            args: Prisma.plan_results_flights_dataGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_results_flights_dataGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_results_flights_dataCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_results_flights_dataCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_results_total_data: {
+        payload: Prisma.$plan_results_total_dataPayload<ExtArgs>
+        fields: Prisma.plan_results_total_dataFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_results_total_dataFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_results_total_dataFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_results_total_dataFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_results_total_dataFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>
+          }
+          findMany: {
+            args: Prisma.plan_results_total_dataFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>[]
+          }
+          create: {
+            args: Prisma.plan_results_total_dataCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>
+          }
+          createMany: {
+            args: Prisma.plan_results_total_dataCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_results_total_dataCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_results_total_dataDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>
+          }
+          update: {
+            args: Prisma.plan_results_total_dataUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_results_total_dataDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_results_total_dataUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_results_total_dataUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_results_total_dataUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_results_total_dataPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_results_total_dataAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_results_total_data>
+          }
+          groupBy: {
+            args: Prisma.plan_results_total_dataGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_results_total_dataGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_results_total_dataCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_results_total_dataCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2691,6 +3063,10 @@ export namespace Prisma {
     plan_notification?: plan_notificationOmit
     plan_status?: plan_statusOmit
     plan_resource_input?: plan_resource_inputOmit
+    oauth_clients?: oauth_clientsOmit
+    plan_results_daily_data?: plan_results_daily_dataOmit
+    plan_results_flights_data?: plan_results_flights_dataOmit
+    plan_results_total_data?: plan_results_total_dataOmit
   }
 
   /* Types for Logging */
@@ -2981,10 +3357,12 @@ export namespace Prisma {
 
   export type Plan_listCountOutputType = {
     plan_notification: number
+    plan_results_flights_data: number
   }
 
   export type Plan_listCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plan_notification?: boolean | Plan_listCountOutputTypeCountPlan_notificationArgs
+    plan_results_flights_data?: boolean | Plan_listCountOutputTypeCountPlan_results_flights_dataArgs
   }
 
   // Custom InputTypes
@@ -3003,6 +3381,13 @@ export namespace Prisma {
    */
   export type Plan_listCountOutputTypeCountPlan_notificationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: plan_notificationWhereInput
+  }
+
+  /**
+   * Plan_listCountOutputType without action
+   */
+  export type Plan_listCountOutputTypeCountPlan_results_flights_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_results_flights_dataWhereInput
   }
 
 
@@ -22241,6 +22626,9 @@ export namespace Prisma {
     created_at?: boolean
     plan_notification?: boolean | plan_list$plan_notificationArgs<ExtArgs>
     plan_resource_input?: boolean | plan_list$plan_resource_inputArgs<ExtArgs>
+    plan_results_daily_data?: boolean | plan_list$plan_results_daily_dataArgs<ExtArgs>
+    plan_results_flights_data?: boolean | plan_list$plan_results_flights_dataArgs<ExtArgs>
+    plan_results_total_data?: boolean | plan_list$plan_results_total_dataArgs<ExtArgs>
     plan_status?: boolean | plan_list$plan_statusArgs<ExtArgs>
     _count?: boolean | Plan_listCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_list"]>
@@ -22279,6 +22667,9 @@ export namespace Prisma {
   export type plan_listInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plan_notification?: boolean | plan_list$plan_notificationArgs<ExtArgs>
     plan_resource_input?: boolean | plan_list$plan_resource_inputArgs<ExtArgs>
+    plan_results_daily_data?: boolean | plan_list$plan_results_daily_dataArgs<ExtArgs>
+    plan_results_flights_data?: boolean | plan_list$plan_results_flights_dataArgs<ExtArgs>
+    plan_results_total_data?: boolean | plan_list$plan_results_total_dataArgs<ExtArgs>
     plan_status?: boolean | plan_list$plan_statusArgs<ExtArgs>
     _count?: boolean | Plan_listCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -22290,6 +22681,9 @@ export namespace Prisma {
     objects: {
       plan_notification: Prisma.$plan_notificationPayload<ExtArgs>[]
       plan_resource_input: Prisma.$plan_resource_inputPayload<ExtArgs> | null
+      plan_results_daily_data: Prisma.$plan_results_daily_dataPayload<ExtArgs> | null
+      plan_results_flights_data: Prisma.$plan_results_flights_dataPayload<ExtArgs>[]
+      plan_results_total_data: Prisma.$plan_results_total_dataPayload<ExtArgs> | null
       plan_status: Prisma.$plan_statusPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -22696,6 +23090,9 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     plan_notification<T extends plan_list$plan_notificationArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_notificationArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_notificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     plan_resource_input<T extends plan_list$plan_resource_inputArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_resource_inputArgs<ExtArgs>>): Prisma__plan_resource_inputClient<$Result.GetResult<Prisma.$plan_resource_inputPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    plan_results_daily_data<T extends plan_list$plan_results_daily_dataArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_results_daily_dataArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    plan_results_flights_data<T extends plan_list$plan_results_flights_dataArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_results_flights_dataArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    plan_results_total_data<T extends plan_list$plan_results_total_dataArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_results_total_dataArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     plan_status<T extends plan_list$plan_statusArgs<ExtArgs> = {}>(args?: Subset<T, plan_list$plan_statusArgs<ExtArgs>>): Prisma__plan_statusClient<$Result.GetResult<Prisma.$plan_statusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -23161,6 +23558,68 @@ export namespace Prisma {
      */
     include?: plan_resource_inputInclude<ExtArgs> | null
     where?: plan_resource_inputWhereInput
+  }
+
+  /**
+   * plan_list.plan_results_daily_data
+   */
+  export type plan_list$plan_results_daily_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    where?: plan_results_daily_dataWhereInput
+  }
+
+  /**
+   * plan_list.plan_results_flights_data
+   */
+  export type plan_list$plan_results_flights_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    where?: plan_results_flights_dataWhereInput
+    orderBy?: plan_results_flights_dataOrderByWithRelationInput | plan_results_flights_dataOrderByWithRelationInput[]
+    cursor?: plan_results_flights_dataWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_results_flights_dataScalarFieldEnum | Plan_results_flights_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_list.plan_results_total_data
+   */
+  export type plan_list$plan_results_total_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    where?: plan_results_total_dataWhereInput
   }
 
   /**
@@ -26445,6 +26904,4197 @@ export namespace Prisma {
 
 
   /**
+   * Model oauth_clients
+   */
+
+  export type AggregateOauth_clients = {
+    _count: Oauth_clientsCountAggregateOutputType | null
+    _min: Oauth_clientsMinAggregateOutputType | null
+    _max: Oauth_clientsMaxAggregateOutputType | null
+  }
+
+  export type Oauth_clientsMinAggregateOutputType = {
+    id: string | null
+    client_id: string | null
+    client_secret_hash: string | null
+    registration_type: $Enums.oauth_registration_type | null
+    redirect_uris: string | null
+    grant_types: string | null
+    client_name: string | null
+    client_uri: string | null
+    logo_uri: string | null
+    created_at: Date | null
+    updated_at: Date | null
+    deleted_at: Date | null
+  }
+
+  export type Oauth_clientsMaxAggregateOutputType = {
+    id: string | null
+    client_id: string | null
+    client_secret_hash: string | null
+    registration_type: $Enums.oauth_registration_type | null
+    redirect_uris: string | null
+    grant_types: string | null
+    client_name: string | null
+    client_uri: string | null
+    logo_uri: string | null
+    created_at: Date | null
+    updated_at: Date | null
+    deleted_at: Date | null
+  }
+
+  export type Oauth_clientsCountAggregateOutputType = {
+    id: number
+    client_id: number
+    client_secret_hash: number
+    registration_type: number
+    redirect_uris: number
+    grant_types: number
+    client_name: number
+    client_uri: number
+    logo_uri: number
+    created_at: number
+    updated_at: number
+    deleted_at: number
+    _all: number
+  }
+
+
+  export type Oauth_clientsMinAggregateInputType = {
+    id?: true
+    client_id?: true
+    client_secret_hash?: true
+    registration_type?: true
+    redirect_uris?: true
+    grant_types?: true
+    client_name?: true
+    client_uri?: true
+    logo_uri?: true
+    created_at?: true
+    updated_at?: true
+    deleted_at?: true
+  }
+
+  export type Oauth_clientsMaxAggregateInputType = {
+    id?: true
+    client_id?: true
+    client_secret_hash?: true
+    registration_type?: true
+    redirect_uris?: true
+    grant_types?: true
+    client_name?: true
+    client_uri?: true
+    logo_uri?: true
+    created_at?: true
+    updated_at?: true
+    deleted_at?: true
+  }
+
+  export type Oauth_clientsCountAggregateInputType = {
+    id?: true
+    client_id?: true
+    client_secret_hash?: true
+    registration_type?: true
+    redirect_uris?: true
+    grant_types?: true
+    client_name?: true
+    client_uri?: true
+    logo_uri?: true
+    created_at?: true
+    updated_at?: true
+    deleted_at?: true
+    _all?: true
+  }
+
+  export type Oauth_clientsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which oauth_clients to aggregate.
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of oauth_clients to fetch.
+     */
+    orderBy?: oauth_clientsOrderByWithRelationInput | oauth_clientsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: oauth_clientsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` oauth_clients from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` oauth_clients.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned oauth_clients
+    **/
+    _count?: true | Oauth_clientsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Oauth_clientsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Oauth_clientsMaxAggregateInputType
+  }
+
+  export type GetOauth_clientsAggregateType<T extends Oauth_clientsAggregateArgs> = {
+        [P in keyof T & keyof AggregateOauth_clients]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateOauth_clients[P]>
+      : GetScalarType<T[P], AggregateOauth_clients[P]>
+  }
+
+
+
+
+  export type oauth_clientsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: oauth_clientsWhereInput
+    orderBy?: oauth_clientsOrderByWithAggregationInput | oauth_clientsOrderByWithAggregationInput[]
+    by: Oauth_clientsScalarFieldEnum[] | Oauth_clientsScalarFieldEnum
+    having?: oauth_clientsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Oauth_clientsCountAggregateInputType | true
+    _min?: Oauth_clientsMinAggregateInputType
+    _max?: Oauth_clientsMaxAggregateInputType
+  }
+
+  export type Oauth_clientsGroupByOutputType = {
+    id: string
+    client_id: string
+    client_secret_hash: string
+    registration_type: $Enums.oauth_registration_type
+    redirect_uris: string
+    grant_types: string
+    client_name: string | null
+    client_uri: string | null
+    logo_uri: string | null
+    created_at: Date
+    updated_at: Date
+    deleted_at: Date | null
+    _count: Oauth_clientsCountAggregateOutputType | null
+    _min: Oauth_clientsMinAggregateOutputType | null
+    _max: Oauth_clientsMaxAggregateOutputType | null
+  }
+
+  type GetOauth_clientsGroupByPayload<T extends oauth_clientsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Oauth_clientsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Oauth_clientsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Oauth_clientsGroupByOutputType[P]>
+            : GetScalarType<T[P], Oauth_clientsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type oauth_clientsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    client_id?: boolean
+    client_secret_hash?: boolean
+    registration_type?: boolean
+    redirect_uris?: boolean
+    grant_types?: boolean
+    client_name?: boolean
+    client_uri?: boolean
+    logo_uri?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    deleted_at?: boolean
+  }, ExtArgs["result"]["oauth_clients"]>
+
+  export type oauth_clientsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    client_id?: boolean
+    client_secret_hash?: boolean
+    registration_type?: boolean
+    redirect_uris?: boolean
+    grant_types?: boolean
+    client_name?: boolean
+    client_uri?: boolean
+    logo_uri?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    deleted_at?: boolean
+  }, ExtArgs["result"]["oauth_clients"]>
+
+  export type oauth_clientsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    client_id?: boolean
+    client_secret_hash?: boolean
+    registration_type?: boolean
+    redirect_uris?: boolean
+    grant_types?: boolean
+    client_name?: boolean
+    client_uri?: boolean
+    logo_uri?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    deleted_at?: boolean
+  }, ExtArgs["result"]["oauth_clients"]>
+
+  export type oauth_clientsSelectScalar = {
+    id?: boolean
+    client_id?: boolean
+    client_secret_hash?: boolean
+    registration_type?: boolean
+    redirect_uris?: boolean
+    grant_types?: boolean
+    client_name?: boolean
+    client_uri?: boolean
+    logo_uri?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    deleted_at?: boolean
+  }
+
+  export type oauth_clientsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "client_id" | "client_secret_hash" | "registration_type" | "redirect_uris" | "grant_types" | "client_name" | "client_uri" | "logo_uri" | "created_at" | "updated_at" | "deleted_at", ExtArgs["result"]["oauth_clients"]>
+
+  export type $oauth_clientsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "oauth_clients"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      client_id: string
+      client_secret_hash: string
+      registration_type: $Enums.oauth_registration_type
+      redirect_uris: string
+      grant_types: string
+      client_name: string | null
+      client_uri: string | null
+      logo_uri: string | null
+      created_at: Date
+      updated_at: Date
+      deleted_at: Date | null
+    }, ExtArgs["result"]["oauth_clients"]>
+    composites: {}
+  }
+
+  type oauth_clientsGetPayload<S extends boolean | null | undefined | oauth_clientsDefaultArgs> = $Result.GetResult<Prisma.$oauth_clientsPayload, S>
+
+  type oauth_clientsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<oauth_clientsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Oauth_clientsCountAggregateInputType | true
+    }
+
+  export interface oauth_clientsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['oauth_clients'], meta: { name: 'oauth_clients' } }
+    /**
+     * Find zero or one Oauth_clients that matches the filter.
+     * @param {oauth_clientsFindUniqueArgs} args - Arguments to find a Oauth_clients
+     * @example
+     * // Get one Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends oauth_clientsFindUniqueArgs>(args: SelectSubset<T, oauth_clientsFindUniqueArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Oauth_clients that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {oauth_clientsFindUniqueOrThrowArgs} args - Arguments to find a Oauth_clients
+     * @example
+     * // Get one Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends oauth_clientsFindUniqueOrThrowArgs>(args: SelectSubset<T, oauth_clientsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Oauth_clients that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {oauth_clientsFindFirstArgs} args - Arguments to find a Oauth_clients
+     * @example
+     * // Get one Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends oauth_clientsFindFirstArgs>(args?: SelectSubset<T, oauth_clientsFindFirstArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Oauth_clients that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {oauth_clientsFindFirstOrThrowArgs} args - Arguments to find a Oauth_clients
+     * @example
+     * // Get one Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends oauth_clientsFindFirstOrThrowArgs>(args?: SelectSubset<T, oauth_clientsFindFirstOrThrowArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Oauth_clients that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {oauth_clientsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.findMany()
+     * 
+     * // Get first 10 Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const oauth_clientsWithIdOnly = await prisma.oauth_clients.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends oauth_clientsFindManyArgs>(args?: SelectSubset<T, oauth_clientsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Oauth_clients.
+     * @param {oauth_clientsCreateArgs} args - Arguments to create a Oauth_clients.
+     * @example
+     * // Create one Oauth_clients
+     * const Oauth_clients = await prisma.oauth_clients.create({
+     *   data: {
+     *     // ... data to create a Oauth_clients
+     *   }
+     * })
+     * 
+     */
+    create<T extends oauth_clientsCreateArgs>(args: SelectSubset<T, oauth_clientsCreateArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Oauth_clients.
+     * @param {oauth_clientsCreateManyArgs} args - Arguments to create many Oauth_clients.
+     * @example
+     * // Create many Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends oauth_clientsCreateManyArgs>(args?: SelectSubset<T, oauth_clientsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Oauth_clients and returns the data saved in the database.
+     * @param {oauth_clientsCreateManyAndReturnArgs} args - Arguments to create many Oauth_clients.
+     * @example
+     * // Create many Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Oauth_clients and only return the `id`
+     * const oauth_clientsWithIdOnly = await prisma.oauth_clients.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends oauth_clientsCreateManyAndReturnArgs>(args?: SelectSubset<T, oauth_clientsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Oauth_clients.
+     * @param {oauth_clientsDeleteArgs} args - Arguments to delete one Oauth_clients.
+     * @example
+     * // Delete one Oauth_clients
+     * const Oauth_clients = await prisma.oauth_clients.delete({
+     *   where: {
+     *     // ... filter to delete one Oauth_clients
+     *   }
+     * })
+     * 
+     */
+    delete<T extends oauth_clientsDeleteArgs>(args: SelectSubset<T, oauth_clientsDeleteArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Oauth_clients.
+     * @param {oauth_clientsUpdateArgs} args - Arguments to update one Oauth_clients.
+     * @example
+     * // Update one Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends oauth_clientsUpdateArgs>(args: SelectSubset<T, oauth_clientsUpdateArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Oauth_clients.
+     * @param {oauth_clientsDeleteManyArgs} args - Arguments to filter Oauth_clients to delete.
+     * @example
+     * // Delete a few Oauth_clients
+     * const { count } = await prisma.oauth_clients.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends oauth_clientsDeleteManyArgs>(args?: SelectSubset<T, oauth_clientsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Oauth_clients.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {oauth_clientsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends oauth_clientsUpdateManyArgs>(args: SelectSubset<T, oauth_clientsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Oauth_clients and returns the data updated in the database.
+     * @param {oauth_clientsUpdateManyAndReturnArgs} args - Arguments to update many Oauth_clients.
+     * @example
+     * // Update many Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Oauth_clients and only return the `id`
+     * const oauth_clientsWithIdOnly = await prisma.oauth_clients.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends oauth_clientsUpdateManyAndReturnArgs>(args: SelectSubset<T, oauth_clientsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Oauth_clients.
+     * @param {oauth_clientsUpsertArgs} args - Arguments to update or create a Oauth_clients.
+     * @example
+     * // Update or create a Oauth_clients
+     * const oauth_clients = await prisma.oauth_clients.upsert({
+     *   create: {
+     *     // ... data to create a Oauth_clients
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Oauth_clients we want to update
+     *   }
+     * })
+     */
+    upsert<T extends oauth_clientsUpsertArgs>(args: SelectSubset<T, oauth_clientsUpsertArgs<ExtArgs>>): Prisma__oauth_clientsClient<$Result.GetResult<Prisma.$oauth_clientsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Oauth_clients.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {oauth_clientsCountArgs} args - Arguments to filter Oauth_clients to count.
+     * @example
+     * // Count the number of Oauth_clients
+     * const count = await prisma.oauth_clients.count({
+     *   where: {
+     *     // ... the filter for the Oauth_clients we want to count
+     *   }
+     * })
+    **/
+    count<T extends oauth_clientsCountArgs>(
+      args?: Subset<T, oauth_clientsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Oauth_clientsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Oauth_clients.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Oauth_clientsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Oauth_clientsAggregateArgs>(args: Subset<T, Oauth_clientsAggregateArgs>): Prisma.PrismaPromise<GetOauth_clientsAggregateType<T>>
+
+    /**
+     * Group by Oauth_clients.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {oauth_clientsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends oauth_clientsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: oauth_clientsGroupByArgs['orderBy'] }
+        : { orderBy?: oauth_clientsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, oauth_clientsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOauth_clientsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the oauth_clients model
+   */
+  readonly fields: oauth_clientsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for oauth_clients.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__oauth_clientsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the oauth_clients model
+   */
+  interface oauth_clientsFieldRefs {
+    readonly id: FieldRef<"oauth_clients", 'String'>
+    readonly client_id: FieldRef<"oauth_clients", 'String'>
+    readonly client_secret_hash: FieldRef<"oauth_clients", 'String'>
+    readonly registration_type: FieldRef<"oauth_clients", 'oauth_registration_type'>
+    readonly redirect_uris: FieldRef<"oauth_clients", 'String'>
+    readonly grant_types: FieldRef<"oauth_clients", 'String'>
+    readonly client_name: FieldRef<"oauth_clients", 'String'>
+    readonly client_uri: FieldRef<"oauth_clients", 'String'>
+    readonly logo_uri: FieldRef<"oauth_clients", 'String'>
+    readonly created_at: FieldRef<"oauth_clients", 'DateTime'>
+    readonly updated_at: FieldRef<"oauth_clients", 'DateTime'>
+    readonly deleted_at: FieldRef<"oauth_clients", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * oauth_clients findUnique
+   */
+  export type oauth_clientsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * Filter, which oauth_clients to fetch.
+     */
+    where: oauth_clientsWhereUniqueInput
+  }
+
+  /**
+   * oauth_clients findUniqueOrThrow
+   */
+  export type oauth_clientsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * Filter, which oauth_clients to fetch.
+     */
+    where: oauth_clientsWhereUniqueInput
+  }
+
+  /**
+   * oauth_clients findFirst
+   */
+  export type oauth_clientsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * Filter, which oauth_clients to fetch.
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of oauth_clients to fetch.
+     */
+    orderBy?: oauth_clientsOrderByWithRelationInput | oauth_clientsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for oauth_clients.
+     */
+    cursor?: oauth_clientsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` oauth_clients from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` oauth_clients.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of oauth_clients.
+     */
+    distinct?: Oauth_clientsScalarFieldEnum | Oauth_clientsScalarFieldEnum[]
+  }
+
+  /**
+   * oauth_clients findFirstOrThrow
+   */
+  export type oauth_clientsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * Filter, which oauth_clients to fetch.
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of oauth_clients to fetch.
+     */
+    orderBy?: oauth_clientsOrderByWithRelationInput | oauth_clientsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for oauth_clients.
+     */
+    cursor?: oauth_clientsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` oauth_clients from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` oauth_clients.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of oauth_clients.
+     */
+    distinct?: Oauth_clientsScalarFieldEnum | Oauth_clientsScalarFieldEnum[]
+  }
+
+  /**
+   * oauth_clients findMany
+   */
+  export type oauth_clientsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * Filter, which oauth_clients to fetch.
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of oauth_clients to fetch.
+     */
+    orderBy?: oauth_clientsOrderByWithRelationInput | oauth_clientsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing oauth_clients.
+     */
+    cursor?: oauth_clientsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` oauth_clients from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` oauth_clients.
+     */
+    skip?: number
+    distinct?: Oauth_clientsScalarFieldEnum | Oauth_clientsScalarFieldEnum[]
+  }
+
+  /**
+   * oauth_clients create
+   */
+  export type oauth_clientsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * The data needed to create a oauth_clients.
+     */
+    data: XOR<oauth_clientsCreateInput, oauth_clientsUncheckedCreateInput>
+  }
+
+  /**
+   * oauth_clients createMany
+   */
+  export type oauth_clientsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many oauth_clients.
+     */
+    data: oauth_clientsCreateManyInput | oauth_clientsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * oauth_clients createManyAndReturn
+   */
+  export type oauth_clientsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * The data used to create many oauth_clients.
+     */
+    data: oauth_clientsCreateManyInput | oauth_clientsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * oauth_clients update
+   */
+  export type oauth_clientsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * The data needed to update a oauth_clients.
+     */
+    data: XOR<oauth_clientsUpdateInput, oauth_clientsUncheckedUpdateInput>
+    /**
+     * Choose, which oauth_clients to update.
+     */
+    where: oauth_clientsWhereUniqueInput
+  }
+
+  /**
+   * oauth_clients updateMany
+   */
+  export type oauth_clientsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update oauth_clients.
+     */
+    data: XOR<oauth_clientsUpdateManyMutationInput, oauth_clientsUncheckedUpdateManyInput>
+    /**
+     * Filter which oauth_clients to update
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * Limit how many oauth_clients to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * oauth_clients updateManyAndReturn
+   */
+  export type oauth_clientsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * The data used to update oauth_clients.
+     */
+    data: XOR<oauth_clientsUpdateManyMutationInput, oauth_clientsUncheckedUpdateManyInput>
+    /**
+     * Filter which oauth_clients to update
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * Limit how many oauth_clients to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * oauth_clients upsert
+   */
+  export type oauth_clientsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * The filter to search for the oauth_clients to update in case it exists.
+     */
+    where: oauth_clientsWhereUniqueInput
+    /**
+     * In case the oauth_clients found by the `where` argument doesn't exist, create a new oauth_clients with this data.
+     */
+    create: XOR<oauth_clientsCreateInput, oauth_clientsUncheckedCreateInput>
+    /**
+     * In case the oauth_clients was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<oauth_clientsUpdateInput, oauth_clientsUncheckedUpdateInput>
+  }
+
+  /**
+   * oauth_clients delete
+   */
+  export type oauth_clientsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+    /**
+     * Filter which oauth_clients to delete.
+     */
+    where: oauth_clientsWhereUniqueInput
+  }
+
+  /**
+   * oauth_clients deleteMany
+   */
+  export type oauth_clientsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which oauth_clients to delete
+     */
+    where?: oauth_clientsWhereInput
+    /**
+     * Limit how many oauth_clients to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * oauth_clients without action
+   */
+  export type oauth_clientsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the oauth_clients
+     */
+    select?: oauth_clientsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the oauth_clients
+     */
+    omit?: oauth_clientsOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_results_daily_data
+   */
+
+  export type AggregatePlan_results_daily_data = {
+    _count: Plan_results_daily_dataCountAggregateOutputType | null
+    _avg: Plan_results_daily_dataAvgAggregateOutputType | null
+    _sum: Plan_results_daily_dataSumAggregateOutputType | null
+    _min: Plan_results_daily_dataMinAggregateOutputType | null
+    _max: Plan_results_daily_dataMaxAggregateOutputType | null
+  }
+
+  export type Plan_results_daily_dataAvgAggregateOutputType = {
+    day: number | null
+  }
+
+  export type Plan_results_daily_dataSumAggregateOutputType = {
+    day: number | null
+  }
+
+  export type Plan_results_daily_dataMinAggregateOutputType = {
+    plan_id: string | null
+    day: number | null
+  }
+
+  export type Plan_results_daily_dataMaxAggregateOutputType = {
+    plan_id: string | null
+    day: number | null
+  }
+
+  export type Plan_results_daily_dataCountAggregateOutputType = {
+    plan_id: number
+    day: number
+    data: number
+    _all: number
+  }
+
+
+  export type Plan_results_daily_dataAvgAggregateInputType = {
+    day?: true
+  }
+
+  export type Plan_results_daily_dataSumAggregateInputType = {
+    day?: true
+  }
+
+  export type Plan_results_daily_dataMinAggregateInputType = {
+    plan_id?: true
+    day?: true
+  }
+
+  export type Plan_results_daily_dataMaxAggregateInputType = {
+    plan_id?: true
+    day?: true
+  }
+
+  export type Plan_results_daily_dataCountAggregateInputType = {
+    plan_id?: true
+    day?: true
+    data?: true
+    _all?: true
+  }
+
+  export type Plan_results_daily_dataAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_results_daily_data to aggregate.
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_daily_data to fetch.
+     */
+    orderBy?: plan_results_daily_dataOrderByWithRelationInput | plan_results_daily_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_results_daily_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_daily_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_daily_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_results_daily_data
+    **/
+    _count?: true | Plan_results_daily_dataCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Plan_results_daily_dataAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Plan_results_daily_dataSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_results_daily_dataMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_results_daily_dataMaxAggregateInputType
+  }
+
+  export type GetPlan_results_daily_dataAggregateType<T extends Plan_results_daily_dataAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_results_daily_data]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_results_daily_data[P]>
+      : GetScalarType<T[P], AggregatePlan_results_daily_data[P]>
+  }
+
+
+
+
+  export type plan_results_daily_dataGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_results_daily_dataWhereInput
+    orderBy?: plan_results_daily_dataOrderByWithAggregationInput | plan_results_daily_dataOrderByWithAggregationInput[]
+    by: Plan_results_daily_dataScalarFieldEnum[] | Plan_results_daily_dataScalarFieldEnum
+    having?: plan_results_daily_dataScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_results_daily_dataCountAggregateInputType | true
+    _avg?: Plan_results_daily_dataAvgAggregateInputType
+    _sum?: Plan_results_daily_dataSumAggregateInputType
+    _min?: Plan_results_daily_dataMinAggregateInputType
+    _max?: Plan_results_daily_dataMaxAggregateInputType
+  }
+
+  export type Plan_results_daily_dataGroupByOutputType = {
+    plan_id: string
+    day: number
+    data: JsonValue
+    _count: Plan_results_daily_dataCountAggregateOutputType | null
+    _avg: Plan_results_daily_dataAvgAggregateOutputType | null
+    _sum: Plan_results_daily_dataSumAggregateOutputType | null
+    _min: Plan_results_daily_dataMinAggregateOutputType | null
+    _max: Plan_results_daily_dataMaxAggregateOutputType | null
+  }
+
+  type GetPlan_results_daily_dataGroupByPayload<T extends plan_results_daily_dataGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_results_daily_dataGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_results_daily_dataGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_results_daily_dataGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_results_daily_dataGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_results_daily_dataSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    day?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_daily_data"]>
+
+  export type plan_results_daily_dataSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    day?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_daily_data"]>
+
+  export type plan_results_daily_dataSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    day?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_daily_data"]>
+
+  export type plan_results_daily_dataSelectScalar = {
+    plan_id?: boolean
+    day?: boolean
+    data?: boolean
+  }
+
+  export type plan_results_daily_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "day" | "data", ExtArgs["result"]["plan_results_daily_data"]>
+  export type plan_results_daily_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_results_daily_dataIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_results_daily_dataIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_results_daily_dataPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_results_daily_data"
+    objects: {
+      plan_list: Prisma.$plan_listPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      day: number
+      data: Prisma.JsonValue
+    }, ExtArgs["result"]["plan_results_daily_data"]>
+    composites: {}
+  }
+
+  type plan_results_daily_dataGetPayload<S extends boolean | null | undefined | plan_results_daily_dataDefaultArgs> = $Result.GetResult<Prisma.$plan_results_daily_dataPayload, S>
+
+  type plan_results_daily_dataCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_results_daily_dataFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_results_daily_dataCountAggregateInputType | true
+    }
+
+  export interface plan_results_daily_dataDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_results_daily_data'], meta: { name: 'plan_results_daily_data' } }
+    /**
+     * Find zero or one Plan_results_daily_data that matches the filter.
+     * @param {plan_results_daily_dataFindUniqueArgs} args - Arguments to find a Plan_results_daily_data
+     * @example
+     * // Get one Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_results_daily_dataFindUniqueArgs>(args: SelectSubset<T, plan_results_daily_dataFindUniqueArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_results_daily_data that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_results_daily_dataFindUniqueOrThrowArgs} args - Arguments to find a Plan_results_daily_data
+     * @example
+     * // Get one Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_results_daily_dataFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_results_daily_dataFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_results_daily_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_daily_dataFindFirstArgs} args - Arguments to find a Plan_results_daily_data
+     * @example
+     * // Get one Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_results_daily_dataFindFirstArgs>(args?: SelectSubset<T, plan_results_daily_dataFindFirstArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_results_daily_data that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_daily_dataFindFirstOrThrowArgs} args - Arguments to find a Plan_results_daily_data
+     * @example
+     * // Get one Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_results_daily_dataFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_results_daily_dataFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_results_daily_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_daily_dataFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.findMany()
+     * 
+     * // Get first 10 Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_results_daily_dataWithPlan_idOnly = await prisma.plan_results_daily_data.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_results_daily_dataFindManyArgs>(args?: SelectSubset<T, plan_results_daily_dataFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_results_daily_data.
+     * @param {plan_results_daily_dataCreateArgs} args - Arguments to create a Plan_results_daily_data.
+     * @example
+     * // Create one Plan_results_daily_data
+     * const Plan_results_daily_data = await prisma.plan_results_daily_data.create({
+     *   data: {
+     *     // ... data to create a Plan_results_daily_data
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_results_daily_dataCreateArgs>(args: SelectSubset<T, plan_results_daily_dataCreateArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_results_daily_data.
+     * @param {plan_results_daily_dataCreateManyArgs} args - Arguments to create many Plan_results_daily_data.
+     * @example
+     * // Create many Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_results_daily_dataCreateManyArgs>(args?: SelectSubset<T, plan_results_daily_dataCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_results_daily_data and returns the data saved in the database.
+     * @param {plan_results_daily_dataCreateManyAndReturnArgs} args - Arguments to create many Plan_results_daily_data.
+     * @example
+     * // Create many Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_results_daily_data and only return the `plan_id`
+     * const plan_results_daily_dataWithPlan_idOnly = await prisma.plan_results_daily_data.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_results_daily_dataCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_results_daily_dataCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_results_daily_data.
+     * @param {plan_results_daily_dataDeleteArgs} args - Arguments to delete one Plan_results_daily_data.
+     * @example
+     * // Delete one Plan_results_daily_data
+     * const Plan_results_daily_data = await prisma.plan_results_daily_data.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_results_daily_data
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_results_daily_dataDeleteArgs>(args: SelectSubset<T, plan_results_daily_dataDeleteArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_results_daily_data.
+     * @param {plan_results_daily_dataUpdateArgs} args - Arguments to update one Plan_results_daily_data.
+     * @example
+     * // Update one Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_results_daily_dataUpdateArgs>(args: SelectSubset<T, plan_results_daily_dataUpdateArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_results_daily_data.
+     * @param {plan_results_daily_dataDeleteManyArgs} args - Arguments to filter Plan_results_daily_data to delete.
+     * @example
+     * // Delete a few Plan_results_daily_data
+     * const { count } = await prisma.plan_results_daily_data.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_results_daily_dataDeleteManyArgs>(args?: SelectSubset<T, plan_results_daily_dataDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_results_daily_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_daily_dataUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_results_daily_dataUpdateManyArgs>(args: SelectSubset<T, plan_results_daily_dataUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_results_daily_data and returns the data updated in the database.
+     * @param {plan_results_daily_dataUpdateManyAndReturnArgs} args - Arguments to update many Plan_results_daily_data.
+     * @example
+     * // Update many Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_results_daily_data and only return the `plan_id`
+     * const plan_results_daily_dataWithPlan_idOnly = await prisma.plan_results_daily_data.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_results_daily_dataUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_results_daily_dataUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_results_daily_data.
+     * @param {plan_results_daily_dataUpsertArgs} args - Arguments to update or create a Plan_results_daily_data.
+     * @example
+     * // Update or create a Plan_results_daily_data
+     * const plan_results_daily_data = await prisma.plan_results_daily_data.upsert({
+     *   create: {
+     *     // ... data to create a Plan_results_daily_data
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_results_daily_data we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_results_daily_dataUpsertArgs>(args: SelectSubset<T, plan_results_daily_dataUpsertArgs<ExtArgs>>): Prisma__plan_results_daily_dataClient<$Result.GetResult<Prisma.$plan_results_daily_dataPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_results_daily_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_daily_dataCountArgs} args - Arguments to filter Plan_results_daily_data to count.
+     * @example
+     * // Count the number of Plan_results_daily_data
+     * const count = await prisma.plan_results_daily_data.count({
+     *   where: {
+     *     // ... the filter for the Plan_results_daily_data we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_results_daily_dataCountArgs>(
+      args?: Subset<T, plan_results_daily_dataCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_results_daily_dataCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_results_daily_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_results_daily_dataAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_results_daily_dataAggregateArgs>(args: Subset<T, Plan_results_daily_dataAggregateArgs>): Prisma.PrismaPromise<GetPlan_results_daily_dataAggregateType<T>>
+
+    /**
+     * Group by Plan_results_daily_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_daily_dataGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_results_daily_dataGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_results_daily_dataGroupByArgs['orderBy'] }
+        : { orderBy?: plan_results_daily_dataGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_results_daily_dataGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_results_daily_dataGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_results_daily_data model
+   */
+  readonly fields: plan_results_daily_dataFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_results_daily_data.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_results_daily_dataClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plan_list<T extends plan_listDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plan_listDefaultArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_results_daily_data model
+   */
+  interface plan_results_daily_dataFieldRefs {
+    readonly plan_id: FieldRef<"plan_results_daily_data", 'String'>
+    readonly day: FieldRef<"plan_results_daily_data", 'Int'>
+    readonly data: FieldRef<"plan_results_daily_data", 'Json'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_results_daily_data findUnique
+   */
+  export type plan_results_daily_dataFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_daily_data to fetch.
+     */
+    where: plan_results_daily_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_daily_data findUniqueOrThrow
+   */
+  export type plan_results_daily_dataFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_daily_data to fetch.
+     */
+    where: plan_results_daily_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_daily_data findFirst
+   */
+  export type plan_results_daily_dataFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_daily_data to fetch.
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_daily_data to fetch.
+     */
+    orderBy?: plan_results_daily_dataOrderByWithRelationInput | plan_results_daily_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_results_daily_data.
+     */
+    cursor?: plan_results_daily_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_daily_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_daily_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_results_daily_data.
+     */
+    distinct?: Plan_results_daily_dataScalarFieldEnum | Plan_results_daily_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_daily_data findFirstOrThrow
+   */
+  export type plan_results_daily_dataFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_daily_data to fetch.
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_daily_data to fetch.
+     */
+    orderBy?: plan_results_daily_dataOrderByWithRelationInput | plan_results_daily_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_results_daily_data.
+     */
+    cursor?: plan_results_daily_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_daily_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_daily_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_results_daily_data.
+     */
+    distinct?: Plan_results_daily_dataScalarFieldEnum | Plan_results_daily_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_daily_data findMany
+   */
+  export type plan_results_daily_dataFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_daily_data to fetch.
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_daily_data to fetch.
+     */
+    orderBy?: plan_results_daily_dataOrderByWithRelationInput | plan_results_daily_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_results_daily_data.
+     */
+    cursor?: plan_results_daily_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_daily_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_daily_data.
+     */
+    skip?: number
+    distinct?: Plan_results_daily_dataScalarFieldEnum | Plan_results_daily_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_daily_data create
+   */
+  export type plan_results_daily_dataCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_results_daily_data.
+     */
+    data: XOR<plan_results_daily_dataCreateInput, plan_results_daily_dataUncheckedCreateInput>
+  }
+
+  /**
+   * plan_results_daily_data createMany
+   */
+  export type plan_results_daily_dataCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_results_daily_data.
+     */
+    data: plan_results_daily_dataCreateManyInput | plan_results_daily_dataCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_results_daily_data createManyAndReturn
+   */
+  export type plan_results_daily_dataCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_results_daily_data.
+     */
+    data: plan_results_daily_dataCreateManyInput | plan_results_daily_dataCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_results_daily_data update
+   */
+  export type plan_results_daily_dataUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_results_daily_data.
+     */
+    data: XOR<plan_results_daily_dataUpdateInput, plan_results_daily_dataUncheckedUpdateInput>
+    /**
+     * Choose, which plan_results_daily_data to update.
+     */
+    where: plan_results_daily_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_daily_data updateMany
+   */
+  export type plan_results_daily_dataUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_results_daily_data.
+     */
+    data: XOR<plan_results_daily_dataUpdateManyMutationInput, plan_results_daily_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_results_daily_data to update
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * Limit how many plan_results_daily_data to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_results_daily_data updateManyAndReturn
+   */
+  export type plan_results_daily_dataUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_results_daily_data.
+     */
+    data: XOR<plan_results_daily_dataUpdateManyMutationInput, plan_results_daily_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_results_daily_data to update
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * Limit how many plan_results_daily_data to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_results_daily_data upsert
+   */
+  export type plan_results_daily_dataUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_results_daily_data to update in case it exists.
+     */
+    where: plan_results_daily_dataWhereUniqueInput
+    /**
+     * In case the plan_results_daily_data found by the `where` argument doesn't exist, create a new plan_results_daily_data with this data.
+     */
+    create: XOR<plan_results_daily_dataCreateInput, plan_results_daily_dataUncheckedCreateInput>
+    /**
+     * In case the plan_results_daily_data was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_results_daily_dataUpdateInput, plan_results_daily_dataUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_results_daily_data delete
+   */
+  export type plan_results_daily_dataDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+    /**
+     * Filter which plan_results_daily_data to delete.
+     */
+    where: plan_results_daily_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_daily_data deleteMany
+   */
+  export type plan_results_daily_dataDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_results_daily_data to delete
+     */
+    where?: plan_results_daily_dataWhereInput
+    /**
+     * Limit how many plan_results_daily_data to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_results_daily_data without action
+   */
+  export type plan_results_daily_dataDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_daily_data
+     */
+    select?: plan_results_daily_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_daily_data
+     */
+    omit?: plan_results_daily_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_daily_dataInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_results_flights_data
+   */
+
+  export type AggregatePlan_results_flights_data = {
+    _count: Plan_results_flights_dataCountAggregateOutputType | null
+    _min: Plan_results_flights_dataMinAggregateOutputType | null
+    _max: Plan_results_flights_dataMaxAggregateOutputType | null
+  }
+
+  export type Plan_results_flights_dataMinAggregateOutputType = {
+    id: string | null
+    plan_id: string | null
+  }
+
+  export type Plan_results_flights_dataMaxAggregateOutputType = {
+    id: string | null
+    plan_id: string | null
+  }
+
+  export type Plan_results_flights_dataCountAggregateOutputType = {
+    id: number
+    plan_id: number
+    data: number
+    _all: number
+  }
+
+
+  export type Plan_results_flights_dataMinAggregateInputType = {
+    id?: true
+    plan_id?: true
+  }
+
+  export type Plan_results_flights_dataMaxAggregateInputType = {
+    id?: true
+    plan_id?: true
+  }
+
+  export type Plan_results_flights_dataCountAggregateInputType = {
+    id?: true
+    plan_id?: true
+    data?: true
+    _all?: true
+  }
+
+  export type Plan_results_flights_dataAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_results_flights_data to aggregate.
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_flights_data to fetch.
+     */
+    orderBy?: plan_results_flights_dataOrderByWithRelationInput | plan_results_flights_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_results_flights_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_flights_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_flights_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_results_flights_data
+    **/
+    _count?: true | Plan_results_flights_dataCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_results_flights_dataMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_results_flights_dataMaxAggregateInputType
+  }
+
+  export type GetPlan_results_flights_dataAggregateType<T extends Plan_results_flights_dataAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_results_flights_data]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_results_flights_data[P]>
+      : GetScalarType<T[P], AggregatePlan_results_flights_data[P]>
+  }
+
+
+
+
+  export type plan_results_flights_dataGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_results_flights_dataWhereInput
+    orderBy?: plan_results_flights_dataOrderByWithAggregationInput | plan_results_flights_dataOrderByWithAggregationInput[]
+    by: Plan_results_flights_dataScalarFieldEnum[] | Plan_results_flights_dataScalarFieldEnum
+    having?: plan_results_flights_dataScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_results_flights_dataCountAggregateInputType | true
+    _min?: Plan_results_flights_dataMinAggregateInputType
+    _max?: Plan_results_flights_dataMaxAggregateInputType
+  }
+
+  export type Plan_results_flights_dataGroupByOutputType = {
+    id: string
+    plan_id: string
+    data: JsonValue
+    _count: Plan_results_flights_dataCountAggregateOutputType | null
+    _min: Plan_results_flights_dataMinAggregateOutputType | null
+    _max: Plan_results_flights_dataMaxAggregateOutputType | null
+  }
+
+  type GetPlan_results_flights_dataGroupByPayload<T extends plan_results_flights_dataGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_results_flights_dataGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_results_flights_dataGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_results_flights_dataGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_results_flights_dataGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_results_flights_dataSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    plan_id?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_flights_data"]>
+
+  export type plan_results_flights_dataSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    plan_id?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_flights_data"]>
+
+  export type plan_results_flights_dataSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    plan_id?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_flights_data"]>
+
+  export type plan_results_flights_dataSelectScalar = {
+    id?: boolean
+    plan_id?: boolean
+    data?: boolean
+  }
+
+  export type plan_results_flights_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plan_id" | "data", ExtArgs["result"]["plan_results_flights_data"]>
+  export type plan_results_flights_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_results_flights_dataIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_results_flights_dataIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_results_flights_dataPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_results_flights_data"
+    objects: {
+      plan_list: Prisma.$plan_listPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      plan_id: string
+      data: Prisma.JsonValue
+    }, ExtArgs["result"]["plan_results_flights_data"]>
+    composites: {}
+  }
+
+  type plan_results_flights_dataGetPayload<S extends boolean | null | undefined | plan_results_flights_dataDefaultArgs> = $Result.GetResult<Prisma.$plan_results_flights_dataPayload, S>
+
+  type plan_results_flights_dataCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_results_flights_dataFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_results_flights_dataCountAggregateInputType | true
+    }
+
+  export interface plan_results_flights_dataDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_results_flights_data'], meta: { name: 'plan_results_flights_data' } }
+    /**
+     * Find zero or one Plan_results_flights_data that matches the filter.
+     * @param {plan_results_flights_dataFindUniqueArgs} args - Arguments to find a Plan_results_flights_data
+     * @example
+     * // Get one Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_results_flights_dataFindUniqueArgs>(args: SelectSubset<T, plan_results_flights_dataFindUniqueArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_results_flights_data that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_results_flights_dataFindUniqueOrThrowArgs} args - Arguments to find a Plan_results_flights_data
+     * @example
+     * // Get one Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_results_flights_dataFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_results_flights_dataFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_results_flights_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_flights_dataFindFirstArgs} args - Arguments to find a Plan_results_flights_data
+     * @example
+     * // Get one Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_results_flights_dataFindFirstArgs>(args?: SelectSubset<T, plan_results_flights_dataFindFirstArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_results_flights_data that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_flights_dataFindFirstOrThrowArgs} args - Arguments to find a Plan_results_flights_data
+     * @example
+     * // Get one Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_results_flights_dataFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_results_flights_dataFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_results_flights_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_flights_dataFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.findMany()
+     * 
+     * // Get first 10 Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const plan_results_flights_dataWithIdOnly = await prisma.plan_results_flights_data.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends plan_results_flights_dataFindManyArgs>(args?: SelectSubset<T, plan_results_flights_dataFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_results_flights_data.
+     * @param {plan_results_flights_dataCreateArgs} args - Arguments to create a Plan_results_flights_data.
+     * @example
+     * // Create one Plan_results_flights_data
+     * const Plan_results_flights_data = await prisma.plan_results_flights_data.create({
+     *   data: {
+     *     // ... data to create a Plan_results_flights_data
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_results_flights_dataCreateArgs>(args: SelectSubset<T, plan_results_flights_dataCreateArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_results_flights_data.
+     * @param {plan_results_flights_dataCreateManyArgs} args - Arguments to create many Plan_results_flights_data.
+     * @example
+     * // Create many Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_results_flights_dataCreateManyArgs>(args?: SelectSubset<T, plan_results_flights_dataCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_results_flights_data and returns the data saved in the database.
+     * @param {plan_results_flights_dataCreateManyAndReturnArgs} args - Arguments to create many Plan_results_flights_data.
+     * @example
+     * // Create many Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_results_flights_data and only return the `id`
+     * const plan_results_flights_dataWithIdOnly = await prisma.plan_results_flights_data.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_results_flights_dataCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_results_flights_dataCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_results_flights_data.
+     * @param {plan_results_flights_dataDeleteArgs} args - Arguments to delete one Plan_results_flights_data.
+     * @example
+     * // Delete one Plan_results_flights_data
+     * const Plan_results_flights_data = await prisma.plan_results_flights_data.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_results_flights_data
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_results_flights_dataDeleteArgs>(args: SelectSubset<T, plan_results_flights_dataDeleteArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_results_flights_data.
+     * @param {plan_results_flights_dataUpdateArgs} args - Arguments to update one Plan_results_flights_data.
+     * @example
+     * // Update one Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_results_flights_dataUpdateArgs>(args: SelectSubset<T, plan_results_flights_dataUpdateArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_results_flights_data.
+     * @param {plan_results_flights_dataDeleteManyArgs} args - Arguments to filter Plan_results_flights_data to delete.
+     * @example
+     * // Delete a few Plan_results_flights_data
+     * const { count } = await prisma.plan_results_flights_data.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_results_flights_dataDeleteManyArgs>(args?: SelectSubset<T, plan_results_flights_dataDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_results_flights_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_flights_dataUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_results_flights_dataUpdateManyArgs>(args: SelectSubset<T, plan_results_flights_dataUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_results_flights_data and returns the data updated in the database.
+     * @param {plan_results_flights_dataUpdateManyAndReturnArgs} args - Arguments to update many Plan_results_flights_data.
+     * @example
+     * // Update many Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_results_flights_data and only return the `id`
+     * const plan_results_flights_dataWithIdOnly = await prisma.plan_results_flights_data.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_results_flights_dataUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_results_flights_dataUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_results_flights_data.
+     * @param {plan_results_flights_dataUpsertArgs} args - Arguments to update or create a Plan_results_flights_data.
+     * @example
+     * // Update or create a Plan_results_flights_data
+     * const plan_results_flights_data = await prisma.plan_results_flights_data.upsert({
+     *   create: {
+     *     // ... data to create a Plan_results_flights_data
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_results_flights_data we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_results_flights_dataUpsertArgs>(args: SelectSubset<T, plan_results_flights_dataUpsertArgs<ExtArgs>>): Prisma__plan_results_flights_dataClient<$Result.GetResult<Prisma.$plan_results_flights_dataPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_results_flights_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_flights_dataCountArgs} args - Arguments to filter Plan_results_flights_data to count.
+     * @example
+     * // Count the number of Plan_results_flights_data
+     * const count = await prisma.plan_results_flights_data.count({
+     *   where: {
+     *     // ... the filter for the Plan_results_flights_data we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_results_flights_dataCountArgs>(
+      args?: Subset<T, plan_results_flights_dataCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_results_flights_dataCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_results_flights_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_results_flights_dataAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_results_flights_dataAggregateArgs>(args: Subset<T, Plan_results_flights_dataAggregateArgs>): Prisma.PrismaPromise<GetPlan_results_flights_dataAggregateType<T>>
+
+    /**
+     * Group by Plan_results_flights_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_flights_dataGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_results_flights_dataGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_results_flights_dataGroupByArgs['orderBy'] }
+        : { orderBy?: plan_results_flights_dataGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_results_flights_dataGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_results_flights_dataGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_results_flights_data model
+   */
+  readonly fields: plan_results_flights_dataFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_results_flights_data.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_results_flights_dataClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plan_list<T extends plan_listDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plan_listDefaultArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_results_flights_data model
+   */
+  interface plan_results_flights_dataFieldRefs {
+    readonly id: FieldRef<"plan_results_flights_data", 'String'>
+    readonly plan_id: FieldRef<"plan_results_flights_data", 'String'>
+    readonly data: FieldRef<"plan_results_flights_data", 'Json'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_results_flights_data findUnique
+   */
+  export type plan_results_flights_dataFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_flights_data to fetch.
+     */
+    where: plan_results_flights_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_flights_data findUniqueOrThrow
+   */
+  export type plan_results_flights_dataFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_flights_data to fetch.
+     */
+    where: plan_results_flights_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_flights_data findFirst
+   */
+  export type plan_results_flights_dataFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_flights_data to fetch.
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_flights_data to fetch.
+     */
+    orderBy?: plan_results_flights_dataOrderByWithRelationInput | plan_results_flights_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_results_flights_data.
+     */
+    cursor?: plan_results_flights_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_flights_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_flights_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_results_flights_data.
+     */
+    distinct?: Plan_results_flights_dataScalarFieldEnum | Plan_results_flights_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_flights_data findFirstOrThrow
+   */
+  export type plan_results_flights_dataFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_flights_data to fetch.
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_flights_data to fetch.
+     */
+    orderBy?: plan_results_flights_dataOrderByWithRelationInput | plan_results_flights_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_results_flights_data.
+     */
+    cursor?: plan_results_flights_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_flights_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_flights_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_results_flights_data.
+     */
+    distinct?: Plan_results_flights_dataScalarFieldEnum | Plan_results_flights_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_flights_data findMany
+   */
+  export type plan_results_flights_dataFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_flights_data to fetch.
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_flights_data to fetch.
+     */
+    orderBy?: plan_results_flights_dataOrderByWithRelationInput | plan_results_flights_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_results_flights_data.
+     */
+    cursor?: plan_results_flights_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_flights_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_flights_data.
+     */
+    skip?: number
+    distinct?: Plan_results_flights_dataScalarFieldEnum | Plan_results_flights_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_flights_data create
+   */
+  export type plan_results_flights_dataCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_results_flights_data.
+     */
+    data: XOR<plan_results_flights_dataCreateInput, plan_results_flights_dataUncheckedCreateInput>
+  }
+
+  /**
+   * plan_results_flights_data createMany
+   */
+  export type plan_results_flights_dataCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_results_flights_data.
+     */
+    data: plan_results_flights_dataCreateManyInput | plan_results_flights_dataCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_results_flights_data createManyAndReturn
+   */
+  export type plan_results_flights_dataCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_results_flights_data.
+     */
+    data: plan_results_flights_dataCreateManyInput | plan_results_flights_dataCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_results_flights_data update
+   */
+  export type plan_results_flights_dataUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_results_flights_data.
+     */
+    data: XOR<plan_results_flights_dataUpdateInput, plan_results_flights_dataUncheckedUpdateInput>
+    /**
+     * Choose, which plan_results_flights_data to update.
+     */
+    where: plan_results_flights_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_flights_data updateMany
+   */
+  export type plan_results_flights_dataUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_results_flights_data.
+     */
+    data: XOR<plan_results_flights_dataUpdateManyMutationInput, plan_results_flights_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_results_flights_data to update
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * Limit how many plan_results_flights_data to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_results_flights_data updateManyAndReturn
+   */
+  export type plan_results_flights_dataUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_results_flights_data.
+     */
+    data: XOR<plan_results_flights_dataUpdateManyMutationInput, plan_results_flights_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_results_flights_data to update
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * Limit how many plan_results_flights_data to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_results_flights_data upsert
+   */
+  export type plan_results_flights_dataUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_results_flights_data to update in case it exists.
+     */
+    where: plan_results_flights_dataWhereUniqueInput
+    /**
+     * In case the plan_results_flights_data found by the `where` argument doesn't exist, create a new plan_results_flights_data with this data.
+     */
+    create: XOR<plan_results_flights_dataCreateInput, plan_results_flights_dataUncheckedCreateInput>
+    /**
+     * In case the plan_results_flights_data was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_results_flights_dataUpdateInput, plan_results_flights_dataUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_results_flights_data delete
+   */
+  export type plan_results_flights_dataDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+    /**
+     * Filter which plan_results_flights_data to delete.
+     */
+    where: plan_results_flights_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_flights_data deleteMany
+   */
+  export type plan_results_flights_dataDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_results_flights_data to delete
+     */
+    where?: plan_results_flights_dataWhereInput
+    /**
+     * Limit how many plan_results_flights_data to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_results_flights_data without action
+   */
+  export type plan_results_flights_dataDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_flights_data
+     */
+    select?: plan_results_flights_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_flights_data
+     */
+    omit?: plan_results_flights_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_flights_dataInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_results_total_data
+   */
+
+  export type AggregatePlan_results_total_data = {
+    _count: Plan_results_total_dataCountAggregateOutputType | null
+    _min: Plan_results_total_dataMinAggregateOutputType | null
+    _max: Plan_results_total_dataMaxAggregateOutputType | null
+  }
+
+  export type Plan_results_total_dataMinAggregateOutputType = {
+    plan_id: string | null
+  }
+
+  export type Plan_results_total_dataMaxAggregateOutputType = {
+    plan_id: string | null
+  }
+
+  export type Plan_results_total_dataCountAggregateOutputType = {
+    plan_id: number
+    data: number
+    _all: number
+  }
+
+
+  export type Plan_results_total_dataMinAggregateInputType = {
+    plan_id?: true
+  }
+
+  export type Plan_results_total_dataMaxAggregateInputType = {
+    plan_id?: true
+  }
+
+  export type Plan_results_total_dataCountAggregateInputType = {
+    plan_id?: true
+    data?: true
+    _all?: true
+  }
+
+  export type Plan_results_total_dataAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_results_total_data to aggregate.
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_total_data to fetch.
+     */
+    orderBy?: plan_results_total_dataOrderByWithRelationInput | plan_results_total_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_results_total_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_total_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_total_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_results_total_data
+    **/
+    _count?: true | Plan_results_total_dataCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_results_total_dataMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_results_total_dataMaxAggregateInputType
+  }
+
+  export type GetPlan_results_total_dataAggregateType<T extends Plan_results_total_dataAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_results_total_data]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_results_total_data[P]>
+      : GetScalarType<T[P], AggregatePlan_results_total_data[P]>
+  }
+
+
+
+
+  export type plan_results_total_dataGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_results_total_dataWhereInput
+    orderBy?: plan_results_total_dataOrderByWithAggregationInput | plan_results_total_dataOrderByWithAggregationInput[]
+    by: Plan_results_total_dataScalarFieldEnum[] | Plan_results_total_dataScalarFieldEnum
+    having?: plan_results_total_dataScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_results_total_dataCountAggregateInputType | true
+    _min?: Plan_results_total_dataMinAggregateInputType
+    _max?: Plan_results_total_dataMaxAggregateInputType
+  }
+
+  export type Plan_results_total_dataGroupByOutputType = {
+    plan_id: string
+    data: JsonValue
+    _count: Plan_results_total_dataCountAggregateOutputType | null
+    _min: Plan_results_total_dataMinAggregateOutputType | null
+    _max: Plan_results_total_dataMaxAggregateOutputType | null
+  }
+
+  type GetPlan_results_total_dataGroupByPayload<T extends plan_results_total_dataGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_results_total_dataGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_results_total_dataGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_results_total_dataGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_results_total_dataGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_results_total_dataSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_total_data"]>
+
+  export type plan_results_total_dataSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_total_data"]>
+
+  export type plan_results_total_dataSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    data?: boolean
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_results_total_data"]>
+
+  export type plan_results_total_dataSelectScalar = {
+    plan_id?: boolean
+    data?: boolean
+  }
+
+  export type plan_results_total_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "data", ExtArgs["result"]["plan_results_total_data"]>
+  export type plan_results_total_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_results_total_dataIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+  export type plan_results_total_dataIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_list?: boolean | plan_listDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_results_total_dataPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_results_total_data"
+    objects: {
+      plan_list: Prisma.$plan_listPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      data: Prisma.JsonValue
+    }, ExtArgs["result"]["plan_results_total_data"]>
+    composites: {}
+  }
+
+  type plan_results_total_dataGetPayload<S extends boolean | null | undefined | plan_results_total_dataDefaultArgs> = $Result.GetResult<Prisma.$plan_results_total_dataPayload, S>
+
+  type plan_results_total_dataCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_results_total_dataFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_results_total_dataCountAggregateInputType | true
+    }
+
+  export interface plan_results_total_dataDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_results_total_data'], meta: { name: 'plan_results_total_data' } }
+    /**
+     * Find zero or one Plan_results_total_data that matches the filter.
+     * @param {plan_results_total_dataFindUniqueArgs} args - Arguments to find a Plan_results_total_data
+     * @example
+     * // Get one Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_results_total_dataFindUniqueArgs>(args: SelectSubset<T, plan_results_total_dataFindUniqueArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_results_total_data that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_results_total_dataFindUniqueOrThrowArgs} args - Arguments to find a Plan_results_total_data
+     * @example
+     * // Get one Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_results_total_dataFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_results_total_dataFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_results_total_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_total_dataFindFirstArgs} args - Arguments to find a Plan_results_total_data
+     * @example
+     * // Get one Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_results_total_dataFindFirstArgs>(args?: SelectSubset<T, plan_results_total_dataFindFirstArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_results_total_data that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_total_dataFindFirstOrThrowArgs} args - Arguments to find a Plan_results_total_data
+     * @example
+     * // Get one Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_results_total_dataFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_results_total_dataFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_results_total_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_total_dataFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.findMany()
+     * 
+     * // Get first 10 Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_results_total_dataWithPlan_idOnly = await prisma.plan_results_total_data.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_results_total_dataFindManyArgs>(args?: SelectSubset<T, plan_results_total_dataFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_results_total_data.
+     * @param {plan_results_total_dataCreateArgs} args - Arguments to create a Plan_results_total_data.
+     * @example
+     * // Create one Plan_results_total_data
+     * const Plan_results_total_data = await prisma.plan_results_total_data.create({
+     *   data: {
+     *     // ... data to create a Plan_results_total_data
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_results_total_dataCreateArgs>(args: SelectSubset<T, plan_results_total_dataCreateArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_results_total_data.
+     * @param {plan_results_total_dataCreateManyArgs} args - Arguments to create many Plan_results_total_data.
+     * @example
+     * // Create many Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_results_total_dataCreateManyArgs>(args?: SelectSubset<T, plan_results_total_dataCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_results_total_data and returns the data saved in the database.
+     * @param {plan_results_total_dataCreateManyAndReturnArgs} args - Arguments to create many Plan_results_total_data.
+     * @example
+     * // Create many Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_results_total_data and only return the `plan_id`
+     * const plan_results_total_dataWithPlan_idOnly = await prisma.plan_results_total_data.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_results_total_dataCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_results_total_dataCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_results_total_data.
+     * @param {plan_results_total_dataDeleteArgs} args - Arguments to delete one Plan_results_total_data.
+     * @example
+     * // Delete one Plan_results_total_data
+     * const Plan_results_total_data = await prisma.plan_results_total_data.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_results_total_data
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_results_total_dataDeleteArgs>(args: SelectSubset<T, plan_results_total_dataDeleteArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_results_total_data.
+     * @param {plan_results_total_dataUpdateArgs} args - Arguments to update one Plan_results_total_data.
+     * @example
+     * // Update one Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_results_total_dataUpdateArgs>(args: SelectSubset<T, plan_results_total_dataUpdateArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_results_total_data.
+     * @param {plan_results_total_dataDeleteManyArgs} args - Arguments to filter Plan_results_total_data to delete.
+     * @example
+     * // Delete a few Plan_results_total_data
+     * const { count } = await prisma.plan_results_total_data.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_results_total_dataDeleteManyArgs>(args?: SelectSubset<T, plan_results_total_dataDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_results_total_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_total_dataUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_results_total_dataUpdateManyArgs>(args: SelectSubset<T, plan_results_total_dataUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_results_total_data and returns the data updated in the database.
+     * @param {plan_results_total_dataUpdateManyAndReturnArgs} args - Arguments to update many Plan_results_total_data.
+     * @example
+     * // Update many Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_results_total_data and only return the `plan_id`
+     * const plan_results_total_dataWithPlan_idOnly = await prisma.plan_results_total_data.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_results_total_dataUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_results_total_dataUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_results_total_data.
+     * @param {plan_results_total_dataUpsertArgs} args - Arguments to update or create a Plan_results_total_data.
+     * @example
+     * // Update or create a Plan_results_total_data
+     * const plan_results_total_data = await prisma.plan_results_total_data.upsert({
+     *   create: {
+     *     // ... data to create a Plan_results_total_data
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_results_total_data we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_results_total_dataUpsertArgs>(args: SelectSubset<T, plan_results_total_dataUpsertArgs<ExtArgs>>): Prisma__plan_results_total_dataClient<$Result.GetResult<Prisma.$plan_results_total_dataPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_results_total_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_total_dataCountArgs} args - Arguments to filter Plan_results_total_data to count.
+     * @example
+     * // Count the number of Plan_results_total_data
+     * const count = await prisma.plan_results_total_data.count({
+     *   where: {
+     *     // ... the filter for the Plan_results_total_data we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_results_total_dataCountArgs>(
+      args?: Subset<T, plan_results_total_dataCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_results_total_dataCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_results_total_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_results_total_dataAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_results_total_dataAggregateArgs>(args: Subset<T, Plan_results_total_dataAggregateArgs>): Prisma.PrismaPromise<GetPlan_results_total_dataAggregateType<T>>
+
+    /**
+     * Group by Plan_results_total_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_results_total_dataGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_results_total_dataGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_results_total_dataGroupByArgs['orderBy'] }
+        : { orderBy?: plan_results_total_dataGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_results_total_dataGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_results_total_dataGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_results_total_data model
+   */
+  readonly fields: plan_results_total_dataFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_results_total_data.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_results_total_dataClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plan_list<T extends plan_listDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plan_listDefaultArgs<ExtArgs>>): Prisma__plan_listClient<$Result.GetResult<Prisma.$plan_listPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_results_total_data model
+   */
+  interface plan_results_total_dataFieldRefs {
+    readonly plan_id: FieldRef<"plan_results_total_data", 'String'>
+    readonly data: FieldRef<"plan_results_total_data", 'Json'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_results_total_data findUnique
+   */
+  export type plan_results_total_dataFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_total_data to fetch.
+     */
+    where: plan_results_total_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_total_data findUniqueOrThrow
+   */
+  export type plan_results_total_dataFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_total_data to fetch.
+     */
+    where: plan_results_total_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_total_data findFirst
+   */
+  export type plan_results_total_dataFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_total_data to fetch.
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_total_data to fetch.
+     */
+    orderBy?: plan_results_total_dataOrderByWithRelationInput | plan_results_total_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_results_total_data.
+     */
+    cursor?: plan_results_total_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_total_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_total_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_results_total_data.
+     */
+    distinct?: Plan_results_total_dataScalarFieldEnum | Plan_results_total_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_total_data findFirstOrThrow
+   */
+  export type plan_results_total_dataFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_total_data to fetch.
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_total_data to fetch.
+     */
+    orderBy?: plan_results_total_dataOrderByWithRelationInput | plan_results_total_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_results_total_data.
+     */
+    cursor?: plan_results_total_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_total_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_total_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_results_total_data.
+     */
+    distinct?: Plan_results_total_dataScalarFieldEnum | Plan_results_total_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_total_data findMany
+   */
+  export type plan_results_total_dataFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_results_total_data to fetch.
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_results_total_data to fetch.
+     */
+    orderBy?: plan_results_total_dataOrderByWithRelationInput | plan_results_total_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_results_total_data.
+     */
+    cursor?: plan_results_total_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_results_total_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_results_total_data.
+     */
+    skip?: number
+    distinct?: Plan_results_total_dataScalarFieldEnum | Plan_results_total_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_results_total_data create
+   */
+  export type plan_results_total_dataCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_results_total_data.
+     */
+    data: XOR<plan_results_total_dataCreateInput, plan_results_total_dataUncheckedCreateInput>
+  }
+
+  /**
+   * plan_results_total_data createMany
+   */
+  export type plan_results_total_dataCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_results_total_data.
+     */
+    data: plan_results_total_dataCreateManyInput | plan_results_total_dataCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_results_total_data createManyAndReturn
+   */
+  export type plan_results_total_dataCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_results_total_data.
+     */
+    data: plan_results_total_dataCreateManyInput | plan_results_total_dataCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_results_total_data update
+   */
+  export type plan_results_total_dataUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_results_total_data.
+     */
+    data: XOR<plan_results_total_dataUpdateInput, plan_results_total_dataUncheckedUpdateInput>
+    /**
+     * Choose, which plan_results_total_data to update.
+     */
+    where: plan_results_total_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_total_data updateMany
+   */
+  export type plan_results_total_dataUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_results_total_data.
+     */
+    data: XOR<plan_results_total_dataUpdateManyMutationInput, plan_results_total_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_results_total_data to update
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * Limit how many plan_results_total_data to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_results_total_data updateManyAndReturn
+   */
+  export type plan_results_total_dataUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_results_total_data.
+     */
+    data: XOR<plan_results_total_dataUpdateManyMutationInput, plan_results_total_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_results_total_data to update
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * Limit how many plan_results_total_data to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_results_total_data upsert
+   */
+  export type plan_results_total_dataUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_results_total_data to update in case it exists.
+     */
+    where: plan_results_total_dataWhereUniqueInput
+    /**
+     * In case the plan_results_total_data found by the `where` argument doesn't exist, create a new plan_results_total_data with this data.
+     */
+    create: XOR<plan_results_total_dataCreateInput, plan_results_total_dataUncheckedCreateInput>
+    /**
+     * In case the plan_results_total_data was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_results_total_dataUpdateInput, plan_results_total_dataUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_results_total_data delete
+   */
+  export type plan_results_total_dataDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+    /**
+     * Filter which plan_results_total_data to delete.
+     */
+    where: plan_results_total_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_results_total_data deleteMany
+   */
+  export type plan_results_total_dataDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_results_total_data to delete
+     */
+    where?: plan_results_total_dataWhereInput
+    /**
+     * Limit how many plan_results_total_data to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_results_total_data without action
+   */
+  export type plan_results_total_dataDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_results_total_data
+     */
+    select?: plan_results_total_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_results_total_data
+     */
+    omit?: plan_results_total_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_results_total_dataInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -26759,6 +31409,50 @@ export namespace Prisma {
   export type Plan_resource_inputScalarFieldEnum = (typeof Plan_resource_inputScalarFieldEnum)[keyof typeof Plan_resource_inputScalarFieldEnum]
 
 
+  export const Oauth_clientsScalarFieldEnum: {
+    id: 'id',
+    client_id: 'client_id',
+    client_secret_hash: 'client_secret_hash',
+    registration_type: 'registration_type',
+    redirect_uris: 'redirect_uris',
+    grant_types: 'grant_types',
+    client_name: 'client_name',
+    client_uri: 'client_uri',
+    logo_uri: 'logo_uri',
+    created_at: 'created_at',
+    updated_at: 'updated_at',
+    deleted_at: 'deleted_at'
+  };
+
+  export type Oauth_clientsScalarFieldEnum = (typeof Oauth_clientsScalarFieldEnum)[keyof typeof Oauth_clientsScalarFieldEnum]
+
+
+  export const Plan_results_daily_dataScalarFieldEnum: {
+    plan_id: 'plan_id',
+    day: 'day',
+    data: 'data'
+  };
+
+  export type Plan_results_daily_dataScalarFieldEnum = (typeof Plan_results_daily_dataScalarFieldEnum)[keyof typeof Plan_results_daily_dataScalarFieldEnum]
+
+
+  export const Plan_results_flights_dataScalarFieldEnum: {
+    id: 'id',
+    plan_id: 'plan_id',
+    data: 'data'
+  };
+
+  export type Plan_results_flights_dataScalarFieldEnum = (typeof Plan_results_flights_dataScalarFieldEnum)[keyof typeof Plan_results_flights_dataScalarFieldEnum]
+
+
+  export const Plan_results_total_dataScalarFieldEnum: {
+    plan_id: 'plan_id',
+    data: 'data'
+  };
+
+  export type Plan_results_total_dataScalarFieldEnum = (typeof Plan_results_total_dataScalarFieldEnum)[keyof typeof Plan_results_total_dataScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -26956,6 +31650,20 @@ export namespace Prisma {
    * Reference to a field of type 'Int[]'
    */
   export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'oauth_registration_type'
+   */
+  export type Enumoauth_registration_typeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'oauth_registration_type'>
+    
+
+
+  /**
+   * Reference to a field of type 'oauth_registration_type[]'
+   */
+  export type ListEnumoauth_registration_typeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'oauth_registration_type[]'>
     
 
 
@@ -28278,6 +32986,9 @@ export namespace Prisma {
     created_at?: DateTimeFilter<"plan_list"> | Date | string
     plan_notification?: Plan_notificationListRelationFilter
     plan_resource_input?: XOR<Plan_resource_inputNullableScalarRelationFilter, plan_resource_inputWhereInput> | null
+    plan_results_daily_data?: XOR<Plan_results_daily_dataNullableScalarRelationFilter, plan_results_daily_dataWhereInput> | null
+    plan_results_flights_data?: Plan_results_flights_dataListRelationFilter
+    plan_results_total_data?: XOR<Plan_results_total_dataNullableScalarRelationFilter, plan_results_total_dataWhereInput> | null
     plan_status?: XOR<Plan_statusNullableScalarRelationFilter, plan_statusWhereInput> | null
   }
 
@@ -28291,6 +33002,9 @@ export namespace Prisma {
     created_at?: SortOrder
     plan_notification?: plan_notificationOrderByRelationAggregateInput
     plan_resource_input?: plan_resource_inputOrderByWithRelationInput
+    plan_results_daily_data?: plan_results_daily_dataOrderByWithRelationInput
+    plan_results_flights_data?: plan_results_flights_dataOrderByRelationAggregateInput
+    plan_results_total_data?: plan_results_total_dataOrderByWithRelationInput
     plan_status?: plan_statusOrderByWithRelationInput
   }
 
@@ -28307,6 +33021,9 @@ export namespace Prisma {
     created_at?: DateTimeFilter<"plan_list"> | Date | string
     plan_notification?: Plan_notificationListRelationFilter
     plan_resource_input?: XOR<Plan_resource_inputNullableScalarRelationFilter, plan_resource_inputWhereInput> | null
+    plan_results_daily_data?: XOR<Plan_results_daily_dataNullableScalarRelationFilter, plan_results_daily_dataWhereInput> | null
+    plan_results_flights_data?: Plan_results_flights_dataListRelationFilter
+    plan_results_total_data?: XOR<Plan_results_total_dataNullableScalarRelationFilter, plan_results_total_dataWhereInput> | null
     plan_status?: XOR<Plan_statusNullableScalarRelationFilter, plan_statusWhereInput> | null
   }, "id">
 
@@ -28518,6 +33235,226 @@ export namespace Prisma {
     total_person_exponent?: BigIntNullableWithAggregatesFilter<"plan_resource_input"> | bigint | number | null
     flight_scale_types?: StringNullableListFilter<"plan_resource_input">
     per_flight_scale_data?: JsonNullableWithAggregatesFilter<"plan_resource_input">
+  }
+
+  export type oauth_clientsWhereInput = {
+    AND?: oauth_clientsWhereInput | oauth_clientsWhereInput[]
+    OR?: oauth_clientsWhereInput[]
+    NOT?: oauth_clientsWhereInput | oauth_clientsWhereInput[]
+    id?: UuidFilter<"oauth_clients"> | string
+    client_id?: StringFilter<"oauth_clients"> | string
+    client_secret_hash?: StringFilter<"oauth_clients"> | string
+    registration_type?: Enumoauth_registration_typeFilter<"oauth_clients"> | $Enums.oauth_registration_type
+    redirect_uris?: StringFilter<"oauth_clients"> | string
+    grant_types?: StringFilter<"oauth_clients"> | string
+    client_name?: StringNullableFilter<"oauth_clients"> | string | null
+    client_uri?: StringNullableFilter<"oauth_clients"> | string | null
+    logo_uri?: StringNullableFilter<"oauth_clients"> | string | null
+    created_at?: DateTimeFilter<"oauth_clients"> | Date | string
+    updated_at?: DateTimeFilter<"oauth_clients"> | Date | string
+    deleted_at?: DateTimeNullableFilter<"oauth_clients"> | Date | string | null
+  }
+
+  export type oauth_clientsOrderByWithRelationInput = {
+    id?: SortOrder
+    client_id?: SortOrder
+    client_secret_hash?: SortOrder
+    registration_type?: SortOrder
+    redirect_uris?: SortOrder
+    grant_types?: SortOrder
+    client_name?: SortOrderInput | SortOrder
+    client_uri?: SortOrderInput | SortOrder
+    logo_uri?: SortOrderInput | SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    deleted_at?: SortOrderInput | SortOrder
+  }
+
+  export type oauth_clientsWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    client_id?: string
+    AND?: oauth_clientsWhereInput | oauth_clientsWhereInput[]
+    OR?: oauth_clientsWhereInput[]
+    NOT?: oauth_clientsWhereInput | oauth_clientsWhereInput[]
+    client_secret_hash?: StringFilter<"oauth_clients"> | string
+    registration_type?: Enumoauth_registration_typeFilter<"oauth_clients"> | $Enums.oauth_registration_type
+    redirect_uris?: StringFilter<"oauth_clients"> | string
+    grant_types?: StringFilter<"oauth_clients"> | string
+    client_name?: StringNullableFilter<"oauth_clients"> | string | null
+    client_uri?: StringNullableFilter<"oauth_clients"> | string | null
+    logo_uri?: StringNullableFilter<"oauth_clients"> | string | null
+    created_at?: DateTimeFilter<"oauth_clients"> | Date | string
+    updated_at?: DateTimeFilter<"oauth_clients"> | Date | string
+    deleted_at?: DateTimeNullableFilter<"oauth_clients"> | Date | string | null
+  }, "id" | "client_id">
+
+  export type oauth_clientsOrderByWithAggregationInput = {
+    id?: SortOrder
+    client_id?: SortOrder
+    client_secret_hash?: SortOrder
+    registration_type?: SortOrder
+    redirect_uris?: SortOrder
+    grant_types?: SortOrder
+    client_name?: SortOrderInput | SortOrder
+    client_uri?: SortOrderInput | SortOrder
+    logo_uri?: SortOrderInput | SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    deleted_at?: SortOrderInput | SortOrder
+    _count?: oauth_clientsCountOrderByAggregateInput
+    _max?: oauth_clientsMaxOrderByAggregateInput
+    _min?: oauth_clientsMinOrderByAggregateInput
+  }
+
+  export type oauth_clientsScalarWhereWithAggregatesInput = {
+    AND?: oauth_clientsScalarWhereWithAggregatesInput | oauth_clientsScalarWhereWithAggregatesInput[]
+    OR?: oauth_clientsScalarWhereWithAggregatesInput[]
+    NOT?: oauth_clientsScalarWhereWithAggregatesInput | oauth_clientsScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"oauth_clients"> | string
+    client_id?: StringWithAggregatesFilter<"oauth_clients"> | string
+    client_secret_hash?: StringWithAggregatesFilter<"oauth_clients"> | string
+    registration_type?: Enumoauth_registration_typeWithAggregatesFilter<"oauth_clients"> | $Enums.oauth_registration_type
+    redirect_uris?: StringWithAggregatesFilter<"oauth_clients"> | string
+    grant_types?: StringWithAggregatesFilter<"oauth_clients"> | string
+    client_name?: StringNullableWithAggregatesFilter<"oauth_clients"> | string | null
+    client_uri?: StringNullableWithAggregatesFilter<"oauth_clients"> | string | null
+    logo_uri?: StringNullableWithAggregatesFilter<"oauth_clients"> | string | null
+    created_at?: DateTimeWithAggregatesFilter<"oauth_clients"> | Date | string
+    updated_at?: DateTimeWithAggregatesFilter<"oauth_clients"> | Date | string
+    deleted_at?: DateTimeNullableWithAggregatesFilter<"oauth_clients"> | Date | string | null
+  }
+
+  export type plan_results_daily_dataWhereInput = {
+    AND?: plan_results_daily_dataWhereInput | plan_results_daily_dataWhereInput[]
+    OR?: plan_results_daily_dataWhereInput[]
+    NOT?: plan_results_daily_dataWhereInput | plan_results_daily_dataWhereInput[]
+    plan_id?: UuidFilter<"plan_results_daily_data"> | string
+    day?: IntFilter<"plan_results_daily_data"> | number
+    data?: JsonFilter<"plan_results_daily_data">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }
+
+  export type plan_results_daily_dataOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    day?: SortOrder
+    data?: SortOrder
+    plan_list?: plan_listOrderByWithRelationInput
+  }
+
+  export type plan_results_daily_dataWhereUniqueInput = Prisma.AtLeast<{
+    plan_id?: string
+    AND?: plan_results_daily_dataWhereInput | plan_results_daily_dataWhereInput[]
+    OR?: plan_results_daily_dataWhereInput[]
+    NOT?: plan_results_daily_dataWhereInput | plan_results_daily_dataWhereInput[]
+    day?: IntFilter<"plan_results_daily_data"> | number
+    data?: JsonFilter<"plan_results_daily_data">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }, "plan_id">
+
+  export type plan_results_daily_dataOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    day?: SortOrder
+    data?: SortOrder
+    _count?: plan_results_daily_dataCountOrderByAggregateInput
+    _avg?: plan_results_daily_dataAvgOrderByAggregateInput
+    _max?: plan_results_daily_dataMaxOrderByAggregateInput
+    _min?: plan_results_daily_dataMinOrderByAggregateInput
+    _sum?: plan_results_daily_dataSumOrderByAggregateInput
+  }
+
+  export type plan_results_daily_dataScalarWhereWithAggregatesInput = {
+    AND?: plan_results_daily_dataScalarWhereWithAggregatesInput | plan_results_daily_dataScalarWhereWithAggregatesInput[]
+    OR?: plan_results_daily_dataScalarWhereWithAggregatesInput[]
+    NOT?: plan_results_daily_dataScalarWhereWithAggregatesInput | plan_results_daily_dataScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_results_daily_data"> | string
+    day?: IntWithAggregatesFilter<"plan_results_daily_data"> | number
+    data?: JsonWithAggregatesFilter<"plan_results_daily_data">
+  }
+
+  export type plan_results_flights_dataWhereInput = {
+    AND?: plan_results_flights_dataWhereInput | plan_results_flights_dataWhereInput[]
+    OR?: plan_results_flights_dataWhereInput[]
+    NOT?: plan_results_flights_dataWhereInput | plan_results_flights_dataWhereInput[]
+    id?: UuidFilter<"plan_results_flights_data"> | string
+    plan_id?: UuidFilter<"plan_results_flights_data"> | string
+    data?: JsonFilter<"plan_results_flights_data">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }
+
+  export type plan_results_flights_dataOrderByWithRelationInput = {
+    id?: SortOrder
+    plan_id?: SortOrder
+    data?: SortOrder
+    plan_list?: plan_listOrderByWithRelationInput
+  }
+
+  export type plan_results_flights_dataWhereUniqueInput = Prisma.AtLeast<{
+    id_plan_id?: plan_results_flights_dataIdPlan_idCompoundUniqueInput
+    AND?: plan_results_flights_dataWhereInput | plan_results_flights_dataWhereInput[]
+    OR?: plan_results_flights_dataWhereInput[]
+    NOT?: plan_results_flights_dataWhereInput | plan_results_flights_dataWhereInput[]
+    id?: UuidFilter<"plan_results_flights_data"> | string
+    plan_id?: UuidFilter<"plan_results_flights_data"> | string
+    data?: JsonFilter<"plan_results_flights_data">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }, "id_plan_id">
+
+  export type plan_results_flights_dataOrderByWithAggregationInput = {
+    id?: SortOrder
+    plan_id?: SortOrder
+    data?: SortOrder
+    _count?: plan_results_flights_dataCountOrderByAggregateInput
+    _max?: plan_results_flights_dataMaxOrderByAggregateInput
+    _min?: plan_results_flights_dataMinOrderByAggregateInput
+  }
+
+  export type plan_results_flights_dataScalarWhereWithAggregatesInput = {
+    AND?: plan_results_flights_dataScalarWhereWithAggregatesInput | plan_results_flights_dataScalarWhereWithAggregatesInput[]
+    OR?: plan_results_flights_dataScalarWhereWithAggregatesInput[]
+    NOT?: plan_results_flights_dataScalarWhereWithAggregatesInput | plan_results_flights_dataScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"plan_results_flights_data"> | string
+    plan_id?: UuidWithAggregatesFilter<"plan_results_flights_data"> | string
+    data?: JsonWithAggregatesFilter<"plan_results_flights_data">
+  }
+
+  export type plan_results_total_dataWhereInput = {
+    AND?: plan_results_total_dataWhereInput | plan_results_total_dataWhereInput[]
+    OR?: plan_results_total_dataWhereInput[]
+    NOT?: plan_results_total_dataWhereInput | plan_results_total_dataWhereInput[]
+    plan_id?: UuidFilter<"plan_results_total_data"> | string
+    data?: JsonFilter<"plan_results_total_data">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }
+
+  export type plan_results_total_dataOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    data?: SortOrder
+    plan_list?: plan_listOrderByWithRelationInput
+  }
+
+  export type plan_results_total_dataWhereUniqueInput = Prisma.AtLeast<{
+    plan_id?: string
+    AND?: plan_results_total_dataWhereInput | plan_results_total_dataWhereInput[]
+    OR?: plan_results_total_dataWhereInput[]
+    NOT?: plan_results_total_dataWhereInput | plan_results_total_dataWhereInput[]
+    data?: JsonFilter<"plan_results_total_data">
+    plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
+  }, "plan_id">
+
+  export type plan_results_total_dataOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    data?: SortOrder
+    _count?: plan_results_total_dataCountOrderByAggregateInput
+    _max?: plan_results_total_dataMaxOrderByAggregateInput
+    _min?: plan_results_total_dataMinOrderByAggregateInput
+  }
+
+  export type plan_results_total_dataScalarWhereWithAggregatesInput = {
+    AND?: plan_results_total_dataScalarWhereWithAggregatesInput | plan_results_total_dataScalarWhereWithAggregatesInput[]
+    OR?: plan_results_total_dataScalarWhereWithAggregatesInput[]
+    NOT?: plan_results_total_dataScalarWhereWithAggregatesInput | plan_results_total_dataScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_results_total_data"> | string
+    data?: JsonWithAggregatesFilter<"plan_results_total_data">
   }
 
   export type audit_log_entriesCreateInput = {
@@ -29973,6 +34910,9 @@ export namespace Prisma {
     created_at?: Date | string
     plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
     plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
   }
 
@@ -29986,6 +34926,9 @@ export namespace Prisma {
     created_at?: Date | string
     plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
     plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
@@ -29999,6 +34942,9 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
     plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -30012,6 +34958,9 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
     plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -30229,6 +35178,227 @@ export namespace Prisma {
     total_person_exponent?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     flight_scale_types?: plan_resource_inputUpdateflight_scale_typesInput | string[]
     per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
+  }
+
+  export type oauth_clientsCreateInput = {
+    id: string
+    client_id: string
+    client_secret_hash: string
+    registration_type: $Enums.oauth_registration_type
+    redirect_uris: string
+    grant_types: string
+    client_name?: string | null
+    client_uri?: string | null
+    logo_uri?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    deleted_at?: Date | string | null
+  }
+
+  export type oauth_clientsUncheckedCreateInput = {
+    id: string
+    client_id: string
+    client_secret_hash: string
+    registration_type: $Enums.oauth_registration_type
+    redirect_uris: string
+    grant_types: string
+    client_name?: string | null
+    client_uri?: string | null
+    logo_uri?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    deleted_at?: Date | string | null
+  }
+
+  export type oauth_clientsUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    client_id?: StringFieldUpdateOperationsInput | string
+    client_secret_hash?: StringFieldUpdateOperationsInput | string
+    registration_type?: Enumoauth_registration_typeFieldUpdateOperationsInput | $Enums.oauth_registration_type
+    redirect_uris?: StringFieldUpdateOperationsInput | string
+    grant_types?: StringFieldUpdateOperationsInput | string
+    client_name?: NullableStringFieldUpdateOperationsInput | string | null
+    client_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    logo_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type oauth_clientsUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    client_id?: StringFieldUpdateOperationsInput | string
+    client_secret_hash?: StringFieldUpdateOperationsInput | string
+    registration_type?: Enumoauth_registration_typeFieldUpdateOperationsInput | $Enums.oauth_registration_type
+    redirect_uris?: StringFieldUpdateOperationsInput | string
+    grant_types?: StringFieldUpdateOperationsInput | string
+    client_name?: NullableStringFieldUpdateOperationsInput | string | null
+    client_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    logo_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type oauth_clientsCreateManyInput = {
+    id: string
+    client_id: string
+    client_secret_hash: string
+    registration_type: $Enums.oauth_registration_type
+    redirect_uris: string
+    grant_types: string
+    client_name?: string | null
+    client_uri?: string | null
+    logo_uri?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    deleted_at?: Date | string | null
+  }
+
+  export type oauth_clientsUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    client_id?: StringFieldUpdateOperationsInput | string
+    client_secret_hash?: StringFieldUpdateOperationsInput | string
+    registration_type?: Enumoauth_registration_typeFieldUpdateOperationsInput | $Enums.oauth_registration_type
+    redirect_uris?: StringFieldUpdateOperationsInput | string
+    grant_types?: StringFieldUpdateOperationsInput | string
+    client_name?: NullableStringFieldUpdateOperationsInput | string | null
+    client_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    logo_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type oauth_clientsUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    client_id?: StringFieldUpdateOperationsInput | string
+    client_secret_hash?: StringFieldUpdateOperationsInput | string
+    registration_type?: Enumoauth_registration_typeFieldUpdateOperationsInput | $Enums.oauth_registration_type
+    redirect_uris?: StringFieldUpdateOperationsInput | string
+    grant_types?: StringFieldUpdateOperationsInput | string
+    client_name?: NullableStringFieldUpdateOperationsInput | string | null
+    client_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    logo_uri?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type plan_results_daily_dataCreateInput = {
+    day: number
+    data: JsonNullValueInput | InputJsonValue
+    plan_list: plan_listCreateNestedOneWithoutPlan_results_daily_dataInput
+  }
+
+  export type plan_results_daily_dataUncheckedCreateInput = {
+    plan_id: string
+    day: number
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataUpdateInput = {
+    day?: IntFieldUpdateOperationsInput | number
+    data?: JsonNullValueInput | InputJsonValue
+    plan_list?: plan_listUpdateOneRequiredWithoutPlan_results_daily_dataNestedInput
+  }
+
+  export type plan_results_daily_dataUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    day?: IntFieldUpdateOperationsInput | number
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataCreateManyInput = {
+    plan_id: string
+    day: number
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataUpdateManyMutationInput = {
+    day?: IntFieldUpdateOperationsInput | number
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    day?: IntFieldUpdateOperationsInput | number
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataCreateInput = {
+    id?: string
+    data: JsonNullValueInput | InputJsonValue
+    plan_list: plan_listCreateNestedOneWithoutPlan_results_flights_dataInput
+  }
+
+  export type plan_results_flights_dataUncheckedCreateInput = {
+    id?: string
+    plan_id: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+    plan_list?: plan_listUpdateOneRequiredWithoutPlan_results_flights_dataNestedInput
+  }
+
+  export type plan_results_flights_dataUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    plan_id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataCreateManyInput = {
+    id?: string
+    plan_id: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    plan_id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataCreateInput = {
+    data: JsonNullValueInput | InputJsonValue
+    plan_list: plan_listCreateNestedOneWithoutPlan_results_total_dataInput
+  }
+
+  export type plan_results_total_dataUncheckedCreateInput = {
+    plan_id: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataUpdateInput = {
+    data?: JsonNullValueInput | InputJsonValue
+    plan_list?: plan_listUpdateOneRequiredWithoutPlan_results_total_dataNestedInput
+  }
+
+  export type plan_results_total_dataUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataCreateManyInput = {
+    plan_id: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataUpdateManyMutationInput = {
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
   }
 
   export type UuidNullableFilter<$PrismaModel = never> = {
@@ -31459,12 +36629,32 @@ export namespace Prisma {
     isNot?: plan_resource_inputWhereInput | null
   }
 
+  export type Plan_results_daily_dataNullableScalarRelationFilter = {
+    is?: plan_results_daily_dataWhereInput | null
+    isNot?: plan_results_daily_dataWhereInput | null
+  }
+
+  export type Plan_results_flights_dataListRelationFilter = {
+    every?: plan_results_flights_dataWhereInput
+    some?: plan_results_flights_dataWhereInput
+    none?: plan_results_flights_dataWhereInput
+  }
+
+  export type Plan_results_total_dataNullableScalarRelationFilter = {
+    is?: plan_results_total_dataWhereInput | null
+    isNot?: plan_results_total_dataWhereInput | null
+  }
+
   export type Plan_statusNullableScalarRelationFilter = {
     is?: plan_statusWhereInput | null
     isNot?: plan_statusWhereInput | null
   }
 
   export type plan_notificationOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type plan_results_flights_dataOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -31639,6 +36829,126 @@ export namespace Prisma {
     _sum?: NestedBigIntNullableFilter<$PrismaModel>
     _min?: NestedBigIntNullableFilter<$PrismaModel>
     _max?: NestedBigIntNullableFilter<$PrismaModel>
+  }
+
+  export type Enumoauth_registration_typeFilter<$PrismaModel = never> = {
+    equals?: $Enums.oauth_registration_type | Enumoauth_registration_typeFieldRefInput<$PrismaModel>
+    in?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    not?: NestedEnumoauth_registration_typeFilter<$PrismaModel> | $Enums.oauth_registration_type
+  }
+
+  export type oauth_clientsCountOrderByAggregateInput = {
+    id?: SortOrder
+    client_id?: SortOrder
+    client_secret_hash?: SortOrder
+    registration_type?: SortOrder
+    redirect_uris?: SortOrder
+    grant_types?: SortOrder
+    client_name?: SortOrder
+    client_uri?: SortOrder
+    logo_uri?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    deleted_at?: SortOrder
+  }
+
+  export type oauth_clientsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    client_id?: SortOrder
+    client_secret_hash?: SortOrder
+    registration_type?: SortOrder
+    redirect_uris?: SortOrder
+    grant_types?: SortOrder
+    client_name?: SortOrder
+    client_uri?: SortOrder
+    logo_uri?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    deleted_at?: SortOrder
+  }
+
+  export type oauth_clientsMinOrderByAggregateInput = {
+    id?: SortOrder
+    client_id?: SortOrder
+    client_secret_hash?: SortOrder
+    registration_type?: SortOrder
+    redirect_uris?: SortOrder
+    grant_types?: SortOrder
+    client_name?: SortOrder
+    client_uri?: SortOrder
+    logo_uri?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    deleted_at?: SortOrder
+  }
+
+  export type Enumoauth_registration_typeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.oauth_registration_type | Enumoauth_registration_typeFieldRefInput<$PrismaModel>
+    in?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    not?: NestedEnumoauth_registration_typeWithAggregatesFilter<$PrismaModel> | $Enums.oauth_registration_type
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumoauth_registration_typeFilter<$PrismaModel>
+    _max?: NestedEnumoauth_registration_typeFilter<$PrismaModel>
+  }
+
+  export type plan_results_daily_dataCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    day?: SortOrder
+    data?: SortOrder
+  }
+
+  export type plan_results_daily_dataAvgOrderByAggregateInput = {
+    day?: SortOrder
+  }
+
+  export type plan_results_daily_dataMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    day?: SortOrder
+  }
+
+  export type plan_results_daily_dataMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    day?: SortOrder
+  }
+
+  export type plan_results_daily_dataSumOrderByAggregateInput = {
+    day?: SortOrder
+  }
+
+  export type plan_results_flights_dataIdPlan_idCompoundUniqueInput = {
+    id: string
+    plan_id: string
+  }
+
+  export type plan_results_flights_dataCountOrderByAggregateInput = {
+    id?: SortOrder
+    plan_id?: SortOrder
+    data?: SortOrder
+  }
+
+  export type plan_results_flights_dataMaxOrderByAggregateInput = {
+    id?: SortOrder
+    plan_id?: SortOrder
+  }
+
+  export type plan_results_flights_dataMinOrderByAggregateInput = {
+    id?: SortOrder
+    plan_id?: SortOrder
+  }
+
+  export type plan_results_total_dataCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    data?: SortOrder
+  }
+
+  export type plan_results_total_dataMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+  }
+
+  export type plan_results_total_dataMinOrderByAggregateInput = {
+    plan_id?: SortOrder
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -32384,6 +37694,25 @@ export namespace Prisma {
     connect?: plan_resource_inputWhereUniqueInput
   }
 
+  export type plan_results_daily_dataCreateNestedOneWithoutPlan_listInput = {
+    create?: XOR<plan_results_daily_dataCreateWithoutPlan_listInput, plan_results_daily_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_daily_dataCreateOrConnectWithoutPlan_listInput
+    connect?: plan_results_daily_dataWhereUniqueInput
+  }
+
+  export type plan_results_flights_dataCreateNestedManyWithoutPlan_listInput = {
+    create?: XOR<plan_results_flights_dataCreateWithoutPlan_listInput, plan_results_flights_dataUncheckedCreateWithoutPlan_listInput> | plan_results_flights_dataCreateWithoutPlan_listInput[] | plan_results_flights_dataUncheckedCreateWithoutPlan_listInput[]
+    connectOrCreate?: plan_results_flights_dataCreateOrConnectWithoutPlan_listInput | plan_results_flights_dataCreateOrConnectWithoutPlan_listInput[]
+    createMany?: plan_results_flights_dataCreateManyPlan_listInputEnvelope
+    connect?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+  }
+
+  export type plan_results_total_dataCreateNestedOneWithoutPlan_listInput = {
+    create?: XOR<plan_results_total_dataCreateWithoutPlan_listInput, plan_results_total_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_total_dataCreateOrConnectWithoutPlan_listInput
+    connect?: plan_results_total_dataWhereUniqueInput
+  }
+
   export type plan_statusCreateNestedOneWithoutPlan_listInput = {
     create?: XOR<plan_statusCreateWithoutPlan_listInput, plan_statusUncheckedCreateWithoutPlan_listInput>
     connectOrCreate?: plan_statusCreateOrConnectWithoutPlan_listInput
@@ -32401,6 +37730,25 @@ export namespace Prisma {
     create?: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
     connectOrCreate?: plan_resource_inputCreateOrConnectWithoutPlan_listInput
     connect?: plan_resource_inputWhereUniqueInput
+  }
+
+  export type plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput = {
+    create?: XOR<plan_results_daily_dataCreateWithoutPlan_listInput, plan_results_daily_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_daily_dataCreateOrConnectWithoutPlan_listInput
+    connect?: plan_results_daily_dataWhereUniqueInput
+  }
+
+  export type plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput = {
+    create?: XOR<plan_results_flights_dataCreateWithoutPlan_listInput, plan_results_flights_dataUncheckedCreateWithoutPlan_listInput> | plan_results_flights_dataCreateWithoutPlan_listInput[] | plan_results_flights_dataUncheckedCreateWithoutPlan_listInput[]
+    connectOrCreate?: plan_results_flights_dataCreateOrConnectWithoutPlan_listInput | plan_results_flights_dataCreateOrConnectWithoutPlan_listInput[]
+    createMany?: plan_results_flights_dataCreateManyPlan_listInputEnvelope
+    connect?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+  }
+
+  export type plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput = {
+    create?: XOR<plan_results_total_dataCreateWithoutPlan_listInput, plan_results_total_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_total_dataCreateOrConnectWithoutPlan_listInput
+    connect?: plan_results_total_dataWhereUniqueInput
   }
 
   export type plan_statusUncheckedCreateNestedOneWithoutPlan_listInput = {
@@ -32446,6 +37794,40 @@ export namespace Prisma {
     update?: XOR<XOR<plan_resource_inputUpdateToOneWithWhereWithoutPlan_listInput, plan_resource_inputUpdateWithoutPlan_listInput>, plan_resource_inputUncheckedUpdateWithoutPlan_listInput>
   }
 
+  export type plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput = {
+    create?: XOR<plan_results_daily_dataCreateWithoutPlan_listInput, plan_results_daily_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_daily_dataCreateOrConnectWithoutPlan_listInput
+    upsert?: plan_results_daily_dataUpsertWithoutPlan_listInput
+    disconnect?: plan_results_daily_dataWhereInput | boolean
+    delete?: plan_results_daily_dataWhereInput | boolean
+    connect?: plan_results_daily_dataWhereUniqueInput
+    update?: XOR<XOR<plan_results_daily_dataUpdateToOneWithWhereWithoutPlan_listInput, plan_results_daily_dataUpdateWithoutPlan_listInput>, plan_results_daily_dataUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput = {
+    create?: XOR<plan_results_flights_dataCreateWithoutPlan_listInput, plan_results_flights_dataUncheckedCreateWithoutPlan_listInput> | plan_results_flights_dataCreateWithoutPlan_listInput[] | plan_results_flights_dataUncheckedCreateWithoutPlan_listInput[]
+    connectOrCreate?: plan_results_flights_dataCreateOrConnectWithoutPlan_listInput | plan_results_flights_dataCreateOrConnectWithoutPlan_listInput[]
+    upsert?: plan_results_flights_dataUpsertWithWhereUniqueWithoutPlan_listInput | plan_results_flights_dataUpsertWithWhereUniqueWithoutPlan_listInput[]
+    createMany?: plan_results_flights_dataCreateManyPlan_listInputEnvelope
+    set?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    disconnect?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    delete?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    connect?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    update?: plan_results_flights_dataUpdateWithWhereUniqueWithoutPlan_listInput | plan_results_flights_dataUpdateWithWhereUniqueWithoutPlan_listInput[]
+    updateMany?: plan_results_flights_dataUpdateManyWithWhereWithoutPlan_listInput | plan_results_flights_dataUpdateManyWithWhereWithoutPlan_listInput[]
+    deleteMany?: plan_results_flights_dataScalarWhereInput | plan_results_flights_dataScalarWhereInput[]
+  }
+
+  export type plan_results_total_dataUpdateOneWithoutPlan_listNestedInput = {
+    create?: XOR<plan_results_total_dataCreateWithoutPlan_listInput, plan_results_total_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_total_dataCreateOrConnectWithoutPlan_listInput
+    upsert?: plan_results_total_dataUpsertWithoutPlan_listInput
+    disconnect?: plan_results_total_dataWhereInput | boolean
+    delete?: plan_results_total_dataWhereInput | boolean
+    connect?: plan_results_total_dataWhereUniqueInput
+    update?: XOR<XOR<plan_results_total_dataUpdateToOneWithWhereWithoutPlan_listInput, plan_results_total_dataUpdateWithoutPlan_listInput>, plan_results_total_dataUncheckedUpdateWithoutPlan_listInput>
+  }
+
   export type plan_statusUpdateOneWithoutPlan_listNestedInput = {
     create?: XOR<plan_statusCreateWithoutPlan_listInput, plan_statusUncheckedCreateWithoutPlan_listInput>
     connectOrCreate?: plan_statusCreateOrConnectWithoutPlan_listInput
@@ -32478,6 +37860,40 @@ export namespace Prisma {
     delete?: plan_resource_inputWhereInput | boolean
     connect?: plan_resource_inputWhereUniqueInput
     update?: XOR<XOR<plan_resource_inputUpdateToOneWithWhereWithoutPlan_listInput, plan_resource_inputUpdateWithoutPlan_listInput>, plan_resource_inputUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput = {
+    create?: XOR<plan_results_daily_dataCreateWithoutPlan_listInput, plan_results_daily_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_daily_dataCreateOrConnectWithoutPlan_listInput
+    upsert?: plan_results_daily_dataUpsertWithoutPlan_listInput
+    disconnect?: plan_results_daily_dataWhereInput | boolean
+    delete?: plan_results_daily_dataWhereInput | boolean
+    connect?: plan_results_daily_dataWhereUniqueInput
+    update?: XOR<XOR<plan_results_daily_dataUpdateToOneWithWhereWithoutPlan_listInput, plan_results_daily_dataUpdateWithoutPlan_listInput>, plan_results_daily_dataUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput = {
+    create?: XOR<plan_results_flights_dataCreateWithoutPlan_listInput, plan_results_flights_dataUncheckedCreateWithoutPlan_listInput> | plan_results_flights_dataCreateWithoutPlan_listInput[] | plan_results_flights_dataUncheckedCreateWithoutPlan_listInput[]
+    connectOrCreate?: plan_results_flights_dataCreateOrConnectWithoutPlan_listInput | plan_results_flights_dataCreateOrConnectWithoutPlan_listInput[]
+    upsert?: plan_results_flights_dataUpsertWithWhereUniqueWithoutPlan_listInput | plan_results_flights_dataUpsertWithWhereUniqueWithoutPlan_listInput[]
+    createMany?: plan_results_flights_dataCreateManyPlan_listInputEnvelope
+    set?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    disconnect?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    delete?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    connect?: plan_results_flights_dataWhereUniqueInput | plan_results_flights_dataWhereUniqueInput[]
+    update?: plan_results_flights_dataUpdateWithWhereUniqueWithoutPlan_listInput | plan_results_flights_dataUpdateWithWhereUniqueWithoutPlan_listInput[]
+    updateMany?: plan_results_flights_dataUpdateManyWithWhereWithoutPlan_listInput | plan_results_flights_dataUpdateManyWithWhereWithoutPlan_listInput[]
+    deleteMany?: plan_results_flights_dataScalarWhereInput | plan_results_flights_dataScalarWhereInput[]
+  }
+
+  export type plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput = {
+    create?: XOR<plan_results_total_dataCreateWithoutPlan_listInput, plan_results_total_dataUncheckedCreateWithoutPlan_listInput>
+    connectOrCreate?: plan_results_total_dataCreateOrConnectWithoutPlan_listInput
+    upsert?: plan_results_total_dataUpsertWithoutPlan_listInput
+    disconnect?: plan_results_total_dataWhereInput | boolean
+    delete?: plan_results_total_dataWhereInput | boolean
+    connect?: plan_results_total_dataWhereUniqueInput
+    update?: XOR<XOR<plan_results_total_dataUpdateToOneWithWhereWithoutPlan_listInput, plan_results_total_dataUpdateWithoutPlan_listInput>, plan_results_total_dataUncheckedUpdateWithoutPlan_listInput>
   }
 
   export type plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput = {
@@ -32547,6 +37963,52 @@ export namespace Prisma {
     upsert?: plan_listUpsertWithoutPlan_resource_inputInput
     connect?: plan_listWhereUniqueInput
     update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_resource_inputInput, plan_listUpdateWithoutPlan_resource_inputInput>, plan_listUncheckedUpdateWithoutPlan_resource_inputInput>
+  }
+
+  export type Enumoauth_registration_typeFieldUpdateOperationsInput = {
+    set?: $Enums.oauth_registration_type
+  }
+
+  export type plan_listCreateNestedOneWithoutPlan_results_daily_dataInput = {
+    create?: XOR<plan_listCreateWithoutPlan_results_daily_dataInput, plan_listUncheckedCreateWithoutPlan_results_daily_dataInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_results_daily_dataInput
+    connect?: plan_listWhereUniqueInput
+  }
+
+  export type plan_listUpdateOneRequiredWithoutPlan_results_daily_dataNestedInput = {
+    create?: XOR<plan_listCreateWithoutPlan_results_daily_dataInput, plan_listUncheckedCreateWithoutPlan_results_daily_dataInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_results_daily_dataInput
+    upsert?: plan_listUpsertWithoutPlan_results_daily_dataInput
+    connect?: plan_listWhereUniqueInput
+    update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_results_daily_dataInput, plan_listUpdateWithoutPlan_results_daily_dataInput>, plan_listUncheckedUpdateWithoutPlan_results_daily_dataInput>
+  }
+
+  export type plan_listCreateNestedOneWithoutPlan_results_flights_dataInput = {
+    create?: XOR<plan_listCreateWithoutPlan_results_flights_dataInput, plan_listUncheckedCreateWithoutPlan_results_flights_dataInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_results_flights_dataInput
+    connect?: plan_listWhereUniqueInput
+  }
+
+  export type plan_listUpdateOneRequiredWithoutPlan_results_flights_dataNestedInput = {
+    create?: XOR<plan_listCreateWithoutPlan_results_flights_dataInput, plan_listUncheckedCreateWithoutPlan_results_flights_dataInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_results_flights_dataInput
+    upsert?: plan_listUpsertWithoutPlan_results_flights_dataInput
+    connect?: plan_listWhereUniqueInput
+    update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_results_flights_dataInput, plan_listUpdateWithoutPlan_results_flights_dataInput>, plan_listUncheckedUpdateWithoutPlan_results_flights_dataInput>
+  }
+
+  export type plan_listCreateNestedOneWithoutPlan_results_total_dataInput = {
+    create?: XOR<plan_listCreateWithoutPlan_results_total_dataInput, plan_listUncheckedCreateWithoutPlan_results_total_dataInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_results_total_dataInput
+    connect?: plan_listWhereUniqueInput
+  }
+
+  export type plan_listUpdateOneRequiredWithoutPlan_results_total_dataNestedInput = {
+    create?: XOR<plan_listCreateWithoutPlan_results_total_dataInput, plan_listUncheckedCreateWithoutPlan_results_total_dataInput>
+    connectOrCreate?: plan_listCreateOrConnectWithoutPlan_results_total_dataInput
+    upsert?: plan_listUpsertWithoutPlan_results_total_dataInput
+    connect?: plan_listWhereUniqueInput
+    update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_results_total_dataInput, plan_listUpdateWithoutPlan_results_total_dataInput>, plan_listUncheckedUpdateWithoutPlan_results_total_dataInput>
   }
 
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
@@ -32996,6 +38458,23 @@ export namespace Prisma {
     _sum?: NestedBigIntNullableFilter<$PrismaModel>
     _min?: NestedBigIntNullableFilter<$PrismaModel>
     _max?: NestedBigIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumoauth_registration_typeFilter<$PrismaModel = never> = {
+    equals?: $Enums.oauth_registration_type | Enumoauth_registration_typeFieldRefInput<$PrismaModel>
+    in?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    not?: NestedEnumoauth_registration_typeFilter<$PrismaModel> | $Enums.oauth_registration_type
+  }
+
+  export type NestedEnumoauth_registration_typeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.oauth_registration_type | Enumoauth_registration_typeFieldRefInput<$PrismaModel>
+    in?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.oauth_registration_type[] | ListEnumoauth_registration_typeFieldRefInput<$PrismaModel>
+    not?: NestedEnumoauth_registration_typeWithAggregatesFilter<$PrismaModel> | $Enums.oauth_registration_type
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumoauth_registration_typeFilter<$PrismaModel>
+    _max?: NestedEnumoauth_registration_typeFilter<$PrismaModel>
   }
 
   export type saml_relay_statesCreateWithoutFlow_stateInput = {
@@ -35141,6 +40620,54 @@ export namespace Prisma {
     create: XOR<plan_resource_inputCreateWithoutPlan_listInput, plan_resource_inputUncheckedCreateWithoutPlan_listInput>
   }
 
+  export type plan_results_daily_dataCreateWithoutPlan_listInput = {
+    day: number
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataUncheckedCreateWithoutPlan_listInput = {
+    day: number
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataCreateOrConnectWithoutPlan_listInput = {
+    where: plan_results_daily_dataWhereUniqueInput
+    create: XOR<plan_results_daily_dataCreateWithoutPlan_listInput, plan_results_daily_dataUncheckedCreateWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataCreateWithoutPlan_listInput = {
+    id?: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUncheckedCreateWithoutPlan_listInput = {
+    id?: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataCreateOrConnectWithoutPlan_listInput = {
+    where: plan_results_flights_dataWhereUniqueInput
+    create: XOR<plan_results_flights_dataCreateWithoutPlan_listInput, plan_results_flights_dataUncheckedCreateWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataCreateManyPlan_listInputEnvelope = {
+    data: plan_results_flights_dataCreateManyPlan_listInput | plan_results_flights_dataCreateManyPlan_listInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type plan_results_total_dataCreateWithoutPlan_listInput = {
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataUncheckedCreateWithoutPlan_listInput = {
+    data: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataCreateOrConnectWithoutPlan_listInput = {
+    where: plan_results_total_dataWhereUniqueInput
+    create: XOR<plan_results_total_dataCreateWithoutPlan_listInput, plan_results_total_dataUncheckedCreateWithoutPlan_listInput>
+  }
+
   export type plan_statusCreateWithoutPlan_listInput = {
     step?: string
     input_status?: JsonNullValueInput | InputJsonValue
@@ -35216,6 +40743,71 @@ export namespace Prisma {
     per_flight_scale_data?: NullableJsonNullValueInput | InputJsonValue
   }
 
+  export type plan_results_daily_dataUpsertWithoutPlan_listInput = {
+    update: XOR<plan_results_daily_dataUpdateWithoutPlan_listInput, plan_results_daily_dataUncheckedUpdateWithoutPlan_listInput>
+    create: XOR<plan_results_daily_dataCreateWithoutPlan_listInput, plan_results_daily_dataUncheckedCreateWithoutPlan_listInput>
+    where?: plan_results_daily_dataWhereInput
+  }
+
+  export type plan_results_daily_dataUpdateToOneWithWhereWithoutPlan_listInput = {
+    where?: plan_results_daily_dataWhereInput
+    data: XOR<plan_results_daily_dataUpdateWithoutPlan_listInput, plan_results_daily_dataUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_results_daily_dataUpdateWithoutPlan_listInput = {
+    day?: IntFieldUpdateOperationsInput | number
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_daily_dataUncheckedUpdateWithoutPlan_listInput = {
+    day?: IntFieldUpdateOperationsInput | number
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUpsertWithWhereUniqueWithoutPlan_listInput = {
+    where: plan_results_flights_dataWhereUniqueInput
+    update: XOR<plan_results_flights_dataUpdateWithoutPlan_listInput, plan_results_flights_dataUncheckedUpdateWithoutPlan_listInput>
+    create: XOR<plan_results_flights_dataCreateWithoutPlan_listInput, plan_results_flights_dataUncheckedCreateWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataUpdateWithWhereUniqueWithoutPlan_listInput = {
+    where: plan_results_flights_dataWhereUniqueInput
+    data: XOR<plan_results_flights_dataUpdateWithoutPlan_listInput, plan_results_flights_dataUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataUpdateManyWithWhereWithoutPlan_listInput = {
+    where: plan_results_flights_dataScalarWhereInput
+    data: XOR<plan_results_flights_dataUpdateManyMutationInput, plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listInput>
+  }
+
+  export type plan_results_flights_dataScalarWhereInput = {
+    AND?: plan_results_flights_dataScalarWhereInput | plan_results_flights_dataScalarWhereInput[]
+    OR?: plan_results_flights_dataScalarWhereInput[]
+    NOT?: plan_results_flights_dataScalarWhereInput | plan_results_flights_dataScalarWhereInput[]
+    id?: UuidFilter<"plan_results_flights_data"> | string
+    plan_id?: UuidFilter<"plan_results_flights_data"> | string
+    data?: JsonFilter<"plan_results_flights_data">
+  }
+
+  export type plan_results_total_dataUpsertWithoutPlan_listInput = {
+    update: XOR<plan_results_total_dataUpdateWithoutPlan_listInput, plan_results_total_dataUncheckedUpdateWithoutPlan_listInput>
+    create: XOR<plan_results_total_dataCreateWithoutPlan_listInput, plan_results_total_dataUncheckedCreateWithoutPlan_listInput>
+    where?: plan_results_total_dataWhereInput
+  }
+
+  export type plan_results_total_dataUpdateToOneWithWhereWithoutPlan_listInput = {
+    where?: plan_results_total_dataWhereInput
+    data: XOR<plan_results_total_dataUpdateWithoutPlan_listInput, plan_results_total_dataUncheckedUpdateWithoutPlan_listInput>
+  }
+
+  export type plan_results_total_dataUpdateWithoutPlan_listInput = {
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_total_dataUncheckedUpdateWithoutPlan_listInput = {
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
   export type plan_statusUpsertWithoutPlan_listInput = {
     update: XOR<plan_statusUpdateWithoutPlan_listInput, plan_statusUncheckedUpdateWithoutPlan_listInput>
     create: XOR<plan_statusCreateWithoutPlan_listInput, plan_statusUncheckedCreateWithoutPlan_listInput>
@@ -35250,6 +40842,9 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
   }
 
@@ -35262,6 +40857,9 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
@@ -35290,6 +40888,9 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -35302,6 +40903,9 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -35315,6 +40919,9 @@ export namespace Prisma {
     created_at?: Date | string
     plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
     plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataCreateNestedOneWithoutPlan_listInput
   }
 
   export type plan_listUncheckedCreateWithoutPlan_statusInput = {
@@ -35327,6 +40934,9 @@ export namespace Prisma {
     created_at?: Date | string
     plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
     plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
   export type plan_listCreateOrConnectWithoutPlan_statusInput = {
@@ -35355,6 +40965,9 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
     plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUpdateOneWithoutPlan_listNestedInput
   }
 
   export type plan_listUncheckedUpdateWithoutPlan_statusInput = {
@@ -35367,6 +40980,9 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
     plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
   export type plan_listCreateWithoutPlan_resource_inputInput = {
@@ -35378,6 +40994,9 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
   }
 
@@ -35390,6 +41009,9 @@ export namespace Prisma {
     participant_ids?: plan_listCreateparticipant_idsInput | string[]
     created_at?: Date | string
     plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput
     plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
   }
 
@@ -35418,6 +41040,9 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUpdateOneWithoutPlan_listNestedInput
     plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -35430,6 +41055,237 @@ export namespace Prisma {
     participant_ids?: plan_listUpdateparticipant_idsInput | string[]
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listCreateWithoutPlan_results_daily_dataInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataCreateNestedOneWithoutPlan_listInput
+    plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listUncheckedCreateWithoutPlan_results_daily_dataInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listCreateOrConnectWithoutPlan_results_daily_dataInput = {
+    where: plan_listWhereUniqueInput
+    create: XOR<plan_listCreateWithoutPlan_results_daily_dataInput, plan_listUncheckedCreateWithoutPlan_results_daily_dataInput>
+  }
+
+  export type plan_listUpsertWithoutPlan_results_daily_dataInput = {
+    update: XOR<plan_listUpdateWithoutPlan_results_daily_dataInput, plan_listUncheckedUpdateWithoutPlan_results_daily_dataInput>
+    create: XOR<plan_listCreateWithoutPlan_results_daily_dataInput, plan_listUncheckedCreateWithoutPlan_results_daily_dataInput>
+    where?: plan_listWhereInput
+  }
+
+  export type plan_listUpdateToOneWithWhereWithoutPlan_results_daily_dataInput = {
+    where?: plan_listWhereInput
+    data: XOR<plan_listUpdateWithoutPlan_results_daily_dataInput, plan_listUncheckedUpdateWithoutPlan_results_daily_dataInput>
+  }
+
+  export type plan_listUpdateWithoutPlan_results_daily_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUpdateOneWithoutPlan_listNestedInput
+    plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listUncheckedUpdateWithoutPlan_results_daily_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listCreateWithoutPlan_results_flights_dataInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataCreateNestedOneWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataCreateNestedOneWithoutPlan_listInput
+    plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listUncheckedCreateWithoutPlan_results_flights_dataInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_total_data?: plan_results_total_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listCreateOrConnectWithoutPlan_results_flights_dataInput = {
+    where: plan_listWhereUniqueInput
+    create: XOR<plan_listCreateWithoutPlan_results_flights_dataInput, plan_listUncheckedCreateWithoutPlan_results_flights_dataInput>
+  }
+
+  export type plan_listUpsertWithoutPlan_results_flights_dataInput = {
+    update: XOR<plan_listUpdateWithoutPlan_results_flights_dataInput, plan_listUncheckedUpdateWithoutPlan_results_flights_dataInput>
+    create: XOR<plan_listCreateWithoutPlan_results_flights_dataInput, plan_listUncheckedCreateWithoutPlan_results_flights_dataInput>
+    where?: plan_listWhereInput
+  }
+
+  export type plan_listUpdateToOneWithWhereWithoutPlan_results_flights_dataInput = {
+    where?: plan_listWhereInput
+    data: XOR<plan_listUpdateWithoutPlan_results_flights_dataInput, plan_listUncheckedUpdateWithoutPlan_results_flights_dataInput>
+  }
+
+  export type plan_listUpdateWithoutPlan_results_flights_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUpdateOneWithoutPlan_listNestedInput
+    plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listUncheckedUpdateWithoutPlan_results_flights_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_total_data?: plan_results_total_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listCreateWithoutPlan_results_total_dataInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataCreateNestedManyWithoutPlan_listInput
+    plan_status?: plan_statusCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listUncheckedCreateWithoutPlan_results_total_dataInput = {
+    id?: string
+    creator_id: string
+    name: string
+    year: number
+    month: number
+    participant_ids?: plan_listCreateparticipant_idsInput | string[]
+    created_at?: Date | string
+    plan_notification?: plan_notificationUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_resource_input?: plan_resource_inputUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedCreateNestedOneWithoutPlan_listInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedCreateNestedManyWithoutPlan_listInput
+    plan_status?: plan_statusUncheckedCreateNestedOneWithoutPlan_listInput
+  }
+
+  export type plan_listCreateOrConnectWithoutPlan_results_total_dataInput = {
+    where: plan_listWhereUniqueInput
+    create: XOR<plan_listCreateWithoutPlan_results_total_dataInput, plan_listUncheckedCreateWithoutPlan_results_total_dataInput>
+  }
+
+  export type plan_listUpsertWithoutPlan_results_total_dataInput = {
+    update: XOR<plan_listUpdateWithoutPlan_results_total_dataInput, plan_listUncheckedUpdateWithoutPlan_results_total_dataInput>
+    create: XOR<plan_listCreateWithoutPlan_results_total_dataInput, plan_listUncheckedCreateWithoutPlan_results_total_dataInput>
+    where?: plan_listWhereInput
+  }
+
+  export type plan_listUpdateToOneWithWhereWithoutPlan_results_total_dataInput = {
+    where?: plan_listWhereInput
+    data: XOR<plan_listUpdateWithoutPlan_results_total_dataInput, plan_listUncheckedUpdateWithoutPlan_results_total_dataInput>
+  }
+
+  export type plan_listUpdateWithoutPlan_results_total_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUpdateManyWithoutPlan_listNestedInput
+    plan_status?: plan_statusUpdateOneWithoutPlan_listNestedInput
+  }
+
+  export type plan_listUncheckedUpdateWithoutPlan_results_total_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    participant_ids?: plan_listUpdateparticipant_idsInput | string[]
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_notification?: plan_notificationUncheckedUpdateManyWithoutPlan_listNestedInput
+    plan_resource_input?: plan_resource_inputUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_daily_data?: plan_results_daily_dataUncheckedUpdateOneWithoutPlan_listNestedInput
+    plan_results_flights_data?: plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listNestedInput
     plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
@@ -35896,6 +41752,11 @@ export namespace Prisma {
     created_at?: Date | string
   }
 
+  export type plan_results_flights_dataCreateManyPlan_listInput = {
+    id?: string
+    data: JsonNullValueInput | InputJsonValue
+  }
+
   export type plan_notificationUpdateWithoutPlan_listInput = {
     id?: StringFieldUpdateOperationsInput | string
     plan_name?: StringFieldUpdateOperationsInput | string
@@ -35921,6 +41782,21 @@ export namespace Prisma {
     message?: StringFieldUpdateOperationsInput | string
     is_confirmed?: BoolFieldUpdateOperationsInput | boolean
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type plan_results_flights_dataUpdateWithoutPlan_listInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUncheckedUpdateWithoutPlan_listInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
   }
 
 
