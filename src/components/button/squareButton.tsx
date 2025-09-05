@@ -1,7 +1,7 @@
 "use client";
 
 import { ButtonHTMLAttributes } from "react";
-import { Spinner } from "@/client/components/spinner";
+import { Spinner } from "@/components/spinner";
 
 interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;

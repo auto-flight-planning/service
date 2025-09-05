@@ -1,4 +1,4 @@
-import { CloseButton } from "@/client/components/button";
+import { CloseButton } from "@/components/button";
 
 interface BasicModalHeaderProps {
   title: string;

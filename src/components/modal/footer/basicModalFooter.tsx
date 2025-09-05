@@ -1,4 +1,4 @@
-import { SquareButton } from "@/client/components/button";
+import { SquareButton } from "@/components/button";
 
 interface BasicModalFooterProps {
   cancelText?: string;
