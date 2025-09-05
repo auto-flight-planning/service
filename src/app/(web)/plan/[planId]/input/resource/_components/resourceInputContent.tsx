@@ -5,7 +5,7 @@ import { BackButton, SquareButton } from "@/components/button";
 import { PointCard } from "@/components/card";
 import DataInputCard from "../../_components/dataInputCard";
 import { useModalStore } from "@/features/modal/modalStore";
-import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { useGetPlanInfo } from "@/features/plan/base/get/one/useGetPlanInfo";
 import { Spinner } from "@/components/spinner";
 
 interface ResourceInputContentProps {

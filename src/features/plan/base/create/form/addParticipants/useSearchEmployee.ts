@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useUserStore } from "@/client/stores";
+import { useUserStore } from "@/features/auth";
 
 export interface EmployeeResult {
   employeeId: string;

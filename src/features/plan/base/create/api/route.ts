@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { withErrorHandler, checkRequestBody } from "@/server/lib";
 import { createPlanReqSchema, createPlanResSchema } from "./schema";
 import { prismaClient } from "@/server/db/prismaClient";
-import { inputStatusInitDummy } from "@/client/inputStatusDummy";
+import { inputStatusInitDummy } from "@/constants/dummy/inputStatusDummy";
 
 export const POST = withErrorHandler(async (req: NextRequest) => {
   const parsed = await checkRequestBody(req, createPlanReqSchema);

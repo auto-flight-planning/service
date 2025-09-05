@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { useModalStore } from "../modalStore";
 import Modal from "./modal";
 import { LoginModal } from "@/features/auth/login";
-import { CreatePlanModal } from "@/client/features/plan/create";
-import { ResourceInputModal } from "@/client/features/plan/input/resource/totalPerson";
-import { FlightScaleModal } from "@/client/features/plan/input/resource/flightScale";
+import { CreatePlanModal } from "@/features/plan/base/create";
+import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";
+import { FlightScaleModal } from "@/features/plan/input/resource/flightScale";
 
 const MODAL_COMPONENTS = {
   login: LoginModal,

@@ -11,18 +11,18 @@ extendZodWithOpenApi(z);
 import { registerLoginSchemas } from "@/features/employee/check-employee/openapi";
 import { registerGetEmployeeSchemas } from "@/features/employee/get-employee/openapi";
 import { registerSearchEmployeeSchemas } from "@/features/employee/search-employee/openapi";
-import { registerCreatePlanSchemas } from "@/server/features/plan/create/openapi";
-import { registerGetNotificationSchemas } from "@/server/features/plan/notification/get/openapi";
-import { registerGetPlanOneSchemas } from "@/server/features/plan/get/one/openapi";
+import { registerCreatePlanSchemas } from "@/features/plan/base/create/api/openapi";
+import { registerGetNotificationSchemas } from "@/features/plan/notification/get/api/openapi";
+import { registerGetPlanOneSchemas } from "@/features/plan/base/get/one/api/openapi";
 import {
   registerUpdateFlightScaleResourceSchemas,
   registerUpdateTotalPersonResourceSchemas,
-} from "@/server/features/plan/input/resource/update/openapi";
+} from "@/features/plan/input/resource/update/openapi";
 import {
   registerGetFlightScaleResourceSchemas,
   registerGetTotalPersonResourceSchemas,
-} from "@/server/features/plan/input/resource/get/openapi";
-import { registerGetResultSchemas } from "@/server/features/plan/result/openapi";
+} from "@/features/plan/input/resource/get/openapi";
+import { registerGetResultSchemas } from "@/features/plan/result/create/openapi";
 
 export const registry = new OpenAPIRegistry();
 

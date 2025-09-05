@@ -1,26 +1,22 @@
-import { useModalStore } from "@/client/stores";
-import { InputModalProps } from "../../types";
+"use client";
+
+import { FormProvider } from "react-hook-form";
+import { useModalStore } from "@/features/modal";
 import {
+  NumberedModalHeader,
   BasicModalFooter,
   ModalTab,
-  NumberedModalHeader,
 } from "@/features/modal/components";
-import { FlightScaleExplain, FlightScaleForm } from ".";
-import useFlightScaleResource from "./useFlightScaleResource";
-import { FormProvider } from "react-hook-form";
 import { Spinner } from "@/components/spinner";
+import { useTotalPersonResource, TotalPersonForm, TotalPersonExplain } from ".";
+import { InputModalProps } from "../../types";
 
-export default function FlightScaleModal({
+export default function ResourceInputModal({
   planId = "",
   type = "edit",
 }: InputModalProps) {
-  const {
-    formMethods,
-    onValidSubmit,
-    onInvalidSubmit,
-    isPendingToGet,
-    isPendingToUpdate,
-  } = useFlightScaleResource(planId);
+  const { formMethods, onValidSubmit, isPendingToGet, isPendingToUpdate } =
+    useTotalPersonResource(planId);
   const { handleSubmit } = formMethods;
   const { closeModal, openModal } = useModalStore();
 
@@ -33,21 +29,21 @@ export default function FlightScaleModal({
           <Spinner size="md" />
         </div>
       ) : (
-        <FlightScaleForm planId={planId} type={type} />
+        <TotalPersonForm planId={planId} type={type} />
       ),
     },
     {
       id: "detail",
       label: "詳細説明",
-      content: <FlightScaleExplain />,
+      content: <TotalPersonExplain />,
     },
   ];
 
   return (
     <div className="w-[50rem] h-[40rem] max-h-[40rem] max-w-[50rem] flex flex-col justify-between">
       <NumberedModalHeader
-        title="運航規模の種類"
-        number={2}
+        title="総人員データ"
+        number={1}
         onClose={closeModal}
       />
       <FormProvider {...formMethods}>
@@ -58,7 +54,7 @@ export default function FlightScaleModal({
               confirmText="保存"
               showCancel={false}
               leftText="保存すると企画部に自動で通知が送信されます"
-              onConfirm={handleSubmit(onValidSubmit, onInvalidSubmit)}
+              onConfirm={handleSubmit(onValidSubmit)}
               isPending={isPendingToUpdate}
               onBorder={false}
             />
@@ -67,7 +63,7 @@ export default function FlightScaleModal({
               confirmText="編集"
               showCancel={false}
               onConfirm={() =>
-                openModal("flightScaleInput", {
+                openModal("resourceInput", {
                   planId,
                   type: "edit",
                 })

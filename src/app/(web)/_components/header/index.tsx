@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useUserStore } from "@/client/stores";
+import { useUserStore } from "@/features/auth";
 import LogoutButton from "./logoutButton";
 
 export default function Header() {

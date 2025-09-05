@@ -5,7 +5,7 @@ import {
 } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { useToastStore } from "@/client/stores";
+import { useToastStore } from "@/features/toast";
 import { queryClient } from "@/app/(web)/_providers/reactQueryProvider";
 import { useEffect } from "react";
 

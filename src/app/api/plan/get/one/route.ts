@@ -1,1 +1,1 @@
-export { GET } from "@/server/features/plan/get/one/route";
+export { GET } from "@/features/plan/base/get/one/api/route";

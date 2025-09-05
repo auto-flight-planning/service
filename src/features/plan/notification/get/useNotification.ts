@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { useUserStore } from "@/client/stores";
+import { useUserStore } from "@/features/auth";
 import { plan_notification } from "@/server/db/prisma/index.d";
 import { useEffect, useState } from "react";
 

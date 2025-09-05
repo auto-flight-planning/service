@@ -1,7 +1,7 @@
 "use client";
 
 import { Spinner } from "@/components/spinner";
-import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { useGetPlanInfo } from "@/features/plan/base/get/one/useGetPlanInfo";
 import { usePathname } from "next/navigation";
 
 interface PlanHeaderProps {

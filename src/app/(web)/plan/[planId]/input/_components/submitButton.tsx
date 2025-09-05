@@ -1,7 +1,7 @@
 "use client";
 
 import { SquareButton } from "@/components/button";
-import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { useGetPlanInfo } from "@/features/plan/base/get/one/useGetPlanInfo";
 import { useRouter } from "next/navigation";
 
 interface SubmitButtonProps {

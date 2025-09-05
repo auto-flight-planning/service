@@ -1,4 +1,4 @@
-import { GetPlanOneResSchema } from "@/server/features/plan/get/one/schema";
+import { GetPlanOneResSchema } from "@/features/plan/base/get/one/api/schema";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetPlanInfo = (planId: string) => {

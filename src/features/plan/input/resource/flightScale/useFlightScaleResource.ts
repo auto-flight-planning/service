@@ -6,7 +6,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/app/(web)/_providers/reactQueryProvider";
-import { useToastStore } from "@/client/stores";
+import { useToastStore } from "@/features/toast";
 import { useEffect } from "react";
 
 export default function useFlightScaleResource(planId: string) {

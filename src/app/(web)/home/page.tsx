@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useModalStore } from "@/features/modal/modalStore";
+import { useModalStore } from "@/features/modal";
 import { WhiteCard } from "@/components/card";
-import Notification from "@/client/features/plan/notification";
+import Notification from "@/features/plan/notification/get";
 
 export default function Home() {
   const router = useRouter();
