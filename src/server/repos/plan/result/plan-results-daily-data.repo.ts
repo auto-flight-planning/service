@@ -1,6 +1,6 @@
 import { prismaClient } from "@/server/db/prismaClient";
 
-export const planResultsDailyDataRepo = {
+const planResultsDailyDataRepo = {
   async insertMany(planId: string, day: number, data: any) {
     return prismaClient.plan_results_daily_data.create({
       data: { plan_id: planId, day, data },
@@ -32,3 +32,5 @@ export const planResultsDailyDataRepo = {
     });
   },
 };
+
+export default planResultsDailyDataRepo;

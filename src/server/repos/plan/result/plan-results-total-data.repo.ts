@@ -1,6 +1,6 @@
 import { prismaClient } from "@/server/db/prismaClient";
 
-export const planResultsTotalDataRepo = {
+const planResultsTotalDataRepo = {
   async insertOne(planId: string, data: any) {
     return prismaClient.plan_results_total_data.create({
       data: {
@@ -35,3 +35,5 @@ export const planResultsTotalDataRepo = {
     });
   },
 };
+
+export default planResultsTotalDataRepo;
