@@ -430,12 +430,11 @@ model plan_results_daily_data {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_results_flights_data {
-  id        String    @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   plan_id   String    @db.Uuid
   data      Json
   plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade)
 
-  @@id([id, plan_id])
   @@schema("public")
 }
 

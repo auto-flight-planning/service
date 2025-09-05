@@ -33389,15 +33389,14 @@ export namespace Prisma {
   }
 
   export type plan_results_flights_dataWhereUniqueInput = Prisma.AtLeast<{
-    id_plan_id?: plan_results_flights_dataIdPlan_idCompoundUniqueInput
+    id?: string
     AND?: plan_results_flights_dataWhereInput | plan_results_flights_dataWhereInput[]
     OR?: plan_results_flights_dataWhereInput[]
     NOT?: plan_results_flights_dataWhereInput | plan_results_flights_dataWhereInput[]
-    id?: UuidFilter<"plan_results_flights_data"> | string
     plan_id?: UuidFilter<"plan_results_flights_data"> | string
     data?: JsonFilter<"plan_results_flights_data">
     plan_list?: XOR<Plan_listScalarRelationFilter, plan_listWhereInput>
-  }, "id_plan_id">
+  }, "id">
 
   export type plan_results_flights_dataOrderByWithAggregationInput = {
     id?: SortOrder
@@ -36915,11 +36914,6 @@ export namespace Prisma {
 
   export type plan_results_daily_dataSumOrderByAggregateInput = {
     day?: SortOrder
-  }
-
-  export type plan_results_flights_dataIdPlan_idCompoundUniqueInput = {
-    id: string
-    plan_id: string
   }
 
   export type plan_results_flights_dataCountOrderByAggregateInput = {
