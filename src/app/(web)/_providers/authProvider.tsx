@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import createBrowserClient from "@/server/supabase/browserClient";
+import createBrowserClient from "@/supabase/browserClient";
 import { useToastStore, useUserStore } from "@/client/stores";
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
