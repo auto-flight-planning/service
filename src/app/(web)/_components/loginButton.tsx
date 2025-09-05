@@ -1,7 +1,7 @@
 "use client";
 
-import { useModalStore } from "@/client/stores";
-import { SquareButton } from "@/client/components/button";
+import { useModalStore } from "@/features/modal";
+import { SquareButton } from "@/components/button";
 
 export default function LoginButton() {
   const { openModal } = useModalStore();

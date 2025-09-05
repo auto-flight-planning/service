@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { SquareButton } from "@/client/components/button";
-import { PointCard } from "@/client/components/card";
+import { SquareButton } from "@/components/button";
+import { PointCard } from "@/components/card";
 import DataInputCard from "../../_components/dataInputCard";
 
 interface AnalyticsInputContentProps {

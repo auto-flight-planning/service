@@ -1,5 +1,5 @@
-import { RoundButton } from "@/client/components/button";
-import createBrowserClient from "@/server/supabase/browserClient";
+import { RoundButton } from "@/components/button";
+import createBrowserClient from "@/supabase/browserClient";
 
 export default function LogoutButton() {
   const supabaseCli = createBrowserClient();

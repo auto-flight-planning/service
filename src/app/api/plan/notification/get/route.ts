@@ -1,1 +1,1 @@
-export { POST } from "@/server/features/plan/notification/get/route";
+export { POST } from "@/features/plan/notification/get/api/route";

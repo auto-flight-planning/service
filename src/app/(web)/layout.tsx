@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "../../app/globals.css";
-import { AuthProvider, ReactQueryProvider } from "@/client/providers";
-import { ModalContainer } from "@/client/components/modal";
-import { ToastContainer } from "@/client/components/toast";
+import "@/styles/globals.css";
+import { ReactQueryProvider } from "./_providers";
+import AuthProvider from "@/features/auth/authProvider";
+import { ModalContainer } from "@/features/modal/components";
+import { ToastContainer } from "@/features/toast/components";
 import { Header } from "./_components";
 
 export const metadata: Metadata = {
