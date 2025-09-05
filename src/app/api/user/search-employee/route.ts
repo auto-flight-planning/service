@@ -1,1 +1,1 @@
-export { GET } from "@/server/features/user/search-employee/route";
+export { GET } from "@/features/employee/search-employee/route";

@@ -1,1 +1,1 @@
-export { POST } from "@/server/features/user/check-employee/route";
+export { POST } from "@/features/employee/check-employee/route";

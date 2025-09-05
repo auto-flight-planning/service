@@ -1,8 +1,8 @@
 "use client";
 
-import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
+import { useGetPlanInfo } from "@/features/plan/base/get/one/useGetPlanInfo";
 import DataCategoryCard from "./dataCategoryCard";
-import { inputStatusExampleDummy } from "@/client/inputStatusDummy";
+import { inputStatusExampleDummy } from "@/constants/dummy/inputStatusDummy";
 import { useRouter } from "next/navigation";
 
 interface DataCategoriesSectionProps {

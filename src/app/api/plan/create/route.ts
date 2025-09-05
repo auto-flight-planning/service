@@ -1,1 +1,1 @@
-export { POST } from "@/server/features/plan/create/route";
+export { POST } from "@/features/plan/base/create/api/route";

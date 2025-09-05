@@ -1,1 +1,1 @@
-export { TotalPersonGET as GET } from "@/server/features/plan/input/resource/get/route";
+export { TotalPersonGET as GET } from "@/features/plan/input/resource/get/route";

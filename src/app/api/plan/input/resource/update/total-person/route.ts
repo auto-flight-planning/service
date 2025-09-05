@@ -1,1 +1,1 @@
-export { TotalPersonPOST as POST } from "@/server/features/plan/input/resource/update/route";
+export { TotalPersonPOST as POST } from "@/features/plan/input/resource/update/route";

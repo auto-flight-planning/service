@@ -1,7 +1,7 @@
 "use client";
 
-import { WhiteCard } from "@/client/components/card";
-import { StatusChip } from "@/client/components/chip";
+import { WhiteCard } from "@/components/card";
+import { StatusChip } from "@/components/chip";
 
 interface DataInputCardProps {
   number: number;
