@@ -22,7 +22,7 @@ import {
   registerGetFlightScaleResourceSchemas,
   registerGetTotalPersonResourceSchemas,
 } from "@/features/plan/input/resource/get/openapi";
-import { registerGetResultSchemas } from "@/features/plan/result/create/openapi";
+import { registerGetResultSchemas } from "@/features/plan/result/server/createPlanResult/openapi";
 
 export const registry = new OpenAPIRegistry();
 
