@@ -50,12 +50,7 @@ export async function loadMonthlyMinimumOperations(
   filePath: string
 ): Promise<MonthlyMinimumOperations> {
   try {
-    console.log("月別最小運航基準データロード開始...");
-
     const data = await loadCSVData(filePath);
-
-    console.log(`月別最小運航基準データロード完了: ${data.length}件`);
-
     return data;
   } catch (error) {
     console.error("月別最小運航基準データロード失敗:", error);

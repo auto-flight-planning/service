@@ -1,5 +1,4 @@
 import fs from "fs";
-import path from "path";
 import { parse } from "csv-parse/sync";
 
 // CSVの全てのカラムを含むインターフェース
@@ -96,8 +95,6 @@ export async function loadAndProcessFlightData(
   domesticPath: string
 ): Promise<LoadedFlightData> {
   try {
-    console.log("CSVファイル群ロード開始...");
-
     // CSV 파일들 로드 (병렬 처리)
     const [internationalDepartures, internationalArrivals, domesticFlights] =
       await Promise.all([
@@ -105,12 +102,6 @@ export async function loadAndProcessFlightData(
         loadCSVData(internationalArrivalPath),
         loadCSVData(domesticPath),
       ]);
-
-    console.log(
-      `International 출발 데이터: ${internationalDepartures.length}건`
-    );
-    console.log(`International 도착 데이터: ${internationalArrivals.length}건`);
-    console.log(`Domestic 데이터: ${domesticFlights.length}건`);
 
     // 往路 구성 (international 출발 + domestic)
     const outbound: FlightData[] = [
@@ -158,8 +149,6 @@ export async function loadAndProcessFlightData(
     const domesticInbound: DomesticInboundFlights = [...domesticFlights].sort(
       (a, b) => b.優先順位指数 - a.優先順位指数
     );
-
-    console.log("운항 데이터 로드 및 정렬 완료");
 
     return {
       outbound,

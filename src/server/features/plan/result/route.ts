@@ -15,23 +15,30 @@ export async function GET(request: NextRequest) {
     // エンジン初期化
     await engine.initialize();
 
-    // 全体運航割り当て実行
-    await engine.assignAllFlights();
-
-    // 割り当て結果取得
-    const assignedFlights = engine.getAssignedFlights();
-
-    // レスポンスデータ構造
     const responseData = {
       message: "Flight assignment result retrieved successfully",
       timestamp: new Date(),
-      assignedFlightsCount: assignedFlights.length,
-      assignedFlights: assignedFlights.map((flight) => ({
-        outbound: flight.outbound,
-        inbound: flight.inbound,
-        assignmentTime: flight.assignmentTime,
-      })),
+      assignedFlightsCount: 0,
+      assignedFlights: [],
     };
+
+    // // 全体運航割り当て実行
+    // await engine.assignAllFlights();
+
+    // // 割り当て結果取得
+    // const assignedFlights = engine.getAssignedFlights();
+
+    // // レスポンスデータ構造
+    // const responseData = {
+    //   message: "Flight assignment result retrieved successfully",
+    //   timestamp: new Date(),
+    //   assignedFlightsCount: assignedFlights.length,
+    //   assignedFlights: assignedFlights.map((flight) => ({
+    //     outbound: flight.outbound,
+    //     inbound: flight.inbound,
+    //     assignmentTime: flight.assignmentTime,
+    //   })),
+    // };
 
     // スキーマ検証
     const validatedResponse = getResultResponseSchema.parse(responseData);

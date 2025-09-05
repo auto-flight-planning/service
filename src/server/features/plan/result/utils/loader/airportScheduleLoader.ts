@@ -28,8 +28,6 @@ export async function loadAirportScheduleData(
       skip_empty_lines: true,
     }) as AirportScheduleRow[];
 
-    console.log(`空港スケジュールデータロード完了: ${records.length}件`);
-
     // パースされたデータ作成
     const parsedData: ParsedAirportScheduleData = {};
 
@@ -56,12 +54,6 @@ export async function loadAirportScheduleData(
         parsedData[scheduleKey] = [];
       }
     });
-
-    console.log(
-      `空港スケジュールデータパース完了: ${
-        Object.keys(parsedData).length
-      }個のキー`
-    );
 
     return {
       rawData: records,

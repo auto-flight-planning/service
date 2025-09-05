@@ -30,7 +30,7 @@ export interface AssignedFlight {
 // 割り当てエンジンの状態
 export interface AssignmentEngineState {
   internalResourceData: any;
-  loadedData: LoadedFlightData;
+  flightCandidateData: LoadedFlightData;
   assignedFlights: AssignedFlight[];
   currentOutboundIndex: number;
   airportScheduleData: ParsedAirportScheduleData; // 空港スケジュールデータ
@@ -50,7 +50,7 @@ export class FlightAssignmentEngine {
     this.dataPaths = dataPaths;
     this.state = {
       internalResourceData: {},
-      loadedData: {
+      flightCandidateData: {
         outbound: [],
         internationalInbound: {},
         domesticInbound: [],
@@ -68,39 +68,37 @@ export class FlightAssignmentEngine {
    */
   async initialize(): Promise<void> {
     try {
-      console.log("データロード開始...");
-
       // 並列で全てのデータロード
       const [
-        loadedData,
-        airportScheduleData,
-        resourceTimeGridVariables,
         internalResourceData,
+        resourceTimeGridVariables,
+        flightCandidateData,
         monthlyMinimumOperations,
+        airportScheduleData,
       ] = await Promise.all([
+        loadInternalResourceData(this.dataPaths.INTERNAL_RESOURCE_DATA),
+        initializeResourceTimeGridVariables(
+          this.dataPaths.INTERNAL_RESOURCE_DATA
+        ),
         loadAndProcessFlightData(
           this.dataPaths.INTERNATIONAL_DEPARTURE,
           this.dataPaths.INTERNATIONAL_ARRIVAL,
           this.dataPaths.DOMESTIC_ALL
         ),
-        loadAirportScheduleData(this.dataPaths.AIRPORT_SCHEDULE_DATA),
-        initializeResourceTimeGridVariables(
-          this.dataPaths.INTERNAL_RESOURCE_DATA
-        ),
-        loadInternalResourceData(this.dataPaths.INTERNAL_RESOURCE_DATA),
         loadMonthlyMinimumOperations(
           this.dataPaths.MONTHLY_MINIMUM_OPERATIONS_STANDARD
         ),
+        loadAirportScheduleData(this.dataPaths.AIRPORT_SCHEDULE_DATA),
       ]);
 
-      this.state.loadedData = loadedData;
-      this.state.airportScheduleData = airportScheduleData.parsedData;
-      this.state.resourceTimeGridVariables = resourceTimeGridVariables;
       this.state.internalResourceData = internalResourceData;
+      this.state.resourceTimeGridVariables = resourceTimeGridVariables;
+      this.state.flightCandidateData = flightCandidateData;
       this.state.monthlyMinimumOperations = monthlyMinimumOperations;
+      this.state.airportScheduleData = airportScheduleData.parsedData;
 
       console.log(
-        `往路 데이터 로드 완료: ${this.state.loadedData.outbound.length}건`
+        `往路 데이터 로드 완료: ${this.state.flightCandidateData.outbound.length}건`
       );
       console.log(`復路 데이터 로드 완료: ${this.getInboundCount()}건`);
       console.log("공항 스케줄 데이터 로드 완료");
@@ -126,7 +124,7 @@ export class FlightAssignmentEngine {
     let count = 0;
 
     // International 復路 개수 계산
-    Object.values(this.state.loadedData.internationalInbound).forEach(
+    Object.values(this.state.flightCandidateData.internationalInbound).forEach(
       (countryData) => {
         Object.values(countryData).forEach((airportData) => {
           count += airportData.length;
@@ -135,7 +133,7 @@ export class FlightAssignmentEngine {
     );
 
     // Domestic 復路 개수 추가
-    count += this.state.loadedData.domesticInbound.length;
+    count += this.state.flightCandidateData.domesticInbound.length;
 
     return count;
   }
@@ -146,14 +144,15 @@ export class FlightAssignmentEngine {
    */
   async assignNextOutbound(): Promise<boolean> {
     if (
-      this.state.currentOutboundIndex >= this.state.loadedData.outbound.length
+      this.state.currentOutboundIndex >=
+      this.state.flightCandidateData.outbound.length
     ) {
       console.log("모든 往路 배정 완료");
       return false;
     }
 
     const currentOutbound =
-      this.state.loadedData.outbound[this.state.currentOutboundIndex];
+      this.state.flightCandidateData.outbound[this.state.currentOutboundIndex];
     console.log(
       `往路 배정 시도: ${currentOutbound.出発空港} → ${currentOutbound.到着空港} (${currentOutbound.日付})`
     );
@@ -268,26 +267,27 @@ export class FlightAssignmentEngine {
 
     if (isInternationalOutbound) {
       // International 往路인 경우: international 復路에서 후보 찾기
-      if (this.state.loadedData.internationalInbound[arrivalCountry]) {
+      if (this.state.flightCandidateData.internationalInbound[arrivalCountry]) {
         if (
-          this.state.loadedData.internationalInbound[arrivalCountry][
+          this.state.flightCandidateData.internationalInbound[arrivalCountry][
             arrivalAirport
           ]
         ) {
           candidates.push(
-            ...this.state.loadedData.internationalInbound[arrivalCountry][
-              arrivalAirport
-            ]
+            ...this.state.flightCandidateData.internationalInbound[
+              arrivalCountry
+            ][arrivalAirport]
           );
         }
       }
     } else {
       // Domestic 往路인 경우: domestic 復路에서 후보 찾기
-      const domesticCandidates = this.state.loadedData.domesticInbound.filter(
-        (domesticFlight) =>
-          domesticFlight.出発国家 === arrivalCountry &&
-          domesticFlight.出発空港 === arrivalAirport
-      );
+      const domesticCandidates =
+        this.state.flightCandidateData.domesticInbound.filter(
+          (domesticFlight) =>
+            domesticFlight.出発国家 === arrivalCountry &&
+            domesticFlight.出発空港 === arrivalAirport
+        );
       candidates.push(...domesticCandidates);
     }
 
@@ -313,7 +313,8 @@ export class FlightAssignmentEngine {
    */
   isAllOutboundAssigned(): boolean {
     return (
-      this.state.currentOutboundIndex >= this.state.loadedData.outbound.length
+      this.state.currentOutboundIndex >=
+      this.state.flightCandidateData.outbound.length
     );
   }
 
@@ -434,7 +435,7 @@ export class FlightAssignmentEngine {
       console.log("2단계: 수익 최대화 배정 시작...");
 
       // 남은 outbound들을 찾기 (loader에서 이미 優先順位指数 순으로 정렬되어 있음)
-      const remainingOutbounds = this.state.loadedData.outbound.filter(
+      const remainingOutbounds = this.state.flightCandidateData.outbound.filter(
         (outbound) =>
           !this.state.assignedFlights.some(
             (flight) => flight.outbound === outbound
@@ -525,7 +526,7 @@ export class FlightAssignmentEngine {
   private findMatchingOutbounds(
     minOperation: MonthlyMinimumOperations[0]
   ): FlightData[] {
-    return this.state.loadedData.outbound.filter(
+    return this.state.flightCandidateData.outbound.filter(
       (outbound) =>
         outbound.出発国家 === minOperation.出発国家 &&
         outbound.出発空港 === minOperation.出発空港 &&
