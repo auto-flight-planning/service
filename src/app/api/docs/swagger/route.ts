@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { openApiDocument } from "@/server/openapi/document";
+import { openApiDocument } from "../_config/document";
 
 export async function GET() {
   return new NextResponse(JSON.stringify(openApiDocument), {

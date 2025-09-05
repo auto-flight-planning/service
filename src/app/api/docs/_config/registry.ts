@@ -12,17 +12,17 @@ import { registerLoginSchemas } from "@/server/features/user/check-employee/open
 import { registerGetEmployeeSchemas } from "@/server/features/user/get-employee/openapi";
 import { registerSearchEmployeeSchemas } from "@/server/features/user/search-employee/openapi";
 import { registerCreatePlanSchemas } from "@/server/features/plan/create/openapi";
-import { registerGetNotificationSchemas } from "../features/plan/notification/get/openapi";
-import { registerGetPlanOneSchemas } from "../features/plan/get/one/openapi";
+import { registerGetNotificationSchemas } from "@/server/features/plan/notification/get/openapi";
+import { registerGetPlanOneSchemas } from "@/server/features/plan/get/one/openapi";
 import {
   registerUpdateFlightScaleResourceSchemas,
   registerUpdateTotalPersonResourceSchemas,
-} from "../features/plan/input/resource/update/openapi";
+} from "@/server/features/plan/input/resource/update/openapi";
 import {
   registerGetFlightScaleResourceSchemas,
   registerGetTotalPersonResourceSchemas,
-} from "../features/plan/input/resource/get/openapi";
-import { registerGetResultSchemas } from "../features/plan/result/openapi";
+} from "@/server/features/plan/input/resource/get/openapi";
+import { registerGetResultSchemas } from "@/server/features/plan/result/openapi";
 
 export const registry = new OpenAPIRegistry();
 
