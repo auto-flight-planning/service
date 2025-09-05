@@ -1,6 +1,6 @@
 "use client";
 
-import { useToastStore } from "@/client/stores";
+import { useToastStore } from "../toastStore";
 import Toast from "./toast";
 
 export default function ToastContainer() {

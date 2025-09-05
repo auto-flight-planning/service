@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { AuthProvider, ReactQueryProvider } from "./_providers";
 import { ModalContainer } from "@/features/modal/components";
-import { ToastContainer } from "@/components/toast";
+import { ToastContainer } from "@/features/toast/components";
 import { Header } from "./_components";
 
 export const metadata: Metadata = {
