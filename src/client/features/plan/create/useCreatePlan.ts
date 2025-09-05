@@ -1,5 +1,6 @@
 import { useRouter } from "next/navigation";
-import { useModalStore, useToastStore, useUserStore } from "@/client/stores";
+import { useToastStore, useUserStore } from "@/client/stores";
+import { useModalStore } from "@/features/modal/modalStore";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createPlanSchema, type CreatePlanFormDataType } from "./schema";

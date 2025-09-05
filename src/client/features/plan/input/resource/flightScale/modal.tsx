@@ -4,7 +4,7 @@ import {
   BasicModalFooter,
   ModalTab,
   NumberedModalHeader,
-} from "@/components/modal";
+} from "@/features/modal/components";
 import { FlightScaleExplain, FlightScaleForm } from ".";
 import useFlightScaleResource from "./useFlightScaleResource";
 import { FormProvider } from "react-hook-form";

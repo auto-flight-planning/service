@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { AuthProvider, ReactQueryProvider } from "./_providers";
-import { ModalContainer } from "@/components/modal";
+import { ModalContainer } from "@/features/modal/components";
 import { ToastContainer } from "@/components/toast";
 import { Header } from "./_components";
 

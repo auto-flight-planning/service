@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BackButton, SquareButton } from "@/components/button";
 import { PointCard } from "@/components/card";
 import DataInputCard from "../../_components/dataInputCard";
-import { useModalStore } from "@/client/stores";
+import { useModalStore } from "@/features/modal/modalStore";
 import { useGetPlanInfo } from "@/client/features/plan/get/useGetPlanInfo";
 import { Spinner } from "@/components/spinner";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useModalStore } from "@/client/stores";
+import { useModalStore } from "@/features/modal/modalStore";
 import { WhiteCard } from "@/components/card";
 import Notification from "@/client/features/plan/notification";
 
