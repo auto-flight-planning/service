@@ -3,55 +3,67 @@
 import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import createBrowserClient from "@/supabase/browserClient";
+import { Subscription } from "@supabase/supabase-js";
+import getBrowserClient from "@/supabase/browserClient";
 import { useToastStore } from "@/features/toast/toastStore";
 import { useUserStore } from "./userStore";
+import { DoubleSpinner } from "@/components/spinner";
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
-  const queryClient = useQueryClient();
-  const supabaseBrowserClient = createBrowserClient();
-  const { user, setUser } = useUserStore();
   const router = useRouter();
   const pathname = usePathname();
+  const queryClient = useQueryClient();
+  const { user, setUser } = useUserStore();
   const { addToast } = useToastStore();
 
   useEffect(() => {
-    const { data: listener } = supabaseBrowserClient.auth.onAuthStateChange(
-      async (event, session) => {
-        if (event === "INITIAL_SESSION") {
-          if (session) {
-            const res = await fetch("/api/user/get-employee", {
-              method: "POST",
-              body: JSON.stringify({ userId: session.user.id }),
-            });
-            const { employeeId, firstName, lastName } = await res.json();
+    let authSubscription: Subscription | null = null;
 
-            setUser({
-              userId: session.user.id,
-              employeeId,
-              firstName,
-              lastName,
-            });
+    const initAuthProvider = async () => {
+      const supabaseBrowserClient = await getBrowserClient();
+      const { data: listener } = supabaseBrowserClient.auth.onAuthStateChange(
+        async (event, session) => {
+          if (event === "INITIAL_SESSION") {
+            if (session) {
+              const res = await fetch("/api/user/get-employee", {
+                method: "POST",
+                body: JSON.stringify({ userId: session.user.id }),
+              });
+              const { employeeId, firstName, lastName } = await res.json();
 
-            if (pathname === "/") {
-              router.push("/home");
+              setUser({
+                userId: session.user.id,
+                employeeId,
+                firstName,
+                lastName,
+              });
+
+              if (pathname === "/") {
+                router.push("/home");
+              }
+              addToast({
+                type: "success",
+                message: `${firstName} ${lastName} さん、システムへようこそ。`,
+                title: "ログイン成功",
+              });
+            } else {
+              setUser(null);
             }
-            addToast({
-              type: "success",
-              message: `${firstName} ${lastName} さん、システムへようこそ。`,
-              title: "ログイン成功",
-            });
-          } else {
+          } else if (event === "SIGNED_OUT") {
             setUser(null);
+            router.push("/");
           }
-        } else if (event === "SIGNED_OUT") {
-          setUser(null);
-          router.push("/");
         }
-      }
-    );
+      );
+      authSubscription = listener.subscription;
+    };
+
+    initAuthProvider();
+
     return () => {
-      listener?.subscription.unsubscribe();
+      if (authSubscription) {
+        authSubscription.unsubscribe();
+      }
     };
   }, [queryClient]);
 
@@ -64,13 +76,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
 export function LoadingScreen() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="text-center">
-        <div className="relative mb-6">
-          <div className="w-16 h-16 border-4 border-blue-200 rounded-full animate-spin">
-            <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-blue-600 rounded-full animate-spin"></div>
-          </div>
-        </div>
-      </div>
+      <DoubleSpinner />
     </div>
   );
 }
