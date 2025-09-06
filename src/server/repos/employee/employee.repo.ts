@@ -18,7 +18,7 @@ const employeeRepo = {
     const trimmedSearchName = searchName.trim();
 
     return prismaClient.$queryRaw<Array<Employees>>`
-      SELECT id, user_id, last_name, first_name 
+      SELECT id, user_id, last_name, first_name, email 
       FROM employees 
       WHERE CONCAT(last_name, first_name) LIKE ${`%${trimmedSearchName}%`}
          OR last_name LIKE ${`%${trimmedSearchName}%`}
