@@ -5,7 +5,7 @@ import { EMPLOYEE_ID_EXAMPLE } from "@/constants/openapi.example";
 extendZodWithOpenApi(z);
 
 export const getEmployeeByIdReqSchema = z.object({
-  employeeId: z.uuid().openapi({
+  employeeId: z.string().openapi({
     param: {
       name: "employeeId",
       in: "path",
