@@ -342,16 +342,19 @@ model employees {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_list {
-  id                  String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  creator_id          String               @db.Uuid
-  name                String               @db.VarChar
-  year                Int                  @db.SmallInt
-  month               Int                  @db.SmallInt
-  participant_ids     String[]             @db.Uuid
-  created_at          DateTime             @default(now()) @db.Timestamptz(6)
-  plan_notification   plan_notification[]
-  plan_resource_input plan_resource_input?
-  plan_status         plan_status?
+  id                        String                      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  creator_id                String                      @db.Uuid
+  name                      String                      @db.VarChar
+  year                      Int                         @db.SmallInt
+  month                     Int                         @db.SmallInt
+  participant_ids           String[]                    @db.Uuid
+  created_at                DateTime                    @default(now()) @db.Timestamptz(6)
+  plan_notification         plan_notification[]
+  plan_resource_input       plan_resource_input?
+  plan_results_daily_data   plan_results_daily_data?
+  plan_results_flights_data plan_results_flights_data[]
+  plan_results_total_data   plan_results_total_data?
+  plan_status               plan_status?
 
   @@schema("public")
 }
@@ -395,6 +398,55 @@ model plan_resource_input {
   @@schema("public")
 }
 
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model oauth_clients {
+  id                 String                  @id @db.Uuid
+  client_id          String                  @unique
+  client_secret_hash String
+  registration_type  oauth_registration_type
+  redirect_uris      String
+  grant_types        String
+  client_name        String?
+  client_uri         String?
+  logo_uri           String?
+  created_at         DateTime                @default(now()) @db.Timestamptz(6)
+  updated_at         DateTime                @default(now()) @db.Timestamptz(6)
+  deleted_at         DateTime?               @db.Timestamptz(6)
+
+  @@index([client_id])
+  @@index([deleted_at])
+  @@schema("auth")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model plan_results_daily_data {
+  plan_id   String    @id @db.Uuid
+  day       Int       @db.SmallInt
+  data      Json
+  plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade)
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model plan_results_flights_data {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  plan_id   String    @db.Uuid
+  data      Json
+  plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade)
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model plan_results_total_data {
+  plan_id   String    @id(map: "plan_result_total_data_pkey") @db.Uuid
+  data      Json
+  plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade, map: "plan_result_total_data_plan_id_fkey")
+
+  @@schema("public")
+}
+
 enum aal_level {
   aal1
   aal2
@@ -432,6 +484,13 @@ enum one_time_token_type {
   email_change_token_new
   email_change_token_current
   phone_change_token
+
+  @@schema("auth")
+}
+
+enum oauth_registration_type {
+  dynamic
+  manual
 
   @@schema("auth")
 }

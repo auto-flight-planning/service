@@ -2,7 +2,7 @@ import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
 
 export const registerGetResultSchemas = (registry: OpenAPIRegistry) => {
   registry.registerPath({
-    method: "get",
+    method: "post",
     path: "/api/plan/result",
     tags: ["Plan/Result"],
     summary: "運航割り当て結果を取得",

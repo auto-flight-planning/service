@@ -10,10 +10,10 @@ import { getResultResponseSchema } from "./schema";
 export async function GET(request: NextRequest) {
   try {
     // FlightAssignmentEngineインスタンス作成
-    const engine = new FlightAssignmentEngine(DUMMY_DATA_PATHS);
+    // const engine = new FlightAssignmentEngine(DUMMY_DATA_PATHS);
 
-    // エンジン初期化
-    await engine.initialize();
+    // // エンジン初期化
+    // await engine.initialize();
 
     const responseData = {
       message: "Flight assignment result retrieved successfully",
