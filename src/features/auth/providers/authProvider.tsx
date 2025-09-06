@@ -6,8 +6,9 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Subscription } from "@supabase/supabase-js";
 import getBrowserClient from "@/supabase/browserClient";
 import { useToastStore } from "@/features/toast/stores/toastStore";
-import { useUserStore } from "../stores/userStore";
+import useUserStore from "../stores/userStore";
 import { DoubleSpinner } from "@/components/spinner";
+import { GetEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
@@ -25,17 +26,18 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         async (event, session) => {
           if (event === "INITIAL_SESSION") {
             if (session) {
-              const res = await fetch("/api/user/get-employee", {
-                method: "POST",
-                body: JSON.stringify({ userId: session.user.id }),
-              });
-              const { employeeId, firstName, lastName } = await res.json();
+              const res = await fetch(
+                `/api/employees?userId=${session.user.id}`
+              );
+              const employee: GetEmployeeByUserIdResSchema = await res.json();
 
+              const { id, userId, firstName, lastName, email } = employee;
               setUser({
-                userId: session.user.id,
-                employeeId,
+                userId,
+                employeeId: id,
                 firstName,
                 lastName,
+                email,
               });
 
               if (pathname === "/") {

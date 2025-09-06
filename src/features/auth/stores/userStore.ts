@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
 export interface User {
-  userId: string;
   employeeId: string;
+  userId: string;
   lastName: string;
   firstName: string;
   email: string;
@@ -13,7 +13,9 @@ interface UserStore {
   setUser: (user: User | null) => void;
 }
 
-export const useUserStore = create<UserStore>((set) => ({
+const useUserStore = create<UserStore>((set) => ({
   user: undefined,
   setUser: (user: User | null) => set({ user }),
 }));
+
+export default useUserStore;

@@ -1,17 +1,20 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import createBrowserClient from "@/supabase/browserClient";
+import getBrowserClient from "@/supabase/browserClient";
+import { useUserStore } from "@/features/auth";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
-import { loginSchema, LoginFormDataType } from "../schemas/formSchema";
-import { useUserStore } from "@/features/auth";
+import { loginFormSchema, type LoginFormData } from "../schemas/formSchema";
+import { GetEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
 
 export default function useLogin() {
-  const formMethods = useForm<LoginFormDataType>({
+  const formMethods = useForm<LoginFormData>({
     mode: "onChange",
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(loginFormSchema),
     defaultValues: {
       employeeId: "",
       password: "",
@@ -25,12 +28,13 @@ export default function useLogin() {
 
   const { mutate: login, isPending } = useMutation({
     mutationFn: loginAPI,
-    onSuccess: ({ userId, employeeId, firstName, lastName }) => {
+    onSuccess: ({ userId, employeeId, firstName, lastName, email }) => {
       setUser({
         userId,
         employeeId,
         firstName,
         lastName,
+        email,
       });
       addToast({
         type: "success",
@@ -49,7 +53,7 @@ export default function useLogin() {
     },
   });
 
-  const onValidSubmit = (data: LoginFormDataType) => {
+  const onValidSubmit = (data: LoginFormData) => {
     login(data);
   };
 
@@ -60,33 +64,32 @@ export default function useLogin() {
   };
 }
 
-export async function loginAPI(data: LoginFormDataType) {
-  const employeeResponse = await fetch("/api/user/check-employee", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ employeeId: data.employeeId }),
-  });
+export async function loginAPI(data: LoginFormData) {
+  try {
+    const res = await fetch(`/api/employees/${data.employeeId}`);
+    const employee: GetEmployeeByIdResSchema = await res.json();
 
-  const responseData = await employeeResponse.json();
-  if (responseData.error) {
-    throw new Error(responseData.error);
+    const supabase = await getBrowserClient();
+    const {
+      data: { user },
+      error,
+    } = await supabase.auth.signInWithPassword({
+      email: employee.email,
+      password: data.password,
+    });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return {
+      userId: user!.id,
+      employeeId: employee.id,
+      lastName: employee.lastName,
+      firstName: employee.firstName,
+      email: employee.email,
+    };
+  } catch (error) {
+    throw error;
   }
-
-  const supabaseCli = createBrowserClient();
-  const { data: authData, error } = await supabaseCli.auth.signInWithPassword({
-    email: responseData.email,
-    password: data.password,
-  });
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return {
-    accessToken: authData.session.access_token,
-    userId: authData.user.id,
-    employeeId: responseData.employeeId,
-    firstName: responseData.firstName,
-    lastName: responseData.lastName,
-  };
 }

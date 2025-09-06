@@ -1,8 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useUserStore } from "@/features/auth";
-import LogoutButton from "./logoutButton";
+import { useUserStore, LogoutButton } from "@/features/auth";
 
 export default function Header() {
   const router = useRouter();

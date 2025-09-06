@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const loginSchema = z.object({
+export const loginFormSchema = z.object({
   employeeId: z.string().min(1, "社員IDを入力してください"),
   password: z
     .string()
@@ -12,4 +12,4 @@ export const loginSchema = z.object({
     ),
 });
 
-export type LoginFormDataType = z.infer<typeof loginSchema>;
+export type LoginFormData = z.infer<typeof loginFormSchema>;
