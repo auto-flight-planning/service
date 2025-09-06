@@ -1,5 +1,5 @@
 import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
-import { userIdPathReqSchema } from "@/server/schemas/req.schema";
+import { userIdReqSchema } from "@/server/schemas/req.schema";
 import {
   getEmployeeByIdReqSchema,
   searchEmployeesByNameReqSchema,
@@ -14,6 +14,7 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
     method: "get",
     path: "/api/employees/{employeeId}",
     tags: ["Employee"],
+    summary: "職員情報をemployeeIdで取得",
     request: {
       params: getEmployeeByIdReqSchema,
     },
@@ -40,10 +41,11 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
 
   registry.registerPath({
     method: "get",
-    path: "/api/employees/{userId}",
+    path: "/api/employees",
     tags: ["Employee"],
+    summary: "職員情報をuserIdで取得",
     request: {
-      params: userIdPathReqSchema,
+      query: userIdReqSchema("query"),
     },
     responses: {
       200: {
@@ -73,6 +75,7 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
     method: "get",
     path: "/api/employees/search",
     tags: ["Employee"],
+    summary: "職員を氏名で検索",
     request: {
       query: searchEmployeesByNameReqSchema,
     },
