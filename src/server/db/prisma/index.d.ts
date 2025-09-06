@@ -21368,6 +21368,7 @@ export namespace Prisma {
     first_name: string | null
     last_name: string | null
     created_at: Date | null
+    email: string | null
   }
 
   export type EmployeesMaxAggregateOutputType = {
@@ -21376,6 +21377,7 @@ export namespace Prisma {
     first_name: string | null
     last_name: string | null
     created_at: Date | null
+    email: string | null
   }
 
   export type EmployeesCountAggregateOutputType = {
@@ -21384,6 +21386,7 @@ export namespace Prisma {
     first_name: number
     last_name: number
     created_at: number
+    email: number
     _all: number
   }
 
@@ -21394,6 +21397,7 @@ export namespace Prisma {
     first_name?: true
     last_name?: true
     created_at?: true
+    email?: true
   }
 
   export type EmployeesMaxAggregateInputType = {
@@ -21402,6 +21406,7 @@ export namespace Prisma {
     first_name?: true
     last_name?: true
     created_at?: true
+    email?: true
   }
 
   export type EmployeesCountAggregateInputType = {
@@ -21410,6 +21415,7 @@ export namespace Prisma {
     first_name?: true
     last_name?: true
     created_at?: true
+    email?: true
     _all?: true
   }
 
@@ -21491,6 +21497,7 @@ export namespace Prisma {
     first_name: string
     last_name: string
     created_at: Date
+    email: string
     _count: EmployeesCountAggregateOutputType | null
     _min: EmployeesMinAggregateOutputType | null
     _max: EmployeesMaxAggregateOutputType | null
@@ -21516,6 +21523,7 @@ export namespace Prisma {
     first_name?: boolean
     last_name?: boolean
     created_at?: boolean
+    email?: boolean
     users?: boolean | usersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["employees"]>
 
@@ -21525,6 +21533,7 @@ export namespace Prisma {
     first_name?: boolean
     last_name?: boolean
     created_at?: boolean
+    email?: boolean
     users?: boolean | usersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["employees"]>
 
@@ -21534,6 +21543,7 @@ export namespace Prisma {
     first_name?: boolean
     last_name?: boolean
     created_at?: boolean
+    email?: boolean
     users?: boolean | usersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["employees"]>
 
@@ -21543,9 +21553,10 @@ export namespace Prisma {
     first_name?: boolean
     last_name?: boolean
     created_at?: boolean
+    email?: boolean
   }
 
-  export type employeesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "first_name" | "last_name" | "created_at", ExtArgs["result"]["employees"]>
+  export type employeesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "first_name" | "last_name" | "created_at" | "email", ExtArgs["result"]["employees"]>
   export type employeesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     users?: boolean | usersDefaultArgs<ExtArgs>
   }
@@ -21567,6 +21578,7 @@ export namespace Prisma {
       first_name: string
       last_name: string
       created_at: Date
+      email: string
     }, ExtArgs["result"]["employees"]>
     composites: {}
   }
@@ -21996,6 +22008,7 @@ export namespace Prisma {
     readonly first_name: FieldRef<"employees", 'String'>
     readonly last_name: FieldRef<"employees", 'String'>
     readonly created_at: FieldRef<"employees", 'DateTime'>
+    readonly email: FieldRef<"employees", 'String'>
   }
     
 
@@ -31354,7 +31367,8 @@ export namespace Prisma {
     user_id: 'user_id',
     first_name: 'first_name',
     last_name: 'last_name',
-    created_at: 'created_at'
+    created_at: 'created_at',
+    email: 'email'
   };
 
   export type EmployeesScalarFieldEnum = (typeof EmployeesScalarFieldEnum)[keyof typeof EmployeesScalarFieldEnum]
@@ -32927,6 +32941,7 @@ export namespace Prisma {
     first_name?: StringFilter<"employees"> | string
     last_name?: StringFilter<"employees"> | string
     created_at?: DateTimeFilter<"employees"> | Date | string
+    email?: StringFilter<"employees"> | string
     users?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }
 
@@ -32936,12 +32951,14 @@ export namespace Prisma {
     first_name?: SortOrder
     last_name?: SortOrder
     created_at?: SortOrder
+    email?: SortOrder
     users?: usersOrderByWithRelationInput
   }
 
   export type employeesWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     user_id?: string
+    email?: string
     AND?: employeesWhereInput | employeesWhereInput[]
     OR?: employeesWhereInput[]
     NOT?: employeesWhereInput | employeesWhereInput[]
@@ -32949,7 +32966,7 @@ export namespace Prisma {
     last_name?: StringFilter<"employees"> | string
     created_at?: DateTimeFilter<"employees"> | Date | string
     users?: XOR<UsersScalarRelationFilter, usersWhereInput>
-  }, "id" | "user_id">
+  }, "id" | "user_id" | "email">
 
   export type employeesOrderByWithAggregationInput = {
     id?: SortOrder
@@ -32957,6 +32974,7 @@ export namespace Prisma {
     first_name?: SortOrder
     last_name?: SortOrder
     created_at?: SortOrder
+    email?: SortOrder
     _count?: employeesCountOrderByAggregateInput
     _max?: employeesMaxOrderByAggregateInput
     _min?: employeesMinOrderByAggregateInput
@@ -32971,6 +32989,7 @@ export namespace Prisma {
     first_name?: StringWithAggregatesFilter<"employees"> | string
     last_name?: StringWithAggregatesFilter<"employees"> | string
     created_at?: DateTimeWithAggregatesFilter<"employees"> | Date | string
+    email?: StringWithAggregatesFilter<"employees"> | string
   }
 
   export type plan_listWhereInput = {
@@ -34849,6 +34868,7 @@ export namespace Prisma {
     first_name: string
     last_name: string
     created_at?: Date | string
+    email: string
     users?: usersCreateNestedOneWithoutEmployeesInput
   }
 
@@ -34858,6 +34878,7 @@ export namespace Prisma {
     first_name: string
     last_name: string
     created_at?: Date | string
+    email: string
   }
 
   export type employeesUpdateInput = {
@@ -34865,6 +34886,7 @@ export namespace Prisma {
     first_name?: StringFieldUpdateOperationsInput | string
     last_name?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
     users?: usersUpdateOneRequiredWithoutEmployeesNestedInput
   }
 
@@ -34874,6 +34896,7 @@ export namespace Prisma {
     first_name?: StringFieldUpdateOperationsInput | string
     last_name?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type employeesCreateManyInput = {
@@ -34882,6 +34905,7 @@ export namespace Prisma {
     first_name: string
     last_name: string
     created_at?: Date | string
+    email: string
   }
 
   export type employeesUpdateManyMutationInput = {
@@ -34889,6 +34913,7 @@ export namespace Prisma {
     first_name?: StringFieldUpdateOperationsInput | string
     last_name?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type employeesUncheckedUpdateManyInput = {
@@ -34897,6 +34922,7 @@ export namespace Prisma {
     first_name?: StringFieldUpdateOperationsInput | string
     last_name?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type plan_listCreateInput = {
@@ -36580,6 +36606,7 @@ export namespace Prisma {
     first_name?: SortOrder
     last_name?: SortOrder
     created_at?: SortOrder
+    email?: SortOrder
   }
 
   export type employeesMaxOrderByAggregateInput = {
@@ -36588,6 +36615,7 @@ export namespace Prisma {
     first_name?: SortOrder
     last_name?: SortOrder
     created_at?: SortOrder
+    email?: SortOrder
   }
 
   export type employeesMinOrderByAggregateInput = {
@@ -36596,6 +36624,7 @@ export namespace Prisma {
     first_name?: SortOrder
     last_name?: SortOrder
     created_at?: SortOrder
+    email?: SortOrder
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -40215,6 +40244,7 @@ export namespace Prisma {
     first_name: string
     last_name: string
     created_at?: Date | string
+    email: string
   }
 
   export type employeesUncheckedCreateWithoutUsersInput = {
@@ -40222,6 +40252,7 @@ export namespace Prisma {
     first_name: string
     last_name: string
     created_at?: Date | string
+    email: string
   }
 
   export type employeesCreateOrConnectWithoutUsersInput = {
@@ -40372,6 +40403,7 @@ export namespace Prisma {
     first_name?: StringFieldUpdateOperationsInput | string
     last_name?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type employeesUncheckedUpdateWithoutUsersInput = {
@@ -40379,6 +40411,7 @@ export namespace Prisma {
     first_name?: StringFieldUpdateOperationsInput | string
     last_name?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type usersCreateWithoutEmployeesInput = {

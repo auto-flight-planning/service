@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { ReactQueryProvider } from "./_providers";
-import AuthProvider from "@/features/auth/authProvider";
-import { ModalContainer } from "@/features/modal/components";
-import { ToastContainer } from "@/features/toast/components";
-import { Header } from "./_components";
+import AuthProvider from "@/features/auth/providers/authProvider";
+import { ModalContainer } from "@/features/modal";
+import { ToastContainer } from "@/features/toast";
+import Header from "./_widgets/header";
 
 export const metadata: Metadata = {
   title: "運航日程企画システム",

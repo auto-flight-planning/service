@@ -1,5 +1,5 @@
 import { FormProvider } from "react-hook-form";
-import { useModalStore } from "@/features/modal/modalStore";
+import { useModalStore } from "@/features/modal/stores/modalStore";
 import {
   BasicModalHeader,
   BasicModalFooter,

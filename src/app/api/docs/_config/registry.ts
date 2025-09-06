@@ -6,11 +6,7 @@ import { z } from "zod";
 
 extendZodWithOpenApi(z);
 
-// import { resourceRequestSchema, resourceResponseSchema } from '../schemas/createResource';
-
-import { registerLoginSchemas } from "@/features/employee/check-employee/openapi";
-import { registerGetEmployeeSchemas } from "@/features/employee/get-employee/openapi";
-import { registerSearchEmployeeSchemas } from "@/features/employee/search-employee/openapi";
+// ---------------Legacy------------------
 import { registerCreatePlanSchemas } from "@/features/plan/base/create/api/openapi";
 import { registerGetNotificationSchemas } from "@/features/plan/notification/get/api/openapi";
 import { registerGetPlanOneSchemas } from "@/features/plan/base/get/one/api/openapi";
@@ -23,20 +19,21 @@ import {
   registerGetTotalPersonResourceSchemas,
 } from "@/features/plan/input/resource/get/openapi";
 import { registerGetResultSchemas } from "@/features/plan/result/server/createPlanResult/openapi";
+// ---------------Legacy------------------
+
+// ["Employee"]
+import { registerEmployeeSchemas } from "@/features/employee/server/openapi";
 
 export const registry = new OpenAPIRegistry();
 
-// 共通スキーマ
-// registry.register('ResourceRequestSchema', resourceRequestSchema);
-// registry.register('ResourceResponseSchema', resourceResponseSchema);
-
-// Result (Dummy)
-registerGetResultSchemas(registry);
+registry.registerComponent("securitySchemes", "bearerAuth", {
+  type: "http",
+  scheme: "bearer",
+  bearerFormat: "JWT",
+});
 
 // API別
-registerLoginSchemas(registry);
-registerGetEmployeeSchemas(registry);
-registerSearchEmployeeSchemas(registry);
+registerEmployeeSchemas(registry);
 registerCreatePlanSchemas(registry);
 registerGetNotificationSchemas(registry);
 registerGetPlanOneSchemas(registry);
@@ -44,3 +41,4 @@ registerUpdateTotalPersonResourceSchemas(registry);
 registerGetTotalPersonResourceSchemas(registry);
 registerUpdateFlightScaleResourceSchemas(registry);
 registerGetFlightScaleResourceSchemas(registry);
+registerGetResultSchemas(registry); // Result (Dummy)

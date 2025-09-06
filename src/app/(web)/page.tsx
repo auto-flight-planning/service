@@ -1,4 +1,4 @@
-import { LoginButton } from "./_components";
+import { LoginButton } from "@/features/auth";
 
 export default function Start() {
   return (
