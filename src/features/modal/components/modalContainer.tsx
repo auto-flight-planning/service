@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useModalStore } from "../modalStore";
 import Modal from "./modal";
-import { LoginModal } from "@/features/auth/login";
+import { LoginModal } from "@/features/auth";
 import { CreatePlanModal } from "@/features/plan/base/create";
 import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";
 import { FlightScaleModal } from "@/features/plan/input/resource/flightScale";

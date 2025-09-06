@@ -1,3 +1,3 @@
-export { default as AuthProvider } from "./authProvider";
-export { useUserStore } from "./userStore";
-export * from "./login";
+export { default as AuthProvider } from "./providers/authProvider";
+export { type User, useUserStore } from "./stores/userStore";
+export { default as LoginModal } from "./login/widgets/modal";

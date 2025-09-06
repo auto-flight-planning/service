@@ -1,11 +1,12 @@
 import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import createBrowserClient from "@/supabase/browserClient";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
-import { LoginFormDataType, loginSchema, useUserStore } from "..";
+import { loginSchema, LoginFormDataType } from "../schemas/formSchema";
+import { useUserStore } from "@/features/auth";
 
 export default function useLogin() {
   const formMethods = useForm<LoginFormDataType>({
@@ -17,9 +18,9 @@ export default function useLogin() {
     },
   });
 
+  const router = useRouter();
   const { setUser } = useUserStore();
   const { addToast } = useToastStore();
-  const router = useRouter();
   const { closeModal } = useModalStore();
 
   const { mutate: login, isPending } = useMutation({
@@ -56,7 +57,6 @@ export default function useLogin() {
     formMethods,
     onValidSubmit,
     isPending,
-    login,
   };
 }
 

@@ -1,10 +1,11 @@
 import { create } from "zustand";
 
-interface User {
+export interface User {
   userId: string;
   employeeId: string;
   lastName: string;
   firstName: string;
+  email: string;
 }
 
 interface UserStore {

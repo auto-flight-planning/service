@@ -1,7 +1,7 @@
-import { useLogin } from ".";
+import { FormProvider } from "react-hook-form";
+import useLogin from "../hooks/useLogin";
 import { TextField, SecretTextField } from "@/components/form";
 import { SquareButton } from "@/components/button";
-import { FormProvider } from "react-hook-form";
 
 export default function LoginForm() {
   const { formMethods, onValidSubmit, isPending } = useLogin();

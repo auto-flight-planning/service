@@ -1,5 +1,5 @@
 import { useModalStore, BasicModalHeader } from "@/features/modal";
-import { LoginForm } from ".";
+import LoginForm from "./form";
 
 export default function LoginModal() {
   const { closeModal } = useModalStore();

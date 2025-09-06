@@ -6,7 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Subscription } from "@supabase/supabase-js";
 import getBrowserClient from "@/supabase/browserClient";
 import { useToastStore } from "@/features/toast/toastStore";
-import { useUserStore } from "./userStore";
+import { useUserStore } from "../stores/userStore";
 import { DoubleSpinner } from "@/components/spinner";
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
