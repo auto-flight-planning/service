@@ -21,7 +21,6 @@ export default function ModalContainer() {
 
   useEffect(() => {
     if (isOpen && modalName) {
-      // isOpen이 true가 되고 100ms 후에 모달 표시
       const timer = setTimeout(() => setIsReady(true), 100);
       return () => clearTimeout(timer);
     } else {
