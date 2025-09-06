@@ -5,7 +5,7 @@ interface Toast {
   type: "success" | "error";
   title: string;
   message: string;
-  duration?: number; // 자동 사라짐 시간 (ms)
+  duration?: number;
 }
 
 interface ToastStore {
@@ -26,7 +26,6 @@ export const useToastStore = create<ToastStore>((set) => ({
       toasts: [...state.toasts, newToast],
     }));
 
-    // 자동 제거
     setTimeout(() => {
       set((state) => ({
         toasts: state.toasts.filter((t) => t.id !== id),
@@ -41,3 +40,5 @@ export const useToastStore = create<ToastStore>((set) => ({
 
   clearToasts: () => set({ toasts: [] }),
 }));
+
+export default useToastStore;

@@ -1,7 +1,7 @@
 "use client";
 
-import { useToastStore } from "../toastStore";
-import Toast from "./toast";
+import { useToastStore } from "../stores/toastStore";
+import Toast from "../components/toast";
 
 export default function ToastContainer() {
   const { toasts, removeToast } = useToastStore();

@@ -5,7 +5,7 @@ import { ReactNode, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Subscription } from "@supabase/supabase-js";
 import getBrowserClient from "@/supabase/browserClient";
-import { useToastStore } from "@/features/toast/toastStore";
+import { useToastStore } from "@/features/toast/stores/toastStore";
 import { useUserStore } from "../stores/userStore";
 import { DoubleSpinner } from "@/components/spinner";
 
