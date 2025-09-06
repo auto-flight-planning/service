@@ -29,9 +29,6 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
       400: {
         description: "不正なリクエストです",
       },
-      401: {
-        description: "認証が必要です",
-      },
       404: {
         description: "職員が見つかりません",
       },
