@@ -29,6 +29,12 @@ import { registerEmployeeSchemas } from "@/features/employee/server/openapi";
 
 export const registry = new OpenAPIRegistry();
 
+registry.registerComponent("securitySchemes", "bearerAuth", {
+  type: "http",
+  scheme: "bearer",
+  bearerFormat: "JWT",
+});
+
 // API別
 registerGetResultSchemas(registry); // Result (Dummy)
 registerEmployeeSchemas(registry);

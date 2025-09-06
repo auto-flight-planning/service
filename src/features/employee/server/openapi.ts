@@ -5,7 +5,8 @@ import {
   searchEmployeesByNameReqSchema,
 } from "./schemas/req.schema";
 import {
-  getEmployeeResSchema,
+  getEmployeeByIdResSchema,
+  getEmployeeByUserIdResSchema,
   searchEmployeesByNameResSchema,
 } from "./schemas/res.schema";
 
@@ -23,7 +24,7 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
         description: "職員情報を取得しました",
         content: {
           "application/json": {
-            schema: getEmployeeResSchema,
+            schema: getEmployeeByIdResSchema,
           },
         },
       },
@@ -44,6 +45,7 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
     path: "/api/employees",
     tags: ["Employee"],
     summary: "職員情報をuserIdで取得",
+    security: [{ BearerAuth: [] }],
     request: {
       query: userIdReqSchema("query"),
     },
@@ -52,7 +54,7 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
         description: "職員情報を取得しました",
         content: {
           "application/json": {
-            schema: getEmployeeResSchema,
+            schema: getEmployeeByUserIdResSchema,
           },
         },
       },
@@ -76,6 +78,7 @@ export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
     path: "/api/employees/search",
     tags: ["Employee"],
     summary: "職員を氏名で検索",
+    security: [{ BearerAuth: [] }],
     request: {
       query: searchEmployeesByNameReqSchema,
     },

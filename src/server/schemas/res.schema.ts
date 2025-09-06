@@ -13,17 +13,3 @@ export const baseResponseSchema = z.object({
     example: "Success",
   }),
 });
-
-export const withResponseData = <T extends z.ZodTypeAny>({
-  responseDataSchema,
-}: {
-  responseDataSchema: T;
-}) =>
-  baseResponseSchema.extend({
-    response_data: responseDataSchema,
-  });
-
-export type BaseResponseSchema = z.infer<typeof baseResponseSchema>;
-export type WithResponseData<T extends z.ZodTypeAny> = z.infer<
-  ReturnType<typeof withResponseData<T>>
->;

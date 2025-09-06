@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { withErrorHandler } from "@/server/lib";
+import { withHandler } from "@/server/lib";
 import { getEmployeeByIdReqSchema } from "@/features/employee/server/schemas/req.schema";
-import { getEmployeeResSchema } from "@/features/employee/server/schemas/res.schema";
+import { getEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
 import employeeRepo from "@/server/repos/employee/employee.repo";
 
-export const GET = withErrorHandler(
+export const GET = withHandler(
   async (
     request: NextRequest,
     { params }: { params: Promise<{ employeeId: string }> }
@@ -21,9 +21,8 @@ export const GET = withErrorHandler(
       );
     }
 
-    const res = getEmployeeResSchema.parse({
+    const res = getEmployeeByIdResSchema.parse({
       id: employee.id,
-      userId: employee.user_id,
       lastName: employee.last_name,
       firstName: employee.first_name,
       email: employee.email,

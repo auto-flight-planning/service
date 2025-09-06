@@ -5,12 +5,11 @@ import { EMPLOYEE_ID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
-export const getEmployeeResSchema = z.object({
+export const getEmployeeByIdResSchema = z.object({
   id: z.string().openapi({
     description: "職員ID",
     example: EMPLOYEE_ID_EXAMPLE,
   }),
-  userId: userIdSchema,
   lastName: z.string().min(1).openapi({
     description: "姓",
     example: "田中",
@@ -25,11 +24,18 @@ export const getEmployeeResSchema = z.object({
   }),
 });
 
-export const searchEmployeesByNameResSchema = z.object({
-  employees: z.array(getEmployeeResSchema),
+export const getEmployeeByUserIdResSchema = getEmployeeByIdResSchema.extend({
+  userId: userIdSchema,
 });
 
-export type GetEmployeeResSchema = z.infer<typeof getEmployeeResSchema>;
+export const searchEmployeesByNameResSchema = z.object({
+  employees: z.array(getEmployeeByUserIdResSchema),
+});
+
+export type GetEmployeeByIdResSchema = z.infer<typeof getEmployeeByIdResSchema>;
+export type GetEmployeeByUserIdResSchema = z.infer<
+  typeof getEmployeeByUserIdResSchema
+>;
 export type SearchEmployeesByNameResSchema = z.infer<
   typeof searchEmployeesByNameResSchema
 >;
