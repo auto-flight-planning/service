@@ -318,7 +318,8 @@ exports.Prisma.EmployeesScalarFieldEnum = {
   user_id: 'user_id',
   first_name: 'first_name',
   last_name: 'last_name',
-  created_at: 'created_at'
+  created_at: 'created_at',
+  email: 'email'
 };
 
 exports.Prisma.Plan_listScalarFieldEnum = {
