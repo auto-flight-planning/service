@@ -1,5 +1,5 @@
-// src/server/utils/withErrorHandler.ts
 import { NextResponse } from "next/server";
+import { ZodError } from "zod";
 
 export default function withErrorHandler<T extends any[]>(
   handler: (...args: T) => Promise<NextResponse>
@@ -9,6 +9,15 @@ export default function withErrorHandler<T extends any[]>(
       return await handler(...args);
     } catch (error) {
       console.error("API Error:", error);
+
+      // 400: Zod validation
+      if (error instanceof ZodError) {
+        return NextResponse.json(
+          { error: "不正なリクエストです" },
+          { status: 400 }
+        );
+      }
+
       return NextResponse.json(
         {
           error:
