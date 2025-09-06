@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useModalStore } from "../modalStore";
-import Modal from "./modal";
+import { useModalStore } from "../stores/modalStore";
+import Modal from "../components/modal";
+
+// MODAL_COMPONENTS
 import { LoginModal } from "@/features/auth";
 import { CreatePlanModal } from "@/features/plan/base/create";
 import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";

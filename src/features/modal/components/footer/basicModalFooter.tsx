@@ -29,12 +29,10 @@ export default function BasicModalFooter({
         onBorder ? "border-t border-gray-200 pt-4" : ""
       }`}
     >
-      {/* 왼쪽 텍스트 */}
       <div className="flex-1">
         {leftText && <p className="text-sm text-gray-500">{leftText}</p>}
       </div>
 
-      {/* 오른쪽 버튼들 */}
       <div className="flex gap-3">
         {showCancel && onCancel && (
           <SquareButton
