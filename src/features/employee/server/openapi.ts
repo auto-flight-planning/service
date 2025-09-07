@@ -10,7 +10,7 @@ import {
   searchEmployeesByNameResSchema,
 } from "./schemas/res.schema";
 
-export const registerEmployeeSchemas = (registry: OpenAPIRegistry) => {
+export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
     method: "get",
     path: "/api/employees/{employeeId}",

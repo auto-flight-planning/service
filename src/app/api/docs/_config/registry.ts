@@ -7,7 +7,7 @@ import { z } from "zod";
 extendZodWithOpenApi(z);
 
 // ---------------Legacy------------------
-import { registerCreatePlanSchemas } from "@/features/plan/base/create/api/openapi";
+// import { registerCreatePlanSchemas } from "@/features/plan/base/create/api/openapi";
 import { registerGetNotificationSchemas } from "@/features/plan/notification/get/api/openapi";
 import { registerGetPlanOneSchemas } from "@/features/plan/base/get/one/api/openapi";
 import {
@@ -22,7 +22,10 @@ import { registerGetResultSchemas } from "@/features/plan/result/server/createPl
 // ---------------Legacy------------------
 
 // ["Employee"]
-import { registerEmployeeSchemas } from "@/features/employee/server/openapi";
+import { registerEmployeeAPIsToDocs } from "@/features/employee/server/openapi";
+
+// ["Plan"]
+import { registerPlanAPIsToDocs } from "@/features/plan/base/server/openapi";
 
 export const registry = new OpenAPIRegistry();
 
@@ -33,8 +36,9 @@ registry.registerComponent("securitySchemes", "bearerAuth", {
 });
 
 // API別
-registerEmployeeSchemas(registry);
-registerCreatePlanSchemas(registry);
+registerEmployeeAPIsToDocs(registry);
+registerPlanAPIsToDocs(registry);
+// registerCreatePlanSchemas(registry);
 registerGetNotificationSchemas(registry);
 registerGetPlanOneSchemas(registry);
 registerUpdateTotalPersonResourceSchemas(registry);
