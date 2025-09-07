@@ -493,30 +493,32 @@ model plan_inputs_analytics {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_inputs_resources_flight_scale_data {
-  plan_id                       String  @db.Uuid
-  flight_scale                  String
-  airplne_cnt                   BigInt?
-  min_standby_airplane_cnt      BigInt?
-  seat_cnt                      BigInt?
-  required_captain_cnt          BigInt?
-  required_sub_captain_cnt      BigInt?
-  required_other_personnel_norm BigInt?
-  required_pre_flight_hours     BigInt?
-  required_post_flight_hours    BigInt?
-  min_required_revenue          BigInt?
-  plans                         plans   @relation(fields: [plan_id], references: [id], onDelete: Cascade)
+  plan_id                             String                              @db.Uuid
+  flight_scale                        String                              @default("")
+  airplne_cnt                         BigInt?
+  min_standby_airplane_cnt            BigInt?
+  seat_cnt                            BigInt?
+  required_captain_cnt                BigInt?
+  required_sub_captain_cnt            BigInt?
+  required_other_personnel_norm       BigInt?
+  required_pre_flight_hours           BigInt?
+  required_post_flight_hours          BigInt?
+  min_required_revenue                BigInt?
+  flight_scale_id                     String                              @id @db.Uuid
+  plan_inputs_resources_flight_scales plan_inputs_resources_flight_scales @relation(fields: [flight_scale_id], references: [id], onDelete: Cascade)
+  plans                               plans                               @relation(fields: [plan_id], references: [id], onDelete: Cascade)
 
-  @@id([plan_id, flight_scale])
   @@schema("public")
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_inputs_resources_flight_scales {
-  plan_id      String @db.Uuid
-  flight_scale String
-  plans        plans  @relation(fields: [plan_id], references: [id], onDelete: Cascade)
+  plan_id                                 String                                   @db.Uuid
+  flight_scale                            String                                   @default("EMPTY")
+  id                                      String                                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  plan_inputs_resources_flight_scale_data plan_inputs_resources_flight_scale_data?
+  plans                                   plans                                    @relation(fields: [plan_id], references: [id], onDelete: Cascade)
 
-  @@id([plan_id, flight_scale])
   @@schema("public")
 }
 

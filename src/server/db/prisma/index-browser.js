@@ -429,12 +429,14 @@ exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
   required_other_personnel_norm: 'required_other_personnel_norm',
   required_pre_flight_hours: 'required_pre_flight_hours',
   required_post_flight_hours: 'required_post_flight_hours',
-  min_required_revenue: 'min_required_revenue'
+  min_required_revenue: 'min_required_revenue',
+  flight_scale_id: 'flight_scale_id'
 };
 
 exports.Prisma.Plan_inputs_resources_flight_scalesScalarFieldEnum = {
   plan_id: 'plan_id',
-  flight_scale: 'flight_scale'
+  flight_scale: 'flight_scale',
+  id: 'id'
 };
 
 exports.Prisma.Plan_inputs_resources_workforceScalarFieldEnum = {
