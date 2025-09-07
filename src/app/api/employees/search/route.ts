@@ -6,7 +6,11 @@ import { searchEmployeesByNameResSchema } from "@/features/employee/server/schem
 import { withHandler } from "@/server/lib";
 
 export const GET = withHandler(
-  async (request: NextRequest) => {
+  async (
+    request: NextRequest,
+    { params }: { params: Promise<any> },
+    user: User
+  ) => {
     const searchParams = request.nextUrl.searchParams;
     const _searchName = searchParams.get("searchName");
     const validatedParams = searchEmployeesByNameReqSchema.parse({
@@ -15,10 +19,13 @@ export const GET = withHandler(
     const { searchName } = validatedParams;
 
     const employees = await employeesRepo.searchManyByNames({ searchName });
-    // TODO: ログインしている職員を除外
+    // ログインしている職員を除外
+    const filteredEmployees = employees.filter(
+      (employee) => employee.user_id !== user.id
+    );
 
     const res = searchEmployeesByNameResSchema.parse({
-      employees: employees.map((employee) => ({
+      employees: filteredEmployees.map((employee) => ({
         id: employee.id,
         userId: employee.user_id,
         lastName: employee.last_name,
