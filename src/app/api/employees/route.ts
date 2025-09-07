@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { withHandler } from "@/server/lib";
+import employeesRepo from "@/server/repos/employees/employees.repo";
 import { userIdReqSchema } from "@/server/schemas/req.schema";
 import { getEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import employeesRepo from "@/server/repos/employees/employees.repo";
+import { withHandler } from "@/server/lib";
 
 export const GET = withHandler(
   async (request: NextRequest) => {
     const searchParams = request.nextUrl.searchParams;
     const _userId = searchParams.get("userId");
-
     const validatedParams = userIdReqSchema("query").parse({ userId: _userId });
     const { userId } = validatedParams;
 
