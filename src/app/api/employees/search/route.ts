@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { withHandler } from "@/server/lib";
 import { searchEmployeesByNameReqSchema } from "@/features/employee/server/schemas/req.schema";
 import { searchEmployeesByNameResSchema } from "@/features/employee/server/schemas/res.schema";
-import employeeRepo from "@/server/repos/employee/employee.repo";
+import employeesRepo from "@/server/repos/employees/employees.repo";
 
 export const GET = withHandler(
   async (request: NextRequest) => {
@@ -14,7 +14,7 @@ export const GET = withHandler(
     });
     const { searchName } = validatedParams;
 
-    const employees = await employeeRepo.searchManyByNames(searchName);
+    const employees = await employeesRepo.searchManyByNames(searchName);
     // TODO: ログインしている職員を除外
 
     const res = searchEmployeesByNameResSchema.parse({
