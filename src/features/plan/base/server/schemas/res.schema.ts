@@ -25,3 +25,5 @@ export const createPlanResSchema = z.object({
   }),
   participantDataList: planParticipantDataListSchema,
 });
+
+export type CreatePlanResSchema = z.infer<typeof createPlanResSchema>;
