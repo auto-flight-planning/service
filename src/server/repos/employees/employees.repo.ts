@@ -2,19 +2,19 @@ import { prismaClient } from "@/server/db/prismaClient";
 import { type employees as Employees } from "@/server/db/prisma";
 
 const employeesRepo = {
-  async findOneById(id: string) {
+  async findOneById({ id }: { id: string }) {
     return prismaClient.employees.findUnique({
       where: { id },
     });
   },
 
-  async findOneByUserId(userId: string) {
+  async findOneByUserId({ userId }: { userId: string }) {
     return prismaClient.employees.findUnique({
       where: { user_id: userId },
     });
   },
 
-  async searchManyByNames(searchName: string) {
+  async searchManyByNames({ searchName }: { searchName: string }) {
     const trimmedSearchName = searchName.trim();
 
     return prismaClient.$queryRaw<Array<Employees>>`

@@ -14,7 +14,7 @@ export const GET = withHandler(
     });
     const { searchName } = validatedParams;
 
-    const employees = await employeesRepo.searchManyByNames(searchName);
+    const employees = await employeesRepo.searchManyByNames({ searchName });
     // TODO: ログインしている職員を除外
 
     const res = searchEmployeesByNameResSchema.parse({

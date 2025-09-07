@@ -12,7 +12,7 @@ export const GET = withHandler(
     const validatedParams = getEmployeeByIdReqSchema.parse(await params);
     const { employeeId } = validatedParams;
 
-    const employee = await employeesRepo.findOneById(employeeId);
+    const employee = await employeesRepo.findOneById({ id: employeeId });
 
     if (!employee) {
       return NextResponse.json(
