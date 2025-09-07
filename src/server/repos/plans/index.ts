@@ -6,9 +6,11 @@ export { default as planParticipantsRepo } from "./participant/plan-participants
 export { default as planInputsStatusRepo } from "./status/plan-inputs-status.repo";
 
 // Inputs
-export { default as planInputsResourcesFlightScaleDataRepo } from "./inputs/resources/flight-scale-data.repo";
-export { default as planInputsResourcesFlightScalesRepo } from "./inputs/resources/flight-scales.repo";
 export { default as planInputsResourcesWorkforceRepo } from "./inputs/resources/workforce.repo";
+export { default as planInputsResourcesFlightScalesRepo } from "./inputs/resources/flight-scales.repo";
+export { default as planInputsResourcesFlightScaleDataRepo } from "./inputs/resources/flight-scale-data.repo";
+export { default as planInputsAnalyticsRepo } from "./inputs/analytics.repo";
+export { default as planInputsAirportsRepo } from "./inputs/airports.repo";
 
 // Results
 export { default as planResultsDailyDataRepo } from "./result/plan-results-daily-data.repo";
