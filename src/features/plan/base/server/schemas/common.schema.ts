@@ -23,10 +23,23 @@ export const planTitleSchema = z.string().min(1).openapi({
   example: "2028年9月運航企画",
 });
 
-export const planTargetDateSchema = z.date().min(new Date()).openapi({
-  description: "対象年月",
-  example: "2028-09-01",
-});
+export const planTargetDateSchema = z
+  .string()
+  .refine(
+    (dateStr) => {
+      const inputDate = new Date(dateStr);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return inputDate >= today;
+    },
+    {
+      message: "対象年月は今日以降の日付である必要があります",
+    }
+  )
+  .openapi({
+    description: "対象年月 (YYYY-MM-DD 形式, 今日以降)",
+    example: "2028-09-01",
+  });
 
 export const planParticipantDataListSchema = z.array(
   z.object({

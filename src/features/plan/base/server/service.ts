@@ -19,7 +19,7 @@ const planService = {
     // 1. planの生成
     const plan = await plansRepo.insertOne({
       title,
-      targetDate,
+      targetDate: new Date(targetDate),
       creatorId,
     });
 
