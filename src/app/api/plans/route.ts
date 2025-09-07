@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { User } from "@supabase/supabase-js";
+import { type User } from "@supabase/supabase-js";
 import { withHandler } from "@/server/lib";
 import planService from "@/features/plan/base/server/service";
 import { createPlanReqSchema } from "@/features/plan/base/server/schemas/req.schema";
