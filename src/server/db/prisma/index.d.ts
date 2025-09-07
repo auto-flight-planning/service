@@ -162,6 +162,51 @@ export type plan_results_flights_data = $Result.DefaultSelection<Prisma.$plan_re
  * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
  */
 export type plan_results_total_data = $Result.DefaultSelection<Prisma.$plan_results_total_dataPayload>
+/**
+ * Model airports
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type airports = $Result.DefaultSelection<Prisma.$airportsPayload>
+/**
+ * Model plan_inputs_airports
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_inputs_airports = $Result.DefaultSelection<Prisma.$plan_inputs_airportsPayload>
+/**
+ * Model plan_inputs_analytics
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_inputs_analytics = $Result.DefaultSelection<Prisma.$plan_inputs_analyticsPayload>
+/**
+ * Model plan_inputs_resources_flight_scale_data
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_inputs_resources_flight_scale_data = $Result.DefaultSelection<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+/**
+ * Model plan_inputs_resources_flight_scales
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_inputs_resources_flight_scales = $Result.DefaultSelection<Prisma.$plan_inputs_resources_flight_scalesPayload>
+/**
+ * Model plan_inputs_resources_workforce
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_inputs_resources_workforce = $Result.DefaultSelection<Prisma.$plan_inputs_resources_workforcePayload>
+/**
+ * Model plan_inputs_status
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_inputs_status = $Result.DefaultSelection<Prisma.$plan_inputs_statusPayload>
+/**
+ * Model plan_participants
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plan_participants = $Result.DefaultSelection<Prisma.$plan_participantsPayload>
+/**
+ * Model plans
+ * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+ */
+export type plans = $Result.DefaultSelection<Prisma.$plansPayload>
 
 /**
  * Enums
@@ -613,6 +658,96 @@ export class PrismaClient<
     * ```
     */
   get plan_results_total_data(): Prisma.plan_results_total_dataDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.airports`: Exposes CRUD operations for the **airports** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Airports
+    * const airports = await prisma.airports.findMany()
+    * ```
+    */
+  get airports(): Prisma.airportsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_inputs_airports`: Exposes CRUD operations for the **plan_inputs_airports** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_inputs_airports
+    * const plan_inputs_airports = await prisma.plan_inputs_airports.findMany()
+    * ```
+    */
+  get plan_inputs_airports(): Prisma.plan_inputs_airportsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_inputs_analytics`: Exposes CRUD operations for the **plan_inputs_analytics** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_inputs_analytics
+    * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findMany()
+    * ```
+    */
+  get plan_inputs_analytics(): Prisma.plan_inputs_analyticsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_inputs_resources_flight_scale_data`: Exposes CRUD operations for the **plan_inputs_resources_flight_scale_data** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_inputs_resources_flight_scale_data
+    * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findMany()
+    * ```
+    */
+  get plan_inputs_resources_flight_scale_data(): Prisma.plan_inputs_resources_flight_scale_dataDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_inputs_resources_flight_scales`: Exposes CRUD operations for the **plan_inputs_resources_flight_scales** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_inputs_resources_flight_scales
+    * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findMany()
+    * ```
+    */
+  get plan_inputs_resources_flight_scales(): Prisma.plan_inputs_resources_flight_scalesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_inputs_resources_workforce`: Exposes CRUD operations for the **plan_inputs_resources_workforce** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_inputs_resources_workforces
+    * const plan_inputs_resources_workforces = await prisma.plan_inputs_resources_workforce.findMany()
+    * ```
+    */
+  get plan_inputs_resources_workforce(): Prisma.plan_inputs_resources_workforceDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_inputs_status`: Exposes CRUD operations for the **plan_inputs_status** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_inputs_statuses
+    * const plan_inputs_statuses = await prisma.plan_inputs_status.findMany()
+    * ```
+    */
+  get plan_inputs_status(): Prisma.plan_inputs_statusDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plan_participants`: Exposes CRUD operations for the **plan_participants** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plan_participants
+    * const plan_participants = await prisma.plan_participants.findMany()
+    * ```
+    */
+  get plan_participants(): Prisma.plan_participantsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.plans`: Exposes CRUD operations for the **plans** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Plans
+    * const plans = await prisma.plans.findMany()
+    * ```
+    */
+  get plans(): Prisma.plansDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -1077,7 +1212,16 @@ export namespace Prisma {
     oauth_clients: 'oauth_clients',
     plan_results_daily_data: 'plan_results_daily_data',
     plan_results_flights_data: 'plan_results_flights_data',
-    plan_results_total_data: 'plan_results_total_data'
+    plan_results_total_data: 'plan_results_total_data',
+    airports: 'airports',
+    plan_inputs_airports: 'plan_inputs_airports',
+    plan_inputs_analytics: 'plan_inputs_analytics',
+    plan_inputs_resources_flight_scale_data: 'plan_inputs_resources_flight_scale_data',
+    plan_inputs_resources_flight_scales: 'plan_inputs_resources_flight_scales',
+    plan_inputs_resources_workforce: 'plan_inputs_resources_workforce',
+    plan_inputs_status: 'plan_inputs_status',
+    plan_participants: 'plan_participants',
+    plans: 'plans'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1096,7 +1240,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list" | "plan_notification" | "plan_status" | "plan_resource_input" | "oauth_clients" | "plan_results_daily_data" | "plan_results_flights_data" | "plan_results_total_data"
+      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "plan_list" | "plan_notification" | "plan_status" | "plan_resource_input" | "oauth_clients" | "plan_results_daily_data" | "plan_results_flights_data" | "plan_results_total_data" | "airports" | "plan_inputs_airports" | "plan_inputs_analytics" | "plan_inputs_resources_flight_scale_data" | "plan_inputs_resources_flight_scales" | "plan_inputs_resources_workforce" | "plan_inputs_status" | "plan_participants" | "plans"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2950,6 +3094,672 @@ export namespace Prisma {
           }
         }
       }
+      airports: {
+        payload: Prisma.$airportsPayload<ExtArgs>
+        fields: Prisma.airportsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.airportsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.airportsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>
+          }
+          findFirst: {
+            args: Prisma.airportsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.airportsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>
+          }
+          findMany: {
+            args: Prisma.airportsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>[]
+          }
+          create: {
+            args: Prisma.airportsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>
+          }
+          createMany: {
+            args: Prisma.airportsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.airportsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>[]
+          }
+          delete: {
+            args: Prisma.airportsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>
+          }
+          update: {
+            args: Prisma.airportsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>
+          }
+          deleteMany: {
+            args: Prisma.airportsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.airportsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.airportsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>[]
+          }
+          upsert: {
+            args: Prisma.airportsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$airportsPayload>
+          }
+          aggregate: {
+            args: Prisma.AirportsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAirports>
+          }
+          groupBy: {
+            args: Prisma.airportsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AirportsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.airportsCountArgs<ExtArgs>
+            result: $Utils.Optional<AirportsCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_inputs_airports: {
+        payload: Prisma.$plan_inputs_airportsPayload<ExtArgs>
+        fields: Prisma.plan_inputs_airportsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_inputs_airportsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_inputs_airportsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_inputs_airportsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_inputs_airportsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>
+          }
+          findMany: {
+            args: Prisma.plan_inputs_airportsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>[]
+          }
+          create: {
+            args: Prisma.plan_inputs_airportsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>
+          }
+          createMany: {
+            args: Prisma.plan_inputs_airportsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_inputs_airportsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_inputs_airportsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>
+          }
+          update: {
+            args: Prisma.plan_inputs_airportsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_inputs_airportsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_inputs_airportsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_inputs_airportsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_inputs_airportsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_airportsPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_inputs_airportsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_inputs_airports>
+          }
+          groupBy: {
+            args: Prisma.plan_inputs_airportsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_airportsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_inputs_airportsCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_airportsCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_inputs_analytics: {
+        payload: Prisma.$plan_inputs_analyticsPayload<ExtArgs>
+        fields: Prisma.plan_inputs_analyticsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_inputs_analyticsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_inputs_analyticsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_inputs_analyticsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_inputs_analyticsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>
+          }
+          findMany: {
+            args: Prisma.plan_inputs_analyticsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>[]
+          }
+          create: {
+            args: Prisma.plan_inputs_analyticsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>
+          }
+          createMany: {
+            args: Prisma.plan_inputs_analyticsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_inputs_analyticsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_inputs_analyticsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>
+          }
+          update: {
+            args: Prisma.plan_inputs_analyticsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_inputs_analyticsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_inputs_analyticsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_inputs_analyticsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_inputs_analyticsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_analyticsPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_inputs_analyticsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_inputs_analytics>
+          }
+          groupBy: {
+            args: Prisma.plan_inputs_analyticsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_analyticsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_inputs_analyticsCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_analyticsCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_inputs_resources_flight_scale_data: {
+        payload: Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>
+        fields: Prisma.plan_inputs_resources_flight_scale_dataFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+          }
+          findMany: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>[]
+          }
+          create: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+          }
+          createMany: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+          }
+          update: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_inputs_resources_flight_scale_dataAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_inputs_resources_flight_scale_data>
+          }
+          groupBy: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_resources_flight_scale_dataGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_inputs_resources_flight_scale_dataCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_resources_flight_scale_dataCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_inputs_resources_flight_scales: {
+        payload: Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>
+        fields: Prisma.plan_inputs_resources_flight_scalesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_inputs_resources_flight_scalesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_inputs_resources_flight_scalesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_inputs_resources_flight_scalesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
+          }
+          findMany: {
+            args: Prisma.plan_inputs_resources_flight_scalesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>[]
+          }
+          create: {
+            args: Prisma.plan_inputs_resources_flight_scalesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
+          }
+          createMany: {
+            args: Prisma.plan_inputs_resources_flight_scalesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_inputs_resources_flight_scalesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_inputs_resources_flight_scalesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
+          }
+          update: {
+            args: Prisma.plan_inputs_resources_flight_scalesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_inputs_resources_flight_scalesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_inputs_resources_flight_scalesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_inputs_resources_flight_scalesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_inputs_resources_flight_scalesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_inputs_resources_flight_scales>
+          }
+          groupBy: {
+            args: Prisma.plan_inputs_resources_flight_scalesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_resources_flight_scalesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_inputs_resources_flight_scalesCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_resources_flight_scalesCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_inputs_resources_workforce: {
+        payload: Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>
+        fields: Prisma.plan_inputs_resources_workforceFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_inputs_resources_workforceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_inputs_resources_workforceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>
+          }
+          findFirst: {
+            args: Prisma.plan_inputs_resources_workforceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_inputs_resources_workforceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>
+          }
+          findMany: {
+            args: Prisma.plan_inputs_resources_workforceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>[]
+          }
+          create: {
+            args: Prisma.plan_inputs_resources_workforceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>
+          }
+          createMany: {
+            args: Prisma.plan_inputs_resources_workforceCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_inputs_resources_workforceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>[]
+          }
+          delete: {
+            args: Prisma.plan_inputs_resources_workforceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>
+          }
+          update: {
+            args: Prisma.plan_inputs_resources_workforceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_inputs_resources_workforceDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_inputs_resources_workforceUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_inputs_resources_workforceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_inputs_resources_workforceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_workforcePayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_inputs_resources_workforceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_inputs_resources_workforce>
+          }
+          groupBy: {
+            args: Prisma.plan_inputs_resources_workforceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_resources_workforceGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_inputs_resources_workforceCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_resources_workforceCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_inputs_status: {
+        payload: Prisma.$plan_inputs_statusPayload<ExtArgs>
+        fields: Prisma.plan_inputs_statusFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_inputs_statusFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_inputs_statusFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_inputs_statusFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_inputs_statusFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>
+          }
+          findMany: {
+            args: Prisma.plan_inputs_statusFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>[]
+          }
+          create: {
+            args: Prisma.plan_inputs_statusCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>
+          }
+          createMany: {
+            args: Prisma.plan_inputs_statusCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_inputs_statusCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_inputs_statusDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>
+          }
+          update: {
+            args: Prisma.plan_inputs_statusUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_inputs_statusDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_inputs_statusUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_inputs_statusUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_inputs_statusUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_inputs_statusPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_inputs_statusAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_inputs_status>
+          }
+          groupBy: {
+            args: Prisma.plan_inputs_statusGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_statusGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_inputs_statusCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_inputs_statusCountAggregateOutputType> | number
+          }
+        }
+      }
+      plan_participants: {
+        payload: Prisma.$plan_participantsPayload<ExtArgs>
+        fields: Prisma.plan_participantsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plan_participantsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plan_participantsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>
+          }
+          findFirst: {
+            args: Prisma.plan_participantsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plan_participantsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>
+          }
+          findMany: {
+            args: Prisma.plan_participantsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>[]
+          }
+          create: {
+            args: Prisma.plan_participantsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>
+          }
+          createMany: {
+            args: Prisma.plan_participantsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plan_participantsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>[]
+          }
+          delete: {
+            args: Prisma.plan_participantsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>
+          }
+          update: {
+            args: Prisma.plan_participantsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>
+          }
+          deleteMany: {
+            args: Prisma.plan_participantsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plan_participantsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plan_participantsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>[]
+          }
+          upsert: {
+            args: Prisma.plan_participantsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plan_participantsPayload>
+          }
+          aggregate: {
+            args: Prisma.Plan_participantsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlan_participants>
+          }
+          groupBy: {
+            args: Prisma.plan_participantsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Plan_participantsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plan_participantsCountArgs<ExtArgs>
+            result: $Utils.Optional<Plan_participantsCountAggregateOutputType> | number
+          }
+        }
+      }
+      plans: {
+        payload: Prisma.$plansPayload<ExtArgs>
+        fields: Prisma.plansFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.plansFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.plansFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>
+          }
+          findFirst: {
+            args: Prisma.plansFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.plansFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>
+          }
+          findMany: {
+            args: Prisma.plansFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>[]
+          }
+          create: {
+            args: Prisma.plansCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>
+          }
+          createMany: {
+            args: Prisma.plansCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.plansCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>[]
+          }
+          delete: {
+            args: Prisma.plansDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>
+          }
+          update: {
+            args: Prisma.plansUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>
+          }
+          deleteMany: {
+            args: Prisma.plansDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.plansUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.plansUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>[]
+          }
+          upsert: {
+            args: Prisma.plansUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$plansPayload>
+          }
+          aggregate: {
+            args: Prisma.PlansAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlans>
+          }
+          groupBy: {
+            args: Prisma.plansGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PlansGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.plansCountArgs<ExtArgs>
+            result: $Utils.Optional<PlansCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -3067,6 +3877,15 @@ export namespace Prisma {
     plan_results_daily_data?: plan_results_daily_dataOmit
     plan_results_flights_data?: plan_results_flights_dataOmit
     plan_results_total_data?: plan_results_total_dataOmit
+    airports?: airportsOmit
+    plan_inputs_airports?: plan_inputs_airportsOmit
+    plan_inputs_analytics?: plan_inputs_analyticsOmit
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataOmit
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesOmit
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceOmit
+    plan_inputs_status?: plan_inputs_statusOmit
+    plan_participants?: plan_participantsOmit
+    plans?: plansOmit
   }
 
   /* Types for Logging */
@@ -3302,6 +4121,8 @@ export namespace Prisma {
     mfa_factors: number
     one_time_tokens: number
     sessions: number
+    plan_participants: number
+    plans: number
   }
 
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3309,6 +4130,8 @@ export namespace Prisma {
     mfa_factors?: boolean | UsersCountOutputTypeCountMfa_factorsArgs
     one_time_tokens?: boolean | UsersCountOutputTypeCountOne_time_tokensArgs
     sessions?: boolean | UsersCountOutputTypeCountSessionsArgs
+    plan_participants?: boolean | UsersCountOutputTypeCountPlan_participantsArgs
+    plans?: boolean | UsersCountOutputTypeCountPlansArgs
   }
 
   // Custom InputTypes
@@ -3350,6 +4173,20 @@ export namespace Prisma {
     where?: sessionsWhereInput
   }
 
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountPlan_participantsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_participantsWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountPlansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plansWhereInput
+  }
+
 
   /**
    * Count Type Plan_listCountOutputType
@@ -3388,6 +4225,95 @@ export namespace Prisma {
    */
   export type Plan_listCountOutputTypeCountPlan_results_flights_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: plan_results_flights_dataWhereInput
+  }
+
+
+  /**
+   * Count Type AirportsCountOutputType
+   */
+
+  export type AirportsCountOutputType = {
+    plan_inputs_airports: number
+  }
+
+  export type AirportsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_inputs_airports?: boolean | AirportsCountOutputTypeCountPlan_inputs_airportsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * AirportsCountOutputType without action
+   */
+  export type AirportsCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AirportsCountOutputType
+     */
+    select?: AirportsCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * AirportsCountOutputType without action
+   */
+  export type AirportsCountOutputTypeCountPlan_inputs_airportsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_airportsWhereInput
+  }
+
+
+  /**
+   * Count Type PlansCountOutputType
+   */
+
+  export type PlansCountOutputType = {
+    plan_inputs_airports: number
+    plan_inputs_resources_flight_scale_data: number
+    plan_inputs_resources_flight_scales: number
+    plan_participants: number
+  }
+
+  export type PlansCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_inputs_airports?: boolean | PlansCountOutputTypeCountPlan_inputs_airportsArgs
+    plan_inputs_resources_flight_scale_data?: boolean | PlansCountOutputTypeCountPlan_inputs_resources_flight_scale_dataArgs
+    plan_inputs_resources_flight_scales?: boolean | PlansCountOutputTypeCountPlan_inputs_resources_flight_scalesArgs
+    plan_participants?: boolean | PlansCountOutputTypeCountPlan_participantsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * PlansCountOutputType without action
+   */
+  export type PlansCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlansCountOutputType
+     */
+    select?: PlansCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * PlansCountOutputType without action
+   */
+  export type PlansCountOutputTypeCountPlan_inputs_airportsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_airportsWhereInput
+  }
+
+  /**
+   * PlansCountOutputType without action
+   */
+  export type PlansCountOutputTypeCountPlan_inputs_resources_flight_scale_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+  }
+
+  /**
+   * PlansCountOutputType without action
+   */
+  export type PlansCountOutputTypeCountPlan_inputs_resources_flight_scalesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_resources_flight_scalesWhereInput
+  }
+
+  /**
+   * PlansCountOutputType without action
+   */
+  export type PlansCountOutputTypeCountPlan_participantsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_participantsWhereInput
   }
 
 
@@ -20194,6 +21120,8 @@ export namespace Prisma {
     one_time_tokens?: boolean | users$one_time_tokensArgs<ExtArgs>
     sessions?: boolean | users$sessionsArgs<ExtArgs>
     employees?: boolean | users$employeesArgs<ExtArgs>
+    plan_participants?: boolean | users$plan_participantsArgs<ExtArgs>
+    plans?: boolean | users$plansArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
@@ -20318,6 +21246,8 @@ export namespace Prisma {
     one_time_tokens?: boolean | users$one_time_tokensArgs<ExtArgs>
     sessions?: boolean | users$sessionsArgs<ExtArgs>
     employees?: boolean | users$employeesArgs<ExtArgs>
+    plan_participants?: boolean | users$plan_participantsArgs<ExtArgs>
+    plans?: boolean | users$plansArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type usersIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -20331,6 +21261,8 @@ export namespace Prisma {
       one_time_tokens: Prisma.$one_time_tokensPayload<ExtArgs>[]
       sessions: Prisma.$sessionsPayload<ExtArgs>[]
       employees: Prisma.$employeesPayload<ExtArgs> | null
+      plan_participants: Prisma.$plan_participantsPayload<ExtArgs>[]
+      plans: Prisma.$plansPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       instance_id: string | null
@@ -20767,6 +21699,8 @@ export namespace Prisma {
     one_time_tokens<T extends users$one_time_tokensArgs<ExtArgs> = {}>(args?: Subset<T, users$one_time_tokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$one_time_tokensPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     sessions<T extends users$sessionsArgs<ExtArgs> = {}>(args?: Subset<T, users$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sessionsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     employees<T extends users$employeesArgs<ExtArgs> = {}>(args?: Subset<T, users$employeesArgs<ExtArgs>>): Prisma__employeesClient<$Result.GetResult<Prisma.$employeesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    plan_participants<T extends users$plan_participantsArgs<ExtArgs> = {}>(args?: Subset<T, users$plan_participantsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    plans<T extends users$plansArgs<ExtArgs> = {}>(args?: Subset<T, users$plansArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -21331,6 +22265,54 @@ export namespace Prisma {
      */
     include?: employeesInclude<ExtArgs> | null
     where?: employeesWhereInput
+  }
+
+  /**
+   * users.plan_participants
+   */
+  export type users$plan_participantsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    where?: plan_participantsWhereInput
+    orderBy?: plan_participantsOrderByWithRelationInput | plan_participantsOrderByWithRelationInput[]
+    cursor?: plan_participantsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_participantsScalarFieldEnum | Plan_participantsScalarFieldEnum[]
+  }
+
+  /**
+   * users.plans
+   */
+  export type users$plansArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    where?: plansWhereInput
+    orderBy?: plansOrderByWithRelationInput | plansOrderByWithRelationInput[]
+    cursor?: plansWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PlansScalarFieldEnum | PlansScalarFieldEnum[]
   }
 
   /**
@@ -31108,6 +32090,9934 @@ export namespace Prisma {
 
 
   /**
+   * Model airports
+   */
+
+  export type AggregateAirports = {
+    _count: AirportsCountAggregateOutputType | null
+    _min: AirportsMinAggregateOutputType | null
+    _max: AirportsMaxAggregateOutputType | null
+  }
+
+  export type AirportsMinAggregateOutputType = {
+    airport_code: string | null
+    airport_name: string | null
+    country: string | null
+  }
+
+  export type AirportsMaxAggregateOutputType = {
+    airport_code: string | null
+    airport_name: string | null
+    country: string | null
+  }
+
+  export type AirportsCountAggregateOutputType = {
+    airport_code: number
+    airport_name: number
+    country: number
+    _all: number
+  }
+
+
+  export type AirportsMinAggregateInputType = {
+    airport_code?: true
+    airport_name?: true
+    country?: true
+  }
+
+  export type AirportsMaxAggregateInputType = {
+    airport_code?: true
+    airport_name?: true
+    country?: true
+  }
+
+  export type AirportsCountAggregateInputType = {
+    airport_code?: true
+    airport_name?: true
+    country?: true
+    _all?: true
+  }
+
+  export type AirportsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which airports to aggregate.
+     */
+    where?: airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of airports to fetch.
+     */
+    orderBy?: airportsOrderByWithRelationInput | airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` airports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned airports
+    **/
+    _count?: true | AirportsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: AirportsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: AirportsMaxAggregateInputType
+  }
+
+  export type GetAirportsAggregateType<T extends AirportsAggregateArgs> = {
+        [P in keyof T & keyof AggregateAirports]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAirports[P]>
+      : GetScalarType<T[P], AggregateAirports[P]>
+  }
+
+
+
+
+  export type airportsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: airportsWhereInput
+    orderBy?: airportsOrderByWithAggregationInput | airportsOrderByWithAggregationInput[]
+    by: AirportsScalarFieldEnum[] | AirportsScalarFieldEnum
+    having?: airportsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: AirportsCountAggregateInputType | true
+    _min?: AirportsMinAggregateInputType
+    _max?: AirportsMaxAggregateInputType
+  }
+
+  export type AirportsGroupByOutputType = {
+    airport_code: string
+    airport_name: string
+    country: string
+    _count: AirportsCountAggregateOutputType | null
+    _min: AirportsMinAggregateOutputType | null
+    _max: AirportsMaxAggregateOutputType | null
+  }
+
+  type GetAirportsGroupByPayload<T extends airportsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<AirportsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof AirportsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], AirportsGroupByOutputType[P]>
+            : GetScalarType<T[P], AirportsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type airportsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    airport_code?: boolean
+    airport_name?: boolean
+    country?: boolean
+    plan_inputs_airports?: boolean | airports$plan_inputs_airportsArgs<ExtArgs>
+    _count?: boolean | AirportsCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["airports"]>
+
+  export type airportsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    airport_code?: boolean
+    airport_name?: boolean
+    country?: boolean
+  }, ExtArgs["result"]["airports"]>
+
+  export type airportsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    airport_code?: boolean
+    airport_name?: boolean
+    country?: boolean
+  }, ExtArgs["result"]["airports"]>
+
+  export type airportsSelectScalar = {
+    airport_code?: boolean
+    airport_name?: boolean
+    country?: boolean
+  }
+
+  export type airportsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"airport_code" | "airport_name" | "country", ExtArgs["result"]["airports"]>
+  export type airportsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_inputs_airports?: boolean | airports$plan_inputs_airportsArgs<ExtArgs>
+    _count?: boolean | AirportsCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type airportsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type airportsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $airportsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "airports"
+    objects: {
+      plan_inputs_airports: Prisma.$plan_inputs_airportsPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      airport_code: string
+      airport_name: string
+      country: string
+    }, ExtArgs["result"]["airports"]>
+    composites: {}
+  }
+
+  type airportsGetPayload<S extends boolean | null | undefined | airportsDefaultArgs> = $Result.GetResult<Prisma.$airportsPayload, S>
+
+  type airportsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<airportsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: AirportsCountAggregateInputType | true
+    }
+
+  export interface airportsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['airports'], meta: { name: 'airports' } }
+    /**
+     * Find zero or one Airports that matches the filter.
+     * @param {airportsFindUniqueArgs} args - Arguments to find a Airports
+     * @example
+     * // Get one Airports
+     * const airports = await prisma.airports.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends airportsFindUniqueArgs>(args: SelectSubset<T, airportsFindUniqueArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Airports that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {airportsFindUniqueOrThrowArgs} args - Arguments to find a Airports
+     * @example
+     * // Get one Airports
+     * const airports = await prisma.airports.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends airportsFindUniqueOrThrowArgs>(args: SelectSubset<T, airportsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Airports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {airportsFindFirstArgs} args - Arguments to find a Airports
+     * @example
+     * // Get one Airports
+     * const airports = await prisma.airports.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends airportsFindFirstArgs>(args?: SelectSubset<T, airportsFindFirstArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Airports that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {airportsFindFirstOrThrowArgs} args - Arguments to find a Airports
+     * @example
+     * // Get one Airports
+     * const airports = await prisma.airports.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends airportsFindFirstOrThrowArgs>(args?: SelectSubset<T, airportsFindFirstOrThrowArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Airports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {airportsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Airports
+     * const airports = await prisma.airports.findMany()
+     * 
+     * // Get first 10 Airports
+     * const airports = await prisma.airports.findMany({ take: 10 })
+     * 
+     * // Only select the `airport_code`
+     * const airportsWithAirport_codeOnly = await prisma.airports.findMany({ select: { airport_code: true } })
+     * 
+     */
+    findMany<T extends airportsFindManyArgs>(args?: SelectSubset<T, airportsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Airports.
+     * @param {airportsCreateArgs} args - Arguments to create a Airports.
+     * @example
+     * // Create one Airports
+     * const Airports = await prisma.airports.create({
+     *   data: {
+     *     // ... data to create a Airports
+     *   }
+     * })
+     * 
+     */
+    create<T extends airportsCreateArgs>(args: SelectSubset<T, airportsCreateArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Airports.
+     * @param {airportsCreateManyArgs} args - Arguments to create many Airports.
+     * @example
+     * // Create many Airports
+     * const airports = await prisma.airports.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends airportsCreateManyArgs>(args?: SelectSubset<T, airportsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Airports and returns the data saved in the database.
+     * @param {airportsCreateManyAndReturnArgs} args - Arguments to create many Airports.
+     * @example
+     * // Create many Airports
+     * const airports = await prisma.airports.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Airports and only return the `airport_code`
+     * const airportsWithAirport_codeOnly = await prisma.airports.createManyAndReturn({
+     *   select: { airport_code: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends airportsCreateManyAndReturnArgs>(args?: SelectSubset<T, airportsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Airports.
+     * @param {airportsDeleteArgs} args - Arguments to delete one Airports.
+     * @example
+     * // Delete one Airports
+     * const Airports = await prisma.airports.delete({
+     *   where: {
+     *     // ... filter to delete one Airports
+     *   }
+     * })
+     * 
+     */
+    delete<T extends airportsDeleteArgs>(args: SelectSubset<T, airportsDeleteArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Airports.
+     * @param {airportsUpdateArgs} args - Arguments to update one Airports.
+     * @example
+     * // Update one Airports
+     * const airports = await prisma.airports.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends airportsUpdateArgs>(args: SelectSubset<T, airportsUpdateArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Airports.
+     * @param {airportsDeleteManyArgs} args - Arguments to filter Airports to delete.
+     * @example
+     * // Delete a few Airports
+     * const { count } = await prisma.airports.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends airportsDeleteManyArgs>(args?: SelectSubset<T, airportsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {airportsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Airports
+     * const airports = await prisma.airports.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends airportsUpdateManyArgs>(args: SelectSubset<T, airportsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Airports and returns the data updated in the database.
+     * @param {airportsUpdateManyAndReturnArgs} args - Arguments to update many Airports.
+     * @example
+     * // Update many Airports
+     * const airports = await prisma.airports.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Airports and only return the `airport_code`
+     * const airportsWithAirport_codeOnly = await prisma.airports.updateManyAndReturn({
+     *   select: { airport_code: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends airportsUpdateManyAndReturnArgs>(args: SelectSubset<T, airportsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Airports.
+     * @param {airportsUpsertArgs} args - Arguments to update or create a Airports.
+     * @example
+     * // Update or create a Airports
+     * const airports = await prisma.airports.upsert({
+     *   create: {
+     *     // ... data to create a Airports
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Airports we want to update
+     *   }
+     * })
+     */
+    upsert<T extends airportsUpsertArgs>(args: SelectSubset<T, airportsUpsertArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {airportsCountArgs} args - Arguments to filter Airports to count.
+     * @example
+     * // Count the number of Airports
+     * const count = await prisma.airports.count({
+     *   where: {
+     *     // ... the filter for the Airports we want to count
+     *   }
+     * })
+    **/
+    count<T extends airportsCountArgs>(
+      args?: Subset<T, airportsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], AirportsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AirportsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends AirportsAggregateArgs>(args: Subset<T, AirportsAggregateArgs>): Prisma.PrismaPromise<GetAirportsAggregateType<T>>
+
+    /**
+     * Group by Airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {airportsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends airportsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: airportsGroupByArgs['orderBy'] }
+        : { orderBy?: airportsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, airportsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAirportsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the airports model
+   */
+  readonly fields: airportsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for airports.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__airportsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plan_inputs_airports<T extends airports$plan_inputs_airportsArgs<ExtArgs> = {}>(args?: Subset<T, airports$plan_inputs_airportsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the airports model
+   */
+  interface airportsFieldRefs {
+    readonly airport_code: FieldRef<"airports", 'String'>
+    readonly airport_name: FieldRef<"airports", 'String'>
+    readonly country: FieldRef<"airports", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * airports findUnique
+   */
+  export type airportsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which airports to fetch.
+     */
+    where: airportsWhereUniqueInput
+  }
+
+  /**
+   * airports findUniqueOrThrow
+   */
+  export type airportsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which airports to fetch.
+     */
+    where: airportsWhereUniqueInput
+  }
+
+  /**
+   * airports findFirst
+   */
+  export type airportsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which airports to fetch.
+     */
+    where?: airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of airports to fetch.
+     */
+    orderBy?: airportsOrderByWithRelationInput | airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for airports.
+     */
+    cursor?: airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` airports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of airports.
+     */
+    distinct?: AirportsScalarFieldEnum | AirportsScalarFieldEnum[]
+  }
+
+  /**
+   * airports findFirstOrThrow
+   */
+  export type airportsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which airports to fetch.
+     */
+    where?: airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of airports to fetch.
+     */
+    orderBy?: airportsOrderByWithRelationInput | airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for airports.
+     */
+    cursor?: airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` airports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of airports.
+     */
+    distinct?: AirportsScalarFieldEnum | AirportsScalarFieldEnum[]
+  }
+
+  /**
+   * airports findMany
+   */
+  export type airportsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which airports to fetch.
+     */
+    where?: airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of airports to fetch.
+     */
+    orderBy?: airportsOrderByWithRelationInput | airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing airports.
+     */
+    cursor?: airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` airports.
+     */
+    skip?: number
+    distinct?: AirportsScalarFieldEnum | AirportsScalarFieldEnum[]
+  }
+
+  /**
+   * airports create
+   */
+  export type airportsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a airports.
+     */
+    data: XOR<airportsCreateInput, airportsUncheckedCreateInput>
+  }
+
+  /**
+   * airports createMany
+   */
+  export type airportsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many airports.
+     */
+    data: airportsCreateManyInput | airportsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * airports createManyAndReturn
+   */
+  export type airportsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * The data used to create many airports.
+     */
+    data: airportsCreateManyInput | airportsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * airports update
+   */
+  export type airportsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a airports.
+     */
+    data: XOR<airportsUpdateInput, airportsUncheckedUpdateInput>
+    /**
+     * Choose, which airports to update.
+     */
+    where: airportsWhereUniqueInput
+  }
+
+  /**
+   * airports updateMany
+   */
+  export type airportsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update airports.
+     */
+    data: XOR<airportsUpdateManyMutationInput, airportsUncheckedUpdateManyInput>
+    /**
+     * Filter which airports to update
+     */
+    where?: airportsWhereInput
+    /**
+     * Limit how many airports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * airports updateManyAndReturn
+   */
+  export type airportsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * The data used to update airports.
+     */
+    data: XOR<airportsUpdateManyMutationInput, airportsUncheckedUpdateManyInput>
+    /**
+     * Filter which airports to update
+     */
+    where?: airportsWhereInput
+    /**
+     * Limit how many airports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * airports upsert
+   */
+  export type airportsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the airports to update in case it exists.
+     */
+    where: airportsWhereUniqueInput
+    /**
+     * In case the airports found by the `where` argument doesn't exist, create a new airports with this data.
+     */
+    create: XOR<airportsCreateInput, airportsUncheckedCreateInput>
+    /**
+     * In case the airports was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<airportsUpdateInput, airportsUncheckedUpdateInput>
+  }
+
+  /**
+   * airports delete
+   */
+  export type airportsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+    /**
+     * Filter which airports to delete.
+     */
+    where: airportsWhereUniqueInput
+  }
+
+  /**
+   * airports deleteMany
+   */
+  export type airportsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which airports to delete
+     */
+    where?: airportsWhereInput
+    /**
+     * Limit how many airports to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * airports.plan_inputs_airports
+   */
+  export type airports$plan_inputs_airportsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    where?: plan_inputs_airportsWhereInput
+    orderBy?: plan_inputs_airportsOrderByWithRelationInput | plan_inputs_airportsOrderByWithRelationInput[]
+    cursor?: plan_inputs_airportsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_inputs_airportsScalarFieldEnum | Plan_inputs_airportsScalarFieldEnum[]
+  }
+
+  /**
+   * airports without action
+   */
+  export type airportsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the airports
+     */
+    select?: airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the airports
+     */
+    omit?: airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: airportsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_inputs_airports
+   */
+
+  export type AggregatePlan_inputs_airports = {
+    _count: Plan_inputs_airportsCountAggregateOutputType | null
+    _min: Plan_inputs_airportsMinAggregateOutputType | null
+    _max: Plan_inputs_airportsMaxAggregateOutputType | null
+  }
+
+  export type Plan_inputs_airportsMinAggregateOutputType = {
+    plan_id: string | null
+    airport_code: string | null
+    schedule_file_name: string | null
+    schedule_file_path: string | null
+  }
+
+  export type Plan_inputs_airportsMaxAggregateOutputType = {
+    plan_id: string | null
+    airport_code: string | null
+    schedule_file_name: string | null
+    schedule_file_path: string | null
+  }
+
+  export type Plan_inputs_airportsCountAggregateOutputType = {
+    plan_id: number
+    airport_code: number
+    schedule_file_name: number
+    schedule_file_path: number
+    _all: number
+  }
+
+
+  export type Plan_inputs_airportsMinAggregateInputType = {
+    plan_id?: true
+    airport_code?: true
+    schedule_file_name?: true
+    schedule_file_path?: true
+  }
+
+  export type Plan_inputs_airportsMaxAggregateInputType = {
+    plan_id?: true
+    airport_code?: true
+    schedule_file_name?: true
+    schedule_file_path?: true
+  }
+
+  export type Plan_inputs_airportsCountAggregateInputType = {
+    plan_id?: true
+    airport_code?: true
+    schedule_file_name?: true
+    schedule_file_path?: true
+    _all?: true
+  }
+
+  export type Plan_inputs_airportsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_airports to aggregate.
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_airports to fetch.
+     */
+    orderBy?: plan_inputs_airportsOrderByWithRelationInput | plan_inputs_airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_inputs_airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_airports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_inputs_airports
+    **/
+    _count?: true | Plan_inputs_airportsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_inputs_airportsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_inputs_airportsMaxAggregateInputType
+  }
+
+  export type GetPlan_inputs_airportsAggregateType<T extends Plan_inputs_airportsAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_inputs_airports]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_inputs_airports[P]>
+      : GetScalarType<T[P], AggregatePlan_inputs_airports[P]>
+  }
+
+
+
+
+  export type plan_inputs_airportsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_airportsWhereInput
+    orderBy?: plan_inputs_airportsOrderByWithAggregationInput | plan_inputs_airportsOrderByWithAggregationInput[]
+    by: Plan_inputs_airportsScalarFieldEnum[] | Plan_inputs_airportsScalarFieldEnum
+    having?: plan_inputs_airportsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_inputs_airportsCountAggregateInputType | true
+    _min?: Plan_inputs_airportsMinAggregateInputType
+    _max?: Plan_inputs_airportsMaxAggregateInputType
+  }
+
+  export type Plan_inputs_airportsGroupByOutputType = {
+    plan_id: string
+    airport_code: string
+    schedule_file_name: string | null
+    schedule_file_path: string | null
+    _count: Plan_inputs_airportsCountAggregateOutputType | null
+    _min: Plan_inputs_airportsMinAggregateOutputType | null
+    _max: Plan_inputs_airportsMaxAggregateOutputType | null
+  }
+
+  type GetPlan_inputs_airportsGroupByPayload<T extends plan_inputs_airportsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_inputs_airportsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_inputs_airportsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_inputs_airportsGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_inputs_airportsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_inputs_airportsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    airport_code?: boolean
+    schedule_file_name?: boolean
+    schedule_file_path?: boolean
+    airports?: boolean | airportsDefaultArgs<ExtArgs>
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_airports"]>
+
+  export type plan_inputs_airportsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    airport_code?: boolean
+    schedule_file_name?: boolean
+    schedule_file_path?: boolean
+    airports?: boolean | airportsDefaultArgs<ExtArgs>
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_airports"]>
+
+  export type plan_inputs_airportsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    airport_code?: boolean
+    schedule_file_name?: boolean
+    schedule_file_path?: boolean
+    airports?: boolean | airportsDefaultArgs<ExtArgs>
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_airports"]>
+
+  export type plan_inputs_airportsSelectScalar = {
+    plan_id?: boolean
+    airport_code?: boolean
+    schedule_file_name?: boolean
+    schedule_file_path?: boolean
+  }
+
+  export type plan_inputs_airportsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "airport_code" | "schedule_file_name" | "schedule_file_path", ExtArgs["result"]["plan_inputs_airports"]>
+  export type plan_inputs_airportsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    airports?: boolean | airportsDefaultArgs<ExtArgs>
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_airportsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    airports?: boolean | airportsDefaultArgs<ExtArgs>
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_airportsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    airports?: boolean | airportsDefaultArgs<ExtArgs>
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_inputs_airportsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_inputs_airports"
+    objects: {
+      airports: Prisma.$airportsPayload<ExtArgs>
+      plans: Prisma.$plansPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      airport_code: string
+      schedule_file_name: string | null
+      schedule_file_path: string | null
+    }, ExtArgs["result"]["plan_inputs_airports"]>
+    composites: {}
+  }
+
+  type plan_inputs_airportsGetPayload<S extends boolean | null | undefined | plan_inputs_airportsDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_airportsPayload, S>
+
+  type plan_inputs_airportsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_inputs_airportsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_inputs_airportsCountAggregateInputType | true
+    }
+
+  export interface plan_inputs_airportsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_airports'], meta: { name: 'plan_inputs_airports' } }
+    /**
+     * Find zero or one Plan_inputs_airports that matches the filter.
+     * @param {plan_inputs_airportsFindUniqueArgs} args - Arguments to find a Plan_inputs_airports
+     * @example
+     * // Get one Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_inputs_airportsFindUniqueArgs>(args: SelectSubset<T, plan_inputs_airportsFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_inputs_airports that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_inputs_airportsFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_airports
+     * @example
+     * // Get one Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_inputs_airportsFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_airportsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_airports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_airportsFindFirstArgs} args - Arguments to find a Plan_inputs_airports
+     * @example
+     * // Get one Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_inputs_airportsFindFirstArgs>(args?: SelectSubset<T, plan_inputs_airportsFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_airports that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_airportsFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_airports
+     * @example
+     * // Get one Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_inputs_airportsFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_airportsFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_inputs_airports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_airportsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.findMany()
+     * 
+     * // Get first 10 Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_inputs_airportsWithPlan_idOnly = await prisma.plan_inputs_airports.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_inputs_airportsFindManyArgs>(args?: SelectSubset<T, plan_inputs_airportsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_inputs_airports.
+     * @param {plan_inputs_airportsCreateArgs} args - Arguments to create a Plan_inputs_airports.
+     * @example
+     * // Create one Plan_inputs_airports
+     * const Plan_inputs_airports = await prisma.plan_inputs_airports.create({
+     *   data: {
+     *     // ... data to create a Plan_inputs_airports
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_inputs_airportsCreateArgs>(args: SelectSubset<T, plan_inputs_airportsCreateArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_inputs_airports.
+     * @param {plan_inputs_airportsCreateManyArgs} args - Arguments to create many Plan_inputs_airports.
+     * @example
+     * // Create many Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_inputs_airportsCreateManyArgs>(args?: SelectSubset<T, plan_inputs_airportsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_inputs_airports and returns the data saved in the database.
+     * @param {plan_inputs_airportsCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_airports.
+     * @example
+     * // Create many Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_inputs_airports and only return the `plan_id`
+     * const plan_inputs_airportsWithPlan_idOnly = await prisma.plan_inputs_airports.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_inputs_airportsCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_airportsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_inputs_airports.
+     * @param {plan_inputs_airportsDeleteArgs} args - Arguments to delete one Plan_inputs_airports.
+     * @example
+     * // Delete one Plan_inputs_airports
+     * const Plan_inputs_airports = await prisma.plan_inputs_airports.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_inputs_airports
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_inputs_airportsDeleteArgs>(args: SelectSubset<T, plan_inputs_airportsDeleteArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_inputs_airports.
+     * @param {plan_inputs_airportsUpdateArgs} args - Arguments to update one Plan_inputs_airports.
+     * @example
+     * // Update one Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_inputs_airportsUpdateArgs>(args: SelectSubset<T, plan_inputs_airportsUpdateArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_inputs_airports.
+     * @param {plan_inputs_airportsDeleteManyArgs} args - Arguments to filter Plan_inputs_airports to delete.
+     * @example
+     * // Delete a few Plan_inputs_airports
+     * const { count } = await prisma.plan_inputs_airports.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_inputs_airportsDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_airportsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_airportsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_inputs_airportsUpdateManyArgs>(args: SelectSubset<T, plan_inputs_airportsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_airports and returns the data updated in the database.
+     * @param {plan_inputs_airportsUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_airports.
+     * @example
+     * // Update many Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_inputs_airports and only return the `plan_id`
+     * const plan_inputs_airportsWithPlan_idOnly = await prisma.plan_inputs_airports.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_inputs_airportsUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_airportsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_inputs_airports.
+     * @param {plan_inputs_airportsUpsertArgs} args - Arguments to update or create a Plan_inputs_airports.
+     * @example
+     * // Update or create a Plan_inputs_airports
+     * const plan_inputs_airports = await prisma.plan_inputs_airports.upsert({
+     *   create: {
+     *     // ... data to create a Plan_inputs_airports
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_inputs_airports we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_inputs_airportsUpsertArgs>(args: SelectSubset<T, plan_inputs_airportsUpsertArgs<ExtArgs>>): Prisma__plan_inputs_airportsClient<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_inputs_airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_airportsCountArgs} args - Arguments to filter Plan_inputs_airports to count.
+     * @example
+     * // Count the number of Plan_inputs_airports
+     * const count = await prisma.plan_inputs_airports.count({
+     *   where: {
+     *     // ... the filter for the Plan_inputs_airports we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_inputs_airportsCountArgs>(
+      args?: Subset<T, plan_inputs_airportsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_inputs_airportsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_inputs_airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_inputs_airportsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_inputs_airportsAggregateArgs>(args: Subset<T, Plan_inputs_airportsAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_airportsAggregateType<T>>
+
+    /**
+     * Group by Plan_inputs_airports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_airportsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_inputs_airportsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_inputs_airportsGroupByArgs['orderBy'] }
+        : { orderBy?: plan_inputs_airportsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_inputs_airportsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_airportsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_inputs_airports model
+   */
+  readonly fields: plan_inputs_airportsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_inputs_airports.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_inputs_airportsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    airports<T extends airportsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, airportsDefaultArgs<ExtArgs>>): Prisma__airportsClient<$Result.GetResult<Prisma.$airportsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_inputs_airports model
+   */
+  interface plan_inputs_airportsFieldRefs {
+    readonly plan_id: FieldRef<"plan_inputs_airports", 'String'>
+    readonly airport_code: FieldRef<"plan_inputs_airports", 'String'>
+    readonly schedule_file_name: FieldRef<"plan_inputs_airports", 'String'>
+    readonly schedule_file_path: FieldRef<"plan_inputs_airports", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_inputs_airports findUnique
+   */
+  export type plan_inputs_airportsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_airports to fetch.
+     */
+    where: plan_inputs_airportsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_airports findUniqueOrThrow
+   */
+  export type plan_inputs_airportsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_airports to fetch.
+     */
+    where: plan_inputs_airportsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_airports findFirst
+   */
+  export type plan_inputs_airportsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_airports to fetch.
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_airports to fetch.
+     */
+    orderBy?: plan_inputs_airportsOrderByWithRelationInput | plan_inputs_airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_airports.
+     */
+    cursor?: plan_inputs_airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_airports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_airports.
+     */
+    distinct?: Plan_inputs_airportsScalarFieldEnum | Plan_inputs_airportsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_airports findFirstOrThrow
+   */
+  export type plan_inputs_airportsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_airports to fetch.
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_airports to fetch.
+     */
+    orderBy?: plan_inputs_airportsOrderByWithRelationInput | plan_inputs_airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_airports.
+     */
+    cursor?: plan_inputs_airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_airports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_airports.
+     */
+    distinct?: Plan_inputs_airportsScalarFieldEnum | Plan_inputs_airportsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_airports findMany
+   */
+  export type plan_inputs_airportsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_airports to fetch.
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_airports to fetch.
+     */
+    orderBy?: plan_inputs_airportsOrderByWithRelationInput | plan_inputs_airportsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_inputs_airports.
+     */
+    cursor?: plan_inputs_airportsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_airports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_airports.
+     */
+    skip?: number
+    distinct?: Plan_inputs_airportsScalarFieldEnum | Plan_inputs_airportsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_airports create
+   */
+  export type plan_inputs_airportsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_inputs_airports.
+     */
+    data: XOR<plan_inputs_airportsCreateInput, plan_inputs_airportsUncheckedCreateInput>
+  }
+
+  /**
+   * plan_inputs_airports createMany
+   */
+  export type plan_inputs_airportsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_inputs_airports.
+     */
+    data: plan_inputs_airportsCreateManyInput | plan_inputs_airportsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_inputs_airports createManyAndReturn
+   */
+  export type plan_inputs_airportsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_inputs_airports.
+     */
+    data: plan_inputs_airportsCreateManyInput | plan_inputs_airportsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_airports update
+   */
+  export type plan_inputs_airportsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_inputs_airports.
+     */
+    data: XOR<plan_inputs_airportsUpdateInput, plan_inputs_airportsUncheckedUpdateInput>
+    /**
+     * Choose, which plan_inputs_airports to update.
+     */
+    where: plan_inputs_airportsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_airports updateMany
+   */
+  export type plan_inputs_airportsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_inputs_airports.
+     */
+    data: XOR<plan_inputs_airportsUpdateManyMutationInput, plan_inputs_airportsUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_airports to update
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * Limit how many plan_inputs_airports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_airports updateManyAndReturn
+   */
+  export type plan_inputs_airportsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_inputs_airports.
+     */
+    data: XOR<plan_inputs_airportsUpdateManyMutationInput, plan_inputs_airportsUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_airports to update
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * Limit how many plan_inputs_airports to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_airports upsert
+   */
+  export type plan_inputs_airportsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_inputs_airports to update in case it exists.
+     */
+    where: plan_inputs_airportsWhereUniqueInput
+    /**
+     * In case the plan_inputs_airports found by the `where` argument doesn't exist, create a new plan_inputs_airports with this data.
+     */
+    create: XOR<plan_inputs_airportsCreateInput, plan_inputs_airportsUncheckedCreateInput>
+    /**
+     * In case the plan_inputs_airports was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_inputs_airportsUpdateInput, plan_inputs_airportsUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_inputs_airports delete
+   */
+  export type plan_inputs_airportsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    /**
+     * Filter which plan_inputs_airports to delete.
+     */
+    where: plan_inputs_airportsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_airports deleteMany
+   */
+  export type plan_inputs_airportsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_airports to delete
+     */
+    where?: plan_inputs_airportsWhereInput
+    /**
+     * Limit how many plan_inputs_airports to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_airports without action
+   */
+  export type plan_inputs_airportsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_inputs_analytics
+   */
+
+  export type AggregatePlan_inputs_analytics = {
+    _count: Plan_inputs_analyticsCountAggregateOutputType | null
+    _min: Plan_inputs_analyticsMinAggregateOutputType | null
+    _max: Plan_inputs_analyticsMaxAggregateOutputType | null
+  }
+
+  export type Plan_inputs_analyticsMinAggregateOutputType = {
+    plan_id: string | null
+    domestic_candidates_file_name: string | null
+    domestic_candidates_file_path: string | null
+    international_departure_candidates_file_name: string | null
+    international_departure_candidates_file_path: string | null
+    international_arrival_candidates_file_name: string | null
+    international_arrival_candidates_file_path: string | null
+    round_trip_normalization_file_name: string | null
+    round_trip_normalization_file_path: string | null
+    min_distribution_criteria_file_name: string | null
+    min_distribution_criteria_file_path: string | null
+  }
+
+  export type Plan_inputs_analyticsMaxAggregateOutputType = {
+    plan_id: string | null
+    domestic_candidates_file_name: string | null
+    domestic_candidates_file_path: string | null
+    international_departure_candidates_file_name: string | null
+    international_departure_candidates_file_path: string | null
+    international_arrival_candidates_file_name: string | null
+    international_arrival_candidates_file_path: string | null
+    round_trip_normalization_file_name: string | null
+    round_trip_normalization_file_path: string | null
+    min_distribution_criteria_file_name: string | null
+    min_distribution_criteria_file_path: string | null
+  }
+
+  export type Plan_inputs_analyticsCountAggregateOutputType = {
+    plan_id: number
+    domestic_candidates_file_name: number
+    domestic_candidates_file_path: number
+    international_departure_candidates_file_name: number
+    international_departure_candidates_file_path: number
+    international_arrival_candidates_file_name: number
+    international_arrival_candidates_file_path: number
+    round_trip_normalization_file_name: number
+    round_trip_normalization_file_path: number
+    min_distribution_criteria_file_name: number
+    min_distribution_criteria_file_path: number
+    _all: number
+  }
+
+
+  export type Plan_inputs_analyticsMinAggregateInputType = {
+    plan_id?: true
+    domestic_candidates_file_name?: true
+    domestic_candidates_file_path?: true
+    international_departure_candidates_file_name?: true
+    international_departure_candidates_file_path?: true
+    international_arrival_candidates_file_name?: true
+    international_arrival_candidates_file_path?: true
+    round_trip_normalization_file_name?: true
+    round_trip_normalization_file_path?: true
+    min_distribution_criteria_file_name?: true
+    min_distribution_criteria_file_path?: true
+  }
+
+  export type Plan_inputs_analyticsMaxAggregateInputType = {
+    plan_id?: true
+    domestic_candidates_file_name?: true
+    domestic_candidates_file_path?: true
+    international_departure_candidates_file_name?: true
+    international_departure_candidates_file_path?: true
+    international_arrival_candidates_file_name?: true
+    international_arrival_candidates_file_path?: true
+    round_trip_normalization_file_name?: true
+    round_trip_normalization_file_path?: true
+    min_distribution_criteria_file_name?: true
+    min_distribution_criteria_file_path?: true
+  }
+
+  export type Plan_inputs_analyticsCountAggregateInputType = {
+    plan_id?: true
+    domestic_candidates_file_name?: true
+    domestic_candidates_file_path?: true
+    international_departure_candidates_file_name?: true
+    international_departure_candidates_file_path?: true
+    international_arrival_candidates_file_name?: true
+    international_arrival_candidates_file_path?: true
+    round_trip_normalization_file_name?: true
+    round_trip_normalization_file_path?: true
+    min_distribution_criteria_file_name?: true
+    min_distribution_criteria_file_path?: true
+    _all?: true
+  }
+
+  export type Plan_inputs_analyticsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_analytics to aggregate.
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_analytics to fetch.
+     */
+    orderBy?: plan_inputs_analyticsOrderByWithRelationInput | plan_inputs_analyticsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_inputs_analyticsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_analytics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_analytics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_inputs_analytics
+    **/
+    _count?: true | Plan_inputs_analyticsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_inputs_analyticsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_inputs_analyticsMaxAggregateInputType
+  }
+
+  export type GetPlan_inputs_analyticsAggregateType<T extends Plan_inputs_analyticsAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_inputs_analytics]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_inputs_analytics[P]>
+      : GetScalarType<T[P], AggregatePlan_inputs_analytics[P]>
+  }
+
+
+
+
+  export type plan_inputs_analyticsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_analyticsWhereInput
+    orderBy?: plan_inputs_analyticsOrderByWithAggregationInput | plan_inputs_analyticsOrderByWithAggregationInput[]
+    by: Plan_inputs_analyticsScalarFieldEnum[] | Plan_inputs_analyticsScalarFieldEnum
+    having?: plan_inputs_analyticsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_inputs_analyticsCountAggregateInputType | true
+    _min?: Plan_inputs_analyticsMinAggregateInputType
+    _max?: Plan_inputs_analyticsMaxAggregateInputType
+  }
+
+  export type Plan_inputs_analyticsGroupByOutputType = {
+    plan_id: string
+    domestic_candidates_file_name: string | null
+    domestic_candidates_file_path: string | null
+    international_departure_candidates_file_name: string | null
+    international_departure_candidates_file_path: string | null
+    international_arrival_candidates_file_name: string | null
+    international_arrival_candidates_file_path: string | null
+    round_trip_normalization_file_name: string | null
+    round_trip_normalization_file_path: string | null
+    min_distribution_criteria_file_name: string | null
+    min_distribution_criteria_file_path: string | null
+    _count: Plan_inputs_analyticsCountAggregateOutputType | null
+    _min: Plan_inputs_analyticsMinAggregateOutputType | null
+    _max: Plan_inputs_analyticsMaxAggregateOutputType | null
+  }
+
+  type GetPlan_inputs_analyticsGroupByPayload<T extends plan_inputs_analyticsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_inputs_analyticsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_inputs_analyticsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_inputs_analyticsGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_inputs_analyticsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_inputs_analyticsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    domestic_candidates_file_name?: boolean
+    domestic_candidates_file_path?: boolean
+    international_departure_candidates_file_name?: boolean
+    international_departure_candidates_file_path?: boolean
+    international_arrival_candidates_file_name?: boolean
+    international_arrival_candidates_file_path?: boolean
+    round_trip_normalization_file_name?: boolean
+    round_trip_normalization_file_path?: boolean
+    min_distribution_criteria_file_name?: boolean
+    min_distribution_criteria_file_path?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_analytics"]>
+
+  export type plan_inputs_analyticsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    domestic_candidates_file_name?: boolean
+    domestic_candidates_file_path?: boolean
+    international_departure_candidates_file_name?: boolean
+    international_departure_candidates_file_path?: boolean
+    international_arrival_candidates_file_name?: boolean
+    international_arrival_candidates_file_path?: boolean
+    round_trip_normalization_file_name?: boolean
+    round_trip_normalization_file_path?: boolean
+    min_distribution_criteria_file_name?: boolean
+    min_distribution_criteria_file_path?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_analytics"]>
+
+  export type plan_inputs_analyticsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    domestic_candidates_file_name?: boolean
+    domestic_candidates_file_path?: boolean
+    international_departure_candidates_file_name?: boolean
+    international_departure_candidates_file_path?: boolean
+    international_arrival_candidates_file_name?: boolean
+    international_arrival_candidates_file_path?: boolean
+    round_trip_normalization_file_name?: boolean
+    round_trip_normalization_file_path?: boolean
+    min_distribution_criteria_file_name?: boolean
+    min_distribution_criteria_file_path?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_analytics"]>
+
+  export type plan_inputs_analyticsSelectScalar = {
+    plan_id?: boolean
+    domestic_candidates_file_name?: boolean
+    domestic_candidates_file_path?: boolean
+    international_departure_candidates_file_name?: boolean
+    international_departure_candidates_file_path?: boolean
+    international_arrival_candidates_file_name?: boolean
+    international_arrival_candidates_file_path?: boolean
+    round_trip_normalization_file_name?: boolean
+    round_trip_normalization_file_path?: boolean
+    min_distribution_criteria_file_name?: boolean
+    min_distribution_criteria_file_path?: boolean
+  }
+
+  export type plan_inputs_analyticsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "domestic_candidates_file_name" | "domestic_candidates_file_path" | "international_departure_candidates_file_name" | "international_departure_candidates_file_path" | "international_arrival_candidates_file_name" | "international_arrival_candidates_file_path" | "round_trip_normalization_file_name" | "round_trip_normalization_file_path" | "min_distribution_criteria_file_name" | "min_distribution_criteria_file_path", ExtArgs["result"]["plan_inputs_analytics"]>
+  export type plan_inputs_analyticsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_analyticsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_analyticsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_inputs_analyticsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_inputs_analytics"
+    objects: {
+      plans: Prisma.$plansPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      domestic_candidates_file_name: string | null
+      domestic_candidates_file_path: string | null
+      international_departure_candidates_file_name: string | null
+      international_departure_candidates_file_path: string | null
+      international_arrival_candidates_file_name: string | null
+      international_arrival_candidates_file_path: string | null
+      round_trip_normalization_file_name: string | null
+      round_trip_normalization_file_path: string | null
+      min_distribution_criteria_file_name: string | null
+      min_distribution_criteria_file_path: string | null
+    }, ExtArgs["result"]["plan_inputs_analytics"]>
+    composites: {}
+  }
+
+  type plan_inputs_analyticsGetPayload<S extends boolean | null | undefined | plan_inputs_analyticsDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_analyticsPayload, S>
+
+  type plan_inputs_analyticsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_inputs_analyticsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_inputs_analyticsCountAggregateInputType | true
+    }
+
+  export interface plan_inputs_analyticsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_analytics'], meta: { name: 'plan_inputs_analytics' } }
+    /**
+     * Find zero or one Plan_inputs_analytics that matches the filter.
+     * @param {plan_inputs_analyticsFindUniqueArgs} args - Arguments to find a Plan_inputs_analytics
+     * @example
+     * // Get one Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_inputs_analyticsFindUniqueArgs>(args: SelectSubset<T, plan_inputs_analyticsFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_inputs_analytics that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_inputs_analyticsFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_analytics
+     * @example
+     * // Get one Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_inputs_analyticsFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_analyticsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_analytics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_analyticsFindFirstArgs} args - Arguments to find a Plan_inputs_analytics
+     * @example
+     * // Get one Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_inputs_analyticsFindFirstArgs>(args?: SelectSubset<T, plan_inputs_analyticsFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_analytics that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_analyticsFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_analytics
+     * @example
+     * // Get one Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_inputs_analyticsFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_analyticsFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_inputs_analytics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_analyticsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findMany()
+     * 
+     * // Get first 10 Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_inputs_analyticsWithPlan_idOnly = await prisma.plan_inputs_analytics.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_inputs_analyticsFindManyArgs>(args?: SelectSubset<T, plan_inputs_analyticsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_inputs_analytics.
+     * @param {plan_inputs_analyticsCreateArgs} args - Arguments to create a Plan_inputs_analytics.
+     * @example
+     * // Create one Plan_inputs_analytics
+     * const Plan_inputs_analytics = await prisma.plan_inputs_analytics.create({
+     *   data: {
+     *     // ... data to create a Plan_inputs_analytics
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_inputs_analyticsCreateArgs>(args: SelectSubset<T, plan_inputs_analyticsCreateArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_inputs_analytics.
+     * @param {plan_inputs_analyticsCreateManyArgs} args - Arguments to create many Plan_inputs_analytics.
+     * @example
+     * // Create many Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_inputs_analyticsCreateManyArgs>(args?: SelectSubset<T, plan_inputs_analyticsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_inputs_analytics and returns the data saved in the database.
+     * @param {plan_inputs_analyticsCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_analytics.
+     * @example
+     * // Create many Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_inputs_analytics and only return the `plan_id`
+     * const plan_inputs_analyticsWithPlan_idOnly = await prisma.plan_inputs_analytics.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_inputs_analyticsCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_analyticsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_inputs_analytics.
+     * @param {plan_inputs_analyticsDeleteArgs} args - Arguments to delete one Plan_inputs_analytics.
+     * @example
+     * // Delete one Plan_inputs_analytics
+     * const Plan_inputs_analytics = await prisma.plan_inputs_analytics.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_inputs_analytics
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_inputs_analyticsDeleteArgs>(args: SelectSubset<T, plan_inputs_analyticsDeleteArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_inputs_analytics.
+     * @param {plan_inputs_analyticsUpdateArgs} args - Arguments to update one Plan_inputs_analytics.
+     * @example
+     * // Update one Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_inputs_analyticsUpdateArgs>(args: SelectSubset<T, plan_inputs_analyticsUpdateArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_inputs_analytics.
+     * @param {plan_inputs_analyticsDeleteManyArgs} args - Arguments to filter Plan_inputs_analytics to delete.
+     * @example
+     * // Delete a few Plan_inputs_analytics
+     * const { count } = await prisma.plan_inputs_analytics.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_inputs_analyticsDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_analyticsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_analytics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_analyticsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_inputs_analyticsUpdateManyArgs>(args: SelectSubset<T, plan_inputs_analyticsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_analytics and returns the data updated in the database.
+     * @param {plan_inputs_analyticsUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_analytics.
+     * @example
+     * // Update many Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_inputs_analytics and only return the `plan_id`
+     * const plan_inputs_analyticsWithPlan_idOnly = await prisma.plan_inputs_analytics.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_inputs_analyticsUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_analyticsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_inputs_analytics.
+     * @param {plan_inputs_analyticsUpsertArgs} args - Arguments to update or create a Plan_inputs_analytics.
+     * @example
+     * // Update or create a Plan_inputs_analytics
+     * const plan_inputs_analytics = await prisma.plan_inputs_analytics.upsert({
+     *   create: {
+     *     // ... data to create a Plan_inputs_analytics
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_inputs_analytics we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_inputs_analyticsUpsertArgs>(args: SelectSubset<T, plan_inputs_analyticsUpsertArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_inputs_analytics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_analyticsCountArgs} args - Arguments to filter Plan_inputs_analytics to count.
+     * @example
+     * // Count the number of Plan_inputs_analytics
+     * const count = await prisma.plan_inputs_analytics.count({
+     *   where: {
+     *     // ... the filter for the Plan_inputs_analytics we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_inputs_analyticsCountArgs>(
+      args?: Subset<T, plan_inputs_analyticsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_inputs_analyticsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_inputs_analytics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_inputs_analyticsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_inputs_analyticsAggregateArgs>(args: Subset<T, Plan_inputs_analyticsAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_analyticsAggregateType<T>>
+
+    /**
+     * Group by Plan_inputs_analytics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_analyticsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_inputs_analyticsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_inputs_analyticsGroupByArgs['orderBy'] }
+        : { orderBy?: plan_inputs_analyticsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_inputs_analyticsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_analyticsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_inputs_analytics model
+   */
+  readonly fields: plan_inputs_analyticsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_inputs_analytics.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_inputs_analyticsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_inputs_analytics model
+   */
+  interface plan_inputs_analyticsFieldRefs {
+    readonly plan_id: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly domestic_candidates_file_name: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly domestic_candidates_file_path: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly international_departure_candidates_file_name: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly international_departure_candidates_file_path: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly international_arrival_candidates_file_name: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly international_arrival_candidates_file_path: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly round_trip_normalization_file_name: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly round_trip_normalization_file_path: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly min_distribution_criteria_file_name: FieldRef<"plan_inputs_analytics", 'String'>
+    readonly min_distribution_criteria_file_path: FieldRef<"plan_inputs_analytics", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_inputs_analytics findUnique
+   */
+  export type plan_inputs_analyticsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_analytics to fetch.
+     */
+    where: plan_inputs_analyticsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_analytics findUniqueOrThrow
+   */
+  export type plan_inputs_analyticsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_analytics to fetch.
+     */
+    where: plan_inputs_analyticsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_analytics findFirst
+   */
+  export type plan_inputs_analyticsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_analytics to fetch.
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_analytics to fetch.
+     */
+    orderBy?: plan_inputs_analyticsOrderByWithRelationInput | plan_inputs_analyticsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_analytics.
+     */
+    cursor?: plan_inputs_analyticsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_analytics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_analytics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_analytics.
+     */
+    distinct?: Plan_inputs_analyticsScalarFieldEnum | Plan_inputs_analyticsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_analytics findFirstOrThrow
+   */
+  export type plan_inputs_analyticsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_analytics to fetch.
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_analytics to fetch.
+     */
+    orderBy?: plan_inputs_analyticsOrderByWithRelationInput | plan_inputs_analyticsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_analytics.
+     */
+    cursor?: plan_inputs_analyticsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_analytics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_analytics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_analytics.
+     */
+    distinct?: Plan_inputs_analyticsScalarFieldEnum | Plan_inputs_analyticsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_analytics findMany
+   */
+  export type plan_inputs_analyticsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_analytics to fetch.
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_analytics to fetch.
+     */
+    orderBy?: plan_inputs_analyticsOrderByWithRelationInput | plan_inputs_analyticsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_inputs_analytics.
+     */
+    cursor?: plan_inputs_analyticsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_analytics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_analytics.
+     */
+    skip?: number
+    distinct?: Plan_inputs_analyticsScalarFieldEnum | Plan_inputs_analyticsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_analytics create
+   */
+  export type plan_inputs_analyticsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_inputs_analytics.
+     */
+    data: XOR<plan_inputs_analyticsCreateInput, plan_inputs_analyticsUncheckedCreateInput>
+  }
+
+  /**
+   * plan_inputs_analytics createMany
+   */
+  export type plan_inputs_analyticsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_inputs_analytics.
+     */
+    data: plan_inputs_analyticsCreateManyInput | plan_inputs_analyticsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_inputs_analytics createManyAndReturn
+   */
+  export type plan_inputs_analyticsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_inputs_analytics.
+     */
+    data: plan_inputs_analyticsCreateManyInput | plan_inputs_analyticsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_analytics update
+   */
+  export type plan_inputs_analyticsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_inputs_analytics.
+     */
+    data: XOR<plan_inputs_analyticsUpdateInput, plan_inputs_analyticsUncheckedUpdateInput>
+    /**
+     * Choose, which plan_inputs_analytics to update.
+     */
+    where: plan_inputs_analyticsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_analytics updateMany
+   */
+  export type plan_inputs_analyticsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_inputs_analytics.
+     */
+    data: XOR<plan_inputs_analyticsUpdateManyMutationInput, plan_inputs_analyticsUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_analytics to update
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * Limit how many plan_inputs_analytics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_analytics updateManyAndReturn
+   */
+  export type plan_inputs_analyticsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_inputs_analytics.
+     */
+    data: XOR<plan_inputs_analyticsUpdateManyMutationInput, plan_inputs_analyticsUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_analytics to update
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * Limit how many plan_inputs_analytics to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_analytics upsert
+   */
+  export type plan_inputs_analyticsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_inputs_analytics to update in case it exists.
+     */
+    where: plan_inputs_analyticsWhereUniqueInput
+    /**
+     * In case the plan_inputs_analytics found by the `where` argument doesn't exist, create a new plan_inputs_analytics with this data.
+     */
+    create: XOR<plan_inputs_analyticsCreateInput, plan_inputs_analyticsUncheckedCreateInput>
+    /**
+     * In case the plan_inputs_analytics was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_inputs_analyticsUpdateInput, plan_inputs_analyticsUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_inputs_analytics delete
+   */
+  export type plan_inputs_analyticsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    /**
+     * Filter which plan_inputs_analytics to delete.
+     */
+    where: plan_inputs_analyticsWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_analytics deleteMany
+   */
+  export type plan_inputs_analyticsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_analytics to delete
+     */
+    where?: plan_inputs_analyticsWhereInput
+    /**
+     * Limit how many plan_inputs_analytics to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_analytics without action
+   */
+  export type plan_inputs_analyticsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_inputs_resources_flight_scale_data
+   */
+
+  export type AggregatePlan_inputs_resources_flight_scale_data = {
+    _count: Plan_inputs_resources_flight_scale_dataCountAggregateOutputType | null
+    _avg: Plan_inputs_resources_flight_scale_dataAvgAggregateOutputType | null
+    _sum: Plan_inputs_resources_flight_scale_dataSumAggregateOutputType | null
+    _min: Plan_inputs_resources_flight_scale_dataMinAggregateOutputType | null
+    _max: Plan_inputs_resources_flight_scale_dataMaxAggregateOutputType | null
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataAvgAggregateOutputType = {
+    airplne_cnt: number | null
+    min_standby_airplane_cnt: number | null
+    seat_cnt: number | null
+    required_captain_cnt: number | null
+    required_sub_captain_cnt: number | null
+    required_other_personnel_norm: number | null
+    required_pre_flight_hours: number | null
+    required_post_flight_hours: number | null
+    min_required_revenue: number | null
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataSumAggregateOutputType = {
+    airplne_cnt: bigint | null
+    min_standby_airplane_cnt: bigint | null
+    seat_cnt: bigint | null
+    required_captain_cnt: bigint | null
+    required_sub_captain_cnt: bigint | null
+    required_other_personnel_norm: bigint | null
+    required_pre_flight_hours: bigint | null
+    required_post_flight_hours: bigint | null
+    min_required_revenue: bigint | null
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataMinAggregateOutputType = {
+    plan_id: string | null
+    flight_scale: string | null
+    airplne_cnt: bigint | null
+    min_standby_airplane_cnt: bigint | null
+    seat_cnt: bigint | null
+    required_captain_cnt: bigint | null
+    required_sub_captain_cnt: bigint | null
+    required_other_personnel_norm: bigint | null
+    required_pre_flight_hours: bigint | null
+    required_post_flight_hours: bigint | null
+    min_required_revenue: bigint | null
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataMaxAggregateOutputType = {
+    plan_id: string | null
+    flight_scale: string | null
+    airplne_cnt: bigint | null
+    min_standby_airplane_cnt: bigint | null
+    seat_cnt: bigint | null
+    required_captain_cnt: bigint | null
+    required_sub_captain_cnt: bigint | null
+    required_other_personnel_norm: bigint | null
+    required_pre_flight_hours: bigint | null
+    required_post_flight_hours: bigint | null
+    min_required_revenue: bigint | null
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataCountAggregateOutputType = {
+    plan_id: number
+    flight_scale: number
+    airplne_cnt: number
+    min_standby_airplane_cnt: number
+    seat_cnt: number
+    required_captain_cnt: number
+    required_sub_captain_cnt: number
+    required_other_personnel_norm: number
+    required_pre_flight_hours: number
+    required_post_flight_hours: number
+    min_required_revenue: number
+    _all: number
+  }
+
+
+  export type Plan_inputs_resources_flight_scale_dataAvgAggregateInputType = {
+    airplne_cnt?: true
+    min_standby_airplane_cnt?: true
+    seat_cnt?: true
+    required_captain_cnt?: true
+    required_sub_captain_cnt?: true
+    required_other_personnel_norm?: true
+    required_pre_flight_hours?: true
+    required_post_flight_hours?: true
+    min_required_revenue?: true
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataSumAggregateInputType = {
+    airplne_cnt?: true
+    min_standby_airplane_cnt?: true
+    seat_cnt?: true
+    required_captain_cnt?: true
+    required_sub_captain_cnt?: true
+    required_other_personnel_norm?: true
+    required_pre_flight_hours?: true
+    required_post_flight_hours?: true
+    min_required_revenue?: true
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataMinAggregateInputType = {
+    plan_id?: true
+    flight_scale?: true
+    airplne_cnt?: true
+    min_standby_airplane_cnt?: true
+    seat_cnt?: true
+    required_captain_cnt?: true
+    required_sub_captain_cnt?: true
+    required_other_personnel_norm?: true
+    required_pre_flight_hours?: true
+    required_post_flight_hours?: true
+    min_required_revenue?: true
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataMaxAggregateInputType = {
+    plan_id?: true
+    flight_scale?: true
+    airplne_cnt?: true
+    min_standby_airplane_cnt?: true
+    seat_cnt?: true
+    required_captain_cnt?: true
+    required_sub_captain_cnt?: true
+    required_other_personnel_norm?: true
+    required_pre_flight_hours?: true
+    required_post_flight_hours?: true
+    min_required_revenue?: true
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataCountAggregateInputType = {
+    plan_id?: true
+    flight_scale?: true
+    airplne_cnt?: true
+    min_standby_airplane_cnt?: true
+    seat_cnt?: true
+    required_captain_cnt?: true
+    required_sub_captain_cnt?: true
+    required_other_personnel_norm?: true
+    required_pre_flight_hours?: true
+    required_post_flight_hours?: true
+    min_required_revenue?: true
+    _all?: true
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_resources_flight_scale_data to aggregate.
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scale_data to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scale_dataOrderByWithRelationInput | plan_inputs_resources_flight_scale_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scale_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scale_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_inputs_resources_flight_scale_data
+    **/
+    _count?: true | Plan_inputs_resources_flight_scale_dataCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Plan_inputs_resources_flight_scale_dataAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Plan_inputs_resources_flight_scale_dataSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_inputs_resources_flight_scale_dataMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_inputs_resources_flight_scale_dataMaxAggregateInputType
+  }
+
+  export type GetPlan_inputs_resources_flight_scale_dataAggregateType<T extends Plan_inputs_resources_flight_scale_dataAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_inputs_resources_flight_scale_data]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_inputs_resources_flight_scale_data[P]>
+      : GetScalarType<T[P], AggregatePlan_inputs_resources_flight_scale_data[P]>
+  }
+
+
+
+
+  export type plan_inputs_resources_flight_scale_dataGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    orderBy?: plan_inputs_resources_flight_scale_dataOrderByWithAggregationInput | plan_inputs_resources_flight_scale_dataOrderByWithAggregationInput[]
+    by: Plan_inputs_resources_flight_scale_dataScalarFieldEnum[] | Plan_inputs_resources_flight_scale_dataScalarFieldEnum
+    having?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_inputs_resources_flight_scale_dataCountAggregateInputType | true
+    _avg?: Plan_inputs_resources_flight_scale_dataAvgAggregateInputType
+    _sum?: Plan_inputs_resources_flight_scale_dataSumAggregateInputType
+    _min?: Plan_inputs_resources_flight_scale_dataMinAggregateInputType
+    _max?: Plan_inputs_resources_flight_scale_dataMaxAggregateInputType
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataGroupByOutputType = {
+    plan_id: string
+    flight_scale: string
+    airplne_cnt: bigint | null
+    min_standby_airplane_cnt: bigint | null
+    seat_cnt: bigint | null
+    required_captain_cnt: bigint | null
+    required_sub_captain_cnt: bigint | null
+    required_other_personnel_norm: bigint | null
+    required_pre_flight_hours: bigint | null
+    required_post_flight_hours: bigint | null
+    min_required_revenue: bigint | null
+    _count: Plan_inputs_resources_flight_scale_dataCountAggregateOutputType | null
+    _avg: Plan_inputs_resources_flight_scale_dataAvgAggregateOutputType | null
+    _sum: Plan_inputs_resources_flight_scale_dataSumAggregateOutputType | null
+    _min: Plan_inputs_resources_flight_scale_dataMinAggregateOutputType | null
+    _max: Plan_inputs_resources_flight_scale_dataMaxAggregateOutputType | null
+  }
+
+  type GetPlan_inputs_resources_flight_scale_dataGroupByPayload<T extends plan_inputs_resources_flight_scale_dataGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_inputs_resources_flight_scale_dataGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_inputs_resources_flight_scale_dataGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_inputs_resources_flight_scale_dataGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_inputs_resources_flight_scale_dataGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_inputs_resources_flight_scale_dataSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    flight_scale?: boolean
+    airplne_cnt?: boolean
+    min_standby_airplane_cnt?: boolean
+    seat_cnt?: boolean
+    required_captain_cnt?: boolean
+    required_sub_captain_cnt?: boolean
+    required_other_personnel_norm?: boolean
+    required_pre_flight_hours?: boolean
+    required_post_flight_hours?: boolean
+    min_required_revenue?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+
+  export type plan_inputs_resources_flight_scale_dataSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    flight_scale?: boolean
+    airplne_cnt?: boolean
+    min_standby_airplane_cnt?: boolean
+    seat_cnt?: boolean
+    required_captain_cnt?: boolean
+    required_sub_captain_cnt?: boolean
+    required_other_personnel_norm?: boolean
+    required_pre_flight_hours?: boolean
+    required_post_flight_hours?: boolean
+    min_required_revenue?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+
+  export type plan_inputs_resources_flight_scale_dataSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    flight_scale?: boolean
+    airplne_cnt?: boolean
+    min_standby_airplane_cnt?: boolean
+    seat_cnt?: boolean
+    required_captain_cnt?: boolean
+    required_sub_captain_cnt?: boolean
+    required_other_personnel_norm?: boolean
+    required_pre_flight_hours?: boolean
+    required_post_flight_hours?: boolean
+    min_required_revenue?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+
+  export type plan_inputs_resources_flight_scale_dataSelectScalar = {
+    plan_id?: boolean
+    flight_scale?: boolean
+    airplne_cnt?: boolean
+    min_standby_airplane_cnt?: boolean
+    seat_cnt?: boolean
+    required_captain_cnt?: boolean
+    required_sub_captain_cnt?: boolean
+    required_other_personnel_norm?: boolean
+    required_pre_flight_hours?: boolean
+    required_post_flight_hours?: boolean
+    min_required_revenue?: boolean
+  }
+
+  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "flight_scale" | "airplne_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_hours" | "required_post_flight_hours" | "min_required_revenue", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+  export type plan_inputs_resources_flight_scale_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_resources_flight_scale_dataIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_resources_flight_scale_dataIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_inputs_resources_flight_scale_dataPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_inputs_resources_flight_scale_data"
+    objects: {
+      plans: Prisma.$plansPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      flight_scale: string
+      airplne_cnt: bigint | null
+      min_standby_airplane_cnt: bigint | null
+      seat_cnt: bigint | null
+      required_captain_cnt: bigint | null
+      required_sub_captain_cnt: bigint | null
+      required_other_personnel_norm: bigint | null
+      required_pre_flight_hours: bigint | null
+      required_post_flight_hours: bigint | null
+      min_required_revenue: bigint | null
+    }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+    composites: {}
+  }
+
+  type plan_inputs_resources_flight_scale_dataGetPayload<S extends boolean | null | undefined | plan_inputs_resources_flight_scale_dataDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload, S>
+
+  type plan_inputs_resources_flight_scale_dataCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_inputs_resources_flight_scale_dataFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_inputs_resources_flight_scale_dataCountAggregateInputType | true
+    }
+
+  export interface plan_inputs_resources_flight_scale_dataDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_resources_flight_scale_data'], meta: { name: 'plan_inputs_resources_flight_scale_data' } }
+    /**
+     * Find zero or one Plan_inputs_resources_flight_scale_data that matches the filter.
+     * @param {plan_inputs_resources_flight_scale_dataFindUniqueArgs} args - Arguments to find a Plan_inputs_resources_flight_scale_data
+     * @example
+     * // Get one Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_inputs_resources_flight_scale_dataFindUniqueArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_inputs_resources_flight_scale_data that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_inputs_resources_flight_scale_dataFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_resources_flight_scale_data
+     * @example
+     * // Get one Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_inputs_resources_flight_scale_dataFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_resources_flight_scale_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scale_dataFindFirstArgs} args - Arguments to find a Plan_inputs_resources_flight_scale_data
+     * @example
+     * // Get one Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_inputs_resources_flight_scale_dataFindFirstArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scale_dataFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_resources_flight_scale_data that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scale_dataFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_resources_flight_scale_data
+     * @example
+     * // Get one Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_inputs_resources_flight_scale_dataFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scale_dataFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_inputs_resources_flight_scale_data that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scale_dataFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findMany()
+     * 
+     * // Get first 10 Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_inputs_resources_flight_scale_dataWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scale_data.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_inputs_resources_flight_scale_dataFindManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scale_dataFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_inputs_resources_flight_scale_data.
+     * @param {plan_inputs_resources_flight_scale_dataCreateArgs} args - Arguments to create a Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Create one Plan_inputs_resources_flight_scale_data
+     * const Plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.create({
+     *   data: {
+     *     // ... data to create a Plan_inputs_resources_flight_scale_data
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_inputs_resources_flight_scale_dataCreateArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataCreateArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_inputs_resources_flight_scale_data.
+     * @param {plan_inputs_resources_flight_scale_dataCreateManyArgs} args - Arguments to create many Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Create many Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_inputs_resources_flight_scale_dataCreateManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scale_dataCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_inputs_resources_flight_scale_data and returns the data saved in the database.
+     * @param {plan_inputs_resources_flight_scale_dataCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Create many Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_inputs_resources_flight_scale_data and only return the `plan_id`
+     * const plan_inputs_resources_flight_scale_dataWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scale_data.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_inputs_resources_flight_scale_dataCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scale_dataCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_inputs_resources_flight_scale_data.
+     * @param {plan_inputs_resources_flight_scale_dataDeleteArgs} args - Arguments to delete one Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Delete one Plan_inputs_resources_flight_scale_data
+     * const Plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_inputs_resources_flight_scale_data
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_inputs_resources_flight_scale_dataDeleteArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataDeleteArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_inputs_resources_flight_scale_data.
+     * @param {plan_inputs_resources_flight_scale_dataUpdateArgs} args - Arguments to update one Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Update one Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_inputs_resources_flight_scale_dataUpdateArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataUpdateArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_inputs_resources_flight_scale_data.
+     * @param {plan_inputs_resources_flight_scale_dataDeleteManyArgs} args - Arguments to filter Plan_inputs_resources_flight_scale_data to delete.
+     * @example
+     * // Delete a few Plan_inputs_resources_flight_scale_data
+     * const { count } = await prisma.plan_inputs_resources_flight_scale_data.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_inputs_resources_flight_scale_dataDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scale_dataDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_resources_flight_scale_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scale_dataUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_inputs_resources_flight_scale_dataUpdateManyArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_resources_flight_scale_data and returns the data updated in the database.
+     * @param {plan_inputs_resources_flight_scale_dataUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Update many Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_inputs_resources_flight_scale_data and only return the `plan_id`
+     * const plan_inputs_resources_flight_scale_dataWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scale_data.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_inputs_resources_flight_scale_dataUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_inputs_resources_flight_scale_data.
+     * @param {plan_inputs_resources_flight_scale_dataUpsertArgs} args - Arguments to update or create a Plan_inputs_resources_flight_scale_data.
+     * @example
+     * // Update or create a Plan_inputs_resources_flight_scale_data
+     * const plan_inputs_resources_flight_scale_data = await prisma.plan_inputs_resources_flight_scale_data.upsert({
+     *   create: {
+     *     // ... data to create a Plan_inputs_resources_flight_scale_data
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_inputs_resources_flight_scale_data we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_inputs_resources_flight_scale_dataUpsertArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scale_dataUpsertArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_inputs_resources_flight_scale_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scale_dataCountArgs} args - Arguments to filter Plan_inputs_resources_flight_scale_data to count.
+     * @example
+     * // Count the number of Plan_inputs_resources_flight_scale_data
+     * const count = await prisma.plan_inputs_resources_flight_scale_data.count({
+     *   where: {
+     *     // ... the filter for the Plan_inputs_resources_flight_scale_data we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_inputs_resources_flight_scale_dataCountArgs>(
+      args?: Subset<T, plan_inputs_resources_flight_scale_dataCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_inputs_resources_flight_scale_dataCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_inputs_resources_flight_scale_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_inputs_resources_flight_scale_dataAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_inputs_resources_flight_scale_dataAggregateArgs>(args: Subset<T, Plan_inputs_resources_flight_scale_dataAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_resources_flight_scale_dataAggregateType<T>>
+
+    /**
+     * Group by Plan_inputs_resources_flight_scale_data.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scale_dataGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_inputs_resources_flight_scale_dataGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_inputs_resources_flight_scale_dataGroupByArgs['orderBy'] }
+        : { orderBy?: plan_inputs_resources_flight_scale_dataGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_inputs_resources_flight_scale_dataGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_resources_flight_scale_dataGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_inputs_resources_flight_scale_data model
+   */
+  readonly fields: plan_inputs_resources_flight_scale_dataFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_inputs_resources_flight_scale_data.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_inputs_resources_flight_scale_dataClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_inputs_resources_flight_scale_data model
+   */
+  interface plan_inputs_resources_flight_scale_dataFieldRefs {
+    readonly plan_id: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
+    readonly flight_scale: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
+    readonly airplne_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly min_standby_airplane_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly seat_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_captain_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_sub_captain_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_other_personnel_norm: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_pre_flight_hours: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_post_flight_hours: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly min_required_revenue: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_inputs_resources_flight_scale_data findUnique
+   */
+  export type plan_inputs_resources_flight_scale_dataFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scale_data to fetch.
+     */
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data findUniqueOrThrow
+   */
+  export type plan_inputs_resources_flight_scale_dataFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scale_data to fetch.
+     */
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data findFirst
+   */
+  export type plan_inputs_resources_flight_scale_dataFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scale_data to fetch.
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scale_data to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scale_dataOrderByWithRelationInput | plan_inputs_resources_flight_scale_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_resources_flight_scale_data.
+     */
+    cursor?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scale_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scale_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_resources_flight_scale_data.
+     */
+    distinct?: Plan_inputs_resources_flight_scale_dataScalarFieldEnum | Plan_inputs_resources_flight_scale_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data findFirstOrThrow
+   */
+  export type plan_inputs_resources_flight_scale_dataFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scale_data to fetch.
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scale_data to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scale_dataOrderByWithRelationInput | plan_inputs_resources_flight_scale_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_resources_flight_scale_data.
+     */
+    cursor?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scale_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scale_data.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_resources_flight_scale_data.
+     */
+    distinct?: Plan_inputs_resources_flight_scale_dataScalarFieldEnum | Plan_inputs_resources_flight_scale_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data findMany
+   */
+  export type plan_inputs_resources_flight_scale_dataFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scale_data to fetch.
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scale_data to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scale_dataOrderByWithRelationInput | plan_inputs_resources_flight_scale_dataOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_inputs_resources_flight_scale_data.
+     */
+    cursor?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scale_data from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scale_data.
+     */
+    skip?: number
+    distinct?: Plan_inputs_resources_flight_scale_dataScalarFieldEnum | Plan_inputs_resources_flight_scale_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data create
+   */
+  export type plan_inputs_resources_flight_scale_dataCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_inputs_resources_flight_scale_data.
+     */
+    data: XOR<plan_inputs_resources_flight_scale_dataCreateInput, plan_inputs_resources_flight_scale_dataUncheckedCreateInput>
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data createMany
+   */
+  export type plan_inputs_resources_flight_scale_dataCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_inputs_resources_flight_scale_data.
+     */
+    data: plan_inputs_resources_flight_scale_dataCreateManyInput | plan_inputs_resources_flight_scale_dataCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data createManyAndReturn
+   */
+  export type plan_inputs_resources_flight_scale_dataCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_inputs_resources_flight_scale_data.
+     */
+    data: plan_inputs_resources_flight_scale_dataCreateManyInput | plan_inputs_resources_flight_scale_dataCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data update
+   */
+  export type plan_inputs_resources_flight_scale_dataUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_inputs_resources_flight_scale_data.
+     */
+    data: XOR<plan_inputs_resources_flight_scale_dataUpdateInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateInput>
+    /**
+     * Choose, which plan_inputs_resources_flight_scale_data to update.
+     */
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data updateMany
+   */
+  export type plan_inputs_resources_flight_scale_dataUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_inputs_resources_flight_scale_data.
+     */
+    data: XOR<plan_inputs_resources_flight_scale_dataUpdateManyMutationInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_resources_flight_scale_data to update
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * Limit how many plan_inputs_resources_flight_scale_data to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data updateManyAndReturn
+   */
+  export type plan_inputs_resources_flight_scale_dataUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_inputs_resources_flight_scale_data.
+     */
+    data: XOR<plan_inputs_resources_flight_scale_dataUpdateManyMutationInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_resources_flight_scale_data to update
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * Limit how many plan_inputs_resources_flight_scale_data to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data upsert
+   */
+  export type plan_inputs_resources_flight_scale_dataUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_inputs_resources_flight_scale_data to update in case it exists.
+     */
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    /**
+     * In case the plan_inputs_resources_flight_scale_data found by the `where` argument doesn't exist, create a new plan_inputs_resources_flight_scale_data with this data.
+     */
+    create: XOR<plan_inputs_resources_flight_scale_dataCreateInput, plan_inputs_resources_flight_scale_dataUncheckedCreateInput>
+    /**
+     * In case the plan_inputs_resources_flight_scale_data was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_inputs_resources_flight_scale_dataUpdateInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data delete
+   */
+  export type plan_inputs_resources_flight_scale_dataDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    /**
+     * Filter which plan_inputs_resources_flight_scale_data to delete.
+     */
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data deleteMany
+   */
+  export type plan_inputs_resources_flight_scale_dataDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_resources_flight_scale_data to delete
+     */
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    /**
+     * Limit how many plan_inputs_resources_flight_scale_data to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_resources_flight_scale_data without action
+   */
+  export type plan_inputs_resources_flight_scale_dataDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_inputs_resources_flight_scales
+   */
+
+  export type AggregatePlan_inputs_resources_flight_scales = {
+    _count: Plan_inputs_resources_flight_scalesCountAggregateOutputType | null
+    _min: Plan_inputs_resources_flight_scalesMinAggregateOutputType | null
+    _max: Plan_inputs_resources_flight_scalesMaxAggregateOutputType | null
+  }
+
+  export type Plan_inputs_resources_flight_scalesMinAggregateOutputType = {
+    plan_id: string | null
+    flight_scale: string | null
+  }
+
+  export type Plan_inputs_resources_flight_scalesMaxAggregateOutputType = {
+    plan_id: string | null
+    flight_scale: string | null
+  }
+
+  export type Plan_inputs_resources_flight_scalesCountAggregateOutputType = {
+    plan_id: number
+    flight_scale: number
+    _all: number
+  }
+
+
+  export type Plan_inputs_resources_flight_scalesMinAggregateInputType = {
+    plan_id?: true
+    flight_scale?: true
+  }
+
+  export type Plan_inputs_resources_flight_scalesMaxAggregateInputType = {
+    plan_id?: true
+    flight_scale?: true
+  }
+
+  export type Plan_inputs_resources_flight_scalesCountAggregateInputType = {
+    plan_id?: true
+    flight_scale?: true
+    _all?: true
+  }
+
+  export type Plan_inputs_resources_flight_scalesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_resources_flight_scales to aggregate.
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scales to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scales.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_inputs_resources_flight_scales
+    **/
+    _count?: true | Plan_inputs_resources_flight_scalesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_inputs_resources_flight_scalesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_inputs_resources_flight_scalesMaxAggregateInputType
+  }
+
+  export type GetPlan_inputs_resources_flight_scalesAggregateType<T extends Plan_inputs_resources_flight_scalesAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_inputs_resources_flight_scales]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_inputs_resources_flight_scales[P]>
+      : GetScalarType<T[P], AggregatePlan_inputs_resources_flight_scales[P]>
+  }
+
+
+
+
+  export type plan_inputs_resources_flight_scalesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    orderBy?: plan_inputs_resources_flight_scalesOrderByWithAggregationInput | plan_inputs_resources_flight_scalesOrderByWithAggregationInput[]
+    by: Plan_inputs_resources_flight_scalesScalarFieldEnum[] | Plan_inputs_resources_flight_scalesScalarFieldEnum
+    having?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_inputs_resources_flight_scalesCountAggregateInputType | true
+    _min?: Plan_inputs_resources_flight_scalesMinAggregateInputType
+    _max?: Plan_inputs_resources_flight_scalesMaxAggregateInputType
+  }
+
+  export type Plan_inputs_resources_flight_scalesGroupByOutputType = {
+    plan_id: string
+    flight_scale: string
+    _count: Plan_inputs_resources_flight_scalesCountAggregateOutputType | null
+    _min: Plan_inputs_resources_flight_scalesMinAggregateOutputType | null
+    _max: Plan_inputs_resources_flight_scalesMaxAggregateOutputType | null
+  }
+
+  type GetPlan_inputs_resources_flight_scalesGroupByPayload<T extends plan_inputs_resources_flight_scalesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_inputs_resources_flight_scalesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_inputs_resources_flight_scalesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_inputs_resources_flight_scalesGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_inputs_resources_flight_scalesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_inputs_resources_flight_scalesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    flight_scale?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
+
+  export type plan_inputs_resources_flight_scalesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    flight_scale?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
+
+  export type plan_inputs_resources_flight_scalesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    flight_scale?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
+
+  export type plan_inputs_resources_flight_scalesSelectScalar = {
+    plan_id?: boolean
+    flight_scale?: boolean
+  }
+
+  export type plan_inputs_resources_flight_scalesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "flight_scale", ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
+  export type plan_inputs_resources_flight_scalesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_resources_flight_scalesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_resources_flight_scalesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_inputs_resources_flight_scalesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_inputs_resources_flight_scales"
+    objects: {
+      plans: Prisma.$plansPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      flight_scale: string
+    }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
+    composites: {}
+  }
+
+  type plan_inputs_resources_flight_scalesGetPayload<S extends boolean | null | undefined | plan_inputs_resources_flight_scalesDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload, S>
+
+  type plan_inputs_resources_flight_scalesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_inputs_resources_flight_scalesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_inputs_resources_flight_scalesCountAggregateInputType | true
+    }
+
+  export interface plan_inputs_resources_flight_scalesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_resources_flight_scales'], meta: { name: 'plan_inputs_resources_flight_scales' } }
+    /**
+     * Find zero or one Plan_inputs_resources_flight_scales that matches the filter.
+     * @param {plan_inputs_resources_flight_scalesFindUniqueArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
+     * @example
+     * // Get one Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_inputs_resources_flight_scalesFindUniqueArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_inputs_resources_flight_scales that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
+     * @example
+     * // Get one Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_resources_flight_scales that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scalesFindFirstArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
+     * @example
+     * // Get one Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_inputs_resources_flight_scalesFindFirstArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_resources_flight_scales that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scalesFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
+     * @example
+     * // Get one Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_inputs_resources_flight_scalesFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_inputs_resources_flight_scales that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scalesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findMany()
+     * 
+     * // Get first 10 Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_inputs_resources_flight_scalesWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scales.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_inputs_resources_flight_scalesFindManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_inputs_resources_flight_scales.
+     * @param {plan_inputs_resources_flight_scalesCreateArgs} args - Arguments to create a Plan_inputs_resources_flight_scales.
+     * @example
+     * // Create one Plan_inputs_resources_flight_scales
+     * const Plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.create({
+     *   data: {
+     *     // ... data to create a Plan_inputs_resources_flight_scales
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_inputs_resources_flight_scalesCreateArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesCreateArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_inputs_resources_flight_scales.
+     * @param {plan_inputs_resources_flight_scalesCreateManyArgs} args - Arguments to create many Plan_inputs_resources_flight_scales.
+     * @example
+     * // Create many Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_inputs_resources_flight_scalesCreateManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_inputs_resources_flight_scales and returns the data saved in the database.
+     * @param {plan_inputs_resources_flight_scalesCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_resources_flight_scales.
+     * @example
+     * // Create many Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_inputs_resources_flight_scales and only return the `plan_id`
+     * const plan_inputs_resources_flight_scalesWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scales.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_inputs_resources_flight_scalesCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_inputs_resources_flight_scales.
+     * @param {plan_inputs_resources_flight_scalesDeleteArgs} args - Arguments to delete one Plan_inputs_resources_flight_scales.
+     * @example
+     * // Delete one Plan_inputs_resources_flight_scales
+     * const Plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_inputs_resources_flight_scales
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_inputs_resources_flight_scalesDeleteArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesDeleteArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_inputs_resources_flight_scales.
+     * @param {plan_inputs_resources_flight_scalesUpdateArgs} args - Arguments to update one Plan_inputs_resources_flight_scales.
+     * @example
+     * // Update one Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_inputs_resources_flight_scalesUpdateArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpdateArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_inputs_resources_flight_scales.
+     * @param {plan_inputs_resources_flight_scalesDeleteManyArgs} args - Arguments to filter Plan_inputs_resources_flight_scales to delete.
+     * @example
+     * // Delete a few Plan_inputs_resources_flight_scales
+     * const { count } = await prisma.plan_inputs_resources_flight_scales.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_inputs_resources_flight_scalesDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_resources_flight_scales.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scalesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_inputs_resources_flight_scalesUpdateManyArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_resources_flight_scales and returns the data updated in the database.
+     * @param {plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_resources_flight_scales.
+     * @example
+     * // Update many Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_inputs_resources_flight_scales and only return the `plan_id`
+     * const plan_inputs_resources_flight_scalesWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scales.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_inputs_resources_flight_scales.
+     * @param {plan_inputs_resources_flight_scalesUpsertArgs} args - Arguments to update or create a Plan_inputs_resources_flight_scales.
+     * @example
+     * // Update or create a Plan_inputs_resources_flight_scales
+     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.upsert({
+     *   create: {
+     *     // ... data to create a Plan_inputs_resources_flight_scales
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_inputs_resources_flight_scales we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_inputs_resources_flight_scalesUpsertArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpsertArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_inputs_resources_flight_scales.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scalesCountArgs} args - Arguments to filter Plan_inputs_resources_flight_scales to count.
+     * @example
+     * // Count the number of Plan_inputs_resources_flight_scales
+     * const count = await prisma.plan_inputs_resources_flight_scales.count({
+     *   where: {
+     *     // ... the filter for the Plan_inputs_resources_flight_scales we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_inputs_resources_flight_scalesCountArgs>(
+      args?: Subset<T, plan_inputs_resources_flight_scalesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_inputs_resources_flight_scalesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_inputs_resources_flight_scales.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_inputs_resources_flight_scalesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_inputs_resources_flight_scalesAggregateArgs>(args: Subset<T, Plan_inputs_resources_flight_scalesAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_resources_flight_scalesAggregateType<T>>
+
+    /**
+     * Group by Plan_inputs_resources_flight_scales.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_flight_scalesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_inputs_resources_flight_scalesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_inputs_resources_flight_scalesGroupByArgs['orderBy'] }
+        : { orderBy?: plan_inputs_resources_flight_scalesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_inputs_resources_flight_scalesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_resources_flight_scalesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_inputs_resources_flight_scales model
+   */
+  readonly fields: plan_inputs_resources_flight_scalesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_inputs_resources_flight_scales.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_inputs_resources_flight_scalesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_inputs_resources_flight_scales model
+   */
+  interface plan_inputs_resources_flight_scalesFieldRefs {
+    readonly plan_id: FieldRef<"plan_inputs_resources_flight_scales", 'String'>
+    readonly flight_scale: FieldRef<"plan_inputs_resources_flight_scales", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_inputs_resources_flight_scales findUnique
+   */
+  export type plan_inputs_resources_flight_scalesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scales to fetch.
+     */
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales findUniqueOrThrow
+   */
+  export type plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scales to fetch.
+     */
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales findFirst
+   */
+  export type plan_inputs_resources_flight_scalesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scales to fetch.
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scales to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_resources_flight_scales.
+     */
+    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scales.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_resources_flight_scales.
+     */
+    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales findFirstOrThrow
+   */
+  export type plan_inputs_resources_flight_scalesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scales to fetch.
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scales to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_resources_flight_scales.
+     */
+    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scales.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_resources_flight_scales.
+     */
+    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales findMany
+   */
+  export type plan_inputs_resources_flight_scalesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_flight_scales to fetch.
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_flight_scales to fetch.
+     */
+    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_inputs_resources_flight_scales.
+     */
+    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_flight_scales.
+     */
+    skip?: number
+    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales create
+   */
+  export type plan_inputs_resources_flight_scalesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_inputs_resources_flight_scales.
+     */
+    data: XOR<plan_inputs_resources_flight_scalesCreateInput, plan_inputs_resources_flight_scalesUncheckedCreateInput>
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales createMany
+   */
+  export type plan_inputs_resources_flight_scalesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_inputs_resources_flight_scales.
+     */
+    data: plan_inputs_resources_flight_scalesCreateManyInput | plan_inputs_resources_flight_scalesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales createManyAndReturn
+   */
+  export type plan_inputs_resources_flight_scalesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_inputs_resources_flight_scales.
+     */
+    data: plan_inputs_resources_flight_scalesCreateManyInput | plan_inputs_resources_flight_scalesCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales update
+   */
+  export type plan_inputs_resources_flight_scalesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_inputs_resources_flight_scales.
+     */
+    data: XOR<plan_inputs_resources_flight_scalesUpdateInput, plan_inputs_resources_flight_scalesUncheckedUpdateInput>
+    /**
+     * Choose, which plan_inputs_resources_flight_scales to update.
+     */
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales updateMany
+   */
+  export type plan_inputs_resources_flight_scalesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_inputs_resources_flight_scales.
+     */
+    data: XOR<plan_inputs_resources_flight_scalesUpdateManyMutationInput, plan_inputs_resources_flight_scalesUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_resources_flight_scales to update
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * Limit how many plan_inputs_resources_flight_scales to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales updateManyAndReturn
+   */
+  export type plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_inputs_resources_flight_scales.
+     */
+    data: XOR<plan_inputs_resources_flight_scalesUpdateManyMutationInput, plan_inputs_resources_flight_scalesUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_resources_flight_scales to update
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * Limit how many plan_inputs_resources_flight_scales to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales upsert
+   */
+  export type plan_inputs_resources_flight_scalesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_inputs_resources_flight_scales to update in case it exists.
+     */
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+    /**
+     * In case the plan_inputs_resources_flight_scales found by the `where` argument doesn't exist, create a new plan_inputs_resources_flight_scales with this data.
+     */
+    create: XOR<plan_inputs_resources_flight_scalesCreateInput, plan_inputs_resources_flight_scalesUncheckedCreateInput>
+    /**
+     * In case the plan_inputs_resources_flight_scales was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_inputs_resources_flight_scalesUpdateInput, plan_inputs_resources_flight_scalesUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales delete
+   */
+  export type plan_inputs_resources_flight_scalesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    /**
+     * Filter which plan_inputs_resources_flight_scales to delete.
+     */
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales deleteMany
+   */
+  export type plan_inputs_resources_flight_scalesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_resources_flight_scales to delete
+     */
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    /**
+     * Limit how many plan_inputs_resources_flight_scales to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_resources_flight_scales without action
+   */
+  export type plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_inputs_resources_workforce
+   */
+
+  export type AggregatePlan_inputs_resources_workforce = {
+    _count: Plan_inputs_resources_workforceCountAggregateOutputType | null
+    _avg: Plan_inputs_resources_workforceAvgAggregateOutputType | null
+    _sum: Plan_inputs_resources_workforceSumAggregateOutputType | null
+    _min: Plan_inputs_resources_workforceMinAggregateOutputType | null
+    _max: Plan_inputs_resources_workforceMaxAggregateOutputType | null
+  }
+
+  export type Plan_inputs_resources_workforceAvgAggregateOutputType = {
+    captain_cnt: number | null
+    sub_captain_cnt: number | null
+    other_personnel_norm: number | null
+  }
+
+  export type Plan_inputs_resources_workforceSumAggregateOutputType = {
+    captain_cnt: bigint | null
+    sub_captain_cnt: bigint | null
+    other_personnel_norm: bigint | null
+  }
+
+  export type Plan_inputs_resources_workforceMinAggregateOutputType = {
+    plan_id: string | null
+    captain_cnt: bigint | null
+    sub_captain_cnt: bigint | null
+    other_personnel_norm: bigint | null
+  }
+
+  export type Plan_inputs_resources_workforceMaxAggregateOutputType = {
+    plan_id: string | null
+    captain_cnt: bigint | null
+    sub_captain_cnt: bigint | null
+    other_personnel_norm: bigint | null
+  }
+
+  export type Plan_inputs_resources_workforceCountAggregateOutputType = {
+    plan_id: number
+    captain_cnt: number
+    sub_captain_cnt: number
+    other_personnel_norm: number
+    _all: number
+  }
+
+
+  export type Plan_inputs_resources_workforceAvgAggregateInputType = {
+    captain_cnt?: true
+    sub_captain_cnt?: true
+    other_personnel_norm?: true
+  }
+
+  export type Plan_inputs_resources_workforceSumAggregateInputType = {
+    captain_cnt?: true
+    sub_captain_cnt?: true
+    other_personnel_norm?: true
+  }
+
+  export type Plan_inputs_resources_workforceMinAggregateInputType = {
+    plan_id?: true
+    captain_cnt?: true
+    sub_captain_cnt?: true
+    other_personnel_norm?: true
+  }
+
+  export type Plan_inputs_resources_workforceMaxAggregateInputType = {
+    plan_id?: true
+    captain_cnt?: true
+    sub_captain_cnt?: true
+    other_personnel_norm?: true
+  }
+
+  export type Plan_inputs_resources_workforceCountAggregateInputType = {
+    plan_id?: true
+    captain_cnt?: true
+    sub_captain_cnt?: true
+    other_personnel_norm?: true
+    _all?: true
+  }
+
+  export type Plan_inputs_resources_workforceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_resources_workforce to aggregate.
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_workforces to fetch.
+     */
+    orderBy?: plan_inputs_resources_workforceOrderByWithRelationInput | plan_inputs_resources_workforceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_inputs_resources_workforceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_workforces from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_workforces.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_inputs_resources_workforces
+    **/
+    _count?: true | Plan_inputs_resources_workforceCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Plan_inputs_resources_workforceAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Plan_inputs_resources_workforceSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_inputs_resources_workforceMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_inputs_resources_workforceMaxAggregateInputType
+  }
+
+  export type GetPlan_inputs_resources_workforceAggregateType<T extends Plan_inputs_resources_workforceAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_inputs_resources_workforce]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_inputs_resources_workforce[P]>
+      : GetScalarType<T[P], AggregatePlan_inputs_resources_workforce[P]>
+  }
+
+
+
+
+  export type plan_inputs_resources_workforceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_resources_workforceWhereInput
+    orderBy?: plan_inputs_resources_workforceOrderByWithAggregationInput | plan_inputs_resources_workforceOrderByWithAggregationInput[]
+    by: Plan_inputs_resources_workforceScalarFieldEnum[] | Plan_inputs_resources_workforceScalarFieldEnum
+    having?: plan_inputs_resources_workforceScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_inputs_resources_workforceCountAggregateInputType | true
+    _avg?: Plan_inputs_resources_workforceAvgAggregateInputType
+    _sum?: Plan_inputs_resources_workforceSumAggregateInputType
+    _min?: Plan_inputs_resources_workforceMinAggregateInputType
+    _max?: Plan_inputs_resources_workforceMaxAggregateInputType
+  }
+
+  export type Plan_inputs_resources_workforceGroupByOutputType = {
+    plan_id: string
+    captain_cnt: bigint | null
+    sub_captain_cnt: bigint | null
+    other_personnel_norm: bigint | null
+    _count: Plan_inputs_resources_workforceCountAggregateOutputType | null
+    _avg: Plan_inputs_resources_workforceAvgAggregateOutputType | null
+    _sum: Plan_inputs_resources_workforceSumAggregateOutputType | null
+    _min: Plan_inputs_resources_workforceMinAggregateOutputType | null
+    _max: Plan_inputs_resources_workforceMaxAggregateOutputType | null
+  }
+
+  type GetPlan_inputs_resources_workforceGroupByPayload<T extends plan_inputs_resources_workforceGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_inputs_resources_workforceGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_inputs_resources_workforceGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_inputs_resources_workforceGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_inputs_resources_workforceGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_inputs_resources_workforceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    captain_cnt?: boolean
+    sub_captain_cnt?: boolean
+    other_personnel_norm?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_workforce"]>
+
+  export type plan_inputs_resources_workforceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    captain_cnt?: boolean
+    sub_captain_cnt?: boolean
+    other_personnel_norm?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_workforce"]>
+
+  export type plan_inputs_resources_workforceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    captain_cnt?: boolean
+    sub_captain_cnt?: boolean
+    other_personnel_norm?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_resources_workforce"]>
+
+  export type plan_inputs_resources_workforceSelectScalar = {
+    plan_id?: boolean
+    captain_cnt?: boolean
+    sub_captain_cnt?: boolean
+    other_personnel_norm?: boolean
+  }
+
+  export type plan_inputs_resources_workforceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "captain_cnt" | "sub_captain_cnt" | "other_personnel_norm", ExtArgs["result"]["plan_inputs_resources_workforce"]>
+  export type plan_inputs_resources_workforceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_resources_workforceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_resources_workforceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_inputs_resources_workforcePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_inputs_resources_workforce"
+    objects: {
+      plans: Prisma.$plansPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      captain_cnt: bigint | null
+      sub_captain_cnt: bigint | null
+      other_personnel_norm: bigint | null
+    }, ExtArgs["result"]["plan_inputs_resources_workforce"]>
+    composites: {}
+  }
+
+  type plan_inputs_resources_workforceGetPayload<S extends boolean | null | undefined | plan_inputs_resources_workforceDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload, S>
+
+  type plan_inputs_resources_workforceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_inputs_resources_workforceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_inputs_resources_workforceCountAggregateInputType | true
+    }
+
+  export interface plan_inputs_resources_workforceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_resources_workforce'], meta: { name: 'plan_inputs_resources_workforce' } }
+    /**
+     * Find zero or one Plan_inputs_resources_workforce that matches the filter.
+     * @param {plan_inputs_resources_workforceFindUniqueArgs} args - Arguments to find a Plan_inputs_resources_workforce
+     * @example
+     * // Get one Plan_inputs_resources_workforce
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_inputs_resources_workforceFindUniqueArgs>(args: SelectSubset<T, plan_inputs_resources_workforceFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_inputs_resources_workforce that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_inputs_resources_workforceFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_resources_workforce
+     * @example
+     * // Get one Plan_inputs_resources_workforce
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_inputs_resources_workforceFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_resources_workforceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_resources_workforce that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_workforceFindFirstArgs} args - Arguments to find a Plan_inputs_resources_workforce
+     * @example
+     * // Get one Plan_inputs_resources_workforce
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_inputs_resources_workforceFindFirstArgs>(args?: SelectSubset<T, plan_inputs_resources_workforceFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_resources_workforce that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_workforceFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_resources_workforce
+     * @example
+     * // Get one Plan_inputs_resources_workforce
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_inputs_resources_workforceFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_resources_workforceFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_inputs_resources_workforces that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_workforceFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_inputs_resources_workforces
+     * const plan_inputs_resources_workforces = await prisma.plan_inputs_resources_workforce.findMany()
+     * 
+     * // Get first 10 Plan_inputs_resources_workforces
+     * const plan_inputs_resources_workforces = await prisma.plan_inputs_resources_workforce.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_inputs_resources_workforceWithPlan_idOnly = await prisma.plan_inputs_resources_workforce.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_inputs_resources_workforceFindManyArgs>(args?: SelectSubset<T, plan_inputs_resources_workforceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_inputs_resources_workforce.
+     * @param {plan_inputs_resources_workforceCreateArgs} args - Arguments to create a Plan_inputs_resources_workforce.
+     * @example
+     * // Create one Plan_inputs_resources_workforce
+     * const Plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.create({
+     *   data: {
+     *     // ... data to create a Plan_inputs_resources_workforce
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_inputs_resources_workforceCreateArgs>(args: SelectSubset<T, plan_inputs_resources_workforceCreateArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_inputs_resources_workforces.
+     * @param {plan_inputs_resources_workforceCreateManyArgs} args - Arguments to create many Plan_inputs_resources_workforces.
+     * @example
+     * // Create many Plan_inputs_resources_workforces
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_inputs_resources_workforceCreateManyArgs>(args?: SelectSubset<T, plan_inputs_resources_workforceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_inputs_resources_workforces and returns the data saved in the database.
+     * @param {plan_inputs_resources_workforceCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_resources_workforces.
+     * @example
+     * // Create many Plan_inputs_resources_workforces
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_inputs_resources_workforces and only return the `plan_id`
+     * const plan_inputs_resources_workforceWithPlan_idOnly = await prisma.plan_inputs_resources_workforce.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_inputs_resources_workforceCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_resources_workforceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_inputs_resources_workforce.
+     * @param {plan_inputs_resources_workforceDeleteArgs} args - Arguments to delete one Plan_inputs_resources_workforce.
+     * @example
+     * // Delete one Plan_inputs_resources_workforce
+     * const Plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_inputs_resources_workforce
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_inputs_resources_workforceDeleteArgs>(args: SelectSubset<T, plan_inputs_resources_workforceDeleteArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_inputs_resources_workforce.
+     * @param {plan_inputs_resources_workforceUpdateArgs} args - Arguments to update one Plan_inputs_resources_workforce.
+     * @example
+     * // Update one Plan_inputs_resources_workforce
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_inputs_resources_workforceUpdateArgs>(args: SelectSubset<T, plan_inputs_resources_workforceUpdateArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_inputs_resources_workforces.
+     * @param {plan_inputs_resources_workforceDeleteManyArgs} args - Arguments to filter Plan_inputs_resources_workforces to delete.
+     * @example
+     * // Delete a few Plan_inputs_resources_workforces
+     * const { count } = await prisma.plan_inputs_resources_workforce.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_inputs_resources_workforceDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_resources_workforceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_resources_workforces.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_workforceUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_inputs_resources_workforces
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_inputs_resources_workforceUpdateManyArgs>(args: SelectSubset<T, plan_inputs_resources_workforceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_resources_workforces and returns the data updated in the database.
+     * @param {plan_inputs_resources_workforceUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_resources_workforces.
+     * @example
+     * // Update many Plan_inputs_resources_workforces
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_inputs_resources_workforces and only return the `plan_id`
+     * const plan_inputs_resources_workforceWithPlan_idOnly = await prisma.plan_inputs_resources_workforce.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_inputs_resources_workforceUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_resources_workforceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_inputs_resources_workforce.
+     * @param {plan_inputs_resources_workforceUpsertArgs} args - Arguments to update or create a Plan_inputs_resources_workforce.
+     * @example
+     * // Update or create a Plan_inputs_resources_workforce
+     * const plan_inputs_resources_workforce = await prisma.plan_inputs_resources_workforce.upsert({
+     *   create: {
+     *     // ... data to create a Plan_inputs_resources_workforce
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_inputs_resources_workforce we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_inputs_resources_workforceUpsertArgs>(args: SelectSubset<T, plan_inputs_resources_workforceUpsertArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_inputs_resources_workforces.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_workforceCountArgs} args - Arguments to filter Plan_inputs_resources_workforces to count.
+     * @example
+     * // Count the number of Plan_inputs_resources_workforces
+     * const count = await prisma.plan_inputs_resources_workforce.count({
+     *   where: {
+     *     // ... the filter for the Plan_inputs_resources_workforces we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_inputs_resources_workforceCountArgs>(
+      args?: Subset<T, plan_inputs_resources_workforceCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_inputs_resources_workforceCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_inputs_resources_workforce.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_inputs_resources_workforceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_inputs_resources_workforceAggregateArgs>(args: Subset<T, Plan_inputs_resources_workforceAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_resources_workforceAggregateType<T>>
+
+    /**
+     * Group by Plan_inputs_resources_workforce.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_resources_workforceGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_inputs_resources_workforceGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_inputs_resources_workforceGroupByArgs['orderBy'] }
+        : { orderBy?: plan_inputs_resources_workforceGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_inputs_resources_workforceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_resources_workforceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_inputs_resources_workforce model
+   */
+  readonly fields: plan_inputs_resources_workforceFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_inputs_resources_workforce.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_inputs_resources_workforceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_inputs_resources_workforce model
+   */
+  interface plan_inputs_resources_workforceFieldRefs {
+    readonly plan_id: FieldRef<"plan_inputs_resources_workforce", 'String'>
+    readonly captain_cnt: FieldRef<"plan_inputs_resources_workforce", 'BigInt'>
+    readonly sub_captain_cnt: FieldRef<"plan_inputs_resources_workforce", 'BigInt'>
+    readonly other_personnel_norm: FieldRef<"plan_inputs_resources_workforce", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_inputs_resources_workforce findUnique
+   */
+  export type plan_inputs_resources_workforceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_workforce to fetch.
+     */
+    where: plan_inputs_resources_workforceWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_workforce findUniqueOrThrow
+   */
+  export type plan_inputs_resources_workforceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_workforce to fetch.
+     */
+    where: plan_inputs_resources_workforceWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_workforce findFirst
+   */
+  export type plan_inputs_resources_workforceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_workforce to fetch.
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_workforces to fetch.
+     */
+    orderBy?: plan_inputs_resources_workforceOrderByWithRelationInput | plan_inputs_resources_workforceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_resources_workforces.
+     */
+    cursor?: plan_inputs_resources_workforceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_workforces from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_workforces.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_resources_workforces.
+     */
+    distinct?: Plan_inputs_resources_workforceScalarFieldEnum | Plan_inputs_resources_workforceScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_workforce findFirstOrThrow
+   */
+  export type plan_inputs_resources_workforceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_workforce to fetch.
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_workforces to fetch.
+     */
+    orderBy?: plan_inputs_resources_workforceOrderByWithRelationInput | plan_inputs_resources_workforceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_resources_workforces.
+     */
+    cursor?: plan_inputs_resources_workforceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_workforces from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_workforces.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_resources_workforces.
+     */
+    distinct?: Plan_inputs_resources_workforceScalarFieldEnum | Plan_inputs_resources_workforceScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_workforce findMany
+   */
+  export type plan_inputs_resources_workforceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_resources_workforces to fetch.
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_resources_workforces to fetch.
+     */
+    orderBy?: plan_inputs_resources_workforceOrderByWithRelationInput | plan_inputs_resources_workforceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_inputs_resources_workforces.
+     */
+    cursor?: plan_inputs_resources_workforceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_resources_workforces from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_resources_workforces.
+     */
+    skip?: number
+    distinct?: Plan_inputs_resources_workforceScalarFieldEnum | Plan_inputs_resources_workforceScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_resources_workforce create
+   */
+  export type plan_inputs_resources_workforceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_inputs_resources_workforce.
+     */
+    data: XOR<plan_inputs_resources_workforceCreateInput, plan_inputs_resources_workforceUncheckedCreateInput>
+  }
+
+  /**
+   * plan_inputs_resources_workforce createMany
+   */
+  export type plan_inputs_resources_workforceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_inputs_resources_workforces.
+     */
+    data: plan_inputs_resources_workforceCreateManyInput | plan_inputs_resources_workforceCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_inputs_resources_workforce createManyAndReturn
+   */
+  export type plan_inputs_resources_workforceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_inputs_resources_workforces.
+     */
+    data: plan_inputs_resources_workforceCreateManyInput | plan_inputs_resources_workforceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_resources_workforce update
+   */
+  export type plan_inputs_resources_workforceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_inputs_resources_workforce.
+     */
+    data: XOR<plan_inputs_resources_workforceUpdateInput, plan_inputs_resources_workforceUncheckedUpdateInput>
+    /**
+     * Choose, which plan_inputs_resources_workforce to update.
+     */
+    where: plan_inputs_resources_workforceWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_workforce updateMany
+   */
+  export type plan_inputs_resources_workforceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_inputs_resources_workforces.
+     */
+    data: XOR<plan_inputs_resources_workforceUpdateManyMutationInput, plan_inputs_resources_workforceUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_resources_workforces to update
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * Limit how many plan_inputs_resources_workforces to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_resources_workforce updateManyAndReturn
+   */
+  export type plan_inputs_resources_workforceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_inputs_resources_workforces.
+     */
+    data: XOR<plan_inputs_resources_workforceUpdateManyMutationInput, plan_inputs_resources_workforceUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_resources_workforces to update
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * Limit how many plan_inputs_resources_workforces to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_resources_workforce upsert
+   */
+  export type plan_inputs_resources_workforceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_inputs_resources_workforce to update in case it exists.
+     */
+    where: plan_inputs_resources_workforceWhereUniqueInput
+    /**
+     * In case the plan_inputs_resources_workforce found by the `where` argument doesn't exist, create a new plan_inputs_resources_workforce with this data.
+     */
+    create: XOR<plan_inputs_resources_workforceCreateInput, plan_inputs_resources_workforceUncheckedCreateInput>
+    /**
+     * In case the plan_inputs_resources_workforce was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_inputs_resources_workforceUpdateInput, plan_inputs_resources_workforceUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_inputs_resources_workforce delete
+   */
+  export type plan_inputs_resources_workforceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    /**
+     * Filter which plan_inputs_resources_workforce to delete.
+     */
+    where: plan_inputs_resources_workforceWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_resources_workforce deleteMany
+   */
+  export type plan_inputs_resources_workforceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_resources_workforces to delete
+     */
+    where?: plan_inputs_resources_workforceWhereInput
+    /**
+     * Limit how many plan_inputs_resources_workforces to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_resources_workforce without action
+   */
+  export type plan_inputs_resources_workforceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_inputs_status
+   */
+
+  export type AggregatePlan_inputs_status = {
+    _count: Plan_inputs_statusCountAggregateOutputType | null
+    _min: Plan_inputs_statusMinAggregateOutputType | null
+    _max: Plan_inputs_statusMaxAggregateOutputType | null
+  }
+
+  export type Plan_inputs_statusMinAggregateOutputType = {
+    plan_id: string | null
+    resources_workforce_status: string | null
+    resources_flight_scales_status: boolean | null
+    resources_flight_scale_data_status: string | null
+    analytics_flight_candidates_status: string | null
+    analytics_round_trip_normalization_status: boolean | null
+    analytics_min_distribution_criteria_status: boolean | null
+    airports_schedule_data_status: string | null
+  }
+
+  export type Plan_inputs_statusMaxAggregateOutputType = {
+    plan_id: string | null
+    resources_workforce_status: string | null
+    resources_flight_scales_status: boolean | null
+    resources_flight_scale_data_status: string | null
+    analytics_flight_candidates_status: string | null
+    analytics_round_trip_normalization_status: boolean | null
+    analytics_min_distribution_criteria_status: boolean | null
+    airports_schedule_data_status: string | null
+  }
+
+  export type Plan_inputs_statusCountAggregateOutputType = {
+    plan_id: number
+    resources_workforce_status: number
+    resources_flight_scales_status: number
+    resources_flight_scale_data_status: number
+    analytics_flight_candidates_status: number
+    analytics_round_trip_normalization_status: number
+    analytics_min_distribution_criteria_status: number
+    airports_schedule_data_status: number
+    _all: number
+  }
+
+
+  export type Plan_inputs_statusMinAggregateInputType = {
+    plan_id?: true
+    resources_workforce_status?: true
+    resources_flight_scales_status?: true
+    resources_flight_scale_data_status?: true
+    analytics_flight_candidates_status?: true
+    analytics_round_trip_normalization_status?: true
+    analytics_min_distribution_criteria_status?: true
+    airports_schedule_data_status?: true
+  }
+
+  export type Plan_inputs_statusMaxAggregateInputType = {
+    plan_id?: true
+    resources_workforce_status?: true
+    resources_flight_scales_status?: true
+    resources_flight_scale_data_status?: true
+    analytics_flight_candidates_status?: true
+    analytics_round_trip_normalization_status?: true
+    analytics_min_distribution_criteria_status?: true
+    airports_schedule_data_status?: true
+  }
+
+  export type Plan_inputs_statusCountAggregateInputType = {
+    plan_id?: true
+    resources_workforce_status?: true
+    resources_flight_scales_status?: true
+    resources_flight_scale_data_status?: true
+    analytics_flight_candidates_status?: true
+    analytics_round_trip_normalization_status?: true
+    analytics_min_distribution_criteria_status?: true
+    airports_schedule_data_status?: true
+    _all?: true
+  }
+
+  export type Plan_inputs_statusAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_status to aggregate.
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_statuses to fetch.
+     */
+    orderBy?: plan_inputs_statusOrderByWithRelationInput | plan_inputs_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_inputs_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_statuses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_inputs_statuses
+    **/
+    _count?: true | Plan_inputs_statusCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_inputs_statusMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_inputs_statusMaxAggregateInputType
+  }
+
+  export type GetPlan_inputs_statusAggregateType<T extends Plan_inputs_statusAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_inputs_status]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_inputs_status[P]>
+      : GetScalarType<T[P], AggregatePlan_inputs_status[P]>
+  }
+
+
+
+
+  export type plan_inputs_statusGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_inputs_statusWhereInput
+    orderBy?: plan_inputs_statusOrderByWithAggregationInput | plan_inputs_statusOrderByWithAggregationInput[]
+    by: Plan_inputs_statusScalarFieldEnum[] | Plan_inputs_statusScalarFieldEnum
+    having?: plan_inputs_statusScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_inputs_statusCountAggregateInputType | true
+    _min?: Plan_inputs_statusMinAggregateInputType
+    _max?: Plan_inputs_statusMaxAggregateInputType
+  }
+
+  export type Plan_inputs_statusGroupByOutputType = {
+    plan_id: string
+    resources_workforce_status: string
+    resources_flight_scales_status: boolean
+    resources_flight_scale_data_status: string
+    analytics_flight_candidates_status: string
+    analytics_round_trip_normalization_status: boolean
+    analytics_min_distribution_criteria_status: boolean
+    airports_schedule_data_status: string
+    _count: Plan_inputs_statusCountAggregateOutputType | null
+    _min: Plan_inputs_statusMinAggregateOutputType | null
+    _max: Plan_inputs_statusMaxAggregateOutputType | null
+  }
+
+  type GetPlan_inputs_statusGroupByPayload<T extends plan_inputs_statusGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_inputs_statusGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_inputs_statusGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_inputs_statusGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_inputs_statusGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_inputs_statusSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    resources_workforce_status?: boolean
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: boolean
+    analytics_flight_candidates_status?: boolean
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_status"]>
+
+  export type plan_inputs_statusSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    resources_workforce_status?: boolean
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: boolean
+    analytics_flight_candidates_status?: boolean
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_status"]>
+
+  export type plan_inputs_statusSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    resources_workforce_status?: boolean
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: boolean
+    analytics_flight_candidates_status?: boolean
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_inputs_status"]>
+
+  export type plan_inputs_statusSelectScalar = {
+    plan_id?: boolean
+    resources_workforce_status?: boolean
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: boolean
+    analytics_flight_candidates_status?: boolean
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: boolean
+  }
+
+  export type plan_inputs_statusOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "resources_workforce_status" | "resources_flight_scales_status" | "resources_flight_scale_data_status" | "analytics_flight_candidates_status" | "analytics_round_trip_normalization_status" | "analytics_min_distribution_criteria_status" | "airports_schedule_data_status", ExtArgs["result"]["plan_inputs_status"]>
+  export type plan_inputs_statusInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_statusIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+  export type plan_inputs_statusIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_inputs_statusPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_inputs_status"
+    objects: {
+      plans: Prisma.$plansPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      resources_workforce_status: string
+      resources_flight_scales_status: boolean
+      resources_flight_scale_data_status: string
+      analytics_flight_candidates_status: string
+      analytics_round_trip_normalization_status: boolean
+      analytics_min_distribution_criteria_status: boolean
+      airports_schedule_data_status: string
+    }, ExtArgs["result"]["plan_inputs_status"]>
+    composites: {}
+  }
+
+  type plan_inputs_statusGetPayload<S extends boolean | null | undefined | plan_inputs_statusDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_statusPayload, S>
+
+  type plan_inputs_statusCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_inputs_statusFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_inputs_statusCountAggregateInputType | true
+    }
+
+  export interface plan_inputs_statusDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_status'], meta: { name: 'plan_inputs_status' } }
+    /**
+     * Find zero or one Plan_inputs_status that matches the filter.
+     * @param {plan_inputs_statusFindUniqueArgs} args - Arguments to find a Plan_inputs_status
+     * @example
+     * // Get one Plan_inputs_status
+     * const plan_inputs_status = await prisma.plan_inputs_status.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_inputs_statusFindUniqueArgs>(args: SelectSubset<T, plan_inputs_statusFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_inputs_status that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_inputs_statusFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_status
+     * @example
+     * // Get one Plan_inputs_status
+     * const plan_inputs_status = await prisma.plan_inputs_status.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_inputs_statusFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_statusFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_status that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_statusFindFirstArgs} args - Arguments to find a Plan_inputs_status
+     * @example
+     * // Get one Plan_inputs_status
+     * const plan_inputs_status = await prisma.plan_inputs_status.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_inputs_statusFindFirstArgs>(args?: SelectSubset<T, plan_inputs_statusFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_inputs_status that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_statusFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_status
+     * @example
+     * // Get one Plan_inputs_status
+     * const plan_inputs_status = await prisma.plan_inputs_status.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_inputs_statusFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_statusFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_inputs_statuses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_statusFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_inputs_statuses
+     * const plan_inputs_statuses = await prisma.plan_inputs_status.findMany()
+     * 
+     * // Get first 10 Plan_inputs_statuses
+     * const plan_inputs_statuses = await prisma.plan_inputs_status.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_inputs_statusWithPlan_idOnly = await prisma.plan_inputs_status.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_inputs_statusFindManyArgs>(args?: SelectSubset<T, plan_inputs_statusFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_inputs_status.
+     * @param {plan_inputs_statusCreateArgs} args - Arguments to create a Plan_inputs_status.
+     * @example
+     * // Create one Plan_inputs_status
+     * const Plan_inputs_status = await prisma.plan_inputs_status.create({
+     *   data: {
+     *     // ... data to create a Plan_inputs_status
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_inputs_statusCreateArgs>(args: SelectSubset<T, plan_inputs_statusCreateArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_inputs_statuses.
+     * @param {plan_inputs_statusCreateManyArgs} args - Arguments to create many Plan_inputs_statuses.
+     * @example
+     * // Create many Plan_inputs_statuses
+     * const plan_inputs_status = await prisma.plan_inputs_status.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_inputs_statusCreateManyArgs>(args?: SelectSubset<T, plan_inputs_statusCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_inputs_statuses and returns the data saved in the database.
+     * @param {plan_inputs_statusCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_statuses.
+     * @example
+     * // Create many Plan_inputs_statuses
+     * const plan_inputs_status = await prisma.plan_inputs_status.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_inputs_statuses and only return the `plan_id`
+     * const plan_inputs_statusWithPlan_idOnly = await prisma.plan_inputs_status.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_inputs_statusCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_statusCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_inputs_status.
+     * @param {plan_inputs_statusDeleteArgs} args - Arguments to delete one Plan_inputs_status.
+     * @example
+     * // Delete one Plan_inputs_status
+     * const Plan_inputs_status = await prisma.plan_inputs_status.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_inputs_status
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_inputs_statusDeleteArgs>(args: SelectSubset<T, plan_inputs_statusDeleteArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_inputs_status.
+     * @param {plan_inputs_statusUpdateArgs} args - Arguments to update one Plan_inputs_status.
+     * @example
+     * // Update one Plan_inputs_status
+     * const plan_inputs_status = await prisma.plan_inputs_status.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_inputs_statusUpdateArgs>(args: SelectSubset<T, plan_inputs_statusUpdateArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_inputs_statuses.
+     * @param {plan_inputs_statusDeleteManyArgs} args - Arguments to filter Plan_inputs_statuses to delete.
+     * @example
+     * // Delete a few Plan_inputs_statuses
+     * const { count } = await prisma.plan_inputs_status.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_inputs_statusDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_statusDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_statuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_statusUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_inputs_statuses
+     * const plan_inputs_status = await prisma.plan_inputs_status.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_inputs_statusUpdateManyArgs>(args: SelectSubset<T, plan_inputs_statusUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_inputs_statuses and returns the data updated in the database.
+     * @param {plan_inputs_statusUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_statuses.
+     * @example
+     * // Update many Plan_inputs_statuses
+     * const plan_inputs_status = await prisma.plan_inputs_status.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_inputs_statuses and only return the `plan_id`
+     * const plan_inputs_statusWithPlan_idOnly = await prisma.plan_inputs_status.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_inputs_statusUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_statusUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_inputs_status.
+     * @param {plan_inputs_statusUpsertArgs} args - Arguments to update or create a Plan_inputs_status.
+     * @example
+     * // Update or create a Plan_inputs_status
+     * const plan_inputs_status = await prisma.plan_inputs_status.upsert({
+     *   create: {
+     *     // ... data to create a Plan_inputs_status
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_inputs_status we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_inputs_statusUpsertArgs>(args: SelectSubset<T, plan_inputs_statusUpsertArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_inputs_statuses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_statusCountArgs} args - Arguments to filter Plan_inputs_statuses to count.
+     * @example
+     * // Count the number of Plan_inputs_statuses
+     * const count = await prisma.plan_inputs_status.count({
+     *   where: {
+     *     // ... the filter for the Plan_inputs_statuses we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_inputs_statusCountArgs>(
+      args?: Subset<T, plan_inputs_statusCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_inputs_statusCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_inputs_status.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_inputs_statusAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_inputs_statusAggregateArgs>(args: Subset<T, Plan_inputs_statusAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_statusAggregateType<T>>
+
+    /**
+     * Group by Plan_inputs_status.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_inputs_statusGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_inputs_statusGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_inputs_statusGroupByArgs['orderBy'] }
+        : { orderBy?: plan_inputs_statusGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_inputs_statusGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_statusGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_inputs_status model
+   */
+  readonly fields: plan_inputs_statusFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_inputs_status.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_inputs_statusClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_inputs_status model
+   */
+  interface plan_inputs_statusFieldRefs {
+    readonly plan_id: FieldRef<"plan_inputs_status", 'String'>
+    readonly resources_workforce_status: FieldRef<"plan_inputs_status", 'String'>
+    readonly resources_flight_scales_status: FieldRef<"plan_inputs_status", 'Boolean'>
+    readonly resources_flight_scale_data_status: FieldRef<"plan_inputs_status", 'String'>
+    readonly analytics_flight_candidates_status: FieldRef<"plan_inputs_status", 'String'>
+    readonly analytics_round_trip_normalization_status: FieldRef<"plan_inputs_status", 'Boolean'>
+    readonly analytics_min_distribution_criteria_status: FieldRef<"plan_inputs_status", 'Boolean'>
+    readonly airports_schedule_data_status: FieldRef<"plan_inputs_status", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_inputs_status findUnique
+   */
+  export type plan_inputs_statusFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_status to fetch.
+     */
+    where: plan_inputs_statusWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_status findUniqueOrThrow
+   */
+  export type plan_inputs_statusFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_status to fetch.
+     */
+    where: plan_inputs_statusWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_status findFirst
+   */
+  export type plan_inputs_statusFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_status to fetch.
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_statuses to fetch.
+     */
+    orderBy?: plan_inputs_statusOrderByWithRelationInput | plan_inputs_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_statuses.
+     */
+    cursor?: plan_inputs_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_statuses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_statuses.
+     */
+    distinct?: Plan_inputs_statusScalarFieldEnum | Plan_inputs_statusScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_status findFirstOrThrow
+   */
+  export type plan_inputs_statusFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_status to fetch.
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_statuses to fetch.
+     */
+    orderBy?: plan_inputs_statusOrderByWithRelationInput | plan_inputs_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_inputs_statuses.
+     */
+    cursor?: plan_inputs_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_statuses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_inputs_statuses.
+     */
+    distinct?: Plan_inputs_statusScalarFieldEnum | Plan_inputs_statusScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_status findMany
+   */
+  export type plan_inputs_statusFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_inputs_statuses to fetch.
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_inputs_statuses to fetch.
+     */
+    orderBy?: plan_inputs_statusOrderByWithRelationInput | plan_inputs_statusOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_inputs_statuses.
+     */
+    cursor?: plan_inputs_statusWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_inputs_statuses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_inputs_statuses.
+     */
+    skip?: number
+    distinct?: Plan_inputs_statusScalarFieldEnum | Plan_inputs_statusScalarFieldEnum[]
+  }
+
+  /**
+   * plan_inputs_status create
+   */
+  export type plan_inputs_statusCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_inputs_status.
+     */
+    data: XOR<plan_inputs_statusCreateInput, plan_inputs_statusUncheckedCreateInput>
+  }
+
+  /**
+   * plan_inputs_status createMany
+   */
+  export type plan_inputs_statusCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_inputs_statuses.
+     */
+    data: plan_inputs_statusCreateManyInput | plan_inputs_statusCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_inputs_status createManyAndReturn
+   */
+  export type plan_inputs_statusCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_inputs_statuses.
+     */
+    data: plan_inputs_statusCreateManyInput | plan_inputs_statusCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_status update
+   */
+  export type plan_inputs_statusUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_inputs_status.
+     */
+    data: XOR<plan_inputs_statusUpdateInput, plan_inputs_statusUncheckedUpdateInput>
+    /**
+     * Choose, which plan_inputs_status to update.
+     */
+    where: plan_inputs_statusWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_status updateMany
+   */
+  export type plan_inputs_statusUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_inputs_statuses.
+     */
+    data: XOR<plan_inputs_statusUpdateManyMutationInput, plan_inputs_statusUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_statuses to update
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * Limit how many plan_inputs_statuses to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_status updateManyAndReturn
+   */
+  export type plan_inputs_statusUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_inputs_statuses.
+     */
+    data: XOR<plan_inputs_statusUpdateManyMutationInput, plan_inputs_statusUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_inputs_statuses to update
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * Limit how many plan_inputs_statuses to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_inputs_status upsert
+   */
+  export type plan_inputs_statusUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_inputs_status to update in case it exists.
+     */
+    where: plan_inputs_statusWhereUniqueInput
+    /**
+     * In case the plan_inputs_status found by the `where` argument doesn't exist, create a new plan_inputs_status with this data.
+     */
+    create: XOR<plan_inputs_statusCreateInput, plan_inputs_statusUncheckedCreateInput>
+    /**
+     * In case the plan_inputs_status was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_inputs_statusUpdateInput, plan_inputs_statusUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_inputs_status delete
+   */
+  export type plan_inputs_statusDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    /**
+     * Filter which plan_inputs_status to delete.
+     */
+    where: plan_inputs_statusWhereUniqueInput
+  }
+
+  /**
+   * plan_inputs_status deleteMany
+   */
+  export type plan_inputs_statusDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_inputs_statuses to delete
+     */
+    where?: plan_inputs_statusWhereInput
+    /**
+     * Limit how many plan_inputs_statuses to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_inputs_status without action
+   */
+  export type plan_inputs_statusDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plan_participants
+   */
+
+  export type AggregatePlan_participants = {
+    _count: Plan_participantsCountAggregateOutputType | null
+    _min: Plan_participantsMinAggregateOutputType | null
+    _max: Plan_participantsMaxAggregateOutputType | null
+  }
+
+  export type Plan_participantsMinAggregateOutputType = {
+    plan_id: string | null
+    user_id: string | null
+  }
+
+  export type Plan_participantsMaxAggregateOutputType = {
+    plan_id: string | null
+    user_id: string | null
+  }
+
+  export type Plan_participantsCountAggregateOutputType = {
+    plan_id: number
+    user_id: number
+    permission: number
+    _all: number
+  }
+
+
+  export type Plan_participantsMinAggregateInputType = {
+    plan_id?: true
+    user_id?: true
+  }
+
+  export type Plan_participantsMaxAggregateInputType = {
+    plan_id?: true
+    user_id?: true
+  }
+
+  export type Plan_participantsCountAggregateInputType = {
+    plan_id?: true
+    user_id?: true
+    permission?: true
+    _all?: true
+  }
+
+  export type Plan_participantsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_participants to aggregate.
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_participants to fetch.
+     */
+    orderBy?: plan_participantsOrderByWithRelationInput | plan_participantsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plan_participantsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_participants from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_participants.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plan_participants
+    **/
+    _count?: true | Plan_participantsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Plan_participantsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Plan_participantsMaxAggregateInputType
+  }
+
+  export type GetPlan_participantsAggregateType<T extends Plan_participantsAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlan_participants]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlan_participants[P]>
+      : GetScalarType<T[P], AggregatePlan_participants[P]>
+  }
+
+
+
+
+  export type plan_participantsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plan_participantsWhereInput
+    orderBy?: plan_participantsOrderByWithAggregationInput | plan_participantsOrderByWithAggregationInput[]
+    by: Plan_participantsScalarFieldEnum[] | Plan_participantsScalarFieldEnum
+    having?: plan_participantsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Plan_participantsCountAggregateInputType | true
+    _min?: Plan_participantsMinAggregateInputType
+    _max?: Plan_participantsMaxAggregateInputType
+  }
+
+  export type Plan_participantsGroupByOutputType = {
+    plan_id: string
+    user_id: string
+    permission: string[]
+    _count: Plan_participantsCountAggregateOutputType | null
+    _min: Plan_participantsMinAggregateOutputType | null
+    _max: Plan_participantsMaxAggregateOutputType | null
+  }
+
+  type GetPlan_participantsGroupByPayload<T extends plan_participantsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Plan_participantsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Plan_participantsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Plan_participantsGroupByOutputType[P]>
+            : GetScalarType<T[P], Plan_participantsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plan_participantsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    user_id?: boolean
+    permission?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_participants"]>
+
+  export type plan_participantsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    user_id?: boolean
+    permission?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_participants"]>
+
+  export type plan_participantsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    plan_id?: boolean
+    user_id?: boolean
+    permission?: boolean
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plan_participants"]>
+
+  export type plan_participantsSelectScalar = {
+    plan_id?: boolean
+    user_id?: boolean
+    permission?: boolean
+  }
+
+  export type plan_participantsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "user_id" | "permission", ExtArgs["result"]["plan_participants"]>
+  export type plan_participantsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }
+  export type plan_participantsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }
+  export type plan_participantsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plans?: boolean | plansDefaultArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }
+
+  export type $plan_participantsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plan_participants"
+    objects: {
+      plans: Prisma.$plansPayload<ExtArgs>
+      users: Prisma.$usersPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      plan_id: string
+      user_id: string
+      permission: string[]
+    }, ExtArgs["result"]["plan_participants"]>
+    composites: {}
+  }
+
+  type plan_participantsGetPayload<S extends boolean | null | undefined | plan_participantsDefaultArgs> = $Result.GetResult<Prisma.$plan_participantsPayload, S>
+
+  type plan_participantsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plan_participantsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Plan_participantsCountAggregateInputType | true
+    }
+
+  export interface plan_participantsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_participants'], meta: { name: 'plan_participants' } }
+    /**
+     * Find zero or one Plan_participants that matches the filter.
+     * @param {plan_participantsFindUniqueArgs} args - Arguments to find a Plan_participants
+     * @example
+     * // Get one Plan_participants
+     * const plan_participants = await prisma.plan_participants.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plan_participantsFindUniqueArgs>(args: SelectSubset<T, plan_participantsFindUniqueArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plan_participants that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plan_participantsFindUniqueOrThrowArgs} args - Arguments to find a Plan_participants
+     * @example
+     * // Get one Plan_participants
+     * const plan_participants = await prisma.plan_participants.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plan_participantsFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_participantsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_participants that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_participantsFindFirstArgs} args - Arguments to find a Plan_participants
+     * @example
+     * // Get one Plan_participants
+     * const plan_participants = await prisma.plan_participants.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plan_participantsFindFirstArgs>(args?: SelectSubset<T, plan_participantsFindFirstArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plan_participants that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_participantsFindFirstOrThrowArgs} args - Arguments to find a Plan_participants
+     * @example
+     * // Get one Plan_participants
+     * const plan_participants = await prisma.plan_participants.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plan_participantsFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_participantsFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plan_participants that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_participantsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plan_participants
+     * const plan_participants = await prisma.plan_participants.findMany()
+     * 
+     * // Get first 10 Plan_participants
+     * const plan_participants = await prisma.plan_participants.findMany({ take: 10 })
+     * 
+     * // Only select the `plan_id`
+     * const plan_participantsWithPlan_idOnly = await prisma.plan_participants.findMany({ select: { plan_id: true } })
+     * 
+     */
+    findMany<T extends plan_participantsFindManyArgs>(args?: SelectSubset<T, plan_participantsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plan_participants.
+     * @param {plan_participantsCreateArgs} args - Arguments to create a Plan_participants.
+     * @example
+     * // Create one Plan_participants
+     * const Plan_participants = await prisma.plan_participants.create({
+     *   data: {
+     *     // ... data to create a Plan_participants
+     *   }
+     * })
+     * 
+     */
+    create<T extends plan_participantsCreateArgs>(args: SelectSubset<T, plan_participantsCreateArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plan_participants.
+     * @param {plan_participantsCreateManyArgs} args - Arguments to create many Plan_participants.
+     * @example
+     * // Create many Plan_participants
+     * const plan_participants = await prisma.plan_participants.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plan_participantsCreateManyArgs>(args?: SelectSubset<T, plan_participantsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plan_participants and returns the data saved in the database.
+     * @param {plan_participantsCreateManyAndReturnArgs} args - Arguments to create many Plan_participants.
+     * @example
+     * // Create many Plan_participants
+     * const plan_participants = await prisma.plan_participants.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plan_participants and only return the `plan_id`
+     * const plan_participantsWithPlan_idOnly = await prisma.plan_participants.createManyAndReturn({
+     *   select: { plan_id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plan_participantsCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_participantsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plan_participants.
+     * @param {plan_participantsDeleteArgs} args - Arguments to delete one Plan_participants.
+     * @example
+     * // Delete one Plan_participants
+     * const Plan_participants = await prisma.plan_participants.delete({
+     *   where: {
+     *     // ... filter to delete one Plan_participants
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plan_participantsDeleteArgs>(args: SelectSubset<T, plan_participantsDeleteArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plan_participants.
+     * @param {plan_participantsUpdateArgs} args - Arguments to update one Plan_participants.
+     * @example
+     * // Update one Plan_participants
+     * const plan_participants = await prisma.plan_participants.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plan_participantsUpdateArgs>(args: SelectSubset<T, plan_participantsUpdateArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plan_participants.
+     * @param {plan_participantsDeleteManyArgs} args - Arguments to filter Plan_participants to delete.
+     * @example
+     * // Delete a few Plan_participants
+     * const { count } = await prisma.plan_participants.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plan_participantsDeleteManyArgs>(args?: SelectSubset<T, plan_participantsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_participants.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_participantsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plan_participants
+     * const plan_participants = await prisma.plan_participants.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plan_participantsUpdateManyArgs>(args: SelectSubset<T, plan_participantsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plan_participants and returns the data updated in the database.
+     * @param {plan_participantsUpdateManyAndReturnArgs} args - Arguments to update many Plan_participants.
+     * @example
+     * // Update many Plan_participants
+     * const plan_participants = await prisma.plan_participants.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plan_participants and only return the `plan_id`
+     * const plan_participantsWithPlan_idOnly = await prisma.plan_participants.updateManyAndReturn({
+     *   select: { plan_id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plan_participantsUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_participantsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plan_participants.
+     * @param {plan_participantsUpsertArgs} args - Arguments to update or create a Plan_participants.
+     * @example
+     * // Update or create a Plan_participants
+     * const plan_participants = await prisma.plan_participants.upsert({
+     *   create: {
+     *     // ... data to create a Plan_participants
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plan_participants we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plan_participantsUpsertArgs>(args: SelectSubset<T, plan_participantsUpsertArgs<ExtArgs>>): Prisma__plan_participantsClient<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plan_participants.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_participantsCountArgs} args - Arguments to filter Plan_participants to count.
+     * @example
+     * // Count the number of Plan_participants
+     * const count = await prisma.plan_participants.count({
+     *   where: {
+     *     // ... the filter for the Plan_participants we want to count
+     *   }
+     * })
+    **/
+    count<T extends plan_participantsCountArgs>(
+      args?: Subset<T, plan_participantsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Plan_participantsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plan_participants.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Plan_participantsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Plan_participantsAggregateArgs>(args: Subset<T, Plan_participantsAggregateArgs>): Prisma.PrismaPromise<GetPlan_participantsAggregateType<T>>
+
+    /**
+     * Group by Plan_participants.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plan_participantsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plan_participantsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plan_participantsGroupByArgs['orderBy'] }
+        : { orderBy?: plan_participantsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plan_participantsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_participantsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plan_participants model
+   */
+  readonly fields: plan_participantsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plan_participants.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plan_participantsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    users<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plan_participants model
+   */
+  interface plan_participantsFieldRefs {
+    readonly plan_id: FieldRef<"plan_participants", 'String'>
+    readonly user_id: FieldRef<"plan_participants", 'String'>
+    readonly permission: FieldRef<"plan_participants", 'String[]'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plan_participants findUnique
+   */
+  export type plan_participantsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_participants to fetch.
+     */
+    where: plan_participantsWhereUniqueInput
+  }
+
+  /**
+   * plan_participants findUniqueOrThrow
+   */
+  export type plan_participantsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_participants to fetch.
+     */
+    where: plan_participantsWhereUniqueInput
+  }
+
+  /**
+   * plan_participants findFirst
+   */
+  export type plan_participantsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_participants to fetch.
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_participants to fetch.
+     */
+    orderBy?: plan_participantsOrderByWithRelationInput | plan_participantsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_participants.
+     */
+    cursor?: plan_participantsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_participants from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_participants.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_participants.
+     */
+    distinct?: Plan_participantsScalarFieldEnum | Plan_participantsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_participants findFirstOrThrow
+   */
+  export type plan_participantsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_participants to fetch.
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_participants to fetch.
+     */
+    orderBy?: plan_participantsOrderByWithRelationInput | plan_participantsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plan_participants.
+     */
+    cursor?: plan_participantsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_participants from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_participants.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plan_participants.
+     */
+    distinct?: Plan_participantsScalarFieldEnum | Plan_participantsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_participants findMany
+   */
+  export type plan_participantsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * Filter, which plan_participants to fetch.
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plan_participants to fetch.
+     */
+    orderBy?: plan_participantsOrderByWithRelationInput | plan_participantsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plan_participants.
+     */
+    cursor?: plan_participantsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plan_participants from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plan_participants.
+     */
+    skip?: number
+    distinct?: Plan_participantsScalarFieldEnum | Plan_participantsScalarFieldEnum[]
+  }
+
+  /**
+   * plan_participants create
+   */
+  export type plan_participantsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plan_participants.
+     */
+    data: XOR<plan_participantsCreateInput, plan_participantsUncheckedCreateInput>
+  }
+
+  /**
+   * plan_participants createMany
+   */
+  export type plan_participantsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plan_participants.
+     */
+    data: plan_participantsCreateManyInput | plan_participantsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plan_participants createManyAndReturn
+   */
+  export type plan_participantsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * The data used to create many plan_participants.
+     */
+    data: plan_participantsCreateManyInput | plan_participantsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_participants update
+   */
+  export type plan_participantsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plan_participants.
+     */
+    data: XOR<plan_participantsUpdateInput, plan_participantsUncheckedUpdateInput>
+    /**
+     * Choose, which plan_participants to update.
+     */
+    where: plan_participantsWhereUniqueInput
+  }
+
+  /**
+   * plan_participants updateMany
+   */
+  export type plan_participantsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plan_participants.
+     */
+    data: XOR<plan_participantsUpdateManyMutationInput, plan_participantsUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_participants to update
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * Limit how many plan_participants to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_participants updateManyAndReturn
+   */
+  export type plan_participantsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * The data used to update plan_participants.
+     */
+    data: XOR<plan_participantsUpdateManyMutationInput, plan_participantsUncheckedUpdateManyInput>
+    /**
+     * Filter which plan_participants to update
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * Limit how many plan_participants to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plan_participants upsert
+   */
+  export type plan_participantsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plan_participants to update in case it exists.
+     */
+    where: plan_participantsWhereUniqueInput
+    /**
+     * In case the plan_participants found by the `where` argument doesn't exist, create a new plan_participants with this data.
+     */
+    create: XOR<plan_participantsCreateInput, plan_participantsUncheckedCreateInput>
+    /**
+     * In case the plan_participants was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plan_participantsUpdateInput, plan_participantsUncheckedUpdateInput>
+  }
+
+  /**
+   * plan_participants delete
+   */
+  export type plan_participantsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    /**
+     * Filter which plan_participants to delete.
+     */
+    where: plan_participantsWhereUniqueInput
+  }
+
+  /**
+   * plan_participants deleteMany
+   */
+  export type plan_participantsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plan_participants to delete
+     */
+    where?: plan_participantsWhereInput
+    /**
+     * Limit how many plan_participants to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plan_participants without action
+   */
+  export type plan_participantsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model plans
+   */
+
+  export type AggregatePlans = {
+    _count: PlansCountAggregateOutputType | null
+    _min: PlansMinAggregateOutputType | null
+    _max: PlansMaxAggregateOutputType | null
+  }
+
+  export type PlansMinAggregateOutputType = {
+    id: string | null
+    creator_id: string | null
+    title: string | null
+    target_date: Date | null
+    status: string | null
+    created_at: Date | null
+  }
+
+  export type PlansMaxAggregateOutputType = {
+    id: string | null
+    creator_id: string | null
+    title: string | null
+    target_date: Date | null
+    status: string | null
+    created_at: Date | null
+  }
+
+  export type PlansCountAggregateOutputType = {
+    id: number
+    creator_id: number
+    title: number
+    target_date: number
+    status: number
+    created_at: number
+    _all: number
+  }
+
+
+  export type PlansMinAggregateInputType = {
+    id?: true
+    creator_id?: true
+    title?: true
+    target_date?: true
+    status?: true
+    created_at?: true
+  }
+
+  export type PlansMaxAggregateInputType = {
+    id?: true
+    creator_id?: true
+    title?: true
+    target_date?: true
+    status?: true
+    created_at?: true
+  }
+
+  export type PlansCountAggregateInputType = {
+    id?: true
+    creator_id?: true
+    title?: true
+    target_date?: true
+    status?: true
+    created_at?: true
+    _all?: true
+  }
+
+  export type PlansAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plans to aggregate.
+     */
+    where?: plansWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plans to fetch.
+     */
+    orderBy?: plansOrderByWithRelationInput | plansOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: plansWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned plans
+    **/
+    _count?: true | PlansCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PlansMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PlansMaxAggregateInputType
+  }
+
+  export type GetPlansAggregateType<T extends PlansAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlans]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlans[P]>
+      : GetScalarType<T[P], AggregatePlans[P]>
+  }
+
+
+
+
+  export type plansGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: plansWhereInput
+    orderBy?: plansOrderByWithAggregationInput | plansOrderByWithAggregationInput[]
+    by: PlansScalarFieldEnum[] | PlansScalarFieldEnum
+    having?: plansScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PlansCountAggregateInputType | true
+    _min?: PlansMinAggregateInputType
+    _max?: PlansMaxAggregateInputType
+  }
+
+  export type PlansGroupByOutputType = {
+    id: string
+    creator_id: string
+    title: string
+    target_date: Date
+    status: string
+    created_at: Date
+    _count: PlansCountAggregateOutputType | null
+    _min: PlansMinAggregateOutputType | null
+    _max: PlansMaxAggregateOutputType | null
+  }
+
+  type GetPlansGroupByPayload<T extends plansGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PlansGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PlansGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PlansGroupByOutputType[P]>
+            : GetScalarType<T[P], PlansGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type plansSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    creator_id?: boolean
+    title?: boolean
+    target_date?: boolean
+    status?: boolean
+    created_at?: boolean
+    plan_inputs_airports?: boolean | plans$plan_inputs_airportsArgs<ExtArgs>
+    plan_inputs_analytics?: boolean | plans$plan_inputs_analyticsArgs<ExtArgs>
+    plan_inputs_resources_flight_scale_data?: boolean | plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>
+    plan_inputs_resources_flight_scales?: boolean | plans$plan_inputs_resources_flight_scalesArgs<ExtArgs>
+    plan_inputs_resources_workforce?: boolean | plans$plan_inputs_resources_workforceArgs<ExtArgs>
+    plan_inputs_status?: boolean | plans$plan_inputs_statusArgs<ExtArgs>
+    plan_participants?: boolean | plans$plan_participantsArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+    _count?: boolean | PlansCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plans"]>
+
+  export type plansSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    creator_id?: boolean
+    title?: boolean
+    target_date?: boolean
+    status?: boolean
+    created_at?: boolean
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plans"]>
+
+  export type plansSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    creator_id?: boolean
+    title?: boolean
+    target_date?: boolean
+    status?: boolean
+    created_at?: boolean
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["plans"]>
+
+  export type plansSelectScalar = {
+    id?: boolean
+    creator_id?: boolean
+    title?: boolean
+    target_date?: boolean
+    status?: boolean
+    created_at?: boolean
+  }
+
+  export type plansOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "creator_id" | "title" | "target_date" | "status" | "created_at", ExtArgs["result"]["plans"]>
+  export type plansInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    plan_inputs_airports?: boolean | plans$plan_inputs_airportsArgs<ExtArgs>
+    plan_inputs_analytics?: boolean | plans$plan_inputs_analyticsArgs<ExtArgs>
+    plan_inputs_resources_flight_scale_data?: boolean | plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>
+    plan_inputs_resources_flight_scales?: boolean | plans$plan_inputs_resources_flight_scalesArgs<ExtArgs>
+    plan_inputs_resources_workforce?: boolean | plans$plan_inputs_resources_workforceArgs<ExtArgs>
+    plan_inputs_status?: boolean | plans$plan_inputs_statusArgs<ExtArgs>
+    plan_participants?: boolean | plans$plan_participantsArgs<ExtArgs>
+    users?: boolean | usersDefaultArgs<ExtArgs>
+    _count?: boolean | PlansCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type plansIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }
+  export type plansIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    users?: boolean | usersDefaultArgs<ExtArgs>
+  }
+
+  export type $plansPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "plans"
+    objects: {
+      plan_inputs_airports: Prisma.$plan_inputs_airportsPayload<ExtArgs>[]
+      plan_inputs_analytics: Prisma.$plan_inputs_analyticsPayload<ExtArgs> | null
+      plan_inputs_resources_flight_scale_data: Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>[]
+      plan_inputs_resources_flight_scales: Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>[]
+      plan_inputs_resources_workforce: Prisma.$plan_inputs_resources_workforcePayload<ExtArgs> | null
+      plan_inputs_status: Prisma.$plan_inputs_statusPayload<ExtArgs> | null
+      plan_participants: Prisma.$plan_participantsPayload<ExtArgs>[]
+      users: Prisma.$usersPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      creator_id: string
+      title: string
+      target_date: Date
+      status: string
+      created_at: Date
+    }, ExtArgs["result"]["plans"]>
+    composites: {}
+  }
+
+  type plansGetPayload<S extends boolean | null | undefined | plansDefaultArgs> = $Result.GetResult<Prisma.$plansPayload, S>
+
+  type plansCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<plansFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PlansCountAggregateInputType | true
+    }
+
+  export interface plansDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plans'], meta: { name: 'plans' } }
+    /**
+     * Find zero or one Plans that matches the filter.
+     * @param {plansFindUniqueArgs} args - Arguments to find a Plans
+     * @example
+     * // Get one Plans
+     * const plans = await prisma.plans.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends plansFindUniqueArgs>(args: SelectSubset<T, plansFindUniqueArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Plans that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {plansFindUniqueOrThrowArgs} args - Arguments to find a Plans
+     * @example
+     * // Get one Plans
+     * const plans = await prisma.plans.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends plansFindUniqueOrThrowArgs>(args: SelectSubset<T, plansFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plans that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plansFindFirstArgs} args - Arguments to find a Plans
+     * @example
+     * // Get one Plans
+     * const plans = await prisma.plans.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends plansFindFirstArgs>(args?: SelectSubset<T, plansFindFirstArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Plans that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plansFindFirstOrThrowArgs} args - Arguments to find a Plans
+     * @example
+     * // Get one Plans
+     * const plans = await prisma.plans.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends plansFindFirstOrThrowArgs>(args?: SelectSubset<T, plansFindFirstOrThrowArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Plans that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plansFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Plans
+     * const plans = await prisma.plans.findMany()
+     * 
+     * // Get first 10 Plans
+     * const plans = await prisma.plans.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const plansWithIdOnly = await prisma.plans.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends plansFindManyArgs>(args?: SelectSubset<T, plansFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Plans.
+     * @param {plansCreateArgs} args - Arguments to create a Plans.
+     * @example
+     * // Create one Plans
+     * const Plans = await prisma.plans.create({
+     *   data: {
+     *     // ... data to create a Plans
+     *   }
+     * })
+     * 
+     */
+    create<T extends plansCreateArgs>(args: SelectSubset<T, plansCreateArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Plans.
+     * @param {plansCreateManyArgs} args - Arguments to create many Plans.
+     * @example
+     * // Create many Plans
+     * const plans = await prisma.plans.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends plansCreateManyArgs>(args?: SelectSubset<T, plansCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Plans and returns the data saved in the database.
+     * @param {plansCreateManyAndReturnArgs} args - Arguments to create many Plans.
+     * @example
+     * // Create many Plans
+     * const plans = await prisma.plans.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Plans and only return the `id`
+     * const plansWithIdOnly = await prisma.plans.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends plansCreateManyAndReturnArgs>(args?: SelectSubset<T, plansCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Plans.
+     * @param {plansDeleteArgs} args - Arguments to delete one Plans.
+     * @example
+     * // Delete one Plans
+     * const Plans = await prisma.plans.delete({
+     *   where: {
+     *     // ... filter to delete one Plans
+     *   }
+     * })
+     * 
+     */
+    delete<T extends plansDeleteArgs>(args: SelectSubset<T, plansDeleteArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Plans.
+     * @param {plansUpdateArgs} args - Arguments to update one Plans.
+     * @example
+     * // Update one Plans
+     * const plans = await prisma.plans.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends plansUpdateArgs>(args: SelectSubset<T, plansUpdateArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Plans.
+     * @param {plansDeleteManyArgs} args - Arguments to filter Plans to delete.
+     * @example
+     * // Delete a few Plans
+     * const { count } = await prisma.plans.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends plansDeleteManyArgs>(args?: SelectSubset<T, plansDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plansUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Plans
+     * const plans = await prisma.plans.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends plansUpdateManyArgs>(args: SelectSubset<T, plansUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Plans and returns the data updated in the database.
+     * @param {plansUpdateManyAndReturnArgs} args - Arguments to update many Plans.
+     * @example
+     * // Update many Plans
+     * const plans = await prisma.plans.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Plans and only return the `id`
+     * const plansWithIdOnly = await prisma.plans.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends plansUpdateManyAndReturnArgs>(args: SelectSubset<T, plansUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Plans.
+     * @param {plansUpsertArgs} args - Arguments to update or create a Plans.
+     * @example
+     * // Update or create a Plans
+     * const plans = await prisma.plans.upsert({
+     *   create: {
+     *     // ... data to create a Plans
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Plans we want to update
+     *   }
+     * })
+     */
+    upsert<T extends plansUpsertArgs>(args: SelectSubset<T, plansUpsertArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Plans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plansCountArgs} args - Arguments to filter Plans to count.
+     * @example
+     * // Count the number of Plans
+     * const count = await prisma.plans.count({
+     *   where: {
+     *     // ... the filter for the Plans we want to count
+     *   }
+     * })
+    **/
+    count<T extends plansCountArgs>(
+      args?: Subset<T, plansCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PlansCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Plans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlansAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PlansAggregateArgs>(args: Subset<T, PlansAggregateArgs>): Prisma.PrismaPromise<GetPlansAggregateType<T>>
+
+    /**
+     * Group by Plans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {plansGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends plansGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: plansGroupByArgs['orderBy'] }
+        : { orderBy?: plansGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, plansGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlansGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the plans model
+   */
+  readonly fields: plansFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for plans.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__plansClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    plan_inputs_airports<T extends plans$plan_inputs_airportsArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_airportsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    plan_inputs_analytics<T extends plans$plan_inputs_analyticsArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_analyticsArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    plan_inputs_resources_flight_scale_data<T extends plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    plan_inputs_resources_flight_scales<T extends plans$plan_inputs_resources_flight_scalesArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_resources_flight_scalesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    plan_inputs_resources_workforce<T extends plans$plan_inputs_resources_workforceArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_resources_workforceArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    plan_inputs_status<T extends plans$plan_inputs_statusArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_statusArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    plan_participants<T extends plans$plan_participantsArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_participantsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    users<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the plans model
+   */
+  interface plansFieldRefs {
+    readonly id: FieldRef<"plans", 'String'>
+    readonly creator_id: FieldRef<"plans", 'String'>
+    readonly title: FieldRef<"plans", 'String'>
+    readonly target_date: FieldRef<"plans", 'DateTime'>
+    readonly status: FieldRef<"plans", 'String'>
+    readonly created_at: FieldRef<"plans", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * plans findUnique
+   */
+  export type plansFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * Filter, which plans to fetch.
+     */
+    where: plansWhereUniqueInput
+  }
+
+  /**
+   * plans findUniqueOrThrow
+   */
+  export type plansFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * Filter, which plans to fetch.
+     */
+    where: plansWhereUniqueInput
+  }
+
+  /**
+   * plans findFirst
+   */
+  export type plansFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * Filter, which plans to fetch.
+     */
+    where?: plansWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plans to fetch.
+     */
+    orderBy?: plansOrderByWithRelationInput | plansOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plans.
+     */
+    cursor?: plansWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plans.
+     */
+    distinct?: PlansScalarFieldEnum | PlansScalarFieldEnum[]
+  }
+
+  /**
+   * plans findFirstOrThrow
+   */
+  export type plansFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * Filter, which plans to fetch.
+     */
+    where?: plansWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plans to fetch.
+     */
+    orderBy?: plansOrderByWithRelationInput | plansOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for plans.
+     */
+    cursor?: plansWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of plans.
+     */
+    distinct?: PlansScalarFieldEnum | PlansScalarFieldEnum[]
+  }
+
+  /**
+   * plans findMany
+   */
+  export type plansFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * Filter, which plans to fetch.
+     */
+    where?: plansWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of plans to fetch.
+     */
+    orderBy?: plansOrderByWithRelationInput | plansOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing plans.
+     */
+    cursor?: plansWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` plans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` plans.
+     */
+    skip?: number
+    distinct?: PlansScalarFieldEnum | PlansScalarFieldEnum[]
+  }
+
+  /**
+   * plans create
+   */
+  export type plansCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * The data needed to create a plans.
+     */
+    data: XOR<plansCreateInput, plansUncheckedCreateInput>
+  }
+
+  /**
+   * plans createMany
+   */
+  export type plansCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many plans.
+     */
+    data: plansCreateManyInput | plansCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * plans createManyAndReturn
+   */
+  export type plansCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * The data used to create many plans.
+     */
+    data: plansCreateManyInput | plansCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plans update
+   */
+  export type plansUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * The data needed to update a plans.
+     */
+    data: XOR<plansUpdateInput, plansUncheckedUpdateInput>
+    /**
+     * Choose, which plans to update.
+     */
+    where: plansWhereUniqueInput
+  }
+
+  /**
+   * plans updateMany
+   */
+  export type plansUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update plans.
+     */
+    data: XOR<plansUpdateManyMutationInput, plansUncheckedUpdateManyInput>
+    /**
+     * Filter which plans to update
+     */
+    where?: plansWhereInput
+    /**
+     * Limit how many plans to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * plans updateManyAndReturn
+   */
+  export type plansUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * The data used to update plans.
+     */
+    data: XOR<plansUpdateManyMutationInput, plansUncheckedUpdateManyInput>
+    /**
+     * Filter which plans to update
+     */
+    where?: plansWhereInput
+    /**
+     * Limit how many plans to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * plans upsert
+   */
+  export type plansUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * The filter to search for the plans to update in case it exists.
+     */
+    where: plansWhereUniqueInput
+    /**
+     * In case the plans found by the `where` argument doesn't exist, create a new plans with this data.
+     */
+    create: XOR<plansCreateInput, plansUncheckedCreateInput>
+    /**
+     * In case the plans was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<plansUpdateInput, plansUncheckedUpdateInput>
+  }
+
+  /**
+   * plans delete
+   */
+  export type plansDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+    /**
+     * Filter which plans to delete.
+     */
+    where: plansWhereUniqueInput
+  }
+
+  /**
+   * plans deleteMany
+   */
+  export type plansDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which plans to delete
+     */
+    where?: plansWhereInput
+    /**
+     * Limit how many plans to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * plans.plan_inputs_airports
+   */
+  export type plans$plan_inputs_airportsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_airports
+     */
+    select?: plan_inputs_airportsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_airports
+     */
+    omit?: plan_inputs_airportsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_airportsInclude<ExtArgs> | null
+    where?: plan_inputs_airportsWhereInput
+    orderBy?: plan_inputs_airportsOrderByWithRelationInput | plan_inputs_airportsOrderByWithRelationInput[]
+    cursor?: plan_inputs_airportsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_inputs_airportsScalarFieldEnum | Plan_inputs_airportsScalarFieldEnum[]
+  }
+
+  /**
+   * plans.plan_inputs_analytics
+   */
+  export type plans$plan_inputs_analyticsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_analytics
+     */
+    select?: plan_inputs_analyticsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_analytics
+     */
+    omit?: plan_inputs_analyticsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_analyticsInclude<ExtArgs> | null
+    where?: plan_inputs_analyticsWhereInput
+  }
+
+  /**
+   * plans.plan_inputs_resources_flight_scale_data
+   */
+  export type plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
+     */
+    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scale_data
+     */
+    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
+    where?: plan_inputs_resources_flight_scale_dataWhereInput
+    orderBy?: plan_inputs_resources_flight_scale_dataOrderByWithRelationInput | plan_inputs_resources_flight_scale_dataOrderByWithRelationInput[]
+    cursor?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_inputs_resources_flight_scale_dataScalarFieldEnum | Plan_inputs_resources_flight_scale_dataScalarFieldEnum[]
+  }
+
+  /**
+   * plans.plan_inputs_resources_flight_scales
+   */
+  export type plans$plan_inputs_resources_flight_scalesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
+     */
+    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_flight_scales
+     */
+    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
+    where?: plan_inputs_resources_flight_scalesWhereInput
+    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
+    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
+  }
+
+  /**
+   * plans.plan_inputs_resources_workforce
+   */
+  export type plans$plan_inputs_resources_workforceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_resources_workforce
+     */
+    select?: plan_inputs_resources_workforceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_resources_workforce
+     */
+    omit?: plan_inputs_resources_workforceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_resources_workforceInclude<ExtArgs> | null
+    where?: plan_inputs_resources_workforceWhereInput
+  }
+
+  /**
+   * plans.plan_inputs_status
+   */
+  export type plans$plan_inputs_statusArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_inputs_status
+     */
+    select?: plan_inputs_statusSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_inputs_status
+     */
+    omit?: plan_inputs_statusOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_inputs_statusInclude<ExtArgs> | null
+    where?: plan_inputs_statusWhereInput
+  }
+
+  /**
+   * plans.plan_participants
+   */
+  export type plans$plan_participantsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plan_participants
+     */
+    select?: plan_participantsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plan_participants
+     */
+    omit?: plan_participantsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plan_participantsInclude<ExtArgs> | null
+    where?: plan_participantsWhereInput
+    orderBy?: plan_participantsOrderByWithRelationInput | plan_participantsOrderByWithRelationInput[]
+    cursor?: plan_participantsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Plan_participantsScalarFieldEnum | Plan_participantsScalarFieldEnum[]
+  }
+
+  /**
+   * plans without action
+   */
+  export type plansDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the plans
+     */
+    select?: plansSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the plans
+     */
+    omit?: plansOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: plansInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -31465,6 +42375,112 @@ export namespace Prisma {
   };
 
   export type Plan_results_total_dataScalarFieldEnum = (typeof Plan_results_total_dataScalarFieldEnum)[keyof typeof Plan_results_total_dataScalarFieldEnum]
+
+
+  export const AirportsScalarFieldEnum: {
+    airport_code: 'airport_code',
+    airport_name: 'airport_name',
+    country: 'country'
+  };
+
+  export type AirportsScalarFieldEnum = (typeof AirportsScalarFieldEnum)[keyof typeof AirportsScalarFieldEnum]
+
+
+  export const Plan_inputs_airportsScalarFieldEnum: {
+    plan_id: 'plan_id',
+    airport_code: 'airport_code',
+    schedule_file_name: 'schedule_file_name',
+    schedule_file_path: 'schedule_file_path'
+  };
+
+  export type Plan_inputs_airportsScalarFieldEnum = (typeof Plan_inputs_airportsScalarFieldEnum)[keyof typeof Plan_inputs_airportsScalarFieldEnum]
+
+
+  export const Plan_inputs_analyticsScalarFieldEnum: {
+    plan_id: 'plan_id',
+    domestic_candidates_file_name: 'domestic_candidates_file_name',
+    domestic_candidates_file_path: 'domestic_candidates_file_path',
+    international_departure_candidates_file_name: 'international_departure_candidates_file_name',
+    international_departure_candidates_file_path: 'international_departure_candidates_file_path',
+    international_arrival_candidates_file_name: 'international_arrival_candidates_file_name',
+    international_arrival_candidates_file_path: 'international_arrival_candidates_file_path',
+    round_trip_normalization_file_name: 'round_trip_normalization_file_name',
+    round_trip_normalization_file_path: 'round_trip_normalization_file_path',
+    min_distribution_criteria_file_name: 'min_distribution_criteria_file_name',
+    min_distribution_criteria_file_path: 'min_distribution_criteria_file_path'
+  };
+
+  export type Plan_inputs_analyticsScalarFieldEnum = (typeof Plan_inputs_analyticsScalarFieldEnum)[keyof typeof Plan_inputs_analyticsScalarFieldEnum]
+
+
+  export const Plan_inputs_resources_flight_scale_dataScalarFieldEnum: {
+    plan_id: 'plan_id',
+    flight_scale: 'flight_scale',
+    airplne_cnt: 'airplne_cnt',
+    min_standby_airplane_cnt: 'min_standby_airplane_cnt',
+    seat_cnt: 'seat_cnt',
+    required_captain_cnt: 'required_captain_cnt',
+    required_sub_captain_cnt: 'required_sub_captain_cnt',
+    required_other_personnel_norm: 'required_other_personnel_norm',
+    required_pre_flight_hours: 'required_pre_flight_hours',
+    required_post_flight_hours: 'required_post_flight_hours',
+    min_required_revenue: 'min_required_revenue'
+  };
+
+  export type Plan_inputs_resources_flight_scale_dataScalarFieldEnum = (typeof Plan_inputs_resources_flight_scale_dataScalarFieldEnum)[keyof typeof Plan_inputs_resources_flight_scale_dataScalarFieldEnum]
+
+
+  export const Plan_inputs_resources_flight_scalesScalarFieldEnum: {
+    plan_id: 'plan_id',
+    flight_scale: 'flight_scale'
+  };
+
+  export type Plan_inputs_resources_flight_scalesScalarFieldEnum = (typeof Plan_inputs_resources_flight_scalesScalarFieldEnum)[keyof typeof Plan_inputs_resources_flight_scalesScalarFieldEnum]
+
+
+  export const Plan_inputs_resources_workforceScalarFieldEnum: {
+    plan_id: 'plan_id',
+    captain_cnt: 'captain_cnt',
+    sub_captain_cnt: 'sub_captain_cnt',
+    other_personnel_norm: 'other_personnel_norm'
+  };
+
+  export type Plan_inputs_resources_workforceScalarFieldEnum = (typeof Plan_inputs_resources_workforceScalarFieldEnum)[keyof typeof Plan_inputs_resources_workforceScalarFieldEnum]
+
+
+  export const Plan_inputs_statusScalarFieldEnum: {
+    plan_id: 'plan_id',
+    resources_workforce_status: 'resources_workforce_status',
+    resources_flight_scales_status: 'resources_flight_scales_status',
+    resources_flight_scale_data_status: 'resources_flight_scale_data_status',
+    analytics_flight_candidates_status: 'analytics_flight_candidates_status',
+    analytics_round_trip_normalization_status: 'analytics_round_trip_normalization_status',
+    analytics_min_distribution_criteria_status: 'analytics_min_distribution_criteria_status',
+    airports_schedule_data_status: 'airports_schedule_data_status'
+  };
+
+  export type Plan_inputs_statusScalarFieldEnum = (typeof Plan_inputs_statusScalarFieldEnum)[keyof typeof Plan_inputs_statusScalarFieldEnum]
+
+
+  export const Plan_participantsScalarFieldEnum: {
+    plan_id: 'plan_id',
+    user_id: 'user_id',
+    permission: 'permission'
+  };
+
+  export type Plan_participantsScalarFieldEnum = (typeof Plan_participantsScalarFieldEnum)[keyof typeof Plan_participantsScalarFieldEnum]
+
+
+  export const PlansScalarFieldEnum: {
+    id: 'id',
+    creator_id: 'creator_id',
+    title: 'title',
+    target_date: 'target_date',
+    status: 'status',
+    created_at: 'created_at'
+  };
+
+  export type PlansScalarFieldEnum = (typeof PlansScalarFieldEnum)[keyof typeof PlansScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -32757,6 +43773,8 @@ export namespace Prisma {
     one_time_tokens?: One_time_tokensListRelationFilter
     sessions?: SessionsListRelationFilter
     employees?: XOR<EmployeesNullableScalarRelationFilter, employeesWhereInput> | null
+    plan_participants?: Plan_participantsListRelationFilter
+    plans?: PlansListRelationFilter
   }
 
   export type usersOrderByWithRelationInput = {
@@ -32800,6 +43818,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensOrderByRelationAggregateInput
     sessions?: sessionsOrderByRelationAggregateInput
     employees?: employeesOrderByWithRelationInput
+    plan_participants?: plan_participantsOrderByRelationAggregateInput
+    plans?: plansOrderByRelationAggregateInput
   }
 
   export type usersWhereUniqueInput = Prisma.AtLeast<{
@@ -32846,6 +43866,8 @@ export namespace Prisma {
     one_time_tokens?: One_time_tokensListRelationFilter
     sessions?: SessionsListRelationFilter
     employees?: XOR<EmployeesNullableScalarRelationFilter, employeesWhereInput> | null
+    plan_participants?: Plan_participantsListRelationFilter
+    plans?: PlansListRelationFilter
   }, "id" | "phone">
 
   export type usersOrderByWithAggregationInput = {
@@ -33473,6 +44495,571 @@ export namespace Prisma {
     NOT?: plan_results_total_dataScalarWhereWithAggregatesInput | plan_results_total_dataScalarWhereWithAggregatesInput[]
     plan_id?: UuidWithAggregatesFilter<"plan_results_total_data"> | string
     data?: JsonWithAggregatesFilter<"plan_results_total_data">
+  }
+
+  export type airportsWhereInput = {
+    AND?: airportsWhereInput | airportsWhereInput[]
+    OR?: airportsWhereInput[]
+    NOT?: airportsWhereInput | airportsWhereInput[]
+    airport_code?: StringFilter<"airports"> | string
+    airport_name?: StringFilter<"airports"> | string
+    country?: StringFilter<"airports"> | string
+    plan_inputs_airports?: Plan_inputs_airportsListRelationFilter
+  }
+
+  export type airportsOrderByWithRelationInput = {
+    airport_code?: SortOrder
+    airport_name?: SortOrder
+    country?: SortOrder
+    plan_inputs_airports?: plan_inputs_airportsOrderByRelationAggregateInput
+  }
+
+  export type airportsWhereUniqueInput = Prisma.AtLeast<{
+    airport_code?: string
+    airport_name?: string
+    AND?: airportsWhereInput | airportsWhereInput[]
+    OR?: airportsWhereInput[]
+    NOT?: airportsWhereInput | airportsWhereInput[]
+    country?: StringFilter<"airports"> | string
+    plan_inputs_airports?: Plan_inputs_airportsListRelationFilter
+  }, "airport_code" | "airport_name">
+
+  export type airportsOrderByWithAggregationInput = {
+    airport_code?: SortOrder
+    airport_name?: SortOrder
+    country?: SortOrder
+    _count?: airportsCountOrderByAggregateInput
+    _max?: airportsMaxOrderByAggregateInput
+    _min?: airportsMinOrderByAggregateInput
+  }
+
+  export type airportsScalarWhereWithAggregatesInput = {
+    AND?: airportsScalarWhereWithAggregatesInput | airportsScalarWhereWithAggregatesInput[]
+    OR?: airportsScalarWhereWithAggregatesInput[]
+    NOT?: airportsScalarWhereWithAggregatesInput | airportsScalarWhereWithAggregatesInput[]
+    airport_code?: StringWithAggregatesFilter<"airports"> | string
+    airport_name?: StringWithAggregatesFilter<"airports"> | string
+    country?: StringWithAggregatesFilter<"airports"> | string
+  }
+
+  export type plan_inputs_airportsWhereInput = {
+    AND?: plan_inputs_airportsWhereInput | plan_inputs_airportsWhereInput[]
+    OR?: plan_inputs_airportsWhereInput[]
+    NOT?: plan_inputs_airportsWhereInput | plan_inputs_airportsWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_airports"> | string
+    airport_code?: StringFilter<"plan_inputs_airports"> | string
+    schedule_file_name?: StringNullableFilter<"plan_inputs_airports"> | string | null
+    schedule_file_path?: StringNullableFilter<"plan_inputs_airports"> | string | null
+    airports?: XOR<AirportsScalarRelationFilter, airportsWhereInput>
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }
+
+  export type plan_inputs_airportsOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    airport_code?: SortOrder
+    schedule_file_name?: SortOrderInput | SortOrder
+    schedule_file_path?: SortOrderInput | SortOrder
+    airports?: airportsOrderByWithRelationInput
+    plans?: plansOrderByWithRelationInput
+  }
+
+  export type plan_inputs_airportsWhereUniqueInput = Prisma.AtLeast<{
+    plan_id_airport_code?: plan_inputs_airportsPlan_idAirport_codeCompoundUniqueInput
+    AND?: plan_inputs_airportsWhereInput | plan_inputs_airportsWhereInput[]
+    OR?: plan_inputs_airportsWhereInput[]
+    NOT?: plan_inputs_airportsWhereInput | plan_inputs_airportsWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_airports"> | string
+    airport_code?: StringFilter<"plan_inputs_airports"> | string
+    schedule_file_name?: StringNullableFilter<"plan_inputs_airports"> | string | null
+    schedule_file_path?: StringNullableFilter<"plan_inputs_airports"> | string | null
+    airports?: XOR<AirportsScalarRelationFilter, airportsWhereInput>
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }, "plan_id_airport_code">
+
+  export type plan_inputs_airportsOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    airport_code?: SortOrder
+    schedule_file_name?: SortOrderInput | SortOrder
+    schedule_file_path?: SortOrderInput | SortOrder
+    _count?: plan_inputs_airportsCountOrderByAggregateInput
+    _max?: plan_inputs_airportsMaxOrderByAggregateInput
+    _min?: plan_inputs_airportsMinOrderByAggregateInput
+  }
+
+  export type plan_inputs_airportsScalarWhereWithAggregatesInput = {
+    AND?: plan_inputs_airportsScalarWhereWithAggregatesInput | plan_inputs_airportsScalarWhereWithAggregatesInput[]
+    OR?: plan_inputs_airportsScalarWhereWithAggregatesInput[]
+    NOT?: plan_inputs_airportsScalarWhereWithAggregatesInput | plan_inputs_airportsScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_inputs_airports"> | string
+    airport_code?: StringWithAggregatesFilter<"plan_inputs_airports"> | string
+    schedule_file_name?: StringNullableWithAggregatesFilter<"plan_inputs_airports"> | string | null
+    schedule_file_path?: StringNullableWithAggregatesFilter<"plan_inputs_airports"> | string | null
+  }
+
+  export type plan_inputs_analyticsWhereInput = {
+    AND?: plan_inputs_analyticsWhereInput | plan_inputs_analyticsWhereInput[]
+    OR?: plan_inputs_analyticsWhereInput[]
+    NOT?: plan_inputs_analyticsWhereInput | plan_inputs_analyticsWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_analytics"> | string
+    domestic_candidates_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    domestic_candidates_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_departure_candidates_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_departure_candidates_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_arrival_candidates_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_arrival_candidates_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    round_trip_normalization_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    round_trip_normalization_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    min_distribution_criteria_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    min_distribution_criteria_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }
+
+  export type plan_inputs_analyticsOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    domestic_candidates_file_name?: SortOrderInput | SortOrder
+    domestic_candidates_file_path?: SortOrderInput | SortOrder
+    international_departure_candidates_file_name?: SortOrderInput | SortOrder
+    international_departure_candidates_file_path?: SortOrderInput | SortOrder
+    international_arrival_candidates_file_name?: SortOrderInput | SortOrder
+    international_arrival_candidates_file_path?: SortOrderInput | SortOrder
+    round_trip_normalization_file_name?: SortOrderInput | SortOrder
+    round_trip_normalization_file_path?: SortOrderInput | SortOrder
+    min_distribution_criteria_file_name?: SortOrderInput | SortOrder
+    min_distribution_criteria_file_path?: SortOrderInput | SortOrder
+    plans?: plansOrderByWithRelationInput
+  }
+
+  export type plan_inputs_analyticsWhereUniqueInput = Prisma.AtLeast<{
+    plan_id?: string
+    AND?: plan_inputs_analyticsWhereInput | plan_inputs_analyticsWhereInput[]
+    OR?: plan_inputs_analyticsWhereInput[]
+    NOT?: plan_inputs_analyticsWhereInput | plan_inputs_analyticsWhereInput[]
+    domestic_candidates_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    domestic_candidates_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_departure_candidates_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_departure_candidates_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_arrival_candidates_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    international_arrival_candidates_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    round_trip_normalization_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    round_trip_normalization_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    min_distribution_criteria_file_name?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    min_distribution_criteria_file_path?: StringNullableFilter<"plan_inputs_analytics"> | string | null
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }, "plan_id">
+
+  export type plan_inputs_analyticsOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    domestic_candidates_file_name?: SortOrderInput | SortOrder
+    domestic_candidates_file_path?: SortOrderInput | SortOrder
+    international_departure_candidates_file_name?: SortOrderInput | SortOrder
+    international_departure_candidates_file_path?: SortOrderInput | SortOrder
+    international_arrival_candidates_file_name?: SortOrderInput | SortOrder
+    international_arrival_candidates_file_path?: SortOrderInput | SortOrder
+    round_trip_normalization_file_name?: SortOrderInput | SortOrder
+    round_trip_normalization_file_path?: SortOrderInput | SortOrder
+    min_distribution_criteria_file_name?: SortOrderInput | SortOrder
+    min_distribution_criteria_file_path?: SortOrderInput | SortOrder
+    _count?: plan_inputs_analyticsCountOrderByAggregateInput
+    _max?: plan_inputs_analyticsMaxOrderByAggregateInput
+    _min?: plan_inputs_analyticsMinOrderByAggregateInput
+  }
+
+  export type plan_inputs_analyticsScalarWhereWithAggregatesInput = {
+    AND?: plan_inputs_analyticsScalarWhereWithAggregatesInput | plan_inputs_analyticsScalarWhereWithAggregatesInput[]
+    OR?: plan_inputs_analyticsScalarWhereWithAggregatesInput[]
+    NOT?: plan_inputs_analyticsScalarWhereWithAggregatesInput | plan_inputs_analyticsScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_inputs_analytics"> | string
+    domestic_candidates_file_name?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    domestic_candidates_file_path?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    international_departure_candidates_file_name?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    international_departure_candidates_file_path?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    international_arrival_candidates_file_name?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    international_arrival_candidates_file_path?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    round_trip_normalization_file_name?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    round_trip_normalization_file_path?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    min_distribution_criteria_file_name?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+    min_distribution_criteria_file_path?: StringNullableWithAggregatesFilter<"plan_inputs_analytics"> | string | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataWhereInput = {
+    AND?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
+    OR?: plan_inputs_resources_flight_scale_dataWhereInput[]
+    NOT?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
+    flight_scale?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
+    airplne_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    airplne_cnt?: SortOrderInput | SortOrder
+    min_standby_airplane_cnt?: SortOrderInput | SortOrder
+    seat_cnt?: SortOrderInput | SortOrder
+    required_captain_cnt?: SortOrderInput | SortOrder
+    required_sub_captain_cnt?: SortOrderInput | SortOrder
+    required_other_personnel_norm?: SortOrderInput | SortOrder
+    required_pre_flight_hours?: SortOrderInput | SortOrder
+    required_post_flight_hours?: SortOrderInput | SortOrder
+    min_required_revenue?: SortOrderInput | SortOrder
+    plans?: plansOrderByWithRelationInput
+  }
+
+  export type plan_inputs_resources_flight_scale_dataWhereUniqueInput = Prisma.AtLeast<{
+    plan_id_flight_scale?: plan_inputs_resources_flight_scale_dataPlan_idFlight_scaleCompoundUniqueInput
+    AND?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
+    OR?: plan_inputs_resources_flight_scale_dataWhereInput[]
+    NOT?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
+    flight_scale?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
+    airplne_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }, "plan_id_flight_scale">
+
+  export type plan_inputs_resources_flight_scale_dataOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    airplne_cnt?: SortOrderInput | SortOrder
+    min_standby_airplane_cnt?: SortOrderInput | SortOrder
+    seat_cnt?: SortOrderInput | SortOrder
+    required_captain_cnt?: SortOrderInput | SortOrder
+    required_sub_captain_cnt?: SortOrderInput | SortOrder
+    required_other_personnel_norm?: SortOrderInput | SortOrder
+    required_pre_flight_hours?: SortOrderInput | SortOrder
+    required_post_flight_hours?: SortOrderInput | SortOrder
+    min_required_revenue?: SortOrderInput | SortOrder
+    _count?: plan_inputs_resources_flight_scale_dataCountOrderByAggregateInput
+    _avg?: plan_inputs_resources_flight_scale_dataAvgOrderByAggregateInput
+    _max?: plan_inputs_resources_flight_scale_dataMaxOrderByAggregateInput
+    _min?: plan_inputs_resources_flight_scale_dataMinOrderByAggregateInput
+    _sum?: plan_inputs_resources_flight_scale_dataSumOrderByAggregateInput
+  }
+
+  export type plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput = {
+    AND?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput[]
+    OR?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput[]
+    NOT?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
+    flight_scale?: StringWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
+    airplne_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_standby_airplane_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    seat_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_sub_captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_other_personnel_norm?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_hours?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_hours?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_required_revenue?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scalesWhereInput = {
+    AND?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
+    OR?: plan_inputs_resources_flight_scalesWhereInput[]
+    NOT?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
+    flight_scale?: StringFilter<"plan_inputs_resources_flight_scales"> | string
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }
+
+  export type plan_inputs_resources_flight_scalesOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    plans?: plansOrderByWithRelationInput
+  }
+
+  export type plan_inputs_resources_flight_scalesWhereUniqueInput = Prisma.AtLeast<{
+    plan_id_flight_scale?: plan_inputs_resources_flight_scalesPlan_idFlight_scaleCompoundUniqueInput
+    AND?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
+    OR?: plan_inputs_resources_flight_scalesWhereInput[]
+    NOT?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
+    flight_scale?: StringFilter<"plan_inputs_resources_flight_scales"> | string
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }, "plan_id_flight_scale">
+
+  export type plan_inputs_resources_flight_scalesOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    _count?: plan_inputs_resources_flight_scalesCountOrderByAggregateInput
+    _max?: plan_inputs_resources_flight_scalesMaxOrderByAggregateInput
+    _min?: plan_inputs_resources_flight_scalesMinOrderByAggregateInput
+  }
+
+  export type plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput = {
+    AND?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput[]
+    OR?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput[]
+    NOT?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scales"> | string
+    flight_scale?: StringWithAggregatesFilter<"plan_inputs_resources_flight_scales"> | string
+  }
+
+  export type plan_inputs_resources_workforceWhereInput = {
+    AND?: plan_inputs_resources_workforceWhereInput | plan_inputs_resources_workforceWhereInput[]
+    OR?: plan_inputs_resources_workforceWhereInput[]
+    NOT?: plan_inputs_resources_workforceWhereInput | plan_inputs_resources_workforceWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_workforce"> | string
+    captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }
+
+  export type plan_inputs_resources_workforceOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    captain_cnt?: SortOrderInput | SortOrder
+    sub_captain_cnt?: SortOrderInput | SortOrder
+    other_personnel_norm?: SortOrderInput | SortOrder
+    plans?: plansOrderByWithRelationInput
+  }
+
+  export type plan_inputs_resources_workforceWhereUniqueInput = Prisma.AtLeast<{
+    plan_id?: string
+    AND?: plan_inputs_resources_workforceWhereInput | plan_inputs_resources_workforceWhereInput[]
+    OR?: plan_inputs_resources_workforceWhereInput[]
+    NOT?: plan_inputs_resources_workforceWhereInput | plan_inputs_resources_workforceWhereInput[]
+    captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }, "plan_id">
+
+  export type plan_inputs_resources_workforceOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    captain_cnt?: SortOrderInput | SortOrder
+    sub_captain_cnt?: SortOrderInput | SortOrder
+    other_personnel_norm?: SortOrderInput | SortOrder
+    _count?: plan_inputs_resources_workforceCountOrderByAggregateInput
+    _avg?: plan_inputs_resources_workforceAvgOrderByAggregateInput
+    _max?: plan_inputs_resources_workforceMaxOrderByAggregateInput
+    _min?: plan_inputs_resources_workforceMinOrderByAggregateInput
+    _sum?: plan_inputs_resources_workforceSumOrderByAggregateInput
+  }
+
+  export type plan_inputs_resources_workforceScalarWhereWithAggregatesInput = {
+    AND?: plan_inputs_resources_workforceScalarWhereWithAggregatesInput | plan_inputs_resources_workforceScalarWhereWithAggregatesInput[]
+    OR?: plan_inputs_resources_workforceScalarWhereWithAggregatesInput[]
+    NOT?: plan_inputs_resources_workforceScalarWhereWithAggregatesInput | plan_inputs_resources_workforceScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_inputs_resources_workforce"> | string
+    captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    sub_captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+    other_personnel_norm?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_workforce"> | bigint | number | null
+  }
+
+  export type plan_inputs_statusWhereInput = {
+    AND?: plan_inputs_statusWhereInput | plan_inputs_statusWhereInput[]
+    OR?: plan_inputs_statusWhereInput[]
+    NOT?: plan_inputs_statusWhereInput | plan_inputs_statusWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_status"> | string
+    resources_workforce_status?: StringFilter<"plan_inputs_status"> | string
+    resources_flight_scales_status?: BoolFilter<"plan_inputs_status"> | boolean
+    resources_flight_scale_data_status?: StringFilter<"plan_inputs_status"> | string
+    analytics_flight_candidates_status?: StringFilter<"plan_inputs_status"> | string
+    analytics_round_trip_normalization_status?: BoolFilter<"plan_inputs_status"> | boolean
+    analytics_min_distribution_criteria_status?: BoolFilter<"plan_inputs_status"> | boolean
+    airports_schedule_data_status?: StringFilter<"plan_inputs_status"> | string
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }
+
+  export type plan_inputs_statusOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    resources_workforce_status?: SortOrder
+    resources_flight_scales_status?: SortOrder
+    resources_flight_scale_data_status?: SortOrder
+    analytics_flight_candidates_status?: SortOrder
+    analytics_round_trip_normalization_status?: SortOrder
+    analytics_min_distribution_criteria_status?: SortOrder
+    airports_schedule_data_status?: SortOrder
+    plans?: plansOrderByWithRelationInput
+  }
+
+  export type plan_inputs_statusWhereUniqueInput = Prisma.AtLeast<{
+    plan_id?: string
+    AND?: plan_inputs_statusWhereInput | plan_inputs_statusWhereInput[]
+    OR?: plan_inputs_statusWhereInput[]
+    NOT?: plan_inputs_statusWhereInput | plan_inputs_statusWhereInput[]
+    resources_workforce_status?: StringFilter<"plan_inputs_status"> | string
+    resources_flight_scales_status?: BoolFilter<"plan_inputs_status"> | boolean
+    resources_flight_scale_data_status?: StringFilter<"plan_inputs_status"> | string
+    analytics_flight_candidates_status?: StringFilter<"plan_inputs_status"> | string
+    analytics_round_trip_normalization_status?: BoolFilter<"plan_inputs_status"> | boolean
+    analytics_min_distribution_criteria_status?: BoolFilter<"plan_inputs_status"> | boolean
+    airports_schedule_data_status?: StringFilter<"plan_inputs_status"> | string
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+  }, "plan_id">
+
+  export type plan_inputs_statusOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    resources_workforce_status?: SortOrder
+    resources_flight_scales_status?: SortOrder
+    resources_flight_scale_data_status?: SortOrder
+    analytics_flight_candidates_status?: SortOrder
+    analytics_round_trip_normalization_status?: SortOrder
+    analytics_min_distribution_criteria_status?: SortOrder
+    airports_schedule_data_status?: SortOrder
+    _count?: plan_inputs_statusCountOrderByAggregateInput
+    _max?: plan_inputs_statusMaxOrderByAggregateInput
+    _min?: plan_inputs_statusMinOrderByAggregateInput
+  }
+
+  export type plan_inputs_statusScalarWhereWithAggregatesInput = {
+    AND?: plan_inputs_statusScalarWhereWithAggregatesInput | plan_inputs_statusScalarWhereWithAggregatesInput[]
+    OR?: plan_inputs_statusScalarWhereWithAggregatesInput[]
+    NOT?: plan_inputs_statusScalarWhereWithAggregatesInput | plan_inputs_statusScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_inputs_status"> | string
+    resources_workforce_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
+    resources_flight_scales_status?: BoolWithAggregatesFilter<"plan_inputs_status"> | boolean
+    resources_flight_scale_data_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
+    analytics_flight_candidates_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
+    analytics_round_trip_normalization_status?: BoolWithAggregatesFilter<"plan_inputs_status"> | boolean
+    analytics_min_distribution_criteria_status?: BoolWithAggregatesFilter<"plan_inputs_status"> | boolean
+    airports_schedule_data_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
+  }
+
+  export type plan_participantsWhereInput = {
+    AND?: plan_participantsWhereInput | plan_participantsWhereInput[]
+    OR?: plan_participantsWhereInput[]
+    NOT?: plan_participantsWhereInput | plan_participantsWhereInput[]
+    plan_id?: UuidFilter<"plan_participants"> | string
+    user_id?: UuidFilter<"plan_participants"> | string
+    permission?: StringNullableListFilter<"plan_participants">
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
+  }
+
+  export type plan_participantsOrderByWithRelationInput = {
+    plan_id?: SortOrder
+    user_id?: SortOrder
+    permission?: SortOrder
+    plans?: plansOrderByWithRelationInput
+    users?: usersOrderByWithRelationInput
+  }
+
+  export type plan_participantsWhereUniqueInput = Prisma.AtLeast<{
+    plan_id_user_id?: plan_participantsPlan_idUser_idCompoundUniqueInput
+    AND?: plan_participantsWhereInput | plan_participantsWhereInput[]
+    OR?: plan_participantsWhereInput[]
+    NOT?: plan_participantsWhereInput | plan_participantsWhereInput[]
+    plan_id?: UuidFilter<"plan_participants"> | string
+    user_id?: UuidFilter<"plan_participants"> | string
+    permission?: StringNullableListFilter<"plan_participants">
+    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
+    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
+  }, "plan_id_user_id">
+
+  export type plan_participantsOrderByWithAggregationInput = {
+    plan_id?: SortOrder
+    user_id?: SortOrder
+    permission?: SortOrder
+    _count?: plan_participantsCountOrderByAggregateInput
+    _max?: plan_participantsMaxOrderByAggregateInput
+    _min?: plan_participantsMinOrderByAggregateInput
+  }
+
+  export type plan_participantsScalarWhereWithAggregatesInput = {
+    AND?: plan_participantsScalarWhereWithAggregatesInput | plan_participantsScalarWhereWithAggregatesInput[]
+    OR?: plan_participantsScalarWhereWithAggregatesInput[]
+    NOT?: plan_participantsScalarWhereWithAggregatesInput | plan_participantsScalarWhereWithAggregatesInput[]
+    plan_id?: UuidWithAggregatesFilter<"plan_participants"> | string
+    user_id?: UuidWithAggregatesFilter<"plan_participants"> | string
+    permission?: StringNullableListFilter<"plan_participants">
+  }
+
+  export type plansWhereInput = {
+    AND?: plansWhereInput | plansWhereInput[]
+    OR?: plansWhereInput[]
+    NOT?: plansWhereInput | plansWhereInput[]
+    id?: UuidFilter<"plans"> | string
+    creator_id?: UuidFilter<"plans"> | string
+    title?: StringFilter<"plans"> | string
+    target_date?: DateTimeFilter<"plans"> | Date | string
+    status?: StringFilter<"plans"> | string
+    created_at?: DateTimeFilter<"plans"> | Date | string
+    plan_inputs_airports?: Plan_inputs_airportsListRelationFilter
+    plan_inputs_analytics?: XOR<Plan_inputs_analyticsNullableScalarRelationFilter, plan_inputs_analyticsWhereInput> | null
+    plan_inputs_resources_flight_scale_data?: Plan_inputs_resources_flight_scale_dataListRelationFilter
+    plan_inputs_resources_flight_scales?: Plan_inputs_resources_flight_scalesListRelationFilter
+    plan_inputs_resources_workforce?: XOR<Plan_inputs_resources_workforceNullableScalarRelationFilter, plan_inputs_resources_workforceWhereInput> | null
+    plan_inputs_status?: XOR<Plan_inputs_statusNullableScalarRelationFilter, plan_inputs_statusWhereInput> | null
+    plan_participants?: Plan_participantsListRelationFilter
+    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
+  }
+
+  export type plansOrderByWithRelationInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    title?: SortOrder
+    target_date?: SortOrder
+    status?: SortOrder
+    created_at?: SortOrder
+    plan_inputs_airports?: plan_inputs_airportsOrderByRelationAggregateInput
+    plan_inputs_analytics?: plan_inputs_analyticsOrderByWithRelationInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataOrderByRelationAggregateInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesOrderByRelationAggregateInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceOrderByWithRelationInput
+    plan_inputs_status?: plan_inputs_statusOrderByWithRelationInput
+    plan_participants?: plan_participantsOrderByRelationAggregateInput
+    users?: usersOrderByWithRelationInput
+  }
+
+  export type plansWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: plansWhereInput | plansWhereInput[]
+    OR?: plansWhereInput[]
+    NOT?: plansWhereInput | plansWhereInput[]
+    creator_id?: UuidFilter<"plans"> | string
+    title?: StringFilter<"plans"> | string
+    target_date?: DateTimeFilter<"plans"> | Date | string
+    status?: StringFilter<"plans"> | string
+    created_at?: DateTimeFilter<"plans"> | Date | string
+    plan_inputs_airports?: Plan_inputs_airportsListRelationFilter
+    plan_inputs_analytics?: XOR<Plan_inputs_analyticsNullableScalarRelationFilter, plan_inputs_analyticsWhereInput> | null
+    plan_inputs_resources_flight_scale_data?: Plan_inputs_resources_flight_scale_dataListRelationFilter
+    plan_inputs_resources_flight_scales?: Plan_inputs_resources_flight_scalesListRelationFilter
+    plan_inputs_resources_workforce?: XOR<Plan_inputs_resources_workforceNullableScalarRelationFilter, plan_inputs_resources_workforceWhereInput> | null
+    plan_inputs_status?: XOR<Plan_inputs_statusNullableScalarRelationFilter, plan_inputs_statusWhereInput> | null
+    plan_participants?: Plan_participantsListRelationFilter
+    users?: XOR<UsersScalarRelationFilter, usersWhereInput>
+  }, "id">
+
+  export type plansOrderByWithAggregationInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    title?: SortOrder
+    target_date?: SortOrder
+    status?: SortOrder
+    created_at?: SortOrder
+    _count?: plansCountOrderByAggregateInput
+    _max?: plansMaxOrderByAggregateInput
+    _min?: plansMinOrderByAggregateInput
+  }
+
+  export type plansScalarWhereWithAggregatesInput = {
+    AND?: plansScalarWhereWithAggregatesInput | plansScalarWhereWithAggregatesInput[]
+    OR?: plansScalarWhereWithAggregatesInput[]
+    NOT?: plansScalarWhereWithAggregatesInput | plansScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"plans"> | string
+    creator_id?: UuidWithAggregatesFilter<"plans"> | string
+    title?: StringWithAggregatesFilter<"plans"> | string
+    target_date?: DateTimeWithAggregatesFilter<"plans"> | Date | string
+    status?: StringWithAggregatesFilter<"plans"> | string
+    created_at?: DateTimeWithAggregatesFilter<"plans"> | Date | string
   }
 
   export type audit_log_entriesCreateInput = {
@@ -34618,6 +46205,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
     sessions?: sessionsCreateNestedManyWithoutUsersInput
     employees?: employeesCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateInput = {
@@ -34661,6 +46250,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
     sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
     employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersUpdateInput = {
@@ -34704,6 +46295,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUpdateManyWithoutUsersNestedInput
     employees?: employeesUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateInput = {
@@ -34747,6 +46340,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
     employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type usersCreateManyInput = {
@@ -35424,6 +47019,581 @@ export namespace Prisma {
   export type plan_results_total_dataUncheckedUpdateManyInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
     data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type airportsCreateInput = {
+    airport_code: string
+    airport_name: string
+    country: string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutAirportsInput
+  }
+
+  export type airportsUncheckedCreateInput = {
+    airport_code: string
+    airport_name: string
+    country: string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutAirportsInput
+  }
+
+  export type airportsUpdateInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    airport_name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutAirportsNestedInput
+  }
+
+  export type airportsUncheckedUpdateInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    airport_name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutAirportsNestedInput
+  }
+
+  export type airportsCreateManyInput = {
+    airport_code: string
+    airport_name: string
+    country: string
+  }
+
+  export type airportsUpdateManyMutationInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    airport_name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type airportsUncheckedUpdateManyInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    airport_name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_airportsCreateInput = {
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+    airports: airportsCreateNestedOneWithoutPlan_inputs_airportsInput
+    plans: plansCreateNestedOneWithoutPlan_inputs_airportsInput
+  }
+
+  export type plan_inputs_airportsUncheckedCreateInput = {
+    plan_id: string
+    airport_code: string
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+  }
+
+  export type plan_inputs_airportsUpdateInput = {
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    airports?: airportsUpdateOneRequiredWithoutPlan_inputs_airportsNestedInput
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_airportsNestedInput
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    airport_code?: StringFieldUpdateOperationsInput | string
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_airportsCreateManyInput = {
+    plan_id: string
+    airport_code: string
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+  }
+
+  export type plan_inputs_airportsUpdateManyMutationInput = {
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    airport_code?: StringFieldUpdateOperationsInput | string
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_analyticsCreateInput = {
+    domestic_candidates_file_name?: string | null
+    domestic_candidates_file_path?: string | null
+    international_departure_candidates_file_name?: string | null
+    international_departure_candidates_file_path?: string | null
+    international_arrival_candidates_file_name?: string | null
+    international_arrival_candidates_file_path?: string | null
+    round_trip_normalization_file_name?: string | null
+    round_trip_normalization_file_path?: string | null
+    min_distribution_criteria_file_name?: string | null
+    min_distribution_criteria_file_path?: string | null
+    plans: plansCreateNestedOneWithoutPlan_inputs_analyticsInput
+  }
+
+  export type plan_inputs_analyticsUncheckedCreateInput = {
+    plan_id: string
+    domestic_candidates_file_name?: string | null
+    domestic_candidates_file_path?: string | null
+    international_departure_candidates_file_name?: string | null
+    international_departure_candidates_file_path?: string | null
+    international_arrival_candidates_file_name?: string | null
+    international_arrival_candidates_file_path?: string | null
+    round_trip_normalization_file_name?: string | null
+    round_trip_normalization_file_path?: string | null
+    min_distribution_criteria_file_name?: string | null
+    min_distribution_criteria_file_path?: string | null
+  }
+
+  export type plan_inputs_analyticsUpdateInput = {
+    domestic_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    domestic_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_analyticsNestedInput
+  }
+
+  export type plan_inputs_analyticsUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    domestic_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    domestic_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_analyticsCreateManyInput = {
+    plan_id: string
+    domestic_candidates_file_name?: string | null
+    domestic_candidates_file_path?: string | null
+    international_departure_candidates_file_name?: string | null
+    international_departure_candidates_file_path?: string | null
+    international_arrival_candidates_file_name?: string | null
+    international_arrival_candidates_file_path?: string | null
+    round_trip_normalization_file_name?: string | null
+    round_trip_normalization_file_path?: string | null
+    min_distribution_criteria_file_name?: string | null
+    min_distribution_criteria_file_path?: string | null
+  }
+
+  export type plan_inputs_analyticsUpdateManyMutationInput = {
+    domestic_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    domestic_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_analyticsUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    domestic_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    domestic_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateInput = {
+    flight_scale: string
+    airplne_cnt?: bigint | number | null
+    min_standby_airplane_cnt?: bigint | number | null
+    seat_cnt?: bigint | number | null
+    required_captain_cnt?: bigint | number | null
+    required_sub_captain_cnt?: bigint | number | null
+    required_other_personnel_norm?: bigint | number | null
+    required_pre_flight_hours?: bigint | number | null
+    required_post_flight_hours?: bigint | number | null
+    min_required_revenue?: bigint | number | null
+    plans: plansCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedCreateInput = {
+    plan_id: string
+    flight_scale: string
+    airplne_cnt?: bigint | number | null
+    min_standby_airplane_cnt?: bigint | number | null
+    seat_cnt?: bigint | number | null
+    required_captain_cnt?: bigint | number | null
+    required_sub_captain_cnt?: bigint | number | null
+    required_other_personnel_norm?: bigint | number | null
+    required_pre_flight_hours?: bigint | number | null
+    required_post_flight_hours?: bigint | number | null
+    min_required_revenue?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpdateInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateManyInput = {
+    plan_id: string
+    flight_scale: string
+    airplne_cnt?: bigint | number | null
+    min_standby_airplane_cnt?: bigint | number | null
+    seat_cnt?: bigint | number | null
+    required_captain_cnt?: bigint | number | null
+    required_sub_captain_cnt?: bigint | number | null
+    required_other_personnel_norm?: bigint | number | null
+    required_pre_flight_hours?: bigint | number | null
+    required_post_flight_hours?: bigint | number | null
+    min_required_revenue?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpdateManyMutationInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateInput = {
+    flight_scale: string
+    plans: plansCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedCreateInput = {
+    plan_id: string
+    flight_scale: string
+  }
+
+  export type plan_inputs_resources_flight_scalesUpdateInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scalesNestedInput
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    flight_scale?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateManyInput = {
+    plan_id: string
+    flight_scale: string
+  }
+
+  export type plan_inputs_resources_flight_scalesUpdateManyMutationInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    flight_scale?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_resources_workforceCreateInput = {
+    captain_cnt?: bigint | number | null
+    sub_captain_cnt?: bigint | number | null
+    other_personnel_norm?: bigint | number | null
+    plans: plansCreateNestedOneWithoutPlan_inputs_resources_workforceInput
+  }
+
+  export type plan_inputs_resources_workforceUncheckedCreateInput = {
+    plan_id: string
+    captain_cnt?: bigint | number | null
+    sub_captain_cnt?: bigint | number | null
+    other_personnel_norm?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceUpdateInput = {
+    captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_workforceNestedInput
+  }
+
+  export type plan_inputs_resources_workforceUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceCreateManyInput = {
+    plan_id: string
+    captain_cnt?: bigint | number | null
+    sub_captain_cnt?: bigint | number | null
+    other_personnel_norm?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceUpdateManyMutationInput = {
+    captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_statusCreateInput = {
+    resources_workforce_status?: string
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: string
+    analytics_flight_candidates_status?: string
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: string
+    plans: plansCreateNestedOneWithoutPlan_inputs_statusInput
+  }
+
+  export type plan_inputs_statusUncheckedCreateInput = {
+    plan_id: string
+    resources_workforce_status?: string
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: string
+    analytics_flight_candidates_status?: string
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: string
+  }
+
+  export type plan_inputs_statusUpdateInput = {
+    resources_workforce_status?: StringFieldUpdateOperationsInput | string
+    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
+    resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
+    analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
+    analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
+    analytics_min_distribution_criteria_status?: BoolFieldUpdateOperationsInput | boolean
+    airports_schedule_data_status?: StringFieldUpdateOperationsInput | string
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_statusNestedInput
+  }
+
+  export type plan_inputs_statusUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    resources_workforce_status?: StringFieldUpdateOperationsInput | string
+    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
+    resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
+    analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
+    analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
+    analytics_min_distribution_criteria_status?: BoolFieldUpdateOperationsInput | boolean
+    airports_schedule_data_status?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_statusCreateManyInput = {
+    plan_id: string
+    resources_workforce_status?: string
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: string
+    analytics_flight_candidates_status?: string
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: string
+  }
+
+  export type plan_inputs_statusUpdateManyMutationInput = {
+    resources_workforce_status?: StringFieldUpdateOperationsInput | string
+    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
+    resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
+    analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
+    analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
+    analytics_min_distribution_criteria_status?: BoolFieldUpdateOperationsInput | boolean
+    airports_schedule_data_status?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_statusUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    resources_workforce_status?: StringFieldUpdateOperationsInput | string
+    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
+    resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
+    analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
+    analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
+    analytics_min_distribution_criteria_status?: BoolFieldUpdateOperationsInput | boolean
+    airports_schedule_data_status?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_participantsCreateInput = {
+    permission?: plan_participantsCreatepermissionInput | string[]
+    plans: plansCreateNestedOneWithoutPlan_participantsInput
+    users: usersCreateNestedOneWithoutPlan_participantsInput
+  }
+
+  export type plan_participantsUncheckedCreateInput = {
+    plan_id: string
+    user_id: string
+    permission?: plan_participantsCreatepermissionInput | string[]
+  }
+
+  export type plan_participantsUpdateInput = {
+    permission?: plan_participantsUpdatepermissionInput | string[]
+    plans?: plansUpdateOneRequiredWithoutPlan_participantsNestedInput
+    users?: usersUpdateOneRequiredWithoutPlan_participantsNestedInput
+  }
+
+  export type plan_participantsUncheckedUpdateInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    user_id?: StringFieldUpdateOperationsInput | string
+    permission?: plan_participantsUpdatepermissionInput | string[]
+  }
+
+  export type plan_participantsCreateManyInput = {
+    plan_id: string
+    user_id: string
+    permission?: plan_participantsCreatepermissionInput | string[]
+  }
+
+  export type plan_participantsUpdateManyMutationInput = {
+    permission?: plan_participantsUpdatepermissionInput | string[]
+  }
+
+  export type plan_participantsUncheckedUpdateManyInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    user_id?: StringFieldUpdateOperationsInput | string
+    permission?: plan_participantsUpdatepermissionInput | string[]
+  }
+
+  export type plansCreateInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateManyInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+  }
+
+  export type plansUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type plansUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UuidNullableFilter<$PrismaModel = never> = {
@@ -36442,6 +48612,18 @@ export namespace Prisma {
     isNot?: employeesWhereInput | null
   }
 
+  export type Plan_participantsListRelationFilter = {
+    every?: plan_participantsWhereInput
+    some?: plan_participantsWhereInput
+    none?: plan_participantsWhereInput
+  }
+
+  export type PlansListRelationFilter = {
+    every?: plansWhereInput
+    some?: plansWhereInput
+    none?: plansWhereInput
+  }
+
   export type identitiesOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -36455,6 +48637,14 @@ export namespace Prisma {
   }
 
   export type sessionsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type plan_participantsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type plansOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -36972,6 +49162,352 @@ export namespace Prisma {
 
   export type plan_results_total_dataMinOrderByAggregateInput = {
     plan_id?: SortOrder
+  }
+
+  export type Plan_inputs_airportsListRelationFilter = {
+    every?: plan_inputs_airportsWhereInput
+    some?: plan_inputs_airportsWhereInput
+    none?: plan_inputs_airportsWhereInput
+  }
+
+  export type plan_inputs_airportsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type airportsCountOrderByAggregateInput = {
+    airport_code?: SortOrder
+    airport_name?: SortOrder
+    country?: SortOrder
+  }
+
+  export type airportsMaxOrderByAggregateInput = {
+    airport_code?: SortOrder
+    airport_name?: SortOrder
+    country?: SortOrder
+  }
+
+  export type airportsMinOrderByAggregateInput = {
+    airport_code?: SortOrder
+    airport_name?: SortOrder
+    country?: SortOrder
+  }
+
+  export type AirportsScalarRelationFilter = {
+    is?: airportsWhereInput
+    isNot?: airportsWhereInput
+  }
+
+  export type PlansScalarRelationFilter = {
+    is?: plansWhereInput
+    isNot?: plansWhereInput
+  }
+
+  export type plan_inputs_airportsPlan_idAirport_codeCompoundUniqueInput = {
+    plan_id: string
+    airport_code: string
+  }
+
+  export type plan_inputs_airportsCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    airport_code?: SortOrder
+    schedule_file_name?: SortOrder
+    schedule_file_path?: SortOrder
+  }
+
+  export type plan_inputs_airportsMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    airport_code?: SortOrder
+    schedule_file_name?: SortOrder
+    schedule_file_path?: SortOrder
+  }
+
+  export type plan_inputs_airportsMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    airport_code?: SortOrder
+    schedule_file_name?: SortOrder
+    schedule_file_path?: SortOrder
+  }
+
+  export type plan_inputs_analyticsCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    domestic_candidates_file_name?: SortOrder
+    domestic_candidates_file_path?: SortOrder
+    international_departure_candidates_file_name?: SortOrder
+    international_departure_candidates_file_path?: SortOrder
+    international_arrival_candidates_file_name?: SortOrder
+    international_arrival_candidates_file_path?: SortOrder
+    round_trip_normalization_file_name?: SortOrder
+    round_trip_normalization_file_path?: SortOrder
+    min_distribution_criteria_file_name?: SortOrder
+    min_distribution_criteria_file_path?: SortOrder
+  }
+
+  export type plan_inputs_analyticsMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    domestic_candidates_file_name?: SortOrder
+    domestic_candidates_file_path?: SortOrder
+    international_departure_candidates_file_name?: SortOrder
+    international_departure_candidates_file_path?: SortOrder
+    international_arrival_candidates_file_name?: SortOrder
+    international_arrival_candidates_file_path?: SortOrder
+    round_trip_normalization_file_name?: SortOrder
+    round_trip_normalization_file_path?: SortOrder
+    min_distribution_criteria_file_name?: SortOrder
+    min_distribution_criteria_file_path?: SortOrder
+  }
+
+  export type plan_inputs_analyticsMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    domestic_candidates_file_name?: SortOrder
+    domestic_candidates_file_path?: SortOrder
+    international_departure_candidates_file_name?: SortOrder
+    international_departure_candidates_file_path?: SortOrder
+    international_arrival_candidates_file_name?: SortOrder
+    international_arrival_candidates_file_path?: SortOrder
+    round_trip_normalization_file_name?: SortOrder
+    round_trip_normalization_file_path?: SortOrder
+    min_distribution_criteria_file_name?: SortOrder
+    min_distribution_criteria_file_path?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scale_dataPlan_idFlight_scaleCompoundUniqueInput = {
+    plan_id: string
+    flight_scale: string
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    airplne_cnt?: SortOrder
+    min_standby_airplane_cnt?: SortOrder
+    seat_cnt?: SortOrder
+    required_captain_cnt?: SortOrder
+    required_sub_captain_cnt?: SortOrder
+    required_other_personnel_norm?: SortOrder
+    required_pre_flight_hours?: SortOrder
+    required_post_flight_hours?: SortOrder
+    min_required_revenue?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scale_dataAvgOrderByAggregateInput = {
+    airplne_cnt?: SortOrder
+    min_standby_airplane_cnt?: SortOrder
+    seat_cnt?: SortOrder
+    required_captain_cnt?: SortOrder
+    required_sub_captain_cnt?: SortOrder
+    required_other_personnel_norm?: SortOrder
+    required_pre_flight_hours?: SortOrder
+    required_post_flight_hours?: SortOrder
+    min_required_revenue?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scale_dataMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    airplne_cnt?: SortOrder
+    min_standby_airplane_cnt?: SortOrder
+    seat_cnt?: SortOrder
+    required_captain_cnt?: SortOrder
+    required_sub_captain_cnt?: SortOrder
+    required_other_personnel_norm?: SortOrder
+    required_pre_flight_hours?: SortOrder
+    required_post_flight_hours?: SortOrder
+    min_required_revenue?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scale_dataMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+    airplne_cnt?: SortOrder
+    min_standby_airplane_cnt?: SortOrder
+    seat_cnt?: SortOrder
+    required_captain_cnt?: SortOrder
+    required_sub_captain_cnt?: SortOrder
+    required_other_personnel_norm?: SortOrder
+    required_pre_flight_hours?: SortOrder
+    required_post_flight_hours?: SortOrder
+    min_required_revenue?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scale_dataSumOrderByAggregateInput = {
+    airplne_cnt?: SortOrder
+    min_standby_airplane_cnt?: SortOrder
+    seat_cnt?: SortOrder
+    required_captain_cnt?: SortOrder
+    required_sub_captain_cnt?: SortOrder
+    required_other_personnel_norm?: SortOrder
+    required_pre_flight_hours?: SortOrder
+    required_post_flight_hours?: SortOrder
+    min_required_revenue?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scalesPlan_idFlight_scaleCompoundUniqueInput = {
+    plan_id: string
+    flight_scale: string
+  }
+
+  export type plan_inputs_resources_flight_scalesCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scalesMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scalesMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    flight_scale?: SortOrder
+  }
+
+  export type plan_inputs_resources_workforceCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    captain_cnt?: SortOrder
+    sub_captain_cnt?: SortOrder
+    other_personnel_norm?: SortOrder
+  }
+
+  export type plan_inputs_resources_workforceAvgOrderByAggregateInput = {
+    captain_cnt?: SortOrder
+    sub_captain_cnt?: SortOrder
+    other_personnel_norm?: SortOrder
+  }
+
+  export type plan_inputs_resources_workforceMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    captain_cnt?: SortOrder
+    sub_captain_cnt?: SortOrder
+    other_personnel_norm?: SortOrder
+  }
+
+  export type plan_inputs_resources_workforceMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    captain_cnt?: SortOrder
+    sub_captain_cnt?: SortOrder
+    other_personnel_norm?: SortOrder
+  }
+
+  export type plan_inputs_resources_workforceSumOrderByAggregateInput = {
+    captain_cnt?: SortOrder
+    sub_captain_cnt?: SortOrder
+    other_personnel_norm?: SortOrder
+  }
+
+  export type plan_inputs_statusCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    resources_workforce_status?: SortOrder
+    resources_flight_scales_status?: SortOrder
+    resources_flight_scale_data_status?: SortOrder
+    analytics_flight_candidates_status?: SortOrder
+    analytics_round_trip_normalization_status?: SortOrder
+    analytics_min_distribution_criteria_status?: SortOrder
+    airports_schedule_data_status?: SortOrder
+  }
+
+  export type plan_inputs_statusMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    resources_workforce_status?: SortOrder
+    resources_flight_scales_status?: SortOrder
+    resources_flight_scale_data_status?: SortOrder
+    analytics_flight_candidates_status?: SortOrder
+    analytics_round_trip_normalization_status?: SortOrder
+    analytics_min_distribution_criteria_status?: SortOrder
+    airports_schedule_data_status?: SortOrder
+  }
+
+  export type plan_inputs_statusMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    resources_workforce_status?: SortOrder
+    resources_flight_scales_status?: SortOrder
+    resources_flight_scale_data_status?: SortOrder
+    analytics_flight_candidates_status?: SortOrder
+    analytics_round_trip_normalization_status?: SortOrder
+    analytics_min_distribution_criteria_status?: SortOrder
+    airports_schedule_data_status?: SortOrder
+  }
+
+  export type plan_participantsPlan_idUser_idCompoundUniqueInput = {
+    plan_id: string
+    user_id: string
+  }
+
+  export type plan_participantsCountOrderByAggregateInput = {
+    plan_id?: SortOrder
+    user_id?: SortOrder
+    permission?: SortOrder
+  }
+
+  export type plan_participantsMaxOrderByAggregateInput = {
+    plan_id?: SortOrder
+    user_id?: SortOrder
+  }
+
+  export type plan_participantsMinOrderByAggregateInput = {
+    plan_id?: SortOrder
+    user_id?: SortOrder
+  }
+
+  export type Plan_inputs_analyticsNullableScalarRelationFilter = {
+    is?: plan_inputs_analyticsWhereInput | null
+    isNot?: plan_inputs_analyticsWhereInput | null
+  }
+
+  export type Plan_inputs_resources_flight_scale_dataListRelationFilter = {
+    every?: plan_inputs_resources_flight_scale_dataWhereInput
+    some?: plan_inputs_resources_flight_scale_dataWhereInput
+    none?: plan_inputs_resources_flight_scale_dataWhereInput
+  }
+
+  export type Plan_inputs_resources_flight_scalesListRelationFilter = {
+    every?: plan_inputs_resources_flight_scalesWhereInput
+    some?: plan_inputs_resources_flight_scalesWhereInput
+    none?: plan_inputs_resources_flight_scalesWhereInput
+  }
+
+  export type Plan_inputs_resources_workforceNullableScalarRelationFilter = {
+    is?: plan_inputs_resources_workforceWhereInput | null
+    isNot?: plan_inputs_resources_workforceWhereInput | null
+  }
+
+  export type Plan_inputs_statusNullableScalarRelationFilter = {
+    is?: plan_inputs_statusWhereInput | null
+    isNot?: plan_inputs_statusWhereInput | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type plan_inputs_resources_flight_scalesOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type plansCountOrderByAggregateInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    title?: SortOrder
+    target_date?: SortOrder
+    status?: SortOrder
+    created_at?: SortOrder
+  }
+
+  export type plansMaxOrderByAggregateInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    title?: SortOrder
+    target_date?: SortOrder
+    status?: SortOrder
+    created_at?: SortOrder
+  }
+
+  export type plansMinOrderByAggregateInput = {
+    id?: SortOrder
+    creator_id?: SortOrder
+    title?: SortOrder
+    target_date?: SortOrder
+    status?: SortOrder
+    created_at?: SortOrder
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -37508,6 +50044,20 @@ export namespace Prisma {
     connect?: employeesWhereUniqueInput
   }
 
+  export type plan_participantsCreateNestedManyWithoutUsersInput = {
+    create?: XOR<plan_participantsCreateWithoutUsersInput, plan_participantsUncheckedCreateWithoutUsersInput> | plan_participantsCreateWithoutUsersInput[] | plan_participantsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutUsersInput | plan_participantsCreateOrConnectWithoutUsersInput[]
+    createMany?: plan_participantsCreateManyUsersInputEnvelope
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+  }
+
+  export type plansCreateNestedManyWithoutUsersInput = {
+    create?: XOR<plansCreateWithoutUsersInput, plansUncheckedCreateWithoutUsersInput> | plansCreateWithoutUsersInput[] | plansUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plansCreateOrConnectWithoutUsersInput | plansCreateOrConnectWithoutUsersInput[]
+    createMany?: plansCreateManyUsersInputEnvelope
+    connect?: plansWhereUniqueInput | plansWhereUniqueInput[]
+  }
+
   export type identitiesUncheckedCreateNestedManyWithoutUsersInput = {
     create?: XOR<identitiesCreateWithoutUsersInput, identitiesUncheckedCreateWithoutUsersInput> | identitiesCreateWithoutUsersInput[] | identitiesUncheckedCreateWithoutUsersInput[]
     connectOrCreate?: identitiesCreateOrConnectWithoutUsersInput | identitiesCreateOrConnectWithoutUsersInput[]
@@ -37540,6 +50090,20 @@ export namespace Prisma {
     create?: XOR<employeesCreateWithoutUsersInput, employeesUncheckedCreateWithoutUsersInput>
     connectOrCreate?: employeesCreateOrConnectWithoutUsersInput
     connect?: employeesWhereUniqueInput
+  }
+
+  export type plan_participantsUncheckedCreateNestedManyWithoutUsersInput = {
+    create?: XOR<plan_participantsCreateWithoutUsersInput, plan_participantsUncheckedCreateWithoutUsersInput> | plan_participantsCreateWithoutUsersInput[] | plan_participantsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutUsersInput | plan_participantsCreateOrConnectWithoutUsersInput[]
+    createMany?: plan_participantsCreateManyUsersInputEnvelope
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+  }
+
+  export type plansUncheckedCreateNestedManyWithoutUsersInput = {
+    create?: XOR<plansCreateWithoutUsersInput, plansUncheckedCreateWithoutUsersInput> | plansCreateWithoutUsersInput[] | plansUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plansCreateOrConnectWithoutUsersInput | plansCreateOrConnectWithoutUsersInput[]
+    createMany?: plansCreateManyUsersInputEnvelope
+    connect?: plansWhereUniqueInput | plansWhereUniqueInput[]
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
@@ -37620,6 +50184,34 @@ export namespace Prisma {
     update?: XOR<XOR<employeesUpdateToOneWithWhereWithoutUsersInput, employeesUpdateWithoutUsersInput>, employeesUncheckedUpdateWithoutUsersInput>
   }
 
+  export type plan_participantsUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<plan_participantsCreateWithoutUsersInput, plan_participantsUncheckedCreateWithoutUsersInput> | plan_participantsCreateWithoutUsersInput[] | plan_participantsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutUsersInput | plan_participantsCreateOrConnectWithoutUsersInput[]
+    upsert?: plan_participantsUpsertWithWhereUniqueWithoutUsersInput | plan_participantsUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: plan_participantsCreateManyUsersInputEnvelope
+    set?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    disconnect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    delete?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    update?: plan_participantsUpdateWithWhereUniqueWithoutUsersInput | plan_participantsUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: plan_participantsUpdateManyWithWhereWithoutUsersInput | plan_participantsUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: plan_participantsScalarWhereInput | plan_participantsScalarWhereInput[]
+  }
+
+  export type plansUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<plansCreateWithoutUsersInput, plansUncheckedCreateWithoutUsersInput> | plansCreateWithoutUsersInput[] | plansUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plansCreateOrConnectWithoutUsersInput | plansCreateOrConnectWithoutUsersInput[]
+    upsert?: plansUpsertWithWhereUniqueWithoutUsersInput | plansUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: plansCreateManyUsersInputEnvelope
+    set?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    disconnect?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    delete?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    connect?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    update?: plansUpdateWithWhereUniqueWithoutUsersInput | plansUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: plansUpdateManyWithWhereWithoutUsersInput | plansUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: plansScalarWhereInput | plansScalarWhereInput[]
+  }
+
   export type identitiesUncheckedUpdateManyWithoutUsersNestedInput = {
     create?: XOR<identitiesCreateWithoutUsersInput, identitiesUncheckedCreateWithoutUsersInput> | identitiesCreateWithoutUsersInput[] | identitiesUncheckedCreateWithoutUsersInput[]
     connectOrCreate?: identitiesCreateOrConnectWithoutUsersInput | identitiesCreateOrConnectWithoutUsersInput[]
@@ -37684,6 +50276,34 @@ export namespace Prisma {
     delete?: employeesWhereInput | boolean
     connect?: employeesWhereUniqueInput
     update?: XOR<XOR<employeesUpdateToOneWithWhereWithoutUsersInput, employeesUpdateWithoutUsersInput>, employeesUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type plan_participantsUncheckedUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<plan_participantsCreateWithoutUsersInput, plan_participantsUncheckedCreateWithoutUsersInput> | plan_participantsCreateWithoutUsersInput[] | plan_participantsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutUsersInput | plan_participantsCreateOrConnectWithoutUsersInput[]
+    upsert?: plan_participantsUpsertWithWhereUniqueWithoutUsersInput | plan_participantsUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: plan_participantsCreateManyUsersInputEnvelope
+    set?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    disconnect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    delete?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    update?: plan_participantsUpdateWithWhereUniqueWithoutUsersInput | plan_participantsUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: plan_participantsUpdateManyWithWhereWithoutUsersInput | plan_participantsUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: plan_participantsScalarWhereInput | plan_participantsScalarWhereInput[]
+  }
+
+  export type plansUncheckedUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<plansCreateWithoutUsersInput, plansUncheckedCreateWithoutUsersInput> | plansCreateWithoutUsersInput[] | plansUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: plansCreateOrConnectWithoutUsersInput | plansCreateOrConnectWithoutUsersInput[]
+    upsert?: plansUpsertWithWhereUniqueWithoutUsersInput | plansUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: plansCreateManyUsersInputEnvelope
+    set?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    disconnect?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    delete?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    connect?: plansWhereUniqueInput | plansWhereUniqueInput[]
+    update?: plansUpdateWithWhereUniqueWithoutUsersInput | plansUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: plansUpdateManyWithWhereWithoutUsersInput | plansUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: plansScalarWhereInput | plansScalarWhereInput[]
   }
 
   export type usersCreateNestedOneWithoutEmployeesInput = {
@@ -38032,6 +50652,461 @@ export namespace Prisma {
     upsert?: plan_listUpsertWithoutPlan_results_total_dataInput
     connect?: plan_listWhereUniqueInput
     update?: XOR<XOR<plan_listUpdateToOneWithWhereWithoutPlan_results_total_dataInput, plan_listUpdateWithoutPlan_results_total_dataInput>, plan_listUncheckedUpdateWithoutPlan_results_total_dataInput>
+  }
+
+  export type plan_inputs_airportsCreateNestedManyWithoutAirportsInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutAirportsInput, plan_inputs_airportsUncheckedCreateWithoutAirportsInput> | plan_inputs_airportsCreateWithoutAirportsInput[] | plan_inputs_airportsUncheckedCreateWithoutAirportsInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutAirportsInput | plan_inputs_airportsCreateOrConnectWithoutAirportsInput[]
+    createMany?: plan_inputs_airportsCreateManyAirportsInputEnvelope
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+  }
+
+  export type plan_inputs_airportsUncheckedCreateNestedManyWithoutAirportsInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutAirportsInput, plan_inputs_airportsUncheckedCreateWithoutAirportsInput> | plan_inputs_airportsCreateWithoutAirportsInput[] | plan_inputs_airportsUncheckedCreateWithoutAirportsInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutAirportsInput | plan_inputs_airportsCreateOrConnectWithoutAirportsInput[]
+    createMany?: plan_inputs_airportsCreateManyAirportsInputEnvelope
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+  }
+
+  export type plan_inputs_airportsUpdateManyWithoutAirportsNestedInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutAirportsInput, plan_inputs_airportsUncheckedCreateWithoutAirportsInput> | plan_inputs_airportsCreateWithoutAirportsInput[] | plan_inputs_airportsUncheckedCreateWithoutAirportsInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutAirportsInput | plan_inputs_airportsCreateOrConnectWithoutAirportsInput[]
+    upsert?: plan_inputs_airportsUpsertWithWhereUniqueWithoutAirportsInput | plan_inputs_airportsUpsertWithWhereUniqueWithoutAirportsInput[]
+    createMany?: plan_inputs_airportsCreateManyAirportsInputEnvelope
+    set?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    disconnect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    delete?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    update?: plan_inputs_airportsUpdateWithWhereUniqueWithoutAirportsInput | plan_inputs_airportsUpdateWithWhereUniqueWithoutAirportsInput[]
+    updateMany?: plan_inputs_airportsUpdateManyWithWhereWithoutAirportsInput | plan_inputs_airportsUpdateManyWithWhereWithoutAirportsInput[]
+    deleteMany?: plan_inputs_airportsScalarWhereInput | plan_inputs_airportsScalarWhereInput[]
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateManyWithoutAirportsNestedInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutAirportsInput, plan_inputs_airportsUncheckedCreateWithoutAirportsInput> | plan_inputs_airportsCreateWithoutAirportsInput[] | plan_inputs_airportsUncheckedCreateWithoutAirportsInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutAirportsInput | plan_inputs_airportsCreateOrConnectWithoutAirportsInput[]
+    upsert?: plan_inputs_airportsUpsertWithWhereUniqueWithoutAirportsInput | plan_inputs_airportsUpsertWithWhereUniqueWithoutAirportsInput[]
+    createMany?: plan_inputs_airportsCreateManyAirportsInputEnvelope
+    set?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    disconnect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    delete?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    update?: plan_inputs_airportsUpdateWithWhereUniqueWithoutAirportsInput | plan_inputs_airportsUpdateWithWhereUniqueWithoutAirportsInput[]
+    updateMany?: plan_inputs_airportsUpdateManyWithWhereWithoutAirportsInput | plan_inputs_airportsUpdateManyWithWhereWithoutAirportsInput[]
+    deleteMany?: plan_inputs_airportsScalarWhereInput | plan_inputs_airportsScalarWhereInput[]
+  }
+
+  export type airportsCreateNestedOneWithoutPlan_inputs_airportsInput = {
+    create?: XOR<airportsCreateWithoutPlan_inputs_airportsInput, airportsUncheckedCreateWithoutPlan_inputs_airportsInput>
+    connectOrCreate?: airportsCreateOrConnectWithoutPlan_inputs_airportsInput
+    connect?: airportsWhereUniqueInput
+  }
+
+  export type plansCreateNestedOneWithoutPlan_inputs_airportsInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_airportsInput, plansUncheckedCreateWithoutPlan_inputs_airportsInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_airportsInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type airportsUpdateOneRequiredWithoutPlan_inputs_airportsNestedInput = {
+    create?: XOR<airportsCreateWithoutPlan_inputs_airportsInput, airportsUncheckedCreateWithoutPlan_inputs_airportsInput>
+    connectOrCreate?: airportsCreateOrConnectWithoutPlan_inputs_airportsInput
+    upsert?: airportsUpsertWithoutPlan_inputs_airportsInput
+    connect?: airportsWhereUniqueInput
+    update?: XOR<XOR<airportsUpdateToOneWithWhereWithoutPlan_inputs_airportsInput, airportsUpdateWithoutPlan_inputs_airportsInput>, airportsUncheckedUpdateWithoutPlan_inputs_airportsInput>
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_inputs_airportsNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_airportsInput, plansUncheckedCreateWithoutPlan_inputs_airportsInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_airportsInput
+    upsert?: plansUpsertWithoutPlan_inputs_airportsInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_airportsInput, plansUpdateWithoutPlan_inputs_airportsInput>, plansUncheckedUpdateWithoutPlan_inputs_airportsInput>
+  }
+
+  export type plansCreateNestedOneWithoutPlan_inputs_analyticsInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_analyticsInput, plansUncheckedCreateWithoutPlan_inputs_analyticsInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_analyticsInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_inputs_analyticsNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_analyticsInput, plansUncheckedCreateWithoutPlan_inputs_analyticsInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_analyticsInput
+    upsert?: plansUpsertWithoutPlan_inputs_analyticsInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_analyticsInput, plansUpdateWithoutPlan_inputs_analyticsInput>, plansUncheckedUpdateWithoutPlan_inputs_analyticsInput>
+  }
+
+  export type plansCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput
+    upsert?: plansUpsertWithoutPlan_inputs_resources_flight_scale_dataInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scale_dataInput, plansUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
+  }
+
+  export type plansCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scalesNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
+    upsert?: plansUpsertWithoutPlan_inputs_resources_flight_scalesInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput, plansUpdateWithoutPlan_inputs_resources_flight_scalesInput>, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
+  }
+
+  export type plansCreateNestedOneWithoutPlan_inputs_resources_workforceInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_resources_workforceInput, plansUncheckedCreateWithoutPlan_inputs_resources_workforceInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_workforceInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_inputs_resources_workforceNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_resources_workforceInput, plansUncheckedCreateWithoutPlan_inputs_resources_workforceInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_workforceInput
+    upsert?: plansUpsertWithoutPlan_inputs_resources_workforceInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_resources_workforceInput, plansUpdateWithoutPlan_inputs_resources_workforceInput>, plansUncheckedUpdateWithoutPlan_inputs_resources_workforceInput>
+  }
+
+  export type plansCreateNestedOneWithoutPlan_inputs_statusInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_statusInput, plansUncheckedCreateWithoutPlan_inputs_statusInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_statusInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_inputs_statusNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_inputs_statusInput, plansUncheckedCreateWithoutPlan_inputs_statusInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_statusInput
+    upsert?: plansUpsertWithoutPlan_inputs_statusInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_statusInput, plansUpdateWithoutPlan_inputs_statusInput>, plansUncheckedUpdateWithoutPlan_inputs_statusInput>
+  }
+
+  export type plan_participantsCreatepermissionInput = {
+    set: string[]
+  }
+
+  export type plansCreateNestedOneWithoutPlan_participantsInput = {
+    create?: XOR<plansCreateWithoutPlan_participantsInput, plansUncheckedCreateWithoutPlan_participantsInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_participantsInput
+    connect?: plansWhereUniqueInput
+  }
+
+  export type usersCreateNestedOneWithoutPlan_participantsInput = {
+    create?: XOR<usersCreateWithoutPlan_participantsInput, usersUncheckedCreateWithoutPlan_participantsInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPlan_participantsInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type plan_participantsUpdatepermissionInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type plansUpdateOneRequiredWithoutPlan_participantsNestedInput = {
+    create?: XOR<plansCreateWithoutPlan_participantsInput, plansUncheckedCreateWithoutPlan_participantsInput>
+    connectOrCreate?: plansCreateOrConnectWithoutPlan_participantsInput
+    upsert?: plansUpsertWithoutPlan_participantsInput
+    connect?: plansWhereUniqueInput
+    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_participantsInput, plansUpdateWithoutPlan_participantsInput>, plansUncheckedUpdateWithoutPlan_participantsInput>
+  }
+
+  export type usersUpdateOneRequiredWithoutPlan_participantsNestedInput = {
+    create?: XOR<usersCreateWithoutPlan_participantsInput, usersUncheckedCreateWithoutPlan_participantsInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPlan_participantsInput
+    upsert?: usersUpsertWithoutPlan_participantsInput
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutPlan_participantsInput, usersUpdateWithoutPlan_participantsInput>, usersUncheckedUpdateWithoutPlan_participantsInput>
+  }
+
+  export type plan_inputs_airportsCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutPlansInput, plan_inputs_airportsUncheckedCreateWithoutPlansInput> | plan_inputs_airportsCreateWithoutPlansInput[] | plan_inputs_airportsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutPlansInput | plan_inputs_airportsCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_inputs_airportsCreateManyPlansInputEnvelope
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+  }
+
+  export type plan_inputs_analyticsCreateNestedOneWithoutPlansInput = {
+    create?: XOR<plan_inputs_analyticsCreateWithoutPlansInput, plan_inputs_analyticsUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_analyticsCreateOrConnectWithoutPlansInput
+    connect?: plan_inputs_analyticsWhereUniqueInput
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput[] | plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope
+    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
+    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+  }
+
+  export type plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput = {
+    create?: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_resources_workforceCreateOrConnectWithoutPlansInput
+    connect?: plan_inputs_resources_workforceWhereUniqueInput
+  }
+
+  export type plan_inputs_statusCreateNestedOneWithoutPlansInput = {
+    create?: XOR<plan_inputs_statusCreateWithoutPlansInput, plan_inputs_statusUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_statusCreateOrConnectWithoutPlansInput
+    connect?: plan_inputs_statusWhereUniqueInput
+  }
+
+  export type plan_participantsCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_participantsCreateWithoutPlansInput, plan_participantsUncheckedCreateWithoutPlansInput> | plan_participantsCreateWithoutPlansInput[] | plan_participantsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutPlansInput | plan_participantsCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_participantsCreateManyPlansInputEnvelope
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+  }
+
+  export type usersCreateNestedOneWithoutPlansInput = {
+    create?: XOR<usersCreateWithoutPlansInput, usersUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPlansInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutPlansInput, plan_inputs_airportsUncheckedCreateWithoutPlansInput> | plan_inputs_airportsCreateWithoutPlansInput[] | plan_inputs_airportsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutPlansInput | plan_inputs_airportsCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_inputs_airportsCreateManyPlansInputEnvelope
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+  }
+
+  export type plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput = {
+    create?: XOR<plan_inputs_analyticsCreateWithoutPlansInput, plan_inputs_analyticsUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_analyticsCreateOrConnectWithoutPlansInput
+    connect?: plan_inputs_analyticsWhereUniqueInput
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput[] | plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope
+    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
+    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+  }
+
+  export type plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput = {
+    create?: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_resources_workforceCreateOrConnectWithoutPlansInput
+    connect?: plan_inputs_resources_workforceWhereUniqueInput
+  }
+
+  export type plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput = {
+    create?: XOR<plan_inputs_statusCreateWithoutPlansInput, plan_inputs_statusUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_statusCreateOrConnectWithoutPlansInput
+    connect?: plan_inputs_statusWhereUniqueInput
+  }
+
+  export type plan_participantsUncheckedCreateNestedManyWithoutPlansInput = {
+    create?: XOR<plan_participantsCreateWithoutPlansInput, plan_participantsUncheckedCreateWithoutPlansInput> | plan_participantsCreateWithoutPlansInput[] | plan_participantsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutPlansInput | plan_participantsCreateOrConnectWithoutPlansInput[]
+    createMany?: plan_participantsCreateManyPlansInputEnvelope
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+  }
+
+  export type plan_inputs_airportsUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutPlansInput, plan_inputs_airportsUncheckedCreateWithoutPlansInput> | plan_inputs_airportsCreateWithoutPlansInput[] | plan_inputs_airportsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutPlansInput | plan_inputs_airportsCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_inputs_airportsUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_airportsUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_inputs_airportsCreateManyPlansInputEnvelope
+    set?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    disconnect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    delete?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    update?: plan_inputs_airportsUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_airportsUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_inputs_airportsUpdateManyWithWhereWithoutPlansInput | plan_inputs_airportsUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_inputs_airportsScalarWhereInput | plan_inputs_airportsScalarWhereInput[]
+  }
+
+  export type plan_inputs_analyticsUpdateOneWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_analyticsCreateWithoutPlansInput, plan_inputs_analyticsUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_analyticsCreateOrConnectWithoutPlansInput
+    upsert?: plan_inputs_analyticsUpsertWithoutPlansInput
+    disconnect?: plan_inputs_analyticsWhereInput | boolean
+    delete?: plan_inputs_analyticsWhereInput | boolean
+    connect?: plan_inputs_analyticsWhereUniqueInput
+    update?: XOR<XOR<plan_inputs_analyticsUpdateToOneWithWhereWithoutPlansInput, plan_inputs_analyticsUpdateWithoutPlansInput>, plan_inputs_analyticsUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput[] | plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_inputs_resources_flight_scale_dataUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope
+    set?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    disconnect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    delete?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    update?: plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
+  }
+
+  export type plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
+    set?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    disconnect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    delete?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    update?: plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
+  }
+
+  export type plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_resources_workforceCreateOrConnectWithoutPlansInput
+    upsert?: plan_inputs_resources_workforceUpsertWithoutPlansInput
+    disconnect?: plan_inputs_resources_workforceWhereInput | boolean
+    delete?: plan_inputs_resources_workforceWhereInput | boolean
+    connect?: plan_inputs_resources_workforceWhereUniqueInput
+    update?: XOR<XOR<plan_inputs_resources_workforceUpdateToOneWithWhereWithoutPlansInput, plan_inputs_resources_workforceUpdateWithoutPlansInput>, plan_inputs_resources_workforceUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_statusUpdateOneWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_statusCreateWithoutPlansInput, plan_inputs_statusUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_statusCreateOrConnectWithoutPlansInput
+    upsert?: plan_inputs_statusUpsertWithoutPlansInput
+    disconnect?: plan_inputs_statusWhereInput | boolean
+    delete?: plan_inputs_statusWhereInput | boolean
+    connect?: plan_inputs_statusWhereUniqueInput
+    update?: XOR<XOR<plan_inputs_statusUpdateToOneWithWhereWithoutPlansInput, plan_inputs_statusUpdateWithoutPlansInput>, plan_inputs_statusUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_participantsUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_participantsCreateWithoutPlansInput, plan_participantsUncheckedCreateWithoutPlansInput> | plan_participantsCreateWithoutPlansInput[] | plan_participantsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutPlansInput | plan_participantsCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_participantsUpsertWithWhereUniqueWithoutPlansInput | plan_participantsUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_participantsCreateManyPlansInputEnvelope
+    set?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    disconnect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    delete?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    update?: plan_participantsUpdateWithWhereUniqueWithoutPlansInput | plan_participantsUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_participantsUpdateManyWithWhereWithoutPlansInput | plan_participantsUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_participantsScalarWhereInput | plan_participantsScalarWhereInput[]
+  }
+
+  export type usersUpdateOneRequiredWithoutPlansNestedInput = {
+    create?: XOR<usersCreateWithoutPlansInput, usersUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPlansInput
+    upsert?: usersUpsertWithoutPlansInput
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutPlansInput, usersUpdateWithoutPlansInput>, usersUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_airportsCreateWithoutPlansInput, plan_inputs_airportsUncheckedCreateWithoutPlansInput> | plan_inputs_airportsCreateWithoutPlansInput[] | plan_inputs_airportsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_airportsCreateOrConnectWithoutPlansInput | plan_inputs_airportsCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_inputs_airportsUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_airportsUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_inputs_airportsCreateManyPlansInputEnvelope
+    set?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    disconnect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    delete?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    connect?: plan_inputs_airportsWhereUniqueInput | plan_inputs_airportsWhereUniqueInput[]
+    update?: plan_inputs_airportsUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_airportsUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_inputs_airportsUpdateManyWithWhereWithoutPlansInput | plan_inputs_airportsUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_inputs_airportsScalarWhereInput | plan_inputs_airportsScalarWhereInput[]
+  }
+
+  export type plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_analyticsCreateWithoutPlansInput, plan_inputs_analyticsUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_analyticsCreateOrConnectWithoutPlansInput
+    upsert?: plan_inputs_analyticsUpsertWithoutPlansInput
+    disconnect?: plan_inputs_analyticsWhereInput | boolean
+    delete?: plan_inputs_analyticsWhereInput | boolean
+    connect?: plan_inputs_analyticsWhereUniqueInput
+    update?: XOR<XOR<plan_inputs_analyticsUpdateToOneWithWhereWithoutPlansInput, plan_inputs_analyticsUpdateWithoutPlansInput>, plan_inputs_analyticsUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput[] | plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_inputs_resources_flight_scale_dataUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope
+    set?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    disconnect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    delete?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
+    update?: plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
+    set?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    disconnect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    delete?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
+    update?: plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
+  }
+
+  export type plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_resources_workforceCreateOrConnectWithoutPlansInput
+    upsert?: plan_inputs_resources_workforceUpsertWithoutPlansInput
+    disconnect?: plan_inputs_resources_workforceWhereInput | boolean
+    delete?: plan_inputs_resources_workforceWhereInput | boolean
+    connect?: plan_inputs_resources_workforceWhereUniqueInput
+    update?: XOR<XOR<plan_inputs_resources_workforceUpdateToOneWithWhereWithoutPlansInput, plan_inputs_resources_workforceUpdateWithoutPlansInput>, plan_inputs_resources_workforceUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput = {
+    create?: XOR<plan_inputs_statusCreateWithoutPlansInput, plan_inputs_statusUncheckedCreateWithoutPlansInput>
+    connectOrCreate?: plan_inputs_statusCreateOrConnectWithoutPlansInput
+    upsert?: plan_inputs_statusUpsertWithoutPlansInput
+    disconnect?: plan_inputs_statusWhereInput | boolean
+    delete?: plan_inputs_statusWhereInput | boolean
+    connect?: plan_inputs_statusWhereUniqueInput
+    update?: XOR<XOR<plan_inputs_statusUpdateToOneWithWhereWithoutPlansInput, plan_inputs_statusUpdateWithoutPlansInput>, plan_inputs_statusUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_participantsUncheckedUpdateManyWithoutPlansNestedInput = {
+    create?: XOR<plan_participantsCreateWithoutPlansInput, plan_participantsUncheckedCreateWithoutPlansInput> | plan_participantsCreateWithoutPlansInput[] | plan_participantsUncheckedCreateWithoutPlansInput[]
+    connectOrCreate?: plan_participantsCreateOrConnectWithoutPlansInput | plan_participantsCreateOrConnectWithoutPlansInput[]
+    upsert?: plan_participantsUpsertWithWhereUniqueWithoutPlansInput | plan_participantsUpsertWithWhereUniqueWithoutPlansInput[]
+    createMany?: plan_participantsCreateManyPlansInputEnvelope
+    set?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    disconnect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    delete?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    connect?: plan_participantsWhereUniqueInput | plan_participantsWhereUniqueInput[]
+    update?: plan_participantsUpdateWithWhereUniqueWithoutPlansInput | plan_participantsUpdateWithWhereUniqueWithoutPlansInput[]
+    updateMany?: plan_participantsUpdateManyWithWhereWithoutPlansInput | plan_participantsUpdateManyWithWhereWithoutPlansInput[]
+    deleteMany?: plan_participantsScalarWhereInput | plan_participantsScalarWhereInput[]
   }
 
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
@@ -38600,6 +51675,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
     sessions?: sessionsCreateNestedManyWithoutUsersInput
     employees?: employeesCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateWithoutIdentitiesInput = {
@@ -38642,6 +51719,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
     sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
     employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersCreateOrConnectWithoutIdentitiesInput = {
@@ -38700,6 +51779,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUpdateManyWithoutUsersNestedInput
     employees?: employeesUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateWithoutIdentitiesInput = {
@@ -38742,6 +51823,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
     employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type sessionsCreateWithoutMfa_amr_claimsInput = {
@@ -38964,6 +52047,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
     sessions?: sessionsCreateNestedManyWithoutUsersInput
     employees?: employeesCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateWithoutMfa_factorsInput = {
@@ -39006,6 +52091,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
     sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
     employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersCreateOrConnectWithoutMfa_factorsInput = {
@@ -39093,6 +52180,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUpdateManyWithoutUsersNestedInput
     employees?: employeesUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateWithoutMfa_factorsInput = {
@@ -39135,6 +52224,8 @@ export namespace Prisma {
     one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
     employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type usersCreateWithoutOne_time_tokensInput = {
@@ -39177,6 +52268,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsCreateNestedManyWithoutUsersInput
     sessions?: sessionsCreateNestedManyWithoutUsersInput
     employees?: employeesCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateWithoutOne_time_tokensInput = {
@@ -39219,6 +52312,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUncheckedCreateNestedManyWithoutUsersInput
     sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
     employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersCreateOrConnectWithoutOne_time_tokensInput = {
@@ -39277,6 +52372,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUpdateManyWithoutUsersNestedInput
     employees?: employeesUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateWithoutOne_time_tokensInput = {
@@ -39319,6 +52416,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUncheckedUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
     employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type sessionsCreateWithoutRefresh_tokensInput = {
@@ -39681,6 +52780,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsCreateNestedManyWithoutUsersInput
     one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
     employees?: employeesCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateWithoutSessionsInput = {
@@ -39723,6 +52824,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUncheckedCreateNestedManyWithoutUsersInput
     one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
     employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersCreateOrConnectWithoutSessionsInput = {
@@ -39839,6 +52942,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUpdateManyWithoutUsersNestedInput
     one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
     employees?: employeesUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateWithoutSessionsInput = {
@@ -39881,6 +52986,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUncheckedUpdateManyWithoutUsersNestedInput
     one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
     employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type sso_providersCreateWithoutSso_domainsInput = {
@@ -40260,6 +53367,66 @@ export namespace Prisma {
     create: XOR<employeesCreateWithoutUsersInput, employeesUncheckedCreateWithoutUsersInput>
   }
 
+  export type plan_participantsCreateWithoutUsersInput = {
+    permission?: plan_participantsCreatepermissionInput | string[]
+    plans: plansCreateNestedOneWithoutPlan_participantsInput
+  }
+
+  export type plan_participantsUncheckedCreateWithoutUsersInput = {
+    plan_id: string
+    permission?: plan_participantsCreatepermissionInput | string[]
+  }
+
+  export type plan_participantsCreateOrConnectWithoutUsersInput = {
+    where: plan_participantsWhereUniqueInput
+    create: XOR<plan_participantsCreateWithoutUsersInput, plan_participantsUncheckedCreateWithoutUsersInput>
+  }
+
+  export type plan_participantsCreateManyUsersInputEnvelope = {
+    data: plan_participantsCreateManyUsersInput | plan_participantsCreateManyUsersInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type plansCreateWithoutUsersInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutUsersInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutUsersInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutUsersInput, plansUncheckedCreateWithoutUsersInput>
+  }
+
+  export type plansCreateManyUsersInputEnvelope = {
+    data: plansCreateManyUsersInput | plansCreateManyUsersInput[]
+    skipDuplicates?: boolean
+  }
+
   export type identitiesUpsertWithWhereUniqueWithoutUsersInput = {
     where: identitiesWhereUniqueInput
     update: XOR<identitiesUpdateWithoutUsersInput, identitiesUncheckedUpdateWithoutUsersInput>
@@ -40414,6 +53581,59 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
   }
 
+  export type plan_participantsUpsertWithWhereUniqueWithoutUsersInput = {
+    where: plan_participantsWhereUniqueInput
+    update: XOR<plan_participantsUpdateWithoutUsersInput, plan_participantsUncheckedUpdateWithoutUsersInput>
+    create: XOR<plan_participantsCreateWithoutUsersInput, plan_participantsUncheckedCreateWithoutUsersInput>
+  }
+
+  export type plan_participantsUpdateWithWhereUniqueWithoutUsersInput = {
+    where: plan_participantsWhereUniqueInput
+    data: XOR<plan_participantsUpdateWithoutUsersInput, plan_participantsUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type plan_participantsUpdateManyWithWhereWithoutUsersInput = {
+    where: plan_participantsScalarWhereInput
+    data: XOR<plan_participantsUpdateManyMutationInput, plan_participantsUncheckedUpdateManyWithoutUsersInput>
+  }
+
+  export type plan_participantsScalarWhereInput = {
+    AND?: plan_participantsScalarWhereInput | plan_participantsScalarWhereInput[]
+    OR?: plan_participantsScalarWhereInput[]
+    NOT?: plan_participantsScalarWhereInput | plan_participantsScalarWhereInput[]
+    plan_id?: UuidFilter<"plan_participants"> | string
+    user_id?: UuidFilter<"plan_participants"> | string
+    permission?: StringNullableListFilter<"plan_participants">
+  }
+
+  export type plansUpsertWithWhereUniqueWithoutUsersInput = {
+    where: plansWhereUniqueInput
+    update: XOR<plansUpdateWithoutUsersInput, plansUncheckedUpdateWithoutUsersInput>
+    create: XOR<plansCreateWithoutUsersInput, plansUncheckedCreateWithoutUsersInput>
+  }
+
+  export type plansUpdateWithWhereUniqueWithoutUsersInput = {
+    where: plansWhereUniqueInput
+    data: XOR<plansUpdateWithoutUsersInput, plansUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type plansUpdateManyWithWhereWithoutUsersInput = {
+    where: plansScalarWhereInput
+    data: XOR<plansUpdateManyMutationInput, plansUncheckedUpdateManyWithoutUsersInput>
+  }
+
+  export type plansScalarWhereInput = {
+    AND?: plansScalarWhereInput | plansScalarWhereInput[]
+    OR?: plansScalarWhereInput[]
+    NOT?: plansScalarWhereInput | plansScalarWhereInput[]
+    id?: UuidFilter<"plans"> | string
+    creator_id?: UuidFilter<"plans"> | string
+    title?: StringFilter<"plans"> | string
+    target_date?: DateTimeFilter<"plans"> | Date | string
+    status?: StringFilter<"plans"> | string
+    created_at?: DateTimeFilter<"plans"> | Date | string
+  }
+
   export type usersCreateWithoutEmployeesInput = {
     instance_id?: string | null
     id: string
@@ -40454,6 +53674,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsCreateNestedManyWithoutUsersInput
     one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
     sessions?: sessionsCreateNestedManyWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
   }
 
   export type usersUncheckedCreateWithoutEmployeesInput = {
@@ -40496,6 +53718,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUncheckedCreateNestedManyWithoutUsersInput
     one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
     sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type usersCreateOrConnectWithoutEmployeesInput = {
@@ -40554,6 +53778,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUpdateManyWithoutUsersNestedInput
     one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUpdateManyWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
   }
 
   export type usersUncheckedUpdateWithoutEmployeesInput = {
@@ -40596,6 +53822,8 @@ export namespace Prisma {
     mfa_factors?: mfa_factorsUncheckedUpdateManyWithoutUsersNestedInput
     one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
     sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type plan_notificationCreateWithoutPlan_listInput = {
@@ -41316,6 +54544,1359 @@ export namespace Prisma {
     plan_status?: plan_statusUncheckedUpdateOneWithoutPlan_listNestedInput
   }
 
+  export type plan_inputs_airportsCreateWithoutAirportsInput = {
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+    plans: plansCreateNestedOneWithoutPlan_inputs_airportsInput
+  }
+
+  export type plan_inputs_airportsUncheckedCreateWithoutAirportsInput = {
+    plan_id: string
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+  }
+
+  export type plan_inputs_airportsCreateOrConnectWithoutAirportsInput = {
+    where: plan_inputs_airportsWhereUniqueInput
+    create: XOR<plan_inputs_airportsCreateWithoutAirportsInput, plan_inputs_airportsUncheckedCreateWithoutAirportsInput>
+  }
+
+  export type plan_inputs_airportsCreateManyAirportsInputEnvelope = {
+    data: plan_inputs_airportsCreateManyAirportsInput | plan_inputs_airportsCreateManyAirportsInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type plan_inputs_airportsUpsertWithWhereUniqueWithoutAirportsInput = {
+    where: plan_inputs_airportsWhereUniqueInput
+    update: XOR<plan_inputs_airportsUpdateWithoutAirportsInput, plan_inputs_airportsUncheckedUpdateWithoutAirportsInput>
+    create: XOR<plan_inputs_airportsCreateWithoutAirportsInput, plan_inputs_airportsUncheckedCreateWithoutAirportsInput>
+  }
+
+  export type plan_inputs_airportsUpdateWithWhereUniqueWithoutAirportsInput = {
+    where: plan_inputs_airportsWhereUniqueInput
+    data: XOR<plan_inputs_airportsUpdateWithoutAirportsInput, plan_inputs_airportsUncheckedUpdateWithoutAirportsInput>
+  }
+
+  export type plan_inputs_airportsUpdateManyWithWhereWithoutAirportsInput = {
+    where: plan_inputs_airportsScalarWhereInput
+    data: XOR<plan_inputs_airportsUpdateManyMutationInput, plan_inputs_airportsUncheckedUpdateManyWithoutAirportsInput>
+  }
+
+  export type plan_inputs_airportsScalarWhereInput = {
+    AND?: plan_inputs_airportsScalarWhereInput | plan_inputs_airportsScalarWhereInput[]
+    OR?: plan_inputs_airportsScalarWhereInput[]
+    NOT?: plan_inputs_airportsScalarWhereInput | plan_inputs_airportsScalarWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_airports"> | string
+    airport_code?: StringFilter<"plan_inputs_airports"> | string
+    schedule_file_name?: StringNullableFilter<"plan_inputs_airports"> | string | null
+    schedule_file_path?: StringNullableFilter<"plan_inputs_airports"> | string | null
+  }
+
+  export type airportsCreateWithoutPlan_inputs_airportsInput = {
+    airport_code: string
+    airport_name: string
+    country: string
+  }
+
+  export type airportsUncheckedCreateWithoutPlan_inputs_airportsInput = {
+    airport_code: string
+    airport_name: string
+    country: string
+  }
+
+  export type airportsCreateOrConnectWithoutPlan_inputs_airportsInput = {
+    where: airportsWhereUniqueInput
+    create: XOR<airportsCreateWithoutPlan_inputs_airportsInput, airportsUncheckedCreateWithoutPlan_inputs_airportsInput>
+  }
+
+  export type plansCreateWithoutPlan_inputs_airportsInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_inputs_airportsInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_inputs_airportsInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_inputs_airportsInput, plansUncheckedCreateWithoutPlan_inputs_airportsInput>
+  }
+
+  export type airportsUpsertWithoutPlan_inputs_airportsInput = {
+    update: XOR<airportsUpdateWithoutPlan_inputs_airportsInput, airportsUncheckedUpdateWithoutPlan_inputs_airportsInput>
+    create: XOR<airportsCreateWithoutPlan_inputs_airportsInput, airportsUncheckedCreateWithoutPlan_inputs_airportsInput>
+    where?: airportsWhereInput
+  }
+
+  export type airportsUpdateToOneWithWhereWithoutPlan_inputs_airportsInput = {
+    where?: airportsWhereInput
+    data: XOR<airportsUpdateWithoutPlan_inputs_airportsInput, airportsUncheckedUpdateWithoutPlan_inputs_airportsInput>
+  }
+
+  export type airportsUpdateWithoutPlan_inputs_airportsInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    airport_name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type airportsUncheckedUpdateWithoutPlan_inputs_airportsInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    airport_name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plansUpsertWithoutPlan_inputs_airportsInput = {
+    update: XOR<plansUpdateWithoutPlan_inputs_airportsInput, plansUncheckedUpdateWithoutPlan_inputs_airportsInput>
+    create: XOR<plansCreateWithoutPlan_inputs_airportsInput, plansUncheckedCreateWithoutPlan_inputs_airportsInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_inputs_airportsInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_inputs_airportsInput, plansUncheckedUpdateWithoutPlan_inputs_airportsInput>
+  }
+
+  export type plansUpdateWithoutPlan_inputs_airportsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_inputs_airportsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateWithoutPlan_inputs_analyticsInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_inputs_analyticsInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_inputs_analyticsInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_inputs_analyticsInput, plansUncheckedCreateWithoutPlan_inputs_analyticsInput>
+  }
+
+  export type plansUpsertWithoutPlan_inputs_analyticsInput = {
+    update: XOR<plansUpdateWithoutPlan_inputs_analyticsInput, plansUncheckedUpdateWithoutPlan_inputs_analyticsInput>
+    create: XOR<plansCreateWithoutPlan_inputs_analyticsInput, plansUncheckedCreateWithoutPlan_inputs_analyticsInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_inputs_analyticsInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_inputs_analyticsInput, plansUncheckedUpdateWithoutPlan_inputs_analyticsInput>
+  }
+
+  export type plansUpdateWithoutPlan_inputs_analyticsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_inputs_analyticsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
+  }
+
+  export type plansUpsertWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    update: XOR<plansUpdateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
+    create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
+  }
+
+  export type plansUpdateWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateWithoutPlan_inputs_resources_flight_scalesInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
+  }
+
+  export type plansUpsertWithoutPlan_inputs_resources_flight_scalesInput = {
+    update: XOR<plansUpdateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
+    create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
+  }
+
+  export type plansUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateWithoutPlan_inputs_resources_workforceInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_inputs_resources_workforceInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_inputs_resources_workforceInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_inputs_resources_workforceInput, plansUncheckedCreateWithoutPlan_inputs_resources_workforceInput>
+  }
+
+  export type plansUpsertWithoutPlan_inputs_resources_workforceInput = {
+    update: XOR<plansUpdateWithoutPlan_inputs_resources_workforceInput, plansUncheckedUpdateWithoutPlan_inputs_resources_workforceInput>
+    create: XOR<plansCreateWithoutPlan_inputs_resources_workforceInput, plansUncheckedCreateWithoutPlan_inputs_resources_workforceInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_inputs_resources_workforceInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_inputs_resources_workforceInput, plansUncheckedUpdateWithoutPlan_inputs_resources_workforceInput>
+  }
+
+  export type plansUpdateWithoutPlan_inputs_resources_workforceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_inputs_resources_workforceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateWithoutPlan_inputs_statusInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_inputs_statusInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_inputs_statusInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_inputs_statusInput, plansUncheckedCreateWithoutPlan_inputs_statusInput>
+  }
+
+  export type plansUpsertWithoutPlan_inputs_statusInput = {
+    update: XOR<plansUpdateWithoutPlan_inputs_statusInput, plansUncheckedUpdateWithoutPlan_inputs_statusInput>
+    create: XOR<plansCreateWithoutPlan_inputs_statusInput, plansUncheckedCreateWithoutPlan_inputs_statusInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_inputs_statusInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_inputs_statusInput, plansUncheckedUpdateWithoutPlan_inputs_statusInput>
+  }
+
+  export type plansUpdateWithoutPlan_inputs_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_inputs_statusInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansCreateWithoutPlan_participantsInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
+    users?: usersCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansUncheckedCreateWithoutPlan_participantsInput = {
+    id?: string
+    creator_id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
+    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
+  }
+
+  export type plansCreateOrConnectWithoutPlan_participantsInput = {
+    where: plansWhereUniqueInput
+    create: XOR<plansCreateWithoutPlan_participantsInput, plansUncheckedCreateWithoutPlan_participantsInput>
+  }
+
+  export type usersCreateWithoutPlan_participantsInput = {
+    instance_id?: string | null
+    id: string
+    aud?: string | null
+    role?: string | null
+    email?: string | null
+    encrypted_password?: string | null
+    email_confirmed_at?: Date | string | null
+    invited_at?: Date | string | null
+    confirmation_token?: string | null
+    confirmation_sent_at?: Date | string | null
+    recovery_token?: string | null
+    recovery_sent_at?: Date | string | null
+    email_change_token_new?: string | null
+    email_change?: string | null
+    email_change_sent_at?: Date | string | null
+    last_sign_in_at?: Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: boolean | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    phone?: string | null
+    phone_confirmed_at?: Date | string | null
+    phone_change?: string | null
+    phone_change_token?: string | null
+    phone_change_sent_at?: Date | string | null
+    confirmed_at?: Date | string | null
+    email_change_token_current?: string | null
+    email_change_confirm_status?: number | null
+    banned_until?: Date | string | null
+    reauthentication_token?: string | null
+    reauthentication_sent_at?: Date | string | null
+    is_sso_user?: boolean
+    deleted_at?: Date | string | null
+    is_anonymous?: boolean
+    identities?: identitiesCreateNestedManyWithoutUsersInput
+    mfa_factors?: mfa_factorsCreateNestedManyWithoutUsersInput
+    one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
+    sessions?: sessionsCreateNestedManyWithoutUsersInput
+    employees?: employeesCreateNestedOneWithoutUsersInput
+    plans?: plansCreateNestedManyWithoutUsersInput
+  }
+
+  export type usersUncheckedCreateWithoutPlan_participantsInput = {
+    instance_id?: string | null
+    id: string
+    aud?: string | null
+    role?: string | null
+    email?: string | null
+    encrypted_password?: string | null
+    email_confirmed_at?: Date | string | null
+    invited_at?: Date | string | null
+    confirmation_token?: string | null
+    confirmation_sent_at?: Date | string | null
+    recovery_token?: string | null
+    recovery_sent_at?: Date | string | null
+    email_change_token_new?: string | null
+    email_change?: string | null
+    email_change_sent_at?: Date | string | null
+    last_sign_in_at?: Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: boolean | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    phone?: string | null
+    phone_confirmed_at?: Date | string | null
+    phone_change?: string | null
+    phone_change_token?: string | null
+    phone_change_sent_at?: Date | string | null
+    confirmed_at?: Date | string | null
+    email_change_token_current?: string | null
+    email_change_confirm_status?: number | null
+    banned_until?: Date | string | null
+    reauthentication_token?: string | null
+    reauthentication_sent_at?: Date | string | null
+    is_sso_user?: boolean
+    deleted_at?: Date | string | null
+    is_anonymous?: boolean
+    identities?: identitiesUncheckedCreateNestedManyWithoutUsersInput
+    mfa_factors?: mfa_factorsUncheckedCreateNestedManyWithoutUsersInput
+    one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
+    sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
+    employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plans?: plansUncheckedCreateNestedManyWithoutUsersInput
+  }
+
+  export type usersCreateOrConnectWithoutPlan_participantsInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutPlan_participantsInput, usersUncheckedCreateWithoutPlan_participantsInput>
+  }
+
+  export type plansUpsertWithoutPlan_participantsInput = {
+    update: XOR<plansUpdateWithoutPlan_participantsInput, plansUncheckedUpdateWithoutPlan_participantsInput>
+    create: XOR<plansCreateWithoutPlan_participantsInput, plansUncheckedCreateWithoutPlan_participantsInput>
+    where?: plansWhereInput
+  }
+
+  export type plansUpdateToOneWithWhereWithoutPlan_participantsInput = {
+    where?: plansWhereInput
+    data: XOR<plansUpdateWithoutPlan_participantsInput, plansUncheckedUpdateWithoutPlan_participantsInput>
+  }
+
+  export type plansUpdateWithoutPlan_participantsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    users?: usersUpdateOneRequiredWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutPlan_participantsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+  }
+
+  export type usersUpsertWithoutPlan_participantsInput = {
+    update: XOR<usersUpdateWithoutPlan_participantsInput, usersUncheckedUpdateWithoutPlan_participantsInput>
+    create: XOR<usersCreateWithoutPlan_participantsInput, usersUncheckedCreateWithoutPlan_participantsInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutPlan_participantsInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutPlan_participantsInput, usersUncheckedUpdateWithoutPlan_participantsInput>
+  }
+
+  export type usersUpdateWithoutPlan_participantsInput = {
+    instance_id?: NullableStringFieldUpdateOperationsInput | string | null
+    id?: StringFieldUpdateOperationsInput | string
+    aud?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    encrypted_password?: NullableStringFieldUpdateOperationsInput | string | null
+    email_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    invited_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmation_token?: NullableStringFieldUpdateOperationsInput | string | null
+    confirmation_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    recovery_token?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_new?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    last_sign_in_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone_change?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_token?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_current?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_confirm_status?: NullableIntFieldUpdateOperationsInput | number | null
+    banned_until?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reauthentication_token?: NullableStringFieldUpdateOperationsInput | string | null
+    reauthentication_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_sso_user?: BoolFieldUpdateOperationsInput | boolean
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_anonymous?: BoolFieldUpdateOperationsInput | boolean
+    identities?: identitiesUpdateManyWithoutUsersNestedInput
+    mfa_factors?: mfa_factorsUpdateManyWithoutUsersNestedInput
+    one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
+    sessions?: sessionsUpdateManyWithoutUsersNestedInput
+    employees?: employeesUpdateOneWithoutUsersNestedInput
+    plans?: plansUpdateManyWithoutUsersNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutPlan_participantsInput = {
+    instance_id?: NullableStringFieldUpdateOperationsInput | string | null
+    id?: StringFieldUpdateOperationsInput | string
+    aud?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    encrypted_password?: NullableStringFieldUpdateOperationsInput | string | null
+    email_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    invited_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmation_token?: NullableStringFieldUpdateOperationsInput | string | null
+    confirmation_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    recovery_token?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_new?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    last_sign_in_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone_change?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_token?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_current?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_confirm_status?: NullableIntFieldUpdateOperationsInput | number | null
+    banned_until?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reauthentication_token?: NullableStringFieldUpdateOperationsInput | string | null
+    reauthentication_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_sso_user?: BoolFieldUpdateOperationsInput | boolean
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_anonymous?: BoolFieldUpdateOperationsInput | boolean
+    identities?: identitiesUncheckedUpdateManyWithoutUsersNestedInput
+    mfa_factors?: mfa_factorsUncheckedUpdateManyWithoutUsersNestedInput
+    one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
+    sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
+    employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plans?: plansUncheckedUpdateManyWithoutUsersNestedInput
+  }
+
+  export type plan_inputs_airportsCreateWithoutPlansInput = {
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+    airports: airportsCreateNestedOneWithoutPlan_inputs_airportsInput
+  }
+
+  export type plan_inputs_airportsUncheckedCreateWithoutPlansInput = {
+    airport_code: string
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+  }
+
+  export type plan_inputs_airportsCreateOrConnectWithoutPlansInput = {
+    where: plan_inputs_airportsWhereUniqueInput
+    create: XOR<plan_inputs_airportsCreateWithoutPlansInput, plan_inputs_airportsUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_airportsCreateManyPlansInputEnvelope = {
+    data: plan_inputs_airportsCreateManyPlansInput | plan_inputs_airportsCreateManyPlansInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type plan_inputs_analyticsCreateWithoutPlansInput = {
+    domestic_candidates_file_name?: string | null
+    domestic_candidates_file_path?: string | null
+    international_departure_candidates_file_name?: string | null
+    international_departure_candidates_file_path?: string | null
+    international_arrival_candidates_file_name?: string | null
+    international_arrival_candidates_file_path?: string | null
+    round_trip_normalization_file_name?: string | null
+    round_trip_normalization_file_path?: string | null
+    min_distribution_criteria_file_name?: string | null
+    min_distribution_criteria_file_path?: string | null
+  }
+
+  export type plan_inputs_analyticsUncheckedCreateWithoutPlansInput = {
+    domestic_candidates_file_name?: string | null
+    domestic_candidates_file_path?: string | null
+    international_departure_candidates_file_name?: string | null
+    international_departure_candidates_file_path?: string | null
+    international_arrival_candidates_file_name?: string | null
+    international_arrival_candidates_file_path?: string | null
+    round_trip_normalization_file_name?: string | null
+    round_trip_normalization_file_path?: string | null
+    min_distribution_criteria_file_name?: string | null
+    min_distribution_criteria_file_path?: string | null
+  }
+
+  export type plan_inputs_analyticsCreateOrConnectWithoutPlansInput = {
+    where: plan_inputs_analyticsWhereUniqueInput
+    create: XOR<plan_inputs_analyticsCreateWithoutPlansInput, plan_inputs_analyticsUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput = {
+    flight_scale: string
+    airplne_cnt?: bigint | number | null
+    min_standby_airplane_cnt?: bigint | number | null
+    seat_cnt?: bigint | number | null
+    required_captain_cnt?: bigint | number | null
+    required_sub_captain_cnt?: bigint | number | null
+    required_other_personnel_norm?: bigint | number | null
+    required_pre_flight_hours?: bigint | number | null
+    required_post_flight_hours?: bigint | number | null
+    min_required_revenue?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput = {
+    flight_scale: string
+    airplne_cnt?: bigint | number | null
+    min_standby_airplane_cnt?: bigint | number | null
+    seat_cnt?: bigint | number | null
+    required_captain_cnt?: bigint | number | null
+    required_sub_captain_cnt?: bigint | number | null
+    required_other_personnel_norm?: bigint | number | null
+    required_pre_flight_hours?: bigint | number | null
+    required_post_flight_hours?: bigint | number | null
+    min_required_revenue?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    create: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope = {
+    data: plan_inputs_resources_flight_scale_dataCreateManyPlansInput | plan_inputs_resources_flight_scale_dataCreateManyPlansInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateWithoutPlansInput = {
+    flight_scale: string
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput = {
+    flight_scale: string
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+    create: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope = {
+    data: plan_inputs_resources_flight_scalesCreateManyPlansInput | plan_inputs_resources_flight_scalesCreateManyPlansInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type plan_inputs_resources_workforceCreateWithoutPlansInput = {
+    captain_cnt?: bigint | number | null
+    sub_captain_cnt?: bigint | number | null
+    other_personnel_norm?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput = {
+    captain_cnt?: bigint | number | null
+    sub_captain_cnt?: bigint | number | null
+    other_personnel_norm?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceCreateOrConnectWithoutPlansInput = {
+    where: plan_inputs_resources_workforceWhereUniqueInput
+    create: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_statusCreateWithoutPlansInput = {
+    resources_workforce_status?: string
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: string
+    analytics_flight_candidates_status?: string
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: string
+  }
+
+  export type plan_inputs_statusUncheckedCreateWithoutPlansInput = {
+    resources_workforce_status?: string
+    resources_flight_scales_status?: boolean
+    resources_flight_scale_data_status?: string
+    analytics_flight_candidates_status?: string
+    analytics_round_trip_normalization_status?: boolean
+    analytics_min_distribution_criteria_status?: boolean
+    airports_schedule_data_status?: string
+  }
+
+  export type plan_inputs_statusCreateOrConnectWithoutPlansInput = {
+    where: plan_inputs_statusWhereUniqueInput
+    create: XOR<plan_inputs_statusCreateWithoutPlansInput, plan_inputs_statusUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_participantsCreateWithoutPlansInput = {
+    permission?: plan_participantsCreatepermissionInput | string[]
+    users: usersCreateNestedOneWithoutPlan_participantsInput
+  }
+
+  export type plan_participantsUncheckedCreateWithoutPlansInput = {
+    user_id: string
+    permission?: plan_participantsCreatepermissionInput | string[]
+  }
+
+  export type plan_participantsCreateOrConnectWithoutPlansInput = {
+    where: plan_participantsWhereUniqueInput
+    create: XOR<plan_participantsCreateWithoutPlansInput, plan_participantsUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_participantsCreateManyPlansInputEnvelope = {
+    data: plan_participantsCreateManyPlansInput | plan_participantsCreateManyPlansInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type usersCreateWithoutPlansInput = {
+    instance_id?: string | null
+    id: string
+    aud?: string | null
+    role?: string | null
+    email?: string | null
+    encrypted_password?: string | null
+    email_confirmed_at?: Date | string | null
+    invited_at?: Date | string | null
+    confirmation_token?: string | null
+    confirmation_sent_at?: Date | string | null
+    recovery_token?: string | null
+    recovery_sent_at?: Date | string | null
+    email_change_token_new?: string | null
+    email_change?: string | null
+    email_change_sent_at?: Date | string | null
+    last_sign_in_at?: Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: boolean | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    phone?: string | null
+    phone_confirmed_at?: Date | string | null
+    phone_change?: string | null
+    phone_change_token?: string | null
+    phone_change_sent_at?: Date | string | null
+    confirmed_at?: Date | string | null
+    email_change_token_current?: string | null
+    email_change_confirm_status?: number | null
+    banned_until?: Date | string | null
+    reauthentication_token?: string | null
+    reauthentication_sent_at?: Date | string | null
+    is_sso_user?: boolean
+    deleted_at?: Date | string | null
+    is_anonymous?: boolean
+    identities?: identitiesCreateNestedManyWithoutUsersInput
+    mfa_factors?: mfa_factorsCreateNestedManyWithoutUsersInput
+    one_time_tokens?: one_time_tokensCreateNestedManyWithoutUsersInput
+    sessions?: sessionsCreateNestedManyWithoutUsersInput
+    employees?: employeesCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsCreateNestedManyWithoutUsersInput
+  }
+
+  export type usersUncheckedCreateWithoutPlansInput = {
+    instance_id?: string | null
+    id: string
+    aud?: string | null
+    role?: string | null
+    email?: string | null
+    encrypted_password?: string | null
+    email_confirmed_at?: Date | string | null
+    invited_at?: Date | string | null
+    confirmation_token?: string | null
+    confirmation_sent_at?: Date | string | null
+    recovery_token?: string | null
+    recovery_sent_at?: Date | string | null
+    email_change_token_new?: string | null
+    email_change?: string | null
+    email_change_sent_at?: Date | string | null
+    last_sign_in_at?: Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: boolean | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    phone?: string | null
+    phone_confirmed_at?: Date | string | null
+    phone_change?: string | null
+    phone_change_token?: string | null
+    phone_change_sent_at?: Date | string | null
+    confirmed_at?: Date | string | null
+    email_change_token_current?: string | null
+    email_change_confirm_status?: number | null
+    banned_until?: Date | string | null
+    reauthentication_token?: string | null
+    reauthentication_sent_at?: Date | string | null
+    is_sso_user?: boolean
+    deleted_at?: Date | string | null
+    is_anonymous?: boolean
+    identities?: identitiesUncheckedCreateNestedManyWithoutUsersInput
+    mfa_factors?: mfa_factorsUncheckedCreateNestedManyWithoutUsersInput
+    one_time_tokens?: one_time_tokensUncheckedCreateNestedManyWithoutUsersInput
+    sessions?: sessionsUncheckedCreateNestedManyWithoutUsersInput
+    employees?: employeesUncheckedCreateNestedOneWithoutUsersInput
+    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutUsersInput
+  }
+
+  export type usersCreateOrConnectWithoutPlansInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutPlansInput, usersUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_airportsUpsertWithWhereUniqueWithoutPlansInput = {
+    where: plan_inputs_airportsWhereUniqueInput
+    update: XOR<plan_inputs_airportsUpdateWithoutPlansInput, plan_inputs_airportsUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_inputs_airportsCreateWithoutPlansInput, plan_inputs_airportsUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_airportsUpdateWithWhereUniqueWithoutPlansInput = {
+    where: plan_inputs_airportsWhereUniqueInput
+    data: XOR<plan_inputs_airportsUpdateWithoutPlansInput, plan_inputs_airportsUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_airportsUpdateManyWithWhereWithoutPlansInput = {
+    where: plan_inputs_airportsScalarWhereInput
+    data: XOR<plan_inputs_airportsUpdateManyMutationInput, plan_inputs_airportsUncheckedUpdateManyWithoutPlansInput>
+  }
+
+  export type plan_inputs_analyticsUpsertWithoutPlansInput = {
+    update: XOR<plan_inputs_analyticsUpdateWithoutPlansInput, plan_inputs_analyticsUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_inputs_analyticsCreateWithoutPlansInput, plan_inputs_analyticsUncheckedCreateWithoutPlansInput>
+    where?: plan_inputs_analyticsWhereInput
+  }
+
+  export type plan_inputs_analyticsUpdateToOneWithWhereWithoutPlansInput = {
+    where?: plan_inputs_analyticsWhereInput
+    data: XOR<plan_inputs_analyticsUpdateWithoutPlansInput, plan_inputs_analyticsUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_analyticsUpdateWithoutPlansInput = {
+    domestic_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    domestic_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_analyticsUncheckedUpdateWithoutPlansInput = {
+    domestic_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    domestic_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_departure_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    international_arrival_candidates_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    round_trip_normalization_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    min_distribution_criteria_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpsertWithWhereUniqueWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    update: XOR<plan_inputs_resources_flight_scale_dataUpdateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
+    data: XOR<plan_inputs_resources_flight_scale_dataUpdateWithoutPlansInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scale_dataScalarWhereInput
+    data: XOR<plan_inputs_resources_flight_scale_dataUpdateManyMutationInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scale_dataScalarWhereInput = {
+    AND?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
+    OR?: plan_inputs_resources_flight_scale_dataScalarWhereInput[]
+    NOT?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
+    flight_scale?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
+    airplne_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+    update: XOR<plan_inputs_resources_flight_scalesUpdateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scalesWhereUniqueInput
+    data: XOR<plan_inputs_resources_flight_scalesUpdateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput = {
+    where: plan_inputs_resources_flight_scalesScalarWhereInput
+    data: XOR<plan_inputs_resources_flight_scalesUpdateManyMutationInput, plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_flight_scalesScalarWhereInput = {
+    AND?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
+    OR?: plan_inputs_resources_flight_scalesScalarWhereInput[]
+    NOT?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
+    plan_id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
+    flight_scale?: StringFilter<"plan_inputs_resources_flight_scales"> | string
+  }
+
+  export type plan_inputs_resources_workforceUpsertWithoutPlansInput = {
+    update: XOR<plan_inputs_resources_workforceUpdateWithoutPlansInput, plan_inputs_resources_workforceUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
+    where?: plan_inputs_resources_workforceWhereInput
+  }
+
+  export type plan_inputs_resources_workforceUpdateToOneWithWhereWithoutPlansInput = {
+    where?: plan_inputs_resources_workforceWhereInput
+    data: XOR<plan_inputs_resources_workforceUpdateWithoutPlansInput, plan_inputs_resources_workforceUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_resources_workforceUpdateWithoutPlansInput = {
+    captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_workforceUncheckedUpdateWithoutPlansInput = {
+    captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_statusUpsertWithoutPlansInput = {
+    update: XOR<plan_inputs_statusUpdateWithoutPlansInput, plan_inputs_statusUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_inputs_statusCreateWithoutPlansInput, plan_inputs_statusUncheckedCreateWithoutPlansInput>
+    where?: plan_inputs_statusWhereInput
+  }
+
+  export type plan_inputs_statusUpdateToOneWithWhereWithoutPlansInput = {
+    where?: plan_inputs_statusWhereInput
+    data: XOR<plan_inputs_statusUpdateWithoutPlansInput, plan_inputs_statusUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_inputs_statusUpdateWithoutPlansInput = {
+    resources_workforce_status?: StringFieldUpdateOperationsInput | string
+    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
+    resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
+    analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
+    analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
+    analytics_min_distribution_criteria_status?: BoolFieldUpdateOperationsInput | boolean
+    airports_schedule_data_status?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_statusUncheckedUpdateWithoutPlansInput = {
+    resources_workforce_status?: StringFieldUpdateOperationsInput | string
+    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
+    resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
+    analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
+    analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
+    analytics_min_distribution_criteria_status?: BoolFieldUpdateOperationsInput | boolean
+    airports_schedule_data_status?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_participantsUpsertWithWhereUniqueWithoutPlansInput = {
+    where: plan_participantsWhereUniqueInput
+    update: XOR<plan_participantsUpdateWithoutPlansInput, plan_participantsUncheckedUpdateWithoutPlansInput>
+    create: XOR<plan_participantsCreateWithoutPlansInput, plan_participantsUncheckedCreateWithoutPlansInput>
+  }
+
+  export type plan_participantsUpdateWithWhereUniqueWithoutPlansInput = {
+    where: plan_participantsWhereUniqueInput
+    data: XOR<plan_participantsUpdateWithoutPlansInput, plan_participantsUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type plan_participantsUpdateManyWithWhereWithoutPlansInput = {
+    where: plan_participantsScalarWhereInput
+    data: XOR<plan_participantsUpdateManyMutationInput, plan_participantsUncheckedUpdateManyWithoutPlansInput>
+  }
+
+  export type usersUpsertWithoutPlansInput = {
+    update: XOR<usersUpdateWithoutPlansInput, usersUncheckedUpdateWithoutPlansInput>
+    create: XOR<usersCreateWithoutPlansInput, usersUncheckedCreateWithoutPlansInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutPlansInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutPlansInput, usersUncheckedUpdateWithoutPlansInput>
+  }
+
+  export type usersUpdateWithoutPlansInput = {
+    instance_id?: NullableStringFieldUpdateOperationsInput | string | null
+    id?: StringFieldUpdateOperationsInput | string
+    aud?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    encrypted_password?: NullableStringFieldUpdateOperationsInput | string | null
+    email_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    invited_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmation_token?: NullableStringFieldUpdateOperationsInput | string | null
+    confirmation_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    recovery_token?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_new?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    last_sign_in_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone_change?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_token?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_current?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_confirm_status?: NullableIntFieldUpdateOperationsInput | number | null
+    banned_until?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reauthentication_token?: NullableStringFieldUpdateOperationsInput | string | null
+    reauthentication_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_sso_user?: BoolFieldUpdateOperationsInput | boolean
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_anonymous?: BoolFieldUpdateOperationsInput | boolean
+    identities?: identitiesUpdateManyWithoutUsersNestedInput
+    mfa_factors?: mfa_factorsUpdateManyWithoutUsersNestedInput
+    one_time_tokens?: one_time_tokensUpdateManyWithoutUsersNestedInput
+    sessions?: sessionsUpdateManyWithoutUsersNestedInput
+    employees?: employeesUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutUsersNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutPlansInput = {
+    instance_id?: NullableStringFieldUpdateOperationsInput | string | null
+    id?: StringFieldUpdateOperationsInput | string
+    aud?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    encrypted_password?: NullableStringFieldUpdateOperationsInput | string | null
+    email_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    invited_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmation_token?: NullableStringFieldUpdateOperationsInput | string | null
+    confirmation_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    recovery_token?: NullableStringFieldUpdateOperationsInput | string | null
+    recovery_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_new?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    last_sign_in_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    raw_app_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    raw_user_meta_data?: NullableJsonNullValueInput | InputJsonValue
+    is_super_admin?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    phone_change?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_token?: NullableStringFieldUpdateOperationsInput | string | null
+    phone_change_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    confirmed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    email_change_token_current?: NullableStringFieldUpdateOperationsInput | string | null
+    email_change_confirm_status?: NullableIntFieldUpdateOperationsInput | number | null
+    banned_until?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    reauthentication_token?: NullableStringFieldUpdateOperationsInput | string | null
+    reauthentication_sent_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_sso_user?: BoolFieldUpdateOperationsInput | boolean
+    deleted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    is_anonymous?: BoolFieldUpdateOperationsInput | boolean
+    identities?: identitiesUncheckedUpdateManyWithoutUsersNestedInput
+    mfa_factors?: mfa_factorsUncheckedUpdateManyWithoutUsersNestedInput
+    one_time_tokens?: one_time_tokensUncheckedUpdateManyWithoutUsersNestedInput
+    sessions?: sessionsUncheckedUpdateManyWithoutUsersNestedInput
+    employees?: employeesUncheckedUpdateOneWithoutUsersNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutUsersNestedInput
+  }
+
   export type saml_relay_statesCreateManyFlow_stateInput = {
     id: string
     sso_provider_id: string
@@ -41623,6 +56204,19 @@ export namespace Prisma {
     tag?: string | null
   }
 
+  export type plan_participantsCreateManyUsersInput = {
+    plan_id: string
+    permission?: plan_participantsCreatepermissionInput | string[]
+  }
+
+  export type plansCreateManyUsersInput = {
+    id?: string
+    title: string
+    target_date: Date | string
+    status?: string
+    created_at?: Date | string
+  }
+
   export type identitiesUpdateWithoutUsersInput = {
     provider_id?: StringFieldUpdateOperationsInput | string
     identity_data?: JsonNullValueInput | InputJsonValue
@@ -41770,6 +56364,59 @@ export namespace Prisma {
     tag?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
+  export type plan_participantsUpdateWithoutUsersInput = {
+    permission?: plan_participantsUpdatepermissionInput | string[]
+    plans?: plansUpdateOneRequiredWithoutPlan_participantsNestedInput
+  }
+
+  export type plan_participantsUncheckedUpdateWithoutUsersInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    permission?: plan_participantsUpdatepermissionInput | string[]
+  }
+
+  export type plan_participantsUncheckedUpdateManyWithoutUsersInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    permission?: plan_participantsUpdatepermissionInput | string[]
+  }
+
+  export type plansUpdateWithoutUsersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateWithoutUsersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
+    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
+    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
+    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
+  }
+
+  export type plansUncheckedUpdateManyWithoutUsersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    status?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type plan_notificationCreateManyPlan_listInput = {
     id?: string
     plan_name: string
@@ -41824,6 +56471,142 @@ export namespace Prisma {
   export type plan_results_flights_dataUncheckedUpdateManyWithoutPlan_listInput = {
     id?: StringFieldUpdateOperationsInput | string
     data?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type plan_inputs_airportsCreateManyAirportsInput = {
+    plan_id: string
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+  }
+
+  export type plan_inputs_airportsUpdateWithoutAirportsInput = {
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    plans?: plansUpdateOneRequiredWithoutPlan_inputs_airportsNestedInput
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateWithoutAirportsInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateManyWithoutAirportsInput = {
+    plan_id?: StringFieldUpdateOperationsInput | string
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_airportsCreateManyPlansInput = {
+    airport_code: string
+    schedule_file_name?: string | null
+    schedule_file_path?: string | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataCreateManyPlansInput = {
+    flight_scale: string
+    airplne_cnt?: bigint | number | null
+    min_standby_airplane_cnt?: bigint | number | null
+    seat_cnt?: bigint | number | null
+    required_captain_cnt?: bigint | number | null
+    required_sub_captain_cnt?: bigint | number | null
+    required_other_personnel_norm?: bigint | number | null
+    required_pre_flight_hours?: bigint | number | null
+    required_post_flight_hours?: bigint | number | null
+    min_required_revenue?: bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scalesCreateManyPlansInput = {
+    flight_scale: string
+  }
+
+  export type plan_participantsCreateManyPlansInput = {
+    user_id: string
+    permission?: plan_participantsCreatepermissionInput | string[]
+  }
+
+  export type plan_inputs_airportsUpdateWithoutPlansInput = {
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+    airports?: airportsUpdateOneRequiredWithoutPlan_inputs_airportsNestedInput
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateWithoutPlansInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_airportsUncheckedUpdateManyWithoutPlansInput = {
+    airport_code?: StringFieldUpdateOperationsInput | string
+    schedule_file_name?: NullableStringFieldUpdateOperationsInput | string | null
+    schedule_file_path?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUpdateWithoutPlansInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlansInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  }
+
+  export type plan_inputs_resources_flight_scalesUpdateWithoutPlansInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlansInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansInput = {
+    flight_scale?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type plan_participantsUpdateWithoutPlansInput = {
+    permission?: plan_participantsUpdatepermissionInput | string[]
+    users?: usersUpdateOneRequiredWithoutPlan_participantsNestedInput
+  }
+
+  export type plan_participantsUncheckedUpdateWithoutPlansInput = {
+    user_id?: StringFieldUpdateOperationsInput | string
+    permission?: plan_participantsUpdatepermissionInput | string[]
+  }
+
+  export type plan_participantsUncheckedUpdateManyWithoutPlansInput = {
+    user_id?: StringFieldUpdateOperationsInput | string
+    permission?: plan_participantsUpdatepermissionInput | string[]
   }
 
 

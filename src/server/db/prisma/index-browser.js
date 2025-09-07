@@ -391,6 +391,85 @@ exports.Prisma.Plan_results_total_dataScalarFieldEnum = {
   data: 'data'
 };
 
+exports.Prisma.AirportsScalarFieldEnum = {
+  airport_code: 'airport_code',
+  airport_name: 'airport_name',
+  country: 'country'
+};
+
+exports.Prisma.Plan_inputs_airportsScalarFieldEnum = {
+  plan_id: 'plan_id',
+  airport_code: 'airport_code',
+  schedule_file_name: 'schedule_file_name',
+  schedule_file_path: 'schedule_file_path'
+};
+
+exports.Prisma.Plan_inputs_analyticsScalarFieldEnum = {
+  plan_id: 'plan_id',
+  domestic_candidates_file_name: 'domestic_candidates_file_name',
+  domestic_candidates_file_path: 'domestic_candidates_file_path',
+  international_departure_candidates_file_name: 'international_departure_candidates_file_name',
+  international_departure_candidates_file_path: 'international_departure_candidates_file_path',
+  international_arrival_candidates_file_name: 'international_arrival_candidates_file_name',
+  international_arrival_candidates_file_path: 'international_arrival_candidates_file_path',
+  round_trip_normalization_file_name: 'round_trip_normalization_file_name',
+  round_trip_normalization_file_path: 'round_trip_normalization_file_path',
+  min_distribution_criteria_file_name: 'min_distribution_criteria_file_name',
+  min_distribution_criteria_file_path: 'min_distribution_criteria_file_path'
+};
+
+exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
+  plan_id: 'plan_id',
+  flight_scale: 'flight_scale',
+  airplne_cnt: 'airplne_cnt',
+  min_standby_airplane_cnt: 'min_standby_airplane_cnt',
+  seat_cnt: 'seat_cnt',
+  required_captain_cnt: 'required_captain_cnt',
+  required_sub_captain_cnt: 'required_sub_captain_cnt',
+  required_other_personnel_norm: 'required_other_personnel_norm',
+  required_pre_flight_hours: 'required_pre_flight_hours',
+  required_post_flight_hours: 'required_post_flight_hours',
+  min_required_revenue: 'min_required_revenue'
+};
+
+exports.Prisma.Plan_inputs_resources_flight_scalesScalarFieldEnum = {
+  plan_id: 'plan_id',
+  flight_scale: 'flight_scale'
+};
+
+exports.Prisma.Plan_inputs_resources_workforceScalarFieldEnum = {
+  plan_id: 'plan_id',
+  captain_cnt: 'captain_cnt',
+  sub_captain_cnt: 'sub_captain_cnt',
+  other_personnel_norm: 'other_personnel_norm'
+};
+
+exports.Prisma.Plan_inputs_statusScalarFieldEnum = {
+  plan_id: 'plan_id',
+  resources_workforce_status: 'resources_workforce_status',
+  resources_flight_scales_status: 'resources_flight_scales_status',
+  resources_flight_scale_data_status: 'resources_flight_scale_data_status',
+  analytics_flight_candidates_status: 'analytics_flight_candidates_status',
+  analytics_round_trip_normalization_status: 'analytics_round_trip_normalization_status',
+  analytics_min_distribution_criteria_status: 'analytics_min_distribution_criteria_status',
+  airports_schedule_data_status: 'airports_schedule_data_status'
+};
+
+exports.Prisma.Plan_participantsScalarFieldEnum = {
+  plan_id: 'plan_id',
+  user_id: 'user_id',
+  permission: 'permission'
+};
+
+exports.Prisma.PlansScalarFieldEnum = {
+  id: 'id',
+  creator_id: 'creator_id',
+  title: 'title',
+  target_date: 'target_date',
+  status: 'status',
+  created_at: 'created_at'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -481,7 +560,16 @@ exports.Prisma.ModelName = {
   oauth_clients: 'oauth_clients',
   plan_results_daily_data: 'plan_results_daily_data',
   plan_results_flights_data: 'plan_results_flights_data',
-  plan_results_total_data: 'plan_results_total_data'
+  plan_results_total_data: 'plan_results_total_data',
+  airports: 'airports',
+  plan_inputs_airports: 'plan_inputs_airports',
+  plan_inputs_analytics: 'plan_inputs_analytics',
+  plan_inputs_resources_flight_scale_data: 'plan_inputs_resources_flight_scale_data',
+  plan_inputs_resources_flight_scales: 'plan_inputs_resources_flight_scales',
+  plan_inputs_resources_workforce: 'plan_inputs_resources_workforce',
+  plan_inputs_status: 'plan_inputs_status',
+  plan_participants: 'plan_participants',
+  plans: 'plans'
 };
 
 /**
