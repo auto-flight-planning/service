@@ -24,7 +24,7 @@ const planService = {
     });
 
     // 2. 初期化 (並列処理)
-    const planInit = await Promise.all([
+    await Promise.all([
       await planParticipantsRepo.insertMany({
         planId: plan.id,
         participantDataList,
