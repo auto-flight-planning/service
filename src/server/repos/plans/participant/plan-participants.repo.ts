@@ -17,6 +17,12 @@ const planParticipantsRepo = {
     });
   },
 
+  async findManyByPlanId({ planId }: { planId: string }) {
+    return prismaClient.plan_participants.findMany({
+      where: { plan_id: planId },
+    });
+  },
+
   async updateMany({
     planId,
     participantDataList,
