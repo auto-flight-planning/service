@@ -1,7 +1,7 @@
 import { prismaClient } from "@/server/db/prismaClient";
 import { type employees as Employees } from "@/server/db/prisma";
 
-const employeeRepo = {
+const employeesRepo = {
   async findOneById(id: string) {
     return prismaClient.employees.findUnique({
       where: { id },
@@ -27,4 +27,4 @@ const employeeRepo = {
   },
 };
 
-export default employeeRepo;
+export default employeesRepo;
