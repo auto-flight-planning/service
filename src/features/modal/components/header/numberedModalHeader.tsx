@@ -1,4 +1,4 @@
-import { CloseButton } from "@/components/button";
+import { CrossButton } from "@/components/button";
 
 interface NumberedModalHeaderProps {
   title: string;
@@ -21,7 +21,7 @@ export default function NumberedModalHeader({
         )}
         <h2 className="text-xl font-bold text-gray-800">{title}</h2>
       </div>
-      <CloseButton onClick={onClose} />
+      <CrossButton onClick={onClose} />
     </div>
   );
 }

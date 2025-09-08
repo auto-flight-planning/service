@@ -1,4 +1,4 @@
-import { CloseButton } from "@/components/button";
+import { CrossButton } from "@/components/button";
 
 interface BasicModalHeaderProps {
   title: string;
@@ -12,7 +12,7 @@ export default function BasicModalHeader({
   return (
     <div className="flex items-center justify-between border-b border-gray-200 pb-4">
       <h2 className="text-xl font-bold text-gray-800">{title}</h2>
-      <CloseButton onClick={onClose} />
+      <CrossButton onClick={onClose} />
     </div>
   );
 }
