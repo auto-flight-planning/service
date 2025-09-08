@@ -10,7 +10,7 @@ export default function ParticipantsField() {
     isFetching,
   } = useSearch();
   const {
-    fields,
+    selectedParticipants,
     addParticipant,
     removeParticipant,
     updateParticipantPermission,

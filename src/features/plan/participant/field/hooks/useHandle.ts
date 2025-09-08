@@ -7,12 +7,21 @@ export default function useHandleParticipantsField() {
   const { control } = useFormContext<{
     participants: ParticipantsFieldSchema;
   }>();
-  const { fields, append, remove, update } = useFieldArray({
+  const {
+    fields: selectedParticipants,
+    append,
+    remove,
+    update,
+  } = useFieldArray({
     control,
     name: "participants",
   });
 
   const addParticipant = ({ userId, lastName, firstName }: Employee) => {
+    if (
+      selectedParticipants.some((participant) => participant.userId === userId)
+    )
+      return;
     append({
       userId,
       lastName,
@@ -38,7 +47,7 @@ export default function useHandleParticipantsField() {
   };
 
   return {
-    fields,
+    selectedParticipants,
     addParticipant,
     removeParticipant,
     updateParticipantPermission,
