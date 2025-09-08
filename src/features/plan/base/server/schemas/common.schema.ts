@@ -1,7 +1,6 @@
 import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { planIdSchema, userIdSchema } from "@/server/schemas/common.schema";
-import { ParticipantPermissionEnum } from "@/features/plan/participant/type";
+import { planIdSchema } from "@/server/schemas/common.schema";
 import { USER_ID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
@@ -56,19 +55,6 @@ export const planCreatedAtSchema = z.date().openapi({
   example: new Date(),
 });
 export type PlanCreatedAtSchema = z.infer<typeof planCreatedAtSchema>;
-
-export const planParticipantDataListSchema = z.array(
-  z.object({
-    userId: userIdSchema,
-    permission: z.array(z.enum(ParticipantPermissionEnum)).openapi({
-      description: "権限",
-      example: ["VIEW", "REQUEST", "INPUT", "EDIT"],
-    }),
-  })
-);
-export type PlanParticipantDataListSchema = z.infer<
-  typeof planParticipantDataListSchema
->;
 
 // 2. オブジェクトスキーマ
 export const planSchema = z.object({

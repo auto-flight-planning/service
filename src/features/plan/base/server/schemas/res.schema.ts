@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { planParticipantDataListSchema, planSchema } from "./common.schema";
+import { planSchema } from "./common.schema";
+import { planParticipantDataListSchema } from "@/features/plan/participant/servers/schemas/common.schema";
 
 extendZodWithOpenApi(z);
 
