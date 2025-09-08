@@ -1,4 +1,6 @@
 import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
+import { planIdReqSchema } from "@/server/schemas/req.schema";
+import { planSchema } from "./schemas/common.schema";
 import { createPlanReqSchema } from "./schemas/req.schema";
 import { createPlanResSchema } from "./schemas/res.schema";
 
@@ -32,6 +34,39 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
       },
       401: {
         description: "認証が必要です",
+      },
+      500: {
+        description: "サーバーエラーが発生しました",
+      },
+    },
+  });
+
+  registry.registerPath({
+    method: "get",
+    path: "/api/plans/{planId}",
+    tags: ["Plan"],
+    summary: "企画をplanIdで取得",
+    security: [{ BearerAuth: [] }],
+    request: {
+      params: planIdReqSchema("path"),
+    },
+    responses: {
+      200: {
+        description: "企画を取得しました",
+        content: {
+          "application/json": {
+            schema: planSchema,
+          },
+        },
+      },
+      400: {
+        description: "不正なリクエストです",
+      },
+      401: {
+        description: "認証が必要です",
+      },
+      404: {
+        description: "企画が見つかりません",
       },
       500: {
         description: "サーバーエラーが発生しました",
