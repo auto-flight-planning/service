@@ -53,13 +53,13 @@ export default function useLogin() {
     },
   });
 
-  const onValidSubmit = (data: LoginFormData) => {
-    login(data);
-  };
+  const { handleSubmit } = formMethods;
+  const onValidSubmit = (data: LoginFormData) => login(data);
+  const onSubmit = handleSubmit(onValidSubmit);
 
   return {
     formMethods,
-    onValidSubmit,
+    onSubmit,
     isPending,
   };
 }

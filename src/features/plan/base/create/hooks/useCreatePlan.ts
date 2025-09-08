@@ -51,13 +51,13 @@ export default function useCreatePlan() {
     },
   });
 
-  const onValidSubmit = (data: CreatePlanFormData) => {
-    createPlan(data);
-  };
+  const { handleSubmit } = formMethods;
+  const onValidSubmit = (data: CreatePlanFormData) => createPlan(data);
+  const onSubmit = handleSubmit(onValidSubmit);
 
   return {
     formMethods,
-    onValidSubmit,
+    onSubmit,
     isPending,
   };
 }

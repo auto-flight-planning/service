@@ -4,15 +4,11 @@ import { TextField, SecretTextField } from "@/components/form";
 import { SquareButton } from "@/components/button";
 
 export default function LoginForm() {
-  const { formMethods, onValidSubmit, isPending } = useLogin();
-  const { handleSubmit } = formMethods;
+  const { formMethods, onSubmit, isPending } = useLogin();
 
   return (
     <FormProvider {...formMethods}>
-      <form
-        onSubmit={handleSubmit(onValidSubmit)}
-        className="flex flex-col gap-6"
-      >
+      <form onSubmit={onSubmit} className="flex flex-col gap-6">
         <TextField
           label="社員ID"
           name="employeeId"
