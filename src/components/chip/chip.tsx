@@ -1,17 +1,41 @@
-"use client";
-
 import { ReactNode } from "react";
 
-interface ChipProps {
-  children: ReactNode;
-  onRemove?: () => void;
-  className?: string;
+export interface ChipProps {
+  text?: string;
+  variant?: "outline" | "solid";
+  size?: "extra-small" | "small" | "medium";
+  color?: "primary" | "red" | "green" | "yellow" | "gray" | "light-gray";
+  children?: ReactNode;
 }
 
+const sizeClasses = {
+  "extra-small": "px-1.5 py-0.75 text-[10px]",
+  small: "px-2.5 py-1.5 text-xs",
+  medium: "px-3 py-1.5 text-sm",
+};
+const solidColorClasses = {
+  primary: "bg-primary-200 text-gray-800",
+  red: "bg-red-500 text-white",
+  green: "bg-green-500 text-white",
+  yellow: "bg-yellow-400 text-gray-800",
+  gray: "bg-gray-200 text-gray-800",
+  "light-gray": "bg-gray-100 text-gray-800",
+};
+const outlineColorClasses = {
+  primary: "border border-primary-400 bg-white text-primary-400",
+  red: "border border-red-500 bg-white text-red-500",
+  green: "border border-green-500 bg-white text-green-500",
+  yellow: "border border-yellow-500 bg-white text-yellow-500",
+  gray: "border border-gray-700 bg-white text-gray-700",
+  "light-gray": "border border-gray-400 bg-white text-gray-400",
+};
+
 export default function Chip({
+  text,
+  variant = "solid",
+  size = "medium",
+  color = "primary",
   children,
-  onRemove,
-  className = "",
 }: ChipProps) {
   return (
     <div
@@ -19,39 +43,18 @@ export default function Chip({
         inline-flex
         items-center
         gap-1.5
-        px-3
-        py-1.5
-        bg-gray-100
-        text-gray-700
-        text-sm
+        ${sizeClasses[size]}
+        ${
+          variant === "outline"
+            ? outlineColorClasses[color]
+            : solidColorClasses[color]
+        }
         rounded-full
         transition-colors
         duration-200
-        ${className}
       `}
     >
-      <span>{children}</span>
-      {onRemove && (
-        <button
-          type="button"
-          onClick={onRemove}
-          className="flex items-center justify-center w-4 h-4 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors duration-150 hover:cursor-pointer"
-        >
-          <svg
-            className="w-3 h-3"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      )}
+      {text ? <span>{text}</span> : children}
     </div>
   );
 }
