@@ -2,7 +2,7 @@ import useCreatePlan from "../hooks/useCreatePlan";
 import useHandleTargetDate from "../hooks/useHandleTargetDate";
 import { TextField, FieldWrapper, Select } from "@/components/form";
 import { getYearOptions } from "../utils";
-import ParticipantsField from "./participantsField";
+import { ParticipantsField } from "@/features/plan/participant";
 
 export default function CreatePlanForm() {
   const { formMethods } = useCreatePlan();
