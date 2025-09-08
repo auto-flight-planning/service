@@ -1,18 +1,19 @@
 import { SquareButton } from "@/components/button";
+import useModalStore from "../../stores/modalStore";
 
 interface BasicModalFooterProps {
-  cancelProps: {
+  cancelProps?: {
     text: string;
     onClick?: () => void;
-    disabled?: boolean;
     color?: "primary" | "gray" | "light-gray";
+    disabled?: boolean;
     hidden?: boolean;
   };
   confirmProps: {
     text: string;
     onClick: () => void;
-    disabled?: boolean;
     color?: "primary" | "gray" | "light-gray";
+    disabled?: boolean;
     isPending?: boolean;
   };
   explanationText?: string;
@@ -21,20 +22,22 @@ interface BasicModalFooterProps {
 export default function BasicModalFooter({
   cancelProps = {
     text: "キャンセル",
-    onClick: () => {},
-    disabled: false,
+    onClick: undefined,
     color: "gray",
+    disabled: false,
     hidden: false,
   },
   confirmProps = {
     text: "保存",
     onClick: () => {},
-    disabled: false,
     color: "primary",
+    disabled: false,
     isPending: false,
   },
   explanationText = "",
 }: BasicModalFooterProps) {
+  const { closeModal } = useModalStore();
+
   return (
     <div className="flex justify-between items-center mt-2 border-t border-gray-200 pt-4">
       <div className="flex-1">
@@ -47,15 +50,15 @@ export default function BasicModalFooter({
         {!cancelProps.hidden && (
           <SquareButton
             text={cancelProps.text}
+            onClick={cancelProps.onClick || closeModal}
             color={cancelProps.color}
-            onClick={cancelProps.onClick}
             disabled={cancelProps.disabled}
           />
         )}
         <SquareButton
           text={confirmProps.text}
-          color={confirmProps.color}
           onClick={confirmProps.onClick}
+          color={confirmProps.color}
           disabled={confirmProps.disabled}
           isPending={confirmProps.isPending}
         />
