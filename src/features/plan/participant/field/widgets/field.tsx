@@ -2,6 +2,7 @@ import useSearch from "../hooks/useSearch";
 import useHandle from "../hooks/useHandle";
 import { TextField } from "@/components/input";
 import SearchResult from "../components/searchResult";
+import SelectedParticipantDetail from "../../components/selectedParticipantDetail";
 
 export default function ParticipantsField() {
   const {
@@ -16,6 +17,8 @@ export default function ParticipantsField() {
     removeParticipant,
     updateParticipantPermission,
   } = useHandle();
+
+  console.log(selectedParticipants);
 
   return (
     <div className="flex flex-col gap-2">
@@ -37,6 +40,14 @@ export default function ParticipantsField() {
           />
         )}
       </div>
+      {selectedParticipants.map((participant) => (
+        <SelectedParticipantDetail
+          key={participant.userId}
+          fullName={`${participant.lastName} ${participant.firstName}`}
+          email={participant.email}
+          permission={participant.permission}
+        />
+      ))}
     </div>
   );
 }
