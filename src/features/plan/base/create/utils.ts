@@ -16,10 +16,6 @@ export const getMonthOptions = (year: string) => {
   return options;
 };
 
-export const getCurrentYearToStr = () => {
-  return new Date().getFullYear().toString();
-};
-
 export const getStartMonth = (year: string) => {
   const currentYear = Number(year);
   const currentMonth =
