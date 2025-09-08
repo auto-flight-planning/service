@@ -56,7 +56,7 @@ export default function ParticipantsField() {
             email={participant.email}
             permission={participant.permission}
             onTogglePermission={toggleParticipantPermission}
-            onRemove={() => {}}
+            onRemove={removeParticipant}
           />
         ))}
       </div>

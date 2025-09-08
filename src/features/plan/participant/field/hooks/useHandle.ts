@@ -32,10 +32,6 @@ export default function useHandleParticipantsField(
     });
   };
 
-  const removeParticipant = (index: number) => {
-    remove(index);
-  };
-
   const toggleParticipantPermission = (
     index: number,
     permissionOption: ParticipantPermissionEnum
@@ -54,6 +50,10 @@ export default function useHandleParticipantsField(
               (permission) => permission !== permissionOption
             ),
     });
+  };
+
+  const removeParticipant = (index: number) => {
+    remove(index);
   };
 
   return {

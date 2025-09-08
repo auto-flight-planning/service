@@ -1,4 +1,4 @@
-import { ChipButton } from "@/components/button";
+import { ChipButton, CrossButton } from "@/components/button";
 import { type ChipProps } from "@/components/chip";
 import { ParticipantPermissionEnum } from "../type";
 import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
@@ -12,7 +12,7 @@ interface SelectedParticipantDetailProps {
     index: number,
     permissionOption: ParticipantPermissionEnum
   ) => void;
-  onRemove: () => void;
+  onRemove: (index: number) => void;
 }
 
 const permissionColorClasses: Record<
@@ -65,6 +65,11 @@ export default function SelectedParticipantDetail({
         </div>
         <span className="text-gray-400 text-xs mt-1">{email}</span>
       </div>
+      <CrossButton
+        size="small"
+        type="button"
+        onClick={() => onRemove(participantIndex)}
+      />
     </div>
   );
 }
