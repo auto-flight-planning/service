@@ -69,7 +69,7 @@ export const createPlanAPI = async (data: CreatePlanFormData) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         title: data.title,
-        targetDate: `${data.year}-${data.month}-01`,
+        targetDate: `${data.year}-${data.month.padStart(2, "0")}-01`,
         participantDataList: formatParticipantsField(data.participants),
       }),
     });
