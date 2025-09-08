@@ -5,7 +5,8 @@ import SearchResult from "../components/searchResult";
 
 export default function ParticipantsField() {
   const {
-    useSearhNameState: { searchName, setSearchName },
+    useSearhName: { searchName, setSearchName },
+    useIsFocused: { isFocused, handleFocus, handleBlur },
     employees,
     isFetching,
   } = useSearch();
@@ -17,19 +18,25 @@ export default function ParticipantsField() {
   } = useHandle();
 
   return (
-    <div className="flex flex-col">
-      <TextField
-        label="企画参加者"
-        placeholder="検索する氏名を入力してください"
-        value={searchName}
-        onChange={setSearchName}
-      />
-      <SearchResult
-        employees={employees}
-        isSearching={!!searchName}
-        isLoading={isFetching}
-        onSelect={addParticipant}
-      />
+    <div className="flex flex-col gap-2">
+      <div>
+        <TextField
+          label="企画参加者"
+          placeholder="検索する氏名を入力してください"
+          value={searchName}
+          onChange={setSearchName}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+        {isFocused && (
+          <SearchResult
+            employees={employees}
+            isSearching={!!searchName}
+            isLoading={isFetching}
+            onSelect={addParticipant}
+          />
+        )}
+      </div>
     </div>
   );
 }

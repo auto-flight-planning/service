@@ -14,8 +14,19 @@ export default function useSearchParticipant() {
     staleTime: 5 * 60 * 1000, // 5分
   });
 
+  const [isFocused, setIsFocused] = useState(false);
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+  const handleBlur = () => {
+    setTimeout(() => {
+      setIsFocused(false);
+    }, 1);
+  };
+
   return {
-    useSearhNameState: { searchName, setSearchName },
+    useSearhName: { searchName, setSearchName },
+    useIsFocused: { isFocused, handleFocus, handleBlur },
     employees,
     isFetching,
   };
