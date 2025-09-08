@@ -24,12 +24,12 @@ const colorClasses = {
     "light-gray": "border border-gray-400 bg-white text-gray-400",
   },
   solid: {
-    primary: "bg-primary-400 text-white",
-    red: "bg-red-400 text-white",
-    green: "bg-green-500 text-white",
-    yellow: "bg-yellow-400 text-white",
-    gray: "bg-gray-300 text-gray-600",
-    "light-gray": "bg-gray-200 text-gray-500",
+    primary: "border border-primary-400 bg-primary-400 text-white",
+    red: "border border-red-400 bg-red-400 text-white",
+    green: "border border-green-500 bg-green-500 text-white",
+    yellow: "border border-yellow-400 bg-yellow-400 text-white",
+    gray: "border border-gray-300 bg-gray-300 text-gray-600",
+    "light-gray": "border border-gray-200 bg-gray-200 text-gray-500",
   },
 };
 

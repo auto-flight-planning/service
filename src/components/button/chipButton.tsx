@@ -33,12 +33,13 @@ export default function ChipButton({
         "hover:bg-gray-50 hover:border-gray-500 hover:text-gray-500",
     },
     solid: {
-      primary: "hover:bg-primary-500",
-      red: "hover:bg-red-500",
-      green: "hover:bg-green-600",
-      yellow: "hover:bg-yellow-500",
-      gray: "hover:bg-gray-400 hover:text-gray-700",
-      "light-gray": "hover:bg-gray-300 hover:text-gray-600",
+      primary: "hover:bg-primary-500 hover:border-primary-500",
+      red: "hover:bg-red-500 hover:border-red-500",
+      green: "hover:bg-green-600 hover:border-green-600",
+      yellow: "hover:bg-yellow-500 hover:border-yellow-500",
+      gray: "hover:bg-gray-400 hover:border-gray-400 hover:text-gray-700",
+      "light-gray":
+        "hover:bg-gray-300 hover:border-gray-300 hover:text-gray-600",
     },
   };
   const interactionClasses = `cursor-pointer ${hoverBgClasses[variant][color]} active:scale-95 transition-all duration-200`;
