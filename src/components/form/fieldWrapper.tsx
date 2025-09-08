@@ -27,7 +27,7 @@ export default function FieldWrapper({
       )}
       {children}
       {error && onErrorMsg && (
-        <p className="mt-1 text-xs text-right text-red">{error}</p>
+        <p className="mt-1 text-xs text-right text-red-500">{error}</p>
       )}
     </div>
   );

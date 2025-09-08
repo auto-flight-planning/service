@@ -56,7 +56,7 @@ export default function NumberField({
             onChange={handleChange}
             className={`w-full px-3 py-2.5 pr-12 border rounded-md text-sm transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:ring-opacity-25 placeholder:text-gray-400 placeholder:text-xs disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200 ${
               error
-                ? "border-red focus:border-red focus:ring-red focus:ring-opacity-25"
+                ? "border-red-500 focus:border-red-500 focus:ring-red-500 focus:ring-opacity-25"
                 : "border-gray-300 focus:border-primary-500"
             }`}
             placeholder={placeholder}
@@ -73,7 +73,7 @@ export default function NumberField({
           onChange={handleChange}
           className={`w-full px-3 py-2.5 border rounded-md text-sm transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:ring-opacity-25 placeholder:text-gray-400 placeholder:text-xs disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200 ${
             error
-              ? "border-red focus:border-red focus:ring-red focus:ring-opacity-25"
+              ? "border-red-500 focus:border-red-500 focus:ring-red-500 focus:ring-opacity-25"
               : "border-gray-300 focus:border-primary-500"
           }`}
           placeholder={placeholder}
