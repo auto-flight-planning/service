@@ -10,14 +10,14 @@ import { CreatePlanModal } from "@/features/plan/base/create";
 import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";
 import { FlightScaleModal } from "@/features/plan/input/resource/flightScale";
 
-const MODAL_COMPONENTS = {
-  login: LoginModal,
-  createPlan: CreatePlanModal,
-  resourceInput: ResourceInputModal,
-  flightScaleInput: FlightScaleModal,
-};
-
 export default function ModalContainer() {
+  const MODAL_COMPONENTS = {
+    login: LoginModal,
+    createPlan: CreatePlanModal,
+    // resourceInput: ResourceInputModal,
+    // flightScaleInput: FlightScaleModal,
+  };
+
   const { isOpen, modalName, modalProps, closeModal } = useModalStore();
   const [isReady, setIsReady] = useState(false);
 
