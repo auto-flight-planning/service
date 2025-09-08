@@ -7,10 +7,10 @@ export const createPlanFormSchema = z.object({
   month: z.string().min(1, "対象月を選択してください"),
   participants: z.array(
     z.object({
-      userId: z.string(),
+      userId: z.uuid(),
       lastName: z.string(),
       firstName: z.string(),
-      permission: z.enum(PermissionEnum),
+      permission: z.array(z.enum(PermissionEnum)),
     })
   ),
 });
