@@ -12,6 +12,7 @@ import {
 } from "../schemas/formSchema";
 import { CreatePlanResSchema } from "../../server/schemas/res.schema";
 import { errorResToMessage } from "@/lib/utils";
+import { formatParticipantsField } from "@/features/plan/participant";
 
 export default function useCreatePlan() {
   const formMethods = useForm<CreatePlanFormData>({
@@ -69,10 +70,7 @@ export const createPlanAPI = async (data: CreatePlanFormData) => {
       body: JSON.stringify({
         title: data.title,
         targetDate: `${data.year}-${data.month}-01`,
-        participantDataList: data.participants.map((p) => ({
-          userId: p.userId,
-          permission: p.permission,
-        })),
+        participantDataList: formatParticipantsField(data.participants),
       }),
     });
     if (!res.ok) {

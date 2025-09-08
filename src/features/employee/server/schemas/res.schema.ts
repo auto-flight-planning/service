@@ -38,3 +38,6 @@ export const searchEmployeesByNameResSchema = z.object({
 export type SearchEmployeesByNameResSchema = z.infer<
   typeof searchEmployeesByNameResSchema
 >;
+
+export type Employees = SearchEmployeesByNameResSchema["employees"];
+export type Employee = Employees[number];

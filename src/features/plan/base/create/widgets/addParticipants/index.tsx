@@ -12,6 +12,7 @@ export default function AddParticipants() {
     name: "participants",
   });
 
+  //--------------------------------
   const [searchName, setSearchName] = useState("");
   const deferredSearchName = useDeferredValue(searchName);
   const { employees, isPending } = useSearchEmployee(deferredSearchName);
@@ -21,6 +22,7 @@ export default function AddParticipants() {
         (e: EmployeeResult) => e.userId === employee.userId
       )
   );
+  //--------------------------------
 
   const handleEmployeeSelect = (employee: EmployeeResult) => {
     setValue("participants", [...selectedEmployees, employee]);

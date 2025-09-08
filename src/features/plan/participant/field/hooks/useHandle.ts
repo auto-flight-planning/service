@@ -1,0 +1,45 @@
+import { useFieldArray, useFormContext } from "react-hook-form";
+import { Employee } from "@/features/employee/server/schemas/res.schema";
+import { Participant, ParticipantsFieldSchema } from "../schemas/filed.schema";
+import { ParticipantPermissionEnum } from "../../type";
+
+export default function useHandleParticipantsField() {
+  const { control } = useFormContext<{
+    participants: ParticipantsFieldSchema;
+  }>();
+  const { append, remove, update } = useFieldArray({
+    control,
+    name: "participants",
+  });
+
+  const addParticipant = ({ userId, lastName, firstName }: Employee) => {
+    append({
+      userId,
+      lastName,
+      firstName,
+      permission: [ParticipantPermissionEnum.VIEW],
+    });
+  };
+
+  const removeParticipant = (index: number) => {
+    remove(index);
+  };
+
+  // TODO: 한개씩 바꿀지 통으로 바꿀지 고민
+  const updateParticipantPermission = (
+    index: number,
+    participant: Participant,
+    permission: ParticipantPermissionEnum[]
+  ) => {
+    update(index, {
+      ...participant,
+      permission,
+    });
+  };
+
+  return {
+    addParticipant,
+    removeParticipant,
+    updateParticipantPermission,
+  };
+}

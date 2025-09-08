@@ -1,18 +1,12 @@
 import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { planIdSchema, userIdSchema } from "@/server/schemas/common.schema";
+import { ParticipantPermissionEnum } from "@/features/plan/participant/type";
 import { USER_ID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
 // 1. 個別スキーマ
-export enum PermissionEnum {
-  VIEW = "VIEW",
-  REQUEST = "REQUEST",
-  INPUT = "INPUT",
-  EDIT = "EDIT",
-}
-
 export enum PlanStatusEnum {
   INPUT = "INPUT",
   RESULT = "RESULT",
@@ -66,7 +60,7 @@ export type PlanCreatedAtSchema = z.infer<typeof planCreatedAtSchema>;
 export const planParticipantDataListSchema = z.array(
   z.object({
     userId: userIdSchema,
-    permission: z.array(z.enum(PermissionEnum)).openapi({
+    permission: z.array(z.enum(ParticipantPermissionEnum)).openapi({
       description: "権限",
       example: ["VIEW", "REQUEST", "INPUT", "EDIT"],
     }),
