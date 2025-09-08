@@ -53,7 +53,7 @@ export default function Toast({
     if (type === "success") {
       return `${baseStyles} border-l-4 border-l-primary-500`;
     } else {
-      return `${baseStyles} border-l-4 border-l-red-500`;
+      return `${baseStyles} border-l-4 border-l-red-400`;
     }
   };
 
@@ -61,7 +61,7 @@ export default function Toast({
     if (type === "success") {
       return "bg-primary-500 text-white";
     } else {
-      return "bg-red text-white";
+      return "bg-red-500 text-white";
     }
   };
 
@@ -103,7 +103,7 @@ export default function Toast({
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
         <div
           className={`h-full transition-all duration-100 ease-linear ${
-            type === "success" ? "bg-primary-500" : "bg-red-500"
+            type === "success" ? "bg-primary-500" : "bg-red-400"
           }`}
           style={{ width: `${progress}%` }}
         />

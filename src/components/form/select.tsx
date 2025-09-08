@@ -80,7 +80,7 @@ export default function Select({
             disabled:border-gray-200
             ${
               error
-                ? "border-red-500 focus:border-red-500 focus:ring-red-500 focus:ring-opacity-25"
+                ? "border-red-400 focus:border-red-400 focus:ring-red-400 focus:ring-opacity-25"
                 : "border-gray-300 focus:border-primary-500"
             }
             ${className}
