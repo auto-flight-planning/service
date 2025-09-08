@@ -1,55 +1,45 @@
+"use client";
+
 import { useRouter } from "next/navigation";
-import { useToastStore } from "@/features/toast";
-import { useUserStore } from "@/features/auth";
-import { useModalStore } from "@/features/modal";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  createPlanSchema,
-  type CreatePlanFormDataType,
-} from "../schemas/formSchema";
-import { getMonthOptions, getStartMonth } from "../utils";
 import { useMutation } from "@tanstack/react-query";
+import { useUserStore } from "@/features/auth";
+import { useToastStore } from "@/features/toast";
+import { useModalStore } from "@/features/modal";
+import {
+  createPlanFormSchema,
+  type CreatePlanFormData,
+} from "../schemas/formSchema";
+import { CreatePlanResSchema } from "../../server/schemas/res.schema";
 
 export default function useCreatePlan() {
-  const formMethods = useForm<CreatePlanFormDataType>({
+  const formMethods = useForm<CreatePlanFormData>({
     mode: "onChange",
-    resolver: zodResolver(createPlanSchema),
+    resolver: zodResolver(createPlanFormSchema),
     defaultValues: {
-      planName: "",
+      title: "",
       year: "",
       month: "",
       participants: [],
     },
   });
-  const { control, setValue } = formMethods;
-
-  const watchYear = useWatch({ control, name: "year" });
-  const watchMonth = useWatch({ control, name: "month" });
-  const onYearChange = (year: string) => {
-    setValue("year", year);
-    if (!watchMonth) return;
-    if (Number(watchMonth) < getStartMonth(year)) {
-      setValue("month", "");
-    }
-  };
 
   const router = useRouter();
-  const { addToast } = useToastStore();
   const { user } = useUserStore();
+  const { addToast } = useToastStore();
   const { closeModal } = useModalStore();
 
   const { mutate: createPlan, isPending } = useMutation({
-    mutationFn: (data: CreatePlanFormDataType) =>
-      createPlanAPI(data, user!.userId),
+    mutationFn: createPlanAPI,
     onSuccess: (data) => {
-      const { planId } = data;
+      const { id } = data;
       addToast({
         type: "success",
         message: "企画を作成しました。",
         title: "企画作成成功",
       });
-      router.push(`/plan/${planId}/input`);
+      router.push(`/plan/${id}/input`);
       closeModal();
     },
     onError: (error) => {
@@ -61,7 +51,7 @@ export default function useCreatePlan() {
     },
   });
 
-  const onValidSubmit = (data: CreatePlanFormDataType) => {
+  const onValidSubmit = (data: CreatePlanFormData) => {
     createPlan(data);
   };
 
@@ -69,30 +59,30 @@ export default function useCreatePlan() {
     formMethods,
     onValidSubmit,
     isPending,
-    dateProps: {
-      monthOptions: getMonthOptions(watchYear),
-      onYearChange,
-    },
   };
 }
 
-export const createPlanAPI = async (
-  data: CreatePlanFormDataType,
-  userId: string
-) => {
-  const res = await fetch("/api/plan/create", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      userId,
-      name: data.planName,
-      year: Number(data.year),
-      month: Number(data.month),
-      participant_ids: data.participants.map((p) => p.userId),
-    }),
-  });
-  if (!res.ok) {
-    throw new Error("企画作成に失敗しました。");
+export const createPlanAPI = async (data: CreatePlanFormData) => {
+  try {
+    const res = await fetch("/api/plans", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: data.title,
+        targetDate: `${data.year}-${data.month}-01`,
+        participantDataList: data.participants.map((p) => ({
+          userId: p.userId,
+          permission: p.permission,
+        })),
+      }),
+    });
+    if (!res.ok) {
+      throw new Error("POST /api/plans を呼び出しに失敗しました。");
+    }
+
+    const plan: CreatePlanResSchema = await res.json();
+    return plan;
+  } catch (error) {
+    throw error;
   }
-  return res.json();
 };
