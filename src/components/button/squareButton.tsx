@@ -9,7 +9,7 @@ interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "primary" | "gray" | "light-gray";
   size?: "small" | "medium" | "large";
   fullWidth?: boolean;
-  onLoading?: boolean;
+  isLoading?: boolean;
   onBorder?: boolean;
 }
 
@@ -20,7 +20,7 @@ export default function SquareButton({
   color = "primary",
   size = "medium",
   fullWidth = false,
-  onLoading = false,
+  isLoading = false,
   onBorder = false,
   ...props
 }: SquareButtonProps) {
@@ -70,11 +70,11 @@ export default function SquareButton({
     <button
       className={classes}
       onClick={onClick}
-      disabled={onLoading || props.disabled}
+      disabled={isLoading || props.disabled}
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
-        {onLoading && (
+        {isLoading && (
           <Spinner size={spinnerSizes[size]} color={spinnerColors[color]} />
         )}
         <span className={bold ? "font-semibold" : ""}>{text}</span>
