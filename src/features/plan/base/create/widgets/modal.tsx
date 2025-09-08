@@ -4,7 +4,7 @@ import {
   BasicModalHeader,
   BasicModalFooter,
 } from "@/features/modal/components";
-import { CreatePlanForm, useCreatePlan } from ".";
+import { CreatePlanForm, useCreatePlan } from "..";
 
 export default function CreatePlanModal() {
   const { closeModal } = useModalStore();

@@ -1,7 +1,7 @@
-export { default as CreatePlanModal } from "./createPlanModal";
-export { default as CreatePlanForm } from "./form";
-export { default as useCreatePlan } from "./useCreatePlan";
+export { default as CreatePlanModal } from "./widgets/modal";
+export { default as CreatePlanForm } from "./widgets/form";
+export { default as useCreatePlan } from "./hooks/useCreatePlan";
 export {
   createPlanSchema,
   type CreatePlanFormDataType,
-} from "./createPlanFormSchema";
+} from "./schemas/formSchema";
