@@ -24,7 +24,7 @@ export default function LoginForm() {
           type="submit"
           size="large"
           fullWidth
-          isPending={isPending}
+          onLoading={isPending}
         />
       </form>
     </FormProvider>

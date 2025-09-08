@@ -60,7 +60,7 @@ export default function BasicModalFooter({
           onClick={confirmProps.onClick}
           color={confirmProps.color}
           disabled={confirmProps.disabled}
-          isPending={confirmProps.isPending}
+          onLoading={confirmProps.isPending}
         />
       </div>
     </div>
