@@ -52,6 +52,14 @@ export default function withHandler<T extends any[]>(
 
       console.error("API Error:", error);
 
+      // 400: Request Body パース エラー
+      if (error instanceof SyntaxError) {
+        return NextResponse.json(
+          { error: "Request Bodyのパースに失敗しました" },
+          { status: 400 }
+        );
+      }
+
       // 400: Zod validation エラー
       if (error instanceof ZodError) {
         return NextResponse.json(

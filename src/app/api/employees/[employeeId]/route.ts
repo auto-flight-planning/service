@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { withHandler } from "@/server/lib";
+import employeesRepo from "@/server/repos/employees/employees.repo";
 import { getEmployeeByIdReqSchema } from "@/features/employee/server/schemas/req.schema";
 import { getEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import employeeRepo from "@/server/repos/employee/employee.repo";
+import { withHandler } from "@/server/lib";
 
 export const GET = withHandler(
   async (
@@ -11,8 +11,7 @@ export const GET = withHandler(
   ) => {
     const validatedParams = getEmployeeByIdReqSchema.parse(await params);
     const { employeeId } = validatedParams;
-
-    const employee = await employeeRepo.findOneById(employeeId);
+    const employee = await employeesRepo.findOneById({ id: employeeId });
 
     if (!employee) {
       return NextResponse.json(

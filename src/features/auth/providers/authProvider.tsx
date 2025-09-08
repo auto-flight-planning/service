@@ -26,6 +26,10 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         async (event, session) => {
           if (event === "INITIAL_SESSION") {
             if (session) {
+              if (process.env.NODE_ENV === "development") {
+                console.log("console in dev mode \nsession : ", session);
+              }
+
               const res = await fetch(
                 `/api/employees?userId=${session.user.id}`
               );

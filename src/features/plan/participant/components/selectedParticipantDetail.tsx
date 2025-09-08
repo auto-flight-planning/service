@@ -1,0 +1,75 @@
+import { ChipButton, CrossButton } from "@/components/button";
+import { type ChipProps } from "@/components/chip";
+import { ParticipantPermissionEnum } from "../type";
+import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
+
+interface SelectedParticipantDetailProps {
+  participantIndex: number;
+  fullName: string;
+  email: string;
+  permission: ParticipantPermissionEnum[];
+  onTogglePermission: (
+    index: number,
+    permissionOption: ParticipantPermissionEnum
+  ) => void;
+  onRemove: (index: number) => void;
+}
+
+const permissionColorClasses: Record<
+  ParticipantPermissionEnum,
+  ChipProps["color"]
+> = {
+  [ParticipantPermissionEnum.VIEW]: "light-gray",
+  [ParticipantPermissionEnum.REQUEST]: "green",
+  [ParticipantPermissionEnum.INPUT]: "yellow",
+  [ParticipantPermissionEnum.EDIT]: "primary",
+};
+
+export default function SelectedParticipantDetail({
+  participantIndex,
+  fullName,
+  email,
+  permission,
+  onTogglePermission,
+  onRemove,
+}: SelectedParticipantDetailProps) {
+  return (
+    <div className="flex items-center justify-between py-2 px-3 bg-primary-50 border border-primary-100 rounded-lg">
+      <div className="flex flex-col">
+        <div className="flex items-center gap-2">
+          <span className="text-gray-700 font-medium text-sm">{fullName}</span>
+          <div className="flex items-center gap-1">
+            {Object.values(ParticipantPermissionEnum).map(
+              (permissionOption) => {
+                const isSelected = permission.includes(permissionOption);
+                return (
+                  <ChipButton
+                    key={permissionOption}
+                    text={`${PARTICIPANT_PERMISSION_LABELS[permissionOption]}${
+                      isSelected ? " ✓" : ""
+                    }`}
+                    variant={isSelected ? "solid" : "outline"}
+                    size="extra-small"
+                    color={permissionColorClasses[permissionOption]}
+                    onClick={() =>
+                      onTogglePermission(participantIndex, permissionOption)
+                    }
+                    disabled={
+                      permissionOption === ParticipantPermissionEnum.VIEW
+                    }
+                  />
+                );
+              }
+            )}
+          </div>
+        </div>
+        <span className="text-gray-400 text-xs mt-1">{email}</span>
+      </div>
+      <CrossButton
+        size="small"
+        type="button"
+        onClick={() => onRemove(participantIndex)}
+      />
+    </div>
+  );
+}

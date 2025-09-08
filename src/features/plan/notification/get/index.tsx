@@ -7,7 +7,9 @@ import { Spinner } from "@/components/spinner";
 import { plan_notification } from "@/server/db/prisma/index.d";
 
 export default function Notification() {
-  const { notifications, isPending } = useNotification();
+  // const { notifications, isPending } = useNotification();
+  const notifications: any[] = [];
+  const isPending = false;
   const handleNotificationClick = (notification: plan_notification) => {
     console.log("Notification clicked:", notification);
     // TODO: 나중에 모달이나 페이지 이동 로직 추가

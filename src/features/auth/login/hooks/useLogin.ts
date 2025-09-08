@@ -10,6 +10,7 @@ import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
 import { loginFormSchema, type LoginFormData } from "../schemas/formSchema";
 import { GetEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
+import { errorResToMessage } from "@/lib/utils";
 
 export default function useLogin() {
   const formMethods = useForm<LoginFormData>({
@@ -47,19 +48,19 @@ export default function useLogin() {
     onError: (error) => {
       addToast({
         type: "error",
-        message: error.message || "ログインに失敗しました。",
+        message: "ログインに失敗しました。",
         title: "ログイン失敗",
       });
     },
   });
 
-  const onValidSubmit = (data: LoginFormData) => {
-    login(data);
-  };
+  const { handleSubmit } = formMethods;
+  const onValidSubmit = (data: LoginFormData) => login(data);
+  const onSubmit = handleSubmit(onValidSubmit);
 
   return {
     formMethods,
-    onValidSubmit,
+    onSubmit,
     isPending,
   };
 }
@@ -67,6 +68,12 @@ export default function useLogin() {
 export async function loginAPI(data: LoginFormData) {
   try {
     const res = await fetch(`/api/employees/${data.employeeId}`);
+    if (!res.ok) {
+      throw new Error(
+        errorResToMessage(res, "GET /api/employees/{employeeId}")
+      );
+    }
+
     const employee: GetEmployeeByIdResSchema = await res.json();
 
     const supabase = await getBrowserClient();
@@ -90,6 +97,7 @@ export async function loginAPI(data: LoginFormData) {
       email: employee.email,
     };
   } catch (error) {
+    console.error(error);
     throw error;
   }
 }

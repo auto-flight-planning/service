@@ -1,53 +1,66 @@
 import { SquareButton } from "@/components/button";
+import useModalStore from "../../stores/modalStore";
 
 interface BasicModalFooterProps {
-  cancelText?: string;
-  confirmText: string;
-  onCancel?: () => void;
-  onConfirm: () => void;
-  isPending?: boolean;
-  disabled?: boolean;
-  showCancel?: boolean;
-  leftText?: string;
-  onBorder?: boolean;
+  cancelProps?: {
+    text: string;
+    onClick?: () => void;
+    color?: "primary" | "gray" | "light-gray";
+    disabled?: boolean;
+    hidden?: boolean;
+  };
+  confirmProps: {
+    text: string;
+    onClick: () => void;
+    color?: "primary" | "gray" | "light-gray";
+    disabled?: boolean;
+    isLoading?: boolean;
+  };
+  explanationText?: string;
 }
 
 export default function BasicModalFooter({
-  cancelText = "キャンセル",
-  confirmText,
-  onCancel,
-  onConfirm,
-  isPending = false,
-  disabled = false,
-  showCancel = true,
-  leftText,
-  onBorder = true,
+  cancelProps = {
+    text: "キャンセル",
+    onClick: undefined,
+    color: "light-gray",
+    disabled: false,
+    hidden: false,
+  },
+  confirmProps = {
+    text: "保存",
+    onClick: () => {},
+    color: "primary",
+    disabled: false,
+    isLoading: false,
+  },
+  explanationText = "",
 }: BasicModalFooterProps) {
+  const { closeModal } = useModalStore();
+
   return (
-    <div
-      className={`flex justify-between items-center mt-2 ${
-        onBorder ? "border-t border-gray-200 pt-4" : ""
-      }`}
-    >
+    <div className="flex justify-between items-center mt-2 border-t border-gray-200 pt-4">
       <div className="flex-1">
-        {leftText && <p className="text-sm text-gray-500">{leftText}</p>}
+        {explanationText && (
+          <p className="text-sm text-gray-500">{explanationText}</p>
+        )}
       </div>
 
       <div className="flex gap-3">
-        {showCancel && onCancel && (
+        {!cancelProps.hidden && (
           <SquareButton
-            text={cancelText}
-            color="gray"
-            onClick={onCancel}
-            disabled={isPending}
+            text={cancelProps.text}
+            onClick={cancelProps.onClick || closeModal}
+            color={cancelProps.color}
+            disabled={cancelProps.disabled}
           />
         )}
         <SquareButton
-          text={confirmText}
-          color="primary"
-          onClick={onConfirm}
-          disabled={disabled}
-          isPending={isPending}
+          text={confirmProps.text}
+          onClick={confirmProps.onClick}
+          color={confirmProps.color}
+          disabled={confirmProps.disabled}
+          isLoading={confirmProps.isLoading}
         />
       </div>
     </div>

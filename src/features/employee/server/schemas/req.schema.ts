@@ -14,6 +14,7 @@ export const getEmployeeByIdReqSchema = z.object({
     example: EMPLOYEE_ID_EXAMPLE,
   }),
 });
+export type GetEmployeeByIdReqSchema = z.infer<typeof getEmployeeByIdReqSchema>;
 
 export const searchEmployeesByNameReqSchema = z.object({
   searchName: z
@@ -28,8 +29,6 @@ export const searchEmployeesByNameReqSchema = z.object({
       example: "田中",
     }),
 });
-
-export type GetEmployeeByIdReqSchema = z.infer<typeof getEmployeeByIdReqSchema>;
 export type SearchEmployeesByNameReqSchema = z.infer<
   typeof searchEmployeesByNameReqSchema
 >;
