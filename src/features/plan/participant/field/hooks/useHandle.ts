@@ -17,7 +17,7 @@ export default function useHandleParticipantsField() {
     name: "participants",
   });
 
-  const addParticipant = ({ userId, lastName, firstName }: Employee) => {
+  const addParticipant = ({ userId, lastName, firstName, email }: Employee) => {
     if (
       selectedParticipants.some((participant) => participant.userId === userId)
     )
@@ -26,6 +26,7 @@ export default function useHandleParticipantsField() {
       userId,
       lastName,
       firstName,
+      email,
       permission: [ParticipantPermissionEnum.VIEW],
     });
   };

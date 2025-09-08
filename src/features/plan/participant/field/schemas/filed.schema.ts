@@ -6,6 +6,7 @@ export const participantsFieldSchema = z.array(
     userId: z.uuid(),
     lastName: z.string(),
     firstName: z.string(),
+    email: z.email(),
     permission: z.array(z.enum(ParticipantPermissionEnum)),
   })
 );
