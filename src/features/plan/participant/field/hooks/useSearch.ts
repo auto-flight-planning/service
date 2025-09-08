@@ -30,8 +30,6 @@ export const searchParticipantAPI = async (searchName: string) => {
       throw new Error(errorResToMessage(res, "GET /api/employees/search"));
     }
 
-    console.log("뭐임? 너 실행됨?");
-
     const employees: SearchEmployeesByNameResSchema = await res.json();
     return employees;
   } catch (error) {
