@@ -22,6 +22,7 @@ export const planTitleSchema = z.string().min(1).openapi({
   description: "企画名",
   example: "2028年9月運航企画",
 });
+export type PlanTitleSchema = z.infer<typeof planTitleSchema>;
 
 export const planTargetDateSchema = z
   .string()
@@ -40,6 +41,7 @@ export const planTargetDateSchema = z
     description: "対象年月 (YYYY-MM-DD 形式, 今日以降)",
     example: "2028-09-01",
   });
+export type PlanTargetDateSchema = z.infer<typeof planTargetDateSchema>;
 
 export const planParticipantDataListSchema = z.array(
   z.object({
@@ -50,9 +52,6 @@ export const planParticipantDataListSchema = z.array(
     }),
   })
 );
-
-export type PlanTitleSchema = z.infer<typeof planTitleSchema>;
-export type PlanTargetDateSchema = z.infer<typeof planTargetDateSchema>;
 export type PlanParticipantDataListSchema = z.infer<
   typeof planParticipantDataListSchema
 >;

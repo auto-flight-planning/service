@@ -15,6 +15,7 @@ export const userIdReqSchema = (type: "path" | "query") =>
       example: USER_ID_EXAMPLE,
     }),
   });
+export type UserIdReqSchema = z.infer<typeof userIdReqSchema>;
 
 export const planIdReqSchema = (type: "path" | "query") =>
   z.object({
@@ -27,6 +28,4 @@ export const planIdReqSchema = (type: "path" | "query") =>
       example: PLAN_ID_EXAMPLE,
     }),
   });
-
-export type UserIdReqSchema = z.infer<typeof userIdReqSchema>;
 export type PlanIdReqSchema = z.infer<typeof planIdReqSchema>;

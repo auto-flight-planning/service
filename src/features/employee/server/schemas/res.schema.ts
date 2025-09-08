@@ -23,19 +23,18 @@ export const getEmployeeByIdResSchema = z.object({
     example: "test@example.com",
   }),
 });
+export type GetEmployeeByIdResSchema = z.infer<typeof getEmployeeByIdResSchema>;
 
 export const getEmployeeByUserIdResSchema = getEmployeeByIdResSchema.extend({
   userId: userIdSchema,
 });
+export type GetEmployeeByUserIdResSchema = z.infer<
+  typeof getEmployeeByUserIdResSchema
+>;
 
 export const searchEmployeesByNameResSchema = z.object({
   employees: z.array(getEmployeeByUserIdResSchema),
 });
-
-export type GetEmployeeByIdResSchema = z.infer<typeof getEmployeeByIdResSchema>;
-export type GetEmployeeByUserIdResSchema = z.infer<
-  typeof getEmployeeByUserIdResSchema
->;
 export type SearchEmployeesByNameResSchema = z.infer<
   typeof searchEmployeesByNameResSchema
 >;
