@@ -14,7 +14,7 @@ interface BasicModalFooterProps {
     onClick: () => void;
     color?: "primary" | "gray" | "light-gray";
     disabled?: boolean;
-    isPending?: boolean;
+    onLoading?: boolean;
   };
   explanationText?: string;
 }
@@ -32,7 +32,7 @@ export default function BasicModalFooter({
     onClick: () => {},
     color: "primary",
     disabled: false,
-    isPending: false,
+    onLoading: false,
   },
   explanationText = "",
 }: BasicModalFooterProps) {
@@ -60,7 +60,7 @@ export default function BasicModalFooter({
           onClick={confirmProps.onClick}
           color={confirmProps.color}
           disabled={confirmProps.disabled}
-          onLoading={confirmProps.isPending}
+          onLoading={confirmProps.onLoading}
         />
       </div>
     </div>

@@ -6,18 +6,18 @@ import {
 
 interface ParticipantSearchResultProps {
   employees: Employees;
-  isPending: boolean;
+  onLoading: boolean;
   onSelect: (employee: Employee) => void;
 }
 
 export default function ParticipantSearchResult({
   employees,
-  isPending,
+  onLoading,
   onSelect,
 }: ParticipantSearchResultProps) {
   return (
     <div className="mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
-      {isPending ? (
+      {onLoading ? (
         <div className="px-4 py-3 text-center flex items-center justify-center gap-2">
           <Spinner size="sm" />
           <span className="text-sm text-gray-500">検索中...</span>

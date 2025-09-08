@@ -22,7 +22,7 @@ export default function CreatePlanModal() {
               text: "作成",
               onClick: onSubmit,
               disabled: isPending,
-              isPending: isPending,
+              onLoading: isPending,
             }}
           />
         </form>
