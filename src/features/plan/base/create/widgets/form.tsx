@@ -16,7 +16,7 @@ export default function CreatePlanForm() {
   return (
     <div className="flex flex-col gap-4">
       <TextField
-        name="planName"
+        name="title"
         label="企画名"
         placeholder="企画名を入力してください"
       />

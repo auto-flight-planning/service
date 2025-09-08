@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { useUserStore } from "@/features/auth";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
 import {
@@ -26,7 +25,6 @@ export default function useCreatePlan() {
   });
 
   const router = useRouter();
-  const { user } = useUserStore();
   const { addToast } = useToastStore();
   const { closeModal } = useModalStore();
 
