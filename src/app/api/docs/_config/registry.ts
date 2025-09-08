@@ -7,7 +7,6 @@ import { z } from "zod";
 extendZodWithOpenApi(z);
 
 // ---------------Legacy------------------
-// import { registerCreatePlanSchemas } from "@/features/plan/base/create/api/openapi";
 // import { registerGetNotificationSchemas } from "@/features/plan/notification/get/api/openapi";
 // import { registerGetPlanOneSchemas } from "@/features/plan/base/get/one/api/openapi";
 // import {
@@ -38,7 +37,6 @@ registry.registerComponent("securitySchemes", "bearerAuth", {
 // API別
 registerEmployeeAPIsToDocs(registry);
 registerPlanAPIsToDocs(registry);
-// registerCreatePlanSchemas(registry);
 // registerGetNotificationSchemas(registry);
 // registerGetPlanOneSchemas(registry);
 // registerUpdateTotalPersonResourceSchemas(registry);
