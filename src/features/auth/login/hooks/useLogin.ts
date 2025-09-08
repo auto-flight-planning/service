@@ -67,6 +67,12 @@ export default function useLogin() {
 export async function loginAPI(data: LoginFormData) {
   try {
     const res = await fetch(`/api/employees/${data.employeeId}`);
+    if (!res.ok) {
+      throw new Error(
+        "GET /api/employees/{employeeId} を呼び出しに失敗しました。"
+      );
+    }
+
     const employee: GetEmployeeByIdResSchema = await res.json();
 
     const supabase = await getBrowserClient();
