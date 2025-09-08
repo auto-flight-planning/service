@@ -1,17 +1,17 @@
-import { FieldWrapper, Select } from "@/components/form";
-import { TextField } from "@/components/form";
-import { useCreatePlan } from "@/features/plan/base/create";
-import { getYearOptions } from "../../utils";
+import useCreatePlan from "../hooks/useCreatePlan";
+import useHandleTargetDate from "../hooks/useHandleTargetDate";
+import { TextField, FieldWrapper, Select } from "@/components/form";
+import { getYearOptions } from "../utils";
 import AddParticipants from "./addParticipants";
 
 export default function CreatePlanForm() {
-  const {
-    formMethods,
-    dateProps: { monthOptions, onYearChange },
-  } = useCreatePlan();
+  const { formMethods } = useCreatePlan();
+  const { monthOptions, onYearChange } = useHandleTargetDate();
+
   const {
     formState: { errors },
   } = formMethods;
+  const targetDateError = errors.year?.message || errors.month?.message;
 
   return (
     <div className="flex flex-col gap-4">
@@ -20,11 +20,7 @@ export default function CreatePlanForm() {
         label="企画名"
         placeholder="企画名を入力してください"
       />
-      <FieldWrapper
-        label="対象期間"
-        error={errors.year?.message || errors.month?.message}
-        onErrorMsg={false}
-      >
+      <FieldWrapper label="対象期間" error={targetDateError} onErrorMsg={false}>
         <div className="flex flex-col">
           <div className="flex gap-4 w-full">
             <Select
