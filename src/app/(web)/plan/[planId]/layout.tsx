@@ -12,8 +12,8 @@ export default async function PlanLayout({
   const { planId } = await params;
   return (
     <div className="py-8 px-36 w-full h-full flex flex-col gap-8">
-      <PlanHeader planId={planId} />
-      <div>{children}</div>
+      {/* <PlanHeader planId={planId} /> */}
+      {/* <div>{children}</div> */}
     </div>
   );
 }
