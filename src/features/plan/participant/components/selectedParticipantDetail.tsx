@@ -30,34 +30,23 @@ export default function SelectedParticipantDetail({
         <div className="flex items-center gap-2">
           <span className="text-gray-700 font-medium text-sm">{fullName}</span>
           <div className="flex items-center gap-1">
-            {["VIEW", "REQUEST", "INPUT"].map((p, index) => (
-              <>
-                <ChipButton
-                  key={index}
-                  text={
-                    PARTICIPANT_PERMISSION_LABELS[
-                      p as ParticipantPermissionEnum
-                    ] + " ✓"
-                  }
-                  variant="solid"
-                  size="extra-small"
-                  color={permissionColorClasses[p as ParticipantPermissionEnum]}
-                  onClick={() => {}}
-                />
-                <ChipButton
-                  key={index}
-                  text={
-                    PARTICIPANT_PERMISSION_LABELS[
-                      p as ParticipantPermissionEnum
-                    ]
-                  }
-                  variant="outline"
-                  size="extra-small"
-                  color={permissionColorClasses[p as ParticipantPermissionEnum]}
-                  onClick={() => {}}
-                />
-              </>
-            ))}
+            {Object.values(ParticipantPermissionEnum).map(
+              (permissionOption) => {
+                const isSelected = permission.includes(permissionOption);
+                return (
+                  <ChipButton
+                    key={permissionOption}
+                    text={`${PARTICIPANT_PERMISSION_LABELS[permissionOption]}${
+                      isSelected ? " ✓" : ""
+                    }`}
+                    variant={isSelected ? "solid" : "outline"}
+                    size="extra-small"
+                    color={permissionColorClasses[permissionOption]}
+                    onClick={() => {}}
+                  />
+                );
+              }
+            )}
           </div>
         </div>
         <span className="text-gray-400 text-xs mt-1">{email}</span>
