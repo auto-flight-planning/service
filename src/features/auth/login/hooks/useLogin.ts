@@ -10,6 +10,7 @@ import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
 import { loginFormSchema, type LoginFormData } from "../schemas/formSchema";
 import { GetEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
+import { errorResToMessage } from "@/lib/utils";
 
 export default function useLogin() {
   const formMethods = useForm<LoginFormData>({
@@ -47,7 +48,7 @@ export default function useLogin() {
     onError: (error) => {
       addToast({
         type: "error",
-        message: error.message || "ログインに失敗しました。",
+        message: "ログインに失敗しました。",
         title: "ログイン失敗",
       });
     },
@@ -69,7 +70,7 @@ export async function loginAPI(data: LoginFormData) {
     const res = await fetch(`/api/employees/${data.employeeId}`);
     if (!res.ok) {
       throw new Error(
-        "GET /api/employees/{employeeId} を呼び出しに失敗しました。"
+        errorResToMessage(res, "GET /api/employees/{employeeId}")
       );
     }
 
@@ -96,6 +97,7 @@ export async function loginAPI(data: LoginFormData) {
       email: employee.email,
     };
   } catch (error) {
+    console.error(error);
     throw error;
   }
 }

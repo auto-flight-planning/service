@@ -11,6 +11,7 @@ import {
   type CreatePlanFormData,
 } from "../schemas/formSchema";
 import { CreatePlanResSchema } from "../../server/schemas/res.schema";
+import { errorResToMessage } from "@/lib/utils";
 
 export default function useCreatePlan() {
   const formMethods = useForm<CreatePlanFormData>({
@@ -43,7 +44,7 @@ export default function useCreatePlan() {
     onError: (error) => {
       addToast({
         type: "error",
-        message: error.message || "企画作成に失敗しました。",
+        message: "企画作成に失敗しました。",
         title: "企画作成失敗",
       });
     },
@@ -75,12 +76,13 @@ export const createPlanAPI = async (data: CreatePlanFormData) => {
       }),
     });
     if (!res.ok) {
-      throw new Error("POST /api/plans を呼び出しに失敗しました。");
+      throw new Error(errorResToMessage(res, "POST /api/plans"));
     }
 
     const plan: CreatePlanResSchema = await res.json();
     return plan;
   } catch (error) {
+    console.error(error);
     throw error;
   }
 };
