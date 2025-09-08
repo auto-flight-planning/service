@@ -7,17 +7,17 @@ export default function useSearchParticipant() {
   const [searchName, setSearchName] = useState("");
   const deferredSearchName = useDeferredValue(searchName);
 
-  const { data: { employees } = { employees: [] }, isPending } = useQuery({
-    queryKey: ["searchParticipant", searchName],
+  const { data: { employees } = { employees: [] }, isFetching } = useQuery({
+    queryKey: ["searchParticipant", deferredSearchName],
     queryFn: () => searchParticipantAPI(deferredSearchName),
-    enabled: searchName.length > 0,
+    enabled: deferredSearchName.length > 0,
     staleTime: 5 * 60 * 1000, // 5分
   });
 
   return {
-    useSearhNameState: { searchName: deferredSearchName, setSearchName },
+    useSearhNameState: { searchName, setSearchName },
     employees,
-    isPending,
+    isFetching,
   };
 }
 
@@ -29,6 +29,8 @@ export const searchParticipantAPI = async (searchName: string) => {
     if (!res.ok) {
       throw new Error(errorResToMessage(res, "GET /api/employees/search"));
     }
+
+    console.log("뭐임? 너 실행됨?");
 
     const employees: SearchEmployeesByNameResSchema = await res.json();
     return employees;

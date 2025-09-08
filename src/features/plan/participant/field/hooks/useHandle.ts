@@ -7,7 +7,7 @@ export default function useHandleParticipantsField() {
   const { control } = useFormContext<{
     participants: ParticipantsFieldSchema;
   }>();
-  const { append, remove, update } = useFieldArray({
+  const { fields, append, remove, update } = useFieldArray({
     control,
     name: "participants",
   });
@@ -38,6 +38,7 @@ export default function useHandleParticipantsField() {
   };
 
   return {
+    fields,
     addParticipant,
     removeParticipant,
     updateParticipantPermission,

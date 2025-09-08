@@ -7,13 +7,17 @@ export default function ParticipantsField() {
   const {
     useSearhNameState: { searchName, setSearchName },
     employees,
-    isPending,
+    isFetching,
   } = useSearch();
-  const { addParticipant, removeParticipant, updateParticipantPermission } =
-    useHandle();
+  const {
+    fields,
+    addParticipant,
+    removeParticipant,
+    updateParticipantPermission,
+  } = useHandle();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col">
       <TextField
         label="企画参加者"
         placeholder="検索する氏名を入力してください"
@@ -22,7 +26,8 @@ export default function ParticipantsField() {
       />
       <SearchResult
         employees={employees}
-        isPending={isPending}
+        isSearching={!!searchName}
+        isLoading={isFetching}
         onSelect={addParticipant}
       />
     </div>
