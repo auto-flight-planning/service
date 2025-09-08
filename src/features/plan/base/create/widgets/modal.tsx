@@ -1,31 +1,32 @@
 import { FormProvider } from "react-hook-form";
-import { useModalStore } from "@/features/modal/stores/modalStore";
 import {
+  useModalStore,
   BasicModalHeader,
   BasicModalFooter,
-} from "@/features/modal/components";
+} from "@/features/modal";
 import { CreatePlanForm, useCreatePlan } from "..";
 
 export default function CreatePlanModal() {
-  const { closeModal } = useModalStore();
   const { formMethods, onValidSubmit, isPending } = useCreatePlan();
+  const { closeModal } = useModalStore();
   const { handleSubmit } = formMethods;
 
   return (
     <div className="p-6 w-[30rem] flex flex-col gap-4">
+      <BasicModalHeader title="新規企画作成" onClose={closeModal} />
       <FormProvider {...formMethods}>
-        <BasicModalHeader title="新規企画作成" onClose={closeModal} />
         <form
           className="flex flex-col gap-4"
           onSubmit={handleSubmit(onValidSubmit)}
         >
           <CreatePlanForm />
           <BasicModalFooter
-            cancelText="キャンセル"
-            confirmText="作成"
-            onCancel={closeModal}
-            onConfirm={handleSubmit(onValidSubmit)}
-            isPending={isPending}
+            confirmProps={{
+              text: "作成",
+              onClick: handleSubmit(onValidSubmit),
+              disabled: isPending,
+              isPending: isPending,
+            }}
           />
         </form>
       </FormProvider>
