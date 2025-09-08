@@ -23,7 +23,7 @@ export default function BasicModalFooter({
   cancelProps = {
     text: "キャンセル",
     onClick: undefined,
-    color: "gray",
+    color: "light-gray",
     disabled: false,
     hidden: false,
   },
