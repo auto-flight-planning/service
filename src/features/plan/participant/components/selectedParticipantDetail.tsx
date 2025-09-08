@@ -1,5 +1,5 @@
-import { RoundButton } from "@/components/button";
-import { Chip, type ChipProps } from "@/components/chip";
+import { ChipButton } from "@/components/button";
+import { type ChipProps } from "@/components/chip";
 import { ParticipantPermissionEnum } from "../type";
 import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
 
@@ -30,28 +30,38 @@ export default function SelectedParticipantDetail({
         <div className="flex items-center gap-2">
           <span className="text-gray-700 font-medium text-sm">{fullName}</span>
           <div className="flex items-center gap-1">
-            {["VIEW", "REQUEST", "INPUT", "EDIT"].map((p, index) => (
-              <Chip
-                key={index}
-                variant="outline"
-                text={
-                  PARTICIPANT_PERMISSION_LABELS[p as ParticipantPermissionEnum]
-                }
-                size="extra-small"
-                color={permissionColorClasses[p as ParticipantPermissionEnum]}
-              />
+            {["VIEW", "REQUEST", "INPUT"].map((p, index) => (
+              <>
+                <ChipButton
+                  key={index}
+                  text={
+                    PARTICIPANT_PERMISSION_LABELS[
+                      p as ParticipantPermissionEnum
+                    ] + " ✓"
+                  }
+                  variant="solid"
+                  size="extra-small"
+                  color={permissionColorClasses[p as ParticipantPermissionEnum]}
+                  onClick={() => {}}
+                />
+                <ChipButton
+                  key={index}
+                  text={
+                    PARTICIPANT_PERMISSION_LABELS[
+                      p as ParticipantPermissionEnum
+                    ]
+                  }
+                  variant="outline"
+                  size="extra-small"
+                  color={permissionColorClasses[p as ParticipantPermissionEnum]}
+                  onClick={() => {}}
+                />
+              </>
             ))}
           </div>
         </div>
         <span className="text-gray-400 text-xs mt-1">{email}</span>
       </div>
-
-      <RoundButton
-        text="権限選択"
-        size="small"
-        type="button"
-        onClick={() => {}}
-      />
     </div>
   );
 }
