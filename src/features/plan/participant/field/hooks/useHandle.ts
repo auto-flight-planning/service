@@ -1,12 +1,13 @@
-import { useFieldArray, useFormContext } from "react-hook-form";
+import { Control, useFieldArray } from "react-hook-form";
 import { Employee } from "@/features/employee/server/schemas/res.schema";
 import { Participant, ParticipantsFieldSchema } from "../schemas/filed.schema";
 import { ParticipantPermissionEnum } from "../../type";
 
-export default function useHandleParticipantsField() {
-  const { control } = useFormContext<{
+export default function useHandleParticipantsField(
+  control: Control<{
     participants: ParticipantsFieldSchema;
-  }>();
+  }>
+) {
   const {
     fields: selectedParticipants,
     append,

@@ -1,22 +1,29 @@
+import { useFormContext } from "react-hook-form";
 import useSearch from "../hooks/useSearch";
 import useHandle from "../hooks/useHandle";
 import { TextField } from "@/components/input";
 import SearchResult from "../components/searchResult";
 import SelectedParticipantDetail from "../../components/selectedParticipantDetail";
+import { ParticipantsFieldSchema } from "../schemas/filed.schema";
 
 export default function ParticipantsField() {
+  const { control } = useFormContext<{
+    participants: ParticipantsFieldSchema;
+  }>();
+
   const {
     useSearhName: { searchName, setSearchName },
     useIsFocused: { isFocused, handleFocus, handleBlur },
     employees,
     isFetching,
-  } = useSearch();
+  } = useSearch(control);
+
   const {
     selectedParticipants,
     addParticipant,
     removeParticipant,
     updateParticipantPermission,
-  } = useHandle();
+  } = useHandle(control);
 
   console.log(selectedParticipants);
 
@@ -40,14 +47,16 @@ export default function ParticipantsField() {
           />
         )}
       </div>
-      {selectedParticipants.map((participant) => (
-        <SelectedParticipantDetail
-          key={participant.userId}
-          fullName={`${participant.lastName} ${participant.firstName}`}
-          email={participant.email}
-          permission={participant.permission}
-        />
-      ))}
+      <div className="flex flex-col gap-2 overflow-y-auto max-h-[225px] scrollbar-custom">
+        {selectedParticipants.map((participant) => (
+          <SelectedParticipantDetail
+            key={participant.userId}
+            fullName={`${participant.lastName} ${participant.firstName}`}
+            email={participant.email}
+            permission={participant.permission}
+          />
+        ))}
+      </div>
     </div>
   );
 }
