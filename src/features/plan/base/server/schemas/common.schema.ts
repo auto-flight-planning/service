@@ -1,9 +1,11 @@
 import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { userIdSchema } from "@/server/schemas/common.schema";
+import { planIdSchema, userIdSchema } from "@/server/schemas/common.schema";
+import { USER_ID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
+// 1. 個別スキーマ
 export enum PermissionEnum {
   VIEW = "VIEW",
   REQUEST = "REQUEST",
@@ -17,6 +19,12 @@ export enum PlanStatusEnum {
   REVIEW = "REVIEW",
   ADOPTED = "ADOPTED",
 }
+
+export const planCreatorIdSchema = z.uuid().openapi({
+  description: "企画生成者(責任者)のID",
+  example: USER_ID_EXAMPLE,
+});
+export type PlanCreatorIdSchema = z.infer<typeof planCreatorIdSchema>;
 
 export const planTitleSchema = z.string().min(1).openapi({
   description: "企画名",
@@ -43,6 +51,18 @@ export const planTargetDateSchema = z
   });
 export type PlanTargetDateSchema = z.infer<typeof planTargetDateSchema>;
 
+export const planStatusSchema = z.enum(PlanStatusEnum).openapi({
+  description: "企画の進捗ステータス",
+  example: "INPUT",
+});
+export type PlanStatusSchema = z.infer<typeof planStatusSchema>;
+
+export const planCreatedAtSchema = z.date().openapi({
+  description: "企画作成日時",
+  example: new Date(),
+});
+export type PlanCreatedAtSchema = z.infer<typeof planCreatedAtSchema>;
+
 export const planParticipantDataListSchema = z.array(
   z.object({
     userId: userIdSchema,
@@ -55,3 +75,13 @@ export const planParticipantDataListSchema = z.array(
 export type PlanParticipantDataListSchema = z.infer<
   typeof planParticipantDataListSchema
 >;
+
+// 2. オブジェクトスキーマ
+export const planSchema = z.object({
+  id: planIdSchema,
+  creatorId: planCreatorIdSchema,
+  title: planTitleSchema,
+  targetDate: planTargetDateSchema,
+  status: planStatusSchema,
+  createdAt: planCreatedAtSchema,
+});

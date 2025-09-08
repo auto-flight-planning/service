@@ -13,5 +13,4 @@ export const createPlanReqSchema = z.object({
   targetDate: planTargetDateSchema,
   participantDataList: planParticipantDataListSchema,
 });
-
 export type CreatePlanReqSchema = z.infer<typeof createPlanReqSchema>;
