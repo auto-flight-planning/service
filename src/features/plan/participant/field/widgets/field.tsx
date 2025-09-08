@@ -21,8 +21,8 @@ export default function ParticipantsField() {
   const {
     selectedParticipants,
     addParticipant,
+    toggleParticipantPermission,
     removeParticipant,
-    updateParticipantPermission,
   } = useHandle(control);
 
   console.log(selectedParticipants);
@@ -48,12 +48,15 @@ export default function ParticipantsField() {
         )}
       </div>
       <div className="flex flex-col gap-2 overflow-y-auto max-h-[225px] scrollbar-custom">
-        {selectedParticipants.map((participant) => (
+        {selectedParticipants.map((participant, index) => (
           <SelectedParticipantDetail
             key={participant.userId}
+            participantIndex={index}
             fullName={`${participant.lastName} ${participant.firstName}`}
             email={participant.email}
             permission={participant.permission}
+            onTogglePermission={toggleParticipantPermission}
+            onRemove={() => {}}
           />
         ))}
       </div>

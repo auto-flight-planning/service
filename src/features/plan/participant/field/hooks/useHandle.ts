@@ -1,6 +1,6 @@
 import { Control, useFieldArray } from "react-hook-form";
 import { Employee } from "@/features/employee/server/schemas/res.schema";
-import { Participant, ParticipantsFieldSchema } from "../schemas/filed.schema";
+import { ParticipantsFieldSchema } from "../schemas/filed.schema";
 import { ParticipantPermissionEnum } from "../../type";
 
 export default function useHandleParticipantsField(
@@ -36,22 +36,30 @@ export default function useHandleParticipantsField(
     remove(index);
   };
 
-  // TODO: 한개씩 바꿀지 통으로 바꿀지 고민
-  const updateParticipantPermission = (
+  const toggleParticipantPermission = (
     index: number,
-    participant: Participant,
-    permission: ParticipantPermissionEnum[]
+    permissionOption: ParticipantPermissionEnum
   ) => {
+    const participant = selectedParticipants[index];
+    const toggleType = participant.permission.includes(permissionOption)
+      ? "remove"
+      : "add";
+
     update(index, {
       ...participant,
-      permission,
+      permission:
+        toggleType === "add"
+          ? [...participant.permission, permissionOption]
+          : participant.permission.filter(
+              (permission) => permission !== permissionOption
+            ),
     });
   };
 
   return {
     selectedParticipants,
     addParticipant,
+    toggleParticipantPermission,
     removeParticipant,
-    updateParticipantPermission,
   };
 }

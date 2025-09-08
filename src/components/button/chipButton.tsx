@@ -10,6 +10,7 @@ interface ChipButtonProps {
   color?: ChipProps["color"];
   children?: ReactNode;
   onClick: () => void;
+  disabled?: boolean;
 }
 
 export default function ChipButton({
@@ -19,6 +20,7 @@ export default function ChipButton({
   color = "primary",
   children,
   onClick,
+  disabled = false,
 }: ChipButtonProps) {
   const hoverBgClasses = {
     outline: {
@@ -45,13 +47,17 @@ export default function ChipButton({
   const interactionClasses = `cursor-pointer ${hoverBgClasses[variant][color]} active:scale-95 transition-all duration-200`;
 
   return (
-    <div role="button" onClick={onClick}>
+    <div
+      role="button"
+      onClick={disabled ? undefined : onClick}
+      className={disabled ? "cursor-not-allowed" : ""}
+    >
       <Chip
         text={text}
         variant={variant}
         size={size}
         color={color}
-        className={interactionClasses}
+        className={disabled ? "" : interactionClasses}
       >
         {children}
       </Chip>

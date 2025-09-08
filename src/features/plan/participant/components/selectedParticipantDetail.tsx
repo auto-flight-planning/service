@@ -4,9 +4,15 @@ import { ParticipantPermissionEnum } from "../type";
 import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
 
 interface SelectedParticipantDetailProps {
+  participantIndex: number;
   fullName: string;
   email: string;
   permission: ParticipantPermissionEnum[];
+  onTogglePermission: (
+    index: number,
+    permissionOption: ParticipantPermissionEnum
+  ) => void;
+  onRemove: () => void;
 }
 
 const permissionColorClasses: Record<
@@ -20,9 +26,12 @@ const permissionColorClasses: Record<
 };
 
 export default function SelectedParticipantDetail({
+  participantIndex,
   fullName,
   email,
   permission,
+  onTogglePermission,
+  onRemove,
 }: SelectedParticipantDetailProps) {
   return (
     <div className="flex items-center justify-between py-2 px-3 bg-primary-50 border border-primary-100 rounded-lg">
@@ -42,7 +51,12 @@ export default function SelectedParticipantDetail({
                     variant={isSelected ? "solid" : "outline"}
                     size="extra-small"
                     color={permissionColorClasses[permissionOption]}
-                    onClick={() => {}}
+                    onClick={() =>
+                      onTogglePermission(participantIndex, permissionOption)
+                    }
+                    disabled={
+                      permissionOption === ParticipantPermissionEnum.VIEW
+                    }
                   />
                 );
               }
