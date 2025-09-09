@@ -8,7 +8,6 @@ extendZodWithOpenApi(z);
 
 // ---------------Legacy------------------
 // import { registerGetNotificationSchemas } from "@/features/plan/notification/get/api/openapi";
-// import { registerGetPlanOneSchemas } from "@/features/plan/base/get/one/api/openapi";
 // import {
 //   registerUpdateFlightScaleResourceSchemas,
 //   registerUpdateTotalPersonResourceSchemas,
@@ -25,6 +24,7 @@ import { registerEmployeeAPIsToDocs } from "@/features/employee/server/openapi";
 
 // ["Plan"]
 import { registerPlanAPIsToDocs } from "@/features/plan/base/server/openapi";
+import { registerPlanParticipantsAPIsToDocs } from "@/features/plan/participant/servers/openapi";
 
 export const registry = new OpenAPIRegistry();
 
@@ -37,8 +37,9 @@ registry.registerComponent("securitySchemes", "bearerAuth", {
 // API別
 registerEmployeeAPIsToDocs(registry);
 registerPlanAPIsToDocs(registry);
+registerPlanParticipantsAPIsToDocs(registry);
+
 // registerGetNotificationSchemas(registry);
-// registerGetPlanOneSchemas(registry);
 // registerUpdateTotalPersonResourceSchemas(registry);
 // registerGetTotalPersonResourceSchemas(registry);
 // registerUpdateFlightScaleResourceSchemas(registry);
