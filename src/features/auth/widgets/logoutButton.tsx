@@ -9,5 +9,5 @@ export default function LogoutButton() {
     await supabaseCli.auth.signOut();
   };
 
-  return <RoundButton text="ログアウト" onClick={logout} />;
+  return <RoundButton text="ログアウト" size="small" onClick={logout} />;
 }
