@@ -48,7 +48,7 @@ export default function HeaderWrapper({
             <p className="text-gray-500 text-sm">
               対象期間: {dateToYearMonthJP(new Date(plan.targetDate))}
             </p>
-            <ParticipantButton planId={planId} onClick={() => {}} />
+            <ParticipantButton onClick={() => {}} />
           </div>
         </div>
         <div className="flex-1 min-w-96">

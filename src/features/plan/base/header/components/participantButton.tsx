@@ -1,11 +1,9 @@
 interface ParticipantButtonProps {
-  planId: string;
   onClick: () => void;
   className?: string;
 }
 
 export default function ParticipantButton({
-  planId,
   onClick,
   className = "",
 }: ParticipantButtonProps) {
