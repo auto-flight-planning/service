@@ -60,10 +60,10 @@ export default function withHandler<T extends any[]>(
         );
       }
 
-      // 400: Zod validation エラー
+      // 400: Zod validation
       if (error instanceof ZodError) {
         return NextResponse.json(
-          { error: "不正なリクエストです" },
+          { error: "パースに失敗しました。" },
           { status: 400 }
         );
       }

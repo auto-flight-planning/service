@@ -14,7 +14,7 @@ export default function withErrorHandler<T extends any[]>(
       // 400: Zod validation
       if (error instanceof ZodError) {
         return NextResponse.json(
-          { error: "不正なリクエストです" },
+          { error: "パースに失敗しました。" },
           { status: 400 }
         );
       }

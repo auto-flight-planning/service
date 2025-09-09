@@ -29,7 +29,7 @@ export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
         },
       },
       400: {
-        description: "不正なリクエストです",
+        description: "パースに失敗しました。",
       },
       404: {
         description: "職員が見つかりません",
@@ -59,7 +59,7 @@ export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
         },
       },
       400: {
-        description: "不正なリクエストです",
+        description: "パースに失敗しました。",
       },
       401: {
         description: "認証が必要です",

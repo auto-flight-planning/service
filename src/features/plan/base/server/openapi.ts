@@ -30,7 +30,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
         },
       },
       400: {
-        description: "不正なリクエストです",
+        description: "パースに失敗しました。",
       },
       401: {
         description: "認証が必要です",
@@ -60,7 +60,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
         },
       },
       400: {
-        description: "不正なリクエストです",
+        description: "パースに失敗しました。",
       },
       401: {
         description: "認証が必要です",
