@@ -65,3 +65,4 @@ export const planSchema = z.object({
   status: planStatusSchema,
   createdAt: planCreatedAtSchema,
 });
+export type PlanSchema = z.infer<typeof planSchema>;
