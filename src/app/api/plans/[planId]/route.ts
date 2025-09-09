@@ -27,5 +27,9 @@ export const GET = withHandler(
       createdAt: plan.created_at,
     });
     return NextResponse.json(res);
+  },
+  {
+    onAuth: true,
+    onError: true,
   }
 );
