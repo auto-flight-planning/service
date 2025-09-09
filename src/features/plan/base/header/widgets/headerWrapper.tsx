@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import useGetPlan from "../hooks/useGetPlan";
+import { useUserStore } from "@/features/auth";
 import DoubleSpinner from "@/components/spinner/doubleSpinner";
 import Stepper from "../components/stepper";
 import EditTitleButton from "../components/editTitleButton";
@@ -16,6 +17,7 @@ export default function HeaderWrapper({
   planId: string;
   children: React.ReactNode;
 }) {
+  const { user } = useUserStore();
   const { plan, isFetching } = useGetPlan(planId);
 
   const pathname = usePathname();
@@ -42,7 +44,9 @@ export default function HeaderWrapper({
             <h1 className="text-3xl font-bold text-gray-700 mb-2">
               {plan.title}
             </h1>
-            <EditTitleButton onClick={() => {}} />
+            {user!.userId === plan.creatorId && (
+              <EditTitleButton onClick={() => {}} />
+            )}
           </div>
           <div className="flex items-center gap-4">
             <p className="text-gray-500 text-sm">
