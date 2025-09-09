@@ -1,6 +1,6 @@
 import { errorResToMessage } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
-import { type plans as Plans } from "@/server/db/prisma";
+import { PlanSchema } from "../../server/schemas/common.schema";
 
 export default function useGetPlan(planId: string) {
   const { data: plan = null, isFetching } = useQuery({
@@ -19,7 +19,7 @@ export const getPlanAPI = async (planId: string) => {
     if (!planRes.ok) {
       throw new Error(errorResToMessage(planRes, "GET /api/plans/${planId}"));
     }
-    const plan: Plans = await planRes.json();
+    const plan: PlanSchema = await planRes.json();
     return plan;
   } catch (error) {
     console.error(error);
