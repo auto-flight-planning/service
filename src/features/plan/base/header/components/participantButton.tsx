@@ -28,7 +28,7 @@ export default function ParticipantButton({
       `}
     >
       <span className="text-sm">👥</span>
-      <span className="text-xs">参加者編集</span>
+      <span className="text-xs">参加者管理</span>
     </button>
   );
 }
