@@ -23,7 +23,7 @@ export const registerUpdateTotalPersonResourceSchemas = (
     },
     responses: {
       200: {
-        description: "リソース入力を更新しました",
+        description: "リソース入力を変更しました",
         content: {
           "application/json": {
             schema: updateInputResSchema,
@@ -52,7 +52,7 @@ export const registerUpdateFlightScaleResourceSchemas = (
     },
     responses: {
       200: {
-        description: "リソース入力を更新しました",
+        description: "リソース入力を変更しました",
         content: {
           "application/json": {
             schema: updateInputResSchema,

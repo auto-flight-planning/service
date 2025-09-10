@@ -29,7 +29,7 @@ export default function EditTitleModal({
           <EditTitleForm />
           <BasicModalFooter
             confirmProps={{
-              text: "更新",
+              text: "変更",
               onClick: onSubmit,
               disabled: isPending,
               isLoading: isPending,

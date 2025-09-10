@@ -95,7 +95,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     },
     responses: {
       200: {
-        description: "企画のタイトルを更新しました",
+        description: "企画のタイトルを変更しました",
         content: {
           "application/json": {
             schema: planSchema,

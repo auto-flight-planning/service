@@ -36,8 +36,8 @@ export default function useEditParticipant({
     onSuccess: (data) => {
       addToast({
         type: "success",
-        message: "企画参加者を更新しました。",
-        title: "企画参加者更新成功",
+        message: "企画参加者を変更しました。",
+        title: "企画参加者変更成功",
       });
       queryClient.invalidateQueries({
         queryKey: ["plan", planId, "participants"],
@@ -47,8 +47,8 @@ export default function useEditParticipant({
     onError: (error) => {
       addToast({
         type: "error",
-        message: "企画参加者を更新に失敗しました。",
-        title: "企画参加者更新失敗",
+        message: "企画参加者を変更に失敗しました。",
+        title: "企画参加者変更失敗",
       });
     },
   });
