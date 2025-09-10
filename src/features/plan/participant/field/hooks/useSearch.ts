@@ -35,7 +35,7 @@ export default function useSearchParticipant(
   const handleBlur = () => {
     setTimeout(() => {
       setIsFocused(false);
-    }, 1);
+    }, 50);
   };
 
   return {
