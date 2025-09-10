@@ -3,7 +3,7 @@ import useModalStore from "../../stores/modalStore";
 
 interface BasicModalFooterProps {
   cancelProps?: {
-    text: string;
+    text?: string;
     onClick?: () => void;
     color?: "primary" | "gray" | "light-gray";
     disabled?: boolean;
@@ -49,7 +49,7 @@ export default function BasicModalFooter({
       <div className="flex gap-3">
         {!cancelProps.hidden && (
           <SquareButton
-            text={cancelProps.text}
+            text={cancelProps.text!}
             onClick={cancelProps.onClick || closeModal}
             color={cancelProps.color}
             disabled={cancelProps.disabled}

@@ -48,6 +48,7 @@ export default function ParticipantsField() {
       <div className="flex flex-col gap-2 overflow-y-auto max-h-[225px] scrollbar-custom">
         {selectedParticipants.map((participant, index) => (
           <SelectedParticipantDetail
+            type="edit"
             key={participant.userId}
             participantIndex={index}
             fullName={`${participant.lastName} ${participant.firstName}`}

@@ -7,7 +7,7 @@ import { useModalStore } from "@/features/modal";
 import DoubleSpinner from "@/components/spinner/doubleSpinner";
 import { EditButton } from "@/components/button";
 import Stepper from "../components/stepper";
-import ParticipantButton from "../components/participantButton";
+import { ParticipantButton } from "@/features/plan/participant";
 import { dateToYearMonthJP } from "@/lib/utils";
 import { PlanStatusEnum } from "../../server/schemas/common.schema";
 
@@ -60,7 +60,9 @@ export default function HeaderWrapper({
             <p className="text-gray-500 text-sm">
               対象期間: {dateToYearMonthJP(new Date(plan.targetDate))}
             </p>
-            <ParticipantButton onClick={() => {}} />
+            <ParticipantButton
+              onClick={() => openModal("participantView", { planId })}
+            />
           </div>
         </div>
         <div className="flex-1 min-w-96">

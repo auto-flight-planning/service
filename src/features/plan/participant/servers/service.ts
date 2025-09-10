@@ -32,24 +32,18 @@ const planParticipantsService = {
     let participantDataList: GetPlanParticipantsResSchema["participantDataList"] =
       [];
     if (participants.length > 0) {
-      participantDataList = await Promise.all(
-        participants.map(async (p) => {
-          const employee = await employeesRepo.findOneByUserId({
-            userId: p.user_id,
-          });
-          if (!employee) {
-            throw new NotFoundError("参加者の情報が見つかりません");
-          }
-          return {
-            id: employee.id,
-            lastName: employee.last_name,
-            firstName: employee.first_name,
-            email: employee.email,
-            userId: employee.user_id,
-            permission: p.permission as ParticipantPermissionEnum[],
-          };
-        })
-      );
+      const employees = await employeesRepo.findManyByUserIds({
+        userIds: participants.map((p) => p.user_id),
+      });
+      participantDataList = employees.map((e) => ({
+        id: e.id,
+        lastName: e.last_name,
+        firstName: e.first_name,
+        email: e.email,
+        userId: e.user_id,
+        permission: participants.find((p) => p.user_id === e.user_id)!
+          .permission as ParticipantPermissionEnum[],
+      }));
     }
 
     return getPlanParticipantsResSchema.parse({
