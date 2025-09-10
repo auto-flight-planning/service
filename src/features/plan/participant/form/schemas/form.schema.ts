@@ -12,3 +12,10 @@ export const participantsFieldSchema = z.array(
 );
 export type ParticipantsFieldSchema = z.infer<typeof participantsFieldSchema>;
 export type Participant = ParticipantsFieldSchema[number];
+
+export const editParticipantsFormSchema = z.object({
+  participants: participantsFieldSchema,
+});
+export type EditParticipantsFormSchema = z.infer<
+  typeof editParticipantsFormSchema
+>;

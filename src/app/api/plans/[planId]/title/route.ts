@@ -21,7 +21,7 @@ export const PUT = withHandler(
       throw new NotFoundError("企画が見つかりません");
     }
     if (plan.creator_id !== user.id) {
-      throw new ForbiddenError("企画のタイトルを更新は作成者のみ可能です");
+      throw new ForbiddenError("企画のタイトルを更新は生成者のみ可能です");
     }
 
     const requestBody = await request.json();

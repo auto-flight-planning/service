@@ -1,6 +1,6 @@
 import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { planIdSchema, userIdSchema } from "@/server/schemas/common.schema";
+import { userIdSchema } from "@/server/schemas/common.schema";
 import { ParticipantPermissionEnum } from "../../type";
 
 extendZodWithOpenApi(z);
@@ -13,12 +13,12 @@ export const planPermissionSchema = z
   });
 export type PlanPermissionSchema = z.infer<typeof planPermissionSchema>;
 
-export const planParticipantDataListSchema = z.array(
+export const insertOrUpdateParticipantSchema = z.array(
   z.object({
     userId: userIdSchema,
     permission: planPermissionSchema,
   })
 );
-export type PlanParticipantDataListSchema = z.infer<
-  typeof planParticipantDataListSchema
+export type InsertOrUpdateParticipantSchema = z.infer<
+  typeof insertOrUpdateParticipantSchema
 >;

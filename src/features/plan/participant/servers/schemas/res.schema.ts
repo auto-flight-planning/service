@@ -6,15 +6,25 @@ import { getEmployeeByUserIdResSchema } from "@/features/employee/server/schemas
 
 extendZodWithOpenApi(z);
 
+export const extendedPlanParticipantDataSchema = z.array(
+  getEmployeeByUserIdResSchema.extend({
+    permission: planPermissionSchema,
+  })
+);
+
 export const getPlanParticipantsResSchema = z.object({
   planId: planIdSchema,
   creator: getEmployeeByUserIdResSchema,
-  participantDataList: z.array(
-    getEmployeeByUserIdResSchema.extend({
-      permission: planPermissionSchema,
-    })
-  ),
+  participantDataList: extendedPlanParticipantDataSchema,
 });
 export type GetPlanParticipantsResSchema = z.infer<
   typeof getPlanParticipantsResSchema
+>;
+
+export const updatePlanParticipantsResSchema = z.object({
+  planId: planIdSchema,
+  participantDataList: extendedPlanParticipantDataSchema,
+});
+export type UpdatePlanParticipantsResSchema = z.infer<
+  typeof updatePlanParticipantsResSchema
 >;
