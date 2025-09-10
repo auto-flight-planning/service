@@ -37,7 +37,7 @@ export default function useCreatePlan() {
       addToast({
         type: "success",
         message:
-          "企画を作成しました。企画画面に移動しますので、少々お待ちください。",
+          "企画を作成しました。\n企画画面に移動しますので、少々お待ちください。",
         title: "企画作成成功",
       });
       router.push(`/plan/${id}/input`);

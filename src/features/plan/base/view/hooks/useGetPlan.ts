@@ -1,6 +1,6 @@
-import { errorResToMessage } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { PlanSchema } from "../../server/schemas/common.schema";
+import { errorResToMessage } from "@/lib/utils";
 
 export default function useGetPlan(planId: string) {
   const { data: plan = null, isFetching } = useQuery({

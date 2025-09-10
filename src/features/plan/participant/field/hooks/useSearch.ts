@@ -1,3 +1,5 @@
+"use client";
+
 import { useDeferredValue, useState } from "react";
 import { Control, useWatch } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";

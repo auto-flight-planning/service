@@ -5,3 +5,4 @@ export * from "./field/utils";
 
 // View
 export { default as ParticipantList } from "./view/widgets/list";
+export { default as useGetParticipants } from "./view/hooks/useGetParticipants";
