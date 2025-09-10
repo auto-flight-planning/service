@@ -38,7 +38,7 @@ export default function AccessWrapper({
         title: "接近権限なし",
         message: "企画に接近権限がありません。\nホームページに遷移します。",
       });
-      router.push("/");
+      router.push("/home");
     }
   }, [hasAccess]);
 
