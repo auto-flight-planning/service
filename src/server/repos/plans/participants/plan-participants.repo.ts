@@ -1,5 +1,5 @@
 import { prismaClient } from "@/server/db/prismaClient";
-import { ParticipantPermissionEnum } from "@/features/plan/participant/type";
+import { InsertOrUpdateParticipantSchema } from "@/features/plan/participant/servers/schemas/common.schema";
 
 const planParticipantsRepo = {
   async insertMany({
@@ -7,10 +7,7 @@ const planParticipantsRepo = {
     participantDataList,
   }: {
     planId: string;
-    participantDataList: {
-      userId: string;
-      permission: ParticipantPermissionEnum[];
-    }[];
+    participantDataList: InsertOrUpdateParticipantSchema;
   }) {
     return prismaClient.plan_participants.createMany({
       data: participantDataList.map(({ userId, permission }) => ({
@@ -32,10 +29,7 @@ const planParticipantsRepo = {
     participantDataList,
   }: {
     planId: string;
-    participantDataList: {
-      userId: string;
-      permission: ParticipantPermissionEnum[];
-    }[];
+    participantDataList: InsertOrUpdateParticipantSchema;
   }) {
     const updatePromises = participantDataList.map(({ userId, permission }) =>
       prismaClient.plan_participants.update({

@@ -26,7 +26,6 @@ export const GET = withHandler(
     return NextResponse.json(res);
   },
   {
-    onError: true,
     onAuth: true,
   }
 );

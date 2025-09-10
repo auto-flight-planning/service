@@ -30,6 +30,5 @@ export const GET = withHandler(
   },
   {
     onAuth: true,
-    onError: true,
   }
 );

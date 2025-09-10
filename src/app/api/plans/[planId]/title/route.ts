@@ -41,6 +41,5 @@ export const PUT = withHandler(
   },
   {
     onAuth: true,
-    onError: true,
   }
 );

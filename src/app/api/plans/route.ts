@@ -40,6 +40,5 @@ export const POST = withHandler(
   },
   {
     onAuth: true,
-    onError: true,
   }
 );

@@ -1,21 +1,41 @@
-import { planParticipantsRepo, plansRepo } from "@/server/repos/plans";
+import { planParticipantsRepo } from "@/server/repos/plans";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { NotFoundError } from "@/server/lib/errors";
-import {
-  GetPlanParticipantsResSchema,
-  getPlanParticipantsResSchema,
-} from "./schemas/res.schema";
+import { UpdateParticipantsReqSchema } from "./schemas/req.schema";
 import { ParticipantPermissionEnum } from "../type";
+import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
 
 const planParticipantsService = {
-  async getPlanParticipants({ planId }: { planId: string }) {
-    const plan = await plansRepo.findOne({ id: planId });
-    if (!plan) {
-      throw new NotFoundError("企画が見つかりません");
-    }
+  async getExtendedPlanParticipants({
+    participants,
+  }: {
+    participants: PlanParticipants[];
+  }) {
+    const employees = await employeesRepo.findManyByUserIds({
+      userIds: participants.map((p) => p.user_id),
+    });
 
+    const extendedParticipants = employees.map((e) => ({
+      id: e.id,
+      lastName: e.last_name,
+      firstName: e.first_name,
+      email: e.email,
+      userId: e.user_id,
+      permission: participants.find((p) => p.user_id === e.user_id)!
+        .permission as ParticipantPermissionEnum[],
+    }));
+    return extendedParticipants;
+  },
+
+  async getPlanParticipants({
+    planId,
+    creatorId,
+  }: {
+    planId: string;
+    creatorId: string;
+  }) {
     const [_creator, participants] = await Promise.all([
-      employeesRepo.findOneByUserId({ userId: plan.creator_id }),
+      employeesRepo.findOneByUserId({ userId: creatorId }),
       planParticipantsRepo.findManyByPlanId({ planId }),
     ]);
     if (!_creator) {
@@ -29,28 +49,15 @@ const planParticipantsService = {
       userId: _creator.user_id,
     };
 
-    let participantDataList: GetPlanParticipantsResSchema["participantDataList"] =
-      [];
-    if (participants.length > 0) {
-      const employees = await employeesRepo.findManyByUserIds({
-        userIds: participants.map((p) => p.user_id),
-      });
-      participantDataList = employees.map((e) => ({
-        id: e.id,
-        lastName: e.last_name,
-        firstName: e.first_name,
-        email: e.email,
-        userId: e.user_id,
-        permission: participants.find((p) => p.user_id === e.user_id)!
-          .permission as ParticipantPermissionEnum[],
-      }));
-    }
+    const extendedParticipants = await this.getExtendedPlanParticipants({
+      participants,
+    });
 
-    return getPlanParticipantsResSchema.parse({
+    return {
       planId,
       creator,
-      participantDataList,
-    });
+      participantDataList: extendedParticipants,
+    };
   },
 
   async updatePlanParticipants({
@@ -58,8 +65,35 @@ const planParticipantsService = {
     updateParticipantData,
   }: {
     planId: string;
-    updateParticipantData: any;
-  }) {},
+    updateParticipantData: UpdateParticipantsReqSchema;
+  }) {
+    const { addParticipants, updateParticipants, removeParticipantIds } =
+      updateParticipantData;
+
+    await Promise.all([
+      planParticipantsRepo.insertMany({
+        planId,
+        participantDataList: addParticipants,
+      }),
+      planParticipantsRepo.updateMany({
+        planId,
+        participantDataList: updateParticipants,
+      }),
+      planParticipantsRepo.deleteManyByUserIdList({
+        planId,
+        userIdList: removeParticipantIds,
+      }),
+    ]);
+
+    const updatedParticipants = await planParticipantsRepo.findManyByPlanId({
+      planId,
+    });
+    const extendedParticipants = await this.getExtendedPlanParticipants({
+      participants: updatedParticipants,
+    });
+
+    return { planId, participantDataList: extendedParticipants };
+  },
 };
 
 export default planParticipantsService;
