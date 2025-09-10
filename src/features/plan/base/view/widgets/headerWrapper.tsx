@@ -41,9 +41,7 @@ export default function HeaderWrapper({
       <section className="flex justify-between items-start gap-10">
         <div className="flex-1">
           <div className="flex items-center gap-4 mb-2">
-            <h1 className="text-3xl font-bold text-gray-700 mb-2">
-              {plan.title}
-            </h1>
+            <h1 className="text-3xl font-bold text-gray-700">{plan.title}</h1>
             {user!.userId === plan.creatorId && (
               <EditTitleButton onClick={() => {}} />
             )}

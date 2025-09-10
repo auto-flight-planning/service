@@ -1,4 +1,4 @@
-import { AccessWrapper, HeaderWrapper } from "@/features/plan/base/header";
+import { AccessWrapper, HeaderWrapper } from "@/features/plan/base/view";
 
 export default async function PlanLayout({
   children,
