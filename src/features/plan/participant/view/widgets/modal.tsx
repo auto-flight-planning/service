@@ -28,7 +28,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <h2 className="text-gray-700 text-md font-[550]">作成者</h2>
+              <h2 className="text-gray-700 text-md font-[550]">生成者</h2>
               <PointCard onBorder={true} onShadow={false}>
                 <div className="flex flex-col">
                   <span className="text-gray-700 font-medium text-sm">{`${
@@ -66,7 +66,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
                 hidden: true,
               }}
               confirmProps={{
-                text: "編集",
+                text: "変更",
                 onClick: () => {
                   const editFormDefaultValue = {
                     participants: participantDataList.map(

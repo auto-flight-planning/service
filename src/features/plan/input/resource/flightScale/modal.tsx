@@ -64,7 +64,7 @@ export default function FlightScaleModal({
             />
           ) : (
             <BasicModalFooter
-              confirmText="編集"
+              confirmText="変更"
               showCancel={false}
               onConfirm={() =>
                 openModal("flightScaleInput", {

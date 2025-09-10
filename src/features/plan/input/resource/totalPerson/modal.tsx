@@ -60,7 +60,7 @@ export default function ResourceInputModal({
             />
           ) : (
             <BasicModalFooter
-              confirmText="編集"
+              confirmText="変更"
               showCancel={false}
               onConfirm={() =>
                 openModal("resourceInput", {
