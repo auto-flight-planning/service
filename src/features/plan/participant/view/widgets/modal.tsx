@@ -10,7 +10,7 @@ import SelectedParticipantDetail from "../../components/selectedParticipantDetai
 import { Spinner } from "@/components/spinner";
 
 export default function ParticipantViewModal({ planId }: { planId: string }) {
-  const { closeModal } = useModalStore();
+  const { openModal, closeModal } = useModalStore();
 
   const { user } = useUserStore();
   const { participants, isFetching } = useGetParticipants(planId);
@@ -67,7 +67,19 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
               }}
               confirmProps={{
                 text: "編集",
-                onClick: () => {},
+                onClick: () => {
+                  const editFormDefaultValue = {
+                    participants: participantDataList.map(
+                      ({ id, ...rest }) => ({
+                        ...rest,
+                      })
+                    ),
+                  };
+                  openModal("participantsEdit", {
+                    planId,
+                    defaultValue: editFormDefaultValue,
+                  });
+                },
               }}
             />
           )}

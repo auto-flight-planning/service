@@ -9,6 +9,7 @@ import { LoginModal } from "@/features/auth";
 import { CreatePlanModal } from "@/features/plan/base/create";
 import { EditTitleModal } from "@/features/plan/base/view";
 import { ParticipantViewModal } from "@/features/plan/participant";
+import { ParticipantsEditModal } from "@/features/plan/participant";
 // import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";
 // import { FlightScaleModal } from "@/features/plan/input/resource/flightScale";
 
@@ -18,6 +19,7 @@ export default function ModalContainer() {
     createPlan: CreatePlanModal,
     editTitle: EditTitleModal,
     participantView: ParticipantViewModal,
+    participantsEdit: ParticipantsEditModal,
     // resourceInput: ResourceInputModal,
     // flightScaleInput: FlightScaleModal,
   };
