@@ -1,9 +1,9 @@
 export { default as ParticipantButton } from "./components/participantButton";
 
 // Field
-export { default as ParticipantsField } from "./field/widgets/field";
-export * from "./field/schemas/filed.schema";
-export * from "./field/utils";
+export * from "./form/utils";
+export * from "./form/schemas/filed.schema";
+export { default as ParticipantsField } from "./form/widgets/field";
 
 // View
 export { default as ParticipantViewModal } from "./view/widgets/modal";
