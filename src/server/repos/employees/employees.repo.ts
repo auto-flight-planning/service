@@ -14,6 +14,12 @@ const employeesRepo = {
     });
   },
 
+  async findManyByUserIds({ userIds }: { userIds: string[] }) {
+    return prismaClient.employees.findMany({
+      where: { user_id: { in: userIds } },
+    });
+  },
+
   async searchManyByNames({ searchName }: { searchName: string }) {
     const trimmedSearchName = searchName.trim();
 

@@ -343,64 +343,6 @@ model employees {
   @@schema("public")
 }
 
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_list {
-  id                        String                      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  creator_id                String                      @db.Uuid
-  name                      String                      @db.VarChar
-  year                      Int                         @db.SmallInt
-  month                     Int                         @db.SmallInt
-  participant_ids           String[]                    @db.Uuid
-  created_at                DateTime                    @default(now()) @db.Timestamptz(6)
-  plan_notification         plan_notification[]
-  plan_resource_input       plan_resource_input?
-  plan_results_daily_data   plan_results_daily_data?
-  plan_results_flights_data plan_results_flights_data[]
-  plan_results_total_data   plan_results_total_data?
-  plan_status               plan_status?
-
-  @@schema("public")
-}
-
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_notification {
-  id           String    @id @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  plan_id      String    @db.Uuid
-  plan_name    String    @db.VarChar
-  sender       String    @db.VarChar
-  message      String
-  is_confirmed Boolean   @default(false)
-  created_at   DateTime  @default(now()) @db.Timestamptz(6)
-  plan_list    plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-
-  @@schema("public")
-}
-
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_status {
-  plan_id       String    @id @db.Uuid
-  step          String    @default("input")
-  input_status  Json      @default("{}") @db.Json
-  review_status String?   @default("")
-  result_status String?
-  plan_list     plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-
-  @@schema("public")
-}
-
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_resource_input {
-  plan_id               String    @id @db.Uuid
-  pilot_cnt             Int?      @db.SmallInt
-  second_pilot_cnt      Int?      @db.SmallInt
-  total_person_exponent BigInt?
-  flight_scale_types    String[]
-  per_flight_scale_data Json?     @db.Json
-  plan_list             plan_list @relation(fields: [plan_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-
-  @@schema("public")
-}
-
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model oauth_clients {
   id                 String                  @id @db.Uuid
@@ -419,35 +361,6 @@ model oauth_clients {
   @@index([client_id])
   @@index([deleted_at])
   @@schema("auth")
-}
-
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_results_daily_data {
-  plan_id   String    @id @db.Uuid
-  day       Int       @db.SmallInt
-  data      Json
-  plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade)
-
-  @@schema("public")
-}
-
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_results_flights_data {
-  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  plan_id   String    @db.Uuid
-  data      Json
-  plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade)
-
-  @@schema("public")
-}
-
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model plan_results_total_data {
-  plan_id   String    @id(map: "plan_result_total_data_pkey") @db.Uuid
-  data      Json
-  plan_list plan_list @relation(fields: [plan_id], references: [id], onDelete: Cascade, map: "plan_result_total_data_plan_id_fkey")
-
-  @@schema("public")
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.

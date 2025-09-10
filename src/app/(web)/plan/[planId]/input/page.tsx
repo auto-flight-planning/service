@@ -12,6 +12,7 @@ interface PlanInputPageProps {
 export default async function PlanInputPage({ params }: PlanInputPageProps) {
   const { planId } = await params;
 
+  return <></>;
   return (
     <div className="flex flex-col gap-8 pb-16">
       {/* 안내 섹션 */}

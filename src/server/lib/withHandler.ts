@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 import { getServerClient } from "@/supabase/serverClient";
 import { User } from "@supabase/supabase-js";
+import { NotFoundError } from "./errors";
 
 type HandlerOptions = {
   onError?: boolean;
@@ -60,11 +61,19 @@ export default function withHandler<T extends any[]>(
         );
       }
 
-      // 400: Zod validation エラー
+      // 400: Zod validation
       if (error instanceof ZodError) {
         return NextResponse.json(
-          { error: "不正なリクエストです" },
+          { error: "パースに失敗しました。" },
           { status: 400 }
+        );
+      }
+
+      // その他
+      if (error instanceof NotFoundError) {
+        return NextResponse.json(
+          { error: error.message },
+          { status: error.statusCode }
         );
       }
 

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { userIdReqSchema } from "@/server/schemas/req.schema";
 import { getEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import { withHandler } from "@/server/lib";
+import { NotFoundError, withHandler } from "@/server/lib";
 
 export const GET = withHandler(
   async (request: NextRequest) => {
@@ -12,12 +12,8 @@ export const GET = withHandler(
     const { userId } = validatedParams;
 
     const employee = await employeesRepo.findOneByUserId({ userId });
-
     if (!employee) {
-      return NextResponse.json(
-        { error: "職員が見つかりません" },
-        { status: 404 }
-      );
+      throw new NotFoundError("職員が見つかりません");
     }
 
     const res = getEmployeeByUserIdResSchema.parse({
@@ -30,7 +26,6 @@ export const GET = withHandler(
     return NextResponse.json(res);
   },
   {
-    onError: true,
     onAuth: true,
   }
 );

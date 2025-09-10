@@ -49,7 +49,7 @@ export default function ResourceInputModal({
       <FormProvider {...formMethods}>
         <ModalTab tabs={tabs} defaultTab="data-input" />
         <div className="px-4 pb-4 pt-2 border-t border-gray-200">
-          {type === "edit" ? (
+          {/* {type === "edit" ? (
             <BasicModalFooter
               confirmText="保存"
               showCancel={false}
@@ -60,7 +60,7 @@ export default function ResourceInputModal({
             />
           ) : (
             <BasicModalFooter
-              confirmText="編集"
+              confirmText="変更"
               showCancel={false}
               onConfirm={() =>
                 openModal("resourceInput", {
@@ -70,7 +70,7 @@ export default function ResourceInputModal({
               }
               onBorder={false}
             />
-          )}
+          )} */}
         </div>
       </FormProvider>
     </div>

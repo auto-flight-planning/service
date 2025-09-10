@@ -1,7 +1,10 @@
 import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { planSchema } from "./schemas/common.schema";
-import { createPlanReqSchema } from "./schemas/req.schema";
+import {
+  createPlanReqSchema,
+  updatePlanTitleReqSchema,
+} from "./schemas/req.schema";
 import { createPlanResSchema } from "./schemas/res.schema";
 
 export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
@@ -30,7 +33,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
         },
       },
       400: {
-        description: "不正なリクエストです",
+        description: "パースに失敗しました。",
       },
       401: {
         description: "認証が必要です",
@@ -60,13 +63,56 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
         },
       },
       400: {
-        description: "不正なリクエストです",
+        description: "パースに失敗しました。",
       },
       401: {
         description: "認証が必要です",
       },
       404: {
         description: "企画が見つかりません",
+      },
+      500: {
+        description: "サーバーエラーが発生しました",
+      },
+    },
+  });
+
+  registry.registerPath({
+    method: "put",
+    path: "/api/plans/{planId}/title",
+    tags: ["Plan"],
+    summary: "企画のタイトルを変更",
+    security: [{ BearerAuth: [] }],
+    request: {
+      params: planIdReqSchema("path"),
+      body: {
+        content: {
+          "application/json": {
+            schema: updatePlanTitleReqSchema,
+          },
+        },
+      },
+    },
+    responses: {
+      200: {
+        description: "企画のタイトルを変更しました",
+        content: {
+          "application/json": {
+            schema: planSchema,
+          },
+        },
+      },
+      400: {
+        description: "パースに失敗しました。",
+      },
+      401: {
+        description: "認証が必要です",
+      },
+      404: {
+        description: "企画が見つかりません",
+      },
+      405: {
+        description: "メソッドが許可されていません",
       },
       500: {
         description: "サーバーエラーが発生しました",

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import plansRepo from "@/server/repos/plans/plans.repo";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { planSchema } from "@/features/plan/base/server/schemas/common.schema";
-import { withHandler } from "@/server/lib";
+import { NotFoundError, withHandler } from "@/server/lib";
 import { dateToString } from "@/lib/utils";
 
 export const GET = withHandler(
@@ -14,12 +14,8 @@ export const GET = withHandler(
     const { planId } = validatedParams;
 
     const plan = await plansRepo.findOne({ id: planId });
-
     if (!plan) {
-      return NextResponse.json(
-        { error: "企画が見つかりません" },
-        { status: 404 }
-      );
+      throw new NotFoundError("企画が見つかりません");
     }
 
     const res = planSchema.parse({
@@ -31,5 +27,8 @@ export const GET = withHandler(
       createdAt: plan.created_at,
     });
     return NextResponse.json(res);
+  },
+  {
+    onAuth: true,
   }
 );

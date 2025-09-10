@@ -90,7 +90,9 @@ export default function Toast({
 
       <div className="flex-1">
         <h4 className="text-sm font-semibold text-gray-700 mb-0.5">{title}</h4>
-        <p className="text-xs text-gray-500 leading-relaxed">{message}</p>
+        <p className="text-xs text-gray-500 leading-relaxed whitespace-pre-line">
+          {message}
+        </p>
       </div>
 
       <button

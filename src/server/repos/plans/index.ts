@@ -1,6 +1,6 @@
 export { default as plansRepo } from "./plans.repo";
 
-export { default as planParticipantsRepo } from "./participant/plan-participants.repo";
+export { default as planParticipantsRepo } from "./participants/plan-participants.repo";
 
 // Status
 export { default as planInputsStatusRepo } from "./status/plan-inputs-status.repo";

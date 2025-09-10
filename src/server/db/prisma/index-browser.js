@@ -322,43 +322,6 @@ exports.Prisma.EmployeesScalarFieldEnum = {
   email: 'email'
 };
 
-exports.Prisma.Plan_listScalarFieldEnum = {
-  id: 'id',
-  creator_id: 'creator_id',
-  name: 'name',
-  year: 'year',
-  month: 'month',
-  participant_ids: 'participant_ids',
-  created_at: 'created_at'
-};
-
-exports.Prisma.Plan_notificationScalarFieldEnum = {
-  id: 'id',
-  plan_id: 'plan_id',
-  plan_name: 'plan_name',
-  sender: 'sender',
-  message: 'message',
-  is_confirmed: 'is_confirmed',
-  created_at: 'created_at'
-};
-
-exports.Prisma.Plan_statusScalarFieldEnum = {
-  plan_id: 'plan_id',
-  step: 'step',
-  input_status: 'input_status',
-  review_status: 'review_status',
-  result_status: 'result_status'
-};
-
-exports.Prisma.Plan_resource_inputScalarFieldEnum = {
-  plan_id: 'plan_id',
-  pilot_cnt: 'pilot_cnt',
-  second_pilot_cnt: 'second_pilot_cnt',
-  total_person_exponent: 'total_person_exponent',
-  flight_scale_types: 'flight_scale_types',
-  per_flight_scale_data: 'per_flight_scale_data'
-};
-
 exports.Prisma.Oauth_clientsScalarFieldEnum = {
   id: 'id',
   client_id: 'client_id',
@@ -372,23 +335,6 @@ exports.Prisma.Oauth_clientsScalarFieldEnum = {
   created_at: 'created_at',
   updated_at: 'updated_at',
   deleted_at: 'deleted_at'
-};
-
-exports.Prisma.Plan_results_daily_dataScalarFieldEnum = {
-  plan_id: 'plan_id',
-  day: 'day',
-  data: 'data'
-};
-
-exports.Prisma.Plan_results_flights_dataScalarFieldEnum = {
-  id: 'id',
-  plan_id: 'plan_id',
-  data: 'data'
-};
-
-exports.Prisma.Plan_results_total_dataScalarFieldEnum = {
-  plan_id: 'plan_id',
-  data: 'data'
 };
 
 exports.Prisma.AirportsScalarFieldEnum = {
@@ -555,14 +501,7 @@ exports.Prisma.ModelName = {
   sso_providers: 'sso_providers',
   users: 'users',
   employees: 'employees',
-  plan_list: 'plan_list',
-  plan_notification: 'plan_notification',
-  plan_status: 'plan_status',
-  plan_resource_input: 'plan_resource_input',
   oauth_clients: 'oauth_clients',
-  plan_results_daily_data: 'plan_results_daily_data',
-  plan_results_flights_data: 'plan_results_flights_data',
-  plan_results_total_data: 'plan_results_total_data',
   airports: 'airports',
   plan_inputs_airports: 'plan_inputs_airports',
   plan_inputs_analytics: 'plan_inputs_analytics',

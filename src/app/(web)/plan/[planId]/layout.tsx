@@ -1,4 +1,4 @@
-import PlanHeader from "./_components/planHeader";
+import { AccessWrapper, HeaderWrapper } from "@/features/plan/base/view";
 
 export default async function PlanLayout({
   children,
@@ -11,9 +11,12 @@ export default async function PlanLayout({
 }) {
   const { planId } = await params;
   return (
-    <div className="py-8 px-36 w-full h-full flex flex-col gap-8">
-      {/* <PlanHeader planId={planId} /> */}
-      {/* <div>{children}</div> */}
+    <div className="flex flex-col gap-12 w-[90%] max-w-[1200px] h-[90%]">
+      <AccessWrapper planId={planId}>
+        <HeaderWrapper planId={planId}>
+          <div className="h-[30rem] bg-gray-100 rounded-2xl p-8">content</div>
+        </HeaderWrapper>
+      </AccessWrapper>
     </div>
   );
 }

@@ -5,13 +5,13 @@ import { ReactNode } from "react";
 type ColorVariant = "primary" | "gray" | "yellow" | "deepGray";
 
 interface PointCardProps {
-  children: ReactNode;
   color?: ColorVariant;
   background?: "white" | "light"; // white: 흰색 배경, light: 색상에 맞는 연한 배경
   onBorder?: boolean;
   onPointBorder?: boolean;
   onShadow?: boolean;
   className?: string;
+  children: ReactNode;
   onClick?: () => void;
 }
 
@@ -55,7 +55,7 @@ export default function PointCard({
   color = "primary",
   background = "white",
   onBorder = false,
-  onPointBorder = false,
+  onPointBorder = true,
   onShadow = true,
   className = "",
   onClick,
