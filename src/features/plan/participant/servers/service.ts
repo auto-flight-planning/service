@@ -52,6 +52,14 @@ const planParticipantsService = {
       participantDataList,
     });
   },
+
+  async updatePlanParticipants({
+    planId,
+    updateParticipantData,
+  }: {
+    planId: string;
+    updateParticipantData: any;
+  }) {},
 };
 
 export default planParticipantsService;

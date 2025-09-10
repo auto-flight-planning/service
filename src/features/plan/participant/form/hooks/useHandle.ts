@@ -1,6 +1,6 @@
 import { Control, useFieldArray } from "react-hook-form";
 import { Employee } from "@/features/employee/server/schemas/res.schema";
-import { ParticipantsFieldSchema } from "../schemas/filed.schema";
+import { ParticipantsFieldSchema } from "../schemas/form.schema";
 import { ParticipantPermissionEnum } from "../../type";
 
 export default function useHandleParticipantsField(

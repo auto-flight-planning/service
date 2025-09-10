@@ -4,7 +4,7 @@ import { useDeferredValue, useState } from "react";
 import { Control, useWatch } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { SearchEmployeesByNameResSchema } from "@/features/employee/server/schemas/res.schema";
-import { ParticipantsFieldSchema } from "../schemas/filed.schema";
+import { ParticipantsFieldSchema } from "../schemas/form.schema";
 import { errorResToMessage } from "@/lib/utils";
 
 export default function useSearchParticipant(
