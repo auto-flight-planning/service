@@ -1,14 +1,14 @@
 import { PencilIcon } from "@heroicons/react/24/solid";
 
-interface EditTitleButtonProps {
+interface EditButtonProps {
   onClick: () => void;
   className?: string;
 }
 
-export default function EditTitleButton({
+export default function EditButton({
   onClick,
   className = "",
-}: EditTitleButtonProps) {
+}: EditButtonProps) {
   return (
     <button
       onClick={onClick}

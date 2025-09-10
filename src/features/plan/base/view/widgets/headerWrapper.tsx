@@ -3,9 +3,10 @@
 import { usePathname } from "next/navigation";
 import useGetPlan from "../hooks/useGetPlan";
 import { useUserStore } from "@/features/auth";
+import { useModalStore } from "@/features/modal";
 import DoubleSpinner from "@/components/spinner/doubleSpinner";
+import { EditButton } from "@/components/button";
 import Stepper from "../components/stepper";
-import EditTitleButton from "../components/editTitleButton";
 import ParticipantButton from "../components/participantButton";
 import { dateToYearMonthJP } from "@/lib/utils";
 import { PlanStatusEnum } from "../../server/schemas/common.schema";
@@ -18,17 +19,19 @@ export default function HeaderWrapper({
   children: React.ReactNode;
 }) {
   const { user } = useUserStore();
-  const { plan, isFetching } = useGetPlan(planId);
+  const { plan } = useGetPlan(planId);
 
   const pathname = usePathname();
   const isInputSubPage = ["/resource", "/analytics", "/airport"].some(
     (subPage) => pathname.includes(subPage)
   );
 
+  const { openModal } = useModalStore();
+
   if (isInputSubPage) {
     return null;
   }
-  if (isFetching || !plan) {
+  if (!plan) {
     return (
       <div className="h-full w-full flex justify-center items-center">
         <DoubleSpinner />
@@ -43,7 +46,14 @@ export default function HeaderWrapper({
           <div className="flex items-center gap-4 mb-2">
             <h1 className="text-3xl font-bold text-gray-700">{plan.title}</h1>
             {user!.userId === plan.creatorId && (
-              <EditTitleButton onClick={() => {}} />
+              <EditButton
+                onClick={() =>
+                  openModal("editTitle", {
+                    planId,
+                    defaultValue: { title: plan.title },
+                  })
+                }
+              />
             )}
           </div>
           <div className="flex items-center gap-4">

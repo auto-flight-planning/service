@@ -7,13 +7,15 @@ import Modal from "../components/modal";
 // MODAL_COMPONENTS
 import { LoginModal } from "@/features/auth";
 import { CreatePlanModal } from "@/features/plan/base/create";
-import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";
-import { FlightScaleModal } from "@/features/plan/input/resource/flightScale";
+import { EditTitleModal } from "@/features/plan/base/view";
+// import { ResourceInputModal } from "@/features/plan/input/resource/totalPerson";
+// import { FlightScaleModal } from "@/features/plan/input/resource/flightScale";
 
 export default function ModalContainer() {
   const MODAL_COMPONENTS = {
     login: LoginModal,
     createPlan: CreatePlanModal,
+    editTitle: EditTitleModal,
     // resourceInput: ResourceInputModal,
     // flightScaleInput: FlightScaleModal,
   };
@@ -37,7 +39,7 @@ export default function ModalContainer() {
 
   return (
     <Modal isOpen={isReady} onClose={closeModal}>
-      <ModalComponent {...(modalProps || {})} />
+      <ModalComponent {...(modalProps as any)} />
     </Modal>
   );
 }
