@@ -3,26 +3,25 @@ import { PointCard } from "@/components/card";
 import DataCategoriesSection from "./_components/dataCategoriesSection";
 import SubmitButton from "./_components/submitButton";
 
-interface PlanInputPageProps {
+export default async function PlanInputPage({
+  params,
+}: {
   params: Promise<{
     planId: string;
   }>;
-}
-
-export default async function PlanInputPage({ params }: PlanInputPageProps) {
+}) {
   const { planId } = await params;
 
-  return <></>;
   return (
     <div className="flex flex-col gap-8 pb-16">
-      {/* 안내 섹션 */}
+      {/* 案内 */}
       <PointCard color="primary" onPointBorder>
         <div className="flex flex-col gap-4">
           <p className="text-sm">
-            企画導出のため以下の3つのデータが必要です。クリックで該当ページに移動してデータを個別要請でき、詳細説明、入力結果確認、直接入力が可能です。
+            企画導出には以下の3つのデータが必要です。各項目をクリックすると該当ページに遷移し、詳細説明・入力データの確認・直接入力が可能です。
             <br />
             <b className="text-primary-500">
-              すべてのデータ入力が完了すると、自動的に企画導出が開始されます。
+              すべてのデータ入力が完了しましたら、結果算出ボタンを押してください。
             </b>
           </p>
           <div>
@@ -32,8 +31,8 @@ export default async function PlanInputPage({ params }: PlanInputPageProps) {
       </PointCard>
 
       {/* 데이터 카테고리 섹션 */}
-      <DataCategoriesSection planId={planId} />
-      <SubmitButton planId={planId} />
+      {/* <DataCategoriesSection planId={planId} />
+      <SubmitButton planId={planId} /> */}
     </div>
   );
 }
