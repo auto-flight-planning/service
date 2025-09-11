@@ -1,3 +1,9 @@
+export const INPUT_CATEGORY_LABELS = {
+  RESOURCE: "自社資源データ",
+  ANALYTICS: "分析データ",
+  AIRPORT: "連携空港の運航日程データ",
+};
+
 export const INPUT_DATA_LABELS = {
   RESOURCES_WORKFORCE: "総人員データ",
   RESOURCES_FLIGHT_SCALES: "運航規模の種類",
@@ -6,4 +12,28 @@ export const INPUT_DATA_LABELS = {
   ANALYTICS_ROUND_TRIP_NORMALIZATION_FUNC: "往復運航優先順位指数正規化関数",
   ANALYTICS_ROUTE_MIN_DISTRIBUTION: "運航最小配分基準",
   AIRPORTS_SCHEDULE_DATA: "連携空港の運航日程データ",
+};
+
+export const INPUT_DATA_DETAIL_LABELS = {
+  RESOURCES_WORKFORCE: {
+    CAPTAIN_CNT: "総機長数",
+    SUB_CAPTAIN_CNT: "総副操縦士数",
+    OTHER_PERSONNEL_NORM: "その他総人員指数",
+  },
+  RESOURCES_FLIGHT_SCALE_DATA: {
+    AIRPLANE_CNT: "総航空機数",
+    MIN_STANDBY_AIRPLANE_CNT: "最小待機航空機数",
+    SEAT_CNT: "座席数",
+    REQUIRED_CAPTAIN_CNT: "必要機長数",
+    REQUIRED_SUB_CAPTAIN_CNT: "必要副操縦士数",
+    REQUIRED_OTHER_PERSONNEL_CNT: "その他必要人員数",
+    REQUIRED_PRE_FLIGHT_HOURS: "飛行前に必要な時間",
+    REQUIRED_POST_FLIGHT_HOURS: "飛行後に必要な時間",
+    MIN_REQUIRED_REVENUE: "運航可能最小収益",
+  },
+  ANALYTICS_FLIGHT_CANDIDATES: {
+    DOMESTIC_FLIGHT_CANDIDATES: "国内運航候補",
+    INTERNATIONAL_DEPARTURE_FLIGHT_CANDIDATES: "国際出発運航候補",
+    INTERNATIONAL_ARRIVAL_FLIGHT_CANDIDATES: "国際到着運航候補",
+  },
 };

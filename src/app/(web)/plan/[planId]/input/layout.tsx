@@ -1,4 +1,4 @@
-// import Breadcrumb from "./_components/breadcrumb";
+import { BreadcrumbSection } from "@/features/plan/input";
 
 export default async function InputLayout({
   children,
@@ -10,10 +10,9 @@ export default async function InputLayout({
   }>;
 }) {
   const { planId } = await params;
-
   return (
-    <div>
-      {/* <Breadcrumb planId={planId} /> */}
+    <div className="flex flex-col w-full h-full">
+      <BreadcrumbSection planId={planId} />
       {children}
     </div>
   );
