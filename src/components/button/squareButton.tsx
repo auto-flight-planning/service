@@ -49,12 +49,12 @@ export default function SquareButton({
     large: "px-6 py-3 text-base",
   };
 
-  const widthClasses = fullWidth ? "w-full" : "";
+  const widthClasses = fullWidth ? "w-full" : "w-fit";
 
   const spinnerSizes = {
-    small: "sm" as const,
-    medium: "sm" as const,
-    large: "md" as const,
+    small: "small" as const,
+    medium: "medium" as const,
+    large: "large" as const,
   };
 
   const spinnerColors = {

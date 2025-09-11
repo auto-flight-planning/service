@@ -1,21 +1,19 @@
-import Breadcrumb from "./_components/breadcrumb";
-
-interface InputLayoutProps {
-  children: React.ReactNode;
-  params: Promise<{
-    planId: string;
-  }>;
-}
+// import Breadcrumb from "./_components/breadcrumb";
 
 export default async function InputLayout({
   children,
   params,
-}: InputLayoutProps) {
+}: {
+  children: React.ReactNode;
+  params: Promise<{
+    planId: string;
+  }>;
+}) {
   const { planId } = await params;
 
   return (
     <div>
-      <Breadcrumb planId={planId} />
+      {/* <Breadcrumb planId={planId} /> */}
       {children}
     </div>
   );

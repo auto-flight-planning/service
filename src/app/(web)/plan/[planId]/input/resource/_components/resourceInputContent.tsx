@@ -65,7 +65,7 @@ export default function ResourceInputContent({
   if (isPending) {
     return (
       <div className="flex justify-center items-center h-full">
-        <Spinner size="md" />
+        <Spinner size="medium" />
       </div>
     );
   }

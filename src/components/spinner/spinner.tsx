@@ -1,18 +1,18 @@
 interface SpinnerProps {
-  size?: "sm" | "md" | "lg";
+  size?: "small" | "medium" | "large";
   color?: "gray" | "white";
   className?: string;
 }
 
 export default function Spinner({
-  size = "md",
+  size = "medium",
   color = "gray",
   className = "",
 }: SpinnerProps) {
   const sizeClasses = {
-    sm: "w-4 h-4",
-    md: "w-6 h-6",
-    lg: "w-8 h-8",
+    small: "w-4 h-4",
+    medium: "w-6 h-6",
+    large: "w-8 h-8",
   };
 
   const colorClasses = {

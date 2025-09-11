@@ -1,111 +1,88 @@
-"use client";
+import WhiteCard from "@/components/card/whiteCard";
+import Chip from "@/components/chip/chip";
+import {
+  StatusChip,
+  StatusChipColor,
+  ListItemStatus,
+} from "@/features/plan/status";
+import { ListDataItem, StatusEnum } from "@/features/plan/status/type";
 
-import { WhiteCard } from "@/components/card";
-import { StatusChip } from "@/components/chip";
-
-type StatusChipType = "completed" | "inputting" | "not_started" | null;
-
-interface DataItem {
-  label: string;
-  status: string;
+export enum IconColor {
+  PRIMARY = "primary",
+  PURPLE = "purple",
+  GREEN = "green",
 }
 
-interface DataCategoryCardProps {
-  icon: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  items: DataItem[];
-  statusChip: StatusChipType;
-  color: "primary" | "purple" | "green";
-  onClick?: () => void;
-}
-
-const colorStyles = {
-  primary: {
-    iconBg: "bg-gradient-to-br from-primary-500 to-primary-600",
-  },
-  purple: {
-    iconBg: "bg-gradient-to-br from-purple-600 to-purple-700",
-  },
-  green: {
-    iconBg: "bg-gradient-to-br from-green-500 to-green-600",
-  },
+const iconBgStyles = {
+  primary: "from-primary-500 to-primary-600",
+  purple: "from-purple-600 to-purple-700",
+  green: "from-green-500 to-green-600",
 };
 
-const getStatusIcon = (status: string) => {
-  switch (status) {
-    case "submitted":
-      return <span className="text-green-500 font-bold">✓</span>;
-    case "inputting":
-      return <span className="text-primary-500 font-bold">⋯</span>;
-    case "empty":
-    default:
-      return <span className="text-gray-300 font-bold">○</span>;
-  }
+const statusChipProps = {
+  [StatusEnum.NOT_STARTED]: { text: "未入力", color: "light-gray" },
+  [StatusEnum.IN_PROGRESS]: { text: "入力中", color: "yellow" },
+  [StatusEnum.COMPLETED]: { text: "入力済み", color: "primary" },
 };
-
-// 공통 StatusChip 컴포넌트 사용으로 제거
 
 export default function DataCategoryCard({
   icon,
   title,
-  subtitle,
+  inputSource,
+  status,
   description,
-  items,
-  statusChip,
-  color,
+  listItems,
   onClick,
-}: DataCategoryCardProps) {
-  const styles = colorStyles[color];
-
+}: {
+  icon: { text: string; color: IconColor };
+  title: string;
+  description: string;
+  inputSource: string;
+  status: StatusEnum;
+  listItems: ListDataItem[];
+  onClick: () => void;
+}) {
   return (
     <WhiteCard onClick={onClick}>
-      {/* 상태 칩 */}
-      {statusChip && (
-        <div className="absolute top-5 right-5">
-          {statusChip === "completed" && (
-            <StatusChip text="完了" color="green" showDot />
-          )}
-          {statusChip === "inputting" && (
-            <StatusChip text="入力中" color="yellow" showDot />
-          )}
-          {statusChip === "not_started" && (
-            <StatusChip text="入力前" color="gray" showDot />
-          )}
-        </div>
-      )}
+      {/* Status Chip */}
+      <div className="absolute top-5 right-5">
+        <StatusChip
+          text={statusChipProps[status].text}
+          color={statusChipProps[status].color as StatusChipColor}
+        />
+      </div>
 
-      {/* 헤더 */}
+      {/* Header */}
       <div className="flex items-center gap-4 mb-5">
         <div
-          className={`w-14 h-14 ${styles.iconBg} rounded-xl flex items-center justify-center text-white text-2xl font-bold`}
+          className={`w-14 h-14 bg-gradient-to-r ${
+            iconBgStyles[icon.color]
+          } rounded-lg flex items-center justify-center text-white text-2xl font-bold`}
         >
-          {icon}
+          {icon.text}
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-900 mb-1">{title}</h3>
-          <p className="text-sm text-gray-600">{subtitle}</p>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+          <div className="flex items-center gap-2">
+            <Chip
+              text="入力者"
+              color="light-gray"
+              size="extra-small"
+              rounded="md"
+            />
+            <p className="text-sm text-gray-600">{inputSource}</p>
+          </div>
         </div>
       </div>
 
-      {/* 설명 */}
+      {/* Description */}
       <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
 
-      {/* 아이템 리스트 */}
-      {items.length > 0 && (
+      {/* List Items */}
+      {listItems.length > 0 && (
         <ul className="space-y-2">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-center gap-3">
-              {getStatusIcon(item.status)}
-              <span
-                className={
-                  item.status === "empty" ? "text-gray-400" : "text-gray-700"
-                }
-              >
-                {item.label}
-              </span>
-            </li>
+          {listItems.map((item, index) => (
+            <ListItemStatus key={index} index={index} item={item} />
           ))}
         </ul>
       )}

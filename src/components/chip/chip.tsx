@@ -5,6 +5,7 @@ export interface ChipProps {
   variant?: "outline" | "solid";
   size?: "extra-small" | "small" | "medium";
   color?: "primary" | "red" | "green" | "yellow" | "gray" | "light-gray";
+  rounded?: "full" | "md";
   children?: ReactNode;
   className?: string;
 }
@@ -38,6 +39,7 @@ export default function Chip({
   variant = "solid",
   size = "medium",
   color = "primary",
+  rounded = "full",
   children,
   className = "",
 }: ChipProps) {
@@ -49,7 +51,7 @@ export default function Chip({
         gap-1.5
         ${sizeClasses[size]}
         ${colorClasses[variant][color]}
-        rounded-full
+        rounded-${rounded}
         transition-colors
         duration-300
         ${className}
