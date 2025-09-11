@@ -22,7 +22,7 @@ export default function Notification() {
       <div className="bg-white h-72 max-h-72 overflow-y-auto scrollbar-custom">
         {isPending || !notifications ? (
           <div className="flex justify-center items-center h-full">
-            <Spinner color="gray" size="lg" />
+            <Spinner color="gray" size="large" />
           </div>
         ) : (
           <>

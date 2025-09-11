@@ -30,7 +30,7 @@ export default function FlightScaleModal({
       label: "データ入力",
       content: isPendingToGet ? (
         <div className="flex justify-center items-center h-full">
-          <Spinner size="md" />
+          <Spinner size="medium" />
         </div>
       ) : (
         <FlightScaleForm planId={planId} type={type} />

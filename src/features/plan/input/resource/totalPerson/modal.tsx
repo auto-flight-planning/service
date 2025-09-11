@@ -26,7 +26,7 @@ export default function ResourceInputModal({
       label: "データ入力",
       content: isPendingToGet ? (
         <div className="flex justify-center items-center h-full">
-          <Spinner size="md" />
+          <Spinner size="medium" />
         </div>
       ) : (
         <TotalPersonForm planId={planId} type={type} />
