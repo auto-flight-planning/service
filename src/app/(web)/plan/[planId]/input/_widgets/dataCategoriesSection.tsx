@@ -10,7 +10,7 @@ import {
   useGetPlanInputStatus,
 } from "@/features/plan/status";
 import { getOverallStatus } from "@/features/plan/status/utils";
-import { INPUT_DATA_LABELS } from "@/features/plan/input/constant";
+import { INPUT_CATEGORY_LABELS } from "@/features/plan/input/constant";
 
 export default function DataCategoriesSection({ planId }: { planId: string }) {
   const { planInputStatus } = useGetPlanInputStatus(planId);
@@ -44,7 +44,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
     <div className="flex flex-col gap-6">
       <DataCategoryCard
         icon={{ text: "🏢", color: IconColor.PRIMARY }}
-        title={INPUT_DATA_LABELS.RESOURCES_WORKFORCE}
+        title={INPUT_CATEGORY_LABELS.RESOURCES}
         inputSource="運航本部総括部・財務部"
         status={statuses.resource.status}
         description="自社が保有する人員、航空機などの資源の保有量を基に、実現可能な運航日程を企画します。"
@@ -53,7 +53,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
       />
       <DataCategoryCard
         icon={{ text: "📊", color: IconColor.PURPLE }}
-        title={INPUT_DATA_LABELS.ANALYTICS_FLIGHT_CANDIDATES}
+        title={INPUT_CATEGORY_LABELS.ANALYTICS}
         inputSource="外部データ分析協力会社"
         status={statuses.analytics.status}
         description="過去の運航実績データや人気旅行先関連の需要などを分析し算出したデータを基に、収益性の高い運航日程を企画します。"
@@ -62,7 +62,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
       />
       <DataCategoryCard
         icon={{ text: "🛫", color: IconColor.GREEN }}
-        title={INPUT_DATA_LABELS.AIRPORTS_SCHEDULE_DATA}
+        title={INPUT_CATEGORY_LABELS.AIRPORTS}
         inputSource="連携空港"
         status={statuses.airport.status}
         description="連携空港の運航日程に合わせ、可能な時間帯に運航日程を割り当てます。"

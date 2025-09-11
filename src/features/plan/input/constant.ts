@@ -1,3 +1,9 @@
+export const INPUT_CATEGORY_LABELS = {
+  RESOURCE: "自社資源データ",
+  ANALYTICS: "運航日程企画のための分析データ",
+  AIRPORT: "連携空港の運航日程データ",
+};
+
 export const INPUT_DATA_LABELS = {
   RESOURCES_WORKFORCE: "総人員データ",
   RESOURCES_FLIGHT_SCALES: "運航規模の種類",
