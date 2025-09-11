@@ -1,7 +1,6 @@
 import { SquareButton } from "@/components/button";
 import { PointCard } from "@/components/card";
-import DataCategoriesSection from "./_components/dataCategoriesSection";
-import SubmitButton from "./_components/submitButton";
+import DataCategoriesSection from "./_widgets/dataCategoriesSection";
 
 export default async function PlanInputPage({
   params,
@@ -14,7 +13,6 @@ export default async function PlanInputPage({
 
   return (
     <div className="flex flex-col gap-8 pb-16">
-      {/* 案内 */}
       <PointCard color="primary" onPointBorder>
         <div className="flex flex-col gap-4">
           <p className="text-sm">
@@ -30,9 +28,11 @@ export default async function PlanInputPage({
         </div>
       </PointCard>
 
-      {/* 데이터 카테고리 섹션 */}
-      {/* <DataCategoriesSection planId={planId} />
-      <SubmitButton planId={planId} /> */}
+      <DataCategoriesSection planId={planId} />
+
+      <div className="flex justify-end">
+        <SquareButton text="結果算出" bold size="large" />
+      </div>
     </div>
   );
 }

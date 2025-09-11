@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { StatusEnum } from "./common.schema";
+import { StatusEnum } from "../../type";
 import { planIdSchema } from "@/server/schemas/common.schema";
 
 extendZodWithOpenApi(z);
