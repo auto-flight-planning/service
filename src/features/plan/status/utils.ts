@@ -2,6 +2,14 @@ import { GetPlanInputsStatusResSchema } from "./server/schemas/res.schema";
 import { ListDataItem, StatusEnum } from "./type";
 import { INPUT_DATA_LABELS } from "../input/constant";
 
+export const getStatusChipProps = (size: string) => {
+  return {
+    [StatusEnum.NOT_STARTED]: { text: "未入力", color: "light-gray", size },
+    [StatusEnum.IN_PROGRESS]: { text: "入力中", color: "yellow", size },
+    [StatusEnum.COMPLETED]: { text: "入力済", color: "primary", size },
+  };
+};
+
 export const getResourceInputStatusItems = (
   planInputStatus: GetPlanInputsStatusResSchema
 ) => {
