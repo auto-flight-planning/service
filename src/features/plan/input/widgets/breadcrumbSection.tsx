@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useGetPlan } from "@/features/plan/base/view";
-import Breadcrumb from "../_components/breadcrumb";
+import Breadcrumb from "../components/breadcrumb";
 import { INPUT_CATEGORY_LABELS } from "@/features/plan/input/constant";
 
 export default function BreadcrumbSection({ planId }: { planId: string }) {

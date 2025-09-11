@@ -1,4 +1,4 @@
-import BreadcrumbSection from "./_widgets/breadcrumbSection";
+import { BreadcrumbSection } from "@/features/plan/input";
 
 export default async function InputLayout({
   children,

@@ -1,6 +1,6 @@
 import { SquareButton } from "@/components/button";
 import { PointCard } from "@/components/card";
-import DataCategoriesSection from "./_widgets/dataCategoriesSection";
+import { DataCategoriesSection } from "@/features/plan/input";
 
 export default async function PlanInputPage({
   params,

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { Spinner } from "@/components/spinner";
-import DataCategoryCard, { IconColor } from "../_components/dataCategoryCard";
+import DataCategoryCard, { IconColor } from "../components/dataCategoryCard";
 import {
   getAnalyticsInputStatusItems,
   getResourceInputStatusItems,
@@ -44,7 +44,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
     <div className="flex flex-col gap-6">
       <DataCategoryCard
         icon={{ text: "🏢", color: IconColor.PRIMARY }}
-        title={INPUT_CATEGORY_LABELS.RESOURCES}
+        title={INPUT_CATEGORY_LABELS.RESOURCE}
         inputSource="運航本部総括部・財務部"
         status={statuses.resource.status}
         description="自社が保有する人員、航空機などの資源の保有量を基に、実現可能な運航日程を企画します。"
@@ -62,7 +62,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
       />
       <DataCategoryCard
         icon={{ text: "🛫", color: IconColor.GREEN }}
-        title={INPUT_CATEGORY_LABELS.AIRPORTS}
+        title={INPUT_CATEGORY_LABELS.AIRPORT}
         inputSource="連携空港"
         status={statuses.airport.status}
         description="連携空港の運航日程に合わせ、可能な時間帯に運航日程を割り当てます。"
