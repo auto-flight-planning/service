@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { Spinner } from "@/components/spinner";
-import DataCategoryCard, { IconColor } from "../components/dataCategoryCard";
+import InputCategoryCard, { IconColor } from "../components/inputCategoryCard";
 import {
   getAnalyticsInputStatusItems,
   getResourceInputStatusItems,
@@ -12,7 +12,7 @@ import {
 import { getOverallStatus } from "@/features/plan/status/utils";
 import { INPUT_CATEGORY_LABELS } from "@/features/plan/input/constant";
 
-export default function DataCategoriesSection({ planId }: { planId: string }) {
+export default function InputCategoriesSection({ planId }: { planId: string }) {
   const { planInputStatus } = useGetPlanInputStatus(planId);
   const router = useRouter();
 
@@ -42,7 +42,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
   }
   return (
     <div className="flex flex-col gap-6">
-      <DataCategoryCard
+      <InputCategoryCard
         icon={{ text: "🏢", color: IconColor.PRIMARY }}
         title={INPUT_CATEGORY_LABELS.RESOURCE}
         inputSource="運航本部総括部・財務部"
@@ -51,7 +51,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
         listItems={statuses.resource.items}
         onClick={() => router.push(`/plan/${planId}/input/resource`)}
       />
-      <DataCategoryCard
+      <InputCategoryCard
         icon={{ text: "📊", color: IconColor.PURPLE }}
         title={INPUT_CATEGORY_LABELS.ANALYTICS}
         inputSource="外部データ分析協力会社"
@@ -60,7 +60,7 @@ export default function DataCategoriesSection({ planId }: { planId: string }) {
         listItems={statuses.analytics.items}
         onClick={() => router.push(`/plan/${planId}/input/analytics`)}
       />
-      <DataCategoryCard
+      <InputCategoryCard
         icon={{ text: "🛫", color: IconColor.GREEN }}
         title={INPUT_CATEGORY_LABELS.AIRPORT}
         inputSource="連携空港"

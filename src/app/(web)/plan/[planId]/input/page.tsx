@@ -1,6 +1,6 @@
 import { SquareButton } from "@/components/button";
 import { PointCard } from "@/components/card";
-import { DataCategoriesSection } from "@/features/plan/input";
+import { InputCategoriesSection } from "@/features/plan/input";
 
 export default async function PlanInputPage({
   params,
@@ -28,7 +28,7 @@ export default async function PlanInputPage({
         </div>
       </PointCard>
 
-      <DataCategoriesSection planId={planId} />
+      <InputCategoriesSection planId={planId} />
 
       <div className="flex justify-end">
         <SquareButton text="結果算出" bold size="large" />

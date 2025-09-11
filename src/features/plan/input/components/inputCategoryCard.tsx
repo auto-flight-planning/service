@@ -6,6 +6,7 @@ import {
   ListItemStatus,
 } from "@/features/plan/status";
 import { ListDataItem, StatusEnum } from "@/features/plan/status/type";
+import { getStatusChipProps } from "@/features/plan/status/utils";
 
 export enum IconColor {
   PRIMARY = "primary",
@@ -19,13 +20,9 @@ const iconBgStyles = {
   green: "from-green-500 to-green-600",
 };
 
-const statusChipProps = {
-  [StatusEnum.NOT_STARTED]: { text: "未入力", color: "light-gray" },
-  [StatusEnum.IN_PROGRESS]: { text: "入力中", color: "yellow" },
-  [StatusEnum.COMPLETED]: { text: "入力済み", color: "primary" },
-};
+const statusChipProps = getStatusChipProps("medium");
 
-export default function DataCategoryCard({
+export default function InputCategoryCard({
   icon,
   title,
   inputSource,
