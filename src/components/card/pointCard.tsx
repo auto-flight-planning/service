@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 
-type ColorVariant = "primary" | "gray" | "yellow" | "deepGray";
+type ColorVariant = "primary" | "gray" | "yellow" | "light-gray";
 
 interface PointCardProps {
   color?: ColorVariant;
@@ -24,7 +24,7 @@ const colorStyles = {
     hoverBorder: "hover:border-primary-500",
     shadow: "shadow-primary-500/15",
   },
-  gray: {
+  "light-gray": {
     bgWhite: "bg-white",
     bgLight: "bg-gray-100", // Tailwind 기본 gray-100 사용
     pointBorder: "border-l-gray-500",
@@ -32,7 +32,7 @@ const colorStyles = {
     hoverBorder: "hover:border-gray-500",
     shadow: "shadow-gray-500/15",
   },
-  deepGray: {
+  gray: {
     bgWhite: "bg-white",
     bgLight: "bg-gray-300",
     pointBorder: "border-l-gray-600",
@@ -82,7 +82,7 @@ export default function PointCard({
 
   // 전체 보더
   if (onBorder) {
-    baseClasses.push("border-1", styles.border);
+    baseClasses.push("border", styles.border);
   } else if (!onPointBorder) {
     // 기본적으로 투명 보더를 주고 호버시 색상 변경
     baseClasses.push("border-2", "border-transparent", styles.hoverBorder);

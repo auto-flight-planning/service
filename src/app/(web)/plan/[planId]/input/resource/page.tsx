@@ -1,5 +1,5 @@
 import { InputHeader } from "@/features/plan/input";
-// import ResourceInputContent from "./_components/resourceInputContent";
+import { ResourceInputContainer } from "@/features/plan/input/resource";
 
 export default async function ResourcePage({
   params,
@@ -9,14 +9,13 @@ export default async function ResourcePage({
   }>;
 }) {
   const { planId } = await params;
-
   return (
     <div className="flex flex-col gap-8">
       <InputHeader
         title="自社資源データ"
         description="運航本部総括部・財務部にデータを依頼します"
       />
-      {/* <ResourceInputContent planId={planId} /> */}
+      <ResourceInputContainer planId={planId} />
     </div>
   );
 }
