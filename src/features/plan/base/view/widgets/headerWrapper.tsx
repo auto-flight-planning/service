@@ -28,15 +28,15 @@ export default function HeaderWrapper({
 
   const { openModal } = useModalStore();
 
-  if (isInputSubPage) {
-    return children;
-  }
   if (!plan) {
     return (
       <div className="h-full w-full flex justify-center items-center">
         <DoubleSpinner />
       </div>
     );
+  }
+  if (isInputSubPage) {
+    return children;
   }
   return (
     <section className="flex flex-col gap-8 w-full h-full">

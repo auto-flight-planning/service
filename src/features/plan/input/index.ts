@@ -1,2 +1,5 @@
-export { default as DataCategoriesSection } from "./widgets/dataCategoriesSection";
-export { default as BreadcrumbSection } from "./widgets/breadcrumbSection";
+// widgets
+export * from "./widgets";
+
+// components
+export * from "./components";

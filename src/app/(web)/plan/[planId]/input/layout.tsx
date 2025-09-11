@@ -11,7 +11,7 @@ export default async function InputLayout({
 }) {
   const { planId } = await params;
   return (
-    <div className="flex flex-col gap-4 w-full h-full">
+    <div className="flex flex-col w-full h-full">
       <BreadcrumbSection planId={planId} />
       {children}
     </div>
