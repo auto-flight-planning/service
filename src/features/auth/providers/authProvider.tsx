@@ -3,8 +3,8 @@
 import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client/browser";
 import { Subscription } from "@supabase/supabase-js";
-import getBrowserClient from "@/supabase/browserClient";
 import { useToastStore } from "@/features/toast/stores/toastStore";
 import useUserStore from "../stores/userStore";
 import { DoubleSpinner } from "@/components/spinner";
@@ -21,7 +21,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     let authSubscription: Subscription | null = null;
 
     const initAuthProvider = async () => {
-      const supabaseBrowserClient = await getBrowserClient();
+      const supabaseBrowserClient = createSupabaseBrowserClient();
       const { data: listener } = supabaseBrowserClient.auth.onAuthStateChange(
         async (event, session) => {
           if (event === "INITIAL_SESSION") {

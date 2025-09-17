@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
-import { getServerClient } from "@/supabase/serverClient";
+import { createSupabaseServerClient } from "@/lib/supabase/client/server";
 import { User } from "@supabase/supabase-js";
 import { NotFoundError } from "./errors";
 
@@ -26,7 +26,7 @@ export default function withHandler<T extends any[]>(
       let user = null;
 
       if (onAuth) {
-        const supabase = await getServerClient();
+        const supabase = await createSupabaseServerClient();
         const {
           data: { user: authUser },
           error: authError,

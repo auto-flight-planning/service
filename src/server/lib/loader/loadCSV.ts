@@ -1,5 +1,5 @@
 import { parse } from "csv-parse/sync";
-import { getGeneralClient } from "@/supabase/generalClient";
+import { createSupabaseClient } from "@/lib/supabase/client/general";
 
 type CSVRow = Record<string, string>;
 
@@ -8,7 +8,7 @@ export default async function loadCSV(
   url: string
 ): Promise<CSVRow[]> {
   try {
-    const supabase = await getGeneralClient();
+    const supabase = await createSupabaseClient();
 
     const { data } = await supabase.storage
       .from(bucketName)
