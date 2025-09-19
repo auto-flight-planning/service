@@ -2,10 +2,10 @@ import { planParticipantsRepo } from "@/server/repos/plans";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { NotFoundError } from "@/server/lib/errors";
 import { UpdateParticipantsReqSchema } from "./schemas/req.schema";
-import { ParticipantPermissionEnum } from "../type";
+import { type ParticipantPermission } from "../type";
 import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
 import { getRedisClient } from "@/lib/redis/client";
-import { GetPlanParticipantsResSchema } from "./schemas/res.schema";
+import { PlanParticipantsDto } from "./schemas/res.schema";
 
 const planParticipantsService = {
   async getExtendedPlanParticipants({
@@ -24,7 +24,7 @@ const planParticipantsService = {
       email: e.email,
       userId: e.user_id,
       permission: participants.find((p) => p.user_id === e.user_id)!
-        .permission as ParticipantPermissionEnum[],
+        .permission as ParticipantPermission[],
     }));
     return extendedParticipants;
   },
@@ -38,7 +38,7 @@ const planParticipantsService = {
   }) {
     const redisClient = await getRedisClient();
 
-    let planParticipants: GetPlanParticipantsResSchema | null = null;
+    let planParticipants: PlanParticipantsDto | null = null;
     const cachedPlanParticipants = await redisClient.get(
       `plan_participants:${planId}`
     );
@@ -46,7 +46,7 @@ const planParticipantsService = {
     if (cachedPlanParticipants) {
       planParticipants = JSON.parse(
         cachedPlanParticipants
-      ) as GetPlanParticipantsResSchema;
+      ) as PlanParticipantsDto;
     } else {
       const [_creator, participants] = await Promise.all([
         employeesRepo.findOneByUserId({ userId: creatorId }),

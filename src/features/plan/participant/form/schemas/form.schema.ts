@@ -1,5 +1,5 @@
 import z from "zod";
-import { ParticipantPermissionEnum } from "../../type";
+import { PARTICIPANT_PERMISSION_VALUES } from "../../type";
 
 export const participantsFieldSchema = z.array(
   z.object({
@@ -7,7 +7,7 @@ export const participantsFieldSchema = z.array(
     lastName: z.string(),
     firstName: z.string(),
     email: z.email(),
-    permission: z.array(z.enum(ParticipantPermissionEnum)),
+    permission: z.array(z.enum(PARTICIPANT_PERMISSION_VALUES)),
   })
 );
 export type ParticipantsFieldSchema = z.infer<typeof participantsFieldSchema>;

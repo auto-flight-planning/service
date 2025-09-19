@@ -1,8 +1,8 @@
-import { ParticipantPermissionEnum } from "./type";
+import { PARTICIPANT_PERMISSION_OPTIONS } from "./type";
 
 export const PARTICIPANT_PERMISSION_LABELS = {
-  [ParticipantPermissionEnum.VIEW]: "閲覧",
-  [ParticipantPermissionEnum.REQUEST]: "依頼",
-  [ParticipantPermissionEnum.INPUT]: "入力",
-  [ParticipantPermissionEnum.EDIT]: "変更",
+  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: "閲覧",
+  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]: "依頼",
+  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]: "入力",
+  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]: "変更",
 };

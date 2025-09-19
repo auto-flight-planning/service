@@ -1,6 +1,9 @@
 import { ChipButton, CrossButton } from "@/components/button";
 import { Chip, type ChipProps } from "@/components/chip";
-import { ParticipantPermissionEnum } from "../type";
+import {
+  PARTICIPANT_PERMISSION_OPTIONS,
+  type ParticipantPermission,
+} from "../type";
 import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
 
 interface SelectedParticipantDetailProps {
@@ -8,22 +11,22 @@ interface SelectedParticipantDetailProps {
   participantIndex: number;
   fullName: string;
   email: string;
-  permission: ParticipantPermissionEnum[];
+  permission: ParticipantPermission[];
   onTogglePermission?: (
     index: number,
-    permissionOption: ParticipantPermissionEnum
+    permissionOption: ParticipantPermission
   ) => void;
   onRemove?: (index: number) => void;
 }
 
 const permissionColorClasses: Record<
-  ParticipantPermissionEnum,
+  ParticipantPermission,
   ChipProps["color"]
 > = {
-  [ParticipantPermissionEnum.VIEW]: "light-gray",
-  [ParticipantPermissionEnum.REQUEST]: "green",
-  [ParticipantPermissionEnum.INPUT]: "yellow",
-  [ParticipantPermissionEnum.EDIT]: "primary",
+  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: "light-gray",
+  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]: "green",
+  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]: "yellow",
+  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]: "primary",
 };
 
 export default function SelectedParticipantDetail({
@@ -46,7 +49,7 @@ export default function SelectedParticipantDetail({
           <span className="text-gray-500 text-xs underline">作業権限</span>
           {type === "edit" ? (
             <div className="flex items-center gap-1">
-              {Object.values(ParticipantPermissionEnum).map(
+              {Object.values(PARTICIPANT_PERMISSION_OPTIONS).map(
                 (permissionOption) => {
                   const isSelected = permission.includes(permissionOption);
                   return (
@@ -62,7 +65,7 @@ export default function SelectedParticipantDetail({
                         onTogglePermission?.(participantIndex, permissionOption)
                       }
                       disabled={
-                        permissionOption === ParticipantPermissionEnum.VIEW
+                        permissionOption === PARTICIPANT_PERMISSION_OPTIONS.VIEW
                       }
                     />
                   );
