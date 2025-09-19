@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 import { createSupabaseServerClient } from "@/lib/supabase/client/server";
 import { User } from "@supabase/supabase-js";
-import { NotFoundError } from "./errors";
+import { NotFoundError } from "../errors";
 
 type APIWrapperOptions = {
   onError?: boolean;
