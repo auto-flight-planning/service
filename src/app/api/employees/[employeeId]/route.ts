@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { getEmployeeByIdReqSchema } from "@/features/employee/server/schemas/req.schema";
 import { getEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import { NotFoundError, APIWrapper } from "@/server/lib";
+import { APIWrapper, findOrThrow } from "@/server/lib/helpers";
 
 export const GET = APIWrapper(
   async (
@@ -11,11 +11,11 @@ export const GET = APIWrapper(
   ) => {
     const validatedParams = getEmployeeByIdReqSchema.parse(await params);
     const { employeeId } = validatedParams;
-    const employee = await employeesRepo.findOneById({ id: employeeId });
 
-    if (!employee) {
-      throw new NotFoundError("職員が見つかりません");
-    }
+    const employee = await findOrThrow(
+      () => employeesRepo.findOneById({ id: employeeId }),
+      "職員が見つかりません"
+    );
 
     const res = getEmployeeByIdResSchema.parse({
       id: employee.id,

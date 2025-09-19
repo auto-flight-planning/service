@@ -1,11 +1,12 @@
 import { User } from "@supabase/supabase-js";
 import { plansRepo } from "@/server/repos/plans";
 import planParticipantsService from "@/features/plan/participant/servers/service";
-import { ForbiddenError, NotFoundError } from "../errors";
-import { checkPlanParticipantsPermission } from "@/lib/utils";
 import { type plans } from "../../db/prisma";
 import { type ParticipantPermission } from "@/features/plan/participant/type";
 import { PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
+import { checkPlanParticipantsPermission } from "@/lib/utils";
+import { findOrThrow } from "./find-or-throw";
+import { ForbiddenError } from "../errors";
 
 type PlanCheckType = "exists" | "permission";
 
@@ -27,10 +28,10 @@ export default async function doPlanCheck({
   for (const checkType of checkList) {
     switch (checkType) {
       case "exists":
-        plan = await plansRepo.findOne({ id: planId });
-        if (!plan) {
-          throw new NotFoundError("計画が見つかりません");
-        }
+        plan = await findOrThrow(
+          () => plansRepo.findOne({ id: planId }),
+          "計画が見つかりません"
+        );
         break;
       case "permission":
         if (permissionCheckOptions!.type === "CREATOR") {
