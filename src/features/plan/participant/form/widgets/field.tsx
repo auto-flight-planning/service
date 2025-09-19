@@ -50,6 +50,7 @@ export default function ParticipantsField() {
           <SelectedParticipantDetail
             type="edit"
             key={participant.userId}
+            userId={participant.userId}
             participantIndex={index}
             fullName={`${participant.lastName} ${participant.firstName}`}
             email={participant.email}

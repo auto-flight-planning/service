@@ -1,3 +1,4 @@
+import { useUserStore } from "@/features/auth";
 import { ChipButton, CrossButton } from "@/components/button";
 import { Chip, type ChipProps } from "@/components/chip";
 import {
@@ -7,6 +8,7 @@ import {
 import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
 
 interface SelectedParticipantDetailProps {
+  userId: string;
   type: "view" | "edit";
   participantIndex: number;
   fullName: string;
@@ -30,6 +32,7 @@ const permissionColorClasses: Record<
 };
 
 export default function SelectedParticipantDetail({
+  userId,
   type,
   participantIndex,
   fullName,
@@ -38,8 +41,21 @@ export default function SelectedParticipantDetail({
   onTogglePermission,
   onRemove,
 }: SelectedParticipantDetailProps) {
+  const { user } = useUserStore();
+
   return (
-    <div className="flex items-center justify-between p-3 bg-primary-50 border border-primary-100 rounded-lg">
+    <div
+      className={`flex items-center justify-between p-3 border border-primary-100 rounded-lg relative ${
+        userId === user!.userId
+          ? "bg-primary-100 border-primary-200"
+          : "bg-primary-50"
+      }`}
+    >
+      {userId === user!.userId && (
+        <span className="absolute top-2.5 right-2.5 text-gray-400 text-[10px]">
+          (本人)
+        </span>
+      )}
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
           <span className="text-gray-700 font-medium text-sm">{fullName}</span>

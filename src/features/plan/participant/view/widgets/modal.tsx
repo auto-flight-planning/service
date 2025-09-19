@@ -31,9 +31,14 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
               <h2 className="text-gray-700 text-md font-[550]">生成者</h2>
               <PointCard onBorder={true} onShadow={false}>
                 <div className="flex flex-col">
-                  <span className="text-gray-700 font-medium text-sm">{`${
-                    participants!.creator.lastName
-                  } ${participants!.creator.firstName}`}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-700 font-medium text-sm">{`${
+                      participants!.creator.lastName
+                    } ${participants!.creator.firstName}`}</span>
+                    {isCreator && (
+                      <span className="text-gray-400 text-xs">(本人)</span>
+                    )}
+                  </div>
                   <span className="text-gray-400 text-xs mt-1">
                     {participants!.creator.email}
                   </span>
@@ -47,6 +52,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
                   {participantDataList.map((participant, index) => (
                     <SelectedParticipantDetail
                       key={participant.userId}
+                      userId={participant.userId}
                       type="view"
                       participantIndex={index}
                       fullName={`${participant.lastName} ${participant.firstName}`}
