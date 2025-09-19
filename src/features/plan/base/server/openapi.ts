@@ -6,6 +6,7 @@ import {
   updatePlanTitleReqSchema,
 } from "./schemas/req.schema";
 import { createPlanResSchema } from "./schemas/res.schema";
+import { commonOpenApiResponses } from "@/server/lib/helpers/openapi-helpers";
 
 export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
@@ -32,15 +33,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({ auth: true }),
     },
   });
 
@@ -62,21 +55,12 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
-      403: {
-        description: "使用権限ないユーザーです",
-      },
-      404: {
-        description: "企画が見つかりません",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({
+        auth: true,
+        planNotFound: true,
+        permission: true,
+        permissionType: "VIEW",
+      }),
     },
   });
 
@@ -105,21 +89,12 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
-      403: {
-        description: "企画の生成者のみ使用権限があります",
-      },
-      404: {
-        description: "企画が見つかりません",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({
+        auth: true,
+        planNotFound: true,
+        permission: true,
+        permissionType: "CREATOR",
+      }),
     },
   });
 };
