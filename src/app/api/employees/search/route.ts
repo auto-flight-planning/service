@@ -19,7 +19,6 @@ export const GET = APIWrapper(
     const { searchName } = validatedParams;
 
     const employees = await employeesRepo.searchManyByNames({ searchName });
-    // ログインしている職員を除外
     const filteredEmployees = employees.filter(
       (employee) => employee.user_id !== user.id
     );
