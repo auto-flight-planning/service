@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 import { createSupabaseServerClient } from "@/lib/supabase/client/server";
 import { User } from "@supabase/supabase-js";
-import { NotFoundError } from "../errors";
+import { ForbiddenError, NotFoundError } from "../errors";
 
 type APIWrapperOptions = {
   onError?: boolean;
@@ -71,7 +71,15 @@ export default function APIWrapper<T extends any[]>(
         );
       }
 
-      // その他
+      // 403
+      if (error instanceof ForbiddenError) {
+        return NextResponse.json(
+          { error: error.message },
+          { status: error.statusCode }
+        );
+      }
+
+      // 404
       if (error instanceof NotFoundError) {
         return NextResponse.json(
           { error: error.message },
