@@ -7,8 +7,8 @@ import { ToastContainer } from "@/features/toast";
 import Header from "./_widgets/header";
 
 export const metadata: Metadata = {
-  title: "運航日程企画システム",
-  description: "航空会社の運航日程を自動企画するシステムです。",
+  title: "運航計画システム",
+  description: "航空会社の運航計画を自動作成するシステムです。",
 };
 
 export default function RootLayout({

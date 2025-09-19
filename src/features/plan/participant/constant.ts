@@ -1,8 +1,18 @@
-import { ParticipantPermissionEnum } from "./type";
+import { PARTICIPANT_PERMISSION_OPTIONS } from "./type";
 
 export const PARTICIPANT_PERMISSION_LABELS = {
-  [ParticipantPermissionEnum.VIEW]: "閲覧",
-  [ParticipantPermissionEnum.REQUEST]: "依頼",
-  [ParticipantPermissionEnum.INPUT]: "入力",
-  [ParticipantPermissionEnum.EDIT]: "変更",
+  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: "閲覧",
+  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]: "依頼",
+  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]: "入力",
+  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]: "編集",
+};
+
+export const PARTICIPANT_PERMISSION_TOOLTIP_TEXT = {
+  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: "計画スペースを閲覧できます",
+  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]:
+    "他部署または外部協力会社に、運航計画の算出に必要なデータの入力や検討を依頼できます",
+  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]:
+    "運航計画の算出に必要なデータを直接入力・編集できます",
+  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]:
+    "算出された運航計画を詳細に編集できます",
 };

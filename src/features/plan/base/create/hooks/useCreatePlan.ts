@@ -37,8 +37,8 @@ export default function useCreatePlan() {
       addToast({
         type: "success",
         message:
-          "企画を作成しました。\n企画画面に移動しますので、少々お待ちください。",
-        title: "企画作成成功",
+          "計画を作成しました。\n計画画面に移動しますので、少々お待ちください。",
+        title: "計画作成成功",
       });
       router.push(`/plan/${id}/input`);
       closeModal();
@@ -46,8 +46,8 @@ export default function useCreatePlan() {
     onError: (error) => {
       addToast({
         type: "error",
-        message: "企画作成に失敗しました。",
-        title: "企画作成失敗",
+        message: "計画作成に失敗しました。",
+        title: "計画作成失敗",
       });
     },
   });

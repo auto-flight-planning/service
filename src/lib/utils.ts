@@ -1,3 +1,6 @@
+import { PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
+import { type ParticipantPermission } from "@/features/plan/participant/type";
+
 export const dateToString = (date: Date) => {
   return date.toISOString().split("T")[0];
 };
@@ -8,3 +11,26 @@ export const dateToYearMonthJP = (date: Date) => {
 
 export const errorResToMessage = (res: Response, endpoint: string) =>
   `(${res.status}) ${res.statusText}\n${endpoint} を呼び出しに失敗しました。`;
+
+export const checkPlanParticipantsPermission = ({
+  planParticipants,
+  userId,
+  type,
+}: {
+  planParticipants: PlanParticipantsDto;
+  userId: string;
+  type: "CREATOR" | ParticipantPermission;
+}) => {
+  const isCreator = planParticipants.creator.userId === userId;
+  const participant = planParticipants.participantDataList.find(
+    (participant) => participant.userId === userId
+  );
+
+  if (type === "CREATOR") {
+    return isCreator;
+  } else {
+    if (isCreator) return true;
+    if (!participant) return false;
+    return participant.permission.includes(type);
+  }
+};

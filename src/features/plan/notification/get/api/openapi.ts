@@ -17,7 +17,7 @@ export const registerGetNotificationSchemas = (registry: OpenAPIRegistry) => {
     },
     responses: {
       200: {
-        description: "企画を作成しました",
+        description: "計画を作成しました",
         content: {
           "application/json": {
             schema: getNotificationResSchema,

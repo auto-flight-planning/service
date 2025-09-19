@@ -162,6 +162,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.7.3":
+  version: 1.7.3
+  resolution: "@floating-ui/core@npm:1.7.3"
+  dependencies:
+    "@floating-ui/utils": "npm:^0.2.10"
+  checksum: 10c0/edfc23800122d81df0df0fb780b7328ae6c5f00efbb55bd48ea340f4af8c5b3b121ceb4bb81220966ab0f87b443204d37105abdd93d94846468be3243984144c
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.7.4":
+  version: 1.7.4
+  resolution: "@floating-ui/dom@npm:1.7.4"
+  dependencies:
+    "@floating-ui/core": "npm:^1.7.3"
+    "@floating-ui/utils": "npm:^0.2.10"
+  checksum: 10c0/da6166c25f9b0729caa9f498685a73a0e28251613b35d27db8de8014bc9d045158a23c092b405321a3d67c2064909b6e2a7e6c1c9cc0f62967dca5779f5aef30
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "@floating-ui/react-dom@npm:2.1.6"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.7.4"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/6654834a8e73ecbdbc6cad2ad8f7abc698ac7c1800ded4d61113525c591c03d2e3b59d3cf9205859221465ea38c87af4f9e6e204703c5b7a7e85332d1eef2e18
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:^0.27.16":
+  version: 0.27.16
+  resolution: "@floating-ui/react@npm:0.27.16"
+  dependencies:
+    "@floating-ui/react-dom": "npm:^2.1.6"
+    "@floating-ui/utils": "npm:^0.2.10"
+    tabbable: "npm:^6.0.0"
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: 10c0/a026266d8875e69de1ac1e1a00588660c8ee299c1e7d067c5c5fd1d69a46fd10acff5dd6cb66c3fe40a3347b443234309ba95f5b33d49059d0cda121f558f566
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.10":
+  version: 0.2.10
+  resolution: "@floating-ui/utils@npm:0.2.10"
+  checksum: 10c0/e9bc2a1730ede1ee25843937e911ab6e846a733a4488623cd353f94721b05ec2c9ec6437613a2ac9379a94c2fd40c797a2ba6fa1df2716f5ce4aa6ddb1cf9ea4
+  languageName: node
+  linkType: hard
+
 "@heroicons/react@npm:^2.2.0":
   version: 2.2.0
   resolution: "@heroicons/react@npm:2.2.0"
@@ -704,6 +756,51 @@ __metadata:
   dependencies:
     "@prisma/debug": "npm:6.14.0"
   checksum: 10c0/2d33f6b2831576639080e626e8ffc2c5ac9cc5abe6f549856f37a9731d3728ae1d19b0e304db4c0ed92589a8cca7b4ce75576c2719b6aad1b1455ff0db2d76ad
+  languageName: node
+  linkType: hard
+
+"@redis/bloom@npm:5.8.2":
+  version: 5.8.2
+  resolution: "@redis/bloom@npm:5.8.2"
+  peerDependencies:
+    "@redis/client": ^5.8.2
+  checksum: 10c0/12757ef13059e1c844432ef30f02c675b35b62b3894b57514264ce097db03867c216e4d37e8812fcf8039692211207242b753bf0187a8068b8d91a90560eb8cd
+  languageName: node
+  linkType: hard
+
+"@redis/client@npm:5.8.2":
+  version: 5.8.2
+  resolution: "@redis/client@npm:5.8.2"
+  dependencies:
+    cluster-key-slot: "npm:1.1.2"
+  checksum: 10c0/f3dfd9ba87988458aca3e7d1a7c29a39ac59042c80ec8246fa9e9449028e448dc7bb81313d8ca919a0a6dbd4b0fd7fae3785d209add33df832994fb6c6bf50be
+  languageName: node
+  linkType: hard
+
+"@redis/json@npm:5.8.2":
+  version: 5.8.2
+  resolution: "@redis/json@npm:5.8.2"
+  peerDependencies:
+    "@redis/client": ^5.8.2
+  checksum: 10c0/0baefd5a45ea72e1069566c1c374397284ac65f0786b9c632344b276b9cd9b36d45cabcc748db98db3e2bcfa8dd693c7f6080fbe2d5d264d5faa1863e89c0a77
+  languageName: node
+  linkType: hard
+
+"@redis/search@npm:5.8.2":
+  version: 5.8.2
+  resolution: "@redis/search@npm:5.8.2"
+  peerDependencies:
+    "@redis/client": ^5.8.2
+  checksum: 10c0/d558d9d78905543cc7121a3da388e3e1e43afd66a67843fbc3fdfbad1354fc180651eec251dd03399785de19af23cb64cfa799a428f1c4201053598098d51c12
+  languageName: node
+  linkType: hard
+
+"@redis/time-series@npm:5.8.2":
+  version: 5.8.2
+  resolution: "@redis/time-series@npm:5.8.2"
+  peerDependencies:
+    "@redis/client": ^5.8.2
+  checksum: 10c0/f606913c7f14f6b36a06ce78c91b65c3833e4b9893b912e9af5023217b490e478c4c674b6736d2c5306d7849cfdd6ce0876b1fffc1c65ee020feaba8a90aa208
   languageName: node
   linkType: hard
 
@@ -2717,6 +2814,13 @@ __metadata:
   dependencies:
     mimic-response: "npm:^1.0.0"
   checksum: 10c0/06a2b611824efb128810708baee3bd169ec9a1bf5976a5258cd7eb3f7db25f00166c6eee5961f075c7e38e194f373d4fdf86b8166ad5b9c7e82bbd2e333a6087
+  languageName: node
+  linkType: hard
+
+"cluster-key-slot@npm:1.1.2":
+  version: 1.1.2
+  resolution: "cluster-key-slot@npm:1.1.2"
+  checksum: 10c0/d7d39ca28a8786e9e801eeb8c770e3c3236a566625d7299a47bb71113fb2298ce1039596acb82590e598c52dbc9b1f088c8f587803e697cb58e1867a95ff94d3
   languageName: node
   linkType: hard
 
@@ -5949,6 +6053,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redis@npm:^5.8.2":
+  version: 5.8.2
+  resolution: "redis@npm:5.8.2"
+  dependencies:
+    "@redis/bloom": "npm:5.8.2"
+    "@redis/client": "npm:5.8.2"
+    "@redis/json": "npm:5.8.2"
+    "@redis/search": "npm:5.8.2"
+    "@redis/time-series": "npm:5.8.2"
+  checksum: 10c0/95fe63a50cc5a9fb8d01bb91b8d02cc0f19aa9199204dd50c1f68af88ad44da4c65a67391aa6410880a25dc279b1821ecc6c81e2e1cb240ac16817094b5a293f
+  languageName: node
+  linkType: hard
+
 "redux-immutable@npm:^4.0.0":
   version: 4.0.0
   resolution: "redux-immutable@npm:4.0.0"
@@ -6239,6 +6356,7 @@ __metadata:
   dependencies:
     "@asteasolutions/zod-to-openapi": "npm:^8.1.0"
     "@eslint/eslintrc": "npm:^3"
+    "@floating-ui/react": "npm:^0.27.16"
     "@heroicons/react": "npm:^2.2.0"
     "@hookform/resolvers": "npm:^5.2.1"
     "@prisma/client": "npm:^6.14.0"
@@ -6260,6 +6378,7 @@ __metadata:
     react: "npm:19.1.0"
     react-dom: "npm:19.1.0"
     react-hook-form: "npm:^7.62.0"
+    redis: "npm:^5.8.2"
     swagger-ui-react: "npm:^5.27.1"
     tailwindcss: "npm:^4"
     typescript: "npm:^5.9.2"
@@ -6794,6 +6913,13 @@ __metadata:
     react: ">=16.8.0 <19"
     react-dom: ">=16.8.0 <19"
   checksum: 10c0/f5e2a58e846611ce34aad2220e0d2ec6eed9d830399a20f1f9619a790f272cce4c9d5be167865ad3f6536940a6fc3ee4348267f3c69bdd7a9bd10b9315e33af9
+  languageName: node
+  linkType: hard
+
+"tabbable@npm:^6.0.0":
+  version: 6.2.0
+  resolution: "tabbable@npm:6.2.0"
+  checksum: 10c0/ced8b38f05f2de62cd46836d77c2646c42b8c9713f5bd265daf0e78ff5ac73d3ba48a7ca45f348bafeef29b23da7187c72250742d37627883ef89cbd7fa76898
   languageName: node
   linkType: hard
 

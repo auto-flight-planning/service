@@ -17,8 +17,8 @@ export default function CreatePlanForm() {
     <div className="flex flex-col gap-4">
       <TextField
         name="title"
-        label="企画名"
-        placeholder="企画名を入力してください"
+        label="計画名"
+        placeholder="計画名を入力してください"
       />
       <FieldWrapper label="対象期間" error={targetDateError} onErrorMsg={false}>
         <div className="flex flex-col">

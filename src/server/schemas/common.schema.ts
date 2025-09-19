@@ -11,7 +11,7 @@ export const userIdSchema = z.uuid().openapi({
 export type UserIdSchema = z.infer<typeof userIdSchema>;
 
 export const planIdSchema = z.uuid().openapi({
-  description: "企画ID",
+  description: "計画ID",
   example: PLAN_ID_EXAMPLE,
 });
 export type PlanIdSchema = z.infer<typeof planIdSchema>;

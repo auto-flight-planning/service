@@ -18,10 +18,10 @@ export default function Home() {
         >
           <span className="text-6xl mb-10 block">✈️</span>
           <h2 className="text-2xl font-semibold text-slate-700 mb-3">
-            新規企画
+            新規計画
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
-            予測収益が高い新しい運航日程を企画する
+            予測収益が高い新しい運航計画を作成する
           </p>
         </WhiteCard>
         <WhiteCard
@@ -30,10 +30,10 @@ export default function Home() {
         >
           <span className="text-6xl mb-10 block">📋</span>
           <h2 className="text-2xl font-semibold text-slate-700 mb-3">
-            既存企画
+            既存計画
           </h2>
           <p className="text-slate-500 text-base leading-relaxed">
-            進行中または採択が完了した既存企画を確認する
+            進行中または採択済みの運航計画を確認する
           </p>
         </WhiteCard>
       </div>

@@ -53,7 +53,7 @@ export default function ResourceInputModal({
             <BasicModalFooter
               confirmText="保存"
               showCancel={false}
-              leftText="保存すると企画部に自動で通知が送信されます"
+              leftText="保存すると計画部に自動で通知が送信されます"
               onConfirm={handleSubmit(onValidSubmit)}
               isPending={isPendingToUpdate}
               onBorder={false}

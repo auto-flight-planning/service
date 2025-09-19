@@ -22,7 +22,7 @@ export default function LoginForm() {
         <SquareButton
           text="ログイン"
           type="submit"
-          size="large"
+          size="medium"
           fullWidth
           isLoading={isPending}
         />

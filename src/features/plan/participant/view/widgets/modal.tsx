@@ -19,7 +19,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
 
   return (
     <div className="p-6 w-[30rem] flex flex-col gap-4">
-      <BasicModalHeader title="企画参加者" onClose={closeModal} />
+      <BasicModalHeader title="計画参加者" onClose={closeModal} />
       {isFetching ? (
         <div className="flex justify-center items-center h-40">
           <Spinner />
@@ -31,9 +31,14 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
               <h2 className="text-gray-700 text-md font-[550]">生成者</h2>
               <PointCard onBorder={true} onShadow={false}>
                 <div className="flex flex-col">
-                  <span className="text-gray-700 font-medium text-sm">{`${
-                    participants!.creator.lastName
-                  } ${participants!.creator.firstName}`}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-700 font-medium text-sm">{`${
+                      participants!.creator.lastName
+                    } ${participants!.creator.firstName}`}</span>
+                    {isCreator && (
+                      <span className="text-gray-400 text-xs">(本人)</span>
+                    )}
+                  </div>
                   <span className="text-gray-400 text-xs mt-1">
                     {participants!.creator.email}
                   </span>
@@ -47,6 +52,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
                   {participantDataList.map((participant, index) => (
                     <SelectedParticipantDetail
                       key={participant.userId}
+                      userId={participant.userId}
                       type="view"
                       participantIndex={index}
                       fullName={`${participant.lastName} ${participant.firstName}`}
@@ -66,7 +72,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
                 hidden: true,
               }}
               confirmProps={{
-                text: "変更",
+                text: "編集",
                 onClick: () => {
                   const editFormDefaultValue = {
                     participants: participantDataList.map(

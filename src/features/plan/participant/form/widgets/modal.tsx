@@ -23,7 +23,7 @@ export default function ParticipantsEditModal({
 
   return (
     <div className="p-6 w-[30rem] flex flex-col gap-4">
-      <BasicModalHeader title="企画参加者管理" onClose={closeModal} />
+      <BasicModalHeader title="計画参加者管理" onClose={closeModal} />
       <FormProvider {...formMethods}>
         <form className="flex flex-col gap-4" onSubmit={onSubmit}>
           <ParticipantsField />
@@ -36,7 +36,7 @@ export default function ParticipantsEditModal({
             disabled: isPending,
           }}
           confirmProps={{
-            text: "変更",
+            text: "提出",
             onClick: onSubmit,
             disabled: isPending,
             isLoading: isPending,

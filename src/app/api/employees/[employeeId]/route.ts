@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { getEmployeeByIdReqSchema } from "@/features/employee/server/schemas/req.schema";
 import { getEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import { NotFoundError, withHandler } from "@/server/lib";
+import { NotFoundError, APIWrapper } from "@/server/lib";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<{ employeeId: string }> }

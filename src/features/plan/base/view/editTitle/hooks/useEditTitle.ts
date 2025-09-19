@@ -34,8 +34,8 @@ export default function useEditTitle({
     onSuccess: (data) => {
       addToast({
         type: "success",
-        message: "企画名を変更しました。",
-        title: "企画名変更成功",
+        message: "計画名を変更しました。",
+        title: "計画名変更成功",
       });
       closeModal();
       queryClient.invalidateQueries({ queryKey: ["plan", planId] });
@@ -43,8 +43,8 @@ export default function useEditTitle({
     onError: (error) => {
       addToast({
         type: "error",
-        message: "企画名を変更に失敗しました。",
-        title: "企画名変更失敗",
+        message: "計画名を変更に失敗しました。",
+        title: "計画名変更失敗",
       });
     },
   });

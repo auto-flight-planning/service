@@ -20,6 +20,7 @@ export const getPlanParticipantsResSchema = z.object({
 export type GetPlanParticipantsResSchema = z.infer<
   typeof getPlanParticipantsResSchema
 >;
+export type PlanParticipantsDto = GetPlanParticipantsResSchema;
 
 export const updatePlanParticipantsResSchema = z.object({
   planId: planIdSchema,

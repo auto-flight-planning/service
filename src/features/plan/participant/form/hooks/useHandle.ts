@@ -1,7 +1,10 @@
 import { Control, useFieldArray } from "react-hook-form";
 import { Employee } from "@/features/employee/server/schemas/res.schema";
 import { ParticipantsFieldSchema } from "../schemas/form.schema";
-import { ParticipantPermissionEnum } from "../../type";
+import {
+  PARTICIPANT_PERMISSION_OPTIONS,
+  type ParticipantPermission,
+} from "../../type";
 
 export default function useHandleParticipantsField(
   control: Control<{
@@ -28,13 +31,13 @@ export default function useHandleParticipantsField(
       lastName,
       firstName,
       email,
-      permission: [ParticipantPermissionEnum.VIEW],
+      permission: [PARTICIPANT_PERMISSION_OPTIONS.VIEW],
     });
   };
 
   const toggleParticipantPermission = (
     index: number,
-    permissionOption: ParticipantPermissionEnum
+    permissionOption: ParticipantPermission
   ) => {
     const participant = selectedParticipants[index];
     const toggleType = participant.permission.includes(permissionOption)

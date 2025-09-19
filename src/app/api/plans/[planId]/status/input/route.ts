@@ -1,22 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 import planInputsStatusRepo from "@/server/repos/plans/status/plan-inputs-status.repo";
+import { User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { getPlanInputsStatusResSchema } from "@/features/plan/status/server/schemas/res.schema";
-import { withHandler, doPlanCheck, NotFoundError } from "@/server/lib";
+import { APIWrapper, doPlanCheck, NotFoundError } from "@/server/lib";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (
     req: NextRequest,
-    { params }: { params: Promise<{ planId: string }> }
+    { params }: { params: Promise<{ planId: string }> },
+    user: User
   ) => {
     const validatedParams = planIdReqSchema("path").parse(await params);
     const { planId } = validatedParams;
 
-    await doPlanCheck(["exists"], { planId });
+    await doPlanCheck({
+      checkList: ["exists", "permission"],
+      data: { planId, user, permissionCheckOptions: { type: "VIEW" } },
+    });
 
     const planInputsStatus = await planInputsStatusRepo.findOne({ planId });
     if (!planInputsStatus) {
-      throw new NotFoundError("企画入力データのステータスが見つかりません");
+      throw new NotFoundError("計画入力データのステータスが見つかりません");
     }
 
     const res = getPlanInputsStatusResSchema.parse({

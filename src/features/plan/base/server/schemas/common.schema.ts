@@ -14,14 +14,14 @@ export enum PlanStatusEnum {
 }
 
 export const planCreatorIdSchema = z.uuid().openapi({
-  description: "企画生成者(責任者)のID",
+  description: "計画生成者(責任者)のID",
   example: USER_ID_EXAMPLE,
 });
 export type PlanCreatorIdSchema = z.infer<typeof planCreatorIdSchema>;
 
 export const planTitleSchema = z.string().min(1).openapi({
-  description: "企画名",
-  example: "2028年9月運航企画",
+  description: "計画名",
+  example: "2028年9月運航計画",
 });
 export type PlanTitleSchema = z.infer<typeof planTitleSchema>;
 
@@ -45,13 +45,13 @@ export const planTargetDateSchema = z
 export type PlanTargetDateSchema = z.infer<typeof planTargetDateSchema>;
 
 export const planStatusSchema = z.enum(PlanStatusEnum).openapi({
-  description: "企画の進捗ステータス",
+  description: "計画の進捗ステータス",
   example: "INPUT",
 });
 export type PlanStatusSchema = z.infer<typeof planStatusSchema>;
 
 export const planCreatedAtSchema = z.date().openapi({
-  description: "企画作成日時",
+  description: "計画作成日時",
   example: new Date(),
 });
 export type PlanCreatedAtSchema = z.infer<typeof planCreatedAtSchema>;

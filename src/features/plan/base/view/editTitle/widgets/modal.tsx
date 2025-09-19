@@ -23,7 +23,7 @@ export default function EditTitleModal({
 
   return (
     <div className="p-6 w-[30rem] flex flex-col gap-4">
-      <BasicModalHeader title="企画名変更" onClose={closeModal} />
+      <BasicModalHeader title="計画名編集" onClose={closeModal} />
       <FormProvider {...formMethods}>
         <form className="flex flex-col gap-4" onSubmit={onSubmit}>
           <EditTitleForm />

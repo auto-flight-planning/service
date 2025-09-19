@@ -10,8 +10,8 @@ export default function Spinner({
   className = "",
 }: SpinnerProps) {
   const sizeClasses = {
-    small: "w-4 h-4",
-    medium: "w-6 h-6",
+    small: "w-3 h-3",
+    medium: "w-4 h-4",
     large: "w-8 h-8",
   };
 

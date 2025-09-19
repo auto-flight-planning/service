@@ -13,7 +13,7 @@ export default function Header() {
         className="bg-gradient-to-r from-[#8992a4] to-[#a8b2c4] bg-clip-text text-transparent text-xl font-semibold tracking-wider cursor-pointer"
         onClick={() => router.push("/")}
       >
-        運航日程企画システム
+        運航計画システム
       </h1>
       {user && (
         <div className="flex items-center gap-4">

@@ -16,14 +16,14 @@ export default async function PlanInputPage({
       <PointCard color="primary" onPointBorder>
         <div className="flex flex-col gap-4">
           <p className="text-sm">
-            企画導出には以下の3つのデータが必要です。各項目をクリックすると該当ページに遷移し、詳細説明・入力データの確認・直接入力が可能です。
+            計画導出には以下の3つのデータが必要です。各項目をクリックすると該当ページに移動し、詳細説明・入力データの確認・直接入力が可能です
             <br />
             <b className="text-primary-500">
-              すべてのデータ入力が完了しましたら、結果算出ボタンを押してください。
+              すべてのデータ入力が完了すると、自動的に算出されます。
             </b>
           </p>
           <div>
-            <SquareButton text="全データ一括依頼" bold />
+            <SquareButton text="全データを一括で依頼" bold />
           </div>
         </div>
       </PointCard>
@@ -31,7 +31,7 @@ export default async function PlanInputPage({
       <InputCategoriesSection planId={planId} />
 
       <div className="flex justify-end">
-        <SquareButton text="結果算出" bold size="large" />
+        <SquareButton text="結果を算出" bold size="large" />
       </div>
     </div>
   );

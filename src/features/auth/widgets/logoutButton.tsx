@@ -1,11 +1,11 @@
 "use client";
 
+import { createSupabaseBrowserClient } from "@/lib/supabase/client/browser";
 import { RoundButton } from "@/components/button";
-import getBrowserClient from "@/supabase/browserClient";
 
 export default function LogoutButton() {
   const logout = async () => {
-    const supabaseCli = await getBrowserClient();
+    const supabaseCli = createSupabaseBrowserClient();
     await supabaseCli.auth.signOut();
   };
 

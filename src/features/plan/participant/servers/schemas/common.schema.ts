@@ -1,12 +1,12 @@
 import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { userIdSchema } from "@/server/schemas/common.schema";
-import { ParticipantPermissionEnum } from "../../type";
+import { PARTICIPANT_PERMISSION_VALUES } from "../../type";
 
 extendZodWithOpenApi(z);
 
 export const planPermissionSchema = z
-  .array(z.enum(ParticipantPermissionEnum))
+  .array(z.enum(PARTICIPANT_PERMISSION_VALUES))
   .openapi({
     description: "権限",
     example: ["VIEW", "REQUEST", "INPUT", "EDIT"],

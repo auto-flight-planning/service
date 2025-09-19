@@ -6,13 +6,14 @@ import {
   updatePlanTitleReqSchema,
 } from "./schemas/req.schema";
 import { createPlanResSchema } from "./schemas/res.schema";
+import { commonOpenApiResponses } from "@/server/lib/helpers/openapi-helpers";
 
 export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
     method: "post",
     path: "/api/plans",
     tags: ["Plan"],
-    summary: "新規企画を作成",
+    summary: "新規計画を作成",
     security: [{ BearerAuth: [] }],
     request: {
       body: {
@@ -25,22 +26,14 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     },
     responses: {
       201: {
-        description: "企画を作成しました",
+        description: "計画を作成しました",
         content: {
           "application/json": {
             schema: createPlanResSchema,
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({ auth: true }),
     },
   });
 
@@ -48,32 +41,26 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     method: "get",
     path: "/api/plans/{planId}",
     tags: ["Plan"],
-    summary: "企画をplanIdで取得",
+    summary: "計画をplanIdで取得",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
     },
     responses: {
       200: {
-        description: "企画を取得しました",
+        description: "計画を取得しました",
         content: {
           "application/json": {
             schema: planSchema,
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
-      404: {
-        description: "企画が見つかりません",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({
+        auth: true,
+        planNotFound: true,
+        permission: true,
+        permissionType: "VIEW",
+      }),
     },
   });
 
@@ -81,7 +68,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     method: "put",
     path: "/api/plans/{planId}/title",
     tags: ["Plan"],
-    summary: "企画のタイトルを変更",
+    summary: "計画のタイトルを変更",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
@@ -95,28 +82,19 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     },
     responses: {
       200: {
-        description: "企画のタイトルを変更しました",
+        description: "計画のタイトルを変更しました",
         content: {
           "application/json": {
             schema: planSchema,
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
-      404: {
-        description: "企画が見つかりません",
-      },
-      405: {
-        description: "メソッドが許可されていません",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({
+        auth: true,
+        planNotFound: true,
+        permission: true,
+        permissionType: "CREATOR",
+      }),
     },
   });
 };

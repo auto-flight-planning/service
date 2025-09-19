@@ -13,7 +13,7 @@ export default function CreatePlanModal() {
 
   return (
     <div className="p-6 w-[30rem] flex flex-col gap-4">
-      <BasicModalHeader title="新規企画作成" onClose={closeModal} />
+      <BasicModalHeader title="新規計画作成" onClose={closeModal} />
       <FormProvider {...formMethods}>
         <form className="flex flex-col gap-4" onSubmit={onSubmit}>
           <CreatePlanForm />

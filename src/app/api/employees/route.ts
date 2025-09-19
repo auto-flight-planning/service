@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { userIdReqSchema } from "@/server/schemas/req.schema";
 import { getEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import { NotFoundError, withHandler } from "@/server/lib";
+import { NotFoundError, APIWrapper } from "@/server/lib";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (request: NextRequest) => {
     const searchParams = request.nextUrl.searchParams;
     const _userId = searchParams.get("userId");

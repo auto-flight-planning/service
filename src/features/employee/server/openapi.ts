@@ -9,6 +9,7 @@ import {
   getEmployeeByUserIdResSchema,
   searchEmployeesByNameResSchema,
 } from "./schemas/res.schema";
+import { commonOpenApiResponses } from "@/server/lib/helpers/openapi-helpers";
 
 export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
@@ -28,15 +29,10 @@ export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
       404: {
         description: "職員が見つかりません",
       },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({}),
     },
   });
 
@@ -58,18 +54,10 @@ export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
-      400: {
-        description: "パースに失敗しました。",
-      },
-      401: {
-        description: "認証が必要です",
-      },
       404: {
         description: "職員が見つかりません",
       },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({ auth: true }),
     },
   });
 
@@ -91,12 +79,7 @@ export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
-      401: {
-        description: "認証が必要です",
-      },
-      500: {
-        description: "サーバーエラーが発生しました",
-      },
+      ...commonOpenApiResponses({ auth: true }),
     },
   });
 };

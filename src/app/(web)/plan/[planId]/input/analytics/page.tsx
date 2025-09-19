@@ -12,8 +12,8 @@ export default async function AnalyticsPage({
   return (
     <div className="flex flex-col gap-8">
       <InputHeader
-        title="運航日程企画のための分析データ"
-        description="外部データ分析協力会社にデータを依頼します"
+        title="運航計画のための分析データ"
+        description="外部データ分析協力会社へデータを依頼"
       />
       <AnalyticsInputContainer planId={planId} />
     </div>

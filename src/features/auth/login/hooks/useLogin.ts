@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import getBrowserClient from "@/supabase/browserClient";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client/browser";
 import { useUserStore } from "@/features/auth";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
@@ -76,7 +76,7 @@ export async function loginAPI(data: LoginFormData) {
 
     const employee: GetEmployeeByIdResSchema = await res.json();
 
-    const supabase = await getBrowserClient();
+    const supabase = createSupabaseBrowserClient();
     const {
       data: { user },
       error,

@@ -6,6 +6,7 @@ import { useUserStore } from "@/features/auth";
 import { useGetParticipants } from "@/features/plan/participant";
 import { useToastStore } from "@/features/toast";
 import { DoubleSpinner } from "@/components/spinner";
+import { checkPlanParticipantsPermission } from "@/lib/utils";
 
 export default function AccessWrapper({
   planId,
@@ -19,14 +20,11 @@ export default function AccessWrapper({
 
   const hasAccess: boolean | undefined = useMemo(() => {
     if (!participants || !user) return undefined;
-
-    const isCreator = participants.creator.userId === user.userId;
-    const isParticipant = participants.participantDataList.some(
-      (participant) => participant.userId === user.userId
-    );
-
-    if (isCreator || isParticipant) return true;
-    return false;
+    return checkPlanParticipantsPermission({
+      planParticipants: participants,
+      userId: user.userId,
+      type: "VIEW",
+    });
   }, [participants, user]);
 
   const { addToast } = useToastStore();
@@ -36,7 +34,7 @@ export default function AccessWrapper({
       addToast({
         type: "error",
         title: "接近権限なし",
-        message: "企画に接近権限がありません。\nホームページに遷移します。",
+        message: "計画へのアクセス権限がありません。\nホーム画面へ移動します。",
       });
       router.push("/home");
     }

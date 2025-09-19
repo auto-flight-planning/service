@@ -1,9 +1,9 @@
-import { getGeneralClient } from "@/supabase/generalClient";
+import { createSupabaseClient } from "@/lib/supabase/client/general";
 import ts from "typescript";
 
 export async function loadJS(bucketName: string, url: string): Promise<string> {
   try {
-    const supabase = await getGeneralClient();
+    const supabase = await createSupabaseClient();
 
     const { data } = await supabase.storage
       .from(bucketName)
