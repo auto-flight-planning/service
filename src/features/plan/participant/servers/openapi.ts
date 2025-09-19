@@ -33,6 +33,9 @@ export const registerPlanParticipantsAPIsToDocs = (
       401: {
         description: "認証が必要です",
       },
+      403: {
+        description: "使用権限ないユーザーです",
+      },
       404: {
         description: "企画・生成者・参加者の情報が見つかりません",
       },
@@ -74,7 +77,7 @@ export const registerPlanParticipantsAPIsToDocs = (
         description: "認証が必要です",
       },
       403: {
-        description: "権限がありません",
+        description: "企画の生成者のみ使用権限があります",
       },
       404: {
         description: "企画・生成者の情報が見つかりません",

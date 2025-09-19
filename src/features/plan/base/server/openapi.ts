@@ -68,6 +68,9 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
       401: {
         description: "認証が必要です",
       },
+      403: {
+        description: "使用権限ないユーザーです",
+      },
       404: {
         description: "企画が見つかりません",
       },
@@ -108,11 +111,11 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
       401: {
         description: "認証が必要です",
       },
+      403: {
+        description: "企画の生成者のみ使用権限があります",
+      },
       404: {
         description: "企画が見つかりません",
-      },
-      405: {
-        description: "メソッドが許可されていません",
       },
       500: {
         description: "サーバーエラーが発生しました",

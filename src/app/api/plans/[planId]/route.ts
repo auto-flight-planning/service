@@ -1,23 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-import plansRepo from "@/server/repos/plans/plans.repo";
+import { type User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { planSchema } from "@/features/plan/base/server/schemas/common.schema";
-import { NotFoundError, APIWrapper } from "@/server/lib";
+import { APIWrapper, doPlanCheck } from "@/server/lib";
 import { dateToString } from "@/lib/utils";
 
 export const GET = APIWrapper(
   async (
     request: NextRequest,
-    { params }: { params: Promise<{ planId: string }> }
+    { params }: { params: Promise<{ planId: string }> },
+    user: User
   ) => {
     const validatedParams = planIdReqSchema("path").parse(await params);
     const { planId } = validatedParams;
 
-    const plan = await plansRepo.findOne({ id: planId });
-    if (!plan) {
-      throw new NotFoundError("企画が見つかりません");
-    }
+    const { plan: _plan } = await doPlanCheck({
+      checkList: ["exists", "permission"],
+      data: { planId, user, permissionCheckOptions: { type: "VIEW" } },
+    });
 
+    const plan = _plan!;
     const res = planSchema.parse({
       id: plan.id,
       creatorId: plan.creator_id,

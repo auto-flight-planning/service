@@ -27,6 +27,9 @@ export const registerPlanStatusAPIsToDocs = (registry: OpenAPIRegistry) => {
       401: {
         description: "認証が必要です",
       },
+      403: {
+        description: "使用権限ないユーザーです",
+      },
       404: {
         description: "企画の情報が見つかりません",
       },

@@ -12,19 +12,18 @@ import { APIWrapper, doPlanCheck } from "@/server/lib";
 export const GET = APIWrapper(
   async (
     request: NextRequest,
-    { params }: { params: Promise<{ planId: string }> }
+    { params }: { params: Promise<{ planId: string }> },
+    user: User
   ) => {
     const validatedParams = planIdReqSchema("path").parse(await params);
     const { planId } = validatedParams;
 
-    const { plan } = await doPlanCheck(["exists"], { planId });
-
-    const planParticipants = await planParticipantsService.getPlanParticipants({
-      planId,
-      creatorId: plan.creator_id,
+    const { planParticipants } = await doPlanCheck({
+      checkList: ["exists", "permission"],
+      data: { planId, user, permissionCheckOptions: { type: "VIEW" } },
     });
 
-    const res = getPlanParticipantsResSchema.parse(planParticipants);
+    const res = getPlanParticipantsResSchema.parse(planParticipants!);
     return NextResponse.json(res);
   },
   {
@@ -41,12 +40,15 @@ export const PUT = APIWrapper(
     const validatedParams = planIdReqSchema("path").parse(await params);
     const { planId } = validatedParams;
 
-    await doPlanCheck(["exists", "creator"], { planId, user });
-
     const requestBody = await request.json();
     const validatedRequestBody = updateParticipantsReqSchema.parse(requestBody);
-    const updateParticipantData = validatedRequestBody;
 
+    await doPlanCheck({
+      checkList: ["exists", "permission"],
+      data: { planId, user, permissionCheckOptions: { type: "CREATOR" } },
+    });
+
+    const updateParticipantData = validatedRequestBody;
     const updatedParticipants =
       await planParticipantsService.updatePlanParticipants({
         planId,
