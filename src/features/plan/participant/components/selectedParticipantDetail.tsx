@@ -5,7 +5,11 @@ import {
   PARTICIPANT_PERMISSION_OPTIONS,
   type ParticipantPermission,
 } from "../type";
-import { PARTICIPANT_PERMISSION_LABELS } from "../constant";
+import {
+  PARTICIPANT_PERMISSION_LABELS,
+  PARTICIPANT_PERMISSION_TOOLTIP_TEXT,
+} from "../constant";
+import { Tooltip } from "@/components/tooltip";
 
 interface SelectedParticipantDetailProps {
   userId: string;
@@ -69,35 +73,47 @@ export default function SelectedParticipantDetail({
                 (permissionOption) => {
                   const isSelected = permission.includes(permissionOption);
                   return (
-                    <ChipButton
+                    <Tooltip
                       key={permissionOption}
-                      text={`${
-                        PARTICIPANT_PERMISSION_LABELS[permissionOption]
-                      }${isSelected ? " ✓" : ""}`}
-                      variant={isSelected ? "solid" : "outline"}
-                      size="extra-small"
-                      color={permissionColorClasses[permissionOption]}
-                      onClick={() =>
-                        onTogglePermission?.(participantIndex, permissionOption)
+                      text={
+                        PARTICIPANT_PERMISSION_TOOLTIP_TEXT[permissionOption]
                       }
-                      disabled={
-                        permissionOption === PARTICIPANT_PERMISSION_OPTIONS.VIEW
-                      }
-                    />
+                    >
+                      <ChipButton
+                        key={permissionOption}
+                        text={`${
+                          PARTICIPANT_PERMISSION_LABELS[permissionOption]
+                        }${isSelected ? " ✓" : ""}`}
+                        variant={isSelected ? "solid" : "outline"}
+                        size="extra-small"
+                        color={permissionColorClasses[permissionOption]}
+                        onClick={() =>
+                          onTogglePermission?.(
+                            participantIndex,
+                            permissionOption
+                          )
+                        }
+                        disabled={
+                          permissionOption ===
+                          PARTICIPANT_PERMISSION_OPTIONS.VIEW
+                        }
+                      />
+                    </Tooltip>
                   );
                 }
               )}
             </div>
           ) : (
             <>
-              {permission.map((p, index) => (
-                <Chip
-                  key={index}
-                  text={`${PARTICIPANT_PERMISSION_LABELS[p]}`}
-                  variant="solid"
-                  size="extra-small"
-                  color={permissionColorClasses[p]}
-                />
+              {permission.map((p) => (
+                <Tooltip key={p} text={PARTICIPANT_PERMISSION_TOOLTIP_TEXT[p]}>
+                  <Chip
+                    text={`${PARTICIPANT_PERMISSION_LABELS[p]}`}
+                    variant="solid"
+                    size="extra-small"
+                    color={permissionColorClasses[p]}
+                  />
+                </Tooltip>
               ))}
             </>
           )}

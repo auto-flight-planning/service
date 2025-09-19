@@ -6,3 +6,13 @@ export const PARTICIPANT_PERMISSION_LABELS = {
   [PARTICIPANT_PERMISSION_OPTIONS.INPUT]: "入力",
   [PARTICIPANT_PERMISSION_OPTIONS.EDIT]: "編集",
 };
+
+export const PARTICIPANT_PERMISSION_TOOLTIP_TEXT = {
+  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: "計画スペースを閲覧できます",
+  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]:
+    "他部署または外部協力会社に、運航日程の算出に必要なデータの入力や検討を依頼できます",
+  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]:
+    "運航日程の算出に必要なデータを直接入力・編集できます",
+  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]:
+    "算出された運航日程を詳細に編集できます",
+};

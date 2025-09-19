@@ -46,11 +46,11 @@ export const Tooltip = ({
     onOpenChange: setIsOpen,
     placement: position,
     middleware: [
-      offset(8),
+      offset(12),
       flip({
         fallbackPlacements: ["top", "bottom", "left", "right"],
       }),
-      shift({ padding: 8 }),
+      shift({ padding: 12 }),
       arrow({
         element: arrowRef,
       }),
@@ -80,9 +80,9 @@ export const Tooltip = ({
               left: x ?? 0,
               zIndex: 9999,
             }}
-            className="px-3 py-2 text-sm text-white bg-gray-600 rounded-md shadow-lg whitespace-nowrap"
+            className="px-3 py-2 bg-gray-600 rounded-md shadow-lg w-fit max-w-96"
           >
-            {text && <span>{text}</span>}
+            {text && <span className="text-xs text-white">{text}</span>}
             {tooltipChildren && <div>{tooltipChildren}</div>}
             {/* Arrow */}
             <FloatingArrow
