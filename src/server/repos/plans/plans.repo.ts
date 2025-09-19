@@ -1,6 +1,6 @@
 import { type plans } from "@/server/db/prisma";
 import { prismaClient } from "@/server/db/prismaClient";
-import { getRedisClient } from "@/lib/redis/client";
+import { getRedisClient } from "@/server/redis/client";
 
 const plansRepo = {
   async insertOne({

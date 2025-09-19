@@ -4,7 +4,7 @@ import { NotFoundError } from "@/server/lib/errors";
 import { UpdateParticipantsReqSchema } from "./schemas/req.schema";
 import { type ParticipantPermission } from "../type";
 import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
-import { getRedisClient } from "@/lib/redis/client";
+import { getRedisClient } from "@/server/redis/client";
 import { PlanParticipantsDto } from "./schemas/res.schema";
 
 const planParticipantsService = {
