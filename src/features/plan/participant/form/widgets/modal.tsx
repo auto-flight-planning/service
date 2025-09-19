@@ -36,7 +36,7 @@ export default function ParticipantsEditModal({
             disabled: isPending,
           }}
           confirmProps={{
-            text: "変更",
+            text: "提出",
             onClick: onSubmit,
             disabled: isPending,
             isLoading: isPending,

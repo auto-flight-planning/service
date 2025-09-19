@@ -72,7 +72,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
                 hidden: true,
               }}
               confirmProps={{
-                text: "変更",
+                text: "編集",
                 onClick: () => {
                   const editFormDefaultValue = {
                     participants: participantDataList.map(
