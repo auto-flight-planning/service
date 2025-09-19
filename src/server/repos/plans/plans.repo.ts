@@ -1,4 +1,6 @@
+import { type plans } from "@/server/db/prisma";
 import { prismaClient } from "@/server/db/prismaClient";
+import { getRedisClient } from "@/lib/redis/client";
 
 const plansRepo = {
   async insertOne({
@@ -20,9 +22,25 @@ const plansRepo = {
   },
 
   async findOne({ id }: { id: string }) {
-    return prismaClient.plans.findUnique({
-      where: { id },
-    });
+    const redisClient = await getRedisClient();
+
+    let plan: plans | null = null;
+    const cachedPlan = await redisClient.get(`plans:${id}`);
+
+    if (cachedPlan) {
+      plan = JSON.parse(cachedPlan) as plans;
+      plan.target_date = new Date(plan.target_date);
+      plan.created_at = new Date(plan.created_at);
+    } else {
+      plan = await prismaClient.plans.findUnique({
+        where: { id },
+      });
+      await redisClient.set(`plans:${id}`, JSON.stringify(plan), {
+        EX: 60 * 30,
+      });
+    }
+
+    return plan;
   },
 
   async findManyByIds({ idList }: { idList: string[] }) {
@@ -50,10 +68,15 @@ const plansRepo = {
   },
 
   async updateOneTitle({ id, title }: { id: string; title: string }) {
-    return prismaClient.plans.update({
+    const updatedPlan = await prismaClient.plans.update({
       where: { id },
       data: { title },
     });
+
+    const redisClient = await getRedisClient();
+    await redisClient.del(`plans:${id}`);
+
+    return updatedPlan;
   },
 
   async updateOneStatus({ id, status }: { id: string; status: string }) {

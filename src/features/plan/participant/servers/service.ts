@@ -4,6 +4,8 @@ import { NotFoundError } from "@/server/lib/errors";
 import { UpdateParticipantsReqSchema } from "./schemas/req.schema";
 import { ParticipantPermissionEnum } from "../type";
 import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
+import { getRedisClient } from "@/lib/redis/client";
+import { GetPlanParticipantsResSchema } from "./schemas/res.schema";
 
 const planParticipantsService = {
   async getExtendedPlanParticipants({
@@ -34,30 +36,50 @@ const planParticipantsService = {
     planId: string;
     creatorId: string;
   }) {
-    const [_creator, participants] = await Promise.all([
-      employeesRepo.findOneByUserId({ userId: creatorId }),
-      planParticipantsRepo.findManyByPlanId({ planId }),
-    ]);
-    if (!_creator) {
-      throw new NotFoundError("生成者が見つかりません");
+    const redisClient = await getRedisClient();
+
+    let planParticipants: GetPlanParticipantsResSchema | null = null;
+    const cachedPlanParticipants = await redisClient.get(
+      `plan_participants:${planId}`
+    );
+
+    if (cachedPlanParticipants) {
+      planParticipants = JSON.parse(
+        cachedPlanParticipants
+      ) as GetPlanParticipantsResSchema;
+    } else {
+      const [_creator, participants] = await Promise.all([
+        employeesRepo.findOneByUserId({ userId: creatorId }),
+        planParticipantsRepo.findManyByPlanId({ planId }),
+      ]);
+      if (!_creator) {
+        throw new NotFoundError("生成者が見つかりません");
+      }
+      const creator = {
+        id: _creator.id,
+        lastName: _creator.last_name,
+        firstName: _creator.first_name,
+        email: _creator.email,
+        userId: _creator.user_id,
+      };
+
+      const extendedParticipants = await this.getExtendedPlanParticipants({
+        participants,
+      });
+
+      planParticipants = {
+        planId,
+        creator,
+        participantDataList: extendedParticipants,
+      };
+      await redisClient.set(
+        `plan_participants:${planId}`,
+        JSON.stringify(planParticipants),
+        { EX: 60 * 30 }
+      );
     }
-    const creator = {
-      id: _creator.id,
-      lastName: _creator.last_name,
-      firstName: _creator.first_name,
-      email: _creator.email,
-      userId: _creator.user_id,
-    };
 
-    const extendedParticipants = await this.getExtendedPlanParticipants({
-      participants,
-    });
-
-    return {
-      planId,
-      creator,
-      participantDataList: extendedParticipants,
-    };
+    return planParticipants;
   },
 
   async updatePlanParticipants({
@@ -91,6 +113,9 @@ const planParticipantsService = {
     const extendedParticipants = await this.getExtendedPlanParticipants({
       participants: updatedParticipants,
     });
+
+    const redisClient = await getRedisClient();
+    await redisClient.del(`plan_participants:${planId}`);
 
     return { planId, participantDataList: extendedParticipants };
   },
