@@ -23,7 +23,7 @@ export const commonOpenApiResponses = ({
     ...(permissionType === "CREATOR"
       ? {
           403: {
-            description: "企画の生成者のみ使用権限があります",
+            description: "計画の生成者のみ使用権限があります",
           },
         }
       : {
@@ -34,7 +34,7 @@ export const commonOpenApiResponses = ({
   }),
   ...(planNotFound && {
     404: {
-      description: "企画関連の情報が見つかりません",
+      description: "計画関連の情報が見つかりません",
     },
   }),
   500: {

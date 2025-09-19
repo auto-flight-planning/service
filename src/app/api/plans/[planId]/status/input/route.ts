@@ -21,7 +21,7 @@ export const GET = APIWrapper(
 
     const planInputsStatus = await planInputsStatusRepo.findOne({ planId });
     if (!planInputsStatus) {
-      throw new NotFoundError("企画入力データのステータスが見つかりません");
+      throw new NotFoundError("計画入力データのステータスが見つかりません");
     }
 
     const res = getPlanInputsStatusResSchema.parse({

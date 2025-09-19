@@ -13,7 +13,7 @@ export default async function ResourcePage({
     <div className="flex flex-col gap-8">
       <InputHeader
         title="自社資源データ"
-        description="運航本部総括部・財務部にデータを依頼します"
+        description="運航本部総括部・財務部へデータを依頼"
       />
       <ResourceInputContainer planId={planId} />
     </div>

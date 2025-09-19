@@ -13,7 +13,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     method: "post",
     path: "/api/plans",
     tags: ["Plan"],
-    summary: "新規企画を作成",
+    summary: "新規計画を作成",
     security: [{ BearerAuth: [] }],
     request: {
       body: {
@@ -26,7 +26,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     },
     responses: {
       201: {
-        description: "企画を作成しました",
+        description: "計画を作成しました",
         content: {
           "application/json": {
             schema: createPlanResSchema,
@@ -41,14 +41,14 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     method: "get",
     path: "/api/plans/{planId}",
     tags: ["Plan"],
-    summary: "企画をplanIdで取得",
+    summary: "計画をplanIdで取得",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
     },
     responses: {
       200: {
-        description: "企画を取得しました",
+        description: "計画を取得しました",
         content: {
           "application/json": {
             schema: planSchema,
@@ -68,7 +68,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     method: "put",
     path: "/api/plans/{planId}/title",
     tags: ["Plan"],
-    summary: "企画のタイトルを変更",
+    summary: "計画のタイトルを変更",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
@@ -82,7 +82,7 @@ export const registerPlanAPIsToDocs = (registry: OpenAPIRegistry) => {
     },
     responses: {
       200: {
-        description: "企画のタイトルを変更しました",
+        description: "計画のタイトルを変更しました",
         content: {
           "application/json": {
             schema: planSchema,

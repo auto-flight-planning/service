@@ -47,7 +47,7 @@ export default function InputCategoriesSection({ planId }: { planId: string }) {
         title={INPUT_CATEGORY_LABELS.RESOURCE}
         inputSource="運航本部総括部・財務部"
         status={statuses.resource.status}
-        description="自社が保有する人員、航空機などの資源の保有量を基に、実現可能な運航日程を企画します。"
+        description="自社が保有する人員や航空機などの資源量を基に、実現可能な運航計画を作成します。"
         listItems={statuses.resource.items}
         onClick={() => router.push(`/plan/${planId}/input/resource`)}
       />
@@ -56,7 +56,7 @@ export default function InputCategoriesSection({ planId }: { planId: string }) {
         title={INPUT_CATEGORY_LABELS.ANALYTICS}
         inputSource="外部データ分析協力会社"
         status={statuses.analytics.status}
-        description="過去の運航実績データや人気旅行先関連の需要などを分析し算出したデータを基に、収益性の高い運航日程を企画します。"
+        description="過去の運航実績データや人気旅行先に関する需要を分析したデータを基に、収益性の高い運航計画を作成します。"
         listItems={statuses.analytics.items}
         onClick={() => router.push(`/plan/${planId}/input/analytics`)}
       />
@@ -65,7 +65,7 @@ export default function InputCategoriesSection({ planId }: { planId: string }) {
         title={INPUT_CATEGORY_LABELS.AIRPORT}
         inputSource="連携空港"
         status={statuses.airport.status}
-        description="連携空港の運航日程に合わせ、可能な時間帯に運航日程を割り当てます。"
+        description="連携空港の運航スケジュールに合わせ、可能な時間帯に運航を割り当てます。"
         listItems={[]}
         onClick={() => router.push(`/plan/${planId}/input/airport`)}
       />

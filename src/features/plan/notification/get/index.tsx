@@ -31,7 +31,7 @@ export default function Notification() {
                 <thead>
                   <tr className="bg-gray-50 sticky top-0 z-10">
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wide w-[18%]">
-                      企画名
+                      計画名
                     </th>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wide w-[13%]">
                       送信者

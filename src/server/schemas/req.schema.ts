@@ -24,7 +24,7 @@ export const planIdReqSchema = (type: "path" | "query") =>
         name: "planId",
         in: type,
       },
-      description: "企画ID",
+      description: "計画ID",
       example: PLAN_ID_EXAMPLE,
     }),
   });

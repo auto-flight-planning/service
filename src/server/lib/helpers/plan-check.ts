@@ -29,13 +29,13 @@ export default async function doPlanCheck({
       case "exists":
         plan = await plansRepo.findOne({ id: planId });
         if (!plan) {
-          throw new NotFoundError("企画が見つかりません");
+          throw new NotFoundError("計画が見つかりません");
         }
         break;
       case "permission":
         if (permissionCheckOptions!.type === "CREATOR") {
           if (plan!.creator_id !== user!.id) {
-            throw new ForbiddenError("企画の生成者のみ使用権限があります");
+            throw new ForbiddenError("計画の生成者のみ使用権限があります");
           }
           break;
         }

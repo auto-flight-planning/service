@@ -55,8 +55,8 @@ export default function ResourceInputContainer({ planId }: { planId: string }) {
     <InputContainer
       categoryProps={{
         inputItems,
-        mailContainerMessage: `外部データ分析協力会社に運航日程企画のための分析データの入力を依頼してください。\n
-        依頼メールには、このページにアクセス可能なURLが併せて送信され、協力会社から入力できるようになります。`,
+        mailContainerMessage: `外部データ分析協力会社に、運航計画に必要な分析データの入力を依頼してください。\n
+        依頼メールには本ページにアクセス可能なURLが添付され、外部の協力会社から入力できるようになります。`,
         onClickSendMail: () => {},
       }}
     />

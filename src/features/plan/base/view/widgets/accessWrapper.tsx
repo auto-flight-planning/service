@@ -34,7 +34,7 @@ export default function AccessWrapper({
       addToast({
         type: "error",
         title: "接近権限なし",
-        message: "企画に接近権限がありません。\nホームページに遷移します。",
+        message: "計画へのアクセス権限がありません。\nホーム画面へ移動します。",
       });
       router.push("/home");
     }

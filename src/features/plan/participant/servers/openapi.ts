@@ -14,14 +14,14 @@ export const registerPlanParticipantsAPIsToDocs = (
     method: "get",
     path: "/api/plans/{planId}/participants",
     tags: ["Plan Participant"],
-    summary: "企画参加者一覧をplanIdで取得",
+    summary: "計画参加者一覧をplanIdで取得",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
     },
     responses: {
       200: {
-        description: "企画参加者一覧を取得しました",
+        description: "計画参加者一覧を取得しました",
         content: {
           "application/json": {
             schema: getPlanParticipantsResSchema,
@@ -41,7 +41,7 @@ export const registerPlanParticipantsAPIsToDocs = (
     method: "put",
     path: "/api/plans/{planId}/participants",
     tags: ["Plan Participant"],
-    summary: "企画参加者を変更",
+    summary: "計画参加者を変更",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
@@ -55,7 +55,7 @@ export const registerPlanParticipantsAPIsToDocs = (
     },
     responses: {
       200: {
-        description: "企画参加者を変更しました",
+        description: "計画参加者を変更しました",
         content: {
           "application/json": {
             schema: updatePlanParticipantsResSchema,

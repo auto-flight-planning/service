@@ -29,7 +29,7 @@ export default function ParticipantsField() {
     <div className="flex flex-col gap-2">
       <div>
         <TextField
-          label="企画参加者"
+          label="計画参加者"
           placeholder="検索する氏名を入力してください"
           value={searchName}
           onChange={setSearchName}

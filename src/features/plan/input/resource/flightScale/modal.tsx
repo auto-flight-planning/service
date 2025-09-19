@@ -57,7 +57,7 @@ export default function FlightScaleModal({
             <BasicModalFooter
               confirmText="保存"
               showCancel={false}
-              leftText="保存すると企画部に自動で通知が送信されます"
+              leftText="保存すると計画部に自動で通知が送信されます"
               onConfirm={handleSubmit(onValidSubmit, onInvalidSubmit)}
               isPending={isPendingToUpdate}
               onBorder={false}

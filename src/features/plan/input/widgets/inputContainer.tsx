@@ -55,7 +55,7 @@ export default function InputContainer({
           onShadow={false}
         >
           <p className="text-sm text-primary-500 font-semibold">
-            📝 各項目をクリックすると詳細説明の確認と入力/修正が可能です
+            📝 各項目をクリックすると、詳細説明を確認し、入力や修正ができます。
           </p>
         </PointCard>
       ) : (
@@ -66,7 +66,7 @@ export default function InputContainer({
           onShadow={false}
         >
           <p className="text-sm text-gray-700">
-            📋 各項目をクリックすると詳細説明と入力データを確認できます
+            📋 各項目をクリックすると、詳細説明と入力データを確認できます。
           </p>
         </PointCard>
       )}
@@ -85,12 +85,12 @@ export default function InputContainer({
               <span className="text-primary-500">📧</span>
               <h3 className="font-bold text-gray-900">データ入力依頼</h3>
             </div>
-            <p className="text-sm text-gray-700 whitespace-pre-line">
+            <p className="text-sm text-gray-700 whitespace-pre-line leading-3">
               {mailContainerMessage}
             </p>
             <div>
               <SquareButton
-                text="入力依頼を送信"
+                text="依頼を送信"
                 color="primary"
                 size="medium"
                 onClick={onClickSendMail}

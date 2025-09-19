@@ -19,7 +19,7 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
 
   return (
     <div className="p-6 w-[30rem] flex flex-col gap-4">
-      <BasicModalHeader title="企画参加者" onClose={closeModal} />
+      <BasicModalHeader title="計画参加者" onClose={closeModal} />
       {isFetching ? (
         <div className="flex justify-center items-center h-40">
           <Spinner />

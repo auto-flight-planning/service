@@ -39,7 +39,7 @@ export interface AssignmentEngineState {
 }
 
 /**
- * 運航日程割り当てエンジン
+ * 運航計画割り当てエンジン
  * 往復運航割り当てプロセスを管理するメインクラス
  */
 export class FlightAssignmentEngine {
