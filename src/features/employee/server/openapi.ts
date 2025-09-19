@@ -91,6 +91,9 @@ export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
           },
         },
       },
+      400: {
+        description: "パースに失敗しました。",
+      },
       401: {
         description: "認証が必要です",
       },

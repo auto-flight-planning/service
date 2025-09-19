@@ -4,10 +4,10 @@ import plansRepo from "@/server/repos/plans/plans.repo";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { updatePlanTitleReqSchema } from "@/features/plan/base/server/schemas/req.schema";
 import { planSchema } from "@/features/plan/base/server/schemas/common.schema";
-import { ForbiddenError, NotFoundError, withHandler } from "@/server/lib";
+import { ForbiddenError, NotFoundError, APIWrapper } from "@/server/lib";
 import { dateToString } from "@/lib/utils";
 
-export const PUT = withHandler(
+export const PUT = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<{ planId: string }> },

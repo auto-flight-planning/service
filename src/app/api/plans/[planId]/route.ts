@@ -2,10 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import plansRepo from "@/server/repos/plans/plans.repo";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { planSchema } from "@/features/plan/base/server/schemas/common.schema";
-import { NotFoundError, withHandler } from "@/server/lib";
+import { NotFoundError, APIWrapper } from "@/server/lib";
 import { dateToString } from "@/lib/utils";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<{ planId: string }> }

@@ -7,9 +7,9 @@ import {
   updatePlanParticipantsResSchema,
 } from "@/features/plan/participant/servers/schemas/res.schema";
 import { updateParticipantsReqSchema } from "@/features/plan/participant/servers/schemas/req.schema";
-import { withHandler, doPlanCheck } from "@/server/lib";
+import { APIWrapper, doPlanCheck } from "@/server/lib";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<{ planId: string }> }
@@ -32,7 +32,7 @@ export const GET = withHandler(
   }
 );
 
-export const PUT = withHandler(
+export const PUT = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<{ planId: string }> },

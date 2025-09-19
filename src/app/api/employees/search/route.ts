@@ -3,9 +3,9 @@ import { type User } from "@supabase/supabase-js";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { searchEmployeesByNameReqSchema } from "@/features/employee/server/schemas/req.schema";
 import { searchEmployeesByNameResSchema } from "@/features/employee/server/schemas/res.schema";
-import { withHandler } from "@/server/lib";
+import { APIWrapper } from "@/server/lib";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<any> },

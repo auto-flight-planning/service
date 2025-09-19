@@ -4,20 +4,22 @@ import { createSupabaseServerClient } from "@/lib/supabase/client/server";
 import { User } from "@supabase/supabase-js";
 import { NotFoundError } from "./errors";
 
-type HandlerOptions = {
+type APIWrapperOptions = {
   onError?: boolean;
   onAuth?: boolean;
 };
 
-type HandlerFunction<T extends any[]> = (...args: T) => Promise<NextResponse>;
+type APIWrapperFunction<T extends any[]> = (
+  ...args: T
+) => Promise<NextResponse>;
 
-type AuthHandlerFunction<T extends any[]> = (
+type AuthAPIWrapperFunction<T extends any[]> = (
   ...args: [...T, user: User]
 ) => Promise<NextResponse>;
 
-export default function withHandler<T extends any[]>(
-  handler: HandlerFunction<T> | AuthHandlerFunction<T>,
-  options: HandlerOptions = { onError: true, onAuth: false }
+export default function APIWrapper<T extends any[]>(
+  handler: APIWrapperFunction<T> | AuthAPIWrapperFunction<T>,
+  options: APIWrapperOptions = { onError: true, onAuth: false }
 ) {
   return async (...args: T): Promise<NextResponse> => {
     const { onError = true, onAuth = false } = options;
@@ -42,9 +44,9 @@ export default function withHandler<T extends any[]>(
       }
 
       if (onAuth && user) {
-        return await (handler as AuthHandlerFunction<T>)(...args, user);
+        return await (handler as AuthAPIWrapperFunction<T>)(...args, user);
       } else {
-        return await (handler as HandlerFunction<T>)(...args);
+        return await (handler as APIWrapperFunction<T>)(...args);
       }
     } catch (error) {
       if (!onError) {

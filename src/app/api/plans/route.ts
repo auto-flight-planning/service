@@ -3,10 +3,10 @@ import { type User } from "@supabase/supabase-js";
 import planService from "@/features/plan/base/server/service";
 import { createPlanReqSchema } from "@/features/plan/base/server/schemas/req.schema";
 import { createPlanResSchema } from "@/features/plan/base/server/schemas/res.schema";
-import { withHandler } from "@/server/lib";
+import { APIWrapper } from "@/server/lib";
 import { dateToString } from "@/lib/utils";
 
-export const POST = withHandler(
+export const POST = APIWrapper(
   async (
     request: NextRequest,
     { params }: { params: Promise<any> },

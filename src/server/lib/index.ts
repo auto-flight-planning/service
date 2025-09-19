@@ -1,3 +1,3 @@
 export * from "./errors";
-export { default as withHandler } from "./withHandler";
+export { default as APIWrapper } from "./APIWrapper";
 export { default as doPlanCheck } from "./planCheck";

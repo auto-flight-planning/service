@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import planInputsStatusRepo from "@/server/repos/plans/status/plan-inputs-status.repo";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { getPlanInputsStatusResSchema } from "@/features/plan/status/server/schemas/res.schema";
-import { withHandler, doPlanCheck, NotFoundError } from "@/server/lib";
+import { APIWrapper, doPlanCheck, NotFoundError } from "@/server/lib";
 
-export const GET = withHandler(
+export const GET = APIWrapper(
   async (
     req: NextRequest,
     { params }: { params: Promise<{ planId: string }> }
