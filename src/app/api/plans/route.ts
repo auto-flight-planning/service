@@ -3,7 +3,7 @@ import { type User } from "@supabase/supabase-js";
 import planService from "@/features/plan/base/server/service";
 import { createPlanReqSchema } from "@/features/plan/base/server/schemas/req.schema";
 import { createPlanResSchema } from "@/features/plan/base/server/schemas/res.schema";
-import { APIWrapper } from "@/server/lib";
+import { APIWrapper } from "@/server/lib/helpers";
 import { dateToString } from "@/lib/utils";
 
 export const POST = APIWrapper(

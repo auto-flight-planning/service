@@ -4,7 +4,7 @@ import plansRepo from "@/server/repos/plans/plans.repo";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { updatePlanTitleReqSchema } from "@/features/plan/base/server/schemas/req.schema";
 import { planSchema } from "@/features/plan/base/server/schemas/common.schema";
-import { APIWrapper, doPlanCheck } from "@/server/lib";
+import { APIWrapper, doPlanCheck } from "@/server/lib/helpers";
 import { dateToString } from "@/lib/utils";
 
 export const PUT = APIWrapper(
