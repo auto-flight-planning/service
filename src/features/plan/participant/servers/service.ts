@@ -1,8 +1,10 @@
 import { planParticipantsRepo } from "@/server/repos/plans";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { NotFoundError } from "@/server/lib/errors";
-import { type UpdateParticipantsReqSchema } from "./schemas/req.schema";
-import { type ParticipantPermission } from "../type";
+import {
+  type ParticipantPermission,
+  type UpdateParticipantData,
+} from "../type";
 import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
 import { getRedisClient } from "@/server/redis/client";
 import { type PlanParticipantsDto } from "./schemas/res.schema";
@@ -17,13 +19,9 @@ const planParticipantsService = {
       userIds: participants.map((p) => p.user_id),
     });
 
-    const extendedParticipants = employees.map((e) => ({
-      id: e.id,
-      lastName: e.last_name,
-      firstName: e.first_name,
-      email: e.email,
-      userId: e.user_id,
-      permission: participants.find((p) => p.user_id === e.user_id)!
+    const extendedParticipants = employees.map(({ created_at, ...rest }) => ({
+      ...rest,
+      permission: participants.find((p) => p.user_id === rest.user_id)!
         .permission as ParticipantPermission[],
     }));
     return extendedParticipants;
@@ -48,29 +46,23 @@ const planParticipantsService = {
         cachedPlanParticipants
       ) as PlanParticipantsDto;
     } else {
-      const [_creator, participants] = await Promise.all([
+      const [creator, participants] = await Promise.all([
         employeesRepo.findOneByUserId({ userId: creatorId }),
         planParticipantsRepo.findManyByPlanId({ planId }),
       ]);
-      if (!_creator) {
+      if (!creator) {
         throw new NotFoundError("生成者が見つかりません");
       }
-      const creator = {
-        id: _creator.id,
-        lastName: _creator.last_name,
-        firstName: _creator.first_name,
-        email: _creator.email,
-        userId: _creator.user_id,
-      };
+      const { created_at, ...creatorRest } = creator;
 
       const extendedParticipants = await this.getExtendedPlanParticipants({
         participants,
       });
 
       planParticipants = {
-        planId,
-        creator,
-        participantDataList: extendedParticipants,
+        plan_id: planId,
+        creator: creatorRest,
+        participant_data_list: extendedParticipants,
       };
       await redisClient.set(
         `plan_participants:${planId}`,
@@ -87,7 +79,7 @@ const planParticipantsService = {
     updateParticipantData,
   }: {
     planId: string;
-    updateParticipantData: UpdateParticipantsReqSchema;
+    updateParticipantData: UpdateParticipantData;
   }) {
     const { addParticipants, updateParticipants, removeParticipantIds } =
       updateParticipantData;
@@ -117,7 +109,7 @@ const planParticipantsService = {
     const redisClient = await getRedisClient();
     await redisClient.del(`plan_participants:${planId}`);
 
-    return { planId, participantDataList: extendedParticipants };
+    return { plan_id: planId, participant_data_list: extendedParticipants };
   },
 };
 

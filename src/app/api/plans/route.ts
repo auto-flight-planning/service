@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { type User } from "@supabase/supabase-js";
 import planService from "@/features/plan/base/server/service";
+import camelcaseKeys from "camelcase-keys";
 import { createPlanReqSchema } from "@/features/plan/base/server/schemas/req.schema";
 import { createPlanResSchema } from "@/features/plan/base/server/schemas/res.schema";
 import { APIWrapper } from "@/server/lib/helpers";
@@ -14,28 +15,23 @@ export const POST = APIWrapper(
   ) => {
     const requestBody = await request.json();
     const validatedRequestBody = createPlanReqSchema.parse(requestBody);
-    const { title, targetDate, participantDataList } = validatedRequestBody;
+    const camelcaseRequestBody = camelcaseKeys(validatedRequestBody, {
+      deep: true,
+    });
 
     const { plan, planParticipants } = await planService.createPlan({
-      title,
-      targetDate,
+      ...camelcaseRequestBody,
       creatorId: user.id,
-      participantDataList,
     });
 
+    const { target_date, ...planRest } = plan;
     const res = createPlanResSchema.parse({
-      id: plan.id,
-      creatorId: plan.creator_id,
-      title: plan.title,
-      targetDate: dateToString(plan.target_date),
-      status: plan.status,
-      createdAt: plan.created_at,
-      participantDataList: planParticipants.map((participant) => ({
-        userId: participant.user_id,
-        permission: participant.permission,
-      })),
+      ...planRest,
+      target_date: dateToString(target_date),
+      participant_data_list: planParticipants.map(
+        ({ plan_id, ...participantRest }) => participantRest
+      ),
     });
-
     return NextResponse.json(res);
   },
   {

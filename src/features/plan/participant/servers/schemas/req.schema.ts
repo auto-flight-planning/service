@@ -6,9 +6,9 @@ import { insertOrUpdateParticipantSchema } from "./common.schema";
 extendZodWithOpenApi(z);
 
 export const updateParticipantsReqSchema = z.object({
-  addParticipants: insertOrUpdateParticipantSchema,
-  updateParticipants: insertOrUpdateParticipantSchema,
-  removeParticipantIds: z.array(userIdSchema),
+  add_participants: insertOrUpdateParticipantSchema,
+  update_participants: insertOrUpdateParticipantSchema,
+  remove_participant_ids: z.array(userIdSchema),
 });
 export type UpdateParticipantsReqSchema = z.infer<
   typeof updateParticipantsReqSchema

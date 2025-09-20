@@ -28,3 +28,13 @@ export interface StatusItem {
   status: BasicStatus;
   label: string;
 }
+
+export type PlanInputStatus = {
+  resourcesWorkforceStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
+  resourcesFlightScalesStatus: boolean;
+  resourcesFlightScaleDataStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
+  analyticsFlightCandidatesStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
+  analyticsRoundTripNormalizationStatus: boolean;
+  analyticsMinDistributionCriteriaStatus: boolean;
+  airportsScheduleDataStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
+};

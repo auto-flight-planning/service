@@ -2699,10 +2699,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase-keys@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "camelcase-keys@npm:10.0.0"
+  dependencies:
+    camelcase: "npm:^8.0.0"
+    map-obj: "npm:5.0.2"
+    quick-lru: "npm:^7.1.0"
+    type-fest: "npm:^4.41.0"
+  checksum: 10c0/315a8e9baaea792535b965b6debad926937ce6dd2bc48f4082634977a75c7e7aa90957c53e86c72853c9f82e3b0664a95dbfc8c8579df78891dfc464aa50459c
+  languageName: node
+  linkType: hard
+
 "camelcase@npm:^5.3.1":
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
   checksum: 10c0/92ff9b443bfe8abb15f2b1513ca182d16126359ad4f955ebc83dc4ddcc4ef3fdd2c078bc223f2673dc223488e75c99b16cc4d056624374b799e6a1555cf61b23
+  languageName: node
+  linkType: hard
+
+"camelcase@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "camelcase@npm:8.0.0"
+  checksum: 10c0/56c5fe072f0523c9908cdaac21d4a3b3fb0f608fb2e9ba90a60e792b95dd3bb3d1f3523873ab17d86d146e94171305f73ef619e2f538bd759675bc4a14b4bff3
   languageName: node
   linkType: hard
 
@@ -2720,6 +2739,13 @@ __metadata:
     ansi-styles: "npm:^4.1.0"
     supports-color: "npm:^7.1.0"
   checksum: 10c0/4a3fef5cc34975c898ffe77141450f679721df9dde00f6c304353fa9c8b571929123b26a0e4617bde5018977eb655b31970c297b91b63ee83bb82aeb04666880
+  languageName: node
+  linkType: hard
+
+"change-case@npm:^5.4.4":
+  version: 5.4.4
+  resolution: "change-case@npm:5.4.4"
+  checksum: 10c0/2a9c2b9c9ad6ab2491105aaf506db1a9acaf543a18967798dcce20926c6a173aa63266cb6189f3086e3c14bf7ae1f8ea4f96ecc466fcd582310efa00372f3734
   languageName: node
   linkType: hard
 
@@ -4992,6 +5018,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"map-obj@npm:5.0.2, map-obj@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "map-obj@npm:5.0.2"
+  checksum: 10c0/033f56d93ba08bb389be421819119765bb722ab9742a97b68688fde0d6d4dcbf79a665da9ee3273aef3987e0eb2ba6dab8dcd4ee883163b4a77b4d64e50d63c9
+  languageName: node
+  linkType: hard
+
 "math-intrinsics@npm:^1.1.0":
   version: 1.1.0
   resolution: "math-intrinsics@npm:1.1.0"
@@ -5877,6 +5910,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"quick-lru@npm:^7.1.0":
+  version: 7.2.0
+  resolution: "quick-lru@npm:7.2.0"
+  checksum: 10c0/e63c8c23df965d011795d742814b9677cd47a644076ad73568ef880b16c93a8d4d0ea7a0d81726850773aa211f6e1218651f3a4f77f5c685fe01462a9b41fc95
+  languageName: node
+  linkType: hard
+
 "ramda-adjunct@npm:^5.0.0, ramda-adjunct@npm:^5.1.0":
   version: 5.1.0
   resolution: "ramda-adjunct@npm:5.1.0"
@@ -6370,6 +6410,7 @@ __metadata:
     "@types/react-dom": "npm:^19"
     "@types/swagger-ui-react": "npm:^5.18.0"
     "@yarnpkg/pnpify": "npm:^4.1.5"
+    camelcase-keys: "npm:^10.0.0"
     csv-parse: "npm:^6.1.0"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.4.7"
@@ -6379,6 +6420,7 @@ __metadata:
     react-dom: "npm:19.1.0"
     react-hook-form: "npm:^7.62.0"
     redis: "npm:^5.8.2"
+    snakecase-keys: "npm:^9.0.2"
     swagger-ui-react: "npm:^5.27.1"
     tailwindcss: "npm:^4"
     typescript: "npm:^5.9.2"
@@ -6609,6 +6651,17 @@ __metadata:
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
   checksum: 10c0/a16775323e1404dd43fabafe7460be13a471e021637bc7889468eb45ce6a6b207261f454e4e530a19500cc962c4cc5348583520843b363f4193cee5c00e1e539
+  languageName: node
+  linkType: hard
+
+"snakecase-keys@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "snakecase-keys@npm:9.0.2"
+  dependencies:
+    change-case: "npm:^5.4.4"
+    map-obj: "npm:^5.0.2"
+    type-fest: "npm:^4.15.0"
+  checksum: 10c0/1e2ea95d8d005501eca0f36e4da7e7fdce699a4a5f4af9561a9506c645b78071c28602957a09b0e44cd7d0532da6700f70a6eaf3c5edf851b3ee4b2443fba145
   languageName: node
   linkType: hard
 
@@ -7130,6 +7183,13 @@ __metadata:
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: 10c0/dea9df45ea1f0aaa4e2d3bed3f9a0bfe9e5b2592bddb92eb1bf06e50bcf98dbb78189668cd8bc31a0511d3fc25539b4cd5c704497e53e93e2d40ca764b10bfc3
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.15.0, type-fest@npm:^4.41.0":
+  version: 4.41.0
+  resolution: "type-fest@npm:4.41.0"
+  checksum: 10c0/f5ca697797ed5e88d33ac8f1fec21921839871f808dc59345c9cf67345bfb958ce41bd821165dbf3ae591cedec2bf6fe8882098dfdd8dc54320b859711a2c1e4
   languageName: node
   linkType: hard
 

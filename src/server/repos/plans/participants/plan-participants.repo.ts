@@ -1,5 +1,5 @@
 import { prismaClient } from "@/server/db/prismaClient";
-import { type InsertOrUpdateParticipantSchema } from "@/features/plan/participant/servers/schemas/common.schema";
+import { type ParticipantDataList } from "@/features/plan/participant/type";
 
 const planParticipantsRepo = {
   async insertMany({
@@ -7,7 +7,7 @@ const planParticipantsRepo = {
     participantDataList,
   }: {
     planId: string;
-    participantDataList: InsertOrUpdateParticipantSchema;
+    participantDataList: ParticipantDataList;
   }) {
     return prismaClient.plan_participants.createMany({
       data: participantDataList.map(({ userId, permission }) => ({
@@ -29,7 +29,7 @@ const planParticipantsRepo = {
     participantDataList,
   }: {
     planId: string;
-    participantDataList: InsertOrUpdateParticipantSchema;
+    participantDataList: ParticipantDataList;
   }) {
     const updatePromises = participantDataList.map(({ userId, permission }) =>
       prismaClient.plan_participants.update({

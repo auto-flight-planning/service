@@ -10,7 +10,8 @@ import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
 import { loginFormSchema, type LoginFormData } from "../schemas/formSchema";
 import { GetEmployeeByIdResSchema } from "@/features/employee/server/schemas/res.schema";
-import { errorResToMessage } from "@/lib/utils";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useLogin() {
   const formMethods = useForm<LoginFormData>({
@@ -67,14 +68,10 @@ export default function useLogin() {
 
 export async function loginAPI(data: LoginFormData) {
   try {
-    const res = await fetch(`/api/employees/${data.employeeId}`);
-    if (!res.ok) {
-      throw new Error(
-        errorResToMessage(res, "GET /api/employees/{employeeId}")
-      );
-    }
-
-    const employee: GetEmployeeByIdResSchema = await res.json();
+    const res = await apiFetchJson<GetEmployeeByIdResSchema>(
+      `/api/employees/${data.employeeId}`
+    );
+    const employee = camelcaseKeys(res, { deep: true });
 
     const supabase = createSupabaseBrowserClient();
     const {
@@ -89,12 +86,11 @@ export async function loginAPI(data: LoginFormData) {
       throw new Error(error.message);
     }
 
+    const { id, ...rest } = employee;
     return {
       userId: user!.id,
       employeeId: employee.id,
-      lastName: employee.lastName,
-      firstName: employee.firstName,
-      email: employee.email,
+      ...rest,
     };
   } catch (error) {
     console.error(error);

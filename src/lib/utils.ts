@@ -1,5 +1,7 @@
-import { type PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
-import { type ParticipantPermission } from "@/features/plan/participant/type";
+import {
+  type PlanParticipants,
+  type ParticipantPermission,
+} from "@/features/plan/participant/type";
 
 export const dateToString = (date: Date) => {
   return date.toISOString().split("T")[0];
@@ -18,7 +20,7 @@ export const checkPlanParticipantsPermission = ({
   userId,
   type,
 }: {
-  planParticipants: PlanParticipantsDto;
+  planParticipants: PlanParticipants;
   userId: string;
   type: "CREATOR" | ParticipantPermission;
 }) => {

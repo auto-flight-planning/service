@@ -5,7 +5,8 @@ import { Control, useWatch } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { type SearchEmployeesByNameResSchema } from "@/features/employee/server/schemas/res.schema";
 import { type ParticipantsFieldSchema } from "../schemas/form.schema";
-import { errorResToMessage } from "@/lib/utils";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useSearchParticipant(
   control: Control<{
@@ -50,14 +51,10 @@ export default function useSearchParticipant(
 
 export const searchParticipantAPI = async (searchName: string) => {
   try {
-    const res = await fetch(
+    const res = await apiFetchJson<SearchEmployeesByNameResSchema>(
       `/api/employees/search?searchName=${encodeURIComponent(searchName)}`
     );
-    if (!res.ok) {
-      throw new Error(errorResToMessage(res, "GET /api/employees/search"));
-    }
-
-    const employees: SearchEmployeesByNameResSchema = await res.json();
+    const employees = camelcaseKeys(res, { deep: true });
     return employees;
   } catch (error) {
     console.error(error);

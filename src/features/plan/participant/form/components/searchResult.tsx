@@ -1,8 +1,5 @@
 import { Spinner } from "@/components/spinner";
-import {
-  type Employee,
-  type Employees,
-} from "@/features/employee/server/schemas/res.schema";
+import { type Employee, type Employees } from "@/features/employee/type";
 
 interface ParticipantSearchResultProps {
   employees: Employees;

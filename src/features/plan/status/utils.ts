@@ -1,5 +1,8 @@
-import { type GetPlanInputsStatusResSchema } from "./server/schemas/res.schema";
-import { BASIC_STATUS_OPTIONS, type StatusItem } from "./type";
+import {
+  BASIC_STATUS_OPTIONS,
+  type StatusItem,
+  type PlanInputStatus,
+} from "./type";
 import { INPUT_DATA_LABELS } from "../input/constant";
 import { ALL_COLOR_OPTIONS, type AllSize } from "@/constants/theme";
 
@@ -24,7 +27,7 @@ export const getStatusChipProps = (size: Extract<AllSize, "md" | "sm">) => {
 };
 
 export const getResourceInputStatusItems = (
-  planInputStatus: GetPlanInputsStatusResSchema
+  planInputStatus: PlanInputStatus
 ) => {
   return [
     {
@@ -45,7 +48,7 @@ export const getResourceInputStatusItems = (
 };
 
 export const getAnalyticsInputStatusItems = (
-  planInputStatus: GetPlanInputsStatusResSchema
+  planInputStatus: PlanInputStatus
 ) => {
   return [
     {
