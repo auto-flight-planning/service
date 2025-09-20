@@ -1,10 +1,3 @@
-export enum ParticipantPermissionEnum {
-  VIEW = "VIEW",
-  REQUEST = "REQUEST",
-  INPUT = "INPUT",
-  EDIT = "EDIT",
-}
-
 export const PARTICIPANT_PERMISSION_OPTIONS = {
   VIEW: "VIEW",
   REQUEST: "REQUEST",

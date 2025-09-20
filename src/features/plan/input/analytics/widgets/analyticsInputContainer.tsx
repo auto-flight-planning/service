@@ -47,7 +47,7 @@ export default function ResourceInputContainer({ planId }: { planId: string }) {
   if (!planInputStatus) {
     return (
       <div className="rounded-xl bg-white h-60 w-full flex justify-center items-center shadow-md">
-        <Spinner size="large" />
+        <Spinner size="lg" />
       </div>
     );
   }

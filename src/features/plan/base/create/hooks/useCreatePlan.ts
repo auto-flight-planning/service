@@ -10,7 +10,7 @@ import {
   createPlanFormSchema,
   type CreatePlanFormData,
 } from "../schemas/formSchema";
-import { CreatePlanResSchema } from "../../server/schemas/res.schema";
+import { type CreatePlanResSchema } from "../../server/schemas/res.schema";
 import { errorResToMessage } from "@/lib/utils";
 import { formatParticipantsField } from "@/features/plan/participant";
 

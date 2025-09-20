@@ -1,5 +1,5 @@
 import { useModalStore } from "@/features/modal";
-import { InputModalProps } from "../../types";
+import { type InputModalProps } from "../../types";
 import {
   BasicModalFooter,
   ModalTab,

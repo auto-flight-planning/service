@@ -1,18 +1,12 @@
 import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { planIdSchema } from "@/server/schemas/common.schema";
+import { planStatusSchema } from "@/features/plan/status/server/schemas/common.schema";
 import { USER_ID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
 // 1. 個別スキーマ
-export enum PlanStatusEnum {
-  INPUT = "INPUT",
-  RESULT = "RESULT",
-  REVIEW = "REVIEW",
-  ADOPTED = "ADOPTED",
-}
-
 export const planCreatorIdSchema = z.uuid().openapi({
   description: "計画生成者(責任者)のID",
   example: USER_ID_EXAMPLE,
@@ -43,12 +37,6 @@ export const planTargetDateSchema = z
     example: "2028-09-01",
   });
 export type PlanTargetDateSchema = z.infer<typeof planTargetDateSchema>;
-
-export const planStatusSchema = z.enum(PlanStatusEnum).openapi({
-  description: "計画の進捗ステータス",
-  example: "INPUT",
-});
-export type PlanStatusSchema = z.infer<typeof planStatusSchema>;
 
 export const planCreatedAtSchema = z.date().openapi({
   description: "計画作成日時",

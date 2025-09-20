@@ -7,7 +7,7 @@ import {
   updatePlanParticipantsResSchema,
 } from "@/features/plan/participant/servers/schemas/res.schema";
 import { updateParticipantsReqSchema } from "@/features/plan/participant/servers/schemas/req.schema";
-import { APIWrapper, doPlanCheck } from "@/server/lib";
+import { APIWrapper, doPlanCheck } from "@/server/lib/helpers";
 
 export const GET = APIWrapper(
   async (

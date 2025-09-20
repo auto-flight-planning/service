@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { type User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { planSchema } from "@/features/plan/base/server/schemas/common.schema";
-import { APIWrapper, doPlanCheck } from "@/server/lib";
+import { APIWrapper, doPlanCheck } from "@/server/lib/helpers";
 import { dateToString } from "@/lib/utils";
 
 export const GET = APIWrapper(
@@ -18,8 +18,8 @@ export const GET = APIWrapper(
       checkList: ["exists", "permission"],
       data: { planId, user, permissionCheckOptions: { type: "VIEW" } },
     });
-
     const plan = _plan!;
+
     const res = planSchema.parse({
       id: plan.id,
       creatorId: plan.creator_id,

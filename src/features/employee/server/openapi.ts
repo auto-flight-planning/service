@@ -9,7 +9,7 @@ import {
   getEmployeeByUserIdResSchema,
   searchEmployeesByNameResSchema,
 } from "./schemas/res.schema";
-import { commonOpenApiResponses } from "@/server/lib/helpers/openapi-helpers";
+import { commonOpenApiResponses } from "@/server/lib/helpers";
 
 export const registerEmployeeAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({

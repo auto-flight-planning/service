@@ -6,7 +6,7 @@ import {
 } from "@/features/modal";
 import useEditParticipant from "../hooks/useEditParticipant";
 import ParticipantsField from "./field";
-import { EditParticipantsFormSchema } from "../schemas/form.schema";
+import { type EditParticipantsFormSchema } from "../schemas/form.schema";
 
 export default function ParticipantsEditModal({
   planId,

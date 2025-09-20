@@ -22,7 +22,7 @@ export default function ParticipantSearchResult({
     <div className="mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
       {isLoading ? (
         <div className="px-4 py-3 text-center flex items-center justify-center gap-2">
-          <Spinner size="small" />
+          <Spinner size="sm" />
           <span className="text-xs text-gray-500">検索中...</span>
         </div>
       ) : employees.length === 0 ? (

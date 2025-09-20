@@ -3,7 +3,7 @@ import { type User } from "@supabase/supabase-js";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { searchEmployeesByNameReqSchema } from "@/features/employee/server/schemas/req.schema";
 import { searchEmployeesByNameResSchema } from "@/features/employee/server/schemas/res.schema";
-import { APIWrapper } from "@/server/lib";
+import { APIWrapper } from "@/server/lib/helpers";
 
 export const GET = APIWrapper(
   async (
@@ -19,7 +19,6 @@ export const GET = APIWrapper(
     const { searchName } = validatedParams;
 
     const employees = await employeesRepo.searchManyByNames({ searchName });
-    // ログインしている職員を除外
     const filteredEmployees = employees.filter(
       (employee) => employee.user_id !== user.id
     );

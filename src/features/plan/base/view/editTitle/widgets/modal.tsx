@@ -6,7 +6,7 @@ import {
 } from "@/features/modal";
 import useEditTitle from "../hooks/useEditTitle";
 import EditTitleForm from "./form";
-import { EditTitleFormData } from "../schemas/editTitleFormSchema";
+import { type EditTitleFormData } from "../schemas/editTitleFormSchema";
 
 export default function EditTitleModal({
   planId,

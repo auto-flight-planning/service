@@ -9,9 +9,9 @@ import {
   editParticipantsFormSchema,
   type EditParticipantsFormSchema,
 } from "../schemas/form.schema";
-import { UpdatePlanParticipantsResSchema } from "../../servers/schemas/res.schema";
+import { type UpdatePlanParticipantsResSchema } from "../../servers/schemas/res.schema";
 import { errorResToMessage } from "@/lib/utils";
-import { UpdateParticipantsReqSchema } from "../../servers/schemas/req.schema";
+import { type UpdateParticipantsReqSchema } from "../../servers/schemas/req.schema";
 
 export default function useEditParticipant({
   planId,

@@ -1,7 +1,7 @@
 import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { getPlanInputsStatusResSchema } from "./schemas/res.schema";
-import { commonOpenApiResponses } from "@/server/lib/helpers/openapi-helpers";
+import { commonOpenApiResponses } from "@/server/lib/helpers";
 
 export const registerPlanStatusAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({

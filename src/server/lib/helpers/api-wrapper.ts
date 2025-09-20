@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 import { createSupabaseServerClient } from "@/lib/supabase/client/server";
-import { User } from "@supabase/supabase-js";
+import { type User } from "@supabase/supabase-js";
 import { ForbiddenError, NotFoundError } from "../errors";
 
 type APIWrapperOptions = {

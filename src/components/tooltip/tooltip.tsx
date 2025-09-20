@@ -11,14 +11,13 @@ import {
   arrow,
   FloatingArrow,
 } from "@floating-ui/react";
-
-type Position = "top" | "bottom" | "left" | "right";
+import { ALL_POSITION_OPTIONS, type AllPosition } from "@/constants/theme";
 
 interface TooltipProps {
   children: ReactNode;
   text?: string;
   tooltipChildren?: ReactNode;
-  position?: Position;
+  position?: AllPosition;
   className?: string;
 }
 
@@ -26,22 +25,13 @@ export const Tooltip = ({
   children,
   text,
   tooltipChildren,
-  position = "bottom",
+  position = ALL_POSITION_OPTIONS.BOTTOM,
   className = "",
 }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<SVGSVGElement>(null);
 
-  const {
-    x,
-    y,
-    refs,
-    floatingStyles,
-    strategy,
-    middlewareData,
-    placement,
-    context,
-  } = useFloating({
+  const { x, y, refs, strategy, context } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
     placement: position,

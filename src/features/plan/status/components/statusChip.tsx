@@ -1,52 +1,31 @@
-export enum StatusChipColor {
-  PRIMARY = "primary",
-  GREEN = "green",
-  YELLOW = "yellow",
-  "LIGHT-GRAY" = "light-gray",
-}
-const colorStyles = {
-  primary: "bg-primary-500/10 text-primary-500",
-  green: "bg-green-500/10 text-green-500",
-  yellow: "bg-yellow-500/10 text-yellow-500",
-  "light-gray": "bg-gray-100 text-gray-500",
-};
+import {
+  ALL_SIZE_OPTIONS,
+  type AllSize,
+  ALL_COLOR_OPTIONS,
+  type AllColor,
+} from "@/constants/theme";
 
-export enum StatusChipSize {
-  MEDIUM = "medium",
-  SMALL = "small",
-}
-const sizeStyles = {
-  medium:
-    "px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2",
-  small: "px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-2",
-};
-
-const borderStyles = {
-  primary: "border border-primary-500",
-  green: "border border-green-500",
-  yellow: "border border-yellow-500",
-  "light-gray": "border border-gray-300",
-};
-
-export default function StatusChip({
-  text,
-  color,
-  size = "medium",
-  showDot = true,
-  onBorder = false,
-  className = "",
-}: {
+interface StatusChipProps {
   text: string;
-  color: StatusChipColor;
-  size?: "medium" | "small";
+  size?: Extract<AllSize, "md" | "sm">;
+  color: Extract<AllColor, "primary" | "green" | "yellow" | "light-gray">;
   showDot?: boolean;
   onBorder?: boolean;
   className?: string;
-}) {
+}
+
+export default function StatusChip({
+  text,
+  size = ALL_SIZE_OPTIONS.MD,
+  color,
+  showDot = true,
+  onBorder = false,
+  className = "",
+}: StatusChipProps) {
   return (
     <div
       className={`${colorStyles[color]} ${sizeStyles[size]} ${className} ${
-        onBorder ? borderStyles[color] : ""
+        onBorder ? "border " : ""
       }`}
     >
       {showDot && <div className="w-2 h-2 bg-current rounded-full"></div>}
@@ -54,3 +33,20 @@ export default function StatusChip({
     </div>
   );
 }
+
+const colorStyles = {
+  [ALL_COLOR_OPTIONS.PRIMARY]:
+    "bg-primary-500/10 text-primary-500 border-primary-500",
+  [ALL_COLOR_OPTIONS.GREEN]: "bg-green-500/10 text-green-500 border-green-500",
+  [ALL_COLOR_OPTIONS.YELLOW]:
+    "bg-yellow-500/10 text-yellow-500 border-yellow-500",
+  [ALL_COLOR_OPTIONS["LIGHT-GRAY"]]:
+    "bg-gray-100 text-gray-500 border-gray-300",
+};
+
+const sizeStyles = {
+  [ALL_SIZE_OPTIONS.MD]:
+    "px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2",
+  [ALL_SIZE_OPTIONS.SM]:
+    "px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-2",
+};

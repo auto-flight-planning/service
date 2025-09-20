@@ -9,7 +9,6 @@ import { EditButton } from "@/components/button";
 import Stepper from "../components/stepper";
 import { ParticipantButton } from "@/features/plan/participant";
 import { dateToYearMonthJP } from "@/lib/utils";
-import { PlanStatusEnum } from "../../server/schemas/common.schema";
 
 export default function HeaderWrapper({
   planId,
@@ -72,7 +71,7 @@ export default function HeaderWrapper({
               </div>
             </div>
             <div className="flex-1 min-w-96">
-              <Stepper currentStatus={plan.status as PlanStatusEnum} />
+              <Stepper currentStatus={plan.status} />
             </div>
           </section>
 

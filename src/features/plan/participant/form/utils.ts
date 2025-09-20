@@ -1,4 +1,4 @@
-import { ParticipantsFieldSchema } from "./schemas/form.schema";
+import { type ParticipantsFieldSchema } from "./schemas/form.schema";
 
 export const formatParticipantsField = (
   participants: ParticipantsFieldSchema

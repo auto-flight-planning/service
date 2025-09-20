@@ -1,11 +1,11 @@
 import { planParticipantsRepo } from "@/server/repos/plans";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { NotFoundError } from "@/server/lib/errors";
-import { UpdateParticipantsReqSchema } from "./schemas/req.schema";
+import { type UpdateParticipantsReqSchema } from "./schemas/req.schema";
 import { type ParticipantPermission } from "../type";
 import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
-import { getRedisClient } from "@/lib/redis/client";
-import { PlanParticipantsDto } from "./schemas/res.schema";
+import { getRedisClient } from "@/server/redis/client";
+import { type PlanParticipantsDto } from "./schemas/res.schema";
 
 const planParticipantsService = {
   async getExtendedPlanParticipants({

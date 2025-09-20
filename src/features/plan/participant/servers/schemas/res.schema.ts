@@ -11,6 +11,9 @@ export const extendedPlanParticipantDataSchema = z.array(
     permission: planPermissionSchema,
   })
 );
+export type ExtendedPlanParticipantDataSchema = z.infer<
+  typeof extendedPlanParticipantDataSchema
+>;
 
 export const getPlanParticipantsResSchema = z.object({
   planId: planIdSchema,

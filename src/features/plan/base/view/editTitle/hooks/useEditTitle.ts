@@ -4,10 +4,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
 import {
-  EditTitleFormData,
+  type EditTitleFormData,
   editTitleFormSchema,
 } from "../schemas/editTitleFormSchema";
-import { PlanSchema } from "../../../server/schemas/common.schema";
+import { type PlanSchema } from "../../../server/schemas/common.schema";
 import { errorResToMessage } from "@/lib/utils";
 
 export default function useEditTitle({

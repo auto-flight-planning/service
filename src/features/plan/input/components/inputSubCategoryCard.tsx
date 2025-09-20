@@ -2,10 +2,9 @@
 
 import { WhiteCard } from "@/components/card";
 import StatusChip, {
-  StatusChipColor,
   StatusChipSize,
 } from "@/features/plan/status/components/statusChip";
-import { StatusEnum } from "@/features/plan/status/type";
+import { type BasicStatus } from "@/features/plan/status/type";
 import { getStatusChipProps } from "@/features/plan/status/utils";
 
 const statusChipProps = getStatusChipProps("medium");
@@ -14,7 +13,7 @@ export interface InputSubCategoryCardProps {
   number: number;
   title: string;
   items: string[] | null;
-  status: StatusEnum;
+  status: BasicStatus;
   onClick: () => void;
 }
 
@@ -30,7 +29,7 @@ export default function InputSubCategoryCard({
       <div className="absolute -top-4 left-1/2 -translate-x-1/2">
         <StatusChip
           text={statusChipProps[status].text}
-          color={statusChipProps[status].color as StatusChipColor}
+          color={statusChipProps[status].color}
           size={statusChipProps[status].size as StatusChipSize}
           onBorder
         />

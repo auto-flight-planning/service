@@ -1,8 +1,5 @@
 export { default as ListItemStatus } from "./components/listItemStatus";
-export {
-  default as StatusChip,
-  StatusChipColor,
-} from "./components/statusChip";
+export { default as StatusChip } from "./components/statusChip";
 
 export { default as useGetPlanInputStatus } from "./hooks/useGetPlanInputStatus";
 

@@ -31,7 +31,7 @@ export default async function PlanInputPage({
       <InputCategoriesSection planId={planId} />
 
       <div className="flex justify-end">
-        <SquareButton text="結果を算出" bold size="large" />
+        <SquareButton text="結果を算出" bold size="lg" />
       </div>
     </div>
   );

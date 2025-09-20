@@ -5,7 +5,7 @@ import {
   updatePlanParticipantsResSchema,
 } from "./schemas/res.schema";
 import { updateParticipantsReqSchema } from "./schemas/req.schema";
-import { commonOpenApiResponses } from "@/server/lib/helpers/openapi-helpers";
+import { commonOpenApiResponses } from "@/server/lib/helpers";
 
 export const registerPlanParticipantsAPIsToDocs = (
   registry: OpenAPIRegistry
