@@ -15,7 +15,7 @@ export type PlanPermissionSchema = z.infer<typeof planPermissionSchema>;
 
 export const insertOrUpdateParticipantSchema = z.array(
   z.object({
-    userId: userIdSchema,
+    user_id: userIdSchema,
     permission: planPermissionSchema,
   })
 );

@@ -47,10 +47,10 @@ export type PlanCreatedAtSchema = z.infer<typeof planCreatedAtSchema>;
 // 2. オブジェクトスキーマ
 export const planSchema = z.object({
   id: planIdSchema,
-  creatorId: planCreatorIdSchema,
+  creator_id: planCreatorIdSchema,
   title: planTitleSchema,
-  targetDate: planTargetDateSchema,
+  target_date: planTargetDateSchema,
   status: planStatusSchema,
-  createdAt: planCreatedAtSchema,
+  created_at: planCreatedAtSchema,
 });
 export type PlanSchema = z.infer<typeof planSchema>;

@@ -12,3 +12,8 @@ export const PARTICIPANT_PERMISSION_VALUES = [
 ] as const;
 export type ParticipantPermission =
   (typeof PARTICIPANT_PERMISSION_VALUES)[number];
+
+export type ParticipantDataList = {
+  userId: string;
+  permission: ParticipantPermission[];
+}[];

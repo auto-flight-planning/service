@@ -7,8 +7,8 @@ extendZodWithOpenApi(z);
 
 export const createPlanReqSchema = z.object({
   title: planTitleSchema,
-  targetDate: planTargetDateSchema,
-  participantDataList: insertOrUpdateParticipantSchema,
+  target_date: planTargetDateSchema,
+  participant_data_list: insertOrUpdateParticipantSchema,
 });
 export type CreatePlanReqSchema = z.infer<typeof createPlanReqSchema>;
 

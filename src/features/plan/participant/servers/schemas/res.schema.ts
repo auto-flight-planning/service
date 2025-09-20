@@ -16,9 +16,9 @@ export type ExtendedPlanParticipantDataSchema = z.infer<
 >;
 
 export const getPlanParticipantsResSchema = z.object({
-  planId: planIdSchema,
+  plan_id: planIdSchema,
   creator: getEmployeeByUserIdResSchema,
-  participantDataList: extendedPlanParticipantDataSchema,
+  participant_data_list: extendedPlanParticipantDataSchema,
 });
 export type GetPlanParticipantsResSchema = z.infer<
   typeof getPlanParticipantsResSchema
@@ -26,8 +26,8 @@ export type GetPlanParticipantsResSchema = z.infer<
 export type PlanParticipantsDto = GetPlanParticipantsResSchema;
 
 export const updatePlanParticipantsResSchema = z.object({
-  planId: planIdSchema,
-  participantDataList: extendedPlanParticipantDataSchema,
+  plan_id: planIdSchema,
+  participant_data_list: extendedPlanParticipantDataSchema,
 });
 export type UpdatePlanParticipantsResSchema = z.infer<
   typeof updatePlanParticipantsResSchema

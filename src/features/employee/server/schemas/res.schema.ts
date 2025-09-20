@@ -10,11 +10,11 @@ export const getEmployeeByIdResSchema = z.object({
     description: "職員ID",
     example: EMPLOYEE_ID_EXAMPLE,
   }),
-  lastName: z.string().min(1).openapi({
+  last_name: z.string().min(1).openapi({
     description: "姓",
     example: "田中",
   }),
-  firstName: z.string().min(1).openapi({
+  first_name: z.string().min(1).openapi({
     description: "名",
     example: "太郎",
   }),
@@ -26,7 +26,7 @@ export const getEmployeeByIdResSchema = z.object({
 export type GetEmployeeByIdResSchema = z.infer<typeof getEmployeeByIdResSchema>;
 
 export const getEmployeeByUserIdResSchema = getEmployeeByIdResSchema.extend({
-  userId: userIdSchema,
+  user_id: userIdSchema,
 });
 export type GetEmployeeByUserIdResSchema = z.infer<
   typeof getEmployeeByUserIdResSchema

@@ -6,6 +6,6 @@ import { insertOrUpdateParticipantSchema } from "@/features/plan/participant/ser
 extendZodWithOpenApi(z);
 
 export const createPlanResSchema = planSchema.extend({
-  participantDataList: insertOrUpdateParticipantSchema,
+  participant_data_list: insertOrUpdateParticipantSchema,
 });
 export type CreatePlanResSchema = z.infer<typeof createPlanResSchema>;

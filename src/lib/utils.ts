@@ -22,9 +22,9 @@ export const checkPlanParticipantsPermission = ({
   userId: string;
   type: "CREATOR" | ParticipantPermission;
 }) => {
-  const isCreator = planParticipants.creator.userId === userId;
-  const participant = planParticipants.participantDataList.find(
-    (participant) => participant.userId === userId
+  const isCreator = planParticipants.creator.user_id === userId;
+  const participant = planParticipants.participant_data_list.find(
+    (participant) => participant.user_id === userId
   );
 
   if (type === "CREATOR") {
