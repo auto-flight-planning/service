@@ -7,7 +7,7 @@ import {
   planInputsAnalyticsRepo,
   planInputsAirportsRepo,
 } from "@/server/repos/plans";
-import { type CreatePlanReqSchema } from "./schemas/req.schema";
+import { type ParticipantDataList } from "@/features/plan/participant/type";
 
 const planService = {
   async createPlan({
@@ -15,7 +15,12 @@ const planService = {
     targetDate,
     creatorId,
     participantDataList,
-  }: { creatorId: string } & CreatePlanReqSchema) {
+  }: {
+    creatorId: string;
+    title: string;
+    targetDate: string;
+    participantDataList: ParticipantDataList;
+  }) {
     // 1. planの生成
     const plan = await plansRepo.insertOne({
       title,

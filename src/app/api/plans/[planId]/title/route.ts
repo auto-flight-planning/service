@@ -27,13 +27,10 @@ export const PUT = APIWrapper(
     const { title } = validatedRequestBody;
     const updatedPlan = await plansRepo.updateOneTitle({ id: planId, title });
 
+    const { target_date, ...rest } = updatedPlan;
     const res = planSchema.parse({
-      id: updatedPlan.id,
-      creatorId: updatedPlan.creator_id,
-      title: updatedPlan.title,
-      targetDate: dateToString(updatedPlan.target_date),
-      status: updatedPlan.status,
-      createdAt: updatedPlan.created_at,
+      ...rest,
+      target_date: dateToString(target_date),
     });
     return NextResponse.json(res);
   },

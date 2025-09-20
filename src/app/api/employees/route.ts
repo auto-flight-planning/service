@@ -16,13 +16,8 @@ export const GET = APIWrapper(
       "職員が見つかりません"
     );
 
-    const res = getEmployeeByUserIdResSchema.parse({
-      id: employee.id,
-      userId: employee.user_id,
-      lastName: employee.last_name,
-      firstName: employee.first_name,
-      email: employee.email,
-    });
+    const { created_at, ...rest } = employee;
+    const res = getEmployeeByUserIdResSchema.parse(rest);
     return NextResponse.json(res);
   },
   {

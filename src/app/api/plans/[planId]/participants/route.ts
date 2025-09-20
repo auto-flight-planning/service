@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import planParticipantsService from "@/features/plan/participant/servers/service";
+import camelcaseKeys from "camelcase-keys";
 import { type User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import {
@@ -48,11 +49,13 @@ export const PUT = APIWrapper(
       data: { planId, user, permissionCheckOptions: { type: "CREATOR" } },
     });
 
-    const updateParticipantData = validatedRequestBody;
+    const camelcaseRequestBody = camelcaseKeys(validatedRequestBody, {
+      deep: true,
+    });
     const updatedParticipants =
       await planParticipantsService.updatePlanParticipants({
         planId,
-        updateParticipantData,
+        updateParticipantData: camelcaseRequestBody,
       });
 
     const res = updatePlanParticipantsResSchema.parse(updatedParticipants);

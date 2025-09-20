@@ -24,13 +24,7 @@ export const GET = APIWrapper(
     );
 
     const res = searchEmployeesByNameResSchema.parse({
-      employees: filteredEmployees.map((employee) => ({
-        id: employee.id,
-        userId: employee.user_id,
-        lastName: employee.last_name,
-        firstName: employee.first_name,
-        email: employee.email,
-      })),
+      employees: filteredEmployees.map(({ created_at, ...rest }) => rest),
     });
     return NextResponse.json(res);
   },

@@ -20,13 +20,10 @@ export const GET = APIWrapper(
     });
     const plan = _plan!;
 
+    const { target_date, ...rest } = plan;
     const res = planSchema.parse({
-      id: plan.id,
-      creatorId: plan.creator_id,
-      title: plan.title,
-      targetDate: dateToString(plan.target_date),
-      status: plan.status,
-      createdAt: plan.created_at,
+      ...rest,
+      target_date: dateToString(target_date),
     });
     return NextResponse.json(res);
   },

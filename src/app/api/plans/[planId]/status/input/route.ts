@@ -24,22 +24,7 @@ export const GET = APIWrapper(
       "計画入力データのステータスが見つかりません"
     );
 
-    const res = getPlanInputsStatusResSchema.parse({
-      planId,
-      resourcesWorkforceStatus: planInputsStatus.resources_workforce_status,
-      resourcesFlightScalesStatus:
-        planInputsStatus.resources_flight_scales_status,
-      resourcesFlightScaleDataStatus:
-        planInputsStatus.resources_flight_scale_data_status,
-      analyticsFlightCandidatesStatus:
-        planInputsStatus.analytics_flight_candidates_status,
-      analyticsRoundTripNormalizationStatus:
-        planInputsStatus.analytics_round_trip_normalization_status,
-      analyticsMinDistributionCriteriaStatus:
-        planInputsStatus.analytics_min_distribution_criteria_status,
-      airportsScheduleDataStatus:
-        planInputsStatus.airports_schedule_data_status,
-    });
+    const res = getPlanInputsStatusResSchema.parse(planInputsStatus);
     return NextResponse.json(res);
   },
   {
