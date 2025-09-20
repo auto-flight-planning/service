@@ -1,13 +1,11 @@
 "use client";
 
 import { WhiteCard } from "@/components/card";
-import StatusChip, {
-  StatusChipSize,
-} from "@/features/plan/status/components/statusChip";
+import StatusChip from "@/features/plan/status/components/statusChip";
 import { type BasicStatus } from "@/features/plan/status/type";
 import { getStatusChipProps } from "@/features/plan/status/utils";
 
-const statusChipProps = getStatusChipProps("medium");
+const statusChipProps = getStatusChipProps("md");
 
 export interface InputSubCategoryCardProps {
   number: number;
@@ -30,7 +28,7 @@ export default function InputSubCategoryCard({
         <StatusChip
           text={statusChipProps[status].text}
           color={statusChipProps[status].color}
-          size={statusChipProps[status].size as StatusChipSize}
+          size={statusChipProps[status].size}
           onBorder
         />
       </div>

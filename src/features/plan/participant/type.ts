@@ -1,3 +1,5 @@
+import { type Employee } from "@/features/employee/type";
+
 export const PARTICIPANT_PERMISSION_OPTIONS = {
   VIEW: "VIEW",
   REQUEST: "REQUEST",
@@ -21,4 +23,12 @@ export type UpdateParticipantData = {
   addParticipants: ParticipantDataList;
   updateParticipants: ParticipantDataList;
   removeParticipantIds: string[];
+};
+
+export type PlanParticipants = {
+  planId: string;
+  creator: Employee;
+  participantDataList: (Employee & {
+    permission: ParticipantPermission[];
+  })[];
 };

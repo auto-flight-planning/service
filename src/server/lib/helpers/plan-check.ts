@@ -7,6 +7,7 @@ import { type PlanParticipantsDto } from "@/features/plan/participant/servers/sc
 import { checkPlanParticipantsPermission } from "@/lib/utils";
 import { findOrThrow } from "./find-or-throw";
 import { ForbiddenError } from "../errors";
+import camelcaseKeys from "camelcase-keys";
 
 type PlanCheckType = "exists" | "permission";
 
@@ -48,7 +49,7 @@ export default async function doPlanCheck({
 
         if (
           !checkPlanParticipantsPermission({
-            planParticipants,
+            planParticipants: camelcaseKeys(planParticipants, { deep: true }),
             userId: user!.id,
             type: permissionCheckOptions!.type,
           })

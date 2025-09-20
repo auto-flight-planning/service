@@ -31,7 +31,7 @@ export default function InputContainer({
           <SquareButton
             text="直接入力"
             color="light-gray"
-            size="medium"
+            size="md"
             onBorder
             onClick={() => setMode("input")}
           />
@@ -92,7 +92,7 @@ export default function InputContainer({
               <SquareButton
                 text="依頼を送信"
                 color="primary"
-                size="medium"
+                size="md"
                 onClick={onClickSendMail}
               />
             </div>

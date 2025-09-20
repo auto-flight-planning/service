@@ -1,27 +1,7 @@
 import {
   PLAN_STATUS_OPTIONS,
   type PlanStatus,
-} from "../../server/schemas/common.schema";
-
-const getCurrentProgress = (status: PlanStatus) => {
-  switch (status) {
-    case PLAN_STATUS_OPTIONS.INPUT:
-      return { currentStep: 1, progressWidth: "0%" };
-    case PLAN_STATUS_OPTIONS.RESULT:
-      return { currentStep: 2, progressWidth: "33.33%" };
-    case PLAN_STATUS_OPTIONS.REVIEW:
-      return { currentStep: 3, progressWidth: "66.66%" };
-    case PLAN_STATUS_OPTIONS.ADOPTED:
-      return { currentStep: 4, progressWidth: "100%" };
-  }
-};
-
-const STEP_LIST = [
-  { step: 1, label: "入力" },
-  { step: 2, label: "結果" },
-  { step: 3, label: "検討" },
-  { step: 4, label: "採択" },
-];
+} from "@/features/plan/status/type";
 
 export default function Stepper({
   currentStatus,
@@ -89,3 +69,23 @@ export default function Stepper({
     </div>
   );
 }
+
+const getCurrentProgress = (status: PlanStatus) => {
+  switch (status) {
+    case PLAN_STATUS_OPTIONS.INPUT:
+      return { currentStep: 1, progressWidth: "0%" };
+    case PLAN_STATUS_OPTIONS.RESULT:
+      return { currentStep: 2, progressWidth: "33.33%" };
+    case PLAN_STATUS_OPTIONS.REVIEW:
+      return { currentStep: 3, progressWidth: "66.66%" };
+    case PLAN_STATUS_OPTIONS.ADOPTED:
+      return { currentStep: 4, progressWidth: "100%" };
+  }
+};
+
+const STEP_LIST = [
+  { step: 1, label: "入力" },
+  { step: 2, label: "結果" },
+  { step: 3, label: "検討" },
+  { step: 4, label: "採択" },
+];

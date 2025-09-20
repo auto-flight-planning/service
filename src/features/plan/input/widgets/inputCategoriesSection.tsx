@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { Spinner } from "@/components/spinner";
-import InputCategoryCard, { IconColor } from "../components/inputCategoryCard";
+import InputCategoryCard from "../components/inputCategoryCard";
 import {
   getAnalyticsInputStatusItems,
   getResourceInputStatusItems,
@@ -13,16 +13,17 @@ import { getOverallStatus } from "@/features/plan/status/utils";
 import { INPUT_CATEGORY_LABELS } from "@/features/plan/input/constant";
 
 export default function InputCategoriesSection({ planId }: { planId: string }) {
-  const { planInputStatus } = useGetPlanInputStatus(planId);
   const router = useRouter();
+  const { planInputStatus } = useGetPlanInputStatus(planId);
 
   const statuses = useMemo(() => {
     if (!planInputStatus) return undefined;
+    const { planId, ...rest } = planInputStatus;
 
-    const resourceItems = getResourceInputStatusItems(planInputStatus);
+    const resourceItems = getResourceInputStatusItems(rest);
     const resourceStatus = getOverallStatus(resourceItems);
 
-    const analyticsItems = getAnalyticsInputStatusItems(planInputStatus);
+    const analyticsItems = getAnalyticsInputStatusItems(rest);
     const analyticsStatus = getOverallStatus(analyticsItems);
 
     const statuses = {
@@ -36,14 +37,14 @@ export default function InputCategoriesSection({ planId }: { planId: string }) {
   if (!planInputStatus || !statuses) {
     return (
       <div className="bg-white shadow-lg rounded-xl h-[25rem] w-full flex justify-center items-center">
-        <Spinner size="large" />
+        <Spinner size="lg" />
       </div>
     );
   }
   return (
     <div className="flex flex-col gap-6">
       <InputCategoryCard
-        icon={{ text: "🏢", color: IconColor.PRIMARY }}
+        icon={{ text: "🏢", color: "primary" }}
         title={INPUT_CATEGORY_LABELS.RESOURCE}
         inputSource="運航本部総括部・財務部"
         status={statuses.resource.status}
@@ -52,7 +53,7 @@ export default function InputCategoriesSection({ planId }: { planId: string }) {
         onClick={() => router.push(`/plan/${planId}/input/resource`)}
       />
       <InputCategoryCard
-        icon={{ text: "📊", color: IconColor.PURPLE }}
+        icon={{ text: "📊", color: "purple" }}
         title={INPUT_CATEGORY_LABELS.ANALYTICS}
         inputSource="外部データ分析協力会社"
         status={statuses.analytics.status}
@@ -61,7 +62,7 @@ export default function InputCategoriesSection({ planId }: { planId: string }) {
         onClick={() => router.push(`/plan/${planId}/input/analytics`)}
       />
       <InputCategoryCard
-        icon={{ text: "🛫", color: IconColor.GREEN }}
+        icon={{ text: "🛫", color: "green" }}
         title={INPUT_CATEGORY_LABELS.AIRPORT}
         inputSource="連携空港"
         status={statuses.airport.status}

@@ -1,5 +1,7 @@
-import { type PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
-import { type ParticipantPermission } from "@/features/plan/participant/type";
+import {
+  type PlanParticipants,
+  type ParticipantPermission,
+} from "@/features/plan/participant/type";
 
 export const dateToString = (date: Date) => {
   return date.toISOString().split("T")[0];
@@ -18,13 +20,13 @@ export const checkPlanParticipantsPermission = ({
   userId,
   type,
 }: {
-  planParticipants: PlanParticipantsDto;
+  planParticipants: PlanParticipants;
   userId: string;
   type: "CREATOR" | ParticipantPermission;
 }) => {
-  const isCreator = planParticipants.creator.user_id === userId;
-  const participant = planParticipants.participant_data_list.find(
-    (participant) => participant.user_id === userId
+  const isCreator = planParticipants.creator.userId === userId;
+  const participant = planParticipants.participantDataList.find(
+    (participant) => participant.userId === userId
   );
 
   if (type === "CREATOR") {
