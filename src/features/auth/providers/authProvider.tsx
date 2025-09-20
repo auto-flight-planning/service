@@ -8,7 +8,7 @@ import { Subscription } from "@supabase/supabase-js";
 import { useToastStore } from "@/features/toast/stores/toastStore";
 import useUserStore from "../stores/userStore";
 import { DoubleSpinner } from "@/components/spinner";
-import { GetEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
+import { type GetEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter();

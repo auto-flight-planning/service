@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import planInputsStatusRepo from "@/server/repos/plans/status/plan-inputs-status.repo";
-import { User } from "@supabase/supabase-js";
+import { type User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { getPlanInputsStatusResSchema } from "@/features/plan/status/server/schemas/res.schema";
 import { APIWrapper, doPlanCheck, findOrThrow } from "@/server/lib/helpers";

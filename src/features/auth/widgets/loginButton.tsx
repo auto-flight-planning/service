@@ -10,7 +10,7 @@ export default function LoginButton() {
     <SquareButton
       text="システムにログイン"
       onClick={() => openModal("login")}
-      size="large"
+      size="lg"
     />
   );
 }

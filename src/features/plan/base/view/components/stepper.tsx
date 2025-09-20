@@ -1,14 +1,17 @@
-import { PlanStatusEnum } from "../../server/schemas/common.schema";
+import {
+  PLAN_STATUS_OPTIONS,
+  type PlanStatus,
+} from "../../server/schemas/common.schema";
 
-const getCurrentProgress = (status: PlanStatusEnum) => {
+const getCurrentProgress = (status: PlanStatus) => {
   switch (status) {
-    case PlanStatusEnum.INPUT:
+    case PLAN_STATUS_OPTIONS.INPUT:
       return { currentStep: 1, progressWidth: "0%" };
-    case PlanStatusEnum.RESULT:
+    case PLAN_STATUS_OPTIONS.RESULT:
       return { currentStep: 2, progressWidth: "33.33%" };
-    case PlanStatusEnum.REVIEW:
+    case PLAN_STATUS_OPTIONS.REVIEW:
       return { currentStep: 3, progressWidth: "66.66%" };
-    case PlanStatusEnum.ADOPTED:
+    case PLAN_STATUS_OPTIONS.ADOPTED:
       return { currentStep: 4, progressWidth: "100%" };
   }
 };
@@ -23,7 +26,7 @@ const STEP_LIST = [
 export default function Stepper({
   currentStatus,
 }: {
-  currentStatus: PlanStatusEnum;
+  currentStatus: PlanStatus;
 }) {
   const { currentStep, progressWidth } = getCurrentProgress(currentStatus);
   const isAdopted = currentStep === 4;

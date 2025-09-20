@@ -1,9 +1,9 @@
-import { User } from "@supabase/supabase-js";
+import { type User } from "@supabase/supabase-js";
 import { plansRepo } from "@/server/repos/plans";
 import planParticipantsService from "@/features/plan/participant/servers/service";
 import { type plans } from "../../db/prisma";
 import { type ParticipantPermission } from "@/features/plan/participant/type";
-import { PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
+import { type PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
 import { checkPlanParticipantsPermission } from "@/lib/utils";
 import { findOrThrow } from "./find-or-throw";
 import { ForbiddenError } from "../errors";

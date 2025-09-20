@@ -1,12 +1,25 @@
-import { GetPlanInputsStatusResSchema } from "./server/schemas/res.schema";
-import { ListDataItem, StatusEnum } from "./type";
+import { type GetPlanInputsStatusResSchema } from "./server/schemas/res.schema";
+import { BASIC_STATUS_OPTIONS, type StatusItem } from "./type";
 import { INPUT_DATA_LABELS } from "../input/constant";
+import { ALL_COLOR_OPTIONS, type AllSize } from "@/constants/theme";
 
-export const getStatusChipProps = (size: string) => {
+export const getStatusChipProps = (size: Extract<AllSize, "md" | "sm">) => {
   return {
-    [StatusEnum.NOT_STARTED]: { text: "未入力", color: "light-gray", size },
-    [StatusEnum.IN_PROGRESS]: { text: "入力中", color: "yellow", size },
-    [StatusEnum.COMPLETED]: { text: "入力済", color: "primary", size },
+    [BASIC_STATUS_OPTIONS.NOT_STARTED]: {
+      text: "未入力",
+      color: ALL_COLOR_OPTIONS["LIGHT-GRAY"],
+      size,
+    },
+    [BASIC_STATUS_OPTIONS.IN_PROGRESS]: {
+      text: "入力中",
+      color: ALL_COLOR_OPTIONS.YELLOW,
+      size,
+    },
+    [BASIC_STATUS_OPTIONS.COMPLETED]: {
+      text: "入力済",
+      color: ALL_COLOR_OPTIONS.PRIMARY,
+      size,
+    },
   };
 };
 
@@ -21,8 +34,8 @@ export const getResourceInputStatusItems = (
     {
       label: INPUT_DATA_LABELS.RESOURCES_FLIGHT_SCALES,
       status: planInputStatus.resourcesFlightScalesStatus
-        ? StatusEnum.COMPLETED
-        : StatusEnum.NOT_STARTED,
+        ? BASIC_STATUS_OPTIONS.COMPLETED
+        : BASIC_STATUS_OPTIONS.NOT_STARTED,
     },
     {
       label: INPUT_DATA_LABELS.RESOURCES_FLIGHT_SCALE_DATA,
@@ -42,22 +55,22 @@ export const getAnalyticsInputStatusItems = (
     {
       label: INPUT_DATA_LABELS.ANALYTICS_ROUND_TRIP_NORMALIZATION_FUNC,
       status: planInputStatus.analyticsRoundTripNormalizationStatus
-        ? StatusEnum.COMPLETED
-        : StatusEnum.NOT_STARTED,
+        ? BASIC_STATUS_OPTIONS.COMPLETED
+        : BASIC_STATUS_OPTIONS.NOT_STARTED,
     },
     {
       label: INPUT_DATA_LABELS.ANALYTICS_ROUTE_MIN_DISTRIBUTION,
       status: planInputStatus.analyticsMinDistributionCriteriaStatus
-        ? StatusEnum.COMPLETED
-        : StatusEnum.NOT_STARTED,
+        ? BASIC_STATUS_OPTIONS.COMPLETED
+        : BASIC_STATUS_OPTIONS.NOT_STARTED,
     },
   ];
 };
 
-export const getOverallStatus = (items: ListDataItem[]) => {
-  return items.every((item) => item.status === StatusEnum.COMPLETED)
-    ? StatusEnum.COMPLETED
-    : items.every((item) => item.status === StatusEnum.NOT_STARTED)
-    ? StatusEnum.NOT_STARTED
-    : StatusEnum.IN_PROGRESS;
+export const getOverallStatus = (items: StatusItem[]) => {
+  return items.every((item) => item.status === BASIC_STATUS_OPTIONS.COMPLETED)
+    ? BASIC_STATUS_OPTIONS.COMPLETED
+    : items.every((item) => item.status === BASIC_STATUS_OPTIONS.NOT_STARTED)
+    ? BASIC_STATUS_OPTIONS.NOT_STARTED
+    : BASIC_STATUS_OPTIONS.IN_PROGRESS;
 };

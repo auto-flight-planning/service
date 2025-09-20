@@ -1,5 +1,5 @@
 import { prismaClient } from "@/server/db/prismaClient";
-import { InsertOrUpdateParticipantSchema } from "@/features/plan/participant/servers/schemas/common.schema";
+import { type InsertOrUpdateParticipantSchema } from "@/features/plan/participant/servers/schemas/common.schema";
 
 const planParticipantsRepo = {
   async insertMany({

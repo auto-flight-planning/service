@@ -1,6 +1,7 @@
 import { useUserStore } from "@/features/auth";
 import { ChipButton, CrossButton } from "@/components/button";
-import { Chip, type ChipProps } from "@/components/chip";
+import { Chip } from "@/components/chip";
+import { Tooltip } from "@/components/tooltip";
 import {
   PARTICIPANT_PERMISSION_OPTIONS,
   type ParticipantPermission,
@@ -9,7 +10,7 @@ import {
   PARTICIPANT_PERMISSION_LABELS,
   PARTICIPANT_PERMISSION_TOOLTIP_TEXT,
 } from "../constant";
-import { Tooltip } from "@/components/tooltip";
+import { ALL_COLOR_OPTIONS } from "@/constants/theme";
 
 interface SelectedParticipantDetailProps {
   userId: string;
@@ -24,16 +25,6 @@ interface SelectedParticipantDetailProps {
   ) => void;
   onRemove?: (index: number) => void;
 }
-
-const permissionColorClasses: Record<
-  ParticipantPermission,
-  ChipProps["color"]
-> = {
-  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: "light-gray",
-  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]: "green",
-  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]: "yellow",
-  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]: "primary",
-};
 
 export default function SelectedParticipantDetail({
   userId,
@@ -85,8 +76,8 @@ export default function SelectedParticipantDetail({
                           PARTICIPANT_PERMISSION_LABELS[permissionOption]
                         }${isSelected ? " ✓" : ""}`}
                         variant={isSelected ? "solid" : "outline"}
-                        size="extra-small"
-                        color={permissionColorClasses[permissionOption]}
+                        size="xs"
+                        color={permissionColorStyles[permissionOption]}
                         onClick={() =>
                           onTogglePermission?.(
                             participantIndex,
@@ -110,8 +101,8 @@ export default function SelectedParticipantDetail({
                   <Chip
                     text={`${PARTICIPANT_PERMISSION_LABELS[p]}`}
                     variant="solid"
-                    size="extra-small"
-                    color={permissionColorClasses[p]}
+                    size="xs"
+                    color={permissionColorStyles[p]}
                   />
                 </Tooltip>
               ))}
@@ -121,7 +112,7 @@ export default function SelectedParticipantDetail({
       </div>
       {type === "edit" && (
         <CrossButton
-          size="small"
+          size="sm"
           type="button"
           onClick={() => onRemove?.(participantIndex)}
         />
@@ -129,3 +120,10 @@ export default function SelectedParticipantDetail({
     </div>
   );
 }
+
+const permissionColorStyles = {
+  [PARTICIPANT_PERMISSION_OPTIONS.VIEW]: ALL_COLOR_OPTIONS["LIGHT-GRAY"],
+  [PARTICIPANT_PERMISSION_OPTIONS.REQUEST]: ALL_COLOR_OPTIONS.GREEN,
+  [PARTICIPANT_PERMISSION_OPTIONS.INPUT]: ALL_COLOR_OPTIONS.YELLOW,
+  [PARTICIPANT_PERMISSION_OPTIONS.EDIT]: ALL_COLOR_OPTIONS.PRIMARY,
+};

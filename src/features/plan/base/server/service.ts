@@ -7,7 +7,7 @@ import {
   planInputsAnalyticsRepo,
   planInputsAirportsRepo,
 } from "@/server/repos/plans";
-import { CreatePlanReqSchema } from "./schemas/req.schema";
+import { type CreatePlanReqSchema } from "./schemas/req.schema";
 
 const planService = {
   async createPlan({

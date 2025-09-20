@@ -1,4 +1,4 @@
-import { PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
+import { type PlanParticipantsDto } from "@/features/plan/participant/servers/schemas/res.schema";
 import { type ParticipantPermission } from "@/features/plan/participant/type";
 
 export const dateToString = (date: Date) => {
@@ -12,6 +12,7 @@ export const dateToYearMonthJP = (date: Date) => {
 export const errorResToMessage = (res: Response, endpoint: string) =>
   `(${res.status}) ${res.statusText}\n${endpoint} を呼び出しに失敗しました。`;
 
+// Domain utils
 export const checkPlanParticipantsPermission = ({
   planParticipants,
   userId,

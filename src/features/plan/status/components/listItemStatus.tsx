@@ -1,12 +1,16 @@
-import { ListDataItem, StatusEnum } from "../type";
+import {
+  BASIC_STATUS_OPTIONS,
+  type BasicStatus,
+  type StatusItem,
+} from "../type";
 
-const getStatusIcon = (status: StatusEnum) => {
+const getStatusIcon = (status: BasicStatus) => {
   switch (status) {
-    case StatusEnum.COMPLETED:
+    case BASIC_STATUS_OPTIONS.COMPLETED:
       return <span className="text-green-500 font-bold">✓</span>;
-    case StatusEnum.IN_PROGRESS:
+    case BASIC_STATUS_OPTIONS.IN_PROGRESS:
       return <span className="text-primary-500 font-bold">⋯</span>;
-    case StatusEnum.NOT_STARTED:
+    case BASIC_STATUS_OPTIONS.NOT_STARTED:
     default:
       return <span className="text-gray-300 font-bold">○</span>;
   }
@@ -17,7 +21,7 @@ export default function ListItemStatus({
   item,
 }: {
   index: number;
-  item: ListDataItem;
+  item: StatusItem;
 }) {
   return (
     <li key={index} className="flex items-center gap-3">
@@ -25,7 +29,7 @@ export default function ListItemStatus({
       <span
         className={`text-sm
           ${
-            item.status === StatusEnum.NOT_STARTED
+            item.status === BASIC_STATUS_OPTIONS.NOT_STARTED
               ? "text-gray-400"
               : "text-gray-700"
           }`}

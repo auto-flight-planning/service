@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { GetPlanParticipantsResSchema } from "../../servers/schemas/res.schema";
+import { type GetPlanParticipantsResSchema } from "../../servers/schemas/res.schema";
 import { errorResToMessage } from "@/lib/utils";
 
 export default function useGetParticipants(planId: string) {

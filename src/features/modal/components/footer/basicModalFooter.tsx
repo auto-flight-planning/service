@@ -1,18 +1,19 @@
 import { SquareButton } from "@/components/button";
 import useModalStore from "../../stores/modalStore";
+import { ALL_COLOR_OPTIONS, type AllColor } from "@/constants/theme";
 
 interface BasicModalFooterProps {
   cancelProps?: {
     text?: string;
     onClick?: () => void;
-    color?: "primary" | "gray" | "light-gray";
+    color?: Extract<AllColor, "primary" | "gray" | "light-gray">;
     disabled?: boolean;
     hidden?: boolean;
   };
   confirmProps: {
     text: string;
     onClick: () => void;
-    color?: "primary" | "gray" | "light-gray";
+    color?: Extract<AllColor, "primary" | "gray" | "light-gray">;
     disabled?: boolean;
     isLoading?: boolean;
   };
@@ -23,14 +24,14 @@ export default function BasicModalFooter({
   cancelProps = {
     text: "キャンセル",
     onClick: undefined,
-    color: "light-gray",
+    color: ALL_COLOR_OPTIONS["LIGHT-GRAY"],
     disabled: false,
     hidden: false,
   },
   confirmProps = {
     text: "保存",
     onClick: () => {},
-    color: "primary",
+    color: ALL_COLOR_OPTIONS.PRIMARY,
     disabled: false,
     isLoading: false,
   },

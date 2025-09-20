@@ -4,7 +4,7 @@ import useHandle from "../hooks/useHandle";
 import { TextField } from "@/components/input";
 import SearchResult from "../components/searchResult";
 import SelectedParticipantDetail from "../../components/selectedParticipantDetail";
-import { ParticipantsFieldSchema } from "../schemas/form.schema";
+import { type ParticipantsFieldSchema } from "../schemas/form.schema";
 
 export default function ParticipantsField() {
   const { control } = useFormContext<{

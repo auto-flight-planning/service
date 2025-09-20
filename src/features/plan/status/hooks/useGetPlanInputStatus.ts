@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { GetPlanInputsStatusResSchema } from "../server/schemas/res.schema";
+import { type GetPlanInputsStatusResSchema } from "../server/schemas/res.schema";
 import { errorResToMessage } from "@/lib/utils";
 
 export default function useGetPlanInputStatus(planId: string) {
