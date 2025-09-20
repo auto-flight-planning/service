@@ -8,7 +8,8 @@ import {
   editTitleFormSchema,
 } from "../schemas/editTitleFormSchema";
 import { type PlanSchema } from "../../../server/schemas/common.schema";
-import { errorResToMessage } from "@/lib/utils";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useEditTitle({
   planId,
@@ -62,16 +63,11 @@ export default function useEditTitle({
 
 export const editTitleAPI = async (planId: string, data: EditTitleFormData) => {
   try {
-    const res = await fetch(`/api/plans/${planId}/title`, {
+    const res = await apiFetchJson<PlanSchema>(`/api/plans/${planId}/title`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: data,
     });
-    if (!res.ok) {
-      throw new Error(errorResToMessage(res, "PUT /api/plans/${planId}/title"));
-    }
-
-    const updatedPlan: PlanSchema = await res.json();
+    const updatedPlan = camelcaseKeys(res, { deep: true });
     return updatedPlan;
   } catch (error) {
     console.error(error);

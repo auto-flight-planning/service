@@ -1,6 +1,6 @@
 import { Control, useFieldArray } from "react-hook-form";
-import { type Employee } from "@/features/employee/server/schemas/res.schema";
 import { type ParticipantsFieldSchema } from "../schemas/form.schema";
+import { type Employee } from "@/features/employee/type";
 import {
   PARTICIPANT_PERMISSION_OPTIONS,
   type ParticipantPermission,

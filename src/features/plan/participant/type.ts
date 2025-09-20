@@ -17,3 +17,8 @@ export type ParticipantDataList = {
   userId: string;
   permission: ParticipantPermission[];
 }[];
+export type UpdateParticipantData = {
+  addParticipants: ParticipantDataList;
+  updateParticipants: ParticipantDataList;
+  removeParticipantIds: string[];
+};

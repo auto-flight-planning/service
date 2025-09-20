@@ -9,6 +9,8 @@ import { useToastStore } from "@/features/toast/stores/toastStore";
 import useUserStore from "../stores/userStore";
 import { DoubleSpinner } from "@/components/spinner";
 import { type GetEmployeeByUserIdResSchema } from "@/features/employee/server/schemas/res.schema";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function AuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
@@ -30,18 +32,15 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
                 console.log("console in dev mode \nsession : ", session);
               }
 
-              const res = await fetch(
+              const res = await apiFetchJson<GetEmployeeByUserIdResSchema>(
                 `/api/employees?userId=${session.user.id}`
               );
-              const employee: GetEmployeeByUserIdResSchema = await res.json();
+              const employee = camelcaseKeys(res, { deep: true });
 
-              const { id, userId, firstName, lastName, email } = employee;
+              const { id, ...rest } = employee;
               setUser({
-                userId,
                 employeeId: id,
-                firstName,
-                lastName,
-                email,
+                ...rest,
               });
 
               if (pathname === "/") {
@@ -49,7 +48,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
               }
               addToast({
                 type: "success",
-                message: `${firstName} ${lastName} さん、システムへようこそ。`,
+                message: `${rest.firstName} ${rest.lastName} さん、システムへようこそ。`,
                 title: "ログイン成功",
               });
             } else {

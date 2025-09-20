@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { PlanSchema } from "../../server/schemas/common.schema";
-import { errorResToMessage } from "@/lib/utils";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useGetPlan(planId: string) {
   const { data: plan = null, isFetching } = useQuery({
@@ -15,11 +16,8 @@ export default function useGetPlan(planId: string) {
 
 export const getPlanAPI = async (planId: string) => {
   try {
-    const planRes = await fetch(`/api/plans/${planId}`);
-    if (!planRes.ok) {
-      throw new Error(errorResToMessage(planRes, "GET /api/plans/${planId}"));
-    }
-    const plan: PlanSchema = await planRes.json();
+    const res = await apiFetchJson<PlanSchema>(`/api/plans/${planId}`);
+    const plan = camelcaseKeys(res, { deep: true });
     return plan;
   } catch (error) {
     console.error(error);

@@ -10,8 +10,9 @@ import {
   type EditParticipantsFormSchema,
 } from "../schemas/form.schema";
 import { type UpdatePlanParticipantsResSchema } from "../../servers/schemas/res.schema";
-import { errorResToMessage } from "@/lib/utils";
-import { type UpdateParticipantsReqSchema } from "../../servers/schemas/req.schema";
+import { type UpdateParticipantData } from "../../type";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useEditParticipant({
   planId,
@@ -67,19 +68,15 @@ export const editParticipantAPI = async (
   formData: EditParticipantsFormSchema
 ) => {
   try {
-    const res = await fetch(`/api/plans/${planId}/participants`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formatFormDataToReq(prevParticipants, formData)),
-    });
-    if (!res.ok) {
-      throw new Error(
-        errorResToMessage(res, "PUT /api/plans/${planId}/participants")
-      );
-    }
-
-    const updatedPlan: UpdatePlanParticipantsResSchema = await res.json();
-    return updatedPlan;
+    const res = await apiFetchJson<UpdatePlanParticipantsResSchema>(
+      `/api/plans/${planId}/participants`,
+      {
+        method: "PUT",
+        body: formatFormDataToReq(prevParticipants, formData),
+      }
+    );
+    const updatedPlanParticipants = camelcaseKeys(res, { deep: true });
+    return updatedPlanParticipants;
   } catch (error) {
     console.error(error);
     throw error;
@@ -89,7 +86,7 @@ export const editParticipantAPI = async (
 const formatFormDataToReq = (
   prevParticipants: EditParticipantsFormSchema,
   formData: EditParticipantsFormSchema
-): UpdateParticipantsReqSchema => {
+): UpdateParticipantData => {
   const addParticipants = formData.participants.filter(
     (participant) =>
       !prevParticipants.participants.some(

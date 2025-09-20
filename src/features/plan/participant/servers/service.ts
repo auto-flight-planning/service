@@ -1,7 +1,10 @@
 import { planParticipantsRepo } from "@/server/repos/plans";
 import employeesRepo from "@/server/repos/employees/employees.repo";
 import { NotFoundError } from "@/server/lib/errors";
-import { type ParticipantDataList, type ParticipantPermission } from "../type";
+import {
+  type ParticipantPermission,
+  type UpdateParticipantData,
+} from "../type";
 import { type plan_participants as PlanParticipants } from "@/server/db/prisma";
 import { getRedisClient } from "@/server/redis/client";
 import { type PlanParticipantsDto } from "./schemas/res.schema";
@@ -76,11 +79,7 @@ const planParticipantsService = {
     updateParticipantData,
   }: {
     planId: string;
-    updateParticipantData: {
-      addParticipants: ParticipantDataList;
-      updateParticipants: ParticipantDataList;
-      removeParticipantIds: string[];
-    };
+    updateParticipantData: UpdateParticipantData;
   }) {
     const { addParticipants, updateParticipants, removeParticipantIds } =
       updateParticipantData;

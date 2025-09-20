@@ -11,8 +11,9 @@ import {
   type CreatePlanFormData,
 } from "../schemas/formSchema";
 import { type CreatePlanResSchema } from "../../server/schemas/res.schema";
-import { errorResToMessage } from "@/lib/utils";
 import { formatParticipantsField } from "@/features/plan/participant";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useCreatePlan() {
   const formMethods = useForm<CreatePlanFormData>({
@@ -65,20 +66,15 @@ export default function useCreatePlan() {
 
 export const createPlanAPI = async (data: CreatePlanFormData) => {
   try {
-    const res = await fetch("/api/plans", {
+    const res = await apiFetchJson<CreatePlanResSchema>("/api/plans", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+      body: {
         title: data.title,
         targetDate: `${data.year}-${data.month.padStart(2, "0")}-01`,
         participantDataList: formatParticipantsField(data.participants),
-      }),
+      },
     });
-    if (!res.ok) {
-      throw new Error(errorResToMessage(res, "POST /api/plans"));
-    }
-
-    const plan: CreatePlanResSchema = await res.json();
+    const plan = camelcaseKeys(res, { deep: true });
     return plan;
   } catch (error) {
     console.error(error);

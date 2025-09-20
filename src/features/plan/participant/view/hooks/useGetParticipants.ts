@@ -2,7 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { type GetPlanParticipantsResSchema } from "../../servers/schemas/res.schema";
-import { errorResToMessage } from "@/lib/utils";
+import camelcaseKeys from "camelcase-keys";
+import { apiFetchJson } from "@/lib/api";
 
 export default function useGetParticipants(planId: string) {
   const { data: participants = null, isFetching } = useQuery({
@@ -17,17 +18,10 @@ export default function useGetParticipants(planId: string) {
 
 export const getParticipantsAPI = async (planId: string) => {
   try {
-    const participantsRes = await fetch(`/api/plans/${planId}/participants`);
-    if (!participantsRes.ok) {
-      throw new Error(
-        errorResToMessage(
-          participantsRes,
-          "GET /api/plans/${planId}/participants"
-        )
-      );
-    }
-    const participants: GetPlanParticipantsResSchema =
-      await participantsRes.json();
+    const res = await apiFetchJson<GetPlanParticipantsResSchema>(
+      `/api/plans/${planId}/participants`
+    );
+    const participants = camelcaseKeys(res, { deep: true });
     return participants;
   } catch (error) {
     console.error(error);
