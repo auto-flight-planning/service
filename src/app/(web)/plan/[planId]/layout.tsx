@@ -13,7 +13,7 @@ export default async function PlanLayout({
   return (
     <div className="flex flex-col gap-12 w-[90%] max-w-[1200px] h-[90%]">
       <AccessWrapper planId={planId}>
-        <HeaderWrapper planId={planId}>{children}</HeaderWrapper>
+        <HeaderWrapper>{children}</HeaderWrapper>
       </AccessWrapper>
     </div>
   );

@@ -10,9 +10,9 @@ import { Spinner } from "@/components/spinner";
 import { INPUT_DATA_DETAIL_LABELS, INPUT_DATA_LABELS } from "../../constant";
 import InputContainer from "../../widgets/inputContainer";
 
-export default function ResourceInputContainer({ planId }: { planId: string }) {
+export default function ResourceInputContainer() {
   const { openModal } = useModalStore();
-  const { planInputStatus } = useGetPlanInputStatus(planId);
+  const { planInputStatus } = useGetPlanInputStatus();
 
   const inputItems = useMemo(() => {
     if (!planInputStatus) return [];

@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
+import { usePlanId } from "@/features/plan/stores/planStore";
 import {
   type EditTitleFormData,
   editTitleFormSchema,
@@ -12,12 +13,11 @@ import camelcaseKeys from "camelcase-keys";
 import { apiFetchJson } from "@/lib/api";
 
 export default function useEditTitle({
-  planId,
   defaultValue: { title } = { title: "" },
 }: {
-  planId: string;
   defaultValue: EditTitleFormData;
 }) {
+  const planId = usePlanId();
   const formMethods = useForm<EditTitleFormData>({
     mode: "onChange",
     resolver: zodResolver(editTitleFormSchema),

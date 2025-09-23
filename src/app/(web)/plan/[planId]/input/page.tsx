@@ -2,15 +2,7 @@ import { SquareButton } from "@/components/button";
 import { PointCard } from "@/components/card";
 import { InputCategoriesSection } from "@/features/plan/input";
 
-export default async function PlanInputPage({
-  params,
-}: {
-  params: Promise<{
-    planId: string;
-  }>;
-}) {
-  const { planId } = await params;
-
+export default function PlanInputPage() {
   return (
     <div className="flex flex-col gap-8 pb-16">
       <PointCard color="primary" onPointBorder>
@@ -28,7 +20,7 @@ export default async function PlanInputPage({
         </div>
       </PointCard>
 
-      <InputCategoriesSection planId={planId} />
+      <InputCategoriesSection />
 
       <div className="flex justify-end">
         <SquareButton text="結果を算出" bold size="lg" />

@@ -3,6 +3,7 @@
 import { useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/features/auth";
+import usePlanStore from "@/features/plan/stores/planStore";
 import { useGetParticipants } from "@/features/plan/participant";
 import { useToastStore } from "@/features/toast";
 import { DoubleSpinner } from "@/components/spinner";
@@ -15,7 +16,12 @@ export default function AccessWrapper({
   planId: string;
   children: React.ReactNode;
 }) {
-  const { participants } = useGetParticipants(planId);
+  const { setPlanId } = usePlanStore();
+  useEffect(() => {
+    setPlanId(planId);
+  }, []);
+
+  const { participants } = useGetParticipants();
   const { user } = useUserStore();
 
   const hasAccess: boolean | undefined = useMemo(() => {

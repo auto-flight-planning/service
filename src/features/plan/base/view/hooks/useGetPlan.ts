@@ -1,12 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
+import usePlanStore from "@/features/plan/stores/planStore";
 import { PlanSchema } from "../../server/schemas/common.schema";
 import camelcaseKeys from "camelcase-keys";
 import { apiFetchJson } from "@/lib/api";
 
-export default function useGetPlan(planId: string) {
+export default function useGetPlan() {
+  const { planId } = usePlanStore();
+
   const { data: plan = null, isFetching } = useQuery({
     queryKey: ["plan", planId],
-    queryFn: () => getPlanAPI(planId),
+    queryFn: () => getPlanAPI(planId!),
     enabled: !!planId,
     staleTime: 60 * 60 * 1000, // 1時間
   });

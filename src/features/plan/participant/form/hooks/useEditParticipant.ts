@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToastStore } from "@/features/toast";
 import { useModalStore } from "@/features/modal";
+import { usePlanId } from "@/features/plan/stores/planStore";
 import {
   editParticipantsFormSchema,
   type EditParticipantsFormSchema,
@@ -15,12 +16,11 @@ import camelcaseKeys from "camelcase-keys";
 import { apiFetchJson } from "@/lib/api";
 
 export default function useEditParticipant({
-  planId,
   defaultValue,
 }: {
-  planId: string;
   defaultValue: EditParticipantsFormSchema;
 }) {
+  const planId = usePlanId();
   const formMethods = useForm<EditParticipantsFormSchema>({
     mode: "onChange",
     resolver: zodResolver(editParticipantsFormSchema),
@@ -43,7 +43,7 @@ export default function useEditParticipant({
       queryClient.invalidateQueries({
         queryKey: ["plan", planId, "participants"],
       });
-      openModal("participantView", { planId });
+      openModal("participantView");
     },
     onError: (error) => {
       addToast({
