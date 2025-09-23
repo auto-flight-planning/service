@@ -1,14 +1,6 @@
 import { InputHeader } from "@/features/plan/input";
 
-export default async function AirportInputPage({
-  params,
-}: {
-  params: Promise<{
-    planId: string;
-  }>;
-}) {
-  const { planId } = await params;
-
+export default function AirportInputPage() {
   return (
     <div className="flex flex-col gap-4">
       <InputHeader

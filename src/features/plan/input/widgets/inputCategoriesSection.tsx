@@ -1,7 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
+import { usePlanId } from "@/features/plan/stores/planStore";
 import { Spinner } from "@/components/spinner";
 import InputCategoryCard from "../components/inputCategoryCard";
 import {
@@ -12,9 +13,10 @@ import {
 import { getOverallStatus } from "@/features/plan/status/utils";
 import { INPUT_CATEGORY_LABELS } from "@/features/plan/input/constant";
 
-export default function InputCategoriesSection({ planId }: { planId: string }) {
+export default function InputCategoriesSection() {
+  const planId = usePlanId();
   const router = useRouter();
-  const { planInputStatus } = useGetPlanInputStatus(planId);
+  const { planInputStatus } = useGetPlanInputStatus();
 
   const statuses = useMemo(() => {
     if (!planInputStatus) return undefined;

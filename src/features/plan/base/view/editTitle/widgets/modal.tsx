@@ -9,14 +9,11 @@ import EditTitleForm from "./form";
 import { type EditTitleFormData } from "../schemas/editTitleFormSchema";
 
 export default function EditTitleModal({
-  planId,
   defaultValue: { title } = { title: "" },
 }: {
-  planId: string;
   defaultValue: EditTitleFormData;
 }) {
   const { formMethods, onSubmit, isPending } = useEditTitle({
-    planId,
     defaultValue: { title },
   });
   const { closeModal } = useModalStore();

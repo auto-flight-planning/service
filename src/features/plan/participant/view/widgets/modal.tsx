@@ -9,11 +9,11 @@ import { PointCard } from "@/components/card";
 import SelectedParticipantDetail from "../../components/selectedParticipantDetail";
 import { Spinner } from "@/components/spinner";
 
-export default function ParticipantViewModal({ planId }: { planId: string }) {
+export default function ParticipantViewModal() {
   const { openModal, closeModal } = useModalStore();
 
   const { user } = useUserStore();
-  const { participants, isFetching } = useGetParticipants(planId);
+  const { participants, isFetching } = useGetParticipants();
   const isCreator = participants!.creator.userId === user!.userId;
   const participantDataList = participants!.participantDataList;
 
@@ -82,7 +82,6 @@ export default function ParticipantViewModal({ planId }: { planId: string }) {
                     ),
                   };
                   openModal("participantsEdit", {
-                    planId,
                     defaultValue: editFormDefaultValue,
                   });
                 },

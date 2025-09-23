@@ -11,14 +11,12 @@ import { ParticipantButton } from "@/features/plan/participant";
 import { dateToYearMonthJP } from "@/lib/utils";
 
 export default function HeaderWrapper({
-  planId,
   children,
 }: {
-  planId: string;
   children: React.ReactNode;
 }) {
   const { user } = useUserStore();
-  const { plan } = useGetPlan(planId);
+  const { plan } = useGetPlan();
 
   const pathname = usePathname();
   const isInputSubPage = ["/resource", "/analytics", "/airport"].some(
@@ -54,7 +52,6 @@ export default function HeaderWrapper({
                   <EditButton
                     onClick={() =>
                       openModal("editTitle", {
-                        planId,
                         defaultValue: { title: plan.title },
                       })
                     }
@@ -66,7 +63,7 @@ export default function HeaderWrapper({
                   対象期間: {dateToYearMonthJP(new Date(plan.targetDate))}
                 </p>
                 <ParticipantButton
-                  onClick={() => openModal("participantView", { planId })}
+                  onClick={() => openModal("participantView")}
                 />
               </div>
             </div>

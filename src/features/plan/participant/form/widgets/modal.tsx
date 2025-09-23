@@ -9,14 +9,11 @@ import ParticipantsField from "./field";
 import { type EditParticipantsFormSchema } from "../schemas/form.schema";
 
 export default function ParticipantsEditModal({
-  planId,
   defaultValue,
 }: {
-  planId: string;
   defaultValue: EditParticipantsFormSchema;
 }) {
   const { formMethods, onSubmit, isPending } = useEditParticipant({
-    planId,
     defaultValue,
   });
   const { closeModal, openModal } = useModalStore();
@@ -32,7 +29,7 @@ export default function ParticipantsEditModal({
           cancelProps={{
             text: "キャンセル",
             color: "light-gray",
-            onClick: () => openModal("participantView", { planId }),
+            onClick: () => openModal("participantView"),
             disabled: isPending,
           }}
           confirmProps={{
