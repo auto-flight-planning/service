@@ -40,7 +40,7 @@ export default function useLogin() {
       });
       addToast({
         type: "success",
-        message: `${firstName} ${lastName} さん、システムへようこそ。`,
+        message: `${lastName} ${firstName} さん、システムへようこそ。`,
         title: "ログイン成功",
       });
       router.push("/home");

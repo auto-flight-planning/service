@@ -55,7 +55,8 @@ export default function InputContainer({
           onShadow={false}
         >
           <p className="text-sm text-primary-500 font-semibold">
-            📝 各項目をクリックすると、詳細説明を確認し、入力や修正ができます。
+            📝
+            各項目をクリックすると、該当データの入力内容や詳細説明の確認、または入力・編集ができます。
           </p>
         </PointCard>
       ) : (
@@ -83,7 +84,7 @@ export default function InputContainer({
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-primary-500">📧</span>
-              <h3 className="font-bold text-gray-900">データ入力依頼</h3>
+              <h3 className="font-bold text-gray-700">データ入力依頼</h3>
             </div>
             <p className="text-sm text-gray-700 whitespace-pre-line leading-3">
               {mailContainerMessage}

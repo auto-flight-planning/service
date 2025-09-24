@@ -48,7 +48,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
               }
               addToast({
                 type: "success",
-                message: `${rest.firstName} ${rest.lastName} さん、システムへようこそ。`,
+                message: `${rest.lastName} ${rest.firstName} さん、システムへようこそ。`,
                 title: "ログイン成功",
               });
             } else {
