@@ -1,5 +1,8 @@
 export { default as ParticipantButton } from "./components/participantButton";
 
+// Hooks
+export { default as useCheckPermission } from "./hooks/useCheckPermission";
+
 // Field
 export * from "./form/utils";
 export * from "./form/schemas/form.schema";

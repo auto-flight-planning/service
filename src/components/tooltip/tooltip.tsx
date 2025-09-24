@@ -46,6 +46,7 @@ export const Tooltip = ({
       }),
     ],
     whileElementsMounted: autoUpdate,
+    strategy: "fixed",
   });
 
   return (

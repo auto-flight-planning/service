@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { BackButton, SquareButton } from "@/components/button";
+import { useCheckPermission } from "@/features/plan/participant";
+import { SquareButton } from "@/components/button";
+import { Tooltip } from "@/components/tooltip";
 import InputSubCategoryCard, {
   InputSubCategoryCardProps,
 } from "../components/inputSubCategoryCard";
@@ -17,25 +18,13 @@ export default function InputContainer({
   categoryProps: CategoryProps;
 }) {
   // TODO: 외부 입력자 시점 추가
-  const [mode, setMode] = useState("view");
+  const hasRequestAccess = useCheckPermission("REQUEST");
 
   return (
     <section className="flex flex-col gap-8 bg-white p-8 rounded-xl shadow-md mb-8">
       {/* Header */}
-      <header className="flex items-center gap-4 mb-2">
-        {mode === "input" && <BackButton onClick={() => setMode("view")} />}
-        <h4 className="text-xl font-bold text-gray-700">
-          データ入力{mode === "input" ? "状況" : ""}
-        </h4>
-        {mode === "view" && (
-          <SquareButton
-            text="直接入力"
-            color="light-gray"
-            size="md"
-            onBorder
-            onClick={() => setMode("input")}
-          />
-        )}
+      <header className="mb-2">
+        <h4 className="text-xl font-bold text-gray-700">データ入力</h4>
       </header>
 
       {/* Input Cards */}
@@ -46,60 +35,58 @@ export default function InputContainer({
       </section>
 
       {/* 案内 */}
-      {mode === "input" ? (
-        <PointCard
-          color="primary"
-          onBorder
-          onPointBorder
-          background="light"
-          onShadow={false}
-        >
-          <p className="text-sm text-primary-500 font-semibold">
-            📝
-            各項目をクリックすると、該当データの入力内容や詳細説明の確認、または入力・編集ができます。
-          </p>
-        </PointCard>
-      ) : (
-        <PointCard
-          color="light-gray"
-          onBorder
-          background="light"
-          onShadow={false}
-        >
-          <p className="text-sm text-gray-700">
-            📋 各項目をクリックすると、詳細説明と入力データを確認できます。
-          </p>
-        </PointCard>
-      )}
+      <PointCard
+        color="light-gray"
+        onBorder
+        background="light"
+        onShadow={false}
+      >
+        <p className="text-sm text-gray-700">
+          📝
+          各項目をクリックすると、該当データの入力内容や詳細説明を確認できます。入力権限のある方は、入力や編集も可能です。
+        </p>
+      </PointCard>
 
       {/* データ入力依頼 */}
-      {mode === "view" && (
-        <PointCard
-          color="primary"
-          onBorder
-          onPointBorder={false}
-          background="light"
-          onShadow={false}
-        >
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-primary-500">📧</span>
-              <h3 className="font-bold text-gray-700">データ入力依頼</h3>
-            </div>
-            <p className="text-sm text-gray-700 whitespace-pre-line leading-3">
-              {mailContainerMessage}
-            </p>
-            <div>
+      <PointCard
+        color="primary"
+        onBorder
+        onPointBorder={false}
+        background="light"
+        onShadow={false}
+      >
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="text-primary-500">📧</span>
+            <h3 className="font-bold text-gray-700">データ入力依頼</h3>
+          </div>
+          <p className="text-sm text-gray-700 whitespace-pre-line leading-3">
+            {mailContainerMessage}
+          </p>
+          <div>
+            {!hasRequestAccess ? (
+              <Tooltip
+                text="依頼権限のある方のみ、送信できます"
+                className="inline-block"
+              >
+                <SquareButton
+                  text="依頼を送信"
+                  color="primary"
+                  size="md"
+                  disabled={true}
+                />
+              </Tooltip>
+            ) : (
               <SquareButton
                 text="依頼を送信"
                 color="primary"
                 size="md"
                 onClick={onClickSendMail}
               />
-            </div>
+            )}
           </div>
-        </PointCard>
-      )}
+        </div>
+      </PointCard>
     </section>
   );
 }
