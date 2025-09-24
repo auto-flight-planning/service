@@ -28,7 +28,7 @@ export const commonOpenApiResponses = ({
         }
       : {
           403: {
-            description: "使用権限ないユーザーです",
+            description: "使用権限のないユーザーです",
           },
         }),
   }),

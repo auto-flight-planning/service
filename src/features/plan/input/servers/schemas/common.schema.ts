@@ -1,0 +1,33 @@
+import { z } from "zod";
+import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
+import { numberAndBigint } from "@/server/schemas/common.schema";
+
+extendZodWithOpenApi(z);
+
+export const captainCntSchema = numberAndBigint.nullable().optional().openapi({
+  description: "総機長数",
+  example: 20,
+});
+
+export const subCaptainCntSchema = numberAndBigint
+  .nullable()
+  .optional()
+  .openapi({
+    description: "総副操縦士数",
+    example: 30,
+  });
+
+export const otherPersonnelNormSchema = numberAndBigint
+  .nullable()
+  .optional()
+  .openapi({
+    description: "その他総人員指数",
+    example: 50_000,
+  });
+
+export const workforceSchema = z.object({
+  captain_cnt: captainCntSchema,
+  sub_captain_cnt: subCaptainCntSchema,
+  other_personnel_norm: otherPersonnelNormSchema,
+});
+export type WorkforceSchema = z.infer<typeof workforceSchema>;

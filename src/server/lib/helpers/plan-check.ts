@@ -54,7 +54,7 @@ export default async function doPlanCheck({
             type: permissionCheckOptions!.type,
           })
         ) {
-          throw new ForbiddenError("使用権限ないユーザーです");
+          throw new ForbiddenError("使用権限のないユーザーです");
         }
         break;
     }

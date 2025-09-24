@@ -29,6 +29,9 @@ import { registerPlanParticipantsAPIsToDocs } from "@/features/plan/participant/
 // ["Plan Status"]
 import { registerPlanStatusAPIsToDocs } from "@/features/plan/status/server/openapi";
 
+// ["Plan Input"]
+import { registerPlanInputAPIsToDocs } from "@/features/plan/input/servers/openapi";
+
 export const registry = new OpenAPIRegistry();
 
 registry.registerComponent("securitySchemes", "bearerAuth", {
@@ -42,6 +45,7 @@ registerEmployeeAPIsToDocs(registry);
 registerPlanAPIsToDocs(registry);
 registerPlanParticipantsAPIsToDocs(registry);
 registerPlanStatusAPIsToDocs(registry);
+registerPlanInputAPIsToDocs(registry);
 
 // registerGetNotificationSchemas(registry);
 // registerUpdateTotalPersonResourceSchemas(registry);

@@ -15,3 +15,8 @@ export const planIdSchema = z.uuid().openapi({
   example: PLAN_ID_EXAMPLE,
 });
 export type PlanIdSchema = z.infer<typeof planIdSchema>;
+
+// zod
+export const numberAndBigint = z
+  .union([z.bigint(), z.number()])
+  .transform((val) => (typeof val === "number" ? BigInt(val) : Number(val)));
