@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { FLIGHT_ID_EXAMPLE } from "@/constants/openapi.example";
+import { UUID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
@@ -26,7 +26,7 @@ export const revenueSchema = z.number().int().min(0).openapi({
 
 export const flightIdSchema = z.uuid().openapi({
   description: "運航ID",
-  example: FLIGHT_ID_EXAMPLE,
+  example: UUID_EXAMPLE,
 });
 
 export const departureTimeSchema = z

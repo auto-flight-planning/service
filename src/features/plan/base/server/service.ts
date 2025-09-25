@@ -36,7 +36,6 @@ const planService = {
       }),
       planInputsStatusRepo.initOne({ planId: plan.id }),
       planInputsResourcesWorkforceRepo.initOne({ planId: plan.id }),
-      planInputsResourcesFlightScalesRepo.initOne({ planId: plan.id }),
       planInputsAnalyticsRepo.initOne({ planId: plan.id }),
       planInputsAirportsRepo.initAll({ planId: plan.id }),
     ]);

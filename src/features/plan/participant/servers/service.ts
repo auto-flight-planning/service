@@ -84,20 +84,29 @@ const planParticipantsService = {
     const { addParticipants, updateParticipants, removeParticipantIds } =
       updateParticipantData;
 
-    await Promise.all([
-      planParticipantsRepo.insertMany({
-        planId,
-        participantDataList: addParticipants,
-      }),
-      planParticipantsRepo.updateMany({
-        planId,
-        participantDataList: updateParticipants,
-      }),
-      planParticipantsRepo.deleteManyByUserIdList({
-        planId,
-        userIdList: removeParticipantIds,
-      }),
-    ]);
+    const promises = [];
+    if (addParticipants.length)
+      promises.push(
+        planParticipantsRepo.insertMany({
+          planId,
+          participantDataList: addParticipants,
+        })
+      );
+    if (updateParticipants.length)
+      promises.push(
+        planParticipantsRepo.updateMany({
+          planId,
+          participantDataList: updateParticipants,
+        })
+      );
+    if (removeParticipantIds.length)
+      promises.push(
+        planParticipantsRepo.deleteManyByUserIdList({
+          planId,
+          userIdList: removeParticipantIds,
+        })
+      );
+    if (promises.length > 0) await Promise.all(promises);
 
     const updatedParticipants = await planParticipantsRepo.findManyByPlanId({
       planId,

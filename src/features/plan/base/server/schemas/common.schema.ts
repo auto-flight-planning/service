@@ -2,14 +2,14 @@ import z from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { planIdSchema } from "@/server/schemas/common.schema";
 import { planStatusSchema } from "@/features/plan/status/server/schemas/common.schema";
-import { USER_ID_EXAMPLE } from "@/constants/openapi.example";
+import { UUID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
 // 1. 個別スキーマ
 export const planCreatorIdSchema = z.uuid().openapi({
   description: "計画生成者(責任者)のID",
-  example: USER_ID_EXAMPLE,
+  example: UUID_EXAMPLE,
 });
 export type PlanCreatorIdSchema = z.infer<typeof planCreatorIdSchema>;
 

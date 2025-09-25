@@ -26,7 +26,7 @@ export const registerGetTotalPersonResourceSchemas = (
         },
       },
       400: {
-        description: "プランIDを入力してください",
+        description: "計画IDを入力してください",
       },
       404: {
         description: "総人員データが見つかりません",
@@ -55,7 +55,7 @@ export const registerGetFlightScaleResourceSchemas = (
         },
       },
       400: {
-        description: "プランIDを入力してください",
+        description: "計画IDを入力してください",
       },
       404: {
         description: "運航規模データが見つかりません",

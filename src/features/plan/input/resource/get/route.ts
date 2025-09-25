@@ -10,7 +10,7 @@ export const TotalPersonGET = withErrorHandler(async (req: NextRequest) => {
   const planId = req.nextUrl.searchParams.get("planId");
   if (!planId) {
     return NextResponse.json(
-      { error: "プランIDを入力してください" },
+      { error: "計画IDを入力してください" },
       { status: 400 }
     );
   }
@@ -49,7 +49,7 @@ export const FlightScaleGET = withErrorHandler(async (req: NextRequest) => {
   const planId = req.nextUrl.searchParams.get("planId");
   if (!planId) {
     return NextResponse.json(
-      { error: "プランIDを入力してください" },
+      { error: "計画IDを入力してください" },
       { status: 400 }
     );
   }

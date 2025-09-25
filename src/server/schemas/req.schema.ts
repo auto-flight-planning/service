@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { PLAN_ID_EXAMPLE, USER_ID_EXAMPLE } from "@/constants/openapi.example";
+import { UUID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
@@ -12,7 +12,7 @@ export const userIdReqSchema = (type: "path" | "query") =>
         in: type,
       },
       description: "ユーザーID",
-      example: USER_ID_EXAMPLE,
+      example: UUID_EXAMPLE,
     }),
   });
 
@@ -24,6 +24,6 @@ export const planIdReqSchema = (type: "path" | "query") =>
         in: type,
       },
       description: "計画ID",
-      example: PLAN_ID_EXAMPLE,
+      example: UUID_EXAMPLE,
     }),
   });
