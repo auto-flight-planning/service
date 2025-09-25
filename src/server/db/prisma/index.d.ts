@@ -27060,7 +27060,7 @@ export namespace Prisma {
   }
 
   export type Plan_inputs_resources_flight_scale_dataAvgAggregateOutputType = {
-    airplne_cnt: number | null
+    airplane_cnt: number | null
     min_standby_airplane_cnt: number | null
     seat_cnt: number | null
     required_captain_cnt: number | null
@@ -27072,7 +27072,7 @@ export namespace Prisma {
   }
 
   export type Plan_inputs_resources_flight_scale_dataSumAggregateOutputType = {
-    airplne_cnt: bigint | null
+    airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
     required_captain_cnt: bigint | null
@@ -27086,7 +27086,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataMinAggregateOutputType = {
     plan_id: string | null
     flight_scale: string | null
-    airplne_cnt: bigint | null
+    airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
     required_captain_cnt: bigint | null
@@ -27101,7 +27101,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataMaxAggregateOutputType = {
     plan_id: string | null
     flight_scale: string | null
-    airplne_cnt: bigint | null
+    airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
     required_captain_cnt: bigint | null
@@ -27116,7 +27116,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataCountAggregateOutputType = {
     plan_id: number
     flight_scale: number
-    airplne_cnt: number
+    airplane_cnt: number
     min_standby_airplane_cnt: number
     seat_cnt: number
     required_captain_cnt: number
@@ -27131,7 +27131,7 @@ export namespace Prisma {
 
 
   export type Plan_inputs_resources_flight_scale_dataAvgAggregateInputType = {
-    airplne_cnt?: true
+    airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
     required_captain_cnt?: true
@@ -27143,7 +27143,7 @@ export namespace Prisma {
   }
 
   export type Plan_inputs_resources_flight_scale_dataSumAggregateInputType = {
-    airplne_cnt?: true
+    airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
     required_captain_cnt?: true
@@ -27157,7 +27157,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataMinAggregateInputType = {
     plan_id?: true
     flight_scale?: true
-    airplne_cnt?: true
+    airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
     required_captain_cnt?: true
@@ -27172,7 +27172,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataMaxAggregateInputType = {
     plan_id?: true
     flight_scale?: true
-    airplne_cnt?: true
+    airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
     required_captain_cnt?: true
@@ -27187,7 +27187,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataCountAggregateInputType = {
     plan_id?: true
     flight_scale?: true
-    airplne_cnt?: true
+    airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
     required_captain_cnt?: true
@@ -27289,7 +27289,7 @@ export namespace Prisma {
   export type Plan_inputs_resources_flight_scale_dataGroupByOutputType = {
     plan_id: string
     flight_scale: string
-    airplne_cnt: bigint | null
+    airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
     required_captain_cnt: bigint | null
@@ -27323,7 +27323,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
     flight_scale?: boolean
-    airplne_cnt?: boolean
+    airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
     required_captain_cnt?: boolean
@@ -27340,7 +27340,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
     flight_scale?: boolean
-    airplne_cnt?: boolean
+    airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
     required_captain_cnt?: boolean
@@ -27357,7 +27357,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
     flight_scale?: boolean
-    airplne_cnt?: boolean
+    airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
     required_captain_cnt?: boolean
@@ -27374,7 +27374,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataSelectScalar = {
     plan_id?: boolean
     flight_scale?: boolean
-    airplne_cnt?: boolean
+    airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
     required_captain_cnt?: boolean
@@ -27386,7 +27386,7 @@ export namespace Prisma {
     flight_scale_id?: boolean
   }
 
-  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "flight_scale" | "airplne_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_hours" | "required_post_flight_hours" | "min_required_revenue" | "flight_scale_id", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "flight_scale" | "airplane_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_hours" | "required_post_flight_hours" | "min_required_revenue" | "flight_scale_id", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
   export type plan_inputs_resources_flight_scale_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
     plans?: boolean | plansDefaultArgs<ExtArgs>
@@ -27409,7 +27409,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       plan_id: string
       flight_scale: string
-      airplne_cnt: bigint | null
+      airplane_cnt: bigint | null
       min_standby_airplane_cnt: bigint | null
       seat_cnt: bigint | null
       required_captain_cnt: bigint | null
@@ -27846,7 +27846,7 @@ export namespace Prisma {
   interface plan_inputs_resources_flight_scale_dataFieldRefs {
     readonly plan_id: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
     readonly flight_scale: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
-    readonly airplne_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly airplane_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly min_standby_airplane_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly seat_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly required_captain_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
@@ -34123,7 +34123,7 @@ export namespace Prisma {
   export const Plan_inputs_resources_flight_scale_dataScalarFieldEnum: {
     plan_id: 'plan_id',
     flight_scale: 'flight_scale',
-    airplne_cnt: 'airplne_cnt',
+    airplane_cnt: 'airplane_cnt',
     min_standby_airplane_cnt: 'min_standby_airplane_cnt',
     seat_cnt: 'seat_cnt',
     required_captain_cnt: 'required_captain_cnt',
@@ -36000,7 +36000,7 @@ export namespace Prisma {
     NOT?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
     flight_scale?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
-    airplne_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -36017,7 +36017,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataOrderByWithRelationInput = {
     plan_id?: SortOrder
     flight_scale?: SortOrder
-    airplne_cnt?: SortOrderInput | SortOrder
+    airplane_cnt?: SortOrderInput | SortOrder
     min_standby_airplane_cnt?: SortOrderInput | SortOrder
     seat_cnt?: SortOrderInput | SortOrder
     required_captain_cnt?: SortOrderInput | SortOrder
@@ -36038,7 +36038,7 @@ export namespace Prisma {
     NOT?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
     flight_scale?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
-    airplne_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -36054,7 +36054,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataOrderByWithAggregationInput = {
     plan_id?: SortOrder
     flight_scale?: SortOrder
-    airplne_cnt?: SortOrderInput | SortOrder
+    airplane_cnt?: SortOrderInput | SortOrder
     min_standby_airplane_cnt?: SortOrderInput | SortOrder
     seat_cnt?: SortOrderInput | SortOrder
     required_captain_cnt?: SortOrderInput | SortOrder
@@ -36077,7 +36077,7 @@ export namespace Prisma {
     NOT?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput[]
     plan_id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
     flight_scale?: StringWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
-    airplne_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    airplane_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -38144,7 +38144,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataCreateInput = {
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -38160,7 +38160,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataUncheckedCreateInput = {
     plan_id: string
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -38174,7 +38174,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUpdateInput = {
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38190,7 +38190,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38205,7 +38205,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataCreateManyInput = {
     plan_id: string
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -38219,7 +38219,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUpdateManyMutationInput = {
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38233,7 +38233,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -39952,7 +39952,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataCountOrderByAggregateInput = {
     plan_id?: SortOrder
     flight_scale?: SortOrder
-    airplne_cnt?: SortOrder
+    airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
     required_captain_cnt?: SortOrder
@@ -39965,7 +39965,7 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataAvgOrderByAggregateInput = {
-    airplne_cnt?: SortOrder
+    airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
     required_captain_cnt?: SortOrder
@@ -39979,7 +39979,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataMaxOrderByAggregateInput = {
     plan_id?: SortOrder
     flight_scale?: SortOrder
-    airplne_cnt?: SortOrder
+    airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
     required_captain_cnt?: SortOrder
@@ -39994,7 +39994,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataMinOrderByAggregateInput = {
     plan_id?: SortOrder
     flight_scale?: SortOrder
-    airplne_cnt?: SortOrder
+    airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
     required_captain_cnt?: SortOrder
@@ -40007,7 +40007,7 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataSumOrderByAggregateInput = {
-    airplne_cnt?: SortOrder
+    airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
     required_captain_cnt?: SortOrder
@@ -44596,7 +44596,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput = {
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -44611,7 +44611,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput = {
     plan_id: string
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -44675,7 +44675,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -44690,7 +44690,7 @@ export namespace Prisma {
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -45217,7 +45217,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput = {
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -45231,7 +45231,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput = {
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -45505,7 +45505,7 @@ export namespace Prisma {
     NOT?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
     flight_scale?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
-    airplne_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -46263,7 +46263,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataCreateManyPlansInput = {
     flight_scale?: string
-    airplne_cnt?: bigint | number | null
+    airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
     required_captain_cnt?: bigint | number | null
@@ -46305,7 +46305,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUpdateWithoutPlansInput = {
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -46319,7 +46319,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlansInput = {
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -46333,7 +46333,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansInput = {
     flight_scale?: StringFieldUpdateOperationsInput | string
-    airplne_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null

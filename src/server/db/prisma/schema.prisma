@@ -408,7 +408,7 @@ model plan_inputs_analytics {
 model plan_inputs_resources_flight_scale_data {
   plan_id                             String                              @db.Uuid
   flight_scale                        String                              @default("")
-  airplne_cnt                         BigInt?
+  airplane_cnt                        BigInt?
   min_standby_airplane_cnt            BigInt?
   seat_cnt                            BigInt?
   required_captain_cnt                BigInt?
