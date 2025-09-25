@@ -36,7 +36,7 @@ export default function ModalTab({ tabs, defaultTab }: ModalTabProps) {
         ))}
       </div>
 
-      <div className="flex-1 overflow-y-auto p-6 scrollbar-custom">
+      <div className="flex-1 overflow-y-auto scrollbar-custom">
         {activeTabContent}
       </div>
     </div>

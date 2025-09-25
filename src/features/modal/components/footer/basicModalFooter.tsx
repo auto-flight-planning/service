@@ -43,13 +43,14 @@ export default function BasicModalFooter({
     <div className="flex justify-between items-center mt-2 border-t border-gray-200 pt-4">
       <div className="flex-1">
         {explanationText && (
-          <p className="text-sm text-gray-500">{explanationText}</p>
+          <p className="text-xs text-gray-500">{explanationText}</p>
         )}
       </div>
 
       <div className="flex gap-3">
         {!cancelProps.hidden && (
           <SquareButton
+            type="button"
             text={cancelProps.text!}
             onClick={cancelProps.onClick || closeModal}
             color={cancelProps.color}
@@ -57,6 +58,7 @@ export default function BasicModalFooter({
           />
         )}
         <SquareButton
+          type="button"
           text={confirmProps.text}
           onClick={confirmProps.onClick}
           color={confirmProps.color}

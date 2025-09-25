@@ -14,6 +14,12 @@ export const dateToYearMonthJP = (date: Date) => {
 export const errorResToMessage = (res: Response, endpoint: string) =>
   `(${res.status}) ${res.statusText}\n${endpoint} を呼び出しに失敗しました。`;
 
+export const convertBigintToNumber = (
+  number: number | bigint | null | undefined
+) => {
+  return number ? Number(number) : undefined;
+};
+
 // Domain utils
 export const checkPlanParticipantsPermission = ({
   planParticipants,

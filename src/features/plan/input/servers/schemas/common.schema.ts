@@ -1,15 +1,18 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
-import { numberAndBigint } from "@/server/schemas/common.schema";
+import { numberAndBigintSchema } from "@/lib/schema";
 
 extendZodWithOpenApi(z);
 
-export const captainCntSchema = numberAndBigint.nullable().optional().openapi({
-  description: "総機長数",
-  example: 20,
-});
+export const captainCntSchema = numberAndBigintSchema
+  .nullable()
+  .optional()
+  .openapi({
+    description: "総機長数",
+    example: 20,
+  });
 
-export const subCaptainCntSchema = numberAndBigint
+export const subCaptainCntSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
@@ -17,7 +20,7 @@ export const subCaptainCntSchema = numberAndBigint
     example: 30,
   });
 
-export const otherPersonnelNormSchema = numberAndBigint
+export const otherPersonnelNormSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({

@@ -36,10 +36,9 @@ export default function StatusChip({
 
 const colorStyles = {
   [ALL_COLOR_OPTIONS.PRIMARY]:
-    "bg-primary-500/10 text-primary-500 border-primary-500",
-  [ALL_COLOR_OPTIONS.GREEN]: "bg-green-500/10 text-green-500 border-green-500",
-  [ALL_COLOR_OPTIONS.YELLOW]:
-    "bg-yellow-500/10 text-yellow-500 border-yellow-500",
+    "bg-primary-50 text-primary-500 border-primary-500",
+  [ALL_COLOR_OPTIONS.GREEN]: "bg-green-50 text-green-500 border-green-500",
+  [ALL_COLOR_OPTIONS.YELLOW]: "bg-yellow-50 text-yellow-500 border-yellow-500",
   [ALL_COLOR_OPTIONS["LIGHT-GRAY"]]:
     "bg-gray-100 text-gray-500 border-gray-300",
 };
