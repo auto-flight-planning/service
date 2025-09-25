@@ -6,7 +6,7 @@ interface NumberedModalHeaderProps {
   onClose: () => void;
 }
 
-export default function NumberedModalHeader({
+export default function NumberModalHeader({
   title,
   number,
   onClose,

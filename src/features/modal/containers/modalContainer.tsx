@@ -10,6 +10,7 @@ import { CreatePlanModal } from "@/features/plan/base/create";
 import { EditTitleModal } from "@/features/plan/base/view";
 import { ParticipantViewModal } from "@/features/plan/participant";
 import { ParticipantsEditModal } from "@/features/plan/participant";
+import { WorkforceInputModal } from "@/features/plan/input/resource";
 
 export default function ModalContainer() {
   const MODAL_COMPONENTS = {
@@ -18,6 +19,7 @@ export default function ModalContainer() {
     editTitle: EditTitleModal,
     participantView: ParticipantViewModal,
     participantsEdit: ParticipantsEditModal,
+    workforceInput: WorkforceInputModal,
   };
 
   const { isOpen, modalName, modalProps, closeModal } = useModalStore();

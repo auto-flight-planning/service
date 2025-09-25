@@ -23,7 +23,9 @@ export default function ResourceInputContainer() {
         title: INPUT_DATA_LABELS.RESOURCES_WORKFORCE,
         items: Object.values(INPUT_DATA_DETAIL_LABELS.RESOURCES_WORKFORCE),
         status: statuses[0].status,
-        onClick: () => {},
+        onClick: () => {
+          openModal("workforceInput");
+        },
       },
       {
         number: 2,
