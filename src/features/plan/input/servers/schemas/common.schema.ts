@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { numberAndBigintSchema } from "@/lib/schema";
+import { UUID_EXAMPLE } from "@/constants/openapi.example";
 
 extendZodWithOpenApi(z);
 
@@ -34,3 +35,19 @@ export const workforceSchema = z.object({
   other_personnel_norm: otherPersonnelNormSchema,
 });
 export type WorkforceSchema = z.infer<typeof workforceSchema>;
+
+export const flightScaleIdSchema = z.uuid().openapi({
+  description: "運航規模種類ID",
+  example: UUID_EXAMPLE,
+});
+export const flightScaleNameSchema = z.string().openapi({
+  description: "運航規模種類名",
+  example: "小型機",
+});
+export const flightScaleSchema = z.array(
+  z.object({
+    id: flightScaleIdSchema,
+    flight_scale_name: flightScaleNameSchema,
+  })
+);
+export type FlightScaleSchema = z.infer<typeof flightScaleSchema>;

@@ -2,6 +2,8 @@ import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { workforceSchema } from "./schemas/common.schema";
 import { commonOpenApiResponses } from "@/server/lib/helpers";
+import { updateFlightScalesReqSchema } from "./schemas/req.schema";
+import { flightScalesResSchema } from "./schemas/res.schema";
 
 export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
@@ -53,6 +55,67 @@ export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
         content: {
           "application/json": {
             schema: workforceSchema,
+          },
+        },
+      },
+      ...commonOpenApiResponses({
+        auth: true,
+        planNotFound: true,
+        permission: true,
+        permissionType: "INPUT",
+      }),
+    },
+  });
+
+  registry.registerPath({
+    method: "get",
+    path: "/api/plans/{planId}/inputs/resources/flight-scales",
+    tags: ["Plan Input"],
+    summary: "運航規模の種類データをplanIdで取得",
+    security: [{ BearerAuth: [] }],
+    request: {
+      params: planIdReqSchema("path"),
+    },
+    responses: {
+      200: {
+        description: "運航規模の種類データを取得しました",
+        content: {
+          "application/json": {
+            schema: flightScalesResSchema,
+          },
+        },
+      },
+      ...commonOpenApiResponses({
+        auth: true,
+        planNotFound: true,
+        permission: true,
+        permissionType: "VIEW",
+      }),
+    },
+  });
+
+  registry.registerPath({
+    method: "put",
+    path: "/api/plans/{planId}/inputs/resources/flight-scales",
+    tags: ["Plan Input"],
+    summary: "運航規模の種類データを変更",
+    security: [{ BearerAuth: [] }],
+    request: {
+      params: planIdReqSchema("path"),
+      body: {
+        content: {
+          "application/json": {
+            schema: updateFlightScalesReqSchema,
+          },
+        },
+      },
+    },
+    responses: {
+      200: {
+        description: "運航規模の種類データを変更しました",
+        content: {
+          "application/json": {
+            schema: flightScalesResSchema,
           },
         },
       },

@@ -10,3 +10,10 @@ export type UseTypeState = [
   "edit" | "view",
   Dispatch<SetStateAction<"edit" | "view">>
 ];
+
+export type FlightScales = { id: string; flightScaleName: string }[];
+export type UpdateFlightScales = {
+  addFlightScaleNames: string[];
+  flightScalesToUpdate: FlightScales;
+  removeFlightScaleIds: string[];
+};
