@@ -366,7 +366,7 @@ exports.Prisma.Plan_inputs_analyticsScalarFieldEnum = {
 
 exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
   plan_id: 'plan_id',
-  flight_scale: 'flight_scale',
+  flight_scale_name: 'flight_scale_name',
   airplane_cnt: 'airplane_cnt',
   min_standby_airplane_cnt: 'min_standby_airplane_cnt',
   seat_cnt: 'seat_cnt',
@@ -381,7 +381,7 @@ exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
 
 exports.Prisma.Plan_inputs_resources_flight_scalesScalarFieldEnum = {
   plan_id: 'plan_id',
-  flight_scale: 'flight_scale',
+  flight_scale_name: 'flight_scale_name',
   id: 'id'
 };
 

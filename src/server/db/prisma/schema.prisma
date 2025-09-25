@@ -407,7 +407,7 @@ model plan_inputs_analytics {
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_inputs_resources_flight_scale_data {
   plan_id                             String                              @db.Uuid
-  flight_scale                        String                              @default("")
+  flight_scale_name                   String                              @default("")
   airplane_cnt                        BigInt?
   min_standby_airplane_cnt            BigInt?
   seat_cnt                            BigInt?
@@ -427,7 +427,7 @@ model plan_inputs_resources_flight_scale_data {
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model plan_inputs_resources_flight_scales {
   plan_id                                 String                                   @db.Uuid
-  flight_scale                            String                                   @default("EMPTY")
+  flight_scale_name                       String                                   @default("EMPTY")
   id                                      String                                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   plan_inputs_resources_flight_scale_data plan_inputs_resources_flight_scale_data?
   plans                                   plans                                    @relation(fields: [plan_id], references: [id], onDelete: Cascade)
