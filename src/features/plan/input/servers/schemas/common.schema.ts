@@ -44,81 +44,72 @@ export const flightScaleNameSchema = z.string().optional().openapi({
   description: "運航規模種類名",
   example: "小型機",
 });
-export const flightScaleIndexSchema = z.number().optional().openapi({
+export const flightScaleIndexSchema = numberAndBigintSchema.optional().openapi({
   description: "インデックス",
   example: 1,
 });
-export const flightScaleAirplaneCntSchema = z
-  .number()
+export const flightScaleAirplaneCntSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
     description: "総運航機数",
     example: 10,
   });
-export const flightScaleMinStandbyAirplaneCntSchema = z
-  .number()
+export const flightScaleMinStandbyAirplaneCntSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
     description: "最小待機運航機数",
-    example: 1,
+    example: 3,
   });
-export const flightScaleSeatCntSchema = z
-  .number()
+export const flightScaleSeatCntSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
     description: "座席数",
-    example: 1,
+    example: 200,
   });
-export const flightScaleRequiredCaptainCntSchema = z
-  .number()
+export const flightScaleRequiredCaptainCntSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
     description: "必要機長数",
     example: 1,
   });
-export const flightScaleRequiredSubCaptainCntSchema = z
-  .number()
+export const flightScaleRequiredSubCaptainCntSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
     description: "必要副操縦士数",
     example: 1,
   });
-export const flightScaleRequiredOtherPersonnelNormSchema = z
-  .number()
+export const flightScaleRequiredOtherPersonnelNormSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
     description: "その他必要人員指数",
-    example: 1,
+    example: 40,
   });
-export const flightScaleRequiredPreFlightHoursSchema = z
-  .number()
+export const flightScaleRequiredPreFlightMinutesSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
-    description: "飛行前必要時間",
-    example: 1,
+    description: "飛行前必要時間 (分)",
+    example: 600,
   });
-export const flightScaleRequiredPostFlightHoursSchema = z
-  .number()
+export const flightScaleRequiredPostFlightMinutesSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
-    description: "飛行後必要時間",
-    example: 1,
+    description: "飛行後必要時間 (分)",
+    example: 420,
   });
-export const flightScaleMinRequiredRevenueSchema = z
-  .number()
+export const flightScaleMinRequiredRevenueSchema = numberAndBigintSchema
   .nullable()
   .optional()
   .openapi({
-    description: "運航可能最小収益",
-    example: 1,
+    description: "運航可能最小収益 (円)",
+    example: 1_500_000,
   });
 
 export const flightScaleDataSchema = z.object({
@@ -130,8 +121,8 @@ export const flightScaleDataSchema = z.object({
   required_captain_cnt: flightScaleRequiredCaptainCntSchema,
   required_sub_captain_cnt: flightScaleRequiredSubCaptainCntSchema,
   required_other_personnel_norm: flightScaleRequiredOtherPersonnelNormSchema,
-  required_pre_flight_hours: flightScaleRequiredPreFlightHoursSchema,
-  required_post_flight_hours: flightScaleRequiredPostFlightHoursSchema,
+  required_pre_flight_minutes: flightScaleRequiredPreFlightMinutesSchema,
+  required_post_flight_minutes: flightScaleRequiredPostFlightMinutesSchema,
   min_required_revenue: flightScaleMinRequiredRevenueSchema,
 });
 export type FlightScaleDataSchema = z.infer<typeof flightScaleDataSchema>;

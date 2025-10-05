@@ -7,7 +7,6 @@ export { default as planInputsStatusRepo } from "./status/plan-inputs-status.rep
 
 // Inputs
 export { default as planInputsResourcesWorkforceRepo } from "./inputs/resources/workforce.repo";
-export { default as planInputsResourcesFlightScalesRepo } from "./inputs/resources/flight-scales.repo";
 export { default as planInputsResourcesFlightScaleDataRepo } from "./inputs/resources/flight-scale-data.repo";
 export { default as planInputsAnalyticsRepo } from "./inputs/analytics.repo";
 export { default as planInputsAirportsRepo } from "./inputs/airports.repo";

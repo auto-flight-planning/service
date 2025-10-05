@@ -15,6 +15,7 @@ const planInputsResourcesFlightScaleDataRepo = {
   async findAllByPlanId({ planId }: { planId: string }) {
     return prismaClient.plan_inputs_resources_flight_scale_data.findMany({
       where: { plan_id: planId },
+      orderBy: { index: "asc" },
     });
   },
 

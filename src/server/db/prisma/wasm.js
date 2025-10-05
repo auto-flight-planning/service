@@ -373,8 +373,8 @@ exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
   required_captain_cnt: 'required_captain_cnt',
   required_sub_captain_cnt: 'required_sub_captain_cnt',
   required_other_personnel_norm: 'required_other_personnel_norm',
-  required_pre_flight_hours: 'required_pre_flight_hours',
-  required_post_flight_hours: 'required_post_flight_hours',
+  required_pre_flight_minutes: 'required_pre_flight_minutes',
+  required_post_flight_minutes: 'required_post_flight_minutes',
   min_required_revenue: 'min_required_revenue',
   id: 'id',
   index: 'index'

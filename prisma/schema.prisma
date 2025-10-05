@@ -414,8 +414,8 @@ model plan_inputs_resources_flight_scale_data {
   required_captain_cnt          BigInt?
   required_sub_captain_cnt      BigInt?
   required_other_personnel_norm BigInt?
-  required_pre_flight_hours     BigInt?
-  required_post_flight_hours    BigInt?
+  required_pre_flight_minutes   BigInt?
+  required_post_flight_minutes  BigInt?
   min_required_revenue          BigInt?
   id                            String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   index                         BigInt

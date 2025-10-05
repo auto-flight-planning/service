@@ -56,34 +56,40 @@ const planInputService = {
     const promises = [];
 
     // 1. add
-    promises.push(
-      planInputsResourcesFlightScaleDataRepo.insertMany({
-        flightScaleDatas: addFlightScaleDatas.map(
-          ({ name, index, ...rest }) => ({
-            plan_id: planId,
-            name: name!,
-            index: index!,
-            ...rest,
-          })
-        ),
-      })
-    );
+    if (addFlightScaleDatas.length > 0) {
+      promises.push(
+        planInputsResourcesFlightScaleDataRepo.insertMany({
+          flightScaleDatas: addFlightScaleDatas.map(
+            ({ name, index, ...rest }) => ({
+              plan_id: planId,
+              name: name!,
+              index: index!,
+              ...snakeCaseKeys(rest, { deep: true }),
+            })
+          ),
+        })
+      );
+    }
 
     // 2. update
-    promises.push(
-      planInputsResourcesFlightScaleDataRepo.updateMany({
-        flightScaleDatas: snakeCaseKeys(updateFlightScaleDatas, {
-          deep: true,
-        }),
-      })
-    );
+    if (updateFlightScaleDatas.length > 0) {
+      promises.push(
+        planInputsResourcesFlightScaleDataRepo.updateMany({
+          flightScaleDatas: snakeCaseKeys(updateFlightScaleDatas, {
+            deep: true,
+          }),
+        })
+      );
+    }
 
     // 3. remove
-    promises.push(
-      planInputsResourcesFlightScaleDataRepo.deleteMany({
-        ids: removeFlightScaleDataIds,
-      })
-    );
+    if (removeFlightScaleDataIds.length > 0) {
+      promises.push(
+        planInputsResourcesFlightScaleDataRepo.deleteMany({
+          ids: removeFlightScaleDataIds,
+        })
+      );
+    }
 
     if (promises.length > 0) await Promise.all(promises);
 

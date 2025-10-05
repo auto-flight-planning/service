@@ -13,15 +13,15 @@ export type UseTypeState = [
 
 export type FlightScaleData = {
   name?: string;
-  index?: number;
+  index?: number | bigint;
   airplaneCnt?: number | bigint | null;
   minStandbyAirplaneCnt?: number | bigint | null;
   seatCnt?: number | bigint | null;
   requiredCaptainCnt?: number | bigint | null;
   requiredSubCaptainCnt?: number | bigint | null;
   requiredOtherPersonnelNorm?: number | bigint | null;
-  requiredPreFlightHours?: number | bigint | null;
-  requiredPostFlightHours?: number | bigint | null;
+  requiredPreFlightMinutes?: number | bigint | null;
+  requiredPostFlightMinutes?: number | bigint | null;
   minRequiredRevenue?: number | bigint | null;
 };
 export type FlightScaleDataWithId = FlightScaleData & {

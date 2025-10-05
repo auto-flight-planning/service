@@ -26966,8 +26966,8 @@ export namespace Prisma {
     required_captain_cnt: number | null
     required_sub_captain_cnt: number | null
     required_other_personnel_norm: number | null
-    required_pre_flight_hours: number | null
-    required_post_flight_hours: number | null
+    required_pre_flight_minutes: number | null
+    required_post_flight_minutes: number | null
     min_required_revenue: number | null
     index: number | null
   }
@@ -26979,8 +26979,8 @@ export namespace Prisma {
     required_captain_cnt: bigint | null
     required_sub_captain_cnt: bigint | null
     required_other_personnel_norm: bigint | null
-    required_pre_flight_hours: bigint | null
-    required_post_flight_hours: bigint | null
+    required_pre_flight_minutes: bigint | null
+    required_post_flight_minutes: bigint | null
     min_required_revenue: bigint | null
     index: bigint | null
   }
@@ -26994,8 +26994,8 @@ export namespace Prisma {
     required_captain_cnt: bigint | null
     required_sub_captain_cnt: bigint | null
     required_other_personnel_norm: bigint | null
-    required_pre_flight_hours: bigint | null
-    required_post_flight_hours: bigint | null
+    required_pre_flight_minutes: bigint | null
+    required_post_flight_minutes: bigint | null
     min_required_revenue: bigint | null
     id: string | null
     index: bigint | null
@@ -27010,8 +27010,8 @@ export namespace Prisma {
     required_captain_cnt: bigint | null
     required_sub_captain_cnt: bigint | null
     required_other_personnel_norm: bigint | null
-    required_pre_flight_hours: bigint | null
-    required_post_flight_hours: bigint | null
+    required_pre_flight_minutes: bigint | null
+    required_post_flight_minutes: bigint | null
     min_required_revenue: bigint | null
     id: string | null
     index: bigint | null
@@ -27026,8 +27026,8 @@ export namespace Prisma {
     required_captain_cnt: number
     required_sub_captain_cnt: number
     required_other_personnel_norm: number
-    required_pre_flight_hours: number
-    required_post_flight_hours: number
+    required_pre_flight_minutes: number
+    required_post_flight_minutes: number
     min_required_revenue: number
     id: number
     index: number
@@ -27042,8 +27042,8 @@ export namespace Prisma {
     required_captain_cnt?: true
     required_sub_captain_cnt?: true
     required_other_personnel_norm?: true
-    required_pre_flight_hours?: true
-    required_post_flight_hours?: true
+    required_pre_flight_minutes?: true
+    required_post_flight_minutes?: true
     min_required_revenue?: true
     index?: true
   }
@@ -27055,8 +27055,8 @@ export namespace Prisma {
     required_captain_cnt?: true
     required_sub_captain_cnt?: true
     required_other_personnel_norm?: true
-    required_pre_flight_hours?: true
-    required_post_flight_hours?: true
+    required_pre_flight_minutes?: true
+    required_post_flight_minutes?: true
     min_required_revenue?: true
     index?: true
   }
@@ -27070,8 +27070,8 @@ export namespace Prisma {
     required_captain_cnt?: true
     required_sub_captain_cnt?: true
     required_other_personnel_norm?: true
-    required_pre_flight_hours?: true
-    required_post_flight_hours?: true
+    required_pre_flight_minutes?: true
+    required_post_flight_minutes?: true
     min_required_revenue?: true
     id?: true
     index?: true
@@ -27086,8 +27086,8 @@ export namespace Prisma {
     required_captain_cnt?: true
     required_sub_captain_cnt?: true
     required_other_personnel_norm?: true
-    required_pre_flight_hours?: true
-    required_post_flight_hours?: true
+    required_pre_flight_minutes?: true
+    required_post_flight_minutes?: true
     min_required_revenue?: true
     id?: true
     index?: true
@@ -27102,8 +27102,8 @@ export namespace Prisma {
     required_captain_cnt?: true
     required_sub_captain_cnt?: true
     required_other_personnel_norm?: true
-    required_pre_flight_hours?: true
-    required_post_flight_hours?: true
+    required_pre_flight_minutes?: true
+    required_post_flight_minutes?: true
     min_required_revenue?: true
     id?: true
     index?: true
@@ -27205,8 +27205,8 @@ export namespace Prisma {
     required_captain_cnt: bigint | null
     required_sub_captain_cnt: bigint | null
     required_other_personnel_norm: bigint | null
-    required_pre_flight_hours: bigint | null
-    required_post_flight_hours: bigint | null
+    required_pre_flight_minutes: bigint | null
+    required_post_flight_minutes: bigint | null
     min_required_revenue: bigint | null
     id: string
     index: bigint
@@ -27240,8 +27240,8 @@ export namespace Prisma {
     required_captain_cnt?: boolean
     required_sub_captain_cnt?: boolean
     required_other_personnel_norm?: boolean
-    required_pre_flight_hours?: boolean
-    required_post_flight_hours?: boolean
+    required_pre_flight_minutes?: boolean
+    required_post_flight_minutes?: boolean
     min_required_revenue?: boolean
     id?: boolean
     index?: boolean
@@ -27257,8 +27257,8 @@ export namespace Prisma {
     required_captain_cnt?: boolean
     required_sub_captain_cnt?: boolean
     required_other_personnel_norm?: boolean
-    required_pre_flight_hours?: boolean
-    required_post_flight_hours?: boolean
+    required_pre_flight_minutes?: boolean
+    required_post_flight_minutes?: boolean
     min_required_revenue?: boolean
     id?: boolean
     index?: boolean
@@ -27274,8 +27274,8 @@ export namespace Prisma {
     required_captain_cnt?: boolean
     required_sub_captain_cnt?: boolean
     required_other_personnel_norm?: boolean
-    required_pre_flight_hours?: boolean
-    required_post_flight_hours?: boolean
+    required_pre_flight_minutes?: boolean
+    required_post_flight_minutes?: boolean
     min_required_revenue?: boolean
     id?: boolean
     index?: boolean
@@ -27291,14 +27291,14 @@ export namespace Prisma {
     required_captain_cnt?: boolean
     required_sub_captain_cnt?: boolean
     required_other_personnel_norm?: boolean
-    required_pre_flight_hours?: boolean
-    required_post_flight_hours?: boolean
+    required_pre_flight_minutes?: boolean
+    required_post_flight_minutes?: boolean
     min_required_revenue?: boolean
     id?: boolean
     index?: boolean
   }
 
-  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "name" | "airplane_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_hours" | "required_post_flight_hours" | "min_required_revenue" | "id" | "index", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "name" | "airplane_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_minutes" | "required_post_flight_minutes" | "min_required_revenue" | "id" | "index", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
   export type plan_inputs_resources_flight_scale_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }
@@ -27323,8 +27323,8 @@ export namespace Prisma {
       required_captain_cnt: bigint | null
       required_sub_captain_cnt: bigint | null
       required_other_personnel_norm: bigint | null
-      required_pre_flight_hours: bigint | null
-      required_post_flight_hours: bigint | null
+      required_pre_flight_minutes: bigint | null
+      required_post_flight_minutes: bigint | null
       min_required_revenue: bigint | null
       id: string
       index: bigint
@@ -27760,8 +27760,8 @@ export namespace Prisma {
     readonly required_captain_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly required_sub_captain_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly required_other_personnel_norm: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
-    readonly required_pre_flight_hours: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
-    readonly required_post_flight_hours: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_pre_flight_minutes: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
+    readonly required_post_flight_minutes: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly min_required_revenue: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly id: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
     readonly index: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
@@ -32942,8 +32942,8 @@ export namespace Prisma {
     required_captain_cnt: 'required_captain_cnt',
     required_sub_captain_cnt: 'required_sub_captain_cnt',
     required_other_personnel_norm: 'required_other_personnel_norm',
-    required_pre_flight_hours: 'required_pre_flight_hours',
-    required_post_flight_hours: 'required_post_flight_hours',
+    required_pre_flight_minutes: 'required_pre_flight_minutes',
+    required_post_flight_minutes: 'required_post_flight_minutes',
     min_required_revenue: 'min_required_revenue',
     id: 'id',
     index: 'index'
@@ -34810,8 +34810,8 @@ export namespace Prisma {
     required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_minutes?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_minutes?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
     index?: BigIntFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
@@ -34827,8 +34827,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrderInput | SortOrder
     required_sub_captain_cnt?: SortOrderInput | SortOrder
     required_other_personnel_norm?: SortOrderInput | SortOrder
-    required_pre_flight_hours?: SortOrderInput | SortOrder
-    required_post_flight_hours?: SortOrderInput | SortOrder
+    required_pre_flight_minutes?: SortOrderInput | SortOrder
+    required_post_flight_minutes?: SortOrderInput | SortOrder
     min_required_revenue?: SortOrderInput | SortOrder
     id?: SortOrder
     index?: SortOrder
@@ -34848,8 +34848,8 @@ export namespace Prisma {
     required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_minutes?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_minutes?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     index?: BigIntFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
     plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
@@ -34864,8 +34864,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrderInput | SortOrder
     required_sub_captain_cnt?: SortOrderInput | SortOrder
     required_other_personnel_norm?: SortOrderInput | SortOrder
-    required_pre_flight_hours?: SortOrderInput | SortOrder
-    required_post_flight_hours?: SortOrderInput | SortOrder
+    required_pre_flight_minutes?: SortOrderInput | SortOrder
+    required_post_flight_minutes?: SortOrderInput | SortOrder
     min_required_revenue?: SortOrderInput | SortOrder
     id?: SortOrder
     index?: SortOrder
@@ -34888,8 +34888,8 @@ export namespace Prisma {
     required_captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_sub_captain_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_other_personnel_norm?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_pre_flight_hours?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_post_flight_hours?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_minutes?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_minutes?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
     index?: BigIntWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
@@ -36900,8 +36900,8 @@ export namespace Prisma {
     required_captain_cnt?: bigint | number | null
     required_sub_captain_cnt?: bigint | number | null
     required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
+    required_pre_flight_minutes?: bigint | number | null
+    required_post_flight_minutes?: bigint | number | null
     min_required_revenue?: bigint | number | null
     id?: string
     index: bigint | number
@@ -36917,8 +36917,8 @@ export namespace Prisma {
     required_captain_cnt?: bigint | number | null
     required_sub_captain_cnt?: bigint | number | null
     required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
+    required_pre_flight_minutes?: bigint | number | null
+    required_post_flight_minutes?: bigint | number | null
     min_required_revenue?: bigint | number | null
     id?: string
     index: bigint | number
@@ -36932,8 +36932,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
@@ -36949,8 +36949,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
@@ -36965,8 +36965,8 @@ export namespace Prisma {
     required_captain_cnt?: bigint | number | null
     required_sub_captain_cnt?: bigint | number | null
     required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
+    required_pre_flight_minutes?: bigint | number | null
+    required_post_flight_minutes?: bigint | number | null
     min_required_revenue?: bigint | number | null
     id?: string
     index: bigint | number
@@ -36980,8 +36980,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
@@ -36996,8 +36996,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
@@ -38655,8 +38655,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrder
     required_sub_captain_cnt?: SortOrder
     required_other_personnel_norm?: SortOrder
-    required_pre_flight_hours?: SortOrder
-    required_post_flight_hours?: SortOrder
+    required_pre_flight_minutes?: SortOrder
+    required_post_flight_minutes?: SortOrder
     min_required_revenue?: SortOrder
     id?: SortOrder
     index?: SortOrder
@@ -38669,8 +38669,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrder
     required_sub_captain_cnt?: SortOrder
     required_other_personnel_norm?: SortOrder
-    required_pre_flight_hours?: SortOrder
-    required_post_flight_hours?: SortOrder
+    required_pre_flight_minutes?: SortOrder
+    required_post_flight_minutes?: SortOrder
     min_required_revenue?: SortOrder
     index?: SortOrder
   }
@@ -38684,8 +38684,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrder
     required_sub_captain_cnt?: SortOrder
     required_other_personnel_norm?: SortOrder
-    required_pre_flight_hours?: SortOrder
-    required_post_flight_hours?: SortOrder
+    required_pre_flight_minutes?: SortOrder
+    required_post_flight_minutes?: SortOrder
     min_required_revenue?: SortOrder
     id?: SortOrder
     index?: SortOrder
@@ -38700,8 +38700,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrder
     required_sub_captain_cnt?: SortOrder
     required_other_personnel_norm?: SortOrder
-    required_pre_flight_hours?: SortOrder
-    required_post_flight_hours?: SortOrder
+    required_pre_flight_minutes?: SortOrder
+    required_post_flight_minutes?: SortOrder
     min_required_revenue?: SortOrder
     id?: SortOrder
     index?: SortOrder
@@ -38714,8 +38714,8 @@ export namespace Prisma {
     required_captain_cnt?: SortOrder
     required_sub_captain_cnt?: SortOrder
     required_other_personnel_norm?: SortOrder
-    required_pre_flight_hours?: SortOrder
-    required_post_flight_hours?: SortOrder
+    required_pre_flight_minutes?: SortOrder
+    required_post_flight_minutes?: SortOrder
     min_required_revenue?: SortOrder
     index?: SortOrder
   }
@@ -43573,8 +43573,8 @@ export namespace Prisma {
     required_captain_cnt?: bigint | number | null
     required_sub_captain_cnt?: bigint | number | null
     required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
+    required_pre_flight_minutes?: bigint | number | null
+    required_post_flight_minutes?: bigint | number | null
     min_required_revenue?: bigint | number | null
     id?: string
     index: bigint | number
@@ -43588,8 +43588,8 @@ export namespace Prisma {
     required_captain_cnt?: bigint | number | null
     required_sub_captain_cnt?: bigint | number | null
     required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
+    required_pre_flight_minutes?: bigint | number | null
+    required_post_flight_minutes?: bigint | number | null
     min_required_revenue?: bigint | number | null
     id?: string
     index: bigint | number
@@ -43839,8 +43839,8 @@ export namespace Prisma {
     required_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_sub_captain_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_other_personnel_norm?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_pre_flight_minutes?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
+    required_post_flight_minutes?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
     index?: BigIntFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
@@ -44569,8 +44569,8 @@ export namespace Prisma {
     required_captain_cnt?: bigint | number | null
     required_sub_captain_cnt?: bigint | number | null
     required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
+    required_pre_flight_minutes?: bigint | number | null
+    required_post_flight_minutes?: bigint | number | null
     min_required_revenue?: bigint | number | null
     id?: string
     index: bigint | number
@@ -44607,8 +44607,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
@@ -44622,8 +44622,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
@@ -44637,8 +44637,8 @@ export namespace Prisma {
     required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_pre_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    required_post_flight_minutes?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     id?: StringFieldUpdateOperationsInput | string
     index?: BigIntFieldUpdateOperationsInput | bigint | number
