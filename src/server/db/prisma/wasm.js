@@ -366,7 +366,7 @@ exports.Prisma.Plan_inputs_analyticsScalarFieldEnum = {
 
 exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
   plan_id: 'plan_id',
-  flight_scale_name: 'flight_scale_name',
+  name: 'name',
   airplane_cnt: 'airplane_cnt',
   min_standby_airplane_cnt: 'min_standby_airplane_cnt',
   seat_cnt: 'seat_cnt',
@@ -376,13 +376,8 @@ exports.Prisma.Plan_inputs_resources_flight_scale_dataScalarFieldEnum = {
   required_pre_flight_hours: 'required_pre_flight_hours',
   required_post_flight_hours: 'required_post_flight_hours',
   min_required_revenue: 'min_required_revenue',
-  flight_scale_id: 'flight_scale_id'
-};
-
-exports.Prisma.Plan_inputs_resources_flight_scalesScalarFieldEnum = {
-  plan_id: 'plan_id',
-  flight_scale_name: 'flight_scale_name',
-  id: 'id'
+  id: 'id',
+  index: 'index'
 };
 
 exports.Prisma.Plan_inputs_resources_workforceScalarFieldEnum = {
@@ -395,7 +390,6 @@ exports.Prisma.Plan_inputs_resources_workforceScalarFieldEnum = {
 exports.Prisma.Plan_inputs_statusScalarFieldEnum = {
   plan_id: 'plan_id',
   resources_workforce_status: 'resources_workforce_status',
-  resources_flight_scales_status: 'resources_flight_scales_status',
   resources_flight_scale_data_status: 'resources_flight_scale_data_status',
   analytics_flight_candidates_status: 'analytics_flight_candidates_status',
   analytics_round_trip_normalization_status: 'analytics_round_trip_normalization_status',
@@ -506,7 +500,6 @@ exports.Prisma.ModelName = {
   plan_inputs_airports: 'plan_inputs_airports',
   plan_inputs_analytics: 'plan_inputs_analytics',
   plan_inputs_resources_flight_scale_data: 'plan_inputs_resources_flight_scale_data',
-  plan_inputs_resources_flight_scales: 'plan_inputs_resources_flight_scales',
   plan_inputs_resources_workforce: 'plan_inputs_resources_workforce',
   plan_inputs_status: 'plan_inputs_status',
   plan_participants: 'plan_participants',

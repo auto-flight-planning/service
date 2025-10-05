@@ -1,43 +1,41 @@
+import { Prisma } from "@/server/db/prisma";
 import { prismaClient } from "@/server/db/prismaClient";
-import { type FlightScaleSchema } from "@/features/plan/input/servers/schemas/common.schema";
 
 const planInputsResourcesFlightScaleDataRepo = {
-  async initMany({
-    planId,
-    flightScales,
+  async insertMany({
+    flightScaleDatas,
   }: {
-    planId: string;
-    flightScales: FlightScaleSchema;
+    flightScaleDatas: Prisma.plan_inputs_resources_flight_scale_dataCreateManyInput[];
   }) {
     return prismaClient.plan_inputs_resources_flight_scale_data.createMany({
-      data: flightScales.map(({ id, flight_scale_name }) => ({
-        plan_id: planId,
-        flight_scale_id: id,
-        flight_scale_name,
-      })),
+      data: flightScaleDatas,
     });
   },
 
-  async findManyByPlanId({ planId }: { planId: string }) {
+  async findAllByPlanId({ planId }: { planId: string }) {
     return prismaClient.plan_inputs_resources_flight_scale_data.findMany({
       where: { plan_id: planId },
     });
   },
 
-  async updateManyByFlightScales({
-    planId,
-    flightScales,
+  async updateMany({
+    flightScaleDatas,
   }: {
-    planId: string;
-    flightScales: FlightScaleSchema;
+    flightScaleDatas: Prisma.plan_inputs_resources_flight_scale_dataUpdateInput[];
   }) {
-    const updatePromises = flightScales.map(({ id, flight_scale_name }) =>
+    const updatePromises = flightScaleDatas.map((data) =>
       prismaClient.plan_inputs_resources_flight_scale_data.update({
-        where: { plan_id: planId, flight_scale_id: id },
-        data: { flight_scale_name },
+        where: { id: data.id! as string },
+        data,
       })
     );
     return Promise.all(updatePromises);
+  },
+
+  async deleteMany({ ids }: { ids: string[] }) {
+    return prismaClient.plan_inputs_resources_flight_scale_data.deleteMany({
+      where: { id: { in: ids } },
+    });
   },
 };
 

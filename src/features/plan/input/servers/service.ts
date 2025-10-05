@@ -1,10 +1,9 @@
 import {
-  planInputsResourcesFlightScalesRepo,
-  planInputsResourcesFlightScaleDataRepo,
   planInputsResourcesWorkforceRepo,
+  planInputsResourcesFlightScaleDataRepo,
   planInputsStatusRepo,
 } from "@/server/repos/plans";
-import { type UpdateFlightScales, type WorkforceData } from "../types";
+import { type WorkforceData, type UpdateFlightScaleDatas } from "../types";
 import snakeCaseKeys from "snakecase-keys";
 
 const planInputService = {
@@ -41,101 +40,86 @@ const planInputService = {
     return updatedWorkforceData;
   },
 
-  async updateFlightScales({
+  async updateFlightScaleDatas({
     planId,
-    flightScales,
+    flightScaleDatas,
   }: {
     planId: string;
-    flightScales: UpdateFlightScales;
+    flightScaleDatas: UpdateFlightScaleDatas;
   }) {
-    const { addFlightScaleNames, flightScalesToUpdate, removeFlightScaleIds } =
-      flightScales;
+    const {
+      addFlightScaleDatas,
+      updateFlightScaleDatas,
+      removeFlightScaleDataIds,
+    } = flightScaleDatas;
 
-    // 1. add new scales
-    await planInputsResourcesFlightScalesRepo.insertManyByPlanId({
-      planId,
-      scaleNames: addFlightScaleNames,
-    });
-    const insertedFlightScales =
-      await planInputsResourcesFlightScalesRepo.findManyByPlanIdAndFlightScales(
-        {
-          planId,
-          scaleNames: addFlightScaleNames,
-        }
-      );
-    await planInputsResourcesFlightScaleDataRepo.initMany({
-      planId,
-      flightScales: insertedFlightScales.map(({ plan_id, ...rest }) => rest),
-    });
+    const promises = [];
 
-    // 2. update existing scales
-    const snakeCaseScalesToUpdate = snakeCaseKeys(flightScalesToUpdate, {
-      deep: true,
-    });
-    await Promise.all([
-      planInputsResourcesFlightScalesRepo.updateMany({
-        planId,
-        flightScales: snakeCaseScalesToUpdate,
-      }),
-      planInputsResourcesFlightScaleDataRepo.updateManyByFlightScales({
-        planId,
-        flightScales: snakeCaseScalesToUpdate,
-      }),
-    ]);
+    // 1. add
+    promises.push(
+      planInputsResourcesFlightScaleDataRepo.insertMany({
+        flightScaleDatas: addFlightScaleDatas.map(
+          ({ name, index, ...rest }) => ({
+            plan_id: planId,
+            name: name!,
+            index: index!,
+            ...rest,
+          })
+        ),
+      })
+    );
 
-    // 3. remove scales
-    await planInputsResourcesFlightScalesRepo.deleteMany({
-      planId,
-      ids: removeFlightScaleIds,
-    });
+    // 2. update
+    promises.push(
+      planInputsResourcesFlightScaleDataRepo.updateMany({
+        flightScaleDatas: snakeCaseKeys(updateFlightScaleDatas, {
+          deep: true,
+        }),
+      })
+    );
+
+    // 3. remove
+    promises.push(
+      planInputsResourcesFlightScaleDataRepo.deleteMany({
+        ids: removeFlightScaleDataIds,
+      })
+    );
+
+    if (promises.length > 0) await Promise.all(promises);
 
     // 4. update status
-    const updatedFlightScales =
-      await planInputsResourcesFlightScalesRepo.findAllByPlanId({
+    const updatedFlightScaleData =
+      await planInputsResourcesFlightScaleDataRepo.findAllByPlanId({
         planId,
       });
-    if (updatedFlightScales.length === 0) {
+
+    if (updatedFlightScaleData.length === 0) {
       await planInputsStatusRepo.updateOne({
         planId,
         data: {
-          resources_flight_scales_status: false,
           resources_flight_scale_data_status: "NOT_STARTED",
         },
       });
     } else {
-      const updatedFlightScaleData =
-        await planInputsResourcesFlightScaleDataRepo.findManyByPlanId({
-          planId,
-        });
-
-      let restLength = 0;
-      const filteredFlightScaleData = updatedFlightScaleData.map(
-        ({ plan_id, flight_scale_name, flight_scale_id, ...rest }) => {
-          if (!restLength) restLength = Object.keys(rest).length;
-          return rest;
+      const inputStatuses = updatedFlightScaleData.map(
+        ({ plan_id, id, name, index, ...rest }) => {
+          const dataValues = Object.values(rest);
+          return dataValues.every((value) => value !== null);
         }
       );
-
-      const nullCntArr = filteredFlightScaleData.map((data) => {
-        const dataValues = Object.values(data);
-        return dataValues.filter((value) => value === null).length;
-      });
-
-      const newStatus = nullCntArr.every((cnt) => cnt === 0)
-        ? "COMPLETED"
-        : nullCntArr.every((cnt) => cnt === restLength)
-        ? "NOT_STARTED"
-        : "IN_PROGRESS";
       await planInputsStatusRepo.updateOne({
         planId,
         data: {
-          resources_flight_scales_status: true,
-          resources_flight_scale_data_status: newStatus,
+          resources_flight_scale_data_status: inputStatuses.every(
+            (value) => value
+          )
+            ? "COMPLETED"
+            : "IN_PROGRESS",
         },
       });
     }
 
-    return updatedFlightScales;
+    return updatedFlightScaleData;
   },
 };
 

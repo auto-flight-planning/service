@@ -2,8 +2,8 @@ import { OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { workforceSchema } from "./schemas/common.schema";
 import { commonOpenApiResponses } from "@/server/lib/helpers";
-import { updateFlightScalesReqSchema } from "./schemas/req.schema";
-import { flightScalesResSchema } from "./schemas/res.schema";
+import { updateFlightScaleDataReqSchema } from "./schemas/req.schema";
+import { flightScaleDataResSchema } from "./schemas/res.schema";
 
 export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
@@ -69,19 +69,19 @@ export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
 
   registry.registerPath({
     method: "get",
-    path: "/api/plans/{planId}/inputs/resources/flight-scales",
+    path: "/api/plans/{planId}/inputs/resources/flight-scale-data",
     tags: ["Plan Input"],
-    summary: "運航規模の種類データをplanIdで取得",
+    summary: "運航規模別データをplanIdで取得",
     security: [{ BearerAuth: [] }],
     request: {
       params: planIdReqSchema("path"),
     },
     responses: {
       200: {
-        description: "運航規模の種類データを取得しました",
+        description: "運航規模別データを取得しました",
         content: {
           "application/json": {
-            schema: flightScalesResSchema,
+            schema: flightScaleDataResSchema,
           },
         },
       },
@@ -96,7 +96,7 @@ export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
 
   registry.registerPath({
     method: "put",
-    path: "/api/plans/{planId}/inputs/resources/flight-scales",
+    path: "/api/plans/{planId}/inputs/resources/flight-scale-data",
     tags: ["Plan Input"],
     summary: "運航規模の種類データを変更",
     security: [{ BearerAuth: [] }],
@@ -105,17 +105,17 @@ export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
       body: {
         content: {
           "application/json": {
-            schema: updateFlightScalesReqSchema,
+            schema: updateFlightScaleDataReqSchema,
           },
         },
       },
     },
     responses: {
       200: {
-        description: "運航規模の種類データを変更しました",
+        description: "運航規模別データを変更しました",
         content: {
           "application/json": {
-            schema: flightScalesResSchema,
+            schema: flightScaleDataResSchema,
           },
         },
       },

@@ -148,11 +148,6 @@ export type plan_inputs_analytics = $Result.DefaultSelection<Prisma.$plan_inputs
  */
 export type plan_inputs_resources_flight_scale_data = $Result.DefaultSelection<Prisma.$plan_inputs_resources_flight_scale_dataPayload>
 /**
- * Model plan_inputs_resources_flight_scales
- * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
- */
-export type plan_inputs_resources_flight_scales = $Result.DefaultSelection<Prisma.$plan_inputs_resources_flight_scalesPayload>
-/**
  * Model plan_inputs_resources_workforce
  * This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
  */
@@ -593,16 +588,6 @@ export class PrismaClient<
     * ```
     */
   get plan_inputs_resources_flight_scale_data(): Prisma.plan_inputs_resources_flight_scale_dataDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.plan_inputs_resources_flight_scales`: Exposes CRUD operations for the **plan_inputs_resources_flight_scales** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Plan_inputs_resources_flight_scales
-    * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findMany()
-    * ```
-    */
-  get plan_inputs_resources_flight_scales(): Prisma.plan_inputs_resources_flight_scalesDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.plan_inputs_resources_workforce`: Exposes CRUD operations for the **plan_inputs_resources_workforce** model.
@@ -1105,7 +1090,6 @@ export namespace Prisma {
     plan_inputs_airports: 'plan_inputs_airports',
     plan_inputs_analytics: 'plan_inputs_analytics',
     plan_inputs_resources_flight_scale_data: 'plan_inputs_resources_flight_scale_data',
-    plan_inputs_resources_flight_scales: 'plan_inputs_resources_flight_scales',
     plan_inputs_resources_workforce: 'plan_inputs_resources_workforce',
     plan_inputs_status: 'plan_inputs_status',
     plan_participants: 'plan_participants',
@@ -1128,7 +1112,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "oauth_clients" | "airports" | "plan_inputs_airports" | "plan_inputs_analytics" | "plan_inputs_resources_flight_scale_data" | "plan_inputs_resources_flight_scales" | "plan_inputs_resources_workforce" | "plan_inputs_status" | "plan_participants" | "plans"
+      modelProps: "audit_log_entries" | "flow_state" | "identities" | "instances" | "mfa_amr_claims" | "mfa_challenges" | "mfa_factors" | "one_time_tokens" | "refresh_tokens" | "saml_providers" | "saml_relay_states" | "schema_migrations" | "sessions" | "sso_domains" | "sso_providers" | "users" | "employees" | "oauth_clients" | "airports" | "plan_inputs_airports" | "plan_inputs_analytics" | "plan_inputs_resources_flight_scale_data" | "plan_inputs_resources_workforce" | "plan_inputs_status" | "plan_participants" | "plans"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2760,80 +2744,6 @@ export namespace Prisma {
           }
         }
       }
-      plan_inputs_resources_flight_scales: {
-        payload: Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>
-        fields: Prisma.plan_inputs_resources_flight_scalesFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.plan_inputs_resources_flight_scalesFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
-          }
-          findFirst: {
-            args: Prisma.plan_inputs_resources_flight_scalesFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.plan_inputs_resources_flight_scalesFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
-          }
-          findMany: {
-            args: Prisma.plan_inputs_resources_flight_scalesFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>[]
-          }
-          create: {
-            args: Prisma.plan_inputs_resources_flight_scalesCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
-          }
-          createMany: {
-            args: Prisma.plan_inputs_resources_flight_scalesCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.plan_inputs_resources_flight_scalesCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>[]
-          }
-          delete: {
-            args: Prisma.plan_inputs_resources_flight_scalesDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
-          }
-          update: {
-            args: Prisma.plan_inputs_resources_flight_scalesUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
-          }
-          deleteMany: {
-            args: Prisma.plan_inputs_resources_flight_scalesDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.plan_inputs_resources_flight_scalesUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>[]
-          }
-          upsert: {
-            args: Prisma.plan_inputs_resources_flight_scalesUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$plan_inputs_resources_flight_scalesPayload>
-          }
-          aggregate: {
-            args: Prisma.Plan_inputs_resources_flight_scalesAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePlan_inputs_resources_flight_scales>
-          }
-          groupBy: {
-            args: Prisma.plan_inputs_resources_flight_scalesGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Plan_inputs_resources_flight_scalesGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.plan_inputs_resources_flight_scalesCountArgs<ExtArgs>
-            result: $Utils.Optional<Plan_inputs_resources_flight_scalesCountAggregateOutputType> | number
-          }
-        }
-      }
       plan_inputs_resources_workforce: {
         payload: Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>
         fields: Prisma.plan_inputs_resources_workforceFieldRefs
@@ -3244,7 +3154,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsOmit
     plan_inputs_analytics?: plan_inputs_analyticsOmit
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataOmit
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesOmit
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceOmit
     plan_inputs_status?: plan_inputs_statusOmit
     plan_participants?: plan_participantsOmit
@@ -3589,14 +3498,12 @@ export namespace Prisma {
   export type PlansCountOutputType = {
     plan_inputs_airports: number
     plan_inputs_resources_flight_scale_data: number
-    plan_inputs_resources_flight_scales: number
     plan_participants: number
   }
 
   export type PlansCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plan_inputs_airports?: boolean | PlansCountOutputTypeCountPlan_inputs_airportsArgs
     plan_inputs_resources_flight_scale_data?: boolean | PlansCountOutputTypeCountPlan_inputs_resources_flight_scale_dataArgs
-    plan_inputs_resources_flight_scales?: boolean | PlansCountOutputTypeCountPlan_inputs_resources_flight_scalesArgs
     plan_participants?: boolean | PlansCountOutputTypeCountPlan_participantsArgs
   }
 
@@ -3623,13 +3530,6 @@ export namespace Prisma {
    */
   export type PlansCountOutputTypeCountPlan_inputs_resources_flight_scale_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: plan_inputs_resources_flight_scale_dataWhereInput
-  }
-
-  /**
-   * PlansCountOutputType without action
-   */
-  export type PlansCountOutputTypeCountPlan_inputs_resources_flight_scalesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: plan_inputs_resources_flight_scalesWhereInput
   }
 
   /**
@@ -27069,6 +26969,7 @@ export namespace Prisma {
     required_pre_flight_hours: number | null
     required_post_flight_hours: number | null
     min_required_revenue: number | null
+    index: number | null
   }
 
   export type Plan_inputs_resources_flight_scale_dataSumAggregateOutputType = {
@@ -27081,11 +26982,12 @@ export namespace Prisma {
     required_pre_flight_hours: bigint | null
     required_post_flight_hours: bigint | null
     min_required_revenue: bigint | null
+    index: bigint | null
   }
 
   export type Plan_inputs_resources_flight_scale_dataMinAggregateOutputType = {
     plan_id: string | null
-    flight_scale_name: string | null
+    name: string | null
     airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
@@ -27095,12 +26997,13 @@ export namespace Prisma {
     required_pre_flight_hours: bigint | null
     required_post_flight_hours: bigint | null
     min_required_revenue: bigint | null
-    flight_scale_id: string | null
+    id: string | null
+    index: bigint | null
   }
 
   export type Plan_inputs_resources_flight_scale_dataMaxAggregateOutputType = {
     plan_id: string | null
-    flight_scale_name: string | null
+    name: string | null
     airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
@@ -27110,12 +27013,13 @@ export namespace Prisma {
     required_pre_flight_hours: bigint | null
     required_post_flight_hours: bigint | null
     min_required_revenue: bigint | null
-    flight_scale_id: string | null
+    id: string | null
+    index: bigint | null
   }
 
   export type Plan_inputs_resources_flight_scale_dataCountAggregateOutputType = {
     plan_id: number
-    flight_scale_name: number
+    name: number
     airplane_cnt: number
     min_standby_airplane_cnt: number
     seat_cnt: number
@@ -27125,7 +27029,8 @@ export namespace Prisma {
     required_pre_flight_hours: number
     required_post_flight_hours: number
     min_required_revenue: number
-    flight_scale_id: number
+    id: number
+    index: number
     _all: number
   }
 
@@ -27140,6 +27045,7 @@ export namespace Prisma {
     required_pre_flight_hours?: true
     required_post_flight_hours?: true
     min_required_revenue?: true
+    index?: true
   }
 
   export type Plan_inputs_resources_flight_scale_dataSumAggregateInputType = {
@@ -27152,11 +27058,12 @@ export namespace Prisma {
     required_pre_flight_hours?: true
     required_post_flight_hours?: true
     min_required_revenue?: true
+    index?: true
   }
 
   export type Plan_inputs_resources_flight_scale_dataMinAggregateInputType = {
     plan_id?: true
-    flight_scale_name?: true
+    name?: true
     airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
@@ -27166,12 +27073,13 @@ export namespace Prisma {
     required_pre_flight_hours?: true
     required_post_flight_hours?: true
     min_required_revenue?: true
-    flight_scale_id?: true
+    id?: true
+    index?: true
   }
 
   export type Plan_inputs_resources_flight_scale_dataMaxAggregateInputType = {
     plan_id?: true
-    flight_scale_name?: true
+    name?: true
     airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
@@ -27181,12 +27089,13 @@ export namespace Prisma {
     required_pre_flight_hours?: true
     required_post_flight_hours?: true
     min_required_revenue?: true
-    flight_scale_id?: true
+    id?: true
+    index?: true
   }
 
   export type Plan_inputs_resources_flight_scale_dataCountAggregateInputType = {
     plan_id?: true
-    flight_scale_name?: true
+    name?: true
     airplane_cnt?: true
     min_standby_airplane_cnt?: true
     seat_cnt?: true
@@ -27196,7 +27105,8 @@ export namespace Prisma {
     required_pre_flight_hours?: true
     required_post_flight_hours?: true
     min_required_revenue?: true
-    flight_scale_id?: true
+    id?: true
+    index?: true
     _all?: true
   }
 
@@ -27288,7 +27198,7 @@ export namespace Prisma {
 
   export type Plan_inputs_resources_flight_scale_dataGroupByOutputType = {
     plan_id: string
-    flight_scale_name: string
+    name: string
     airplane_cnt: bigint | null
     min_standby_airplane_cnt: bigint | null
     seat_cnt: bigint | null
@@ -27298,7 +27208,8 @@ export namespace Prisma {
     required_pre_flight_hours: bigint | null
     required_post_flight_hours: bigint | null
     min_required_revenue: bigint | null
-    flight_scale_id: string
+    id: string
+    index: bigint
     _count: Plan_inputs_resources_flight_scale_dataCountAggregateOutputType | null
     _avg: Plan_inputs_resources_flight_scale_dataAvgAggregateOutputType | null
     _sum: Plan_inputs_resources_flight_scale_dataSumAggregateOutputType | null
@@ -27322,7 +27233,7 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
-    flight_scale_name?: boolean
+    name?: boolean
     airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
@@ -27332,14 +27243,14 @@ export namespace Prisma {
     required_pre_flight_hours?: boolean
     required_post_flight_hours?: boolean
     min_required_revenue?: boolean
-    flight_scale_id?: boolean
-    plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
+    id?: boolean
+    index?: boolean
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
 
   export type plan_inputs_resources_flight_scale_dataSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
-    flight_scale_name?: boolean
+    name?: boolean
     airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
@@ -27349,14 +27260,14 @@ export namespace Prisma {
     required_pre_flight_hours?: boolean
     required_post_flight_hours?: boolean
     min_required_revenue?: boolean
-    flight_scale_id?: boolean
-    plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
+    id?: boolean
+    index?: boolean
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
 
   export type plan_inputs_resources_flight_scale_dataSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
-    flight_scale_name?: boolean
+    name?: boolean
     airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
@@ -27366,14 +27277,14 @@ export namespace Prisma {
     required_pre_flight_hours?: boolean
     required_post_flight_hours?: boolean
     min_required_revenue?: boolean
-    flight_scale_id?: boolean
-    plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
+    id?: boolean
+    index?: boolean
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
 
   export type plan_inputs_resources_flight_scale_dataSelectScalar = {
     plan_id?: boolean
-    flight_scale_name?: boolean
+    name?: boolean
     airplane_cnt?: boolean
     min_standby_airplane_cnt?: boolean
     seat_cnt?: boolean
@@ -27383,32 +27294,29 @@ export namespace Prisma {
     required_pre_flight_hours?: boolean
     required_post_flight_hours?: boolean
     min_required_revenue?: boolean
-    flight_scale_id?: boolean
+    id?: boolean
+    index?: boolean
   }
 
-  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "flight_scale_name" | "airplane_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_hours" | "required_post_flight_hours" | "min_required_revenue" | "flight_scale_id", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
+  export type plan_inputs_resources_flight_scale_dataOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "name" | "airplane_cnt" | "min_standby_airplane_cnt" | "seat_cnt" | "required_captain_cnt" | "required_sub_captain_cnt" | "required_other_personnel_norm" | "required_pre_flight_hours" | "required_post_flight_hours" | "min_required_revenue" | "id" | "index", ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
   export type plan_inputs_resources_flight_scale_dataInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }
   export type plan_inputs_resources_flight_scale_dataIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }
   export type plan_inputs_resources_flight_scale_dataIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    plan_inputs_resources_flight_scales?: boolean | plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }
 
   export type $plan_inputs_resources_flight_scale_dataPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "plan_inputs_resources_flight_scale_data"
     objects: {
-      plan_inputs_resources_flight_scales: Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>
       plans: Prisma.$plansPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       plan_id: string
-      flight_scale_name: string
+      name: string
       airplane_cnt: bigint | null
       min_standby_airplane_cnt: bigint | null
       seat_cnt: bigint | null
@@ -27418,7 +27326,8 @@ export namespace Prisma {
       required_pre_flight_hours: bigint | null
       required_post_flight_hours: bigint | null
       min_required_revenue: bigint | null
-      flight_scale_id: string
+      id: string
+      index: bigint
     }, ExtArgs["result"]["plan_inputs_resources_flight_scale_data"]>
     composites: {}
   }
@@ -27813,7 +27722,6 @@ export namespace Prisma {
    */
   export interface Prisma__plan_inputs_resources_flight_scale_dataClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    plan_inputs_resources_flight_scales<T extends plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -27845,7 +27753,7 @@ export namespace Prisma {
    */
   interface plan_inputs_resources_flight_scale_dataFieldRefs {
     readonly plan_id: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
-    readonly flight_scale_name: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
+    readonly name: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
     readonly airplane_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly min_standby_airplane_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly seat_cnt: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
@@ -27855,7 +27763,8 @@ export namespace Prisma {
     readonly required_pre_flight_hours: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly required_post_flight_hours: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
     readonly min_required_revenue: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
-    readonly flight_scale_id: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
+    readonly id: FieldRef<"plan_inputs_resources_flight_scale_data", 'String'>
+    readonly index: FieldRef<"plan_inputs_resources_flight_scale_data", 'BigInt'>
   }
     
 
@@ -28267,1061 +28176,6 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model plan_inputs_resources_flight_scales
-   */
-
-  export type AggregatePlan_inputs_resources_flight_scales = {
-    _count: Plan_inputs_resources_flight_scalesCountAggregateOutputType | null
-    _min: Plan_inputs_resources_flight_scalesMinAggregateOutputType | null
-    _max: Plan_inputs_resources_flight_scalesMaxAggregateOutputType | null
-  }
-
-  export type Plan_inputs_resources_flight_scalesMinAggregateOutputType = {
-    plan_id: string | null
-    flight_scale_name: string | null
-    id: string | null
-  }
-
-  export type Plan_inputs_resources_flight_scalesMaxAggregateOutputType = {
-    plan_id: string | null
-    flight_scale_name: string | null
-    id: string | null
-  }
-
-  export type Plan_inputs_resources_flight_scalesCountAggregateOutputType = {
-    plan_id: number
-    flight_scale_name: number
-    id: number
-    _all: number
-  }
-
-
-  export type Plan_inputs_resources_flight_scalesMinAggregateInputType = {
-    plan_id?: true
-    flight_scale_name?: true
-    id?: true
-  }
-
-  export type Plan_inputs_resources_flight_scalesMaxAggregateInputType = {
-    plan_id?: true
-    flight_scale_name?: true
-    id?: true
-  }
-
-  export type Plan_inputs_resources_flight_scalesCountAggregateInputType = {
-    plan_id?: true
-    flight_scale_name?: true
-    id?: true
-    _all?: true
-  }
-
-  export type Plan_inputs_resources_flight_scalesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which plan_inputs_resources_flight_scales to aggregate.
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of plan_inputs_resources_flight_scales to fetch.
-     */
-    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` plan_inputs_resources_flight_scales.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned plan_inputs_resources_flight_scales
-    **/
-    _count?: true | Plan_inputs_resources_flight_scalesCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Plan_inputs_resources_flight_scalesMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Plan_inputs_resources_flight_scalesMaxAggregateInputType
-  }
-
-  export type GetPlan_inputs_resources_flight_scalesAggregateType<T extends Plan_inputs_resources_flight_scalesAggregateArgs> = {
-        [P in keyof T & keyof AggregatePlan_inputs_resources_flight_scales]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregatePlan_inputs_resources_flight_scales[P]>
-      : GetScalarType<T[P], AggregatePlan_inputs_resources_flight_scales[P]>
-  }
-
-
-
-
-  export type plan_inputs_resources_flight_scalesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    orderBy?: plan_inputs_resources_flight_scalesOrderByWithAggregationInput | plan_inputs_resources_flight_scalesOrderByWithAggregationInput[]
-    by: Plan_inputs_resources_flight_scalesScalarFieldEnum[] | Plan_inputs_resources_flight_scalesScalarFieldEnum
-    having?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Plan_inputs_resources_flight_scalesCountAggregateInputType | true
-    _min?: Plan_inputs_resources_flight_scalesMinAggregateInputType
-    _max?: Plan_inputs_resources_flight_scalesMaxAggregateInputType
-  }
-
-  export type Plan_inputs_resources_flight_scalesGroupByOutputType = {
-    plan_id: string
-    flight_scale_name: string
-    id: string
-    _count: Plan_inputs_resources_flight_scalesCountAggregateOutputType | null
-    _min: Plan_inputs_resources_flight_scalesMinAggregateOutputType | null
-    _max: Plan_inputs_resources_flight_scalesMaxAggregateOutputType | null
-  }
-
-  type GetPlan_inputs_resources_flight_scalesGroupByPayload<T extends plan_inputs_resources_flight_scalesGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Plan_inputs_resources_flight_scalesGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Plan_inputs_resources_flight_scalesGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Plan_inputs_resources_flight_scalesGroupByOutputType[P]>
-            : GetScalarType<T[P], Plan_inputs_resources_flight_scalesGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type plan_inputs_resources_flight_scalesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    plan_id?: boolean
-    flight_scale_name?: boolean
-    id?: boolean
-    plan_inputs_resources_flight_scale_data?: boolean | plan_inputs_resources_flight_scales$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>
-    plans?: boolean | plansDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
-
-  export type plan_inputs_resources_flight_scalesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    plan_id?: boolean
-    flight_scale_name?: boolean
-    id?: boolean
-    plans?: boolean | plansDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
-
-  export type plan_inputs_resources_flight_scalesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    plan_id?: boolean
-    flight_scale_name?: boolean
-    id?: boolean
-    plans?: boolean | plansDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
-
-  export type plan_inputs_resources_flight_scalesSelectScalar = {
-    plan_id?: boolean
-    flight_scale_name?: boolean
-    id?: boolean
-  }
-
-  export type plan_inputs_resources_flight_scalesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "flight_scale_name" | "id", ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
-  export type plan_inputs_resources_flight_scalesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    plan_inputs_resources_flight_scale_data?: boolean | plan_inputs_resources_flight_scales$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>
-    plans?: boolean | plansDefaultArgs<ExtArgs>
-  }
-  export type plan_inputs_resources_flight_scalesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    plans?: boolean | plansDefaultArgs<ExtArgs>
-  }
-  export type plan_inputs_resources_flight_scalesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    plans?: boolean | plansDefaultArgs<ExtArgs>
-  }
-
-  export type $plan_inputs_resources_flight_scalesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "plan_inputs_resources_flight_scales"
-    objects: {
-      plan_inputs_resources_flight_scale_data: Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs> | null
-      plans: Prisma.$plansPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      plan_id: string
-      flight_scale_name: string
-      id: string
-    }, ExtArgs["result"]["plan_inputs_resources_flight_scales"]>
-    composites: {}
-  }
-
-  type plan_inputs_resources_flight_scalesGetPayload<S extends boolean | null | undefined | plan_inputs_resources_flight_scalesDefaultArgs> = $Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload, S>
-
-  type plan_inputs_resources_flight_scalesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<plan_inputs_resources_flight_scalesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Plan_inputs_resources_flight_scalesCountAggregateInputType | true
-    }
-
-  export interface plan_inputs_resources_flight_scalesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['plan_inputs_resources_flight_scales'], meta: { name: 'plan_inputs_resources_flight_scales' } }
-    /**
-     * Find zero or one Plan_inputs_resources_flight_scales that matches the filter.
-     * @param {plan_inputs_resources_flight_scalesFindUniqueArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
-     * @example
-     * // Get one Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends plan_inputs_resources_flight_scalesFindUniqueArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesFindUniqueArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Plan_inputs_resources_flight_scales that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
-     * @example
-     * // Get one Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Plan_inputs_resources_flight_scales that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {plan_inputs_resources_flight_scalesFindFirstArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
-     * @example
-     * // Get one Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends plan_inputs_resources_flight_scalesFindFirstArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesFindFirstArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Plan_inputs_resources_flight_scales that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {plan_inputs_resources_flight_scalesFindFirstOrThrowArgs} args - Arguments to find a Plan_inputs_resources_flight_scales
-     * @example
-     * // Get one Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends plan_inputs_resources_flight_scalesFindFirstOrThrowArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesFindFirstOrThrowArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Plan_inputs_resources_flight_scales that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {plan_inputs_resources_flight_scalesFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findMany()
-     * 
-     * // Get first 10 Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.findMany({ take: 10 })
-     * 
-     * // Only select the `plan_id`
-     * const plan_inputs_resources_flight_scalesWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scales.findMany({ select: { plan_id: true } })
-     * 
-     */
-    findMany<T extends plan_inputs_resources_flight_scalesFindManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Plan_inputs_resources_flight_scales.
-     * @param {plan_inputs_resources_flight_scalesCreateArgs} args - Arguments to create a Plan_inputs_resources_flight_scales.
-     * @example
-     * // Create one Plan_inputs_resources_flight_scales
-     * const Plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.create({
-     *   data: {
-     *     // ... data to create a Plan_inputs_resources_flight_scales
-     *   }
-     * })
-     * 
-     */
-    create<T extends plan_inputs_resources_flight_scalesCreateArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesCreateArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Plan_inputs_resources_flight_scales.
-     * @param {plan_inputs_resources_flight_scalesCreateManyArgs} args - Arguments to create many Plan_inputs_resources_flight_scales.
-     * @example
-     * // Create many Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends plan_inputs_resources_flight_scalesCreateManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Plan_inputs_resources_flight_scales and returns the data saved in the database.
-     * @param {plan_inputs_resources_flight_scalesCreateManyAndReturnArgs} args - Arguments to create many Plan_inputs_resources_flight_scales.
-     * @example
-     * // Create many Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Plan_inputs_resources_flight_scales and only return the `plan_id`
-     * const plan_inputs_resources_flight_scalesWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scales.createManyAndReturn({
-     *   select: { plan_id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends plan_inputs_resources_flight_scalesCreateManyAndReturnArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Plan_inputs_resources_flight_scales.
-     * @param {plan_inputs_resources_flight_scalesDeleteArgs} args - Arguments to delete one Plan_inputs_resources_flight_scales.
-     * @example
-     * // Delete one Plan_inputs_resources_flight_scales
-     * const Plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.delete({
-     *   where: {
-     *     // ... filter to delete one Plan_inputs_resources_flight_scales
-     *   }
-     * })
-     * 
-     */
-    delete<T extends plan_inputs_resources_flight_scalesDeleteArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesDeleteArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Plan_inputs_resources_flight_scales.
-     * @param {plan_inputs_resources_flight_scalesUpdateArgs} args - Arguments to update one Plan_inputs_resources_flight_scales.
-     * @example
-     * // Update one Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends plan_inputs_resources_flight_scalesUpdateArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpdateArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Plan_inputs_resources_flight_scales.
-     * @param {plan_inputs_resources_flight_scalesDeleteManyArgs} args - Arguments to filter Plan_inputs_resources_flight_scales to delete.
-     * @example
-     * // Delete a few Plan_inputs_resources_flight_scales
-     * const { count } = await prisma.plan_inputs_resources_flight_scales.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends plan_inputs_resources_flight_scalesDeleteManyArgs>(args?: SelectSubset<T, plan_inputs_resources_flight_scalesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Plan_inputs_resources_flight_scales.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {plan_inputs_resources_flight_scalesUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends plan_inputs_resources_flight_scalesUpdateManyArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Plan_inputs_resources_flight_scales and returns the data updated in the database.
-     * @param {plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs} args - Arguments to update many Plan_inputs_resources_flight_scales.
-     * @example
-     * // Update many Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Plan_inputs_resources_flight_scales and only return the `plan_id`
-     * const plan_inputs_resources_flight_scalesWithPlan_idOnly = await prisma.plan_inputs_resources_flight_scales.updateManyAndReturn({
-     *   select: { plan_id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Plan_inputs_resources_flight_scales.
-     * @param {plan_inputs_resources_flight_scalesUpsertArgs} args - Arguments to update or create a Plan_inputs_resources_flight_scales.
-     * @example
-     * // Update or create a Plan_inputs_resources_flight_scales
-     * const plan_inputs_resources_flight_scales = await prisma.plan_inputs_resources_flight_scales.upsert({
-     *   create: {
-     *     // ... data to create a Plan_inputs_resources_flight_scales
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Plan_inputs_resources_flight_scales we want to update
-     *   }
-     * })
-     */
-    upsert<T extends plan_inputs_resources_flight_scalesUpsertArgs>(args: SelectSubset<T, plan_inputs_resources_flight_scalesUpsertArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scalesClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Plan_inputs_resources_flight_scales.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {plan_inputs_resources_flight_scalesCountArgs} args - Arguments to filter Plan_inputs_resources_flight_scales to count.
-     * @example
-     * // Count the number of Plan_inputs_resources_flight_scales
-     * const count = await prisma.plan_inputs_resources_flight_scales.count({
-     *   where: {
-     *     // ... the filter for the Plan_inputs_resources_flight_scales we want to count
-     *   }
-     * })
-    **/
-    count<T extends plan_inputs_resources_flight_scalesCountArgs>(
-      args?: Subset<T, plan_inputs_resources_flight_scalesCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Plan_inputs_resources_flight_scalesCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Plan_inputs_resources_flight_scales.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Plan_inputs_resources_flight_scalesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Plan_inputs_resources_flight_scalesAggregateArgs>(args: Subset<T, Plan_inputs_resources_flight_scalesAggregateArgs>): Prisma.PrismaPromise<GetPlan_inputs_resources_flight_scalesAggregateType<T>>
-
-    /**
-     * Group by Plan_inputs_resources_flight_scales.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {plan_inputs_resources_flight_scalesGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends plan_inputs_resources_flight_scalesGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: plan_inputs_resources_flight_scalesGroupByArgs['orderBy'] }
-        : { orderBy?: plan_inputs_resources_flight_scalesGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, plan_inputs_resources_flight_scalesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlan_inputs_resources_flight_scalesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the plan_inputs_resources_flight_scales model
-   */
-  readonly fields: plan_inputs_resources_flight_scalesFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for plan_inputs_resources_flight_scales.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__plan_inputs_resources_flight_scalesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    plan_inputs_resources_flight_scale_data<T extends plan_inputs_resources_flight_scales$plan_inputs_resources_flight_scale_dataArgs<ExtArgs> = {}>(args?: Subset<T, plan_inputs_resources_flight_scales$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>>): Prisma__plan_inputs_resources_flight_scale_dataClient<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    plans<T extends plansDefaultArgs<ExtArgs> = {}>(args?: Subset<T, plansDefaultArgs<ExtArgs>>): Prisma__plansClient<$Result.GetResult<Prisma.$plansPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the plan_inputs_resources_flight_scales model
-   */
-  interface plan_inputs_resources_flight_scalesFieldRefs {
-    readonly plan_id: FieldRef<"plan_inputs_resources_flight_scales", 'String'>
-    readonly flight_scale_name: FieldRef<"plan_inputs_resources_flight_scales", 'String'>
-    readonly id: FieldRef<"plan_inputs_resources_flight_scales", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * plan_inputs_resources_flight_scales findUnique
-   */
-  export type plan_inputs_resources_flight_scalesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * Filter, which plan_inputs_resources_flight_scales to fetch.
-     */
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales findUniqueOrThrow
-   */
-  export type plan_inputs_resources_flight_scalesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * Filter, which plan_inputs_resources_flight_scales to fetch.
-     */
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales findFirst
-   */
-  export type plan_inputs_resources_flight_scalesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * Filter, which plan_inputs_resources_flight_scales to fetch.
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of plan_inputs_resources_flight_scales to fetch.
-     */
-    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for plan_inputs_resources_flight_scales.
-     */
-    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` plan_inputs_resources_flight_scales.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of plan_inputs_resources_flight_scales.
-     */
-    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales findFirstOrThrow
-   */
-  export type plan_inputs_resources_flight_scalesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * Filter, which plan_inputs_resources_flight_scales to fetch.
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of plan_inputs_resources_flight_scales to fetch.
-     */
-    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for plan_inputs_resources_flight_scales.
-     */
-    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` plan_inputs_resources_flight_scales.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of plan_inputs_resources_flight_scales.
-     */
-    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales findMany
-   */
-  export type plan_inputs_resources_flight_scalesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * Filter, which plan_inputs_resources_flight_scales to fetch.
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of plan_inputs_resources_flight_scales to fetch.
-     */
-    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing plan_inputs_resources_flight_scales.
-     */
-    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` plan_inputs_resources_flight_scales from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` plan_inputs_resources_flight_scales.
-     */
-    skip?: number
-    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales create
-   */
-  export type plan_inputs_resources_flight_scalesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * The data needed to create a plan_inputs_resources_flight_scales.
-     */
-    data: XOR<plan_inputs_resources_flight_scalesCreateInput, plan_inputs_resources_flight_scalesUncheckedCreateInput>
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales createMany
-   */
-  export type plan_inputs_resources_flight_scalesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many plan_inputs_resources_flight_scales.
-     */
-    data: plan_inputs_resources_flight_scalesCreateManyInput | plan_inputs_resources_flight_scalesCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales createManyAndReturn
-   */
-  export type plan_inputs_resources_flight_scalesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * The data used to create many plan_inputs_resources_flight_scales.
-     */
-    data: plan_inputs_resources_flight_scalesCreateManyInput | plan_inputs_resources_flight_scalesCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales update
-   */
-  export type plan_inputs_resources_flight_scalesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * The data needed to update a plan_inputs_resources_flight_scales.
-     */
-    data: XOR<plan_inputs_resources_flight_scalesUpdateInput, plan_inputs_resources_flight_scalesUncheckedUpdateInput>
-    /**
-     * Choose, which plan_inputs_resources_flight_scales to update.
-     */
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales updateMany
-   */
-  export type plan_inputs_resources_flight_scalesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update plan_inputs_resources_flight_scales.
-     */
-    data: XOR<plan_inputs_resources_flight_scalesUpdateManyMutationInput, plan_inputs_resources_flight_scalesUncheckedUpdateManyInput>
-    /**
-     * Filter which plan_inputs_resources_flight_scales to update
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * Limit how many plan_inputs_resources_flight_scales to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales updateManyAndReturn
-   */
-  export type plan_inputs_resources_flight_scalesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * The data used to update plan_inputs_resources_flight_scales.
-     */
-    data: XOR<plan_inputs_resources_flight_scalesUpdateManyMutationInput, plan_inputs_resources_flight_scalesUncheckedUpdateManyInput>
-    /**
-     * Filter which plan_inputs_resources_flight_scales to update
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * Limit how many plan_inputs_resources_flight_scales to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales upsert
-   */
-  export type plan_inputs_resources_flight_scalesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * The filter to search for the plan_inputs_resources_flight_scales to update in case it exists.
-     */
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-    /**
-     * In case the plan_inputs_resources_flight_scales found by the `where` argument doesn't exist, create a new plan_inputs_resources_flight_scales with this data.
-     */
-    create: XOR<plan_inputs_resources_flight_scalesCreateInput, plan_inputs_resources_flight_scalesUncheckedCreateInput>
-    /**
-     * In case the plan_inputs_resources_flight_scales was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<plan_inputs_resources_flight_scalesUpdateInput, plan_inputs_resources_flight_scalesUncheckedUpdateInput>
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales delete
-   */
-  export type plan_inputs_resources_flight_scalesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    /**
-     * Filter which plan_inputs_resources_flight_scales to delete.
-     */
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales deleteMany
-   */
-  export type plan_inputs_resources_flight_scalesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which plan_inputs_resources_flight_scales to delete
-     */
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    /**
-     * Limit how many plan_inputs_resources_flight_scales to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales.plan_inputs_resources_flight_scale_data
-   */
-  export type plan_inputs_resources_flight_scales$plan_inputs_resources_flight_scale_dataArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scale_data
-     */
-    select?: plan_inputs_resources_flight_scale_dataSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scale_data
-     */
-    omit?: plan_inputs_resources_flight_scale_dataOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scale_dataInclude<ExtArgs> | null
-    where?: plan_inputs_resources_flight_scale_dataWhereInput
-  }
-
-  /**
-   * plan_inputs_resources_flight_scales without action
-   */
-  export type plan_inputs_resources_flight_scalesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
   }
 
 
@@ -30425,7 +29279,6 @@ export namespace Prisma {
   export type Plan_inputs_statusMinAggregateOutputType = {
     plan_id: string | null
     resources_workforce_status: string | null
-    resources_flight_scales_status: boolean | null
     resources_flight_scale_data_status: string | null
     analytics_flight_candidates_status: string | null
     analytics_round_trip_normalization_status: boolean | null
@@ -30436,7 +29289,6 @@ export namespace Prisma {
   export type Plan_inputs_statusMaxAggregateOutputType = {
     plan_id: string | null
     resources_workforce_status: string | null
-    resources_flight_scales_status: boolean | null
     resources_flight_scale_data_status: string | null
     analytics_flight_candidates_status: string | null
     analytics_round_trip_normalization_status: boolean | null
@@ -30447,7 +29299,6 @@ export namespace Prisma {
   export type Plan_inputs_statusCountAggregateOutputType = {
     plan_id: number
     resources_workforce_status: number
-    resources_flight_scales_status: number
     resources_flight_scale_data_status: number
     analytics_flight_candidates_status: number
     analytics_round_trip_normalization_status: number
@@ -30460,7 +29311,6 @@ export namespace Prisma {
   export type Plan_inputs_statusMinAggregateInputType = {
     plan_id?: true
     resources_workforce_status?: true
-    resources_flight_scales_status?: true
     resources_flight_scale_data_status?: true
     analytics_flight_candidates_status?: true
     analytics_round_trip_normalization_status?: true
@@ -30471,7 +29321,6 @@ export namespace Prisma {
   export type Plan_inputs_statusMaxAggregateInputType = {
     plan_id?: true
     resources_workforce_status?: true
-    resources_flight_scales_status?: true
     resources_flight_scale_data_status?: true
     analytics_flight_candidates_status?: true
     analytics_round_trip_normalization_status?: true
@@ -30482,7 +29331,6 @@ export namespace Prisma {
   export type Plan_inputs_statusCountAggregateInputType = {
     plan_id?: true
     resources_workforce_status?: true
-    resources_flight_scales_status?: true
     resources_flight_scale_data_status?: true
     analytics_flight_candidates_status?: true
     analytics_round_trip_normalization_status?: true
@@ -30566,7 +29414,6 @@ export namespace Prisma {
   export type Plan_inputs_statusGroupByOutputType = {
     plan_id: string
     resources_workforce_status: string
-    resources_flight_scales_status: boolean
     resources_flight_scale_data_status: string
     analytics_flight_candidates_status: string
     analytics_round_trip_normalization_status: boolean
@@ -30594,7 +29441,6 @@ export namespace Prisma {
   export type plan_inputs_statusSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
     resources_workforce_status?: boolean
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: boolean
     analytics_flight_candidates_status?: boolean
     analytics_round_trip_normalization_status?: boolean
@@ -30606,7 +29452,6 @@ export namespace Prisma {
   export type plan_inputs_statusSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
     resources_workforce_status?: boolean
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: boolean
     analytics_flight_candidates_status?: boolean
     analytics_round_trip_normalization_status?: boolean
@@ -30618,7 +29463,6 @@ export namespace Prisma {
   export type plan_inputs_statusSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     plan_id?: boolean
     resources_workforce_status?: boolean
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: boolean
     analytics_flight_candidates_status?: boolean
     analytics_round_trip_normalization_status?: boolean
@@ -30630,7 +29474,6 @@ export namespace Prisma {
   export type plan_inputs_statusSelectScalar = {
     plan_id?: boolean
     resources_workforce_status?: boolean
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: boolean
     analytics_flight_candidates_status?: boolean
     analytics_round_trip_normalization_status?: boolean
@@ -30638,7 +29481,7 @@ export namespace Prisma {
     airports_schedule_data_status?: boolean
   }
 
-  export type plan_inputs_statusOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "resources_workforce_status" | "resources_flight_scales_status" | "resources_flight_scale_data_status" | "analytics_flight_candidates_status" | "analytics_round_trip_normalization_status" | "analytics_min_distribution_criteria_status" | "airports_schedule_data_status", ExtArgs["result"]["plan_inputs_status"]>
+  export type plan_inputs_statusOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"plan_id" | "resources_workforce_status" | "resources_flight_scale_data_status" | "analytics_flight_candidates_status" | "analytics_round_trip_normalization_status" | "analytics_min_distribution_criteria_status" | "airports_schedule_data_status", ExtArgs["result"]["plan_inputs_status"]>
   export type plan_inputs_statusInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     plans?: boolean | plansDefaultArgs<ExtArgs>
   }
@@ -30657,7 +29500,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       plan_id: string
       resources_workforce_status: string
-      resources_flight_scales_status: boolean
       resources_flight_scale_data_status: string
       analytics_flight_candidates_status: string
       analytics_round_trip_normalization_status: boolean
@@ -31089,7 +29931,6 @@ export namespace Prisma {
   interface plan_inputs_statusFieldRefs {
     readonly plan_id: FieldRef<"plan_inputs_status", 'String'>
     readonly resources_workforce_status: FieldRef<"plan_inputs_status", 'String'>
-    readonly resources_flight_scales_status: FieldRef<"plan_inputs_status", 'Boolean'>
     readonly resources_flight_scale_data_status: FieldRef<"plan_inputs_status", 'String'>
     readonly analytics_flight_candidates_status: FieldRef<"plan_inputs_status", 'String'>
     readonly analytics_round_trip_normalization_status: FieldRef<"plan_inputs_status", 'Boolean'>
@@ -32720,7 +31561,6 @@ export namespace Prisma {
     plan_inputs_airports?: boolean | plans$plan_inputs_airportsArgs<ExtArgs>
     plan_inputs_analytics?: boolean | plans$plan_inputs_analyticsArgs<ExtArgs>
     plan_inputs_resources_flight_scale_data?: boolean | plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>
-    plan_inputs_resources_flight_scales?: boolean | plans$plan_inputs_resources_flight_scalesArgs<ExtArgs>
     plan_inputs_resources_workforce?: boolean | plans$plan_inputs_resources_workforceArgs<ExtArgs>
     plan_inputs_status?: boolean | plans$plan_inputs_statusArgs<ExtArgs>
     plan_participants?: boolean | plans$plan_participantsArgs<ExtArgs>
@@ -32762,7 +31602,6 @@ export namespace Prisma {
     plan_inputs_airports?: boolean | plans$plan_inputs_airportsArgs<ExtArgs>
     plan_inputs_analytics?: boolean | plans$plan_inputs_analyticsArgs<ExtArgs>
     plan_inputs_resources_flight_scale_data?: boolean | plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>
-    plan_inputs_resources_flight_scales?: boolean | plans$plan_inputs_resources_flight_scalesArgs<ExtArgs>
     plan_inputs_resources_workforce?: boolean | plans$plan_inputs_resources_workforceArgs<ExtArgs>
     plan_inputs_status?: boolean | plans$plan_inputs_statusArgs<ExtArgs>
     plan_participants?: boolean | plans$plan_participantsArgs<ExtArgs>
@@ -32782,7 +31621,6 @@ export namespace Prisma {
       plan_inputs_airports: Prisma.$plan_inputs_airportsPayload<ExtArgs>[]
       plan_inputs_analytics: Prisma.$plan_inputs_analyticsPayload<ExtArgs> | null
       plan_inputs_resources_flight_scale_data: Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>[]
-      plan_inputs_resources_flight_scales: Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>[]
       plan_inputs_resources_workforce: Prisma.$plan_inputs_resources_workforcePayload<ExtArgs> | null
       plan_inputs_status: Prisma.$plan_inputs_statusPayload<ExtArgs> | null
       plan_participants: Prisma.$plan_participantsPayload<ExtArgs>[]
@@ -33192,7 +32030,6 @@ export namespace Prisma {
     plan_inputs_airports<T extends plans$plan_inputs_airportsArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_airportsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_airportsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     plan_inputs_analytics<T extends plans$plan_inputs_analyticsArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_analyticsArgs<ExtArgs>>): Prisma__plan_inputs_analyticsClient<$Result.GetResult<Prisma.$plan_inputs_analyticsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     plan_inputs_resources_flight_scale_data<T extends plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_resources_flight_scale_dataArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scale_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    plan_inputs_resources_flight_scales<T extends plans$plan_inputs_resources_flight_scalesArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_resources_flight_scalesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_inputs_resources_flight_scalesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     plan_inputs_resources_workforce<T extends plans$plan_inputs_resources_workforceArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_resources_workforceArgs<ExtArgs>>): Prisma__plan_inputs_resources_workforceClient<$Result.GetResult<Prisma.$plan_inputs_resources_workforcePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     plan_inputs_status<T extends plans$plan_inputs_statusArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_inputs_statusArgs<ExtArgs>>): Prisma__plan_inputs_statusClient<$Result.GetResult<Prisma.$plan_inputs_statusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     plan_participants<T extends plans$plan_participantsArgs<ExtArgs> = {}>(args?: Subset<T, plans$plan_participantsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$plan_participantsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -33695,30 +32532,6 @@ export namespace Prisma {
   }
 
   /**
-   * plans.plan_inputs_resources_flight_scales
-   */
-  export type plans$plan_inputs_resources_flight_scalesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the plan_inputs_resources_flight_scales
-     */
-    select?: plan_inputs_resources_flight_scalesSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the plan_inputs_resources_flight_scales
-     */
-    omit?: plan_inputs_resources_flight_scalesOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: plan_inputs_resources_flight_scalesInclude<ExtArgs> | null
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    orderBy?: plan_inputs_resources_flight_scalesOrderByWithRelationInput | plan_inputs_resources_flight_scalesOrderByWithRelationInput[]
-    cursor?: plan_inputs_resources_flight_scalesWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Plan_inputs_resources_flight_scalesScalarFieldEnum | Plan_inputs_resources_flight_scalesScalarFieldEnum[]
-  }
-
-  /**
    * plans.plan_inputs_resources_workforce
    */
   export type plans$plan_inputs_resources_workforceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -34122,7 +32935,7 @@ export namespace Prisma {
 
   export const Plan_inputs_resources_flight_scale_dataScalarFieldEnum: {
     plan_id: 'plan_id',
-    flight_scale_name: 'flight_scale_name',
+    name: 'name',
     airplane_cnt: 'airplane_cnt',
     min_standby_airplane_cnt: 'min_standby_airplane_cnt',
     seat_cnt: 'seat_cnt',
@@ -34132,19 +32945,11 @@ export namespace Prisma {
     required_pre_flight_hours: 'required_pre_flight_hours',
     required_post_flight_hours: 'required_post_flight_hours',
     min_required_revenue: 'min_required_revenue',
-    flight_scale_id: 'flight_scale_id'
+    id: 'id',
+    index: 'index'
   };
 
   export type Plan_inputs_resources_flight_scale_dataScalarFieldEnum = (typeof Plan_inputs_resources_flight_scale_dataScalarFieldEnum)[keyof typeof Plan_inputs_resources_flight_scale_dataScalarFieldEnum]
-
-
-  export const Plan_inputs_resources_flight_scalesScalarFieldEnum: {
-    plan_id: 'plan_id',
-    flight_scale_name: 'flight_scale_name',
-    id: 'id'
-  };
-
-  export type Plan_inputs_resources_flight_scalesScalarFieldEnum = (typeof Plan_inputs_resources_flight_scalesScalarFieldEnum)[keyof typeof Plan_inputs_resources_flight_scalesScalarFieldEnum]
 
 
   export const Plan_inputs_resources_workforceScalarFieldEnum: {
@@ -34160,7 +32965,6 @@ export namespace Prisma {
   export const Plan_inputs_statusScalarFieldEnum: {
     plan_id: 'plan_id',
     resources_workforce_status: 'resources_workforce_status',
-    resources_flight_scales_status: 'resources_flight_scales_status',
     resources_flight_scale_data_status: 'resources_flight_scale_data_status',
     analytics_flight_candidates_status: 'analytics_flight_candidates_status',
     analytics_round_trip_normalization_status: 'analytics_round_trip_normalization_status',
@@ -35999,7 +34803,7 @@ export namespace Prisma {
     OR?: plan_inputs_resources_flight_scale_dataWhereInput[]
     NOT?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
-    flight_scale_name?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
+    name?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
     airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -36009,14 +34813,14 @@ export namespace Prisma {
     required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    flight_scale_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
-    plan_inputs_resources_flight_scales?: XOR<Plan_inputs_resources_flight_scalesScalarRelationFilter, plan_inputs_resources_flight_scalesWhereInput>
+    id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
+    index?: BigIntFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
     plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
   }
 
   export type plan_inputs_resources_flight_scale_dataOrderByWithRelationInput = {
     plan_id?: SortOrder
-    flight_scale_name?: SortOrder
+    name?: SortOrder
     airplane_cnt?: SortOrderInput | SortOrder
     min_standby_airplane_cnt?: SortOrderInput | SortOrder
     seat_cnt?: SortOrderInput | SortOrder
@@ -36026,18 +34830,18 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrderInput | SortOrder
     required_post_flight_hours?: SortOrderInput | SortOrder
     min_required_revenue?: SortOrderInput | SortOrder
-    flight_scale_id?: SortOrder
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesOrderByWithRelationInput
+    id?: SortOrder
+    index?: SortOrder
     plans?: plansOrderByWithRelationInput
   }
 
   export type plan_inputs_resources_flight_scale_dataWhereUniqueInput = Prisma.AtLeast<{
-    flight_scale_id?: string
+    id?: string
     AND?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
     OR?: plan_inputs_resources_flight_scale_dataWhereInput[]
     NOT?: plan_inputs_resources_flight_scale_dataWhereInput | plan_inputs_resources_flight_scale_dataWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
-    flight_scale_name?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
+    name?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
     airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -36047,13 +34851,13 @@ export namespace Prisma {
     required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    plan_inputs_resources_flight_scales?: XOR<Plan_inputs_resources_flight_scalesScalarRelationFilter, plan_inputs_resources_flight_scalesWhereInput>
+    index?: BigIntFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
     plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
-  }, "flight_scale_id">
+  }, "id">
 
   export type plan_inputs_resources_flight_scale_dataOrderByWithAggregationInput = {
     plan_id?: SortOrder
-    flight_scale_name?: SortOrder
+    name?: SortOrder
     airplane_cnt?: SortOrderInput | SortOrder
     min_standby_airplane_cnt?: SortOrderInput | SortOrder
     seat_cnt?: SortOrderInput | SortOrder
@@ -36063,7 +34867,8 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrderInput | SortOrder
     required_post_flight_hours?: SortOrderInput | SortOrder
     min_required_revenue?: SortOrderInput | SortOrder
-    flight_scale_id?: SortOrder
+    id?: SortOrder
+    index?: SortOrder
     _count?: plan_inputs_resources_flight_scale_dataCountOrderByAggregateInput
     _avg?: plan_inputs_resources_flight_scale_dataAvgOrderByAggregateInput
     _max?: plan_inputs_resources_flight_scale_dataMaxOrderByAggregateInput
@@ -36076,7 +34881,7 @@ export namespace Prisma {
     OR?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput[]
     NOT?: plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scale_dataScalarWhereWithAggregatesInput[]
     plan_id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
-    flight_scale_name?: StringWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
+    name?: StringWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
     airplane_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -36086,55 +34891,8 @@ export namespace Prisma {
     required_pre_flight_hours?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_post_flight_hours?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    flight_scale_id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
-  }
-
-  export type plan_inputs_resources_flight_scalesWhereInput = {
-    AND?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
-    OR?: plan_inputs_resources_flight_scalesWhereInput[]
-    NOT?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
-    plan_id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
-    flight_scale_name?: StringFilter<"plan_inputs_resources_flight_scales"> | string
-    id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
-    plan_inputs_resources_flight_scale_data?: XOR<Plan_inputs_resources_flight_scale_dataNullableScalarRelationFilter, plan_inputs_resources_flight_scale_dataWhereInput> | null
-    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesOrderByWithRelationInput = {
-    plan_id?: SortOrder
-    flight_scale_name?: SortOrder
-    id?: SortOrder
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataOrderByWithRelationInput
-    plans?: plansOrderByWithRelationInput
-  }
-
-  export type plan_inputs_resources_flight_scalesWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
-    OR?: plan_inputs_resources_flight_scalesWhereInput[]
-    NOT?: plan_inputs_resources_flight_scalesWhereInput | plan_inputs_resources_flight_scalesWhereInput[]
-    plan_id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
-    flight_scale_name?: StringFilter<"plan_inputs_resources_flight_scales"> | string
-    plan_inputs_resources_flight_scale_data?: XOR<Plan_inputs_resources_flight_scale_dataNullableScalarRelationFilter, plan_inputs_resources_flight_scale_dataWhereInput> | null
-    plans?: XOR<PlansScalarRelationFilter, plansWhereInput>
-  }, "id">
-
-  export type plan_inputs_resources_flight_scalesOrderByWithAggregationInput = {
-    plan_id?: SortOrder
-    flight_scale_name?: SortOrder
-    id?: SortOrder
-    _count?: plan_inputs_resources_flight_scalesCountOrderByAggregateInput
-    _max?: plan_inputs_resources_flight_scalesMaxOrderByAggregateInput
-    _min?: plan_inputs_resources_flight_scalesMinOrderByAggregateInput
-  }
-
-  export type plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput = {
-    AND?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput[]
-    OR?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput[]
-    NOT?: plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput | plan_inputs_resources_flight_scalesScalarWhereWithAggregatesInput[]
-    plan_id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scales"> | string
-    flight_scale_name?: StringWithAggregatesFilter<"plan_inputs_resources_flight_scales"> | string
-    id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scales"> | string
+    id?: UuidWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | string
+    index?: BigIntWithAggregatesFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
   }
 
   export type plan_inputs_resources_workforceWhereInput = {
@@ -36195,7 +34953,6 @@ export namespace Prisma {
     NOT?: plan_inputs_statusWhereInput | plan_inputs_statusWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_status"> | string
     resources_workforce_status?: StringFilter<"plan_inputs_status"> | string
-    resources_flight_scales_status?: BoolFilter<"plan_inputs_status"> | boolean
     resources_flight_scale_data_status?: StringFilter<"plan_inputs_status"> | string
     analytics_flight_candidates_status?: StringFilter<"plan_inputs_status"> | string
     analytics_round_trip_normalization_status?: BoolFilter<"plan_inputs_status"> | boolean
@@ -36207,7 +34964,6 @@ export namespace Prisma {
   export type plan_inputs_statusOrderByWithRelationInput = {
     plan_id?: SortOrder
     resources_workforce_status?: SortOrder
-    resources_flight_scales_status?: SortOrder
     resources_flight_scale_data_status?: SortOrder
     analytics_flight_candidates_status?: SortOrder
     analytics_round_trip_normalization_status?: SortOrder
@@ -36222,7 +34978,6 @@ export namespace Prisma {
     OR?: plan_inputs_statusWhereInput[]
     NOT?: plan_inputs_statusWhereInput | plan_inputs_statusWhereInput[]
     resources_workforce_status?: StringFilter<"plan_inputs_status"> | string
-    resources_flight_scales_status?: BoolFilter<"plan_inputs_status"> | boolean
     resources_flight_scale_data_status?: StringFilter<"plan_inputs_status"> | string
     analytics_flight_candidates_status?: StringFilter<"plan_inputs_status"> | string
     analytics_round_trip_normalization_status?: BoolFilter<"plan_inputs_status"> | boolean
@@ -36234,7 +34989,6 @@ export namespace Prisma {
   export type plan_inputs_statusOrderByWithAggregationInput = {
     plan_id?: SortOrder
     resources_workforce_status?: SortOrder
-    resources_flight_scales_status?: SortOrder
     resources_flight_scale_data_status?: SortOrder
     analytics_flight_candidates_status?: SortOrder
     analytics_round_trip_normalization_status?: SortOrder
@@ -36251,7 +35005,6 @@ export namespace Prisma {
     NOT?: plan_inputs_statusScalarWhereWithAggregatesInput | plan_inputs_statusScalarWhereWithAggregatesInput[]
     plan_id?: UuidWithAggregatesFilter<"plan_inputs_status"> | string
     resources_workforce_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
-    resources_flight_scales_status?: BoolWithAggregatesFilter<"plan_inputs_status"> | boolean
     resources_flight_scale_data_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
     analytics_flight_candidates_status?: StringWithAggregatesFilter<"plan_inputs_status"> | string
     analytics_round_trip_normalization_status?: BoolWithAggregatesFilter<"plan_inputs_status"> | boolean
@@ -36321,7 +35074,6 @@ export namespace Prisma {
     plan_inputs_airports?: Plan_inputs_airportsListRelationFilter
     plan_inputs_analytics?: XOR<Plan_inputs_analyticsNullableScalarRelationFilter, plan_inputs_analyticsWhereInput> | null
     plan_inputs_resources_flight_scale_data?: Plan_inputs_resources_flight_scale_dataListRelationFilter
-    plan_inputs_resources_flight_scales?: Plan_inputs_resources_flight_scalesListRelationFilter
     plan_inputs_resources_workforce?: XOR<Plan_inputs_resources_workforceNullableScalarRelationFilter, plan_inputs_resources_workforceWhereInput> | null
     plan_inputs_status?: XOR<Plan_inputs_statusNullableScalarRelationFilter, plan_inputs_statusWhereInput> | null
     plan_participants?: Plan_participantsListRelationFilter
@@ -36338,7 +35090,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsOrderByRelationAggregateInput
     plan_inputs_analytics?: plan_inputs_analyticsOrderByWithRelationInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataOrderByRelationAggregateInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesOrderByRelationAggregateInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceOrderByWithRelationInput
     plan_inputs_status?: plan_inputs_statusOrderByWithRelationInput
     plan_participants?: plan_participantsOrderByRelationAggregateInput
@@ -36358,7 +35109,6 @@ export namespace Prisma {
     plan_inputs_airports?: Plan_inputs_airportsListRelationFilter
     plan_inputs_analytics?: XOR<Plan_inputs_analyticsNullableScalarRelationFilter, plan_inputs_analyticsWhereInput> | null
     plan_inputs_resources_flight_scale_data?: Plan_inputs_resources_flight_scale_dataListRelationFilter
-    plan_inputs_resources_flight_scales?: Plan_inputs_resources_flight_scalesListRelationFilter
     plan_inputs_resources_workforce?: XOR<Plan_inputs_resources_workforceNullableScalarRelationFilter, plan_inputs_resources_workforceWhereInput> | null
     plan_inputs_status?: XOR<Plan_inputs_statusNullableScalarRelationFilter, plan_inputs_statusWhereInput> | null
     plan_participants?: Plan_participantsListRelationFilter
@@ -38143,7 +36893,7 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataCreateInput = {
-    flight_scale_name?: string
+    name: string
     airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
@@ -38153,13 +36903,14 @@ export namespace Prisma {
     required_pre_flight_hours?: bigint | number | null
     required_post_flight_hours?: bigint | number | null
     min_required_revenue?: bigint | number | null
-    plan_inputs_resources_flight_scales: plan_inputs_resources_flight_scalesCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput
+    id?: string
+    index: bigint | number
     plans: plansCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput
   }
 
   export type plan_inputs_resources_flight_scale_dataUncheckedCreateInput = {
     plan_id: string
-    flight_scale_name?: string
+    name: string
     airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
@@ -38169,11 +36920,12 @@ export namespace Prisma {
     required_pre_flight_hours?: bigint | number | null
     required_post_flight_hours?: bigint | number | null
     min_required_revenue?: bigint | number | null
-    flight_scale_id: string
+    id?: string
+    index: bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataUpdateInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38183,13 +36935,14 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput
+    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
     plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput
   }
 
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38199,12 +36952,13 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    flight_scale_id?: StringFieldUpdateOperationsInput | string
+    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataCreateManyInput = {
     plan_id: string
-    flight_scale_name?: string
+    name: string
     airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
@@ -38214,11 +36968,12 @@ export namespace Prisma {
     required_pre_flight_hours?: bigint | number | null
     required_post_flight_hours?: bigint | number | null
     min_required_revenue?: bigint | number | null
-    flight_scale_id: string
+    id?: string
+    index: bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataUpdateManyMutationInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38228,11 +36983,13 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -38242,52 +36999,8 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    flight_scale_id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateInput = {
-    flight_scale_name?: string
-    id?: string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
-    plans: plansCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedCreateInput = {
-    plan_id: string
-    flight_scale_name?: string
-    id?: string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
     id?: StringFieldUpdateOperationsInput | string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateOneWithoutPlan_inputs_resources_flight_scalesNestedInput
-    plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scalesNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedUpdateInput = {
-    plan_id?: StringFieldUpdateOperationsInput | string
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateOneWithoutPlan_inputs_resources_flight_scalesNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateManyInput = {
-    plan_id: string
-    flight_scale_name?: string
-    id?: string
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateManyMutationInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedUpdateManyInput = {
-    plan_id?: StringFieldUpdateOperationsInput | string
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
   export type plan_inputs_resources_workforceCreateInput = {
@@ -38340,7 +37053,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusCreateInput = {
     resources_workforce_status?: string
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: string
     analytics_flight_candidates_status?: string
     analytics_round_trip_normalization_status?: boolean
@@ -38352,7 +37064,6 @@ export namespace Prisma {
   export type plan_inputs_statusUncheckedCreateInput = {
     plan_id: string
     resources_workforce_status?: string
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: string
     analytics_flight_candidates_status?: string
     analytics_round_trip_normalization_status?: boolean
@@ -38362,7 +37073,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusUpdateInput = {
     resources_workforce_status?: StringFieldUpdateOperationsInput | string
-    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
     resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
     analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
     analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
@@ -38374,7 +37084,6 @@ export namespace Prisma {
   export type plan_inputs_statusUncheckedUpdateInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
     resources_workforce_status?: StringFieldUpdateOperationsInput | string
-    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
     resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
     analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
     analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
@@ -38385,7 +37094,6 @@ export namespace Prisma {
   export type plan_inputs_statusCreateManyInput = {
     plan_id: string
     resources_workforce_status?: string
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: string
     analytics_flight_candidates_status?: string
     analytics_round_trip_normalization_status?: boolean
@@ -38395,7 +37103,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusUpdateManyMutationInput = {
     resources_workforce_status?: StringFieldUpdateOperationsInput | string
-    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
     resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
     analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
     analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
@@ -38406,7 +37113,6 @@ export namespace Prisma {
   export type plan_inputs_statusUncheckedUpdateManyInput = {
     plan_id?: StringFieldUpdateOperationsInput | string
     resources_workforce_status?: StringFieldUpdateOperationsInput | string
-    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
     resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
     analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
     analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
@@ -38463,7 +37169,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
@@ -38480,7 +37185,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
@@ -38495,7 +37199,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
@@ -38512,7 +37215,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
@@ -39944,14 +38646,9 @@ export namespace Prisma {
     not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
   }
 
-  export type Plan_inputs_resources_flight_scalesScalarRelationFilter = {
-    is?: plan_inputs_resources_flight_scalesWhereInput
-    isNot?: plan_inputs_resources_flight_scalesWhereInput
-  }
-
   export type plan_inputs_resources_flight_scale_dataCountOrderByAggregateInput = {
     plan_id?: SortOrder
-    flight_scale_name?: SortOrder
+    name?: SortOrder
     airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
@@ -39961,7 +38658,8 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrder
     required_post_flight_hours?: SortOrder
     min_required_revenue?: SortOrder
-    flight_scale_id?: SortOrder
+    id?: SortOrder
+    index?: SortOrder
   }
 
   export type plan_inputs_resources_flight_scale_dataAvgOrderByAggregateInput = {
@@ -39974,11 +38672,12 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrder
     required_post_flight_hours?: SortOrder
     min_required_revenue?: SortOrder
+    index?: SortOrder
   }
 
   export type plan_inputs_resources_flight_scale_dataMaxOrderByAggregateInput = {
     plan_id?: SortOrder
-    flight_scale_name?: SortOrder
+    name?: SortOrder
     airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
@@ -39988,12 +38687,13 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrder
     required_post_flight_hours?: SortOrder
     min_required_revenue?: SortOrder
-    flight_scale_id?: SortOrder
+    id?: SortOrder
+    index?: SortOrder
   }
 
   export type plan_inputs_resources_flight_scale_dataMinOrderByAggregateInput = {
     plan_id?: SortOrder
-    flight_scale_name?: SortOrder
+    name?: SortOrder
     airplane_cnt?: SortOrder
     min_standby_airplane_cnt?: SortOrder
     seat_cnt?: SortOrder
@@ -40003,7 +38703,8 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrder
     required_post_flight_hours?: SortOrder
     min_required_revenue?: SortOrder
-    flight_scale_id?: SortOrder
+    id?: SortOrder
+    index?: SortOrder
   }
 
   export type plan_inputs_resources_flight_scale_dataSumOrderByAggregateInput = {
@@ -40016,6 +38717,7 @@ export namespace Prisma {
     required_pre_flight_hours?: SortOrder
     required_post_flight_hours?: SortOrder
     min_required_revenue?: SortOrder
+    index?: SortOrder
   }
 
   export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -40032,29 +38734,6 @@ export namespace Prisma {
     _sum?: NestedBigIntNullableFilter<$PrismaModel>
     _min?: NestedBigIntNullableFilter<$PrismaModel>
     _max?: NestedBigIntNullableFilter<$PrismaModel>
-  }
-
-  export type Plan_inputs_resources_flight_scale_dataNullableScalarRelationFilter = {
-    is?: plan_inputs_resources_flight_scale_dataWhereInput | null
-    isNot?: plan_inputs_resources_flight_scale_dataWhereInput | null
-  }
-
-  export type plan_inputs_resources_flight_scalesCountOrderByAggregateInput = {
-    plan_id?: SortOrder
-    flight_scale_name?: SortOrder
-    id?: SortOrder
-  }
-
-  export type plan_inputs_resources_flight_scalesMaxOrderByAggregateInput = {
-    plan_id?: SortOrder
-    flight_scale_name?: SortOrder
-    id?: SortOrder
-  }
-
-  export type plan_inputs_resources_flight_scalesMinOrderByAggregateInput = {
-    plan_id?: SortOrder
-    flight_scale_name?: SortOrder
-    id?: SortOrder
   }
 
   export type plan_inputs_resources_workforceCountOrderByAggregateInput = {
@@ -40093,7 +38772,6 @@ export namespace Prisma {
   export type plan_inputs_statusCountOrderByAggregateInput = {
     plan_id?: SortOrder
     resources_workforce_status?: SortOrder
-    resources_flight_scales_status?: SortOrder
     resources_flight_scale_data_status?: SortOrder
     analytics_flight_candidates_status?: SortOrder
     analytics_round_trip_normalization_status?: SortOrder
@@ -40104,7 +38782,6 @@ export namespace Prisma {
   export type plan_inputs_statusMaxOrderByAggregateInput = {
     plan_id?: SortOrder
     resources_workforce_status?: SortOrder
-    resources_flight_scales_status?: SortOrder
     resources_flight_scale_data_status?: SortOrder
     analytics_flight_candidates_status?: SortOrder
     analytics_round_trip_normalization_status?: SortOrder
@@ -40115,7 +38792,6 @@ export namespace Prisma {
   export type plan_inputs_statusMinOrderByAggregateInput = {
     plan_id?: SortOrder
     resources_workforce_status?: SortOrder
-    resources_flight_scales_status?: SortOrder
     resources_flight_scale_data_status?: SortOrder
     analytics_flight_candidates_status?: SortOrder
     analytics_round_trip_normalization_status?: SortOrder
@@ -40163,12 +38839,6 @@ export namespace Prisma {
     none?: plan_inputs_resources_flight_scale_dataWhereInput
   }
 
-  export type Plan_inputs_resources_flight_scalesListRelationFilter = {
-    every?: plan_inputs_resources_flight_scalesWhereInput
-    some?: plan_inputs_resources_flight_scalesWhereInput
-    none?: plan_inputs_resources_flight_scalesWhereInput
-  }
-
   export type Plan_inputs_resources_workforceNullableScalarRelationFilter = {
     is?: plan_inputs_resources_workforceWhereInput | null
     isNot?: plan_inputs_resources_workforceWhereInput | null
@@ -40180,10 +38850,6 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type plan_inputs_resources_flight_scalesOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -41112,12 +39778,6 @@ export namespace Prisma {
     update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_analyticsInput, plansUpdateWithoutPlan_inputs_analyticsInput>, plansUncheckedUpdateWithoutPlan_inputs_analyticsInput>
   }
 
-  export type plan_inputs_resources_flight_scalesCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
-    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput
-    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput
-  }
-
   export type plansCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput = {
     create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
     connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput
@@ -41132,66 +39792,12 @@ export namespace Prisma {
     divide?: bigint | number
   }
 
-  export type plan_inputs_resources_flight_scalesUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput = {
-    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
-    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput
-    upsert?: plan_inputs_resources_flight_scalesUpsertWithoutPlan_inputs_resources_flight_scale_dataInput
-    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput
-    update?: XOR<XOR<plan_inputs_resources_flight_scalesUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
-  }
-
   export type plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput = {
     create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
     connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput
     upsert?: plansUpsertWithoutPlan_inputs_resources_flight_scale_dataInput
     connect?: plansWhereUniqueInput
     update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scale_dataInput, plansUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
-  }
-
-  export type plan_inputs_resources_flight_scale_dataCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput = {
-    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
-    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
-  }
-
-  export type plansCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput = {
-    create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
-    connect?: plansWhereUniqueInput
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUncheckedCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput = {
-    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
-    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUpdateOneWithoutPlan_inputs_resources_flight_scalesNestedInput = {
-    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
-    upsert?: plan_inputs_resources_flight_scale_dataUpsertWithoutPlan_inputs_resources_flight_scalesInput
-    disconnect?: plan_inputs_resources_flight_scale_dataWhereInput | boolean
-    delete?: plan_inputs_resources_flight_scale_dataWhereInput | boolean
-    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
-    update?: XOR<XOR<plan_inputs_resources_flight_scale_dataUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUpdateWithoutPlan_inputs_resources_flight_scalesInput>, plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
-  }
-
-  export type plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scalesNestedInput = {
-    create?: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    connectOrCreate?: plansCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
-    upsert?: plansUpsertWithoutPlan_inputs_resources_flight_scalesInput
-    connect?: plansWhereUniqueInput
-    update?: XOR<XOR<plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput, plansUpdateWithoutPlan_inputs_resources_flight_scalesInput>, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateOneWithoutPlan_inputs_resources_flight_scalesNestedInput = {
-    create?: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput
-    upsert?: plan_inputs_resources_flight_scale_dataUpsertWithoutPlan_inputs_resources_flight_scalesInput
-    disconnect?: plan_inputs_resources_flight_scale_dataWhereInput | boolean
-    delete?: plan_inputs_resources_flight_scale_dataWhereInput | boolean
-    connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput
-    update?: XOR<XOR<plan_inputs_resources_flight_scale_dataUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUpdateWithoutPlan_inputs_resources_flight_scalesInput>, plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
   }
 
   export type plansCreateNestedOneWithoutPlan_inputs_resources_workforceInput = {
@@ -41279,13 +39885,6 @@ export namespace Prisma {
     connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
   }
 
-  export type plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput = {
-    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
-    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
-    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
-    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-  }
-
   export type plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput = {
     create?: XOR<plan_inputs_resources_workforceCreateWithoutPlansInput, plan_inputs_resources_workforceUncheckedCreateWithoutPlansInput>
     connectOrCreate?: plan_inputs_resources_workforceCreateOrConnectWithoutPlansInput
@@ -41329,13 +39928,6 @@ export namespace Prisma {
     connectOrCreate?: plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput[]
     createMany?: plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope
     connect?: plan_inputs_resources_flight_scale_dataWhereUniqueInput | plan_inputs_resources_flight_scale_dataWhereUniqueInput[]
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput = {
-    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
-    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
-    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
-    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
   }
 
   export type plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput = {
@@ -41393,20 +39985,6 @@ export namespace Prisma {
     update?: plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput[]
     updateMany?: plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput[]
     deleteMany?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput = {
-    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
-    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
-    upsert?: plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput[]
-    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
-    set?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    disconnect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    delete?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    update?: plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput[]
-    updateMany?: plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput[]
-    deleteMany?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
   }
 
   export type plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput = {
@@ -41487,20 +40065,6 @@ export namespace Prisma {
     update?: plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateWithWhereUniqueWithoutPlansInput[]
     updateMany?: plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scale_dataUpdateManyWithWhereWithoutPlansInput[]
     deleteMany?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput = {
-    create?: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput> | plan_inputs_resources_flight_scalesCreateWithoutPlansInput[] | plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput[]
-    connectOrCreate?: plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput | plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput[]
-    upsert?: plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput[]
-    createMany?: plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope
-    set?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    disconnect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    delete?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    connect?: plan_inputs_resources_flight_scalesWhereUniqueInput | plan_inputs_resources_flight_scalesWhereUniqueInput[]
-    update?: plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput[]
-    updateMany?: plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput | plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput[]
-    deleteMany?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
   }
 
   export type plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput = {
@@ -43808,7 +42372,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
@@ -43823,7 +42386,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
@@ -44311,7 +42873,6 @@ export namespace Prisma {
     created_at?: Date | string
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
@@ -44327,7 +42888,6 @@ export namespace Prisma {
     created_at?: Date | string
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
@@ -44380,7 +42940,6 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
@@ -44396,7 +42955,6 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
@@ -44410,7 +42968,6 @@ export namespace Prisma {
     created_at?: Date | string
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
@@ -44426,7 +42983,6 @@ export namespace Prisma {
     created_at?: Date | string
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
@@ -44456,7 +43012,6 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
@@ -44472,27 +43027,9 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    flight_scale_name?: string
-    id?: string
-    plans: plansCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    plan_id: string
-    flight_scale_name?: string
-    id?: string
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-    create: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
   }
 
   export type plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput = {
@@ -44503,7 +43040,6 @@ export namespace Prisma {
     created_at?: Date | string
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
@@ -44519,7 +43055,6 @@ export namespace Prisma {
     created_at?: Date | string
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
@@ -44528,29 +43063,6 @@ export namespace Prisma {
   export type plansCreateOrConnectWithoutPlan_inputs_resources_flight_scale_dataInput = {
     where: plansWhereUniqueInput
     create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesUpsertWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    update: XOR<plan_inputs_resources_flight_scalesUpdateWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
-    create: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlan_inputs_resources_flight_scale_dataInput>
-    where?: plan_inputs_resources_flight_scalesWhereInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    where?: plan_inputs_resources_flight_scalesWhereInput
-    data: XOR<plan_inputs_resources_flight_scalesUpdateWithoutPlan_inputs_resources_flight_scale_dataInput, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
-    plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scalesNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlan_inputs_resources_flight_scale_dataInput = {
-    plan_id?: StringFieldUpdateOperationsInput | string
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
   }
 
   export type plansUpsertWithoutPlan_inputs_resources_flight_scale_dataInput = {
@@ -44572,7 +43084,6 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
@@ -44588,155 +43099,6 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
-    plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
-    plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput = {
-    flight_scale_name?: string
-    airplane_cnt?: bigint | number | null
-    min_standby_airplane_cnt?: bigint | number | null
-    seat_cnt?: bigint | number | null
-    required_captain_cnt?: bigint | number | null
-    required_sub_captain_cnt?: bigint | number | null
-    required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
-    min_required_revenue?: bigint | number | null
-    plans: plansCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput = {
-    plan_id: string
-    flight_scale_name?: string
-    airplane_cnt?: bigint | number | null
-    min_standby_airplane_cnt?: bigint | number | null
-    seat_cnt?: bigint | number | null
-    required_captain_cnt?: bigint | number | null
-    required_sub_captain_cnt?: bigint | number | null
-    required_other_personnel_norm?: bigint | number | null
-    required_pre_flight_hours?: bigint | number | null
-    required_post_flight_hours?: bigint | number | null
-    min_required_revenue?: bigint | number | null
-  }
-
-  export type plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput = {
-    where: plan_inputs_resources_flight_scale_dataWhereUniqueInput
-    create: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-  }
-
-  export type plansCreateWithoutPlan_inputs_resources_flight_scalesInput = {
-    id?: string
-    title: string
-    target_date: Date | string
-    status?: string
-    created_at?: Date | string
-    plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
-    plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
-    plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
-    plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
-    users?: usersCreateNestedOneWithoutPlansInput
-  }
-
-  export type plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput = {
-    id?: string
-    creator_id?: string
-    title: string
-    target_date: Date | string
-    status?: string
-    created_at?: Date | string
-    plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
-    plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
-    plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
-  }
-
-  export type plansCreateOrConnectWithoutPlan_inputs_resources_flight_scalesInput = {
-    where: plansWhereUniqueInput
-    create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUpsertWithoutPlan_inputs_resources_flight_scalesInput = {
-    update: XOR<plan_inputs_resources_flight_scale_dataUpdateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
-    create: XOR<plan_inputs_resources_flight_scale_dataCreateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    where?: plan_inputs_resources_flight_scale_dataWhereInput
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput = {
-    where?: plan_inputs_resources_flight_scale_dataWhereInput
-    data: XOR<plan_inputs_resources_flight_scale_dataUpdateWithoutPlan_inputs_resources_flight_scalesInput, plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    plans?: plansUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
-    plan_id?: StringFieldUpdateOperationsInput | string
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_sub_captain_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_other_personnel_norm?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-  }
-
-  export type plansUpsertWithoutPlan_inputs_resources_flight_scalesInput = {
-    update: XOR<plansUpdateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
-    create: XOR<plansCreateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedCreateWithoutPlan_inputs_resources_flight_scalesInput>
-    where?: plansWhereInput
-  }
-
-  export type plansUpdateToOneWithWhereWithoutPlan_inputs_resources_flight_scalesInput = {
-    where?: plansWhereInput
-    data: XOR<plansUpdateWithoutPlan_inputs_resources_flight_scalesInput, plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput>
-  }
-
-  export type plansUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: StringFieldUpdateOperationsInput | string
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
-    plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
-    plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
-    plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
-    users?: usersUpdateOneRequiredWithoutPlansNestedInput
-  }
-
-  export type plansUncheckedUpdateWithoutPlan_inputs_resources_flight_scalesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    creator_id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    target_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: StringFieldUpdateOperationsInput | string
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
@@ -44751,7 +43113,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
     users?: usersCreateNestedOneWithoutPlansInput
@@ -44767,7 +43128,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
   }
@@ -44797,7 +43157,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
     users?: usersUpdateOneRequiredWithoutPlansNestedInput
@@ -44813,7 +43172,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
   }
@@ -44827,7 +43185,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsCreateNestedManyWithoutPlansInput
     users?: usersCreateNestedOneWithoutPlansInput
@@ -44843,7 +43200,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_participants?: plan_participantsUncheckedCreateNestedManyWithoutPlansInput
   }
@@ -44873,7 +43229,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
     users?: usersUpdateOneRequiredWithoutPlansNestedInput
@@ -44889,7 +43244,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
   }
@@ -44903,7 +43257,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusCreateNestedOneWithoutPlansInput
     users?: usersCreateNestedOneWithoutPlansInput
@@ -44919,7 +43272,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedManyWithoutPlansInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedCreateNestedManyWithoutPlansInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedCreateNestedOneWithoutPlansInput
     plan_inputs_status?: plan_inputs_statusUncheckedCreateNestedOneWithoutPlansInput
   }
@@ -45042,7 +43394,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     users?: usersUpdateOneRequiredWithoutPlansNestedInput
@@ -45058,7 +43409,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
   }
@@ -45216,7 +43566,7 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataCreateWithoutPlansInput = {
-    flight_scale_name?: string
+    name: string
     airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
@@ -45226,11 +43576,12 @@ export namespace Prisma {
     required_pre_flight_hours?: bigint | number | null
     required_post_flight_hours?: bigint | number | null
     min_required_revenue?: bigint | number | null
-    plan_inputs_resources_flight_scales: plan_inputs_resources_flight_scalesCreateNestedOneWithoutPlan_inputs_resources_flight_scale_dataInput
+    id?: string
+    index: bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataUncheckedCreateWithoutPlansInput = {
-    flight_scale_name?: string
+    name: string
     airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
@@ -45240,7 +43591,8 @@ export namespace Prisma {
     required_pre_flight_hours?: bigint | number | null
     required_post_flight_hours?: bigint | number | null
     min_required_revenue?: bigint | number | null
-    flight_scale_id: string
+    id?: string
+    index: bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataCreateOrConnectWithoutPlansInput = {
@@ -45250,28 +43602,6 @@ export namespace Prisma {
 
   export type plan_inputs_resources_flight_scale_dataCreateManyPlansInputEnvelope = {
     data: plan_inputs_resources_flight_scale_dataCreateManyPlansInput | plan_inputs_resources_flight_scale_dataCreateManyPlansInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateWithoutPlansInput = {
-    flight_scale_name?: string
-    id?: string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput = {
-    flight_scale_name?: string
-    id?: string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedCreateNestedOneWithoutPlan_inputs_resources_flight_scalesInput
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateOrConnectWithoutPlansInput = {
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-    create: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateManyPlansInputEnvelope = {
-    data: plan_inputs_resources_flight_scalesCreateManyPlansInput | plan_inputs_resources_flight_scalesCreateManyPlansInput[]
     skipDuplicates?: boolean
   }
 
@@ -45294,7 +43624,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusCreateWithoutPlansInput = {
     resources_workforce_status?: string
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: string
     analytics_flight_candidates_status?: string
     analytics_round_trip_normalization_status?: boolean
@@ -45304,7 +43633,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusUncheckedCreateWithoutPlansInput = {
     resources_workforce_status?: string
-    resources_flight_scales_status?: boolean
     resources_flight_scale_data_status?: string
     analytics_flight_candidates_status?: string
     analytics_round_trip_normalization_status?: boolean
@@ -45504,7 +43832,7 @@ export namespace Prisma {
     OR?: plan_inputs_resources_flight_scale_dataScalarWhereInput[]
     NOT?: plan_inputs_resources_flight_scale_dataScalarWhereInput | plan_inputs_resources_flight_scale_dataScalarWhereInput[]
     plan_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
-    flight_scale_name?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
+    name?: StringFilter<"plan_inputs_resources_flight_scale_data"> | string
     airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_standby_airplane_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     seat_cnt?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
@@ -45514,32 +43842,8 @@ export namespace Prisma {
     required_pre_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     required_post_flight_hours?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
     min_required_revenue?: BigIntNullableFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number | null
-    flight_scale_id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
-  }
-
-  export type plan_inputs_resources_flight_scalesUpsertWithWhereUniqueWithoutPlansInput = {
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-    update: XOR<plan_inputs_resources_flight_scalesUpdateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlansInput>
-    create: XOR<plan_inputs_resources_flight_scalesCreateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedCreateWithoutPlansInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateWithWhereUniqueWithoutPlansInput = {
-    where: plan_inputs_resources_flight_scalesWhereUniqueInput
-    data: XOR<plan_inputs_resources_flight_scalesUpdateWithoutPlansInput, plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlansInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateManyWithWhereWithoutPlansInput = {
-    where: plan_inputs_resources_flight_scalesScalarWhereInput
-    data: XOR<plan_inputs_resources_flight_scalesUpdateManyMutationInput, plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansInput>
-  }
-
-  export type plan_inputs_resources_flight_scalesScalarWhereInput = {
-    AND?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
-    OR?: plan_inputs_resources_flight_scalesScalarWhereInput[]
-    NOT?: plan_inputs_resources_flight_scalesScalarWhereInput | plan_inputs_resources_flight_scalesScalarWhereInput[]
-    plan_id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
-    flight_scale_name?: StringFilter<"plan_inputs_resources_flight_scales"> | string
-    id?: UuidFilter<"plan_inputs_resources_flight_scales"> | string
+    id?: UuidFilter<"plan_inputs_resources_flight_scale_data"> | string
+    index?: BigIntFilter<"plan_inputs_resources_flight_scale_data"> | bigint | number
   }
 
   export type plan_inputs_resources_workforceUpsertWithoutPlansInput = {
@@ -45578,7 +43882,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusUpdateWithoutPlansInput = {
     resources_workforce_status?: StringFieldUpdateOperationsInput | string
-    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
     resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
     analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
     analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
@@ -45588,7 +43891,6 @@ export namespace Prisma {
 
   export type plan_inputs_statusUncheckedUpdateWithoutPlansInput = {
     resources_workforce_status?: StringFieldUpdateOperationsInput | string
-    resources_flight_scales_status?: BoolFieldUpdateOperationsInput | boolean
     resources_flight_scale_data_status?: StringFieldUpdateOperationsInput | string
     analytics_flight_candidates_status?: StringFieldUpdateOperationsInput | string
     analytics_round_trip_normalization_status?: BoolFieldUpdateOperationsInput | boolean
@@ -46202,7 +44504,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUpdateManyWithoutPlansNestedInput
@@ -46217,7 +44518,6 @@ export namespace Prisma {
     plan_inputs_airports?: plan_inputs_airportsUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_analytics?: plan_inputs_analyticsUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansNestedInput
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansNestedInput
     plan_inputs_resources_workforce?: plan_inputs_resources_workforceUncheckedUpdateOneWithoutPlansNestedInput
     plan_inputs_status?: plan_inputs_statusUncheckedUpdateOneWithoutPlansNestedInput
     plan_participants?: plan_participantsUncheckedUpdateManyWithoutPlansNestedInput
@@ -46262,7 +44562,7 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataCreateManyPlansInput = {
-    flight_scale_name?: string
+    name: string
     airplane_cnt?: bigint | number | null
     min_standby_airplane_cnt?: bigint | number | null
     seat_cnt?: bigint | number | null
@@ -46272,12 +44572,8 @@ export namespace Prisma {
     required_pre_flight_hours?: bigint | number | null
     required_post_flight_hours?: bigint | number | null
     min_required_revenue?: bigint | number | null
-    flight_scale_id: string
-  }
-
-  export type plan_inputs_resources_flight_scalesCreateManyPlansInput = {
-    flight_scale_name?: string
     id?: string
+    index: bigint | number
   }
 
   export type plan_participantsCreateManyPlansInput = {
@@ -46304,7 +44600,7 @@ export namespace Prisma {
   }
 
   export type plan_inputs_resources_flight_scale_dataUpdateWithoutPlansInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -46314,11 +44610,12 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    plan_inputs_resources_flight_scales?: plan_inputs_resources_flight_scalesUpdateOneRequiredWithoutPlan_inputs_resources_flight_scale_dataNestedInput
+    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateWithoutPlansInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -46328,11 +44625,12 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    flight_scale_id?: StringFieldUpdateOperationsInput | string
+    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
   export type plan_inputs_resources_flight_scale_dataUncheckedUpdateManyWithoutPlansInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_standby_airplane_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     seat_cnt?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
@@ -46342,24 +44640,8 @@ export namespace Prisma {
     required_pre_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     required_post_flight_hours?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     min_required_revenue?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
-    flight_scale_id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type plan_inputs_resources_flight_scalesUpdateWithoutPlansInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
     id?: StringFieldUpdateOperationsInput | string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUpdateOneWithoutPlan_inputs_resources_flight_scalesNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedUpdateWithoutPlansInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
-    plan_inputs_resources_flight_scale_data?: plan_inputs_resources_flight_scale_dataUncheckedUpdateOneWithoutPlan_inputs_resources_flight_scalesNestedInput
-  }
-
-  export type plan_inputs_resources_flight_scalesUncheckedUpdateManyWithoutPlansInput = {
-    flight_scale_name?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
+    index?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
   export type plan_participantsUpdateWithoutPlansInput = {

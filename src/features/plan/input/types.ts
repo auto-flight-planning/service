@@ -11,9 +11,24 @@ export type UseTypeState = [
   Dispatch<SetStateAction<"edit" | "view">>
 ];
 
-export type FlightScales = { id: string; flightScaleName: string }[];
-export type UpdateFlightScales = {
-  addFlightScaleNames: string[];
-  flightScalesToUpdate: FlightScales;
-  removeFlightScaleIds: string[];
+export type FlightScaleData = {
+  name?: string;
+  index?: number;
+  airplaneCnt?: number | bigint | null;
+  minStandbyAirplaneCnt?: number | bigint | null;
+  seatCnt?: number | bigint | null;
+  requiredCaptainCnt?: number | bigint | null;
+  requiredSubCaptainCnt?: number | bigint | null;
+  requiredOtherPersonnelNorm?: number | bigint | null;
+  requiredPreFlightHours?: number | bigint | null;
+  requiredPostFlightHours?: number | bigint | null;
+  minRequiredRevenue?: number | bigint | null;
+};
+export type FlightScaleDataWithId = FlightScaleData & {
+  id: string;
+};
+export type UpdateFlightScaleDatas = {
+  addFlightScaleDatas: FlightScaleData[];
+  updateFlightScaleDatas: FlightScaleDataWithId[];
+  removeFlightScaleDataIds: string[];
 };

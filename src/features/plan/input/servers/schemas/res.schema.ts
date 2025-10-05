@@ -1,12 +1,12 @@
 import { z } from "zod";
 import { extendZodWithOpenApi } from "@asteasolutions/zod-to-openapi";
 import { planIdSchema } from "@/server/schemas/common.schema";
-import { flightScaleSchema } from "./common.schema";
+import { flightScaleDataWithIdSchema } from "./common.schema";
 
 extendZodWithOpenApi(z);
 
-export const flightScalesResSchema = z.object({
+export const flightScaleDataResSchema = z.object({
   plan_id: planIdSchema,
-  flight_scales: flightScaleSchema,
+  flight_scale_datas: z.array(flightScaleDataWithIdSchema),
 });
-export type FlightScalesResSchema = z.infer<typeof flightScalesResSchema>;
+export type FlightScaleDataResSchema = z.infer<typeof flightScaleDataResSchema>;

@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import planInputsResourcesFlightScalesRepo from "@/server/repos/plans/inputs/resources/flight-scales.repo";
+import planInputsResourcesFlightScaleDataRepo from "@/server/repos/plans/inputs/resources/flight-scale-data.repo";
 import planInputService from "@/features/plan/input/servers/service";
 import camelcaseKeys from "camelcase-keys";
 import { type User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
-import { updateFlightScalesReqSchema } from "@/features/plan/input/servers/schemas/req.schema";
-import { flightScalesResSchema } from "@/features/plan/input/servers/schemas/res.schema";
+import { updateFlightScaleDataReqSchema } from "@/features/plan/input/servers/schemas/req.schema";
+import { flightScaleDataResSchema } from "@/features/plan/input/servers/schemas/res.schema";
 import { APIWrapper, doPlanCheck, findOrThrow } from "@/server/lib/helpers";
 
 export const GET = APIWrapper(
@@ -22,14 +22,14 @@ export const GET = APIWrapper(
       data: { planId, user, permissionCheckOptions: { type: "VIEW" } },
     });
 
-    const flightScales = await findOrThrow(
-      () => planInputsResourcesFlightScalesRepo.findAllByPlanId({ planId }),
+    const flightScaleDatas = await findOrThrow(
+      () => planInputsResourcesFlightScaleDataRepo.findAllByPlanId({ planId }),
       "運航規模の種類データが見つかりません"
     );
 
-    const res = flightScalesResSchema.parse({
+    const res = flightScaleDataResSchema.parse({
       plan_id: planId,
-      flight_scales: flightScales.map(({ plan_id, ...rest }) => rest),
+      flight_scale_datas: flightScaleDatas.map(({ plan_id, ...rest }) => rest),
     });
     return NextResponse.json(res);
   },
@@ -48,7 +48,8 @@ export const PUT = APIWrapper(
     const { planId } = validatedParams;
 
     const requestBody = await request.json();
-    const validatedRequestBody = updateFlightScalesReqSchema.parse(requestBody);
+    const validatedRequestBody =
+      updateFlightScaleDataReqSchema.parse(requestBody);
 
     await doPlanCheck({
       checkList: ["exists", "permission"],
@@ -58,14 +59,17 @@ export const PUT = APIWrapper(
     const camelcaseRequestBody = camelcaseKeys(validatedRequestBody, {
       deep: true,
     });
-    const updatedFlightScales = await planInputService.updateFlightScales({
-      planId,
-      flightScales: camelcaseRequestBody,
-    });
+    const updatedFlightScaleDatas =
+      await planInputService.updateFlightScaleDatas({
+        planId,
+        flightScaleDatas: camelcaseRequestBody,
+      });
 
-    const res = flightScalesResSchema.parse({
+    const res = flightScaleDataResSchema.parse({
       plan_id: planId,
-      flight_scales: updatedFlightScales.map(({ plan_id, ...rest }) => rest),
+      flight_scale_datas: updatedFlightScaleDatas.map(
+        ({ plan_id, ...rest }) => rest
+      ),
     });
     return NextResponse.json(res);
   },
