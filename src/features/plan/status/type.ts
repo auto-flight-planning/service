@@ -31,7 +31,6 @@ export interface StatusItem {
 
 export type PlanInputStatus = {
   resourcesWorkforceStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
-  resourcesFlightScalesStatus: boolean;
   resourcesFlightScaleDataStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
   analyticsFlightCandidatesStatus: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
   analyticsRoundTripNormalizationStatus: boolean;

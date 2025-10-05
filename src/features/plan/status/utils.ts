@@ -35,12 +35,6 @@ export const getResourceInputStatusItems = (
       status: planInputStatus.resourcesWorkforceStatus,
     },
     {
-      label: INPUT_DATA_LABELS.RESOURCES_FLIGHT_SCALES,
-      status: planInputStatus.resourcesFlightScalesStatus
-        ? BASIC_STATUS_OPTIONS.COMPLETED
-        : BASIC_STATUS_OPTIONS.NOT_STARTED,
-    },
-    {
       label: INPUT_DATA_LABELS.RESOURCES_FLIGHT_SCALE_DATA,
       status: planInputStatus.resourcesFlightScaleDataStatus,
     },

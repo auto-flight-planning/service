@@ -8,7 +8,6 @@ extendZodWithOpenApi(z);
 export const getPlanInputsStatusResSchema = z.object({
   plan_id: planIdSchema,
   resources_workforce_status: z.enum(BASIC_STATUS_VALUES),
-  resources_flight_scales_status: z.boolean(),
   resources_flight_scale_data_status: z.enum(BASIC_STATUS_VALUES),
   analytics_flight_candidates_status: z.enum(BASIC_STATUS_VALUES),
   analytics_round_trip_normalization_status: z.boolean(),
