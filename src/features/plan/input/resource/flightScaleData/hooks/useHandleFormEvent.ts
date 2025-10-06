@@ -7,7 +7,7 @@ export default function useHandleFormEvent() {
   const useCurrentIndexState = useState(0);
   const [currentIndex, setCurrentIndex] = useCurrentIndexState;
 
-  const { control } = useFormContext<FlightScaleDataFormData>();
+  const { control, setFocus } = useFormContext<FlightScaleDataFormData>();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "flightScaleDataValues",
@@ -29,11 +29,20 @@ export default function useHandleFormEvent() {
     // currentIndex < index の場合は影響なし
   };
 
-  const focusErrorIndex = (errors: FieldErrors<FlightScaleDataFormData>) => {
-    const arrayErrors = errors.flightScaleDataValues!;
-    for (let i = 0; i < arrayErrors.length!; i++) {
-      if (arrayErrors[i] && typeof arrayErrors[i] === "object") {
+  const focusErrorField = (errors: FieldErrors<FlightScaleDataFormData>) => {
+    const arrayErrors = errors.flightScaleDataValues as FieldErrors<
+      FlightScaleDataFormData["flightScaleDataValues"]
+    >;
+    if (!arrayErrors) return;
+
+    for (let i = 0; i < arrayErrors.length; i++) {
+      const errorItem = arrayErrors[i];
+      if (errorItem && typeof errorItem === "object") {
         setCurrentIndex(i);
+        const errorFieldName = Object.keys(
+          errorItem
+        )[0] as keyof FlightScaleDataFormData["flightScaleDataValues"][number];
+        setFocus(`flightScaleDataValues.${i}.${errorFieldName}`);
         return;
       }
     }
@@ -43,6 +52,6 @@ export default function useHandleFormEvent() {
     useCurrentIndexState,
     addItem,
     removeItem,
-    focusErrorIndex,
+    focusErrorField,
   };
 }

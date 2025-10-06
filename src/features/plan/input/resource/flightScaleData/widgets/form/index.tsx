@@ -11,9 +11,9 @@ export default function FlightScaleDataForm() {
   const { handleSubmit } = useFormContext<FlightScaleDataFormData>();
   const { onValidSubmit, isPending } = useFlightScaleDataForm();
 
-  const { focusErrorIndex } = useHandleFormEvent();
+  const { focusErrorField } = useHandleFormEvent();
   const onSubmit = handleSubmit(onValidSubmit, (errors) =>
-    focusErrorIndex(errors)
+    focusErrorField(errors)
   );
 
   return (
