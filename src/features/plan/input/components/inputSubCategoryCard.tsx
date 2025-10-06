@@ -23,7 +23,7 @@ export default function InputSubCategoryCard({
   onClick,
 }: InputSubCategoryCardProps) {
   return (
-    <WhiteCard onClick={onClick} onBorder>
+    <WhiteCard onClick={onClick} onBorder className="w-full">
       <div className="absolute -top-4 left-1/2 -translate-x-1/2">
         <StatusChip
           text={statusChipProps[status].text}

@@ -3,7 +3,7 @@ import { useFormContext, useFieldArray, FieldErrors } from "react-hook-form";
 import { FlightScaleDataFormData } from "../schemas/formSchema";
 import { DEFAULT_FLIGHT_SCALE_DATA } from "../constant";
 
-export default function useHandleFormEvent() {
+export default function useHandleForm() {
   const useCurrentIndexState = useState(0);
   const [currentIndex, setCurrentIndex] = useCurrentIndexState;
 
@@ -24,9 +24,13 @@ export default function useHandleFormEvent() {
   const removeItem = (index: number) => {
     remove(index);
 
-    if (currentIndex === index) setCurrentIndex(0); // 残っている中で最初の項目にフォーカス
-    if (currentIndex > index) setCurrentIndex(currentIndex - 1); // 要素数が減ったため、現在のインデックスを1つ減らす
-    // currentIndex < index の場合は影響なし
+    setTimeout(() => {
+      setCurrentIndex((prev) => {
+        if (prev === index) return 0;
+        if (prev > index) return prev - 1;
+        return prev;
+      });
+    }, 0);
   };
 
   const focusErrorField = (errors: FieldErrors<FlightScaleDataFormData>) => {
@@ -50,6 +54,7 @@ export default function useHandleFormEvent() {
 
   return {
     useCurrentIndexState,
+    fields,
     addItem,
     removeItem,
     focusErrorField,

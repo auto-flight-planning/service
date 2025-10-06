@@ -28,9 +28,7 @@ export default function InputContainer({
       </header>
 
       {/* Input Cards */}
-      <section
-        className={`grid grid-cols-1 lg:grid-cols-${inputItems.length} gap-6`}
-      >
+      <section className="flex gap-6">
         {inputItems.map((item) => (
           <InputSubCategoryCard key={item.title} {...item} />
         ))}

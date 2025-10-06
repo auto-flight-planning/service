@@ -34,7 +34,7 @@ export default function SquareButton({
     ? "rounded-md font-medium transition-all duration-200 border"
     : "rounded-md font-medium transition-all duration-200 border-none";
 
-  const widthStyles = fullWidth ? "w-full" : "w-fit";
+  const widthStyles = fullWidth ? "w-full" : "min-w-fit";
 
   const styles = `${baseStyles} ${
     colorStyles[onBorder ? "onBorder" : "offBorder"][color]

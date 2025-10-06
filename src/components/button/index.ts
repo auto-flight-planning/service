@@ -4,5 +4,5 @@ export { default as ChipButton } from "./chipButton";
 
 // icon buttons
 export { default as CrossButton } from "./crossButton";
-export { default as BackButton } from "./backButton";
+export { default as IconButton } from "./iconButton";
 export { default as EditButton } from "./editButton";

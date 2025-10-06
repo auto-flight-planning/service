@@ -16,7 +16,7 @@ export default function InputFormWrapper({
 
   return (
     <form
-      className="flex flex-col justify-between p-6 h-full"
+      className="flex flex-col justify-between p-5 h-full"
       onSubmit={onSubmit}
     >
       {children}

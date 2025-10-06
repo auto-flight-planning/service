@@ -1,5 +1,6 @@
 import { useRouter } from "next/navigation";
-import { BackButton } from "@/components/button";
+import { IconButton } from "@/components/button";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function Breadcrumb({
   planId,
@@ -13,8 +14,11 @@ export default function Breadcrumb({
   const router = useRouter();
 
   return (
-    <div className="flex items-center gap-3 mb-6 text-sm">
-      <BackButton onClick={() => router.push(`/plan/${planId}/input`)} />
+    <div className="flex items-center gap-3 mb-6 text-md">
+      <IconButton
+        IconComponent={ChevronLeftIcon}
+        onClick={() => router.push(`/plan/${planId}/input`)}
+      />
       <span className="text-primary-500 font-medium">{planTitle}</span>
       <span className="text-gray-400">/</span>
       <span className="text-gray-600">入力段階</span>

@@ -19,6 +19,7 @@ export const ALL_COLOR_OPTIONS = {
   "LIGHT-GRAY": "light-gray",
   WHITE: "white",
   PURPLE: "purple",
+  TRANSPARENT: "transparent",
 } as const;
 export const ALL_COLOR_VALUES = [
   "primary",
@@ -29,6 +30,7 @@ export const ALL_COLOR_VALUES = [
   "light-gray",
   "white",
   "purple",
+  "transparent",
 ] as const;
 export type AllColor = (typeof ALL_COLOR_VALUES)[number];
 
