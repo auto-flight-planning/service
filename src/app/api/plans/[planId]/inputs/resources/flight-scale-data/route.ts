@@ -5,7 +5,10 @@ import camelcaseKeys from "camelcase-keys";
 import { type User } from "@supabase/supabase-js";
 import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { updateFlightScaleDataReqSchema } from "@/features/plan/input/servers/schemas/req.schema";
-import { flightScaleDataResSchema } from "@/features/plan/input/servers/schemas/res.schema";
+import {
+  getFlightScaleDataResSchema,
+  updateFlightScaleDataResSchema,
+} from "@/features/plan/input/servers/schemas/res.schema";
 import { APIWrapper, doPlanCheck, findOrThrow } from "@/server/lib/helpers";
 
 export const GET = APIWrapper(
@@ -27,10 +30,9 @@ export const GET = APIWrapper(
       "運航規模の種類データが見つかりません"
     );
 
-    const res = flightScaleDataResSchema.parse({
-      plan_id: planId,
-      flight_scale_datas: flightScaleDatas.map(({ plan_id, ...rest }) => rest),
-    });
+    const res = getFlightScaleDataResSchema.parse(
+      flightScaleDatas.map(({ plan_id, ...rest }) => rest)
+    );
     return NextResponse.json(res);
   },
   {
@@ -65,7 +67,7 @@ export const PUT = APIWrapper(
         flightScaleDatas: camelcaseRequestBody,
       });
 
-    const res = flightScaleDataResSchema.parse({
+    const res = updateFlightScaleDataResSchema.parse({
       plan_id: planId,
       flight_scale_datas: updatedFlightScaleDatas.map(
         ({ plan_id, ...rest }) => rest

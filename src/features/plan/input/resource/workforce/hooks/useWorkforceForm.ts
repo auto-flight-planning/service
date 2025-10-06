@@ -1,16 +1,15 @@
-import useGetWorkforce from "./useGetWorkforce";
-import { useToastStore } from "@/features/toast";
-import { usePlanId } from "@/features/plan/stores/planStore";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useToastStore } from "@/features/toast";
+import { usePlanId } from "@/features/plan/stores/planStore";
+import useGetWorkforce from "./useGetWorkforce";
 import { WorkforceFormData, workforceFormSchema } from "../schemas/formSchema";
 import { WorkforceSchema } from "../../../servers/schemas/common.schema";
-import { convertBigintToNumber } from "@/lib/utils";
 import snakeCaseKeys from "snakecase-keys";
 import camelcaseKeys from "camelcase-keys";
 import { apiFetchJson } from "@/lib/api";
-import { useEffect } from "react";
 
 export default function useWorkforceForm() {
   const planId = usePlanId();
@@ -26,14 +25,16 @@ export default function useWorkforceForm() {
     },
   });
 
+  // init
   useEffect(() => {
     if (workforceData && !isFetching) {
+      const { captainCnt, subCaptainCnt, otherPersonnelNorm } = workforceData;
       formMethods.reset({
-        captainCnt: convertBigintToNumber(workforceData!.captainCnt),
-        subCaptainCnt: convertBigintToNumber(workforceData!.subCaptainCnt),
-        otherPersonnelNorm: convertBigintToNumber(
-          workforceData!.otherPersonnelNorm
-        ),
+        captainCnt: captainCnt ? Number(captainCnt) : undefined,
+        subCaptainCnt: subCaptainCnt ? Number(subCaptainCnt) : undefined,
+        otherPersonnelNorm: otherPersonnelNorm
+          ? Number(otherPersonnelNorm)
+          : undefined,
       });
     }
   }, [isFetching]);

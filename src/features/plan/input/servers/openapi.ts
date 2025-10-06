@@ -3,7 +3,10 @@ import { planIdReqSchema } from "@/server/schemas/req.schema";
 import { workforceSchema } from "./schemas/common.schema";
 import { commonOpenApiResponses } from "@/server/lib/helpers";
 import { updateFlightScaleDataReqSchema } from "./schemas/req.schema";
-import { flightScaleDataResSchema } from "./schemas/res.schema";
+import {
+  getFlightScaleDataResSchema,
+  updateFlightScaleDataResSchema,
+} from "./schemas/res.schema";
 
 export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
   registry.registerPath({
@@ -81,7 +84,7 @@ export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
         description: "運航規模別データを取得しました",
         content: {
           "application/json": {
-            schema: flightScaleDataResSchema,
+            schema: getFlightScaleDataResSchema,
           },
         },
       },
@@ -115,7 +118,7 @@ export const registerPlanInputAPIsToDocs = (registry: OpenAPIRegistry) => {
         description: "運航規模別データを変更しました",
         content: {
           "application/json": {
-            schema: flightScaleDataResSchema,
+            schema: updateFlightScaleDataResSchema,
           },
         },
       },

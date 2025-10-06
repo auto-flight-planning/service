@@ -7,4 +7,22 @@ export const numberAndBigintSchema = z
 export const positiveNumberSchema = z
   .number()
   .positive("0より大きい数値を入力してください")
-  .nullable();
+  .nullable()
+  .optional();
+
+export const timeSchema = z.object({
+  hours: z
+    .number()
+    .int()
+    .min(0, "0以上の数値を入力してください")
+    .nullable()
+    .optional(),
+  minutes: z
+    .number()
+    .int()
+    .refine((val) => val >= 0 && val <= 59, {
+      message: "0以上59以下の整数を入力してください",
+    })
+    .nullable()
+    .optional(),
+});

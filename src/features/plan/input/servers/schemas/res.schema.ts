@@ -5,8 +5,15 @@ import { flightScaleDataWithIdSchema } from "./common.schema";
 
 extendZodWithOpenApi(z);
 
-export const flightScaleDataResSchema = z.object({
+export const getFlightScaleDataResSchema = z.array(flightScaleDataWithIdSchema);
+export type GetFlightScaleDataResSchema = z.infer<
+  typeof getFlightScaleDataResSchema
+>;
+
+export const updateFlightScaleDataResSchema = z.object({
   plan_id: planIdSchema,
   flight_scale_datas: z.array(flightScaleDataWithIdSchema),
 });
-export type FlightScaleDataResSchema = z.infer<typeof flightScaleDataResSchema>;
+export type UpdateFlightScaleDataResSchema = z.infer<
+  typeof updateFlightScaleDataResSchema
+>;

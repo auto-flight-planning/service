@@ -14,10 +14,21 @@ export const dateToYearMonthJP = (date: Date) => {
 export const errorResToMessage = (res: Response, endpoint: string) =>
   `(${res.status}) ${res.statusText}\n${endpoint} を呼び出しに失敗しました。`;
 
-export const convertBigintToNumber = (
-  number: number | bigint | null | undefined
-) => {
-  return number ? Number(number) : undefined;
+export const minutesToTime = (minutes: number | bigint) => {
+  const m = Number(minutes);
+  const hours = Math.floor(m / 60);
+  const remainingMinutes = m % 60;
+  return { hours, minutes: remainingMinutes };
+};
+
+export const timeToMinutes = (time: {
+  hours?: number | null;
+  minutes?: number | null;
+}) => {
+  if (!time.hours && !time.minutes) return undefined;
+  const h = time.hours ?? 0;
+  const m = time.minutes ?? 0;
+  return h * 60 + m;
 };
 
 // Domain utils
