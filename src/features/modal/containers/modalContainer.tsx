@@ -10,7 +10,10 @@ import { CreatePlanModal } from "@/features/plan/base/create";
 import { EditTitleModal } from "@/features/plan/base/view";
 import { ParticipantViewModal } from "@/features/plan/participant";
 import { ParticipantsEditModal } from "@/features/plan/participant";
-import { WorkforceInputModal } from "@/features/plan/input/resource";
+import {
+  WorkforceInputModal,
+  FlightScaleDataInputModal,
+} from "@/features/plan/input/resource";
 
 export default function ModalContainer() {
   const MODAL_COMPONENTS = {
@@ -20,6 +23,7 @@ export default function ModalContainer() {
     participantView: ParticipantViewModal,
     participantsEdit: ParticipantsEditModal,
     workforceInput: WorkforceInputModal,
+    flightScaleDataInput: FlightScaleDataInputModal,
   };
 
   const { isOpen, modalName, modalProps, closeModal } = useModalStore();

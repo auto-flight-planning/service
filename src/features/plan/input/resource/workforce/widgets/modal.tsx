@@ -6,8 +6,8 @@ import useGetWorkforce from "../hooks/useGetWorkforce";
 import useWorkforceForm from "../hooks/useWorkforceForm";
 import { useModalStore, NumberModalHeader, ModalTab } from "@/features/modal";
 import { Spinner } from "@/components/spinner";
-import WorkforceExplain from "./explain";
 import WorkforceForm from "./form";
+import WorkforceExplain from "./explain";
 
 export default function WorkforceInputModal() {
   const { closeModal } = useModalStore();

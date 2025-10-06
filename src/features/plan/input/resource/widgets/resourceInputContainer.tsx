@@ -34,7 +34,9 @@ export default function ResourceInputContainer() {
           INPUT_DATA_DETAIL_LABELS.RESOURCES_FLIGHT_SCALE_DATA
         ),
         status: statuses[1].status,
-        onClick: () => {},
+        onClick: () => {
+          openModal("flightScaleDataInput");
+        },
       },
     ];
   }, [planInputStatus]);
