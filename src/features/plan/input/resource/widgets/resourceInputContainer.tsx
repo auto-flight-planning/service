@@ -29,18 +29,11 @@ export default function ResourceInputContainer() {
       },
       {
         number: 2,
-        title: INPUT_DATA_LABELS.RESOURCES_FLIGHT_SCALES,
-        items: null,
-        status: statuses[1].status,
-        onClick: () => {},
-      },
-      {
-        number: 3,
         title: INPUT_DATA_LABELS.RESOURCES_FLIGHT_SCALE_DATA,
         items: Object.values(
           INPUT_DATA_DETAIL_LABELS.RESOURCES_FLIGHT_SCALE_DATA
         ),
-        status: statuses[2].status,
+        status: statuses[1].status,
         onClick: () => {},
       },
     ];

@@ -6,7 +6,6 @@ export const INPUT_CATEGORY_LABELS = {
 
 export const INPUT_DATA_LABELS = {
   RESOURCES_WORKFORCE: "総人員データ",
-  RESOURCES_FLIGHT_SCALES: "運航規模の種類",
   RESOURCES_FLIGHT_SCALE_DATA: "運航規模別データ",
   ANALYTICS_FLIGHT_CANDIDATES: "運航候補別の最適収益・優先順位データ",
   ANALYTICS_ROUND_TRIP_NORMALIZATION_FUNC: "往復運航優先順位指数正規化関数",
